@@ -33,10 +33,9 @@ I executed this query in a new chat, and the presented information about the glo
 
 <details>
 <summary><b>ChatGPT Answer</b></summary>
-
-<br/>
+  
 &nbsp;&nbsp;&nbsp;&nbsp;Yes, you're absolutely correct. Here’s a detailed breakdown:
-
+  
 1. **Global Default Context**
     - The customizations we've established are saved across conversations and act as a default context for how I respond.
     - They can be adjusted or refined at any time to better suit your evolving needs.
