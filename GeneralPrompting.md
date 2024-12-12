@@ -21,9 +21,29 @@ The original training data is the primary resource used by ChatGPT to answer the
 
 Let us now discuss a few prompts that take advantage of these features or provide insights about applicable contexts.
 
-## Q: Who is the 48<sup>th</sup> POTUS?
+## Introspection Queries
 
-This prompt demonstrates the ChatGPT's real-time web search feature, 
+
+<details open>
+ 
+ <summary>Hello</summary>
+
+```python
+  import os
+  ```
+  World!
+  
+</details>
+
+
+## Real-Time Web Search Queries
+### Q: Who is the 48<sup>th</sup> POTUS?
+
+### Q: Who is the wealthiest candidate for a position in the 47th POTUS administration and what is its proposed job title?
+
+Timestamp: November 2024.
+
+These prompts demonstrates the ChatGPT's real-time web search feature. The first one also demonstrates how ChatGPT handles false assumptions, particularly assumptions that will become true in the near future.
 
 # General Prompting Approaches (the GPT-4o Model)
 
