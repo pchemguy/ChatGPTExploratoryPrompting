@@ -6,21 +6,13 @@ The GPT-4o model is used as the base model for the purpose of this repository (p
 
 ## Sample Prompts and Answers
 
-By default, I will not provide answers to presented sample prompts. Note, to get answers not influenced by conversational context, it might be a good idea to ask them in new chats or chats with little history. Note, I format questions/prompts using heading styles, so that they appear in the TOC/outline created by GitHub, Obsidian, and, probably other tools.
+By default, I will not provide answers to presented sample prompts. At the same time, some sections are mostly prompts or Q&A.
 
-# Answer Contexts and Sources
+Note, to get answers not influenced by conversational context, it might be a good idea to ask them in new chats or chats with little history. I format questions/prompts using heading styles, so that they appear in the TOC/outline created by GitHub, Obsidian, and, probably other tools.
 
-The original training data is the primary resource used by ChatGPT to answer the questions, but it is important to understand what other sources shape the answers.
+# Prompt Engineering
 
-1. Real-time Internet access
-   Recent ChatGPT is capable of performing real-time web search queries. The retrieved information is then incorporated into the answer. Note that the free plan provides limited access to this feature. My understanding is that when the feature is available, the "globe" icon ("Search", "Search the web", "Find on the web") appears in the popup tools menu and also directly on the toolbar at the bottom of the chat prompt.
-2. Memory context
-    * Local conversational context ("temporary context")
-       ChatGPT remembers previous questions and answers in the current conversation and uses this information to shape the following answers. When a new conversation is started via the "New Chat" button, the current conversation context should be empty.
-    * Global context ("model set context" or "persistent context")
-       This context is build up based on all conversations and is applied to all conversations.
-
-## Prompt Engineering
+The following prompts (and corresponding answers) might be helpful in getting better at asking without leaving the chat.
 
 ### Q: I want to improve my prompt engineering skills. Can you help with it?
 
@@ -221,7 +213,17 @@ Would you like to experiment with a specific prompt structure to see how it work
 ---
 ---
 
-## Memory Context
+# Memory Context
+
+The original training data is the primary resource used by ChatGPT to answer the questions, but it is important to understand what other sources shape the answers.
+
+1. Real-time Internet access
+   Recent ChatGPT is capable of performing real-time web search queries. The retrieved information is then incorporated into the answer. Note that the free plan provides limited access to this feature. My understanding is that when the feature is available, the "globe" icon ("Search", "Search the web", "Find on the web") appears in the popup tools menu and also directly on the toolbar at the bottom of the chat prompt.
+2. Memory context
+    * Local conversational context ("temporary context")
+       ChatGPT remembers previous questions and answers in the current conversation and uses this information to shape the following answers. When a new conversation is started via the "New Chat" button, the current conversation context should be empty.
+    * Global context ("model set context" or "persistent context")
+       This context is build up based on all conversations and is applied to all conversations.
 
 ### Q: Tell me about customizations applicable to this conversations that are based on my previous ChatGPT conversations.
 
@@ -300,8 +302,6 @@ Would you like to experiment with a specific prompt structure to see how it work
         - You can ask to update, refine, or discard persistent preferences at any time.
         - For example: "Remove my preference for Markdown formatting from the persistent context."
 </details>
-
-A few other sample queries for working with the persistent context.
 
 ### Q: Tell me about the current Model Set Context
 
@@ -419,9 +419,6 @@ Imagine you want a detailed essay outline:
 By actively managing context—through clear instructions, iterative refinement, and leveraging persistent memory—you can significantly improve the quality and relevance of ChatGPT's responses. Treat interactions as collaborative, guiding the model toward your goals with each input.
 </details>
 
-
----
-
 ### Q: Is there a technical term for a set of preferences defined based on my previous conversations and applied across all conversations by default?
 
 <details>
@@ -438,8 +435,7 @@ By actively managing context—through clear instructions, iterative refinement,
 If you're referring to a formal, standardized term, the specific terminology might depend on the domain or application (e.g., "persistent state" in software engineering). Let me know if you'd like more domain-specific examples!
 </details>
 
-This further exploration provides several candidate term for what I referred as "global context" above.
-## Real-Time Web Search Queries
+# Real-Time Web Search Queries
 ### Q: Who is the 48<sup>th</sup> POTUS?
 
 ### Q: Who is the wealthiest candidate for a position in the 47th POTUS administration and what is its proposed job title?
@@ -448,7 +444,10 @@ Timestamp: November 2024.
 
 These prompts demonstrates the ChatGPT's real-time web search feature. The first one also demonstrates how ChatGPT handles false assumptions, particularly assumptions that will become true in the near future.
 
-# General Prompting Approaches (the GPT-4o Model)
+
+
+
+# Writing Context and Guidelines
 
 ## Efficient Technical and Business Writing - Writing Style Guidelines for Technical and Business Texts
 
@@ -458,11 +457,7 @@ These prompts demonstrates the ChatGPT's real-time web search feature. The first
 * Stylistic Guidelines ([Writing Style Guidelines for Technical and Business Texts][WritingStyleGuidelines])  
   These guidelines are designed to be sent directly to ChatGPT and focus on writing mechanics, structure, vocabulary, sentence construction, and coherence. These aspects should apply to most of my writing activities.
 * Context Template ([Writing Context Guidelines][WritingContext])  
-
-
-## Load instruction templates from the web
-
-
+  This template offers customizable options for defining higher-level writing aspects, such as audience, domain, intent, formality, tone, and other contextual factors. It also allows for tailored "profile" contexts (e.g., "LinkedIn Post") that can be included when submitting the entire contents to ChatGPT, instructing it to apply a specific profile.
 
 
 <!-- References -->
