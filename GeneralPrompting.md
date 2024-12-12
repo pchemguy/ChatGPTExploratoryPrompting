@@ -35,7 +35,8 @@ I executed this query in a new chat, and the presented information about the glo
 <summary><b>ChatGPT Answer</b></summary>
 
     Yes, you're absolutely correct. Here’s a detailed breakdown:
-    1. **Global Default Context**
+    
+    1. <b>Global Default Context</b>
         - The customizations we've established are saved across conversations and act as a default context for how I respond.
         - They can be adjusted or refined at any time to better suit your evolving needs.
     2. **Adjustments**
