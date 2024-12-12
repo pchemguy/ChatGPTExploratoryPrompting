@@ -27,9 +27,11 @@ Let us now discuss a few prompts that take advantage of these features or provid
 <details>
 <summary>Hello</summary>
 
-```python
+```
   import os
-  ```
+```
+    qq
+        qq
   World!
   
 </details>
