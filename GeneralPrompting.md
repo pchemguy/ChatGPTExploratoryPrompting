@@ -23,10 +23,9 @@ Let us now discuss a few prompts that take advantage of these features or provid
 
 ## Introspection Queries
 
-
-<details open>
- 
- <summary>Hello</summary>
+<!-- <details open> -->
+<details>
+<summary>Hello</summary>
 
 ```python
   import os
