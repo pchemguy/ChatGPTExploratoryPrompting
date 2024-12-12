@@ -1,6 +1,12 @@
-# GPT Model
+# Repo Conventions
+
+## GPT Model
 
 The GPT-4o model is used as the base model for the purpose of this repository (pchemguy/ChatGPTPromptEngineering).
+
+## Sample Prompts and Answers
+
+By default, I will not provide answers to presented sample prompts. Note, to get answers not influenced by conversational context, it might be a good idea to ask them in new chats or chats with little history.
 
 # Answer Contexts and Sources
 
@@ -8,7 +14,7 @@ The original training data is the primary resource used by ChatGPT to answer the
 
 1. Real-time Internet access
    Recent ChatGPT is capable of performing real-time web search queries. The retrieved information is then incorporated into the answer. Note that the free plan provides limited access to this feature. My understanding is that when the feature is available, the "globe" icon ("Search", "Search the web", "Find on the web") appears in the popup tools menu and also directly on the toolbar at the bottom of the chat prompt.
-2. Conversation context
+2. Local conversational context
    ChatGPT remembers previous questions and answers in the current conversation and uses this information to shape the following answers. When a new conversation is started via the "New Chat" button, the current conversation context should be empty.
 3. Global context
    Until recently, I have not realized that there is also the global context, which applies across conversations.
@@ -17,7 +23,7 @@ Let us now discuss a few prompts that take advantage of these features or provid
 
 ## Q: Who is the 48<sup>th</sup> POTUS?
 
-   
+This prompt demonstrates the ChatGPT's real-time web search feature, 
 
 # General Prompting Approaches (the GPT-4o Model)
 
