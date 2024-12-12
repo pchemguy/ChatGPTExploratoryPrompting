@@ -7,10 +7,15 @@ The GPT-4o model is used as the base model for the purpose of this repository (p
 The original training data is the primary resource used by ChatGPT to answer the questions, but it is important to understand what other sources shape the answers.
 
 1. Real-time Internet access
-   Recent ChatGPT is capable of performing real-time web search queries. The retrieved information is then incorporated into the answer. The free plan provides limited access to this feature. My understanding is that when it available, the "globe" icon ("Search", "Search the web", "Find on the web") appears in the popup tools menu and also directly on the toolbar at the bottom of the chat prompt.
+   Recent ChatGPT is capable of performing real-time web search queries. The retrieved information is then incorporated into the answer. Note that the free plan provides limited access to this feature. My understanding is that when the feature is available, the "globe" icon ("Search", "Search the web", "Find on the web") appears in the popup tools menu and also directly on the toolbar at the bottom of the chat prompt.
 2. Conversation context
-   ChatGPT remembers previous questions and answers in the current conversation and uses this information to shape the following answers.
-3. 
+   ChatGPT remembers previous questions and answers in the current conversation and uses this information to shape the following answers. When a new conversation is started via the "New Chat" button, the current conversation context should be empty.
+3. Global context
+   Until recently, I have not realized that there is also the global context, which applies across conversations.
+
+Let us now discuss a few prompts that take advantage of these features or provide insights about applicable contexts.
+
+## Q: Who is the 48<sup>th</sup> POTUS?
 
    
 
