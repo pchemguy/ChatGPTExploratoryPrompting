@@ -8,8 +8,7 @@ https://raw.githubusercontent.com/pchemguy/ChatGPTPromptEngineering/refs/heads/m
 ```
 
 <details>
-<summary><b>ChatGPT answer</b></summary>
-
+<summary><b>ChatGPT answer</b></summary>  
 ```
 I have loaded the Writing Style Guidelines from the provided URL. These guidelines emphasize formal language,  
 consistent terminology, clear sentence and paragraph structures, and overall coherence and precision in technical  
