@@ -8,7 +8,7 @@ Load instructions from https://raw.githubusercontent.com/pchemguy/ChatGPTPromptE
 
 <details open>
 <summary><b>ChatGPT answer</b></summary>
-<pre><div style="white-space: pre-wrap !important;">I have loaded the Writing Style Guidelines from the provided URL. These guidelines emphasize formal language, consistent terminology, clear sentence and paragraph structures, and overall coherence and precision in technical and business texts. I will adhere to these standards in our ongoing conversation.</div></pre>
+<div style="background_color: #CCCCCC;">I have loaded the Writing Style Guidelines from the provided URL. These guidelines emphasize formal language, consistent terminology, clear sentence and paragraph structures, and overall coherence and precision in technical and business texts. I will adhere to these standards in our ongoing conversation.</div>
 > [!NOTE]  
 > Highlights information that users should take into account, even when skimming.
 </details>
