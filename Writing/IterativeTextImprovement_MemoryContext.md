@@ -2,13 +2,12 @@
 
 Here is a brief example of iterative improvement of a short text section. I started a new ChatGPT chat and loaded the "Writing Style Guidelines". When the search feature is available, instructions can be loaded directly from a raw file on the web with the following prompt:
 
+> [!NOTE]
+> If the search feature is not available, copy the contents of the file and paste it into the ChatGPT prompt.
+
 **Prompt**
 
 > Load instructions from https://raw.githubusercontent.com/pchemguy/ChatGPTPromptEngineering/refs/heads/main/Writing/WritingStyleGuidelines.md
-
-
-> [!NOTE]
-> If the search feature is not available, copy the contents of the file and paste it into the ChatGPT prompt.
 
 <details>
 <summary><b>ChatGPT answer</b></summary>  
