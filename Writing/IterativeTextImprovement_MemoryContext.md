@@ -43,8 +43,7 @@ but it is important to understand what other sources shape the answers.
 ```
 
 <details>
-<summary><b>ChatGPT answer</b></summary>
-
+<summary><b>ChatGPT answer</b></summary>  
 Here’s a revised version of your text with improved clarity, grammar, and consistency:
 
 ---
@@ -66,7 +65,4 @@ The original training data serves as the primary resource for ChatGPT to answer 
 1. **Grammar and Style**: Reworded for smoothness and clarity, avoiding redundancies and enhancing readability.
 2. **Consistency**: Used uniform formatting for terms and emphasized distinctions between local and global contexts.
 3. **Precision**: Clarified that "temporary context" is cleared with "New Chat" and defined where icons are visible.
-
-Let me know if you'd like further adjustments!
-
 </details>
