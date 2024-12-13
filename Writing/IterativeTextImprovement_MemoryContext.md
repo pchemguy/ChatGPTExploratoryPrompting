@@ -7,6 +7,9 @@ Load instructions from
 https://raw.githubusercontent.com/pchemguy/ChatGPTPromptEngineering/refs/heads/main/Writing/WritingStyleGuidelines.md
 ```
 
+> [!NOTE]
+> If the search feature is not available, copy the contents of the file and paste in into ChatGPT prompt.
+
 <details>
 <summary><b>ChatGPT answer</b></summary>  
 ```
@@ -16,7 +19,7 @@ and business texts. I will adhere to these standards in our ongoing conversation
 ```
 </details>
 
-Then I asked ChatGPT to review a text (which implied improvement of the text accord):
+Then I asked ChatGPT to review a text (which implied improvement of the text accordingly to the previously applied style guidelines):
 
 ```
 Review the text
