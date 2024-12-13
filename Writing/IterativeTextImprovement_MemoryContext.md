@@ -24,6 +24,7 @@ Then I asked ChatGPT to review a text (which implied improvement of the text acc
 
 <details>
 <summary><b>Prompt</b></summary>  
+
 > Review the text  
 > 
 > The original training data is the primary resource used by ChatGPT to answer the questions, but it is important to understand what other sources shape the answers.  
@@ -35,6 +36,7 @@ Then I asked ChatGPT to review a text (which implied improvement of the text acc
 >        ChatGPT remembers previous questions and answers in the current conversation and uses this information to shape the following answers. When a new conversation is started via the "New Chat" button, the current conversation context should be empty.  
 >     * Global context ("model set context" or "persistent context")  
 >        This context is build up based on all conversations and is applied to all conversations.  
+
 </details>
 
 <details>
