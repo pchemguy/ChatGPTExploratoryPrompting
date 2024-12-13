@@ -6,9 +6,9 @@ Here is a brief example of iterative improvement of a short text section. I star
 Load instructions from https://raw.githubusercontent.com/pchemguy/ChatGPTPromptEngineering/refs/heads/main/Writing/WritingStyleGuidelines.md
 ```
 
-<details open>
+<details style="background_color: #CCCCCC;" open>
 <summary><b>ChatGPT answer</b></summary>
-<div style="background_color: #CCCCCC;">I have loaded the Writing Style Guidelines from the provided URL. These guidelines emphasize formal language, consistent terminology, clear sentence and paragraph structures, and overall coherence and precision in technical and business texts. I will adhere to these standards in our ongoing conversation.</div>
+<div >I have loaded the Writing Style Guidelines from the provided URL. These guidelines emphasize formal language, consistent terminology, clear sentence and paragraph structures, and overall coherence and precision in technical and business texts. I will adhere to these standards in our ongoing conversation.</div>
 > [!NOTE]  
 > Highlights information that users should take into account, even when skimming.
 </details>
