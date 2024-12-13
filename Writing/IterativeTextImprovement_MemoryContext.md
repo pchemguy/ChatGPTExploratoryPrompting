@@ -9,14 +9,11 @@ Here is a brief example of iterative improvement of a short text section. I star
 
 > Load instructions from https://raw.githubusercontent.com/pchemguy/ChatGPTPromptEngineering/refs/heads/main/Writing/WritingStyleGuidelines.md
 
-<details>
-<summary><b>ChatGPT answer</b></summary>  
+**Answer**
   
 > I have loaded the Writing Style Guidelines from the provided URL. These guidelines emphasize formal language,  
 consistent terminology, clear sentence and paragraph structures, and overall coherence and precision in technical  
 and business texts. I will adhere to these standards in our ongoing conversation.
-
-</details>
 
 Then I asked ChatGPT to review a text (which implied improvement of the text accordingly to the previously applied style guidelines):
 
