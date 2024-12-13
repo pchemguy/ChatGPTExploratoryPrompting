@@ -35,8 +35,7 @@ The original training data is the primary resource used by ChatGPT to answer the
        ChatGPT remembers previous questions and answers in the current conversation and uses this information to shape the following answers. When a new conversation is started via the "New Chat" button, the current conversation context should be empty.
     * Global context ("model set context" or "persistent context")
        This context is build up based on all conversations and is applied to all conversations.
-<details>
-
+</details>
 
 <details>
 <summary><b>ChatGPT answer</b></summary>  
