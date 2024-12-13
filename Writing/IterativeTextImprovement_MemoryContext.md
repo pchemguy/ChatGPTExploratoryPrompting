@@ -23,7 +23,7 @@ and business texts. I will adhere to these standards in our ongoing conversation
 Then I asked ChatGPT to review a text (which implied improvement of the text accordingly to the previously applied style guidelines):
 
 <details>
-<summary><b>Prompt</b></summary> 
+<summary><b>Prompt</b></summary>  
 > Review the text
 > 
 > The original training data is the primary resource used by ChatGPT to answer the questions, but it is important to understand what other sources shape the answers.
