@@ -41,26 +41,28 @@ Then I asked ChatGPT to review a text (which implied improvement of the text acc
 
 <details>
 <summary><b>ChatGPT answer</b></summary>  
-Here’s a revised version of your text with improved clarity, grammar, and consistency:
 
----
-
+> Here’s a revised version of your text with improved clarity, grammar, and consistency:
+> 
+> ---
+> 
 > The original training data serves as the primary resource for ChatGPT to answer questions. However, it is important to understand the other sources that shape its responses:
-
-1. **Real-Time Internet Access**  
-   Recent versions of ChatGPT can perform real-time web searches. The retrieved information is then incorporated into the answers. Note that the free plan offers limited access to this feature. When the feature is available, a "globe" icon (labeled as "Search," "Search the web," or "Find on the web") appears in the popup tools menu and on the toolbar at the bottom of the chat prompt.
-
-2. **Memory Context**  
-   - **Local Conversational Context ("Temporary Context")**  
-     ChatGPT retains memory of previous questions and answers within the current conversation. This information shapes subsequent responses. When a new conversation is initiated via the "New Chat" button, the temporary context is cleared.  
-   - **Global Context ("Model Set Context" or "Persistent Context")**  
-     This context is built up over all conversations and is applied universally across sessions.  
-
----
-
-### Key Improvements:
-1. **Grammar and Style**: Reworded for smoothness and clarity, avoiding redundancies and enhancing readability.
-2. **Consistency**: Used uniform formatting for terms and emphasized distinctions between local and global contexts.
-3. **Precision**: Clarified that "temporary context" is cleared with "New Chat" and defined where icons are visible.
+> 
+> 1. **Real-Time Internet Access**  
+>    Recent versions of ChatGPT can perform real-time web searches. The retrieved information is then incorporated into the answers. Note that the free plan offers limited access to this feature. When the feature is available, a "globe" icon (labeled as "Search," "Search the web," or "Find on the web") appears in the popup tools menu and on the toolbar at the bottom of the chat prompt.
+> 
+> 2. **Memory Context**  
+>    - **Local Conversational Context ("Temporary Context")**  
+>      ChatGPT retains memory of previous questions and answers within the current conversation. This information shapes subsequent responses. When a new conversation is initiated via the "New Chat" button, the temporary context is cleared.  
+>    - **Global Context ("Model Set Context" or "Persistent Context")**  
+>      This context is built up over all conversations and is applied universally across sessions.  
+> 
+> ---
+> 
+> ### Key Improvements:
+> 1. **Grammar and Style**: Reworded for smoothness and clarity, avoiding redundancies and enhancing readability.
+> 2. **Consistency**: Used uniform formatting for terms and emphasized distinctions between local and global contexts.
+> 3. **Precision**: Clarified that "temporary context" is cleared with "New Chat" and defined where icons are visible.
+> 
 </details>
 
