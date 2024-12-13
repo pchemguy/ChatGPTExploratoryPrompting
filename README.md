@@ -1,6 +1,20 @@
+# Repo Conventions
+
+## GPT Model
+
+The GPT-4o model is used as the base model for the purpose of this repository (pchemguy/ChatGPTPromptEngineering).
+
+## Sample Prompts and Answers
+
+By default, I will not provide answers to presented sample prompts. At the same time, some sections are mostly prompts or Q&A.
+
+Note, to get answers not influenced by conversational context, it might be a good idea to ask them in new chats or chats with little history. I format questions/prompts using heading styles, so that they appear in the TOC/outline created by GitHub, Obsidian, and, probably other tools.
+
+
+
 # ChatGPT Tutorial
 
-In this repository, I share my beginner experience exploring features of ChatGPT and the associated workflows. To a certain extent, this project is also about "learning through writing", and presently, I have the following major ChatGPT learning objectives:
+In this repository, I share my beginner experience exploring features of ChatGPT and the associated workflows. To a certain extent, this project is about "learning through writing", and presently, I have the following major ChatGPT learning objectives:
 
 ## 1. Writing assistance for efficient technical and business writing
 
@@ -14,8 +28,19 @@ When it comes to improving the efficiency of non-fiction texts, ChatGPT performs
 - Context Template ([Writing Context Guidelines][WritingContext])  
     This template offers customizable options for defining higher-level writing aspects, such as audience, domain, intent, formality, tone, and other contextual factors. It also allows for tailored "profile" contexts (e.g., "LinkedIn Post") that can be included when submitting the entire contents to ChatGPT, instructing it to apply a specific profile.
 
+## 2. Coding assistance
 
-## 1. Technical aspects for tailoring answers
+**TODO**
+
+## 3. Technical aspects and workflows
+
+While ChatGPT is probably developed as a conversational tool that should be easily accessible to beginners, learning certain technical aspects definitely improves the results, as evidenced by the emergence of prompt engineering.
+
+Prompt engineering
+Model context
+Divide and conquer
+Iterative focused refinement
+Technical aspects for tailoring answers
 
 
 <!-- References -->
