@@ -3,14 +3,13 @@
 Here is a brief example of iterative improvement of a short text section. I started a new ChatGPT chat and loaded the "Writing Style Guidelines". When the search feature is available, instructions can be loaded directly from a raw file on the web with the following prompt:
 
 ```
-Load instructions from https://raw.githubusercontent.com/pchemguy/ChatGPTPromptEngineering/refs/heads/main/Writing/WritingStyleGuidelines.md
+Load instructions from  
+https://raw.githubusercontent.com/pchemguy/ChatGPTPromptEngineering/refs/heads/main/Writing/WritingStyleGuidelines.md
 ```
 
 <details style="background_color: #CCCCCC;" open>
 <summary><b>ChatGPT answer</b></summary>
 <div >I have loaded the Writing Style Guidelines from the provided URL. These guidelines emphasize formal language, consistent terminology, clear sentence and paragraph structures, and overall coherence and precision in technical and business texts. I will adhere to these standards in our ongoing conversation.</div>
-> [!NOTE]  
-> Highlights information that users should take into account, even when skimming.
 </details>
 
 Then I asked ChatGPT to review a text (which implied improvement of the text accord):
