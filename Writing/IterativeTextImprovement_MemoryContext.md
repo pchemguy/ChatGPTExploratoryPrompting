@@ -2,6 +2,7 @@
 
 Here is a brief example of iterative improvement of a short text section. I started a new ChatGPT chat and loaded the "Writing Style Guidelines". When the search feature is available, instructions can be loaded directly from a raw file on the web with the following prompt:
 
+**Prompt**
 ```
 Load instructions from  
 https://raw.githubusercontent.com/pchemguy/ChatGPTPromptEngineering/refs/heads/main/Writing/WritingStyleGuidelines.md
@@ -21,26 +22,21 @@ and business texts. I will adhere to these standards in our ongoing conversation
 
 Then I asked ChatGPT to review a text (which implied improvement of the text accordingly to the previously applied style guidelines):
 
-```
+<details>
+<summary><b>Prompt</b></summary> 
 Review the text
 
-The original training data is the primary resource used by ChatGPT to answer the questions,  
-but it is important to understand what other sources shape the answers.
+The original training data is the primary resource used by ChatGPT to answer the questions, but it is important to understand what other sources shape the answers.
 
 1. Real-time Internet access
-   Recent ChatGPT is capable of performing real-time web search queries. The retrieved  
-   information is then incorporated into the answer. Note that the free plan provides  
-   limited access to this feature. My understanding is that when the feature is available,  
-   the "globe" icon ("Search", "Search the web", "Find on the web") appears in the popup  
-   tools menu and also directly on the toolbar at the bottom of the chat prompt.
+   Recent ChatGPT is capable of performing real-time web search queries. The retrieved information is then incorporated into the answer. Note that the free plan provides limited access to this feature. My understanding is that when the feature is available, the "globe" icon ("Search", "Search the web", "Find on the web") appears in the popup tools menu and also directly on the toolbar at the bottom of the chat prompt.
 1. Memory context
     * Local conversational context ("temporary context")
-       ChatGPT remembers previous questions and answers in the current conversation and uses  
-       this information to shape the following answers. When a new conversation is started  
-       via the "New Chat" button, the current conversation context should be empty.
+       ChatGPT remembers previous questions and answers in the current conversation and uses this information to shape the following answers. When a new conversation is started via the "New Chat" button, the current conversation context should be empty.
     * Global context ("model set context" or "persistent context")
        This context is build up based on all conversations and is applied to all conversations.
-```
+<details>
+
 
 <details>
 <summary><b>ChatGPT answer</b></summary>  
@@ -66,3 +62,4 @@ The original training data serves as the primary resource for ChatGPT to answer 
 2. **Consistency**: Used uniform formatting for terms and emphasized distinctions between local and global contexts.
 3. **Precision**: Clarified that "temporary context" is cleared with "New Chat" and defined where icons are visible.
 </details>
+
