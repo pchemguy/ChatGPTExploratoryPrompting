@@ -65,7 +65,7 @@ Finally, I wanted feedback on the contents, so I followed with the prompt:
 
 **Prompt**
 
-> Now give me feedback on the contents. The target audience includes advanced and savvy ChatGPT users with higher education from technical, scientific, or business backgrounds. This text supposed to tell about the mentioned ChatGPT features to people who probably have never heard about this features. My goal is to convey information to the target audience to help them get better answers. The text is introductory and should remain brief. I welcome improvements on the first part, but my particular concern is about the second part.  
+> Now give me feedback on the contents. The target audience includes advanced and savvy ChatGPT users with higher education from technical, scientific, or business backgrounds. This text supposed to tell about the mentioned ChatGPT features to people who probably have never heard about them. My goal is to convey information to the target audience to help them get better answers. The text is introductory and should remain brief. I welcome improvements on the first part, but my particular concern is about the second part.  
    Is it accurate? Should I add something?
 
 <details>
