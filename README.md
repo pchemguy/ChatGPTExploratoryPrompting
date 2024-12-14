@@ -46,7 +46,7 @@ Structure lists and series with clear, parallel elements:
 
 ## 3. Technical aspects and workflows
 
-While ChatGPT is probably developed as a conversational tool that should be easily accessible to beginners, learning certain technical aspects definitely improves the results, as evidenced by the emergence of the prompt engineering field.
+While ChatGPT is probably developed as a conversational tool that should be easily accessible to beginners, learning certain technical aspects may drastically improve the results, as evidenced by the emergence of the prompt engineering field.
 
 ### Model context
 
