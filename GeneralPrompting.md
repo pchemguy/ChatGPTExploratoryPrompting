@@ -1,15 +1,3 @@
-# Repo Conventions
-
-## GPT Model
-
-The GPT-4o model is used as the base model for the purpose of this repository (pchemguy/ChatGPTPromptEngineering).
-
-## Sample Prompts and Answers
-
-By default, I will not provide answers to presented sample prompts. At the same time, some sections are mostly prompts or Q&A.
-
-Note, to get answers not influenced by conversational context, it might be a good idea to ask them in new chats or chats with little history. I format questions/prompts using heading styles, so that they appear in the TOC/outline created by GitHub, Obsidian, and, probably other tools.
-
 # Prompt Engineering
 
 The following prompts (and corresponding answers) might be helpful in getting better at asking without leaving the chat.
@@ -303,10 +291,231 @@ The original training data is the primary resource used by ChatGPT to answer the
         - For example: "Remove my preference for Markdown formatting from the persistent context."
 </details>
 
-### Q: Tell me about the current Model Set Context
-
+### Q: Tell me about the current model set context
 ### Q: Tell me about currently applicable User Preferences. Provide guidance on how I can set and optimize them.
+### Q: Tell me about current temporary context.
 
+### Q: Tell me about project-specific context.
+### Q: Give me detailed information about the current persistent context
+
+### Q: Tell me about Cross-Session Continuity
+
+<details>
+<summary><b>ChatGPT Answer</b></summary>
+**Cross-Session Continuity** refers to a feature in conversational AI systems like ChatGPT that enables the model to retain relevant information from one session to the next, allowing for a smoother and more contextually aware experience over time. This feature is especially useful for managing ongoing projects, long-term tasks, or personal preferences across multiple interactions.
+
+---
+
+#### **Key Features of Cross-Session Continuity**
+
+1. **Memory of Key Details**:
+   - Retains important information such as:
+     - User preferences (tone, style, or specific needs).
+     - Project details (scope, deadlines, or deliverables).
+     - Context from previous discussions (specific terms, goals, or unresolved queries).
+
+2. **Customizability**:
+   - Users can define what details should be remembered and when to clear the memory for privacy or project shifts.
+
+3. **Personalization**:
+   - Tailors responses based on stored user preferences or ongoing context, improving the relevance and utility of outputs.
+
+4. **Privacy Control**:
+   - Provides transparency about what is being remembered and allows users to manage or delete memory data.
+
+---
+
+#### **How It Works in ChatGPT**
+
+1. **Session-Specific Memory**:
+   - By default, AI systems only retain context within the same session (i.e., as long as the chat is open).
+   - Once the session ends, the context is typically lost unless cross-session continuity is enabled.
+
+2. **Persistent Memory** (with user consent):
+   - Allows the AI to remember project-specific or user-defined information across sessions.
+   - Users can input, update, or delete remembered data (e.g., "Remember that I’m working on a marketing project about renewable energy").
+
+3. **User Prompts for Continuity**:
+   - Users can prompt the AI to recall previous information when needed (e.g., "What were the key points we discussed about the marketing project?").
+
+4. **Integration with Project Tools**:
+   - In project-based tools, continuity may include linking files, notes, and progress updates directly to specific projects or folders.
+
+---
+
+#### **Benefits of Cross-Session Continuity**
+
+1. **Enhanced Productivity**:
+   - Saves time by avoiding repetitive explanations or context-setting.
+   - Streamlines workflows for ongoing projects or recurring tasks.
+
+2. **Improved Collaboration**:
+   - Supports teamwork by maintaining shared context across collaborative projects.
+
+3. **Personalized Interactions**:
+   - Delivers a more human-like experience by adapting to user needs and preferences.
+
+4. **Better Project Management**:
+   - Keeps track of milestones, unresolved tasks, or project notes over time.
+
+---
+
+#### **Challenges and Considerations**
+
+1. **Privacy and Security**:
+   - Users must trust the system to handle sensitive or personal data responsibly.
+   - Robust privacy controls and transparency are crucial.
+
+2. **Accuracy of Memory**:
+   - The AI must avoid misremembering or mixing up details from different sessions or projects.
+
+3. **User Control**:
+   - Users should have clear options to manage what is remembered or forgotten.
+
+---
+
+#### **Applications of Cross-Session Continuity**
+
+1. **Business and Project Management**:
+   - Tracks ongoing project details, meeting notes, and deadlines.
+   - Provides reminders or updates for long-term goals.
+
+2. **Learning and Education**:
+   - Retains study preferences, learning goals, and progress for students.
+   - Facilitates tutoring sessions that build on previous discussions.
+
+3. **Personal Assistance**:
+   - Remembers preferences for meal planning, fitness routines, or travel itineraries.
+   - Supports habit tracking or daily scheduling.
+
+4. **Creative Work**:
+   - Maintains continuity in developing stories, scripts, or design ideas.
+
+---
+
+#### **Example Interaction**
+
+**Session 1**:
+User: "I'm working on a report about renewable energy policies. Can you help me draft an outline?"
+AI: "Sure! Here's a draft outline for your report."
+
+**Session 2**:
+User: "Can you recall the outline we worked on for the renewable energy policies report?"
+AI: "Yes! Here's the outline we created last time..."
+
+---
+</details>
+
+### Q: Provide guidance on setting up cross-session continuity. Explain how cross-session continuity could enhance my use cases
+
+<details>
+<summary><b>ChatGPT Answer</b></summary>
+#### **Guidance on Setting Up Cross-Session Continuity**
+
+Cross-session continuity allows AI systems like ChatGPT to remember information across multiple sessions. Here’s how you can set it up and maximize its potential:
+
+---
+
+#### **Steps to Set Up Cross-Session Continuity**
+
+1. **Check for Memory Features**:
+   - Ensure the tool you’re using (e.g., ChatGPT) supports cross-session memory.
+   - For ChatGPT, memory features are gradually rolling out. You may need a subscription (e.g., ChatGPT Plus or Pro) or specific access.
+
+2. **Enable Memory**:
+   - Go to the settings or preferences menu.
+   - Turn on memory and allow the AI to retain information between sessions.
+
+3. **Define the Context**:
+   - Clearly instruct the AI about what to remember:
+     - Example: “Remember that I am working on a marketing campaign for renewable energy.”
+     - Example: “Remember that I prefer formal responses in our conversations.”
+   - Be specific about the details you want retained.
+
+4. **Review and Update Memory**:
+   - Regularly review what the AI remembers about your projects or preferences:
+     - Example: “What do you remember about my current projects?”
+   - Edit or delete details as needed for privacy or to avoid outdated information.
+
+5. **Use Project-Specific Features**:
+   - Group chats or files related to a specific project.
+   - Use folders or labeled sections if your tool offers such features.
+
+6. **Test the Continuity**:
+   - Restart a session and verify the AI remembers the context:
+     - Example: “What did we discuss about the renewable energy project?”
+
+---
+
+#### **Enhancing Your Use Cases with Cross-Session Continuity**
+
+##### 1. **Personal Productivity**
+   - **How It Helps**: Retain task lists, ongoing goals, or preferences for recurring tasks.
+   - **Example**: “Remember my weekly fitness goals. Provide updates every Monday.”
+   - **Benefit**: Eliminates repetitive context-setting for ongoing habits or plans.
+
+##### 2. **Project Management**
+   - **How It Helps**: Keeps track of key milestones, deliverables, or team roles.
+   - **Example**: “Remember that Sarah is in charge of the financial analysis for our startup project.”
+   - **Benefit**: Enables smoother handovers, quick updates, and a central knowledge source for teams.
+
+##### 3. **Business Communication**
+   - **How It Helps**: Saves company branding guidelines, tone preferences, or client details.
+   - **Example**: “Remember that our emails should have a professional tone and end with our company slogan.”
+   - **Benefit**: Ensures consistent branding across all communications.
+
+##### 4. **Creative Work**
+   - **How It Helps**: Remembers storylines, character details, or design briefs.
+   - **Example**: “Remember that the protagonist in my novel is a 30-year-old archaeologist named Maya.”
+   - **Benefit**: Enhances continuity in creative projects without starting over each session.
+
+##### 5. **Learning and Education**
+   - **How It Helps**: Tracks progress, retains notes, and adapts to learning styles.
+   - **Example**: “Remember that I am preparing for a physics exam and struggle with quantum mechanics.”
+   - **Benefit**: Personalized tutoring that builds on previous knowledge.
+
+##### 6. **Customer Support or FAQs**
+   - **How It Helps**: Saves frequently asked questions, answers, or escalation paths.
+   - **Example**: “Remember the list of FAQs for our e-commerce platform.”
+   - **Benefit**: Quick and consistent responses to customers across sessions.
+
+##### 7. **Collaborative Work**
+   - **How It Helps**: Tracks shared goals, team inputs, or project history.
+   - **Example**: “Remember that my team is focusing on Q1 marketing campaigns for social media growth.”
+   - **Benefit**: Centralizes shared knowledge, ensuring all collaborators have access to consistent information.
+
+##### 8. **Research and Development**
+   - **How It Helps**: Retains references, notes, or ongoing hypotheses.
+   - **Example**: “Remember that I am collecting data on renewable energy adoption rates in the EU.”
+   - **Benefit**: Organizes ongoing research, making it easy to revisit and build on findings.
+
+---
+
+#### **Best Practices**
+
+1. **Be Clear and Specific**:
+   - Clearly define what you want the AI to remember to avoid ambiguity.
+   - Example: “Remember that I’m analyzing a marketing strategy for e-commerce growth in Q4.”
+
+2. **Use Updates for Accuracy**:
+   - Regularly update or correct the memory to reflect changes.
+   - Example: “Forget the previous deadline for my project. Update it to February 15.”
+
+3. **Leverage Projects or Folders**:
+   - Use project-specific folders to group conversations, ensuring relevant details stay organized.
+
+4. **Review Privacy Settings**:
+   - Regularly audit the AI’s memory for sensitive data and adjust permissions as needed.
+
+5. **Use Cross-Session Continuity for Efficiency, Not Dependency**:
+   - Treat memory as a supplement to your workflow, not the sole source of information.
+
+---
+</details>
+
+### Q: Tell me about tools that integrate cross-session continuity
+
+### Q: I want to use cross-session continuity to enhance __\[insert your specific use case, e.g., project management, creative writing, studying, etc.\]__. Can you provide a step-by-step guide tailored to this scenario, including how to set it up, use it effectively, and manage memory for this purpose? Please include examples and best practices to ensure optimal results.
 ### Q: Provide a detailed description of ChatGPT model context. Explain how I can work with it to get better answers. While I might be interested in certain technical details, I am not interested in implementation related details. My primary focus is that of an advanced user, who wants to get most of this feature as far as quality and relevance of answers are concerned.
 
 <details>
