@@ -706,7 +706,326 @@ Would you like to experiment with a specific prompt structure to see how it work
 ---
 ---
 
-# Memory Context
+## Session workspace
+
+### Q: Tell me about session workspace
+
+<details>
+<summary><b>ChatGPT Answer</b></summary>
+A session workspace refers to a temporary environment or "workspace" used during an active interaction between you and a system (like this one). In the context of our interaction here, the session workspace includes:
+
+1. **Session Context**: 
+   - It contains the current conversation's context, including the history of messages exchanged.
+   - Allows for continuity in understanding and responding, so previous messages can influence later replies.
+
+2. **Tools and Capabilities**:
+   - Access to various tools (e.g., for web searches, code execution, or generating images) to enhance responses or provide specific outputs.
+   - Temporary storage of any outputs or data generated within the session.
+
+3. **Persistence**:
+   - Information is generally not retained permanently unless explicitly asked (e.g., saving a document or generating reusable outputs).
+   - For example, data saved using the **bio tool** or documents edited in the **canmore workspace** can persist across conversations if specified.
+
+4. **Functionality and Customization**:
+   - Custom workflows can be developed within the workspace, like refining text documents, analyzing data, or creating visualizations.
+   - These workflows exist only within the active session unless exported or saved.
+
+5. **Ephemeral Nature**:
+   - Once the session ends, the workspace is typically cleared unless you've explicitly saved outputs, such as text documents or other resources.
+
+If you're working on a specific project or task, you can use the workspace to collaborate, refine ideas, and save progress for further iterations. Would you like to explore specific tools or functionalities within this workspace?
+</details>
+
+### Q: Yes, as related to ChatGPT
+
+<details>
+<summary><b>ChatGPT Answer</b></summary>
+As related to **ChatGPT**, the **session workspace** serves as an environment for collaboration and interactivity. Here's how it works and what it offers:
+
+---
+
+#### **Core Features of the ChatGPT Session Workspace**
+1. **Dynamic Context Management**:
+   - Maintains a thread of conversation to provide coherent responses based on prior exchanges.
+   - Supports tasks requiring multi-turn interactions, such as code debugging, text editing, or brainstorming.
+
+2. **Tools Integration**:
+   - ChatGPT integrates with tools like **Python execution**, **bio memory**, **image generation (DALL-E)**, and **web browsing**. These tools enhance the workspace by allowing tasks like:
+     - Writing and testing code.
+     - Creating visuals or illustrations.
+     - Conducting real-time searches for updated information.
+     - Managing and saving relevant data or workflows.
+
+3. **Document and Code Editing (via Canmore)**:
+   - A built-in editor for creating and refining documents or code files.
+   - Real-time collaboration: You can request revisions, add comments, or iterate on content directly within this environment.
+   - Changes are trackable within the session, enabling systematic refinement.
+
+4. **Temporary Memory (Session Context)**:
+   - Tracks all actions and queries during a session to provide continuity and relevance in responses.
+   - This memory is temporary unless specific information or outputs are saved (e.g., through the **bio tool** or external file exports).
+
+5. **Task-Specific Workflows**:
+   - For complex tasks (e.g., data analysis, technical writing, creative projects), the workspace provides iterative support.
+   - You can refine inputs, receive intermediate outputs, and adapt tasks on the fly.
+
+---
+
+#### **Specialized Features Related to ChatGPT**
+- **Bio Tool for Persistent Memory**:  
+   - Allows you to save session-relevant data across conversations, such as preferences, recurring themes, or personal context.
+   - Example: “Remember that I work in healthcare” or “Track project XYZ’s progress.”
+
+- **Modularity in Outputs**:  
+   - Flexibly interact with generated outputs—revising, splitting, or expanding them.
+   - Example: Editing code snippets, adding layers to an image prompt, or refining text for tone.
+
+- **Visual and Analytical Tools**:
+   - Generate graphs, charts, or simulations.
+   - Combine text-based explanations with visual aids for complex topics.
+
+- **Task-Specific Assistance**:
+   - Write, debug, and document software code.
+   - Generate or refine technical documents, such as reports, whitepapers, or plans.
+   - Help with brainstorming or structuring ideas for creative or professional writing.
+
+---
+
+#### **Ephemeral vs. Persistent Data**
+- **Ephemeral Workspace**: The workspace resets at the end of the session unless explicitly saved. Think of it as a whiteboard that gets cleared after the meeting ends.
+- **Persistent Memory**: If you decide to save data (e.g., through commands like "Remember this" or exporting files), it becomes part of a longer-term context for follow-up sessions.
+
+---
+
+#### **How to Use the Session Workspace Effectively**
+1. **Iterative Workflow**:
+   - Use it to draft, refine, and finalize projects like code, reports, presentations, or creative writing.
+   - Keep asking for adjustments until the result meets your expectations.
+
+2. **Collaborative Editing**:
+   - Work on documents or code together in the **Canmore editor**, allowing you to see iterative improvements in real-time.
+
+3. **Multi-Tool Synergy**:
+   - Combine tools, e.g., generating data with Python, visualizing it as a graph, and then writing a report.
+
+4. **Export and Save Progress**:
+   - Save key outputs for future use, whether as a persistent memory, a file download, or integration with external tools.
+
+---
+
+Let me know what specific task or project you'd like to work on, and I can guide you further on using the workspace!
+</details>
+
+### Q: What is Canmore?
+
+<details>
+<summary><b>ChatGPT Answer</b></summary>
+**Canmore** is a feature within the ChatGPT interface that acts as a collaborative text editor or coding workspace. It allows users to create, edit, and refine content—whether it's plain text, structured documents, or code—alongside the conversation. The idea is to provide a persistent and focused environment for working on longer or more complex projects without losing track of the surrounding context or collaboration.
+
+---
+
+#### **Key Features of Canmore**
+1. **Document Creation and Editing**:
+   - Create new documents or code files directly within the session.
+   - Supports various formats, such as:
+     - Plain text documents for writing essays, reports, or other content.
+     - Programming files (e.g., Python, JavaScript, HTML, etc.) for developing or debugging code.
+
+2. **Interactive Collaboration**:
+   - Work on a document or code file iteratively while discussing and refining it in real time.
+   - Enables back-and-forth collaboration on specific sections, making adjustments easier.
+
+3. **Content Persistence**:
+   - Documents or code written in Canmore persist within the workspace for the duration of the session.
+   - You can export the content or save it for future use if needed.
+
+4. **Multi-Use Cases**:
+   - **Technical Writing**: Draft and refine whitepapers, reports, or documentation.
+   - **Creative Writing**: Work on scripts, essays, or other long-form writing.
+   - **Code Development**: Write and debug code with integrated assistance.
+
+5. **Feedback and Suggestions**:
+   - Canmore supports inline comments, providing actionable feedback on specific sections of the text or code.
+   - Iterative improvements can be implemented based on the comments.
+
+6. **Complex Task Management**:
+   - For projects requiring sustained focus (like building a codebase or refining a draft), Canmore helps separate the iterative process from general chat.
+
+---
+
+#### **When to Use Canmore**
+- **For Structured Content**:
+  - When you need to focus on drafting or refining a text or codebase that’s too long or detailed for standard chat responses.
+  - Ideal for content that will be repeatedly revised.
+
+- **For Precision and Control**:
+  - Enables you to isolate sections of the text for targeted revisions without losing sight of the overall structure.
+
+- **For Long-Term Projects**:
+  - Works well for tasks requiring ongoing edits or iterations.
+
+---
+
+#### **How Canmore Works**
+1. **Create a Document or Code File**:
+   - When you request to work on a project, a dedicated Canmore workspace can be opened.
+   - Example: "Let's write a Python script" or "Help me refine my essay."
+
+2. **Collaborate**:
+   - You provide input, and I assist with drafting, revising, or debugging directly within the workspace.
+   - Inline comments and suggestions can help refine specific sections.
+
+3. **Update or Export**:
+   - Save progress by exporting the document or having me store context for later sessions.
+   - If you request changes, the workspace will reflect those edits while keeping everything structured.
+
+---
+
+#### **Example Uses of Canmore**
+- Writing and editing a professional report or business plan.
+- Debugging a Python program or JavaScript function.
+- Drafting a novel, blog post, or essay.
+- Collaborating on detailed technical documentation.
+
+Would you like to try Canmore for a specific task or project?
+</details>
+
+### Q: What is bio tool?
+
+<details>
+<summary><b>ChatGPT Answer</b></summary>
+The **bio tool** is a feature that allows ChatGPT to "remember" specific details about you or the ongoing session to make conversations more personalized and efficient. When you use the bio tool, the information you provide is stored and can persist across sessions if you request it. This is especially useful for tasks that involve recurring context or long-term collaboration.
+
+---
+
+#### **Key Features of the Bio Tool**
+1. **Personalized Context**:
+   - Enables ChatGPT to recall preferences, interests, or recurring information you’ve shared.
+   - Example: "I’m a software engineer" or "I’m working on a research paper about climate change."
+
+2. **Project Continuity**:
+   - Helps keep track of project details, ongoing tasks, or specific goals across sessions.
+   - Example: "Remember that I’m writing a book about AI ethics" or "Track my progress on Project X."
+
+3. **Task Customization**:
+   - Tailors responses to align with your professional background, goals, or areas of interest.
+   - Example: "I prefer concise answers" or "Provide more detailed explanations."
+
+4. **Session Memory**:
+   - The bio tool can save specific information for immediate use within the current session or persist it for future conversations (if explicitly requested).
+   - If you don't request persistence, the information will be forgotten once the session ends.
+
+---
+
+#### **How to Use the Bio Tool**
+- **Save Information**:
+   - You can explicitly tell me to remember something using phrases like:
+     - "Remember that I’m studying for a biology exam."
+     - "Save that I want to focus on improving my Python coding skills."
+
+- **Recall Information**:
+   - If I’ve saved something, you can ask for it:
+     - "What do you remember about my preferences?"
+     - "What’s the status of my project?"
+
+- **Forget Information**:
+   - You can ask me to forget something at any time:
+     - "Forget that I work in marketing."
+
+---
+
+#### **Practical Applications**
+- **Professional Use**:
+   - Track ongoing projects or tasks (e.g., coding assignments, reports, or research topics).
+   - Save career-related details (e.g., job role, industry) to tailor responses.
+
+- **Learning and Development**:
+   - Remember your learning goals (e.g., "I’m learning Spanish").
+   - Save progress on specific topics or skills.
+
+- **Creative Writing**:
+   - Keep track of story characters, plot details, or themes.
+
+---
+
+Would you like to try the bio tool to store information about a project or personal context? Let me know!
+</details>
+
+### Q: Tell me about saving and managing files in session workspace
+
+<details>
+<summary><b>ChatGPT Answer</b></summary>
+Saving and managing files in the **session workspace** allows you to organize and retain your work during and after a session. Here's how it works and the key features:
+
+---
+
+#### **How to Save and Manage Files**
+
+1. **File Types Supported**:
+   - **Documents**: Reports, essays, technical papers, or creative writing (e.g., `.txt`, `.docx`, etc.).
+   - **Code Files**: Scripts or programming projects in formats like `.py`, `.js`, `.html`, etc.
+   - **Data Files**: Tables, charts, or datasets (e.g., `.csv`, `.xlsx`).
+   - **Generated Images**: Visuals or illustrations can also be downloaded.
+
+2. **Saving Progress**:
+   - Any document or code file created (e.g., in **Canmore**) remains accessible within the session.
+   - You can ask to **download your file** in your preferred format for local storage.
+     - Example: “Save this as a `.txt` file” or “Export this Python script as a `.py` file.”
+
+3. **Persistent vs. Temporary Files**:
+   - **Temporary Files**:
+     - Files and progress are retained only for the current session unless explicitly saved or downloaded.
+   - **Persistent Files**:
+     - You can request that I "remember" specific files or save critical details (via the bio tool) for reference in future sessions.
+
+4. **File Management Commands**:
+   - **Export/Download**:
+     - Request to download files at any point in the session.
+     - Example: “Download this document as a `.docx` file.”
+   - **Organize**:
+     - Rename files or structure multiple documents within the session workspace.
+     - Example: “Rename the file to `final_report`.”
+   - **Retrieve Files**:
+     - Easily refer back to open files during the session.
+
+5. **Version Control**:
+   - You can request edits or refinements to existing files while keeping track of changes.
+   - Example: “Update section 2 of the report” or “Revise the code to handle edge cases.”
+
+---
+
+#### **Managing Files Effectively**
+
+##### **For Documents**:
+- Use the workspace to draft, refine, and finalize professional or creative texts.
+- Export the content when done to ensure local backups.
+
+##### **For Code**:
+- Develop, debug, and refine scripts within the session.
+- Export as a runnable file for testing on your local machine.
+
+##### **For Visuals and Data**:
+- Generate charts, graphs, or other outputs and download them in formats like `.png` or `.csv`.
+
+---
+
+#### **Practical Workflow Example**
+1. **Drafting**:
+   - You begin drafting a document or code snippet (e.g., a report on renewable energy or a Python script).
+2. **Iterating**:
+   - Collaborate within the session to refine it based on feedback.
+3. **Saving**:
+   - Export the completed work or save it for later.
+4. **Returning to Work**:
+   - For persistent files, you can resume where you left off in future sessions.
+</details>
+
+### Q: What do you remember about my preferences?
+
+---
+---
+
+## Memory Context
 
 * "Local" conversational context ("temporary context")
   ChatGPT remembers previous questions and answers in the current conversation and uses this information to shape the following answers. When a new conversation is started via the "New Chat" button, the current conversation context should be empty.
@@ -1186,7 +1505,7 @@ If you're referring to a formal, standardized term, the specific terminology mig
 ---
 ---
 
-# Cross-session continuity
+## Cross-session continuity
 
 ### Q: Tell me about Cross-Session Continuity
 
@@ -1410,7 +1729,7 @@ Cross-session continuity allows AI systems like ChatGPT to remember information 
 ---
 ---
 
-# Custom GPTs
+## Custom GPTs
 ### Q: Tell me about Custom GPTs
 
 <details>
@@ -1603,7 +1922,10 @@ Fine-tuning is the process of training a pre-existing GPT model (like GPT-3.5 or
 ---
 </details>
 
-# Real-Time Web Search
+---
+---
+
+## Real-Time Web Search
 ### Q: Who is the 48<sup>th</sup> POTUS?
 
 ### Q: Who is the wealthiest candidate for a position in the 47th POTUS administration and what is its proposed job title?
