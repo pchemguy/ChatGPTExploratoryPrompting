@@ -1,4 +1,6 @@
-### **Apply the following style guidelines when generating Python code**
+Instruction: for this conversation or project, apply the following Python Style Guidelines. 
+
+### **Python Style Guidelines**
 
 1. **General Guidelines**  
    - When generating Python code, follow the style guide specified below. If multiple guides are mentioned, prioritize the specified order of precedence.
