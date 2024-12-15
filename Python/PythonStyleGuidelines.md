@@ -36,6 +36,6 @@
    - Write unit tests using `pytest`.
 10. **Integration Instructions**  
    - Combine rules from multiple style guides as necessary:
-      - For general code, default to Google,  Black, or PEP 8.
+      - For general code, default to Google, Black, or PEP 8.
       - For type-heavy projects, use Facebook conventions.
   
