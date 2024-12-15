@@ -276,6 +276,7 @@ Divide and conquer
 Iterative focused refinement
 Technical aspects for tailoring answers
 
+Graphics analysis: vector or raster - interpret serialized file by comparing with graphical representation?
 
 <!-- References -->
 
