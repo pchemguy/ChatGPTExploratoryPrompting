@@ -1,6 +1,10 @@
 ### **Python Style Guidelines**
 
 1. **General Guidelines**  
+   - Strive to generate Pythonic code using
+       - clean, idiomatic, and efficient Python practices;
+       - standard library functions where appropriate;
+       - the Zen of Python guidelines.
    - When generating Python code, follow the style guide specified below. If multiple guides are mentioned, prioritize the specified order of precedence.
    - If a conflict arises between style guides, default to Black for formatting and to Google or Facebook for structural and type-related decisions.
 
