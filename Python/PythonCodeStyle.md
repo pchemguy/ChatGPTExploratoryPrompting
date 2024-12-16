@@ -303,3 +303,67 @@ When generating Python code, follow the style guide specified below. If multiple
 
 This template allows flexibility to define the preferred style(s) clearly, while referencing the well-known Python style guides explicitly. This ensures ChatGPT or any developer can adapt to the specified standards effectively.
 </details>
+
+## Q: How should I instruct ChatGPT to get Pythonic code?
+
+<details>
+<summary><b>ChatGPT Answer</b></summary>
+To get Pythonic code from ChatGPT, you should provide clear and specific instructions. Here are some tips on how to phrase your requests to ensure the code provided is Pythonic:
+
+---
+
+### 1. **Be Specific About "Pythonic" Style**  
+Mention explicitly that you want Pythonic code, and highlight the characteristics you're looking for, such as readability, efficiency, or idiomatic constructs. 
+
+Example:
+> "Can you write Pythonic code to calculate the factorial of a number using best practices?"
+
+---
+
+### 2. **Emphasize Readability and Simplicity**  
+Request readable and idiomatic solutions:
+> "Write a function in Python that is simple and easy to read. Make use of Python idioms and standard library functions where appropriate."
+
+---
+
+### 3. **Ask for Built-in Functions and Idiomatic Constructs**  
+Encourage the use of Python's built-in features, such as list comprehensions, `zip()`, `enumerate()`, and `with` statements.
+
+Example:
+> "Generate Pythonic code to merge two lists into a dictionary using the `zip()` function."
+
+---
+
+### 4. **Request Adherence to PEP 8 Guidelines**  
+You can ask ChatGPT to follow Python's style guide (PEP 8) for consistency:
+> "Write Pythonic code to sort a dictionary by its values. Follow PEP 8 guidelines."
+
+---
+
+### 5. **Seek Feedback or Improvements**  
+If you already have code, ask for suggestions to make it more Pythonic:
+> "Here's my code. Can you refactor it to make it more Pythonic?"
+
+---
+
+### 6. **Example of a General Request**  
+If you're unsure how to phrase it, use something like this:
+> "Provide a Pythonic solution to solve [problem description]. Use clean, idiomatic, and efficient Python practices."
+
+---
+
+### 7. **Ask for Explanations of the Code**  
+To understand why the code is Pythonic, you can ask for explanations:
+> "Write Pythonic code for a function that checks if a string is a palindrome. Explain why the approach is Pythonic."
+
+---
+
+### 8. **Provide Constraints or Context**  
+If there are specific libraries, styles, or approaches you want to avoid, mention them:
+> "Write Pythonic code to find the intersection of two lists. Avoid using external libraries."
+
+---
+
+By giving detailed instructions and explicitly requesting Pythonic practices, you will guide ChatGPT to produce elegant, readable, and idiomatic Python code.
+<details>
+
