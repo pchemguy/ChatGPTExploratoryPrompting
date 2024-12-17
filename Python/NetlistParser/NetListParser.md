@@ -2,7 +2,7 @@
 ## Q: Code a parser of the netlist file format
 
 <details>
-<summary><b></b></summary>
+<summary><b>ChatGPT answer</b></summary>
 
 A **netlist** file format describes electronic circuits, representing components and their connections. A typical netlist file contains components such as resistors, capacitors, and transistors, and how they are connected through nodes. It may follow various formats depending on the simulator or EDA tool, such as SPICE, Verilog, etc.
 
