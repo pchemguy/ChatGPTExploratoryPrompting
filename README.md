@@ -1,4 +1,4 @@
-# ChatGPT Tutorial
+# ChatGPT Exploratory Prompting
 
 In this repository, I share my beginner's experience exploring features of ChatGPT and the associated workflows. Whenever ChatGPT answers are provided, the GPT-4o model should be assumed. The topics of interest include
 * technical and business writing assistance
