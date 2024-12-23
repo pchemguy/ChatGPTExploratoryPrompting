@@ -1,9 +1,5 @@
 When generating SQL code, follow these guidelines:
 
-Here’s a revised version of your SQL Style Guidelines with enhanced structure and clarity, optimized for effective ChatGPT-based SQL code generation:
-
----
-
 # **SQL Style Guidelines**
 
 ## **1. General**
