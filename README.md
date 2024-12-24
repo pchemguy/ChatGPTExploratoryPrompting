@@ -2,14 +2,22 @@
 
 In this repository, I share my beginner's experience exploring features of ChatGPT and related workflows. Unless otherwise specified, all ChatGPT responses assume the use of the GPT-4o model. The key areas of interest include:
 
-- Non-fiction writing assistance, with a focus on technical and business contexts
-- Coding support and guidance
 - Technical aspects of prompting, such as memory context management and meta-prompting
+- Coding support and guidance
+- Non-fiction writing assistance, with a focus on technical and business contexts
 
 **Disclaimer:**  
 This repository is a work in progress. While some development may occur on the `dev` branch, I aim to update the `main` branch more frequently or directly. As a result, content may change periodically, and portions may appear incomplete or inconsistent at any given time.
 
-## 1. Writing assistance for efficient technical and business writing
+## 1. Technical aspects and workflows
+
+While ChatGPT is developed as a conversational tool that should be easily accessible to beginners, for now, learning certain technical aspects may drastically improve the results, as evidenced by the emergence of the prompt engineering field.
+
+## 2. Coding assistance
+
+**TODO**
+
+## 3. Writing assistance for efficient technical and business writing
 
 Both my work and hobbies involve technical and business writing. The primary goal of non-fiction readers is typically to minimize the time spent reading while maximizing the amount and completeness of relevant information retrieved. Consequently, the efficiency of non-fiction texts heavily depends on their accessibility and clarity.  
 
@@ -48,12 +56,13 @@ Structure lists and series with clear, parallel elements:
 </details>
 
 
-## 2. Coding assistance
 
-**TODO**
 
-## 3. Technical aspects and workflows
 
+
+
+
+<!--
 While ChatGPT is developed as a conversational tool that should be easily accessible to beginners, learning certain technical aspects may drastically improve the results, as evidenced by the emergence of the prompt engineering field.
 
 Divide and conquer
@@ -61,7 +70,7 @@ Iterative focused refinement
 Technical aspects for tailoring answers
 
 Graphics analysis: vector or raster - interpret serialized file by comparing with graphical representation?
-
+-->
 
 
 <!-- References -->
