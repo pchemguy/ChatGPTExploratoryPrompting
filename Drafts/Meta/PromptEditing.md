@@ -16,7 +16,6 @@ Help me improve this ChatGPT prompt to ensure it achieves the following objectiv
             Examples:
             - "Why are all cats black?" (Incorrect assumption)
             - "Who was the first person to land on Mars?" (Factually incorrect event)
-        - **Incorrect, Confused, or non-Existent Terminology**
         - **Logical Fallacies or Contradictions:**  
             Example: "What kind of triangle has two right angles?" (Geometric impossibility)
         - **Insufficient Details or Scope:**  
