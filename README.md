@@ -1,9 +1,9 @@
 # ChatGPT Exploratory Prompting
 
 In this repository, I share my beginner's experience exploring features of ChatGPT and the associated workflows. Whenever ChatGPT answers are provided, the GPT-4o model should be assumed. The topics of interest include
+* technical aspects of prompting (such as memory context management and meta-prompting)
 * non-fiction (technical and business) writing assistance
 * coding assistance
-* technical aspects of prompting (such as memory context management)
 ## 1. Writing assistance for efficient technical and business writing
 
 Both my job and hobbies involve technical and business writing. As opposed to fiction, a typical goal of a non-fiction reader is to minimize the time spent reading and maximize the amount and completeness of relevant information retrieved. Therefore, the efficiency of non-fiction texts largely depends on their information accessibility.  
