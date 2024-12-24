@@ -1,5 +1,4 @@
-# ChatGPTTutorial
-Notes and materials related to efficient use of ChatGPT as a writing and coding assistant.
+# ChatGPT Exploratory Prompting
 
 In this repository, I share my beginner's experience exploring features of ChatGPT and related workflows. Unless otherwise specified, all ChatGPT responses assume the use of the GPT-4o model. The key areas of interest include:
 
@@ -69,4 +68,3 @@ Graphics analysis: vector or raster - interpret serialized file by comparing wit
 
 [WritingStyleGuidelines]: https://raw.githubusercontent.com/pchemguy/ChatGPTPromptEngineering/refs/heads/main/Writing/WritingStyleGuidelines.md
 [WritingContext]: https://raw.githubusercontent.com/pchemguy/ChatGPTPromptEngineering/refs/heads/main/Writing/WritingContext.md
-
