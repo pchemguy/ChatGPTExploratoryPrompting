@@ -1,24 +1,32 @@
 # ChatGPT Exploratory Prompting
 
-In this repository, I share my beginner's experience exploring features of ChatGPT and the associated workflows. Whenever ChatGPT answers are provided, the GPT-4o model should be assumed. The topics of interest include
-* technical aspects of prompting (such as memory context management and meta-prompting)
-* non-fiction (technical and business) writing assistance
-* coding assistance
+In this repository, I share my beginner's experience exploring features of ChatGPT and related workflows. Unless otherwise specified, all ChatGPT responses assume the use of the GPT-4o model. The key areas of interest include:
+
+- Non-fiction writing assistance, with a focus on technical and business contexts
+- Coding support and guidance
+- Technical aspects of prompting, such as memory context management and meta-prompting
+
+**Disclaimer:**  
+This repository is a work in progress. While some development may occur on the `dev` branch, I aim to update the `main` branch more frequently or directly. As a result, content may change periodically, and portions may appear incomplete or inconsistent at any given time.
+
 ## 1. Writing assistance for efficient technical and business writing
 
-Both my job and hobbies involve technical and business writing. As opposed to fiction, a typical goal of a non-fiction reader is to minimize the time spent reading and maximize the amount and completeness of relevant information retrieved. Therefore, the efficiency of non-fiction texts largely depends on their information accessibility.  
+Both my work and hobbies involve technical and business writing. The primary goal of non-fiction readers is typically to minimize the time spent reading while maximizing the amount and completeness of relevant information retrieved. Consequently, the efficiency of non-fiction texts heavily depends on their accessibility and clarity.  
 
-When it comes to improving the efficiency of non-fiction texts, ChatGPT performs reasonably well even with basic prompts (such as "Convert the following text into standard English"). However, having comprehensive instructions handy often helps improve the result of a prompt. Moreover, both text and code editing should always be considered iterative processes, similar to conventional writing, where one goes through a series of drafts, revisions, and edits. With detailed well-layed-out instructions at hand, it is relatively convenient to refine individual aspects of the text. For this purpose, I have developed two documents:
+ChatGPT performs reasonably well in enhancing the efficiency of non-fiction texts, even with basic prompts like "Convert the following text into standard English". However, using detailed and comprehensive instructions often leads to significantly improved results. Additionally, editing — whether for text or code — should always be viewed as an iterative process, akin to traditional writing, where drafts undergo multiple revisions and refinements. Well-structured instructions effectively drive ChatGPT, simplifying the overall revision process and targeted refinement of specific text aspects.
 
-- Stylistic Guidelines ([Writing Style Guidelines for Technical and Business Texts][WritingStyleGuidelines])  
-    These guidelines are designed to be sent directly to ChatGPT and focus on writing mechanics, structure, vocabulary, sentence construction, and coherence. These aspects should apply to most common non-fiction writing activities.
+To streamline this refinement process, I have developed two documents:
+
+- **Stylistic Guidelines** ([Writing Style Guidelines for Technical and Business Texts][WritingStyleGuidelines]):  
+    These guidelines are designed to be provided directly to ChatGPT and focus on core aspects such as writing mechanics, structure, vocabulary, sentence construction, and overall coherence. They are applicable to most common non-fiction writing tasks.
     
-- Context Template ([Writing Context Guidelines][WritingContext])  
-    This template offers customizable options for defining higher-level writing aspects, such as audience, domain, intent, formality, tone, and other contextual factors. It also allows for tailored "profile" contexts (e.g., "LinkedIn Post") that can be included when submitting the entire contents to ChatGPT, instructing it to apply a specific profile.
+- **Context Template** ([Writing Context Guidelines][WritingContext]):  
+    This template offers customizable options for defining high-level writing parameters, including audience, domain, intent, formality, tone, and other contextual factors. It also allows for creating tailored "profile" contexts (e.g., "LinkedIn Post"), which can be included when submitting instructions to ChatGPT, enabling it to adapt to specific needs.    
 
-The files above do not include any examples. However, examples can be readily generated using appropriate queries, for example, I copied a section from the [Writing Style Guidelines][WritingStyleGuidelines] and prepended it with a generic instruction:
+While the above documents do not include examples, examples can be generated easily using appropriate prompts. For instance, a section from the [Writing Style Guidelines][WritingStyleGuidelines] can be copied and prefixed with a general instruction, for example:
 
-**ChatGPT Prompt**
+<details>
+<summary><b>ChatGPT Sample Prompt</b></summary>
 
 ```
 I have a section from the writing style guidelines and need
@@ -37,8 +45,9 @@ Structure lists and series with clear, parallel elements:
     - Verb tense within series  
     - Clauses within sentences
 ```
+</details>
 
-<!-- 
+
 ## 2. Coding assistance
 
 **TODO**
@@ -53,7 +62,7 @@ Technical aspects for tailoring answers
 
 Graphics analysis: vector or raster - interpret serialized file by comparing with graphical representation?
 
--->
+
 
 <!-- References -->
 
