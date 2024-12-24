@@ -1,6 +1,10 @@
 # Improving ChatGPT Interaction - Q&A
 
-I am exploring ways to interact with ChatGPT more thoughtfully and effectively and wanted to share a selection of questions/prompts and answers. The goal is to surface overlooked considerations rather than provide definitive answers or solutions, shifting some 'unknown unknowns' of ChatGPT workflows into 'known unknowns.' Since I am still learning, I have not critically evaluated the answers shared here. Additionally, some of the questions/prompts were constructed based on insights from other ChatGPT interactions. My hope is that this collection inspires ideas and proves helpful to others on a similar path.
+I am exploring ways to interact with ChatGPT more thoughtfully and effectively and wanted to share a selection of questions/prompts and answers. The purpose is not to provide definitive solutions but to highlight overlooked considerations, transforming some of the 'unknown unknowns' of ChatGPT workflows into 'known unknowns.' Since I’m still learning, I haven’t critically evaluated the answers included here. Some prompts were also inspired by insights from other ChatGPT interactions. 
+
+
+The purpose is not to provide definitive solutions but to highlight overlooked considerations, transforming some of the 'unknown unknowns' of ChatGPT workflows into 'known unknowns.' Since I’m still learning, I haven’t critically evaluated the answers included here. Some prompts were also inspired by insights from other ChatGPT interactions. My hope is that this collection sparks ideas and proves useful to others on a similar journey.
+
 
 ## Prompt engineering
 
