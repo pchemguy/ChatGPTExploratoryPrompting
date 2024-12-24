@@ -708,10 +708,7 @@ Would you like to experiment with a specific prompt structure to see how it work
 
 ## Memory Context
 
-* "Local" conversational context ("temporary context")
-  ChatGPT remembers previous questions and answers in the current conversation and uses this information to shape the following answers. When a new conversation is started via the "New Chat" button, the current conversation context should be empty.
-* "Global" context ("model set context" or "persistent context")
-  This context is built up based on all conversations and is applied to all conversations.
+### Q: Tell me about customizations applicable to this conversations that are based on my previous ChatGPT conversations.
 
 ### Q: If I understand it right, these customizations are saved across conversations as the global default context, and I can have it adjusted as necessary? Can I also request to discard the current context and work out a new context from scratch?
 
@@ -731,6 +728,11 @@ Would you like to experiment with a specific prompt structure to see how it work
 4. **Temporary Overrides**
     - For any single conversation, you can specify different preferences without affecting the global context.  
 </details>
+ 
+* "Local" conversational context ("temporary context")
+  ChatGPT remembers previous questions and answers in the current conversation and uses this information to shape the following answers. When a new conversation is started via the "New Chat" button, the current conversation context should be empty.
+* "Global" context ("model set context" or "persistent context")
+  This context is built up based on all conversations and is applied to all conversations.
 
 ### Q: Is there a specific technical term for what I referred to as "global context" understood by ChatGPT?
 
@@ -900,8 +902,6 @@ Imagine you want a detailed essay outline:
 
 By actively managing context—through clear instructions, iterative refinement, and leveraging persistent memory—you can significantly improve the quality and relevance of ChatGPT's responses. Treat interactions as collaborative, guiding the model toward your goals with each input.
 </details>
-
-### Q: Tell me about customizations applicable to this conversations that are based on my previous ChatGPT conversations.
 
 ### Q: Tell me about the current model set context
 ### Q: Tell me about current temporary context.
