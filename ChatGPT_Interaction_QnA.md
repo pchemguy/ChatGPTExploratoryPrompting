@@ -908,6 +908,8 @@ By actively managing context—through clear instructions, iterative refinement,
 
 ### Q: Give me detailed information about the current persistent context
 
+### Q: Tell me about the current contents of persistent memory
+
 ### Q: Tell me about currently applicable User Preferences. Provide guidance on how I can set and optimize them.
 
 ### Q: Tell me about project-specific context
