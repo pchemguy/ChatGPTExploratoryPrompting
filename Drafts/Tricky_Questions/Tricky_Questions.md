@@ -47,3 +47,12 @@ unknown questions that do not have a definitive answer
 
 ### What animal can be found at the top of the men’s Wimbledon trophy?
 ### What fruit can be found at the top of the men’s Wimbledon trophy?
+
+
+---
+---
+
+## Real-Time Web Search
+### Q: Who is the 48<sup>th</sup> POTUS?
+
+### Q: Who is the wealthiest candidate for a position in the 47th POTUS administration and what is its proposed job title?

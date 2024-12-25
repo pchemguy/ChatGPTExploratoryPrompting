@@ -1975,8 +1975,3 @@ Fine-tuning is the process of training a pre-existing GPT model (like GPT-3.5 or
 ---
 ---
 
-## Real-Time Web Search
-### Q: Who is the 48<sup>th</sup> POTUS?
-
-### Q: Who is the wealthiest candidate for a position in the 47th POTUS administration and what is its proposed job title?
-
