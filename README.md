@@ -29,7 +29,7 @@ Basic memory-related prompts include
 - `Is persistent memory on?`
 -  `Show me persistent memory and explain how I can modify it`
 -  `Show me temporary context and explain how I can modify it`
-A [separate page](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/dev/MemoryManagementQnA.md) includes an extended collection of prompts and answers related to memory management.
+A [separate page](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/MemoryManagementQnA.md) includes an extended collection of prompts and answers related to memory management.
 
 ## 2. Coding assistance
 
@@ -74,12 +74,6 @@ Structure lists and series with clear, parallel elements:
 </details>
 
 
-
-
-
-
-
-
 <!--
 While ChatGPT is developed as a conversational tool that should be easily accessible to beginners, learning certain technical aspects may drastically improve the results, as evidenced by the emergence of the prompt engineering field.
 
@@ -93,6 +87,6 @@ Graphics analysis: vector or raster - interpret serialized file by comparing wit
 
 <!-- References -->
 
-[WritingStyleGuidelines]: https://raw.githubusercontent.com/pchemguy/ChatGPTPromptEngineering/refs/heads/main/Writing/WritingStyleGuidelines.md
-[WritingContext]: https://raw.githubusercontent.com/pchemguy/ChatGPTPromptEngineering/refs/heads/main/Writing/WritingContext.md
+[WritingStyleGuidelines]: https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Writing/WritingStyleGuidelines.md
+[WritingContext]: https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Writing/WritingContext.md
 [ChatGPT_Interaction_QnA]:https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/ChatGPT_Interaction_QnA.md
