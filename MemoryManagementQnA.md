@@ -23,11 +23,6 @@ This Q&A represents my initial exploration of ChatGPT's memory context managemen
     - For any single conversation, you can specify different preferences without affecting the global context.  
 </details>
  
-* "Local" conversational context ("temporary context")
-  ChatGPT remembers previous questions and answers in the current conversation and uses this information to shape the following answers. When a new conversation is started via the "New Chat" button, the current conversation context should be empty.
-* "Global" context ("model set context" or "persistent context")
-  This context is built up based on all conversations and is applied to all conversations.
-
 ### Q: Is there a specific technical term for what I referred to as "global context" understood by ChatGPT?
 
 <details>
