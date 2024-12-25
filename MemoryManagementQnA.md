@@ -1,9 +1,6 @@
-## Memory Management Q&A
+# Memory Management Q&A
 
-While ChatGPT is developed as a conversational tool that should be easily accessible to beginners, for now, learning certain technical aspects may significantly improve the results. In particular, basic understanding of *memory management* and *prompting/meta-prompting techniques* may facilitate routine interactions with ChatGPT. At the same time, ChatGPT can be a powerful tool for topic exploration, and, to gain technical insights about ChatGPT, I actively used it along with other more conventional approaches and wanted to share a selection of related questions/prompts and answers. As a beginner, I probably cannot fully appreciate the limitations of ChatGPT even in specific use cases, neither could I critically evaluate the included answers. Acknowledging these limitations, the purpose is not to provide definitive solutions but to highlight overlooked considerations, transforming some of the 'unknown unknowns' of ChatGPT workflows into 'known unknowns'. My hope is that these collections may provide useful insights to others on a similar path.
-
-
-I am exploring ways to interact with ChatGPT more thoughtfully and effectively and wanted to share a selection of questions/prompts and answers. The purpose is not to provide definitive solutions but to highlight overlooked considerations, transforming some of the 'unknown unknowns' of ChatGPT workflows into 'known unknowns.' Since I’m still learning, I haven’t critically evaluated the answers included here. Some prompts were also inspired by insights from other ChatGPT interactions. My hope is that this collection sparks ideas and proves useful to others on a similar path.
+This Q&A reflects my early exploration of ChatGPT memory context management. The set of questions / prompts is intentionally excessive, as even slight variations in the prompt may result in significantly different responses. I varied the prompts during the actual querying process and included prompts that appeared to be working. I also intentionally only provide select ChatGPT answers, and those provided have not been critically evaluated for errors / accuracy. 
 
 ### Q: Tell me about customizations applicable to this conversations that are based on my previous ChatGPT conversations.
 
