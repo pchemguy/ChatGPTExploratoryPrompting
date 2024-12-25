@@ -1,6 +1,6 @@
 # Memory Management Q&A
 
-This Q&A reflects my early exploration of ChatGPT memory context management. The set of questions / prompts is intentionally excessive, as even slight variations in the prompt may result in significantly different responses. I varied the prompts during the actual querying process and included prompts that appeared to be working. I also intentionally only provide select ChatGPT answers, and those provided have not been critically evaluated for errors / accuracy. 
+This Q&A represents my initial exploration of ChatGPT's memory context management. The set of questions and prompts is intentionally redundant, as even slight variations in phrasing can lead to significantly different responses. During the querying process, I experimented with various prompts and included those that appeared to yield useful results. The selected ChatGPT responses are provided without  critical evaluation for errors or accuracy.
 
 ### Q: Tell me about customizations applicable to this conversations that are based on my previous ChatGPT conversations.
 
