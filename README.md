@@ -9,7 +9,7 @@ In this repository, I share my beginner's experience exploring features of ChatG
 **Disclaimer:**  
 This repository is a work in progress. While some development may occur on the `dev` branch, I aim to update the `main` branch more frequently or directly. As a result, content may change periodically, and portions may appear incomplete or inconsistent at any given time.
 
-## 1. Technical aspects and workflows
+## 1. Memory management and meta-prompting
 
 While ChatGPT is developed as a conversational tool that should be easily accessible to beginners, for now, learning certain technical aspects may drastically improve the results, as evidenced by the emergence of the prompt engineering field. Two such topics include GPT memory management and meta-prompting.
 
@@ -20,11 +20,13 @@ The baseline power of ChatGPT comes, of course, from the model training. On top 
 Memory context consists of several components:
 - **Temporary context** is derived from the contents of the current conversation / chat and only applies to that conversation / chat.
   The `Show me temporary context and explain how I can modify it` prompt should yield its current state and modification instructions.
-- **Persistent context** is derived from the contents of all conversations / chats and applies to all of them.
+- **Persistent memory** is derived from the contents of all conversations / chats and applies to all of them.
   As of this writing (12/24), persistent memory needs to be enabled in `Settings -> Personalization -> Memory`.  The same tab also provides the "Manage" button which makes it possible to remove items from persistent context. The final piece on the same tab is a link to sub-popup focused on [custom instructions](https://help.openai.com/en/articles/8096356-custom-instructions-for-chatgpt), which is also a part of persistent context.
-  The `Is persistent memory on?` prompt should tell you whether persistent memory is enabled, but its status can only be changed manually. If persistent context is enabled. the `Show me persistent context and explain how I can modify it` prompt should produce the contents of the persistent context and modification instructions.
+  The `Is persistent memory on?` prompt should tell you whether persistent memory is enabled, but its status can only be changed manually. If persistent memory is enabled. the `Show me persistent memory and explain how I can modify it` prompt should produce the contents of the persistent memory and modification instructions.
 
-Note: the contents of the context displayed with appropriate prompts (above) or in the memory manager probably only shows a brief summary, and the output may not be necessarily identical, if requests are repeated.
+Note: the contents of the context displayed with appropriate prompts (above) or in the memory manager probably only shows a brief summary, and the output may not be necessarily identical, if requests are repeated. Also, depending on the current context, ChatGPT may refuse to answer the questions directly. For this reason, it is better to interrogate ChatGPT regarding the persistent memory
+
+
 
 ## 2. Coding assistance
 
@@ -90,3 +92,4 @@ Graphics analysis: vector or raster - interpret serialized file by comparing wit
 
 [WritingStyleGuidelines]: https://raw.githubusercontent.com/pchemguy/ChatGPTPromptEngineering/refs/heads/main/Writing/WritingStyleGuidelines.md
 [WritingContext]: https://raw.githubusercontent.com/pchemguy/ChatGPTPromptEngineering/refs/heads/main/Writing/WritingContext.md
+[ChatGPT_Interaction_QnA]:https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/ChatGPT_Interaction_QnA.md
