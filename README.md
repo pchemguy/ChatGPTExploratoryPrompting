@@ -11,7 +11,9 @@ This repository is a work in progress. While some development may occur on the `
 
 ## 1. Memory management and meta-prompting
 
-While ChatGPT is developed as a conversational tool that should be easily accessible to beginners, for now, learning certain technical aspects may drastically improve the results, as evidenced by the emergence of the prompt engineering field. Two such topics include GPT memory management and meta-prompting.
+While ChatGPT is developed as a conversational tool that should be easily accessible to beginners, for now, learning certain technical aspects may significantly improve the results. In particular, basic understanding of *memory management* and *prompting/meta-prompting techniques* may facilitate routine interactions with ChatGPT. At the same time, ChatGPT can be a powerful tool for topic exploration, and, to gain technical insights about ChatGPT, I actively used it along with other more conventional approaches and wanted to share a selection of related questions/prompts and answers. As a beginner, I probably cannot fully appreciate the limitations of ChatGPT even in specific use cases, neither could I critically evaluate the included answers. Acknowledging these limitations, the purpose is not to provide definitive solutions but to highlight overlooked considerations, transforming some of the 'unknown unknowns' of ChatGPT workflows into 'known unknowns'. My hope is that these collections may provide useful insights to others on a similar path.
+
+Two such topics include GPT memory management and meta-prompting.
 
 ### Memory management
 
