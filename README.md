@@ -33,6 +33,7 @@ A [separate page](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/m
 
 ### Meta-prompting
 
+Since the relevance of ChatGPT responses substantially depend on the quality of prompts, and because ChatGPT seems to be good at  transformative and creative writing tasks, it appears to be a natural to see if ChatGPT can improve its own prompts.
 
 
 ## 2. Coding assistance
