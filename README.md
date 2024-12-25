@@ -24,9 +24,12 @@ Memory context consists of several components:
   As of this writing (12/24), persistent memory needs to be enabled in `Settings -> Personalization -> Memory`.  The same tab also provides the "Manage" button which makes it possible to remove items from persistent context. The final piece on the same tab is a link to sub-popup focused on [custom instructions](https://help.openai.com/en/articles/8096356-custom-instructions-for-chatgpt), which is also a part of persistent context.
   The `Is persistent memory on?` prompt should tell you whether persistent memory is enabled, but its status can only be changed manually. If persistent memory is enabled. the `Show me persistent memory and explain how I can modify it` prompt should produce the contents of the persistent memory and modification instructions.
 
-Note: the contents of the context displayed with appropriate prompts (above) or in the memory manager probably only shows a brief summary, and the output may not be necessarily identical, if requests are repeated. Also, depending on the current context, ChatGPT may refuse to answer the questions directly. For this reason, it is better to interrogate ChatGPT regarding the persistent memory
+Note: the contents of the context displayed with appropriate prompts (above) or in the memory manager probably only shows a brief summary, and the output may not be necessarily identical, if requests are repeated. Also, depending on the current context, ChatGPT may refuse to answer the questions directly. For this reason, it is better to interrogate ChatGPT regarding the persistent memory from a new blank chat (no temporary context).
 
-
+Basic memory-related prompts include
+- `Is persistent memory on?`
+-  `Show me persistent memory and explain how I can modify it`
+-  `Show me temporary context and explain how I can modify it`
 
 ## 2. Coding assistance
 
