@@ -1,4 +1,4 @@
-## **Prompt Improvement**
+# 1. **Prompt Improvement**
 
 Help me improve this ChatGPT prompt to ensure it achieves the following objectives:
 
@@ -35,7 +35,7 @@ Teach me how to generate templates that describe the structure of my data. Both 
 
 ---
 
-## **Improved Prompt:**
+# 2. **Improved Prompt:**
 
 Teach me how to create templates that effectively describe the structure of my data for use in ChatGPT inputs. These templates should achieve the following:
 
@@ -209,7 +209,7 @@ Refine the template based on feedback and ensure it’s adaptable for new scenar
 ---
 ---
 
-## **Narrowing Prompt**
+# 3. **Narrowing Prompt**
 
 Let's focus on a more specific case. I have a plain-text file containing serialized representation of graphical primitives. Here is the entire contents of a sample file:
 
@@ -236,6 +236,8 @@ PINATTR SpiceOrder 2
 PIN 32 160 RIGHT 0
 PINATTR PinName aq
 PINATTR SpiceOrder 3
+
+---
 
 ## **ChatGPT answer**
 

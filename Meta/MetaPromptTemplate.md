@@ -1,6 +1,6 @@
 # **Prompt Improvement**
 
-Help me improve this ChatGPT prompt to ensure it achieves the following objectives:
+Help me improve this ChatGPT prompt ("Prompt to be improved" below) to ensure it achieves the following objectives:
 
 1. **Clarity of Task or Request:**   
     - Clearly communicate the intended task, question, or request to ChatGPT in a precise and unambiguous manner.
@@ -30,3 +30,5 @@ Help me improve this ChatGPT prompt to ensure it achieves the following objectiv
 **Final Request:** Please ensure the improved version of this prompt is optimized to encourage thoughtful, structured, and actionable responses from ChatGPT. Provide feedback on whether this revised version meets the stated objectives or suggest further refinements to improve it.
 
 ## Prompt to be improved
+
+{PLACE TARGET PROMPT TEXT IN THIS AREA}
