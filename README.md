@@ -21,7 +21,7 @@ Memory context consists of several components:
 - **Temporary context** is derived from the contents of the current conversation and applies only to that specific interaction.  
   Using the prompt `Show me temporary context and explain how I can modify it` should display its current state along with instructions for modification.
 - **Persistent memory** is derived from the contents of all conversations and applies universally across interactions.  
-  As of this writing (12/24), persistent memory must be enabled in `Settings -> Personalization -> Memory`. Its current status can be checked using the prompt `Is persistent memory on?`. If persistent memory is enabled, the prompt `Show me persistent memory and explain how I can modify it` will display its contents along with instructions for modification. The same `Memory` menu includes a "Manage" button, which allows you to remove items from persistent memory. Additionally, the tab provides access to a sub-popup for [custom instructions](https://help.openai.com/en/articles/8096356-custom-instructions-for-chatgpt), which are also part of the persistent memory.
+  As of this writing (December 2024), persistent memory must be enabled in `Settings -> Personalization -> Memory`. Its current status can be checked using the prompt `Is persistent memory on?`. If persistent memory is enabled, the prompt `Show me persistent memory and explain how I can modify it` will display its contents along with instructions for modification. The same `Memory` menu includes a "Manage" button, which allows you to remove items from persistent memory. Additionally, the tab provides access to a sub-popup for [custom instructions](https://help.openai.com/en/articles/8096356-custom-instructions-for-chatgpt), which are also part of the persistent memory.
 
 Note: The context displayed using the appropriate prompts or in the memory manager likely provides only a brief summary. The output may also vary if requests are repeated. Additionally, depending on the current context, ChatGPT may decline to answer these questions directly. For this reason, it is recommended to query ChatGPT about persistent memory from a new, blank chat (without any temporary context).
 
@@ -30,6 +30,10 @@ Basic memory-related prompts include
 -  `Show me persistent memory and explain how I can modify it`
 -  `Show me temporary context and explain how I can modify it`
 A [separate page](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/MemoryManagementQnA.md) includes an extended collection of prompts and answers related to memory management.
+
+### Meta-prompting
+
+
 
 ## 2. Coding assistance
 
