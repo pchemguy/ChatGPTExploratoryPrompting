@@ -5,7 +5,7 @@ This repository shares my beginner-level exploration of ChatGPT's features and r
 - Descriptive writing,
 - ChatGPT instruction templates,
 - Collections of selected prompts/questions and ChatGPT answers focused on specific topics (Q&A),
-- ChatGPT conversations showcasing possible workflows applied to sample problems.
+- ChatGPT conversations showcasing possible workflows applied to model problems.
 
 All ChatGPT responses are based on the GPT-4o model and are provided "as is", without critical evaluation unless explicitly stated otherwise. In the context of Q&A collections, I approach ChatGPT as a powerful tool for topic exploration. My objective is not to offer definitive solutions but to highlight overlooked considerations, transforming some of the 'unknown unknowns' in ChatGPT workflows into 'known unknowns'.
 
