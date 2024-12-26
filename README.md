@@ -27,7 +27,7 @@ Basic memory-related prompts include
 - `Is persistent memory on?`  
 -  `Show me persistent memory and explain how I can modify it`  
 -  `Show me temporary context and explain how I can modify it`  
-A [separate page](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/MemoryManagementQnA.md) includes an extended collection of prompts and answers related to memory management.
+A [separate page](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Technical/MemoryManagementQnA.md) includes an extended collection of prompts and answers related to memory management.
 
 ### Meta-prompting
 
