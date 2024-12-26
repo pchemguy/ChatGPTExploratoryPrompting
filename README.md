@@ -2,14 +2,15 @@
 
 In this repository, I share my beginner's experience exploring features of ChatGPT and related workflows. Unless otherwise specified, all ChatGPT responses assume the use of the GPT-4o model. The key areas of interest include:
 
-- Technical aspects of prompting, such as memory context management and meta-prompting
+- Memory context management
+- Meta-prompting
 - Coding support and guidance
-- Non-fiction writing assistance, with a focus on technical and business contexts
+- Technical and business writing assistance
 
 **Disclaimer:**  
 This repository is a work in progress. While some development may occur on the `dev` branch, I aim to update the `main` branch more frequently or directly. As a result, content may change periodically, and portions may appear incomplete or inconsistent at any given time.
 
-## 1. Memory management and meta-prompting
+## 1. Memory management
 
 ChatGPT is designed as a conversational tool that is easily accessible to beginners. However, learning certain technical aspects can significantly improve the quality of interactions. In particular, a basic understanding of _memory management_ and _prompting/meta-prompting techniques_ can facilitate routine use of ChatGPT. At the same time, ChatGPT can be a powerful tool for topic exploration. To gain technical insights about ChatGPT, I have used it alongside conventional research methods and compiled a selection of related questions / prompts and answers. As a beginner, I may not fully appreciate the limitations of ChatGPT even in specific use cases or critically evaluate all answers. While acknowledging these limitations, my goal is not to offer definitive solutions but to highlight overlooked considerations, transforming some of the 'unknown unknowns' in ChatGPT workflows into 'known unknowns'. I hope this collection provides useful insights for others on a similar path.
 
