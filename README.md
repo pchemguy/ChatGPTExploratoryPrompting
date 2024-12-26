@@ -1,14 +1,15 @@
 # ChatGPT Exploratory Prompting
 
-In this repository, I share my beginner's experience exploring features of ChatGPT and related workflows. My personal interests presently include four broad topics, with two focused on applications (*coding support and guidance* and *technical and business writing assistance*) and two focused on technical aspects closely related to routine use of ChatGPT (*memory management* and *meta-prompting*).
+This repository shares my beginner-level exploration of ChatGPT's features and related workflows. My current interests encompass four broad topics: two focused on applications (_coding support and guidance_ and _technical and business writing assistance_) and two centered on technical aspects closely tied to ChatGPT’s routine use (_memory management_ and _meta-prompting_). I utilize several content formats to share my experience:
 
-I use several content formats:
-- descriptive writing,
+- Descriptive writing,
 - ChatGPT instruction templates,
-- collections of selected prompts/questions and ChatGPT answers focused on specific topics (Q&A),
-- ChatGPT conversations demonstrating possible workflows on sample problems.
+- Collections of selected prompts/questions and ChatGPT answers focused on specific topics (Q&A),
+- ChatGPT conversations showcasing possible workflows applied to sample problems.
 
-All ChatGPT responses are based on the GPT-4o model and are provided "as is" without critical evaluation, unless specified otherwise. When using ChatGPT answers in the context of this repository, I treat ChatGPT as a powerful tool for topic exploration. My goal here is not to offer definitive solutions but to highlight overlooked considerations, transforming some of the 'unknown unknowns' in ChatGPT workflows into 'known unknowns'. This approach is particularly true for Q&A collections shared in the hope that they may provides useful insights for others on a similar (learner's) path.
+All ChatGPT responses are based on the GPT-4o model and are provided "as is", without critical evaluation unless explicitly stated otherwise. In the context of Q&A collections, I approach ChatGPT as a powerful tool for topic exploration. My objective is not to offer definitive solutions but to highlight overlooked considerations, transforming some of the 'unknown unknowns' in ChatGPT workflows into 'known unknowns'.
+
+This repository is a work in progress. While some development may occur in the `dev` branch, I aim to update the `main` branch regularly. As a result, content may change periodically, and portions may appear incomplete or inconsistent at any given time.
 
 ## 1. Memory management
 
