@@ -186,4 +186,3 @@ Identify specific formatting requirements:
 > **Formatting Preferences:** Medium paragraphs, bulleted lists, APA citations.
 
 ---
-

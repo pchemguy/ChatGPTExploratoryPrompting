@@ -122,7 +122,7 @@ Prioritize clarity and precision:
 - **Positive, Action-Oriented Instructions:**  
   Focus on what to do rather than what to avoid.  
       - Action-oriented instructions are typically more direct.  
-      - Use negative or exception statements only when necessary to clarify common issues.
+      - Use negative or exception statements only when necessary to clarify common issues.  
 
 ---
 
@@ -137,6 +137,6 @@ Use this checklist to ensure adherence to the guidelines:
 - [ ] **Paragraph Structure:** Paragraphs focus on a single idea, start with a topic sentence, and use smooth transitions.  
 - [ ] **Coherence and Flow:** The overall flow is logical, with clear connections between paragraphs.  
 - [ ] **Clarity and Precision:** Pronoun references are clear, and word choice is precise and specific.  
-- [ ] **Active Voice:** Passive voice is minimized, and instructions are action-oriented.
+- [ ] **Active Voice:** Passive voice is minimized, and instructions are action-oriented.  
 
 ---
