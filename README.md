@@ -24,9 +24,9 @@ Memory context consists of several components:
 Note: The context displayed using the appropriate prompts or in the memory manager likely provides only a brief summary. The output may also vary if requests are repeated. Additionally, depending on the current context, ChatGPT may decline to answer these questions directly. For this reason, it is recommended to query ChatGPT about persistent memory from a new, blank chat (without any temporary context).
 
 Basic memory-related prompts include
-- `Is persistent memory on?`
--  `Show me persistent memory and explain how I can modify it`
--  `Show me temporary context and explain how I can modify it`
+- `Is persistent memory on?`  
+-  `Show me persistent memory and explain how I can modify it`  
+-  `Show me temporary context and explain how I can modify it`  
 A [separate page](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/MemoryManagementQnA.md) includes an extended collection of prompts and answers related to memory management.
 
 ### Meta-prompting
