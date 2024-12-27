@@ -56,7 +56,7 @@ Help me improve the following ChatGPT prompt. I want to make sure that I
       Example: "What is the square root of happiness?"
 - instruct ChatGPT to provide feedback / reflection on the problematic question instead of trying to generate a direct answer.
 
-## Prompt to be improved
+### Prompt to be improved
 
 Help me improve the following ChatGPT prompt. I want to make sure that I
 - communicate my task / question / request to ChatGPT as clear as possible;
