@@ -17,11 +17,13 @@ While simulating electrical circuits using a [SPICE][] circuit simulator, I sele
 
 ### 1. SPICE Netlist Parser in Python
 
-The SPICE [Netlist][] is a common plain-text format used by SPICE circuit simulators to describe electrical circuits. Modern simulators with graphical circuit editors, such as [LTspice][], can typically generate and utilize netlist files but often lack built-in support for converting these files into native circuit representations suitable for use in graphical editors. While several existing projects aim to parse SPICE netlists, I wanted to explore how ChatGPT could assist in developing a Python-based parser from scratch. This exercise turned out to be a good model problem for ChatGPT. At this stage, I am sharing only the original ChatGPT [conversation][Netlist Parser]. In the future, I may convert this conversation into a tutorial when time permits.
+The SPICE [Netlist][] is a common plain-text format used by SPICE circuit simulators to describe electrical circuits. Modern simulators with graphical circuit editors, such as [LTspice][], can typically generate and utilize netlist files but often lack built-in support for converting these files into native circuit representations suitable for use in graphical editors. While several existing projects aim to parse SPICE netlists, I wanted to explore how ChatGPT could assist in developing a Python-based parser from scratch.
+
+This exercise turned out to be a good instructive model problem for ChatGPT in a sense that the SPICE netlist file format is open source and sufficiently popular that there is no need to describe the format to ChatGPT as can be seen from the shared conversation. At this stage, I am sharing only the original ChatGPT [conversation][Netlist Parser]. In the future, I may convert this conversation into a tutorial when time permits.
 
 ### 2. LTspice Symbol and Circuit Parsers
 
-A closely related problem involves creating parsers for the `*.asy` (symbol) and `*.asc` (circuit) plain-text file formats used by LTspice. Thus far, I have focused on `*.asy` files, which define the vector graphical representations of circuit elements using a basic set of graphical primitives. These file format will serve as the primary demonstration target for now.
+A closely related problem involves creating parsers for the `*.asy` (symbol) and `*.asc` (circuit) plain-text file formats used by LTspice. Thus far, I have focused on `*.asy` file format, which stores vector graphical representation of circuit elements using a basic set of graphical primitives. This file format will serve as the primary demonstration target for now. Playing with the `*.asy` format in ChatGPT also proved to be quite instructive. While this time the file format is not open source, it is fairly intuitive, and is suitable, among other things, for probing ChapGPT's "intuition".
 
 ## Memory management
 
