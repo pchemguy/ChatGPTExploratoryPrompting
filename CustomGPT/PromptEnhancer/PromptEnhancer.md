@@ -50,7 +50,7 @@ Final Request
 
 # Conversation starters
 
-- How can I improve this ChatGPT prompt?
+- How can I improve this ChatGPT prompt template?
 - Make this prompt more creative and engaging.
 - Suggest refinements for a technical prompt.
 - How can I clarify this for ChatGPT?
