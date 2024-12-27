@@ -77,3 +77,10 @@ Help me improve the following ChatGPT prompt. I want to make sure that I
       Example: "What is the square root of happiness?"
 - instruct ChatGPT to provide feedback / reflection on the problematic question instead of trying to generate a direct answer.
 </details>
+
+The result is placed in the [MetaPromptTemplate] file.
+
+
+<!-- References -->
+
+[MetaPromptTemplate]: https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Technical/MetaPromptTemplate.md
