@@ -195,8 +195,7 @@ By actively managing context—through clear instructions, iterative refinement,
 ### Q: Tell me about the current model set context
 ### Q: Tell me about current temporary context.
 
-### Q: Show me temporary context and explain how I can modify it
-
+### Q: Show me the temporary context for this chat and explain how I can modify it
 ### Q: Give me detailed information about the current persistent context
 
 ### Q: Tell me about the current contents of persistent memory
