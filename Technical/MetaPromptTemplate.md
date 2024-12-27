@@ -31,4 +31,4 @@ Help me improve this ChatGPT prompt ("Prompt to be improved" below) to ensure it
 
 ## Prompt to be improved
 
-{PLACE TARGET PROMPT TEXT IN THIS AREA}
+`{TARGET PROMPT}`
