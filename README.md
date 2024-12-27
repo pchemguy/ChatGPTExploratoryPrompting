@@ -29,7 +29,7 @@ The baseline power of ChatGPT comes, of course, from the model training. On top 
 
 Memory context consists of several components:
 - **Temporary context** is derived from the contents of the current conversation and applies only to that specific interaction.  
-  Using the prompt `Show me temporary context and explain how I can modify it` should display its current state along with instructions for modification.
+  Using the prompt `Show me the temporary context for this chat and explain how I can modify it` should display its current state along with instructions for modification.
 - **Persistent memory** is derived from the contents of all conversations and applies universally across interactions.  
   As of this writing (December 2024), persistent memory must be enabled in `Settings -> Personalization -> Memory`. Its current status can be checked using the prompt `Is persistent memory on?`. If persistent memory is enabled, the prompt `Show me persistent memory and explain how I can modify it` will display its contents along with instructions for modification. The same `Memory` menu includes a "Manage" button, which allows you to remove items from persistent memory. Additionally, the tab provides access to a sub-popup for [custom instructions](https://help.openai.com/en/articles/8096356-custom-instructions-for-chatgpt), which are also part of the persistent memory.
 
