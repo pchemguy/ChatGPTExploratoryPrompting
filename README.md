@@ -44,11 +44,9 @@ A [separate page](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/m
 ## Meta-prompting
 
 Since the relevance of ChatGPT responses substantially depend on the quality of prompts, and because ChatGPT seems to be good at  transformative and creative writing tasks, it appears to be a natural question to see if ChatGPT can improve its own prompts.
-**TODO**
 
-## Coding assistance
 
-**TODO**
+
 
 ## Writing assistance for efficient technical and business writing
 
@@ -90,6 +88,9 @@ Structure lists and series with clear, parallel elements:
 
 
 <!--
+## Coding assistance
+
+**TODO**
 While ChatGPT is developed as a conversational tool that should be easily accessible to beginners, learning certain technical aspects may drastically improve the results, as evidenced by the emergence of the prompt engineering field.
 
 Divide and conquer
