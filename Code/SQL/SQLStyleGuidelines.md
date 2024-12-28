@@ -1,4 +1,4 @@
-When generating SQL code, follow these guidelines:
+When generating SQL code directly or when generating scripts that produce SQL code as output, follow these guidelines:
 
 # **SQL Style Guidelines**
 
