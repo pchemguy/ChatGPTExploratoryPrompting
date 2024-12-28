@@ -104,6 +104,6 @@ ChatGPT produced revised style guidelines. I switched to a new conversation agai
 
 <!-- References -->
 
-[Python Style Guidelines]: https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/defective-ddl/Code/Python/PythonStyleGuidelines.md
+[Python Style Guidelines]: https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Code/Python/PythonStyleGuidelines.md
 [SQL Style Guidelines]: https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Code/SQL/SQLStyleGuidelines.md
 [defective-ddl]: https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/defective-ddl/Code/SQL/SQLStyleGuidelines.md

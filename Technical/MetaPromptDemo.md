@@ -508,3 +508,6 @@ ChatGPT did not, of course, guess everything correctly. Additionally, the sample
 [MetaPromptTemplate]: https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Technical/MetaPromptTemplate.md
 [problem #2]: https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/README.md#2-ltspice-symbol-and-circuit-parsers
 [Graphical Primitives Design]: https://chatgpt.com/share/676feb60-7df8-8004-b9e2-953d9b14f7c6
+[Python Style Guidelines]: https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Code/Python/PythonStyleGuidelines.md
+[SQL Style Guidelines]: https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Code/SQL/SQLStyleGuidelines.md
+[defective-ddl]: https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/defective-ddl/Code/SQL/SQLStyleGuidelines.md
