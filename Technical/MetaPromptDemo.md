@@ -4,7 +4,7 @@
 
 ### Template generation
 
-Since the relevance of ChatGPT responses substantially depend on the quality of prompts, and because ChatGPT seems to be good at  transformative and creative writing tasks, it appears to be a natural question to see if ChatGPT can improve its own prompts. I decided to develop template:
+Given that the relevance of ChatGPT's responses largely depends on the quality of the prompts, and recognizing its strengths in transformative and creative writing tasks, it seems natural to ask whether ChatGPT can refine its own prompts. To explore this, I decided to develop a template:
 
 ```
 {INSTRUCTIONS}
@@ -131,19 +131,19 @@ Help me improve this ChatGPT prompt ("Prompt to be improved" below) to ensure it
 
 ### Extending / reverse engineering data application - guided tool prompt design
 
-Now this template can be used to generate improved prompts and, in fact, other prompt templates for specific tasks.
+This template can now be used to generate improved prompts and, in fact, other prompt templates tailored to specific tasks.
 
-Given the model [problem #2][], I might want to do some programmatic manipulations involving the `*.asy` files containing text-based description of graphical primitives (such as lines and rectangles), representing a SPICE circuit element (resistor, capacitor, etc.). This file format can viewed in a text editor and has a fairly simple format. My initial approach was to decode the file format manually, create a detailed description of the file format in technical, but natural language, feed this description to ChatGPT and ask it to generate appropriate code. I realized later that this approach was not optimal, but here is the [source of the conversation][Graphical Primitives Design]. The code generation matter is actually beyond the current subject, but the actual focus is on the preparatory steps.
+Given the context of [problem #2][], I wanted to explore programmatic manipulations involving `*.asy` files, which contain text-based descriptions of graphical primitives (e.g., lines and rectangles) that represent SPICE circuit elements such as resistors and capacitors. These files follow a fairly simple format and can be viewed in a text editor. Initially, my approach was to manually decode the file format, create a detailed description in technical but natural language, provide this description to ChatGPT, and request it to generate appropriate code. However, I later realized this method was not optimal. For reference, here is the [source of the conversation][Graphical Primitives Design]. While the code generation process part is beyond the current scope, the focus here is on the preparatory steps.
 
-Basically, to generate certain code with ChatGPT, one generally needs to provide some kind of specification / description of the desired code. Preparing such a description is probably a fairly time consuming task as well. Here is an idea: assuming the authors of LTspice did not try to obfuscate the file format (which they did not), its format should be fairly intuitive, given the generic task of storing basic vector representation of graphical primitives. As it turned out, this idea is true, but, what is more important, these "intuition" is accessible to ChatGPT as well (sort of, but for the purposes of such data problems, let's just say that ChatGPT may possess / exhibit certain intuition).
+To generate specific code with ChatGPT, one typically needs to provide a detailed specification or description of the of the data file format and desired output. Preparing such a description can be time-consuming. Instead, I reasoned: assuming the authors of LTspice did not intentionally obfuscate the file format (which they did not), its structure should be relatively intuitive, given the task of storing basic vector representations of graphical primitives. This assumption turned out to be correct. More importantly, these "intuition" is sort of accessible to ChatGPT as well (for the current purposes, let's just assume that ChatGPT may possess / exhibit certain "apparent" intuition).
 
-But first things first: I needed to start somewhere. So I came up with the following ChatGPT prompt:
+To begin, I needed a starting point. I devised the following ChatGPT prompt:
 
 ```
 Teach me how to generate templates that describe the structure of my data. Both data and templates describing the data will be part of ChatGPT input. These templates need to help ChatGPT interpret the data, minimize ambiguities, and facilitate subsequent analysis / processing / transformation of data.
 ```
 
-First, this prompt does not include any problem-specific information at all. Instead, it identifies a class of data focused reverse engineering problems. Second, it is also very concise, only defining a generic concept with the idea to seek early ChatGPT contributions. Now, rather than submitting this prompt to ChatGPT directly, it can be included as the target of the meta-prompt:
+First, this prompt does not include any problem-specific information. Instead, it identifies a broader category of data-focused reverse engineering problems. Second, it is intentionally concise, outlining only a generic concept with the goal of soliciting early contributions from ChatGPT. Rather than submitting this prompt to ChatGPT directly, however, it can instead be used as the target of the meta-prompt:
 
 <details>
 <summary><b>Data file prompt template generator (ChatGPT prompt)</b></summary>  
@@ -501,7 +501,7 @@ PINATTR SpiceOrder 1
 
 </details>
 
-Of course, ChatGPT did not guess everything right. Also, the sample data file included in this demo is actually the first file I tried. After getting this result, I spent some time on making a better data file specifically for the present purpose. Basically, after submission of a sample data, ChatGPT now has a model representation of the target format (`*.asy`). The next step is to start providing ChatGPT information about mistakes it made, correcting its "understanding" of the target format. Once all corrections are made, I can ask ChatGPT to generate a template for future use or request generation of the desired code. I am going to stop this demo, however, as these subsequent steps are beyond the current subject (I may provide an extended dedicated demo with focus on these later steps).
+ChatGPT did not, of course, guess everything correctly. Additionally, the sample data file included in this demonstration was actually the first file I tested. After reviewing the initial results, I spent some time creating a better data file specifically for this purpose. By submitting the sample data, ChatGPT now has a preliminary model representation of the target format (`*.asy`). The next step would be to provide ChatGPT with feedback on the mistakes it made, correcting its 'understanding' of the target format. Once all corrections are applied, I could ask ChatGPT to generate a reusable template or request the generation of the desired code. However, I will stop this demonstration here, as these subsequent steps fall outside the scope of the current discussion. I may provide an extended demo focused on these later steps in the future.
 
 <!-- References -->
 
