@@ -501,7 +501,7 @@ PINATTR SpiceOrder 1
 
 </details>
 
-
+Of course, ChatGPT did not guess everything right. Also, the sample data file included in this demo is actually the first file I tried. After getting this result, I spent some time on making a better data file specifically for the present purpose. Basically, after submission of a sample data, ChatGPT now has a model representation of the target format (`*.asy`). The next step is to start providing ChatGPT information about mistakes it made, correcting its "understanding" of the target format. Once all corrections are made, I can ask ChatGPT to generate a template for future use or request generation of the desired code. I am going to stop this demo, however, as these subsequent steps are beyond the current subject (I may provide an extended dedicated demo with focus on these later steps).
 
 <!-- References -->
 
