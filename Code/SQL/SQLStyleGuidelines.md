@@ -1,4 +1,4 @@
-When generating SQL code directly or via an intermediate script, follow these guidelines:
+When generating SQL code directly or via an intermediate script, use the following guidelines.
 
 # **SQL Style Guidelines**
 
@@ -84,11 +84,9 @@ Standardize column name suffixes for clarity:
 
 - Limit lines to **88 characters**.
 - Use **spaces**, not tabs.
-- Escape identifiers in DDL statements
 - **Alignment**:
   - Align root keywords vertically for readability.
   - Ensure readability with consistent spacing around symbols (e.g., `=`).
-  - Align column definitions after the column names in DDL statements.
 - **Spacing**:
   - Add spaces before and after equals (`=`).
   - Add spaces after commas.
@@ -112,8 +110,81 @@ Standardize column name suffixes for clarity:
 
 ## **10. Data Definition Language (DDL)**
 
-- Use `INTEGER PRIMARY KEY` with `AUTOINCREMENT` for single-column integer primary keys.
+When generating schemas or DDL code, enforce the following formatting rules:
+
+### **Data Types**
 - Stick to SQLite data types: **INTEGER**, **REAL**, **NUMERIC**, **TEXT**, **BLOB**.
+
+### **Identifier Quoting**
+- All identifiers (table names, column names, constraint names) must be enclosed in double quotes (`"identifier"`) to ensure compatibility with reserved keywords or special characters.  
+
+### **Column Definitions Alignment**
+- Align column definitions after the column names for consistent readability. Example:
+  ```sql
+  CREATE TABLE "example_table" (
+      "column_one"   TEXT    NOT NULL,
+      "column_two"   INTEGER NOT NULL UNIQUE,
+      "column_three" TEXT    DEFAULT 'default_value'
+  );
+  ```
+
+### **Detailed Comments**
+- Provide detailed comments for each column definition. Comments should align with the column definitions and use `/* */` or `--`. Example:
+  ```sql
+  CREATE TABLE "example_table" (
+      "id"           INTEGER PRIMARY KEY,  -- Unique identifier for the row
+      "name"         TEXT    NOT NULL,     -- Name of the entity
+      "description"  TEXT                  -- Optional description field
+  );
+  ```
+
+### **Primary and Unique Constraints**
+- **Single-column UNIQUE and PRIMARY KEY constraints**:
+  - Always include them as part of the column definition, using bare keywords (`UNIQUE` or `PRIMARY KEY`).
+  - Do not define these constraints as standalone table constraints for single columns.
+  - Use `INTEGER PRIMARY KEY` with `AUTOINCREMENT` for single-column integer primary keys.
+  - Example:
+    ```sql
+    CREATE TABLE "example_table" (
+        "id"   INTEGER PRIMARY KEY,  -- Unique identifier for the row
+        "code" TEXT    UNIQUE        -- Unique code for the entity
+    );
+    ```
+
+### **Other Single-Column Constraints**
+- For constraints other than `UNIQUE` and `PRIMARY KEY`:
+  - Include them at the **end of the column definition**.
+  - Provide descriptive constraint names.
+  - Place each constraint on a new line and indent by four spaces relative to the column name.
+  - Example:
+    ```sql
+    CREATE TABLE "example_table" (
+        "id"   INTEGER PRIMARY KEY,  -- Unique identifier
+        "age"  INTEGER NOT NULL
+                  CONSTRAINT "ck_age_positive" CHECK ("age" > 0)
+    );
+    ```
+
+### **Alignment and Spacing**
+- Use 4 spaces for indentation.
+- Align column definitions for readability.
+- Include a newline between logical column groups if the schema is complex.
+- Align column comments.
+
+### Updated Example: CREATE TABLE
+Here is a full example incorporating the new formatting rules:
+
+```sql
+CREATE TABLE "employees" (
+    "employee_id"  INTEGER PRIMARY KEY,                  -- Unique identifier for each employee
+    "first_name"   TEXT    NOT NULL,                     -- Employee's first name
+    "last_name"    TEXT    NOT NULL,                     -- Employee's last name
+    "email"        TEXT    NOT NULL UNIQUE,              -- Unique email address
+    "salary"       REAL    NOT NULL
+                     CONSTRAINT "ck_salary_positive" CHECK ("salary" > 0), -- Salary must be positive
+    "hire_date"    TEXT    DEFAULT CURRENT_DATE          -- Date of hire
+);
+```
 
 ---
 
@@ -188,6 +259,3 @@ CREATE TABLE "countries" (
 
 [Modern SQL Style Guide]: https://gist.github.com/mattmc3/38a85e6a4ca1093816c08d4815fbebfb
 [Simon Holywell SQL Style Guide]: https://sqlstyle.guide
-
- 
- 
