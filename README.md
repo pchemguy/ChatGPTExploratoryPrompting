@@ -41,14 +41,11 @@ Basic memory-related prompts include
 - `Is persistent memory on?`  
 - `Show me persistent memory and explain how I can modify it`  
 - `Show me the temporary context for this chat and explain how I can modify it`  
-A [separate page](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Technical/MemoryManagementQnA.md) includes an extended collection of prompts and answers related to memory management.
+A [separate page][MemoryManagementQnA] includes an extended collection of prompts and answers related to memory management.
 
 ## Ask ChatGPT to help you generate, debug, and improve prompts
 
-Since the relevance of ChatGPT responses substantially depend on the quality of prompts, and because ChatGPT seems to be good at  transformative and creative writing tasks, it appears to be a natural question to see if ChatGPT can improve its own prompts. The file 
-
-
-
+Since the relevance of ChatGPT responses substantially depend on the quality of prompts, and because ChatGPT seems to be good at  transformative and creative writing tasks, it appears to be a natural question to see if ChatGPT can improve its own prompts. The [file][MetaPromptingQnA] contains a short Q&A on prompt engineering. The [file][MetaPromptTemplate] contains a prompt template that can be used to improve other prompts. Finally, the [file][MetaPromptDemo] provides examples of using ChatGPT for generating and troubleshooting its prompts.
 
 ## Writing assistance for efficient technical and business writing
 
@@ -107,7 +104,10 @@ Graphics analysis: vector or raster - interpret serialized file by comparing wit
 
 [WritingStyleGuidelines]: https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Writing/WritingStyleGuidelines.md
 [WritingContext]: https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Writing/WritingContext.md
-[ChatGPT_Interaction_QnA]:https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/ChatGPT_Interaction_QnA.md
+[MemoryManagementQnA]: https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Technical/MemoryManagementQnA.md
+[MetaPromptingQnA]:https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Technical/MetaPromptingQnA.md
+[MetaPromptTemplate]: https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Technical/MetaPromptTemplate.md
+[MetaPromptDemo]: https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Technical/MetaPromptDemo.md
 [SPICE]: https://en.wikipedia.org/wiki/SPICE
 [Netlist]: https://en.wikipedia.org/wiki/Netlist
 [LTspice]: https://en.wikipedia.org/wiki/LTspice
