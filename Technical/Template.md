@@ -31,7 +31,7 @@ Help me improve this ChatGPT prompt to ensure it achieves the following objectiv
 
 ### Prompt to be improved
 
-Teach me how to generate templates that describe the structure of my data. Both data and templates describing the data will be part of ChatGPT input. These templates need to help GhatGPT intepret the data, minimize ambiguities, and facilitate subsequent analysis / processing / transformation of data.
+Teach me how to generate templates that describe the structure of my data. Both data and templates describing the data will be part of ChatGPT input. These templates need to help GhatGPT interpret the data, minimize ambiguities, and facilitate subsequent analysis / processing / transformation of data.
 
 ---
 

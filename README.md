@@ -43,7 +43,7 @@ Basic memory-related prompts include
 - `Show me the temporary context for this chat and explain how I can modify it`  
 A [separate page](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Technical/MemoryManagementQnA.md) includes an extended collection of prompts and answers related to memory management.
 
-## Meta-prompting
+## Ask ChatGPT to help you generate, debug, and improve prompts
 
 Since the relevance of ChatGPT responses substantially depend on the quality of prompts, and because ChatGPT seems to be good at  transformative and creative writing tasks, it appears to be a natural question to see if ChatGPT can improve its own prompts.
 
