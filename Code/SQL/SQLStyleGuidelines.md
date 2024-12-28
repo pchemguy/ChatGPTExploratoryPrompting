@@ -84,9 +84,11 @@ Standardize column name suffixes for clarity:
 
 - Limit lines to **88 characters**.
 - Use **spaces**, not tabs.
+- Escape identifiers in DDL statements
 - **Alignment**:
   - Align root keywords vertically for readability.
   - Ensure readability with consistent spacing around symbols (e.g., `=`).
+  - Align column definitions after the column names in DDL statements.
 - **Spacing**:
   - Add spaces before and after equals (`=`).
   - Add spaces after commas.
