@@ -120,23 +120,42 @@ When generating schemas or DDL code, enforce the following formatting rules:
 
 ### **Column Definitions Alignment**
 - Align column definitions after the column names for consistent readability. Example:
-  ```sql
-  CREATE TABLE "example_table" (
-      "column_one"   TEXT    NOT NULL,
-      "column_two"   INTEGER NOT NULL UNIQUE,
-      "column_three" TEXT    DEFAULT 'default_value'
-  );
-  ```
+
+```sql
+CREATE TABLE "example_table" (
+  "column_one"   TEXT    NOT NULL,
+  "column_two"   INTEGER NOT NULL UNIQUE,
+  "column_three" TEXT    DEFAULT 'default_value'
+);
+```
 
 ### **Detailed Comments**
-- Provide detailed comments for each column definition. Comments should align with the column definitions and use `/* */` or `--`. Example:
-  ```sql
-  CREATE TABLE "example_table" (
-      "id"           INTEGER PRIMARY KEY,  -- Unique identifier for the row
-      "name"         TEXT    NOT NULL,     -- Name of the entity
-      "description"  TEXT                  -- Optional description field
-  );
-  ```
+- Provide detailed comments for
+    - each column definition.
+    - any triggers and views.
+- Comments should align with the column definitions and use `/* */` or `--`.   
+- Example:
+
+```sql
+CREATE TABLE "example_table" (
+  "id"           INTEGER PRIMARY KEY,  -- Unique identifier for the row
+  "name"         TEXT    NOT NULL,     -- Name of the entity
+  "description"  TEXT                  -- Optional description field
+);
+
+/* Keeps FTS data in synch with message data, making sure that the latter is available for full-text search */
+CREATE TRIGGER email_messages_fts_insert AFTER INSERT ON email_messages
+BEGIN
+    INSERT INTO email_messages_fts (
+        message_id, from_addr, to_addrs, cc_addrs,
+        bcc_addrs, subject, body_text, body_html
+    )
+    VALUES (
+        NEW.message_id, NEW.from_addr, NEW.to_addrs, NEW.cc_addrs,
+        NEW.bcc_addrs, NEW.subject, NEW.body_text, NEW.body_html
+    );
+END;
+```
 
 ### **Primary and Unique Constraints**
 - **Single-column UNIQUE and PRIMARY KEY constraints**:
@@ -144,26 +163,49 @@ When generating schemas or DDL code, enforce the following formatting rules:
   - Do not define these constraints as standalone table constraints for single columns.
   - Use `INTEGER PRIMARY KEY` with `AUTOINCREMENT` for single-column integer primary keys.
   - Example:
-    ```sql
-    CREATE TABLE "example_table" (
-        "id"   INTEGER PRIMARY KEY,  -- Unique identifier for the row
-        "code" TEXT    UNIQUE        -- Unique code for the entity
-    );
-    ```
+
+```sql
+CREATE TABLE "example_table" (
+    "id"   INTEGER PRIMARY KEY,  -- Unique identifier for the row
+    "code" TEXT    UNIQUE        -- Unique code for the entity
+);
+```
 
 ### **Other Single-Column Constraints**
 - For constraints other than `UNIQUE` and `PRIMARY KEY`:
-  - Include them at the **end of the column definition**.
+  - Include them at the end of the column definition.
   - Provide descriptive constraint names.
   - Place each constraint on a new line and indent by four spaces relative to the column name.
   - Example:
-    ```sql
-    CREATE TABLE "example_table" (
-        "id"   INTEGER PRIMARY KEY,  -- Unique identifier
-        "age"  INTEGER NOT NULL
-                  CONSTRAINT "ck_age_positive" CHECK ("age" > 0)
-    );
-    ```
+
+```sql
+CREATE TABLE "example_table" (
+    "id"   INTEGER PRIMARY KEY,  -- Unique identifier
+    "age"  INTEGER NOT NULL
+              CONSTRAINT "ck_age_positive" CHECK ("age" > 0)
+);
+```
+
+### **Multi-Column Table Constraints**
+- Include documenting comments for all constraints other than `PRIMARY KEY`.
+- Include descriptive names for all constraints other than `PRIMARY KEY` and `UNIQUE`.
+- Align constraint naming part with column names and place the definition part on the following line with additional 4-space indent.
+- Example:
+
+```sql
+CREATE TABLE borrowing_records ( 
+    isbn        TEXT    NOT NULL, -- Part of the foreign key 
+    copy_number INTEGER NOT NULL, -- Part of the foreign key 
+    borrower_id INTEGER NOT NULL
+                    REFERENCES borrowers (borrower_id) ON DELETE CASCADE, -- Foreign key 
+    borrow_date TEXT    NOT NULL DEFAULT CURRENT_DATE, 
+    return_date TEXT, 
+    PRIMARY KEY (isbn, copy_number, borrower_id), -- Multi-column natural key 
+    CONSTRAINT "fk_checked_out"
+        FOREIGN KEY (isbn, copy_number) REFERENCES book_copies (isbn, copy_number) ON DELETE CASCADE, 
+    FOREIGN KEY (borrower_id) 
+);
+```
 
 ### **Alignment and Spacing**
 - Use 4 spaces for indentation.
