@@ -129,7 +129,7 @@ Help me improve this ChatGPT prompt ("Prompt to be improved" below) to ensure it
 
 ---
 
-### Extending / reverse engineering data application
+### Extending / reverse engineering data application - guided tool prompt design
 
 Now this template can be used to generate improved prompts and, in fact, other prompt templates for specific tasks.
 
@@ -362,6 +362,146 @@ Use prompts to get ChatGPT’s insights:
 Refine the template based on feedback and ensure it’s adaptable for new scenarios or datasets.
 
 </details>
+
+Now, because of contextual memory, the previous answer can be immediately followed by a "focusing" prompt that includes contents of a sample data `*.asy` file:
+
+```
+Let's focus on a more specific case. I have a plain-text file containing serialized representation of graphical primitives. Here is the entire contents of a sample file:
+
+Version 4
+SymbolType BLOCK
+LINE Normal -224 32 -224 -32
+LINE Normal -128 48 -176 48 2
+LINE Normal 67 -14 -61 -14 3
+RECTANGLE Normal -112 -32 -192 -64
+RECTANGLE Normal 184 -107 137 -139 3
+RECTANGLE Normal 73 82 25 18 3
+CIRCLE Normal -256 -48 -288 -64
+CIRCLE Normal 152 11 130 -7 3
+ARC Normal -114 -22 46 74 0 0 -57 -5
+ARC Normal -239 -175 -144 -121 -219 -155 -185 -118 3
+ARC Normal 700 300 1100 500 1000 500 800 300
+TEXT 247 94 VLeft 5 qqQ q
+PIN -176 16 NONE 7
+PINATTR PinName d
+PINATTR SpiceOrder 1
+PIN 0 -112 VRIGHT 8
+PINATTR PinName q
+PINATTR SpiceOrder 2
+PIN 32 160 RIGHT 0
+PINATTR PinName aq
+PINATTR SpiceOrder 3
+```
+
+and the associated 
+
+<details>
+<summary><b>ChatGPT answer</b></summary>
+
+To effectively parse and work with the serialized graphical primitives from your plain-text file, we can design a template that meets your needs for clarity, precision, and adaptability. Here’s how you can structure your data template:
+
+---
+#### **Template Name:** Serialized Graphical Primitives
+
+**Purpose:** This template describes the structure of a plain-text file representing graphical primitives. It ensures accurate parsing and facilitates analysis, transformation, or rendering of the primitives.
+
+---
+#### **Field Definitions:**
+
+| **Field**    | **Description**                                                                    | **Data Type**      | **Format**                                                 | **Required** |
+| ------------ | ---------------------------------------------------------------------------------- | ------------------ | ---------------------------------------------------------- | ------------ |
+| `Version`    | The version of the serialized file format                                          | Integer            | A single integer (e.g., `Version 4`)                       | Yes          |
+| `SymbolType` | Specifies the type of symbol                                                       | Text               | A single keyword following `SymbolType` (e.g., `BLOCK`)    | Yes          |
+| `Primitive`  | The graphical primitive (e.g., `LINE`, `RECTANGLE`, `CIRCLE`, etc.)                | Text               | A line starting with the primitive type                    | Yes          |
+| `Attributes` | Specific attributes of each primitive, defined in a space-separated format         | Mixed              | Attributes vary based on primitive type                    | Yes          |
+| `TEXT`       | Text-based primitive with position, alignment, and content                         | Text + Coordinates | Format: `TEXT <x> <y> <Alignment> <Size> <Content>`        | Optional     |
+| `PIN`        | Describes connection points, with position, orientation, and additional attributes | Text + Coordinates | Format: `PIN <x> <y> <Orientation> <ElectricalAttributes>` | Optional     |
+| `PINATTR`    | Attributes for the previous PIN                                                    | Key-Value Pair     | Format: `PINATTR <AttributeName> <Value>`                  | Optional     |
+
+---
+
+#### **Details for Key Primitives:**
+
+##### 1. **LINE**
+   - **Format:** `LINE <Style> <x1> <y1> <x2> <y2> [<Width>]`
+   - **Fields:**
+     - `Style`: Line style, e.g., `Normal`
+     - `x1, y1, x2, y2`: Start and end coordinates (integer)
+     - `Width`: Optional width of the line
+##### 2. **RECTANGLE**
+   - **Format:** `RECTANGLE <Style> <x1> <y1> <x2> <y2> [<LineWidth>]`
+   - **Fields:**
+     - `Style`: Rectangle style, e.g., `Normal`
+     - `x1, y1, x2, y2`: Two opposite corners (integer)
+     - `LineWidth`: Optional line thickness
+##### 3. **CIRCLE**
+   - **Format:** `CIRCLE <Style> <x1> <y1> <x2> <y2> [<LineWidth>]`
+   - **Fields:**
+     - `Style`: Circle style, e.g., `Normal`
+     - `x1, y1`: Center coordinates
+     - `x2, y2`: A point on the circumference
+     - `LineWidth`: Optional line thickness
+##### 4. **ARC**
+   - **Format:** `ARC <Style> <x1> <y1> <x2> <y2> <cx1> <cy1> <cx2> <cy2> [<LineWidth>]`
+   - **Fields:**
+     - `Style`: Arc style, e.g., `Normal`
+     - `x1, y1`: Start point
+     - `x2, y2`: End point
+     - `cx1, cy1, cx2, cy2`: Control points for the curve
+     - `LineWidth`: Optional line thickness
+##### 5. **TEXT**
+   - **Format:** `TEXT <x> <y> <Alignment> <FontSize> <Content>`
+   - **Fields:**
+     - `x, y`: Coordinates of the text position
+     - `Alignment`: Alignment of the text, e.g., `VLeft`, `VRight`
+     - `FontSize`: Size of the text
+     - `Content`: The actual text string
+##### 6. **PIN**
+   - **Format:** `PIN <x> <y> <Orientation> <ElectricalAttributes>`
+   - **Fields:**
+     - `x, y`: Coordinates of the pin
+     - `Orientation`: Direction of the pin, e.g., `RIGHT`, `VRIGHT`
+     - `ElectricalAttributes`: Electrical properties, such as `NONE`
+##### 7. **PINATTR**
+   - **Format:** `PINATTR <AttributeName> <Value>`
+   - **Fields:**
+     - `AttributeName`: Name of the attribute, e.g., `PinName`
+     - `Value`: Value assigned to the attribute
+
+---
+#### **Examples:**
+
+##### Complete File Example:
+```plaintext
+Version 4
+SymbolType BLOCK
+LINE Normal -224 32 -224 -32
+LINE Normal -128 48 -176 48 2
+RECTANGLE Normal -112 -32 -192 -64
+CIRCLE Normal -256 -48 -288 -64
+ARC Normal -114 -22 46 74 0 0 -57 -5
+TEXT 247 94 VLeft 5 qqQ q
+PIN -176 16 NONE 7
+PINATTR PinName d
+PINATTR SpiceOrder 1
+```
+##### Explanation of Example:
+- **Header Fields:** `Version 4`, `SymbolType BLOCK` define the format version and symbol type.
+- **LINE Primitive:** A normal line from (-224, 32) to (-224, -32).
+- **RECTANGLE Primitive:** A rectangle spanning two opposite corners (-112, -32) and (-192, -64).
+- **TEXT Primitive:** Text at (247, 94) aligned vertically left, font size 5, with content `qqQ q`.
+- **PIN and PINATTR:** A pin at (-176, 16) with no electrical attributes, followed by attributes `PinName d` and `SpiceOrder 1`.
+
+---
+#### **Feedback Prompts for ChatGPT:**
+1. Are all the fields and formats clear for parsing and processing?
+2. Do the examples align with the defined formats for the primitives?
+3. Are there ambiguities in the way hierarchical relationships (e.g., PIN and PINATTR) are defined?
+4. Are there potential improvements for adaptability to new primitives or additional attributes?
+
+</details>
+
+
 
 <!-- References -->
 
