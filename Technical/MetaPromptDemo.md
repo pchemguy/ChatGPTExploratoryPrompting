@@ -591,7 +591,7 @@ Help me improve the following SQL Style Guidelines (I will provide specific requ
 {SCHEMA BLUEPRINT}
 ```
 
-After confirmation , I submitted the second prompt with desired rules:
+After confirmation, I submitted the second prompt with desired rules:
 
 **ChatGPT prompt**
 
