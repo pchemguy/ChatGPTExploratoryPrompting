@@ -423,7 +423,7 @@ To effectively parse and work with the serialized graphical primitives from your
 #### **Details for Key Primitives:**
 
 ##### 1. **LINE**
-   - **Format:** `LINE <Style> <x1> <y1> <x2> <y2> [<Width>]`
+   - **Format:** `LINE \<Style\> <x1> <y1> <x2> <y2> [<Width>]`
    - **Fields:**
      - `Style`: Line style, e.g., `Normal`
      - `x1, y1, x2, y2`: Start and end coordinates (integer)
