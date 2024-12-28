@@ -1,4 +1,4 @@
-# **Prompt Improvement**
+# **Prompt Improvement Template**
 
 Help me improve this ChatGPT prompt ("Prompt to be improved" below) to ensure it achieves the following objectives:
 
