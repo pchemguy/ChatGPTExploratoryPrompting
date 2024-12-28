@@ -1,6 +1,6 @@
 # Ask ChatGPT to help you generate, debug, and fix prompts
 
-## Prompt generation - Meta-prompt
+## **Prompt generation - Meta-prompt**
 
 ### Template generation
 
