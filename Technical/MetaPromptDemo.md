@@ -1,5 +1,6 @@
 # Ask ChatGPT to help you generate, debug, and fix prompts
 
+When asked nicely, ChatGPT can refine [prompts or generate new ones](#prompt-generation---meta-prompt) based on a brief description. If a prompt does not work as expected, check the memory context and attempt to reproduce the issue in a fresh chat first, updating the memory context if necessary. Next, directly [ask ChatGPT about the issue](#chatgpt-assisted-prompt-debugging-and-fixing) and request a detailed explanation. Finally, seek ChatGPT's assistance in modifying the prompt to achieve the desired outcome. I have tried this approach once so far in a technical coding context, and it worked remarkably well.
 ## Prompt generation - Meta-prompt
 
 ### Template generation
