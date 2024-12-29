@@ -41,7 +41,8 @@ Basic memory-related prompts include
 - `Is persistent memory on?`  
 - `Show me persistent memory and explain how I can modify it`  
 - `Show me the temporary context for this chat and explain how I can modify it`  
-A [separate page][MemoryManagementQnA] includes an extended collection of prompts and answers related to memory management.
+
+Separate pages include a [short tutorial][MemoryManagementDemo] and an [extended collection of prompts and answers][MemoryManagementQnA] related to memory management.
 
 ## Ask ChatGPT to help you generate, debug, and improve prompts
 
@@ -107,6 +108,7 @@ Graphics analysis: vector or raster - interpret serialized file by comparing wit
 [MemoryManagementQnA]: https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Technical/MemoryManagementQnA.md
 [MetaPromptingQnA]:https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Technical/MetaPromptingQnA.md
 [MetaPromptTemplate]: https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Technical/MetaPromptTemplate.md
+[MemoryManagementDemo]: https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Technical/MemoryManagementDemo.md
 [MetaPromptDemo]: https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Technical/MetaPromptDemo.md
 [SPICE]: https://en.wikipedia.org/wiki/SPICE
 [Netlist]: https://en.wikipedia.org/wiki/Netlist
