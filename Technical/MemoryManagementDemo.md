@@ -1,6 +1,8 @@
 # Memory Management Demo
 
-The [Memory Management][] section of the README.md file discusses the two main components of ChatGPT memory. Let's do a practical memory management tutorial. For the duration of this tutorial, I will use  
+The [Memory Management][] section of the README.md file discusses the two main components of ChatGPT memory. Let's do a practical memory management tutorial. The first section, "Key prompts and prompt templates" provides a basic collection of prompt and prompt templates that can be used for ChatGPT memory management. The second, [Tutorial](#tutorial), section is a very short basic step-by-step demonstration of adding preferences to persistent memory and temporary context, following by recalling set preferences.
+
+For the duration of this tutorial, I will use  
 
 ```
 CODE BLOCKS
@@ -106,6 +108,8 @@ In case of conflict, indicated the prevailing preference.
 ```
 
 ## Tutorial
+
+The tutorial is a very short basic step-by-step demonstration of adding preferences to persistent memory and temporary context, following by recalling set preferences.
 
 ### 1. Start a new chat/conversation
 
