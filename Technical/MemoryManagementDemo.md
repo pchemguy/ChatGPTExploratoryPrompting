@@ -475,6 +475,35 @@ CREATE TABLE "countries" (
 
 </details>
 
+ChatGPT should confirm that the guidelines have been added to persistent memory. Add a conflicting preference to temporary context:
+
+```
+Add the following instruction to temporary context. Do not change persistent memory.
+
+Instruction: Use the PostgreSQL dialect by default.
+```
+
+### 6. Check preferred SQL engine
+
+```
+Tell me about my current preferences regarding
+default target SQL engine.
+Indicate where the preferences are stored, if any.
+In case of conflict, indicated the prevailing preference.
+```
+
+Expected output: ChatGPT should indicate that
+- SQLite is set in persistent memory,
+- PostgreSQL is set in temporary context,
+- PostgreSQL is the prevailing preference.
+
+### 7. Cleanup
+
+Reset SQL style guidelines (persistent memory), if necessary, for example:
+
+```
+Reset SQL Style Guidlines.
+```
 
 <!-- References -->
 
