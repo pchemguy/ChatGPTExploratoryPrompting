@@ -2,77 +2,107 @@
 
 The [Memory Management][] section of the README.md file discusses the two main components of ChatGPT memory. Let's do a practical memory management tutorial. For the duration of this tutorial, I will use  
 
-```markdown
+```
 CODE BLOCKS
 ```
 
 to indicate ChatGPT prompts, unless explicitly stated otherwise.
 
+> [!WARNING]
+> **This tutorial changes/resets SQL code generation preferences stored in persistent memory for demonstration purposes. I am not aware of any reliable means to save/restore persistent memory state, so if this preference is important and used/set, consider whether you want to proceed.**
+
 ## Key prompts and prompt templates
 
-**Persistent memory status**
+### Persistent memory status
 
-```markdown
+```
 Is persistent memory on?
 ```
 
-**Memory management in chat**
+### Memory management in chat
 
-```markdown
+```
 Teach me about persistent memory and temporary context.
 Provide me detailed instructions on how I can manage both directly in chat and notify me of any prerequisites.
 ```
 
-```markdown
+```
 Show me persistent memory and explain how I can modify it
 ```  
  
-```markdown
+```
 Show me the temporary context for this chat and explain how I can modify it
 ```  
 
 > [!IMPORTANT]
->When instructions from persistent memory and temporary context are in conflict the latter will prevail by default.
+>In case of conflict, preferences stored in temporary context take precedence over persistent memory.
 
+```
+Save instructions to persistent memory.
 
-**Check memory for specific instructions**
+Instructions: {INSTRUCTIONS}
+```
 
-```markdown
+```
+Add preferences to temporary context.
+
+Preferences: {PREFERENCES}
+```
+
+**Examples:**
+
+```
+Save instructions to persistent memory.
+
+Instructions: assume that any prompts may be Markdown-formatted; use Markdown-formatted output by default.
+```
+
+```
+Add preferences to temporary context.
+
+Preferences: assume that any prompts may be Markdown-formatted; use Markdown-formatted output by default.
+```
+
+### Check memory for specific instructions
+
+```
 Is the following concept set in persistent memory or temporary context?
 
 Concept: {CONCEPT}
 ```
 
-```markdown
+```
 Are the following instructions set in persistent memory or temporary context?  
 
 Instructions: {INSTRUCTIONS}
 ```
 
-```markdown
+```
 Tell me about my current preferences regarding
 {PREFERENCE TARGET}.
 Indicate where the preferences are stored, if any.
+In case of conflict, indicated the prevailing preference.
 ```
 
-Examples:
+**Examples:**
 
-```markdown
+```
 Are the following instructions set in persistent memory or temporary context?  
 
 Instructions: Use Markdown-formatted input/output by default.
 ```
 
-```markdown
+```
 Is the following concept set in persistent memory or temporary context?
 
 Concept: Default input/output format.
 ```
 
-```markdown
+```
 Tell me about my current preferences regarding
 default input/output format.
 Indicate where the preferences are stored, if any.
+In case of conflict, indicated the prevailing preference.
 ```
 
 ## Tutorial
@@ -91,7 +121,30 @@ Is persistent memory on? Provide detailed instructions on how I can change this 
 
 ### 3. Check and set input/output format preferences
 
+I do not know how important this preference is (maybe, this behavior is used by default) so I just keep it.
 
+```
+Tell me about my current preferences regarding
+default input/output format.
+Indicate where the preferences are stored, if any.
+In case of conflict, indicated the prevailing preference.
+```
+
+ The goal is to set Markdown format as the default preference. For the purpose of this tutorial, this preference can be set in either permanent memory (this is what I have) or temporary context. _After executing one of the following prompts, verify the preference using the previous prompt._ For example:
+
+```
+Save instructions to persistent memory.
+Instructions: assume that any prompts may be Markdown-formatted; use Markdown-formatted output by default.
+```
+
+or
+
+```
+Add preferences to temporary context.
+Preferences: assume that any prompts may be Markdown-formatted; use Markdown-formatted output by default.
+```
+
+### 4. Check and set input/output format preferences
 
 <!-- References -->
 
