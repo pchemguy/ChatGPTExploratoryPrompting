@@ -31,7 +31,7 @@ Show me the temporary context for this chat and explain how I can modify it
 ```  
 
 > [!IMPORTANT]
-> Key information users need to know to achieve their goal.
+> When conflicting, instructions stored in temporary context will prevail over instructions stored in persistent memory by default.
 
 **Check memory for specific instructions**
 
@@ -48,7 +48,9 @@ Instructions: {INSTRUCTIONS}
 ```
 
 ```markdown
-Tell me about my current preferences regarding {PREFERENCE TARGET}. Indicate where the preferences are stored, if any.
+Tell me about my current preferences regarding
+{PREFERENCE TARGET}.
+Indicate where the preferences are stored, if any.
 ```
 
 Examples:
@@ -66,7 +68,9 @@ Concept: Default input/output format.
 ```
 
 ```markdown
-Tell me about my current preferences regarding default input/output format. Indicate where the preferences are stored, if any.
+Tell me about my current preferences regarding
+default input/output format.
+Indicate where the preferences are stored, if any.
 ```
 
 ## Tutorial
