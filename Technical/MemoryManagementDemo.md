@@ -2,7 +2,7 @@
 
 The [Memory Management][] section of the README.md file discusses the two main components of ChatGPT memory. Let's do a practical memory management tutorial. For the duration of this tutorial, I will use  
 
-```
+```markdown
 CODE BLOCKS
 ```
 
@@ -12,49 +12,60 @@ to indicate ChatGPT prompts, unless explicitly stated otherwise.
 
 **Persistent memory status**
 
-```
+```markdown
 Is persistent memory on?
 ```
 
 **Memory management in chat**
 
-```
+```markdown
 Teach me about persistent memory and temporary context. Provide me detailed instructions on how I can manage both directly in chat and notify me of any prerequisites.
 ```
 
+```markdown
+Show me persistent memory and explain how I can modify it
+```  
+ 
+```markdown
+Show me the temporary context for this chat and explain how I can modify it
+```  
+
+> [!IMPORTANT]
+> Key information users need to know to achieve their goal.
+
 **Check memory for specific instructions**
 
-```
+```markdown
 Is the following concept set in persistent memory or temporary context?
 
 Concept: {CONCEPT}
 ```
 
-```
+```markdown
 Are the following instructions set in persistent memory or temporary context?  
 
 Instructions: {INSTRUCTIONS}
 ```
 
-```
+```markdown
 Tell me about my current preferences regarding {PREFERENCE TARGET}. Indicate where the preferences are stored, if any.
 ```
 
 Examples:
 
-```
+```markdown
 Are the following instructions set in persistent memory or temporary context?  
 
 Instructions: Use Markdown-formatted input/output by default.
 ```
 
-```
+```markdown
 Is the following concept set in persistent memory or temporary context?
 
 Concept: Default input/output format.
 ```
 
-```
+```markdown
 Tell me about my current preferences regarding default input/output format. Indicate where the preferences are stored, if any.
 ```
 
