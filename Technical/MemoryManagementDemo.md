@@ -19,7 +19,8 @@ Is persistent memory on?
 **Memory management in chat**
 
 ```markdown
-Teach me about persistent memory and temporary context. Provide me detailed instructions on how I can manage both directly in chat and notify me of any prerequisites.
+Teach me about persistent memory and temporary context.
+Provide me detailed instructions on how I can manage both directly in chat and notify me of any prerequisites.
 ```
 
 ```markdown
