@@ -32,7 +32,8 @@ Show me the temporary context for this chat and explain how I can modify it
 ```  
 
 > [!IMPORTANT]
-> When conflicting, instructions stored in temporary context will prevail over instructions stored in persistent memory by default.
+>When instructions from persistent memory and temporary context are in conflict the latter will prevail by default.
+
 
 **Check memory for specific instructions**
 
