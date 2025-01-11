@@ -1,15 +1,32 @@
 # ChatGPT Exploratory Prompting
 
-This repository shares my beginner-level exploration of ChatGPT's features and related workflows. My current interests encompass four broad topics: two focused on applications (_coding support and guidance_ and _technical and business writing assistance_) and two centered on technical aspects closely tied to ChatGPT’s routine use (_memory management_ and _meta-prompting_). I utilize several content formats to share my experience:
+This repository shares my beginner-level exploration of ChatGPT’s features and workflows. My interests span four broad areas: two focused on applications (_coding support and guidance_ and _technical and business writing assistance_) and two centered on technical aspects of routine ChatGPT use (_memory management_ and _meta-prompting_). To share my experiences, I use several content formats:
 
-- Descriptive writing,
-- ChatGPT instruction templates,
-- Collections of selected prompts/questions and ChatGPT answers focused on specific topics (Q&A),
-- ChatGPT conversations showcasing possible workflows applied to model problems.
+- Descriptive writing: Detailed explanations of processes and workflows.
+- Instruction templates: Reusable ChatGPT templates for various tasks.
+- Q&A collections: Curated prompts and ChatGPT answers focused on specific topics, intended for exploration and discovery.
+- Workflow demonstrations: ChatGPT conversations applied to model problems, showcasing potential use cases.
 
-All ChatGPT responses are based on the GPT-4o model and are provided "as is", without critical evaluation unless explicitly stated otherwise. In the context of Q&A collections, I approach ChatGPT as a powerful tool for topic exploration. My objective is not to offer definitive solutions but to highlight overlooked considerations, transforming some of the 'unknown unknowns' in ChatGPT workflows into 'known unknowns'.
+All responses are based on the GPT-4o model and provided "as is," without critical evaluation unless explicitly stated otherwise. In Q&A collections, I approach ChatGPT as a tool for exploration rather than a source of definitive solutions. My objective is to surface overlooked considerations, transforming some of the "unknown unknowns" in ChatGPT workflows into "known unknowns."
 
-This repository is a work in progress. While some development may occur in the `dev` branch, I aim to update the `main` branch regularly. As a result, content may change periodically, and portions may appear incomplete or inconsistent at any given time.
+This repository is a work in progress. Although some development occurs in the `dev` branch, I strive to update the `main` branch regularly. Content may evolve over time, and portions might appear incomplete or inconsistent.
+
+## Highlights of My Experiments
+
+- Developed prompt templates for revising technical text.
+- Adapted style guides for several programming languages (Python, SQL, and VBA) to improve code consistency and quality.
+- Explored approaches to active memory context management and guided meta-prompting for refining ChatGPT prompts.
+- Analyzed semistructured data files to evaluate ChatGPT's ability to identify patterns and infer structure.
+- Tested ChatGPT's intuition in interpreting data file formats with minimal context.
+- Generated Python classes and methods based on serialized data formats and plain language descriptions.
+- Assessed ChatGPT’s capability to interpret and transform data file formats into structured outputs.
+- Developed workflows for iterative prompt improvement through guided experimentation.
+- Implemented techniques for active memory context adjustments to improve response continuity and relevance.
+- Refined ChatGPT’s outputs by providing targeted feedback to enhance clarity and precision.
+- Examined how ChatGPT interprets ambiguous instructions or minimal data input.
+- Utilized meta-prompting strategies to enhance prompt design for specific tasks.
+- Collaborated with ChatGPT to create step-by-step guides and structured code walkthroughs.
+- Discovered ChatGPT's ability to create well-structured and formatted technical workflow guides from unstructured descriptions.
 
 ## Model Problems
 
