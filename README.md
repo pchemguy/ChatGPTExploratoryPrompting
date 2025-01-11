@@ -14,14 +14,11 @@ This repository is a work in progress. Although some development occurs in the `
 ## Highlights of My Experiments
 
 - Developed prompt templates for revising technical text.
-- Created step-by-step guides and structured code walkthroughs from plain text with limited guidance.
-
-- Adapted style guides for Python, SQL, and VBA to improve code consistency and quality.
-- Generated Python classes, docs, and tests from serialized data formats and plain language descriptions.
-
+- Created step-by-step guides and structured code walkthroughs from plain text with minimal guidance.
 - Practiced active memory context management to enhance ChatGPT prompts.
 - Utilized guided meta-prompting to refine prompts for specific tasks.
-
+- Adapted style guides for Python, SQL, and VBA to improve code consistency and quality.
+- Generated Python classes, documentation, and tests from serialized data formats and plain language descriptions.
 - Analyzed semistructured files to identify patterns and infer structure.
 - Transformed sample data files and formats into structured blueprint descriptions.
 - Tested the interpretation of ambiguous input and data file formats with minimal context.
@@ -104,10 +101,11 @@ Structure lists and series with clear, parallel elements:
 ```
 </details>
 
-
-<!--
 ## Coding assistance
 
+*Under development*
+
+<!--
 **TODO**
 While ChatGPT is developed as a conversational tool that should be easily accessible to beginners, learning certain technical aspects may drastically improve the results, as evidenced by the emergence of the prompt engineering field.
 
