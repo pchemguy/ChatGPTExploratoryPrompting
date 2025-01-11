@@ -18,11 +18,11 @@ This repository is a work in progress. Although some development occurs in the `
 - Generated Python classes from serialized data formats and plain language descriptions.
 - Practiced active memory context management to enhance ChatGPT prompts.
 - Utilized guided meta-prompting to refine prompts for specific tasks.
+- Developed workflows for iterative prompt improvement through guided experimentation.
 - Analyzed semistructured files to identify patterns and infer structure.
 - Transformed sample data files and formats into structured blueprint descriptions.
 - Tested the interpretation of ambiguous input and data file formats with minimal context.
 - Created step-by-step guides and structured code walkthroughs from unstructured descriptions.
-- Developed workflows for iterative prompt improvement through guided experimentation.
 
 ## Model Problems
 
