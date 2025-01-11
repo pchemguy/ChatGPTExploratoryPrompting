@@ -14,19 +14,15 @@ This repository is a work in progress. Although some development occurs in the `
 ## Highlights of My Experiments
 
 - Developed prompt templates for revising technical text.
-- Adapted style guides for several programming languages (Python, SQL, and VBA) to improve code consistency and quality.
-- Explored approaches to active memory context management and guided meta-prompting for refining ChatGPT prompts.
-- Analyzed semistructured data files to evaluate ChatGPT's ability to identify patterns and infer structure.
-- Tested ChatGPT's intuition in interpreting data file formats with minimal context.
-- Generated Python classes and methods based on serialized data formats and plain language descriptions.
-- Assessed ChatGPT’s capability to interpret and transform data file formats into structured outputs.
+- Adapted style guides for Python, SQL, and VBA to improve code consistency and quality.
+- Generated Python classes from serialized data formats and plain language descriptions.
+- Practiced active memory context management to enhance ChatGPT prompts.
+- Utilized guided meta-prompting to refine prompts for specific tasks.
+- Analyzed semistructured files to identify patterns and infer structure.
+- Transformed sample data files and formats into structured blueprint descriptions.
+- Tested the interpretation of ambiguous input and data file formats with minimal context.
+- Created step-by-step guides and structured code walkthroughs from unstructured descriptions.
 - Developed workflows for iterative prompt improvement through guided experimentation.
-- Implemented techniques for active memory context adjustments to improve response continuity and relevance.
-- Refined ChatGPT’s outputs by providing targeted feedback to enhance clarity and precision.
-- Examined how ChatGPT interprets ambiguous instructions or minimal data input.
-- Utilized meta-prompting strategies to enhance prompt design for specific tasks.
-- Collaborated with ChatGPT to create step-by-step guides and structured code walkthroughs.
-- Discovered ChatGPT's ability to create well-structured and formatted technical workflow guides from unstructured descriptions.
 
 ## Model Problems
 
