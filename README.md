@@ -46,8 +46,11 @@ Separate pages include a [short tutorial][MemoryManagementDemo] and an [extended
 
 ## Ask ChatGPT to help you generate, debug, and improve prompts
 
-Since the relevance of ChatGPT responses substantially depend on the quality of prompts, and because ChatGPT seems to be good at  transformative and creative writing tasks, it appears to be a natural question to see if ChatGPT can improve its own prompts. The [file][MetaPromptingQnA] contains a short Q&A on prompt engineering. The [file][MetaPromptTemplate] contains a prompt template that can be used to improve other prompts. Finally, the [file][MetaPromptDemo] provides examples of using ChatGPT for generating and troubleshooting its prompts.
+Since the relevance of ChatGPT responses heavily depends on the quality of prompts, and given ChatGPT’s strength in transformative and creative writing tasks, it seems natural to explore whether ChatGPT can improve its own prompts. The following resources offer some insights and tools for this purpose:
 
+- **[Prompt Template][MetaPromptTemplate]**: A reusable template designed to refine and enhance prompts.
+- **[Q&A on Prompt Engineering][MetaPromptingQnA]**: A helpful guide to prompt design and optimization topics.
+- **[Demonstrations][MetaPromptDemo]**: Practical examples illustrating how ChatGPT can assist with generating and troubleshooting prompts.
 ## Writing assistance for efficient technical and business writing
 
 Both my work and hobbies involve technical and business writing. The primary goal of non-fiction readers is typically to minimize the time spent reading while maximizing the amount and completeness of relevant information retrieved. Consequently, the efficiency of non-fiction texts heavily depends on their accessibility and clarity.  
