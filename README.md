@@ -18,7 +18,7 @@ This repository is a work in progress. Although some development occurs in the `
 - Practiced active memory context management to enhance ChatGPT prompts.
 - Utilized guided meta-prompting to refine prompts for specific tasks.
 - Adapted style guides for Python, SQL, and VBA to improve code consistency and quality.
-- Generated Python classes, documentation, and tests from serialized data formats and plain language descriptions.
+- Generated Python classes, documentation, and tests from serialized data formats and plain English.
 - Analyzed semistructured files to identify patterns and infer structure.
 - Transformed sample data files and formats into structured blueprint descriptions.
 - Tested the interpretation of ambiguous input and data file formats with minimal context.
