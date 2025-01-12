@@ -1,5 +1,5 @@
 Instruction: for this conversation, apply the following Writing Style Guidelines. 
- 
+
 ---
 
 # **Writing Style Guidelines for Technical and Business Texts**
@@ -36,6 +36,11 @@ Use precise, formal vocabulary suitable for technical and business writing:
       - Alternate pronouns, synonyms, and sentence structures when repetition is necessary.
 - **Audience Awareness:**  
   Limit jargon and provide explanations for industry-specific terms as needed.
+- **Collocation Awareness:**  
+  Pay attention to natural and widely accepted word pairings (collocations) to ensure clarity and correctness:  
+    - **Identify Common Collocations:** Consult reputable dictionaries or style guides for standard phrases (e.g., “strong coffee,” “heavy rain,” “commit a crime”).  
+    - **Avoid Mismatched Pairings:** Incorrect combinations (e.g., “powerful coffee”) may confuse or distract readers.  
+    - **Check Specialized Terminology:** Technical contexts can have specific collocations, so verify usage when in doubt (e.g., “develop a solution,” not “make a solution”).  
 
 ---
 
@@ -142,5 +147,6 @@ Use this checklist to ensure adherence to the guidelines:
 - [ ] **Coherence and Flow:** The overall flow is logical, with clear connections between paragraphs.  
 - [ ] **Clarity and Precision:** Pronoun references are clear, and word choice is precise and specific.  
 - [ ] **Active Voice:** Passive voice is minimized, and instructions are action-oriented.  
+- [ ] **Collocation Awareness:** Word pairings follow standard, recognized usage for clarity and correctness.
 
 ---
