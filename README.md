@@ -13,11 +13,11 @@ This repository is a work in progress. Although some development occurs in the `
 
 ## Highlights of My Experiments
 
-- Developed prompt templates for revising technical text.
+- Developed [style][WritingStyleGuidelines] and [context][WritingContext] prompt templates for revising technical text.
 - Created step-by-step guides and structured code walkthroughs from plain text with minimal guidance.
-- Practiced active memory context management to enhance ChatGPT prompts.
-- Utilized guided meta-prompting to refine prompts for specific tasks.
-- Adapted style guides for Python, SQL, and VBA to improve code consistency and quality.
+- Practiced active [memory context management][MemoryManagementDemo] to enhance ChatGPT prompts.
+- Utilized guided [meta-prompting][MetaPromptDemo] to refine prompts for specific tasks.
+- Adapted style guides for [Python][], [SQL][], and [VBA][] to improve code consistency and quality.
 - Generated Python classes, documentation, and tests from serialized data formats and plain English.
 - Analyzed semistructured files to identify patterns and infer structure.
 - Transformed sample data files and formats into structured blueprint descriptions.
@@ -130,3 +130,6 @@ Graphics analysis: vector or raster - interpret serialized file by comparing wit
 [Netlist]: https://en.wikipedia.org/wiki/Netlist
 [LTspice]: https://en.wikipedia.org/wiki/LTspice
 [Netlist Parser]: https://chatgpt.com/share/676e4884-0c64-8004-9ab9-b5e5eb2e60f4
+[Python]: https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Code/Python/PythonStyleGuidelines.md
+[SQL]: https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Code/SQL/SQLStyleGuidelines.md
+[VBA]: https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Code/VBA/VBAStyleGuidelines.md
