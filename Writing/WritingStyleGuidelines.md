@@ -24,23 +24,25 @@ Use precise, formal vocabulary suitable for technical and business writing:
 - **Consistent Terminology:**  
   Maintain consistency in the use of technical or specialized terms.
 - **Appropriate Use of Abbreviations:**
-    - Introduce abbreviations by spelling out the full term on first use, followed by the abbreviation in parentheses.  
-    - Use abbreviations consistently throughout the text.
-    - Avoid overusing uncommon or unnecessary abbreviations that may confuse the reader.
-    - Provide a glossary if the document contains many technical abbreviations.
+      - Introduce abbreviations by spelling out the full term on first use, followed by the abbreviation in parentheses.  
+      - Use abbreviations consistently throughout the text.
+      - Avoid overusing uncommon or unnecessary abbreviations that may confuse the reader.
+      - Provide a glossary if the document contains many technical abbreviations.
 - **Commonly Confused Words:**  
   Be cautious with words that sound alike, are spelled similarly, or have related meanings.
+- **Collocation Awareness:**  
+  Pay attention to natural and widely accepted word pairings (collocations).
+      - Verb + Noun (e.g., commit a crime)
+      - Adjective + Noun (e.g., great success)
+      - Noun + Noun (e.g., error correction)
+      - Preposition + Noun (e.g., interested in)
+      - Adverb + Verb (e.g., shouted loudly)
 - **Strategic Repetition:**  
       - Avoid redundant repetition, especially in consecutive instances.
       - Use repetition purposefully to emphasize or clarify key points.
       - Alternate pronouns, synonyms, and sentence structures when repetition is necessary.
 - **Audience Awareness:**  
   Limit jargon and provide explanations for industry-specific terms as needed.
-- **Collocation Awareness:**  
-  Pay attention to natural and widely accepted word pairings (collocations) to ensure clarity and correctness:  
-    - **Identify Common Collocations:** Consult reputable dictionaries or style guides for standard phrases (e.g., “strong coffee,” “heavy rain,” “commit a crime”).  
-    - **Avoid Mismatched Pairings:** Incorrect combinations (e.g., “powerful coffee”) may confuse or distract readers.  
-    - **Check Specialized Terminology:** Technical contexts can have specific collocations, so verify usage when in doubt (e.g., “develop a solution,” not “make a solution”).  
 
 ---
 
@@ -123,7 +125,7 @@ Prioritize clarity and precision:
 - **Active Voice:**  
   Prefer active voice for directness and clarity.
 - **Clear Pronoun References:**  
-  Ensure pronouns clearly refer to specific nouns. Use *this/that/these/those* with appropriate nouns for clarity.
+  Ensure pronouns clearly refer to specific nouns (avoid vague pronoun references). Use *this/that/these/those* with appropriate nouns for clarity.
 - **Specific Word Choice:**  
   Use precise nouns, verbs, adjectives, and adverbs.
 - **Balanced Synonym Use:**  
@@ -132,6 +134,10 @@ Prioritize clarity and precision:
   Focus on what to do rather than what to avoid.  
       - Action-oriented instructions are typically more direct.  
       - Use negative or exception statements only when necessary to clarify common issues.  
+- **Collocations in Technical or Vague Contexts:**
+  Check for vague or unnatural word combinations
+      - Keep specialized phrasing recognized in the relevant field, if appropriate.  
+      - Opt for clearer, more conventional word choices whenever possible.
 
 ---
 
