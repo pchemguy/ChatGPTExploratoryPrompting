@@ -93,6 +93,8 @@ Develop coherent and focused paragraphs:
   Aim for paragraphs between three sentences and half a page.
 - **Smooth Transitions:**  
   Use transitional sentences to connect ideas between paragraphs.
+- **Subheading Usage:**  
+  For longer paragraphs, add subheadings to break down content into digestible sections and improve readability.
 
 ---
 
@@ -102,9 +104,11 @@ Ensure a smooth, logical progression of ideas:
 - **Transition Words:**  
   Use linking words (e.g., *however*, *therefore*, *in addition*) to guide readers through the text.
 - **Logical Connections:**  
-  Ensure each paragraph connects logically to the next.
+  Ensure each paragraph connects logically to the next. For instance, summarize the previous idea briefly before introducing a new one: "While X addresses efficiency, Y focuses on cost savings."
 - **Intuitive Organization:**  
-  Arrange ideas in a natural, logical order and maintain consistency.
+  Arrange ideas in a natural, logical order and maintain consistency. Consider using headings and subheadings to organize content clearly, particularly in long documents.
+- **Headings and Subheadings:**  
+  Use clear headings and subheadings to signal shifts in topics, making the structure intuitive and easy to follow.
 
 ---
 
