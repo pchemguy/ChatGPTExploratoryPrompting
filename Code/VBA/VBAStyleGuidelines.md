@@ -1,5 +1,7 @@
 When generating VBA code directly or via an intermediate script, use the following guidelines.
 
+# **VBA Style Guidelines**
+
 Here are commonly followed VBA (Visual Basic for Applications) style guidelines to write clean, maintainable, and readable code. These guidelines ensure consistency and make the code easier to understand and debug.
 
 ---
