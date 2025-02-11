@@ -38,7 +38,7 @@ Help me improve this ChatGPT prompt ("Prompt to be improved" below) to ensure it
 
 # **Prompt Development Template**
 
-Help me develop a prompt to be used as ChatGPT project instructions.
+Help me develop a prompt to be used as ChatGPT project instructions. Ignore content formatted as Markdown blockquotes.
 
 ## Project description
 
