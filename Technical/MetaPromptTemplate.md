@@ -42,8 +42,9 @@ Help me develop a prompt used as ChatGPT project instructions.
 
 ## Project description
 
-> NOTE
-> Note to the developer: replace content of this section with appropriate content 
+
+> [!Note]
+> Note to the developer: replace content of this section with appropriate content and remove this note.
 
 The target project focuses on development of a python package. The project should use "Python Code Style Guidelines" defined in persistent memory.
 
