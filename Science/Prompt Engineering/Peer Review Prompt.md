@@ -116,10 +116,3 @@ Provide a **structured conclusion** with one of the following recommendations:
 **Justify your recommendation with a concise summary of key strengths and weaknesses.**  
 
 ---
-
-#### **Embedded Prompt Engineering Optimizations for Reasoning Models**  
-This prompt is designed for deep reasoning models (GPT-4-O1, GPT-4-O3, Deep Research) by embedding:  
-- **Stepwise Logical Breakdown**: Each evaluation criterion follows a structured sequence.  
-- **Justification Requirement**: Every critique must include reasoning and alternative solutions.  
-- **Mathematical & Spectral Rigor**: Explicitly prompts verification of equations, spectral analyses, and fitting models.  
-- **Domain-Specific Optimization**: Encourages the model to leverage expert-level knowledge in spectroscopy and physical chemistry.  
