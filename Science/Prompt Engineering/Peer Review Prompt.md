@@ -103,31 +103,8 @@ This prompt is designed for deep reasoning models (GPT-4-O1, GPT-4-O3, Deep Rese
 - **Mathematical & Spectral Rigor**: Explicitly prompts verification of equations, spectral analyses, and fitting models.  
 - **Domain-Specific Optimization**: Encourages the model to leverage expert-level knowledge in spectroscopy and physical chemistry.  
 
----
-# V1
-
-Help me craft a structured detailed ChatGPT prompt template for reasoning models (O1, O3, Deep Research). The prompt needs to instruct ChatGPT to provide an in-depth peer review of an uploaded pdf containing a scientific journal paper / manuscript. The focus of reported research findings is in physical chemistry / spectroscopy.
-
-Suggest structure prompt structure and content. In addition to any suggestions you may have, also include the following:
-- Template section that may instruct ChatGPT to focus on specific paper sections, report aspects;
-- Structure/framework that encourages the user to provide explicit instructions to facilitate the Chain-of-Thought process;
-- Instructions to extract as much quantitative and qualitative information as possible from texts, tables, all sections, supporting information
-- Instructions to critically evaluate all extracted information for consistency, 
 
 
 
-Expand the "Logical Consistency & Cause-Effect Reasoning":
-Include more specific references to logic deficiencies, such as false/unsound/unsubstantiated assumptions, correlation vs. cause-effect interpretation, etc. 
 
-
-Expand the "Research & Academic Integrity" section.
-
-I want to include another subsection (suggest its title) that should call for the following:
-
-1) High-level validity/sanity checks
-- Is the core research question/problem scientifically sound? Would a scientist with relevant background/expertise consider them an appropriate scientific target (for example, targeting a problem necessitating the use of the Philosopher's Stone or violation of laws of thermodynamics is probably not appropriate for a STEM paper).
-- Does it make scientific and/or engineering sense to even attempt to apply proposed methodolогy / approaches to solving the core research question/problem? Do key findings violate any fundamental laws, assuming that the proposed methodolогy / approaches were to solve the core research question/problem?
-2) Consistency checks
- - Extract as much quantitative and qualitative data as possible from text, tables supporting information; also use inference to extract semiquantitative information. Consider what kind of consistency checks can be be performed on the extracted data, such as mass and energy balances, composition checks, unusual data trends (such as non-monotonic property changes where monotonic changes are expected based on the nature of governing chemistry or physics laws) 
-What else?
 -
