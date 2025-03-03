@@ -105,39 +105,40 @@ For each section, **critically analyze and justify your reasoning** with specifi
 - Clearly describe any simplifications used and estimate the **magnitude of potential error introduced**, ensuring it remains within acceptable scientific margins.
 - If results remain inconsistent even with generous assumptions, flag potential **methodological issues or data inconsistencies**.
 ##### **5. Scrutiny of Striking, Impressive, or Highly Unexpected Findings**
-- Identify any **findings that appear revolutionary, disruptive, highly unexpected, or too good to be true.** 
-    - Are the reported results **far beyond** what would typically be expected based on existing literature?
-    - Do the findings appear to **challenge or overturn well-established principles** in the field?
-    - Are they **unusually precise, exceptionally high-performance, or claim near-perfect efficiency/selectivity/yield**?
-    - Is the result **orders of magnitude beyond conventional limits** (e.g., unexpectedly high quantum yield, anomalously fast reaction rates, extreme spectral shifts)?
+
+- **Identify any findings that appear revolutionary, disruptive, highly unexpected, or too good to be true.**
+    - Do the reported results **challenge fundamental principles** or go significantly beyond known physical, chemical, or engineering limits?
+    - Are they **exceptionally high-performance, claim near-perfect efficiency/selectivity/yield, or exceed conventional expectations by orders of magnitude**?
 - **Special concern: Outstanding findings in conventional, well-researched areas.**
-    - If the scientific question or methodology used is **routine, well-established, or extensively studied**, how plausible is it that such an overlooked breakthrough was discovered?
-    - If the field has seen **decades of research without similar breakthroughs**, is the proposed discovery realistically justified?
-    - Would a **similar finding** have likely been noticed by prior researchers using comparable methods?
+    - If the scientific question or methodology is **routine, well-established, or extensively studied**, why have such findings been overlooked until now?
+    - Given the volume of prior research in this area, would a **similar breakthrough have likely been observed previously** using comparable methodologies?
+    - Have the authors **adequately addressed why previous research efforts failed to discover these findings**?
+- **Compelling Explanation for Why These Results Were Previously Overlooked**
+    - Do the authors provide a **convincing rationale** for why previous researchers, despite extensive studies, did not observe such effects?
+    - Do they clearly describe the **key differences between their approach and standard methodologies/best practices**, and why such differences should lead to these novel results?
+    - Are these modifications to experimental setups or computational models **scientifically justified**, or are they **arbitrary, vague, or insufficiently detailed**?
+    - Is there a **direct, well-supported causal link between these changes and the reported improvements**, or do they rely on speculative reasoning?
+    - Have they ruled out **alternative sources of discrepancies**, such as systematic errors, data misinterpretation, or unintentional bias?
 - **Consistency with Governing Laws & Established Scientific Behavior**
-    - Are the findings **consistent with underlying laws of physics, chemistry, thermodynamics, and reaction kinetics**?
-    - Are they in agreement with **established governing equations, known reaction mechanisms, and quantitative/semiquantitative/qualitative trends**?
-    - Do they **violate any fundamental constraints**, such as:
-        - **Perpetual motion, violation of the Second Law of Thermodynamics, energy conservation violations.**
-        - **Impossibly high selectivity, efficiency, or yield beyond known theoretical limits.**
-        - **Unexpected, unexplained symmetry breaking or violation of selection rules in spectroscopy.**
+    - Do the findings **contradict established models, governing equations, or empirical observations**?
+    - Are any reported **efficiencies, selectivities, or reaction rates beyond theoretical limits**?
+    - Are findings **aligned with expected spectral properties, thermodynamic constraints, reaction mechanisms, or computational benchmarks**?
 - **Comparison with Predictive Models, Rules of Thumb & Established Scientific Wisdom**
-    - Does the reported data **contradict educated predictions**, empirical rules, or well-validated approximations?
-    - Are they **unexpected based on rules of thumb**, such as:
-        - Pauling’s electronegativity trends, periodic table chemical behavior.
-        - Bond length and dissociation energy estimates, vibrational mode assignments.
-        - Reaction rate trends based on steric/electronic effects, transition state stability.
-        - Expected mass balance constraints in separation or purification processes.
-    - Are the claims **substantially different from well-reported literature values** for similar systems without a compelling, experimentally supported reason?
+    - Are reported results **unexpected based on empirical trends, heuristic models, or known physical laws**?
+    - Do they adhere to fundamental **thermodynamic, kinetic, or quantum mechanical principles**, or are they suggesting an unexplained anomaly?
 - **Potential Signs of Research Misconduct or Error**
-    - If an extreme or groundbreaking result is presented, **is it sufficiently supported by independent replications, rigorous control experiments, and statistical validation**?
-    - Is the extraordinary claim based on **just a single dataset or lacks corroboration from orthogonal techniques**?
-    - Are alternative explanations (e.g., experimental artifacts, systematic errors, misinterpretation of signals) sufficiently ruled out?
-    - If numerical values appear **suspiciously ideal, free of expected experimental scatter, or overly smooth**, could this suggest fabrication or selective data reporting?
+    - Are the experimental or computational datasets **excessively smooth, free of expected noise, or showing unexplained regularity**?
+    - Is the extraordinary claim based on **a single dataset or lacks corroboration from orthogonal techniques**?
+    - Have the authors performed **sufficient validation tests, independent replications, or statistical analysis to support their claims**?
+- **Consideration of Commercial & Industrial Relevance**
+    - Do the reported results have **established or potential commercial applications** in **high-value markets** (e.g., energy storage, pharmaceuticals, semiconductors, catalysis, materials science, or quantum computing)?
+    - If the findings have **high industrial or economic impact**, why has **no private R&D center, corporate lab, or applied research group identified similar results**?
+    - In well-funded, high-stakes fields where even incremental improvements drive profit, **why would such a discovery remain hidden until now**?
+    - Are the reported performance improvements **realistically attainable, or do they appear exaggerated relative to industry-standard benchmarks**?
 - **Final Sanity Check: Extraordinary Claims Require Extraordinary Evidence**
-    - Are the authors providing **strong enough experimental/theoretical support to justify the magnitude of their claims**?
-    - Would a scientist familiar with this field **reasonably expect** such a result to be possible?
-    - If a similarly striking claim appeared in another paper, would it **immediately raise skepticism or require replication by an independent group**?
+    - Have the authors provided a **robust, detailed explanation of why their findings deviate from established scientific understanding**?
+    - If this study were independently replicated, would the same results be expected based on the described methodology?
+    - Is there a **high likelihood that these findings could be an artifact of experimental design, data processing, selective reporting, or intentional data fabrication**?
 
 #### **F. Scientific Validity & Internal Consistency Checks**  
 ##### **1. High-Level Validity / Sanity Checks**  
