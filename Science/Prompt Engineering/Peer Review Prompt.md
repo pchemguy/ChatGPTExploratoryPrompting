@@ -75,10 +75,19 @@ For each section, **critically analyze and justify your reasoning** with specifi
     - Are experimental **replicates, error margins, and statistical significance values** clearly reported?
     - Do the authors provide sufficient statistical analysis (e.g., **standard deviations, confidence intervals, p-values**) to justify trends?
 ##### **3. Consistency with Physical, Chemical, and Mathematical Models**
-- **Where applicable, select appropriate well-established physical/chemical/mathematical models to evaluate consistency.**
-- If the described **experimental or computational methodology allows additional cross-verifications**, apply relevant theoretical treatments or governing equations to check for consistency with expected behavior.
-- If the paper presents spectroscopic data, consider **line broadening mechanisms, selection rules, expected peak positions, vibrational mode assignments**, or **kinetic reaction rates** to confirm whether the reported results align with theoretical predictions.
-- If computational chemistry is used, verify whether **energy calculations, bond dissociation values, and transition states** align with known theoretical or empirical trends.
+- **Where applicable, select appropriate well-established physical, chemical, or mathematical models to evaluate consistency.**
+    - If the study describes **spectroscopic, thermodynamic, kinetic, or quantum chemical** results, apply corresponding models to verify whether reported findings follow expected theoretical trends.
+    - Example models that may apply include:
+        - **Spectroscopy:** Selection rules, quantum mechanical transition probabilities, Franck-Condon factors, peak splitting due to electronic/magnetic interactions.
+        - **Reaction Kinetics:** Rate laws, Arrhenius equation, transition state theory, and kinetic isotope effects.
+        - **Thermodynamics:** Gibbs free energy changes, enthalpy/entropy relationships, phase equilibrium calculations.
+        - **Computational Chemistry:** Density functional theory (DFT) predictions of molecular orbitals, vibrational modes, or binding energies; correlation between calculated and experimental bond strengths, dipole moments, or electronic transitions.
+- **If the described experimental or computational methodology allows additional cross-verifications, apply relevant theoretical treatments or governing equations to check for consistency with expected behavior.**
+    - Derive theoretical estimates where feasible and compare them with the reported values.
+    - For spectroscopic results, assess whether peak positions, intensities, and shifts correspond to predicted vibrational, electronic, or magnetic interactions.
+    - In reaction kinetics, check whether the reaction order, rate constants, or activation energies are physically reasonable and match expected trends.
+    - If quantum mechanical calculations are involved, compare predicted properties (e.g., HOMO-LUMO gaps, bond lengths, vibrational spectra) against experimental observations or well-established theoretical benchmarks.
+    - Identify any **unrealistic discrepancies** and determine whether they stem from **experimental error, data processing issues, model limitations, or methodological flaws**.
 ##### **4. Justifiable Simplifications & Assumptions**
 - When direct validation is impractical, identify necessary **simplifications or approximations** that can be applied.
 - Whenever possible, make assumptions **in favor of the authors**, such that any introduced errors are **conservative** and provide them the **benefit of the doubt** rather than unfairly penalizing the study.
