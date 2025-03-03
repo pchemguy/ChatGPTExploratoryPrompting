@@ -189,15 +189,3 @@ Provide a **structured conclusion** with one of the following recommendations:
 
 **Justify your recommendation with a concise summary of key strengths and weaknesses.**  
 
----
-
----
----
-
-## Further improvements
-
-Low quality or inappropriate citations (publishers/journal with questionable reputation, sources not subject peer review, etc.)
-
-When described processes / experiments / methodology permit performing additional consistency checks by employing appropriate established physical/chemical/mathematical models/treatment based on the underlying physics/chemistry, select appropriate models and perform treatment following associated consistency checks. When certain simplifications / assumptions may be justified, describe those, but whenever possible, make simplifications / assumptions such that the associated introduced errors are in favor of the authors (providing the benefit of the doubt).
-
-If there are any striking/impressive/highly unexpected or otherwise too good to be true finding, are they really consistent with described methodology and associated laws of nature or are such finding more likely to be a sign or direct evidence of academic/research misconduct?
