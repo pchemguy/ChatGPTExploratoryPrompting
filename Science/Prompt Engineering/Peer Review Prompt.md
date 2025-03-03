@@ -60,17 +60,30 @@ For each section, **critically analyze and justify your reasoning** with specifi
 ##### **1. Plagiarism & Originality Check**
 - Are there indications of **textual plagiarism** from previous works?
 - Do key findings appear to be **original, properly cited, and not self-plagiarized** from the authors' previous publications?
-
-- **Data Authenticity & Manipulation**:  
-  - Are **sudden, unexplained data trends, overly smooth spectra, or missing raw data** present?  
-  - Are experimental **replicates, error margins, and statistical significance values** reported transparently?  
-  - Are spectra or images manipulated (e.g., artificial noise removal, selective smoothing, or copy-pasting of spectral features)?  
-- **Reproducibility & Transparency**:  
-  - Is the research methodology detailed enough for **independent replication**?  
-  - Are **computational methods (e.g., DFT parameters, software versions, initial conditions)** sufficiently described?  
-- **Conflicts of Interest & Ethical Considerations**:  
-  - Does the paper **declare conflicts of interest** and funding sources appropriately?  
-  - If applicable, do the authors **disclose ethical approvals** (e.g., for biological samples, nanomaterials, or human/environmental safety considerations)?  
+##### **2. Data Authenticity & Manipulation**
+- **Data Completeness & Transparency**:
+    - Are all reported **experimental or computational data fully documented** with appropriate metadata?
+    - Are key results supported by **raw or supplementary data**, or do missing data points raise concerns?
+- **Data Fabrication & Manipulation Checks**:
+      - Are **sudden, unexplained data trends, overly smooth spectra, or missing raw data** present?  
+      - Are experimental **replicates, error margins, and statistical significance values** reported transparently?  
+      - Are spectra or images manipulated (e.g., artificial noise removal, selective smoothing, or copy-pasting of spectral features)?  
+    - Are there **unexpectedly smooth or artificially regular trends** in the data that could indicate improper post-processing?
+    - Do spectral graphs, peak patterns, or reaction kinetics exhibit **unusual noise levels, unrealistic smoothness, or copy-pasting artifacts**?
+    - Are spectra or numerical tables potentially duplicated or manipulated (e.g., improper baseline corrections, shifts without physical justification, or missing outlier discussions)?
+- **Statistical & Experimental Variability**:
+    - Are experimental **replicates, error margins, and statistical significance values** clearly reported?
+    - Do the authors provide sufficient statistical analysis (e.g., **standard deviations, confidence intervals, p-values**) to justify trends?
+##### **3. Consistency with Physical, Chemical, and Mathematical Models**
+- **Where applicable, select appropriate well-established physical/chemical/mathematical models to evaluate consistency.**
+- If the described **experimental or computational methodology allows additional cross-verifications**, apply relevant theoretical treatments or governing equations to check for consistency with expected behavior.
+- If the paper presents spectroscopic data, consider **line broadening mechanisms, selection rules, expected peak positions, vibrational mode assignments**, or **kinetic reaction rates** to confirm whether the reported results align with theoretical predictions.
+- If computational chemistry is used, verify whether **energy calculations, bond dissociation values, and transition states** align with known theoretical or empirical trends.
+##### **4. Justifiable Simplifications & Assumptions**
+- When direct validation is impractical, identify necessary **simplifications or approximations** that can be applied.
+- Whenever possible, make assumptions **in favor of the authors**, such that any introduced errors are **conservative** and provide them the **benefit of the doubt** rather than unfairly penalizing the study.
+- Clearly describe any simplifications used and estimate the **magnitude of potential error introduced**, ensuring it remains within acceptable scientific margins.
+- If results remain inconsistent even with generous assumptions, flag potential **methodological issues or data inconsistencies**.
 
 #### **F. Scientific Validity & Internal Consistency Checks**  
 ##### **1. High-Level Validity / Sanity Checks**  
@@ -79,7 +92,6 @@ For each section, **critically analyze and justify your reasoning** with specifi
   - Does it involve unrealistic premises (e.g., **violating thermodynamics, relying on non-existent materials**)?  
 - Does it make sense to apply the proposed **methodology/approach** to solve this problem?  
 - Assuming the methodology works as described, **do the key findings violate fundamental scientific laws**?  
-
 ##### **2. Data Consistency Checks**  
 - Extract **quantitative and qualitative data** from the text, tables, and supporting information.  
 - Perform **cross-checks** on extracted data:
@@ -87,6 +99,12 @@ For each section, **critically analyze and justify your reasoning** with specifi
   - **Composition Checks**: Do stoichiometric, molar, or spectral data align with the reported experimental conditions?  
   - **Unexpected Trends**: Are there **non-monotonic trends** where physics or chemistry dictates monotonic behavior?  
   - **Internal Conflicts**: Do reported reaction rates, spectral shifts, or binding energies contradict known principles?  
+##### **3. Reproducibility & Transparency**  
+  - Is the research methodology detailed enough for **independent replication**?  
+  - Are **computational methods (e.g., DFT parameters, software versions, initial conditions)** sufficiently described?  
+##### **4. Conflicts of Interest & Ethical Considerations**  
+  - Does the paper **declare conflicts of interest** and funding sources appropriately?  
+  - If applicable, do the authors **disclose ethical approvals** (e.g., for biological samples, nanomaterials, or human/environmental safety considerations)?  
 
 #### **G. Clarity, Structure & Presentation**  
 - Is the manuscript **logically organized** with a clear flow of ideas?  
