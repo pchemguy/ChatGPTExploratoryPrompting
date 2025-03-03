@@ -24,16 +24,16 @@ Your review should follow the **standards of high-impact journals** such as **Th
 
 ---
 
-### **2. Critical Evaluation Criteria**  
+#### **2. Critical Evaluation Criteria**  
 
 For each section, **critically analyze and justify your reasoning** with specific examples.  
 
-#### **A. Scientific Significance & Novelty**  
+##### **A. Scientific Significance & Novelty**  
 - Does the research **address a relevant problem** in physical chemistry or spectroscopy?  
 - How does it contribute to existing knowledge? Is the novelty well-articulated?  
 - Are the **theoretical basis and prior research sufficiently referenced** to justify the study’s importance?  
 
-#### **B. Methodological Rigor & Experimental Validity**  
+##### **B. Methodological Rigor & Experimental Validity**  
 - Are the experimental methods, theoretical models, and computational approaches **rigorous, reproducible, and appropriate** for the research question?  
 - Assess the **spectroscopic techniques** used:
   - Are **instrumental parameters (e.g., resolution, scan range, acquisition time, baselines, signal-to-noise ratio)** properly optimized?  
@@ -41,13 +41,13 @@ For each section, **critically analyze and justify your reasoning** with specifi
   - Are any **control experiments, calibration steps, or validation tests** missing?  
 - Evaluate whether **systematic errors, spectral artifacts, or confounding variables** are addressed.  
 
-#### **C. Data Analysis & Interpretation**  
+##### **C. Data Analysis & Interpretation**  
 - Are **spectral assignments, peak deconvolutions, and chemical shifts** correctly interpreted?  
 - Are **band positions, transition intensities, and vibrational modes** assigned with theoretical or experimental justification?  
 - Are any **fitting models, regression analyses, or computational predictions** validated with proper error analysis?  
 - If applicable, does the study properly compare findings with **existing experimental data, theoretical models, or literature values**?  
 
-#### **D. Logical Consistency & Cause-Effect Reasoning**  
+##### **D. Logical Consistency & Cause-Effect Reasoning**  
 - Are the **hypothesis, methodology, results, and conclusions** logically connected?  
 - Identify **logical deficiencies**, such as:
   - **False, unsound, or unsubstantiated assumptions** (e.g., assuming a trend without statistical backing).  
@@ -56,11 +56,11 @@ For each section, **critically analyze and justify your reasoning** with specifi
   - **Circular reasoning**, where conclusions rest on premises that assume their validity.  
 - Identify alternative interpretations if **conclusions seem speculative or unsupported by data**.  
 
-#### **E. Research & Academic Integrity**  
-##### **1. Plagiarism & Originality Check**
+##### **E. Research & Academic Integrity**  
+###### **1. Plagiarism & Originality Check**
 - Are there indications of **textual plagiarism** from previous works?
 - Do key findings appear to be **original, properly cited, and not self-plagiarized** from the authors' previous publications?
-##### **2. Data Authenticity & Manipulation**
+###### **2. Data Authenticity & Manipulation**
 - **Data Completeness & Transparency**:
     - Are all reported **experimental or computational data fully documented** with appropriate metadata?
     - Are key results supported by **raw or supplementary data**, or do missing data points raise concerns?
@@ -74,7 +74,7 @@ For each section, **critically analyze and justify your reasoning** with specifi
 - **Statistical & Experimental Variability**:
     - Are experimental **replicates, error margins, and statistical significance values** clearly reported?
     - Do the authors provide sufficient statistical analysis (e.g., **standard deviations, confidence intervals, p-values**) to justify trends?
-##### **3. Consistency with Physical, Chemical, and Mathematical Models**
+###### **3. Consistency with Physical, Chemical, and Mathematical Models**
 - **Where applicable, select appropriate well-established physical, chemical, or mathematical models to evaluate consistency.**
     - If the study involves **spectroscopy, thermodynamics, reaction kinetics, quantum chemistry, or separation processes**, apply the corresponding models to assess whether reported findings align with established theoretical predictions.
     - **Example models that may apply:**
@@ -99,12 +99,12 @@ For each section, **critically analyze and justify your reasoning** with specifi
     - **For computational chemistry:**
         - Compare **DFT-calculated vibrational spectra, molecular orbitals, dipole moments, and electronic transitions** with experimental spectroscopic results.
         - Identify whether discrepancies are due to **basis set limitations, functional choice, or missing environmental effects** (e.g., solvent interactions, temperature corrections).
-##### **4. Justifiable Simplifications & Assumptions**
+###### **4. Justifiable Simplifications & Assumptions**
 - When direct validation is impractical, identify necessary **simplifications or approximations** that can be applied.
 - Whenever possible, make assumptions **in favor of the authors**, such that any introduced errors are **conservative** and provide them the **benefit of the doubt** rather than unfairly penalizing the study.
 - Clearly describe any simplifications used and estimate the **magnitude of potential error introduced**, ensuring it remains within acceptable scientific margins.
 - If results remain inconsistent even with generous assumptions, flag potential **methodological issues or data inconsistencies**.
-##### **5. Scrutiny of Striking, Impressive, or Highly Unexpected Findings**
+###### **5. Scrutiny of Striking, Impressive, or Highly Unexpected Findings**
 
 - **Identify any findings that appear revolutionary, disruptive, highly unexpected, or too good to be true.**
     - Do the reported results **challenge fundamental principles** or go significantly beyond known physical, chemical, or engineering limits?
@@ -140,48 +140,48 @@ For each section, **critically analyze and justify your reasoning** with specifi
     - If this study were independently replicated, would the same results be expected based on the described methodology?
     - Is there a **high likelihood that these findings could be an artifact of experimental design, data processing, selective reporting, or intentional data fabrication**?
 
-#### **F. Scientific Validity & Internal Consistency Checks**  
-##### **1. High-Level Validity / Sanity Checks**  
+##### **F. Scientific Validity & Internal Consistency Checks**  
+###### **1. High-Level Validity / Sanity Checks**  
 - Is the **core research question scientifically sound**?  
   - Would an expert in the field consider it an appropriate scientific target?  
   - Does it involve unrealistic premises (e.g., **violating thermodynamics, relying on non-existent materials**)?  
 - Does it make sense to apply the proposed **methodology/approach** to solve this problem?  
 - Assuming the methodology works as described, **do the key findings violate fundamental scientific laws**?  
-##### **2. Data Consistency Checks**  
+###### **2. Data Consistency Checks**  
 - Extract **quantitative and qualitative data** from the text, tables, and supporting information.  
 - Perform **cross-checks** on extracted data:
   - **Mass & Energy Balances**: Do material or energy inputs match expected outputs?  
   - **Composition Checks**: Do stoichiometric, molar, or spectral data align with the reported experimental conditions?  
   - **Unexpected Trends**: Are there **non-monotonic trends** where physics or chemistry dictates monotonic behavior?  
   - **Internal Conflicts**: Do reported reaction rates, spectral shifts, or binding energies contradict known principles?  
-##### **3. Reproducibility & Transparency**  
+###### **3. Reproducibility & Transparency**  
   - Is the research methodology detailed enough for **independent replication**?  
   - Are **computational methods (e.g., DFT parameters, software versions, initial conditions)** sufficiently described?  
-##### **4. Conflicts of Interest & Ethical Considerations**  
+###### **4. Conflicts of Interest & Ethical Considerations**  
   - Does the paper **declare conflicts of interest** and funding sources appropriately?  
   - If applicable, do the authors **disclose ethical approvals** (e.g., for biological samples, nanomaterials, or human/environmental safety considerations)?  
 
-#### **G. Clarity, Structure & Presentation**  
+##### **G. Clarity, Structure & Presentation**  
 - Is the manuscript **logically organized** with a clear flow of ideas?  
 - Are the **figures, tables, and spectra clearly labeled and annotated** (e.g., axes, units, baselines)?  
 - Identify **ambiguous sentences, excessive jargon, or redundant sections** that could be improved.  
 - Suggest **concise rewordings** for clarity without losing scientific precision.  
 
-#### **H. References & Citation Accuracy**  
+##### **H. References & Citation Accuracy**  
 - Are all **key references cited**, including **seminal and recent papers**?  
 - Are **theoretical models and spectral interpretations backed by literature**?  
 - Identify any **missing citations or incorrect attributions**.  
 
 ---
 
-### **3. Detailed Feedback & Constructive Suggestions**  
+#### **3. Detailed Feedback & Constructive Suggestions**  
 - Highlight **specific weaknesses** and provide **actionable recommendations** to improve methodology, analysis, or clarity.  
 - Suggest additional **experiments, controls, spectral analyses, or computational checks** that could strengthen the study.  
 - Recommend ways to **enhance the discussion, remove speculation, or improve logical reasoning**.  
 
 ---
 
-### **4. Final Recommendation**  
+#### **4. Final Recommendation**  
 Provide a **structured conclusion** with one of the following recommendations:  
 1. **Accept with Minor Revisions** – The paper is well-prepared and scientifically sound, requiring only minor clarifications or formatting improvements.  
 2. **Major Revisions Required** – The study has merit but requires substantial improvements in methodology, analysis, or discussion.  
