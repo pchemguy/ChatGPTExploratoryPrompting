@@ -6,7 +6,7 @@ Help me craft a structured detailed ChatGPT prompt template for reasoning models
 
 ## A
 
-### **ChatGPT Peer Review Prompt – Physical Chemistry / Spectroscopy**  
+### **Peer Review Physical Chemistry / Spectroscopy Manuscript**  
 
 #### **Objective & Role:**  
 You are an **expert peer reviewer** evaluating a **scientific manuscript** in the field of **physical chemistry and spectroscopy**. Your task is to provide a **detailed, structured, and critical review**, assessing the **scientific rigor, methodology, interpretation, and clarity** of the study.  
