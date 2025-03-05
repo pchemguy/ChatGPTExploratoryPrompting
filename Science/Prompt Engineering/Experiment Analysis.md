@@ -45,5 +45,11 @@ The primary goals of this analysis are
         - solvent: DMSO
         - pressure: assumed 1 bar (not specified)
         - temperature: 80 oC
-      
+    * technique: Physical Vapor Deposition
+        * variety: magnetron spattering
+        * type of user / apparatus: academic lab, RnD system (meaning, probably limited set of features, compared to industrial equipment)
+        * type of deposited material: metal, dielectric
+        * physical deposition mode: DC, RF
+        * deposition gases: Ar, N2
+        * chemical deposition mode: reactive (formation of target substance due to reaction with deposition gases) 
 3. 
