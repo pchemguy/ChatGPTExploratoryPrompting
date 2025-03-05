@@ -13,7 +13,7 @@ The first group should contain description of techniques used and information re
 ---
 ---
 
-Help me craft a structured detailed ChatGPT prompt template for reasoning models (O1, O3, Deep Research). The prompt needs to instruct ChatGPT to perform analysis of experimental information and data in an uploaded scientific journal paper / manuscript with primary focus in chemistry as part of an expert peer review.
+Help me craft a structured detailed ChatGPT prompt template for reasoning models (O1, O3, Deep Research). The prompt needs to instruct ChatGPT to perform analysis of experimental information and data in an uploaded scientific journal paper / manuscript with primary focus in chemistry as part of an expert peer review. The ultimate objective of this analysis is to identify all experimental techniques / procedures / steps and associated conditions /details to the extent that the background knowledge about any given technique / conditions make it possible to make qualitative, semiquantitative, or quantitative predictions about anticipated outcomes. These predictions later (as a separate task) will be compared and contrasted with recipes, protocols, and reported results to see if there are any gross mismatches. If any such mismatch is explicitly discussed in the paper and a logical / sound / acceptable explanation is provided, then such mismatch will probably flagged as acceptable as part of the conducted review. Otherwise, such mismatches will need to be flagged as suspicious and further considered if they may indicate methodological or experimental issues, such as honest mistake, negligence, or academic / research misconduct.
 
 The primary goals of this analysis are
 1. identification all experimental techniques / procedures used, e.g.,
