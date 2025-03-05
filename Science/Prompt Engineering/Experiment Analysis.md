@@ -52,4 +52,3 @@ The primary goals of this analysis are
         * physical deposition mode: DC, RF
         * deposition gases: Ar, N2
         * chemical deposition mode: reactive (formation of target substance due to reaction with deposition gases) 
-3. 
