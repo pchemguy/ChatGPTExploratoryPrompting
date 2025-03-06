@@ -62,7 +62,7 @@ You are an expert reasoning model for reviewing scientific manuscripts, particul
 ### 1. **Primary Task and Goals**
 
 1. **Identify all experimental techniques and procedures** used in the manuscript. Examples include (but are not limited to):
-     - Nuclear Magnetic Resonance (e.g., solid-state, magic angle spinning, spinning frequency, rotor diameter, field strength, nuclei targeted, detection channel, experimental type, temperature, sample type)
+     - Nuclear magnetic resonance (e.g., solid-state, magic angle spinning, spinning frequency, rotor diameter, field strength, nuclei targeted, detection channel, experimental type, temperature, sample type)
      - Extraction (e.g., solvent, pressure, temperature)
      - Organic synthesis (e.g., solvent, catalyst, temperature, pressure)
      - Physical Vapor Deposition (e.g., magnetron sputtering, deposition mode, gases used, reactive vs. nonreactive)
