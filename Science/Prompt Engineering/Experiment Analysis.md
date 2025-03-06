@@ -84,6 +84,11 @@ Organize your answer into clear sections or bullet points:
 1. **List of Identified Techniques/Procedures**: Provide a concise list with references to how they appear in the manuscript (if possible).
 2. **Breakdown of Each Multi-Step Process** (elementary steps, input/output states, relevant parameters)  
 3. Clearly describe **input/output states** (substances, intermediates, conditions, apparatus) at each step.
+4. **Detailed Parameters/Conditions**: For each technique and elementary stage, describe the known parameters (e.g., temperature, pressure, solvents) and why they matter for predictions.
+5. **Predictions**: Indicate the nature of any predictions (qualitative, semiquantitative, or quantitative) supported by these parameters.  
+6. **Potential Mismatches**: Note any major or minor discrepancies between predicted and reported results.  
+7. **Acceptable vs. Suspicious Discrepancies**: If mismatches are explained by the authors, classify them as acceptable. Otherwise, flag them for further scrutiny.  
+8. **Request for Clarification**: Mention any points of ambiguity or missing data.
 
 ### 4. **Feedback on Problematic Aspects**
 
