@@ -65,8 +65,6 @@ You are an expert reasoning model for reviewing scientific manuscripts, particul
      - Extraction (e.g., solvent, pressure, temperature)
      - Organic synthesis (e.g., solvent, catalyst, temperature, pressure)
      - Physical Vapor Deposition (e.g., magnetron sputtering, deposition mode, gases used, reactive vs. nonreactive)
-   - **For each technique or procedure**, extract all relevant details (e.g., phase, variety, specific parameters, apparatus used) that could affect predictions or outcomes.
-   - **Explain how these details** (parameters, conditions, etc.) enable predictions about the expected results. Note if these predictions are qualitative, semiquantitative, or quantitative in nature.
 
    2. **For each technique or procedure**, extract all relevant details (e.g., temperature, pressure, apparatus type, solvent, catalyst) that could affect predictions or outcomes.
 
