@@ -4,6 +4,16 @@ Help me craft a structured detailed ChatGPT prompt template for reasoning models
 
 The specific task is to identify every substance (reagent, product, or catalyst) involved in any chemical or physical process described in the paper. Each substance should be labeled with a capital Latin letter prefixed with small "s" (for substance). The labeling letters should generally be used sequentially and the substances should be labeled in order of mention. ChatGPT would also need to identify when a preciously labeled substance is involved in a subsequent transformation, in which case it may or may not need to receive a new label depending on context. Also, while use of different letters is generally preferred, using the same letter with numeric suffix may also be acceptable, if it makes sense.
 
+---
+
+Let's extend this template. Whenever specific isotopic labels or configuration of asymmetric centers, is provided, such a substance should be treated as distinct from a substance having a different labels or configuration and distinct from a substance indicated with no specific isotopic labels or 3D configuration. A substance for which specific isotopic concentration is indicated is distinct from a substance having a different composition, or no specific composition identified.
+
+Make sure to extract substances from the text, schematics, and tables, where applicable.
+
+When sZ label is insufficient, add a second letter (sZ, then sAA, sAB, and so on).
+ 
+
+---
 # A
 
 Below is a sample “prompt template” you can adapt any time you want ChatGPT (or a similar large-language model) to analyze a chemistry manuscript for substances and systematically label them. You can fine-tune or expand each section depending on the specifics of your manuscript and the level of detail you require.
