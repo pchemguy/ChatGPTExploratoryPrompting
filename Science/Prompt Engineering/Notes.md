@@ -18,3 +18,4 @@ When any such inferences can be made, perform the necessary estimations/assumpti
 - Associate each labeled substance and transformation with corresponding characteristics  (make tables?)
 - Graphs / schematics of different processes
 - Use constructed graphs to identify any missing or redundant information and use such information for subsequent information recovery or consistency checks
+- Model / governing equation identification
