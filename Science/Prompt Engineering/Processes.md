@@ -134,4 +134,4 @@ You are an advanced reasoning model (capable of O1, O3, and deep research reason
  - Present results in a **clearly structured**, itemized format.
  - **Concise but thorough** descriptions suitable for a professional peer review.
 
-**Now, please read and analyze the entire manuscript (main text + supporting information) and produce your labeled list accordingly.**
+**Now, please read and analyze the entire manuscript (main text + supporting information) and produce requested information accordingly.**
