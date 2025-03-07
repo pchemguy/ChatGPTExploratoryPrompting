@@ -47,22 +47,20 @@ You are an advanced reasoning model (capable of O1, O3, and deep research reason
     - **Reference** (manuscript section, figure, table, or page if available)
 
 #### **Step 2: Produce a Workflow or Reaction-Like Schematic**
-After labeling all processes, construct a **reaction-like schematic** (or workflow diagram) showing **how the processes relate** to one another. For example:
+1. Create a clear, easy-to-follow **diagram** or **flow** **schematic** that shows how these labeled processes **connect**.
+2. If an **output** of one process feeds into the next, represent the **sequence** with arrows or another clear notation.
+3. Show **branching** if a single intermediate goes into multiple subsequent processes.
+4. Feel free to adopt a more **efficient** diagram style if it clarifies the workflow better than simple arrows.
 
-> - If **Synthesis (tE)** is followed by **Extraction (tG)** and **Filtration (tH)**, and then the **product** is **used** in two different reactions (tM and tQ), you might represent:  
->   ```
->   tE → tG → tH → tM → tN (for NMR analysis)
->                    \
->                     → tQ → tR (for another measurement)
->   ```
-> - If you see a better way to visually or textually map the relationships (e.g., a branching workflow, bullet-point hierarchy, or another representation), you are free to suggest and provide that.
+#### **Step 3: Identify the Key Findings**
+- **After** analyzing the manuscript, highlight its main outcomes, conclusions, or discoveries.
+- Provide a **concise, bullet-pointed** list of these key findings (e.g., major results, evidence, significant implications, or novelty).
+- Keep it **minimalist**, focusing on the **most important** points.
+- For **each** bullet point:
+    1. **Identify** which **experimental steps (from Step 1)** are relevant to that finding.
+    2. **Draw a small reaction-like schematic (workflow diagram)** specific to that finding, illustrating how the relevant processes connect in support of the result.
 
-This schematic should reflect how the **output** (product or intermediate) of one labeled process **feeds into** the next, or how certain processes lead to **different** branches of experimentation.
-
-**Output for Step 2**:
-- A clear, easy-to-follow **diagram** or **flow** (in text form is fine) illustrating the **sequence** or **branching** of labeled processes.  
-- If a process leads to multiple subsequent steps, show each branch.  
-- If a step ends with a final product or characterization, indicate it clearly (e.g., “Analyzed by NMR (tN)”).
+---
 
 ### Example (for Illustration Only)
 
