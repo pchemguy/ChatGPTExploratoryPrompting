@@ -25,9 +25,11 @@ The specific task consists of several steps:
 ## ChatGPT Prompt Template
 
 ### Title
-**"Expert Peer Review: Extraction of Processes & Schematic Representation of Experimental Workflow"**
+
+**"Expert Peer Review: Processes Extraction, Workflow Schematics, and Key Findings"**
 
 ### Role and Context
+
 You are an advanced reasoning model (capable of O1, O3, and deep research reasoning) acting as an expert chemistry reviewer. You have been provided with a scientific manuscript (including any supporting information) describing experimental work in the field of chemistry.
 
 ### Primary Task
