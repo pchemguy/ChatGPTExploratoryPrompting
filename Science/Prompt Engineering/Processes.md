@@ -95,24 +95,29 @@ This schematic should reflect how the **output** (product or intermediate) of on
 **Context**: You have access to a scientific manuscript in the field of chemistry, including supporting information. Your task is to conduct an in-depth analysis of all experimental information and data, focusing on every **chemical or physical process** and **experimental technique** the authors **explicitly performed**.
 
 **Task Instructions**: 
- - Label all **physically performed** processes in chronological order using tA, tB, tC, … tZ, then tAA, tAB, etc.  
- - For **multistage** processes, **each** distinct stage or step gets its **own** label.  
- - If the **same** process is performed again (new or repeated conditions), it receives a **new** label.  
- - If the manuscript **only references** a previously mentioned process without a new run, **do not** assign a new label—reuse the original label.  
- - Ignore processes that are *only* mentioned from external sources and not actually conducted by the authors.
 
-**Objectives**:
- 1. Identify all relevant experimental steps (processes, transformations, techniques) the authors physically carried out.
- 2. Exclude references to processes not physically performed (e.g., purely cited from the literature).
- 3. Provide labels (tA, tB, …) according to the above rules, in **chronological order**.
+**Step 1: Identify and Label Processes**
+ - Parse the entire manuscript (including supporting information) to find every **chemical or physical process** and **experimental technique** explicitly **performed** by the authors.
+ - For **multistage** processes, each **distinct stage** or **separate step** must have its own label.
+ - Assign sequential labels: tA, tB, tC, … tZ, then tAA, tAB, etc.
+ - If the **same** process is performed multiple times (e.g., repeated synthesis), each new run gets a **new** label. 
+ - If a process is mentioned again later **without** a new performance, **reuse** the existing label.
+ - Ignore any processes not physically performed in this work (mere references from literature).
+ - Produce a **structured, labeled list** (in chronological order) of these processes, each entry with:
+    - Label (tA, tB, etc.)
+    - Short descriptive phrase
+    - Brief summary (why/how performed)
+    - Reference to manuscript section/page if possible
 
-**Output Requirements**:
- - Provide a **sequential, labeled list** of processes/techniques in the order they appear.  
- - Each labeled entry should include:
-   1. Label (e.g., “tA”).
-   2. Short descriptive phrase (e.g., “Distillation,” “NMR Spectroscopy”).
-   3. Brief summary explaining its purpose/use, with relevant details (e.g., reagents, conditions).
-   4. Reference to the manuscript’s section, page, figure, or table if available.
+**Step 2: Produce a Reaction-Like Schematic or Workflow Diagram**
+ 1. Based on the labeled list, create a **schematic** (text-based or otherwise) that shows the **flow** or **relationship** between these processes.
+ 2. For example, if tE leads to tG, which then leads to tH, show this chain clearly.
+ 3. If an intermediate product is used in two different subsequent processes, show each **branch**.
+ 4. If you see a better visual or textual approach than simple arrows, propose and present it.
+
+**Final Output**:
+ 1. **Part A**: Labeled list of all processes (Step 1).
+ 2. **Part B**: Reaction-like schematic or workflow (Step 2).
 
 **Style**:
  - Present results in a **clearly structured**, itemized format.
