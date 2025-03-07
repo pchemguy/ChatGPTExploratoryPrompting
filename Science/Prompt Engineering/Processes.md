@@ -42,10 +42,17 @@ You are an advanced reasoning model (capable of O1, O3, and deep research reason
 3. Assign **sequential labels** (tA, tB, tC… tZ, tAA, tAB, etc.) in the order they **first appear**.
 4. If the **same process** is physically performed again at a later point, assign a **new label**. If only discussed again, **do not** assign a new label (reuse the original).
 5. **Ignore** processes that are _only_ cited from the literature and never performed by the authors.
-6. Provide a **chronologically ordered list** of these processes, each with:
+6. **Categorize** each labeled process according to **one** of the following categories, if **appropriate**:
+    - **Preparatory** (e.g., setting up a reaction mixture, synthesizing a reagent to use later, purification)
+    - **Analytical** (e.g., NMR, GC-MS, IR, data collection or interpretation steps)
+    - **Computational** (e.g., quantum chemistry calculations, data modeling, simulation)
+    - **Safety/Handling** (e.g., special protocols for hazardous materials, disposal procedures)
+    - **Uncategorized** if none of the above categories fits reasonably.
+7. Provide a **chronologically ordered list** of these processes, each with (do not combine any bullets):
     - **Label** (e.g., “tA”)
     - **Short descriptive phrase** (e.g., “Distillation,” “Synthesis of Compound X”)
     - **Brief summary** (purpose, conditions, or highlights)
+    - **Category** from the above list
     - **Reference** (manuscript section, figure, table, or page if available)
 
 #### **Step 2: Produce a Workflow or Reaction-Like Schematic**
@@ -60,7 +67,7 @@ You are an advanced reasoning model (capable of O1, O3, and deep research reason
 - Keep it **minimalist**, focusing on the **most important** points.
 - For **each** bullet point:
     1. **Identify** which **experimental steps (from Step 1)** are relevant to that finding.
-    2. **Draw a small reaction-like schematic (workflow diagram)** specific to that finding, illustrating how the relevant processes connect in support of the result.
+    2. Include a **mini reaction-like schematic** or micro-workflow illustrating those relevant steps (e.g., “tE → tG → tH → Product”).
 
 ---
 
@@ -116,10 +123,12 @@ You are an advanced reasoning model (capable of O1, O3, and deep research reason
  - If the **same** process is performed multiple times (e.g., repeated synthesis), each new run gets a **new** label. 
  - If a process is mentioned again later **without** a new performance, **reuse** the existing label.
  - Ignore any processes not physically performed in this work (mere references from literature).
- - Produce a **structured, labeled list** (in chronological order) of these processes, each entry with:
+ - **Categorize** each process as **Preparatory**, **Analytical**, **Computational**, or **Uncategorized**, whichever **best** applies.
+ - Produce a **structured, labeled list** (in chronological order) of these processes, each entry with (do not combine any bullets):
     - Label (tA, tB, etc.)
     - Short descriptive phrase
     - Brief summary (why/how performed)
+    - Category
     - Reference to manuscript section/page if possible
 
 **Step 2: Produce a Reaction-Like Schematic or Workflow Diagram**
@@ -135,5 +144,6 @@ You are an advanced reasoning model (capable of O1, O3, and deep research reason
 **Style**:
  - Present results in a **clearly structured**, itemized format.
  - **Concise but thorough** descriptions suitable for a professional peer review.
+ - Focus on essential steps, outcomes, and their relationships.
 
 **Now, please read and analyze the entire manuscript (main text + supporting information) and produce requested information accordingly.**
