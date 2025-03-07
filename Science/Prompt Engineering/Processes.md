@@ -140,8 +140,8 @@ You are an advanced reasoning model (capable of O1, O3, and deep research reason
 
 **Step 3: Key Findings**
 - Present
-    - the **most important** finding (one bullet);
-    - if there can be identified other major results possessing demonstrably **significant** (fundamental, methodological, applied, or educational) value, list up to three extra bullets.
+    - The **most important** finding (one bullet);
+    - If there can be identified other major results, list up to three extra bullets. Only include extra results if such results possess demonstrably **significant** value. If the scope of such a result is limited, it must be considered revolutionary to be included. If the result has a clear and broad fundamental, methodological, applied, or educational value, it must be considered truly outstanding to be included. Otherwise, include the main result only.
 - For **each** listed bullet:
     1. **Identify** which **experimental stages (from Step 1)** are relevant to that finding.
     2. Include a **mini reaction-like schematic** or micro-workflow illustrating those relevant stages (e.g., “Et → Gt → Ht → Product”).
