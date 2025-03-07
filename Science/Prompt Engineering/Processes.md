@@ -74,14 +74,23 @@ You are an advanced reasoning model (capable of O1, O3, and deep research reason
      - Identical to tA, but physically repeated.  
 
 - **Step 2** (Schematic):
-
-  ```
+```
   tA -> tB -> tC
       \-> tD
-  ```
+```
+    In this hypothetical example, tD is a repeated run of tA but branched off at an earlier stage.
 
-  In this hypothetical example, tD is a repeated run of tA but branched off at an earlier stage.
-
+* ***Step 3** (Key Findings)
+    - **Finding 1**: The authors successfully prepared and enriched 17O-labeled water to >90%.
+        - Relevant Steps: tA (Evaporation/Distillation), tB (Verification via GC-MS).
+        - Schematic (specific to Finding 1):
+            `tA → tB (Confirmed 17O enrichment)`
+            
+    - **Finding 2**: They uncovered an oxygen-exchange reaction of primary alcohols, catalyzed by camphor.
+        - Relevant Steps: tC, tD…
+        - Schematic (specific to Finding 2):
+            `tC (Camphor + EtOH) → T (Exchange) → tD (Product analysis)`
+      
 ---
 
 ### Complete Prompt Text
