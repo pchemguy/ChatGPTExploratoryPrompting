@@ -30,52 +30,59 @@ You are an advanced reasoning model (capable of O1, O3, and deep research reason
 
 ### Primary Task
 
-### Task Instructions
-- Use **sequential labels** (tA, tB, tC, … up to tZ, then tAA, tAB, etc.) for every **physically performed** process in the order they first appear.  
-- **Multistage Processes**: If a single overarching experiment includes multiple **distinct stages** (e.g., separate steps of a synthesis or sequential treatments), **each stage** of that experiment should be labeled individually.  
-- If the **same** process is physically performed again (under new or repeated conditions), it receives a **new** label.  
-- If the manuscript **only references** a previously mentioned process (no additional physical run), **do not** assign a new label—reuse the original label.  
-- Ignore processes that are *only* cited from background literature (i.e., not physically carried out by the authors).
+#### **Step 1: Identify and Label Processes**
+- **Identify** and label every **chemical or physical process/transformation** and **experimental technique** that was **actually performed** in the reported work.  
+- For **multistage processes** (e.g., multi-step syntheses, sequential treatments), **each** distinct stage or step should have its **own** label.  
+- Use **sequential labels** (tA, tB, tC, … tZ, then tAA, tAB, etc.) in the order they are **first encountered**.  
+- If the **same** process is **physically performed again** (e.g., a repeated synthesis, repeated measurement under different conditions), assign a **new** label for that new occurrence.  
+- If a process is **only re-mentioned** (no new physical run), **reuse** the original label—do not create a new one.  
+- Ignore any processes that are *only* cited from the literature but not actually carried out by the authors.
 
-### What to Identify
-- **All** chemical and physical transformations **carried out by the authors**.  
-- **All** experimental techniques (instrumental methods, analytical procedures, etc.) **actually used** in the reported work.
+**Output for Step 1**:  
+- Provide a **chronologically ordered list** of processes/techniques.  
+- Each item should include:
+  1. **Label** (e.g., tA, tB, …).  
+  2. A **short descriptive phrase** (e.g., “Distillation,” “NMR Measurement,” “Hydrothermal Synthesis”).  
+  3. A **brief summary** of why or how it was performed.  
+  4. **Reference** to the relevant manuscript section or page if available.
 
-### What to Ignore
-- Processes that are *only* cited from external references or background literature and **not** physically performed.  
-- Speculative processes not actually carried out in this study.
+#### **Step 2: Produce a Workflow or Reaction-Like Schematic**
+After labeling all processes, construct a **reaction-like schematic** (or workflow diagram) showing **how the processes relate** to one another. For example:
 
-### Output Format
-1. Provide a structured, **chronologically ordered** list of the identified processes/techniques.  
-2. For each entry:
-   - The **assigned label** (e.g., “tA,” “tB,” “tC,” “tAA”).  
-   - A **short descriptive phrase** or name (e.g., “Distillation,” “NMR Measurement,” “Hydrothermal Synthesis”).  
-   - A **brief summary** of how or why it was performed in the work.  
-   - A **reference** to where it appears if possible (e.g., section, figure, table, or page).
+> - If **Synthesis (tE)** is followed by **Extraction (tG)** and **Filtration (tH)**, and then the **product** is **used** in two different reactions (tM and tQ), you might represent:  
+>   ```
+>   tE → tG → tH → tM → tN (for NMR analysis)
+>                    \
+>                     → tQ → tR (for another measurement)
+>   ```
+> - If you see a better way to visually or textually map the relationships (e.g., a branching workflow, bullet-point hierarchy, or another representation), you are free to suggest and provide that.
 
-### Example (for Illustration)
+This schematic should reflect how the **output** (product or intermediate) of one labeled process **feeds into** the next, or how certain processes lead to **different** branches of experimentation.
 
-```
-List of Identified Processes and Techniques
+**Output for Step 2**:
+- A clear, easy-to-follow **diagram** or **flow** (in text form is fine) illustrating the **sequence** or **branching** of labeled processes.  
+- If a process leads to multiple subsequent steps, show each branch.  
+- If a step ends with a final product or characterization, indicate it clearly (e.g., “Analyzed by NMR (tN)”).
 
-1. tA: Synthesis of Compound X – Stage 1
-   - Performed in Section 2.1. The authors combined Reagent A with Reagent B and heated under reflux.
+### Example (for Illustration Only)
 
-2. tB: Synthesis of Compound X – Stage 2
-   - Immediately follows tA. The authors performed a solvent exchange and continued stirring at room temperature.
+- **Step 1** (Labeled List):  
+  1. tA: “Synthesis of Compound X – Stage 1” (Section 2.1)  
+     - Reagent A + Reagent B, reflux for 3 hours.  
+  2. tB: “Synthesis of Compound X – Stage 2” (Section 2.1)  
+     - Solvent exchange, stirring at room temperature.  
+  3. tC: “Purification by Column Chromatography” (Section 2.2).  
+  4. tD: “Repeat Synthesis of Compound X” (Section 2.3)  
+     - Identical to tA, but physically repeated.  
 
-3. tC: Purification by Column Chromatography
-   - Described in Section 2.2. Used silica gel with a 7:3 hexane/ethyl acetate eluent.
+- **Step 2** (Schematic):
 
-4. tD: Repeat Synthesis of Compound X – Stage 1
-   - Same procedure as tA but physically executed again in Section 2.3, so it receives a new label.
+  ```
+  tA -> tB -> tC
+      \-> tD
+  ```
 
-5. tB (repeated mention)
-   - Discussed in Section 3.2, but not performed anew, so no new label is assigned.
-```
-
-*(Note: This is an illustrative example only; actual manuscript content may vary.)*
-
+  In this hypothetical example, tD is a repeated run of tA but branched off at an earlier stage.
 
 ---
 
