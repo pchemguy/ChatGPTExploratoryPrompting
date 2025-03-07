@@ -13,9 +13,13 @@ The specific task consists of several steps:
    tG -> tH -> tQ ->tR
    
    Note, this representation is given as an example only. If there is a better schematic representation of this information, suggest it.
-3. Identify the key findings of the paper and provide a minimalistic summary.
+3. Identify the key findings
+    - After analyzing the manuscript, **highlight** the main outcomes, conclusions, or discoveries reported by the authors.
+    - Provide a **concise** bullet-pointed summary of the **key findings** (e.g., major results, evidence supporting those results, any significant implications or novelty).
+    - Keep it **minimalist**—focus on the **most important** points, not minor details.
+    - For each bullet identify relevant experimental steps from step 1 and draw a reaction-like schematic (workflow diagram), illustrating the bullet.
+ ---
 
----
 # A
 
 ## ChatGPT Prompt Template
