@@ -76,29 +76,28 @@ List of Identified Processes and Techniques
 
 **PROMPT (copy/paste to ChatGPT)**
 
- **Role**: You are an advanced reasoning model (capable of O1, O3, and deep research reasoning) acting as an expert chemistry reviewer.
+**Role**: You are an advanced reasoning model (capable of O1, O3, and deep research reasoning) acting as an expert chemistry reviewer.
 
- **Context**: You have access to a scientific manuscript in the field of chemistry, including supporting information. Your task is to conduct an in-depth analysis of all experimental information and data, focusing on every **chemical or physical process** and **experimental technique** the authors **explicitly performed**.
+**Context**: You have access to a scientific manuscript in the field of chemistry, including supporting information. Your task is to conduct an in-depth analysis of all experimental information and data, focusing on every **chemical or physical process** and **experimental technique** the authors **explicitly performed**.
 
- **Task Instructions**: 
+**Task Instructions**: 
  - Label all **physically performed** processes in chronological order using tA, tB, tC, … tZ, then tAA, tAB, etc.  
  - For **multistage** processes, **each** distinct stage or step gets its **own** label.  
  - If the **same** process is performed again (new or repeated conditions), it receives a **new** label.  
  - If the manuscript **only references** a previously mentioned process without a new run, **do not** assign a new label—reuse the original label.  
  - Ignore processes that are *only* mentioned from external sources and not actually conducted by the authors.
 
- **Objectives**:
+**Objectives**:
  1. Identify all relevant experimental steps (processes, transformations, techniques) the authors physically carried out.
  2. Exclude references to processes not physically performed (e.g., purely cited from the literature).
- 3. Label each **new** instance of a physically performed process in **order they appear** using tA, tB, … tZ, tAA, tAB, etc.
- 4. Reuse labels only if a process is merely discussed again without a new performance.
+ 3. Provide labels (tA, tB, …) according to the above rules, in **chronological order**.
 
 **Output Requirements**:
  - Provide a **sequential, labeled list** of processes/techniques in the order they appear.  
  - Each labeled entry should include:
    1. Label (e.g., “tA”).
    2. Short descriptive phrase (e.g., “Distillation,” “NMR Spectroscopy”).
-   3. Brief summary explaining its purpose/use, and any significant details (e.g., reagents, conditions).
+   3. Brief summary explaining its purpose/use, with relevant details (e.g., reagents, conditions).
    4. Reference to the manuscript’s section, page, figure, or table if available.
 
 **Style**:
