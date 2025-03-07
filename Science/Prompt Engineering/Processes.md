@@ -80,13 +80,15 @@ List of Identified Processes and Techniques
 
  **Context**: You have access to a scientific manuscript in the field of chemistry, including supporting information. Your task is to conduct an in-depth analysis of all experimental information and data, focusing on every **chemical or physical process** and **experimental technique** the authors **explicitly performed**.
 
-**Task Instructions**: 
- - Assign labels in sequence: tA, tB, tC, … tZ, then tAA, tAB, etc.
- - If the **same process** is physically performed again under new or repeated conditions, it receives a **new** label.
- - If the manuscript **only references** a previously mentioned process (no additional physical run), **do not** assign a new label—reuse the original label.
+ **Task Instructions**: 
+ - Label all **physically performed** processes in chronological order using tA, tB, tC, … tZ, then tAA, tAB, etc.  
+ - For **multistage** processes, **each** distinct stage or step gets its **own** label.  
+ - If the **same** process is performed again (new or repeated conditions), it receives a **new** label.  
+ - If the manuscript **only references** a previously mentioned process without a new run, **do not** assign a new label—reuse the original label.  
+ - Ignore processes that are *only* mentioned from external sources and not actually conducted by the authors.
 
-**Objectives**:
- 1. Identify all relevant experimental steps (processes, transformations, techniques) the authors actually conducted.
+ **Objectives**:
+ 1. Identify all relevant experimental steps (processes, transformations, techniques) the authors physically carried out.
  2. Exclude references to processes not physically performed (e.g., purely cited from the literature).
  3. Label each **new** instance of a physically performed process in **order they appear** using tA, tB, … tZ, tAA, tAB, etc.
  4. Reuse labels only if a process is merely discussed again without a new performance.
