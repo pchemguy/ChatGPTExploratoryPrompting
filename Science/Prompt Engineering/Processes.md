@@ -13,7 +13,7 @@ The specific task consists of several steps:
    tG -> tH -> tQ ->tR
    
    Note, this representation is given as an example only. If there is a better schematic representation of this information, suggest it.
-3. Identify key findings and provide minimalistic summary. Do not refer to any supporting components.
+3. Identify the key findings of the paper and provide a minimalistic summary.
 
 ---
 # A
