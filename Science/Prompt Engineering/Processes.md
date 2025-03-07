@@ -76,7 +76,7 @@ List of Identified Processes and Techniques
 
 **PROMPT (copy/paste to ChatGPT)**
 
-**Role**: You are an advanced reasoning model with O1, O3, and deep research capabilities.
+ **Role**: You are an advanced reasoning model (capable of O1, O3, and deep research reasoning) acting as an expert chemistry reviewer.
 
  **Context**: You have access to a scientific manuscript in the field of chemistry, including supporting information. Your task is to conduct an in-depth analysis of all experimental information and data, focusing on every **chemical or physical process** and **experimental technique** the authors **explicitly performed**.
 
