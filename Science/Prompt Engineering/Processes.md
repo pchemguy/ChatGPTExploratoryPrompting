@@ -8,7 +8,14 @@ Each process should be labeled with a capital Latin letter prefixed with small "
 
 ---
 
-Let's extend the task. The previously defined task becomes the first step. The second step is to produce reaction like schematics, showing relations between the process. For example, Synthesis tE was followed by extraction tG, and the product used later in two independent reactions t
+Let's extend the task. The previously defined task becomes the first step.
+
+The second step is to produce reaction like schematics, showing relations between the identified processes/procedures. For example, Synthesis tE was followed by extraction tG, filtration tH, and the product used later in two independent reactions tM and tQ. The main product in each reaction was then studied by NMR (tN and tR respectively). Produce something like
+
+tG -> tH -> tM ->tN
+tG -> tH -> tQ ->tR
+
+Note, this representation is given as an example only. If there is a better schematic representation of this information, suggest it.
 
 ---
 # A
