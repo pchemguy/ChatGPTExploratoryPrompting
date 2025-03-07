@@ -15,15 +15,13 @@ The specific task consists of several steps:
    tG -> tH -> tQ ->tR
    
    Note, this representation is given as an example only. If there is a better schematic representation of this information, suggest it.
-3. Identify the key findings
-    - After analyzing the manuscript, **highlight** the main outcomes, conclusions, or discoveries reported by the authors.
-    - Provide a **concise** bullet-pointed summary of the **key findings** (e.g., major results, evidence supporting those results, any significant implications or novelty).
-    - Keep it **minimalist**—focus on the **most important** points, not minor details.
-    - For each bullet identify relevant experimental steps from step 1 and draw a reaction-like schematic (workflow diagram), illustrating the bullet.
+3. Highlight the key finding
+    - After analyzing the manuscript, **identify** the main outcomes, conclusions, or discoveries reported by the authors (e.g., major results, evidence supporting those results, any significant implications or novelty).
+    - Provide a **concise** single-bullet summary of the single most important finding.
+    - Include a **reaction-like schematic** (workflow diagram) illustrating illustrating how processes labeled in step 1 combine to produce/confirm the finding.
+    - List up to three other extra (secondary) results or conclusions, **but only** those that are demonstrably **significant** (fundamental, methodological, applied, or educational value).
+    - If any significant secondary results are identified and listed, also include a brief **mini-schematic** or flow illustrating how processes labeled in step 1 combine to produce/confirm the finding.
  ---
-
-Let's amend step 3 task. Identify the most important finding (one bullet only), supplementing it with relevant experimental steps from step 1 and a reaction-like schematic (workflow diagram) as before. Additionally, highlight a maximum of top three extra results (not including the main one) in a similar fashion. You should only include a particular result if its fundamental, methodological, applied, or educational significance is clearly demonstrated by the authors or would be clear to an expert in the field.
-
 
 # A
 
@@ -66,9 +64,9 @@ You are an advanced reasoning model (capable of O1, O3, and deep research reason
 
 #### **Step 3: Identify the Key Findings**
 - **After** analyzing the manuscript, highlight its main outcomes, conclusions, or discoveries.
-- Provide a **concise, bullet-pointed** list of these key findings (e.g., major results, evidence, significant implications, or novelty).
-- Keep it **minimalist**, focusing on the **most important** points.
-- For **each** bullet point:
+- Provide a **concise** single-bullet summary of the single most important finding (e.g., major results, evidence, significant implications, or novelty).
+- List up to three other extra (secondary) results or conclusions, **but only** those that are demonstrably **significant** (fundamental, methodological, applied, or educational value).
+- For **each** bullet point (the main one and secondary, if any):
     1. **Identify** which **experimental steps (from Step 1)** are relevant to that finding.
     2. Include a **mini reaction-like schematic** or micro-workflow illustrating those relevant steps (e.g., “Et → Gt → Ht → Product”).
 
@@ -120,7 +118,7 @@ You are an advanced reasoning model (capable of O1, O3, and deep research reason
 
 **Step 1: Identify and Label Processes**
  - Parse the entire manuscript (including supporting information) to find every **chemical or physical process** and **experimental technique** explicitly **performed** by the authors.
- - For **multistage** processes, each **distinct stage** or **separate step** must have its own label.
+ - For **multistage** processes, each **distinct stage** must have its own label.
  - You are not allowed to combine any stages or processes. Each manipulation or process having a distinct name and meaning must have a distinct label.
  - Assign sequential labels: At, Bt, Ct, … Zt, then AAt, ABt, etc.
  - If the **same** process is performed multiple times (e.g., repeated synthesis), each new run gets a **new** label. 
@@ -141,8 +139,12 @@ You are an advanced reasoning model (capable of O1, O3, and deep research reason
  4. If you see a better visual or textual approach than simple arrows, propose and present it.
 
 **Step 3: Key Findings**
-- Summarize the main results or conclusions of the study as concise bullet points (maximum of 3).
-- Include a simple diagram or flow (like a mini reaction scheme) that shows how those steps interact to produce the result.
+- Present
+    - the **most important** finding (one bullet);
+    - if there can be identified other major results possessing demonstrably **significant** (fundamental, methodological, applied, or educational) value, list up to three extra bullets.
+- For **each** listed bullet:
+    1. **Identify** which **experimental stages (from Step 1)** are relevant to that finding.
+    2. Include a **mini reaction-like schematic** or micro-workflow illustrating those relevant stages (e.g., “Et → Gt → Ht → Product”).
 
 **Style**:
  - Present results in a **clearly structured**, itemized format.
