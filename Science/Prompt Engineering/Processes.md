@@ -24,11 +24,12 @@ You are an advanced reasoning model (capable of O1, O3, and deep research reason
 ### Primary Task
 Identify and label every **chemical or physical process/transformation**, as well as every **experimental technique**, actually **performed** in the reported work. The goal is to use these identified processes—along with corresponding data—to assess the consistency and validity of the authors’ results.
 
-### Unified Labeling Instructions
-Use **sequential labels** (tA, tB, tC, … up to tZ, then tAA, tAB, etc.) for **physically performed** processes in the order they first **appear**.  
-- Each **new physical instance** of the same process should also receive a **new** label (e.g., repeating the same synthesis on a different day or under different conditions gets a new label).  
-- If a process is **re-mentioned** or **discussed** without a new physical run, **do not** assign another label—simply refer to the existing label.  
-- Ignore processes that are only cited from background literature (i.e., not physically carried out by the authors).
+### Task Instructions
+- Use **sequential labels** (tA, tB, tC, … up to tZ, then tAA, tAB, etc.) for every **physically performed** process in the order they first appear.  
+- **Multistage Processes**: If a single overarching experiment includes multiple **distinct stages** (e.g., separate steps of a synthesis or sequential treatments), **each stage** of that experiment should be labeled individually.  
+- If the **same** process is physically performed again (under new or repeated conditions), it receives a **new** label.  
+- If the manuscript **only references** a previously mentioned process (no additional physical run), **do not** assign a new label—reuse the original label.  
+- Ignore processes that are *only* cited from background literature (i.e., not physically carried out by the authors).
 
 ### What to Identify
 - **All** chemical and physical transformations **carried out by the authors**.  
