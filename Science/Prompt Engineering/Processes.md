@@ -153,3 +153,8 @@ You are an advanced reasoning model (capable of O1, O3, and deep research reason
  - Focus on essential steps, outcomes, and their relationships.
 
 **Now, please read and analyze the entire manuscript (main text + supporting information) and produce requested information accordingly.**
+
+---
+
+>[!Note]
+>Next: classify each stage in step 1 as essential or secondary (figure out definition of essential or secondary).
