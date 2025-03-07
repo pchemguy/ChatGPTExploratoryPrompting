@@ -22,6 +22,9 @@ The specific task consists of several steps:
     - For each bullet identify relevant experimental steps from step 1 and draw a reaction-like schematic (workflow diagram), illustrating the bullet.
  ---
 
+Let's amend step 3 task. Identify the most important finding (one bullet only), supplementing it with relevant experimental steps from step 1 and a reaction-like schematic (workflow diagram) as before. Additionally, highlight a maximum of top three extra results (not including the main one) in a similar fashion. You should only include a particular result if its fundamental, methodological, applied, or educational significance is clearly demonstrated by the authors or would be clear to an expert in the field.
+
+
 # A
 
 ## ChatGPT Prompt Template
