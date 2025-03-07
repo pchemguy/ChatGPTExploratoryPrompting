@@ -7,6 +7,12 @@ The specific task is to identify every chemical or physical process/transformati
 Each process should be labeled with a capital Latin letter prefixed with small "t" (if tZ is insufficient, follow by tAA, tAB...). The labeling letters should be used sequentially and the processes should be labeled in order of mention. ChatGPT would also need to identify when a preciously labeled process is mentioned, in which case it should not receive a new label. If process is physically used more than once, each use gets its own label. Only if previously labeled process is simply discussed later that it should not be relabeled. 
 
 ---
+
+"Unified Labeling Instructions" needs to be called "Task Instructions"
+
+Let's extend the task. The previously defined task becomes the first step. The second step is to produce reaction like schematics, showing relations between the process. For example, Synthesis tE was followed by extraction tG, and the product used later in two independent reactions t
+
+---
 # A
 
 Below is an **updated** version of the ChatGPT prompt template, with the **two labeling sections merged into one** while retaining all essential details.
