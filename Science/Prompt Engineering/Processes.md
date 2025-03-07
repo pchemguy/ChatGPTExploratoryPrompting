@@ -16,7 +16,7 @@ Let's extend the task. The previously defined task becomes the first step. The s
 ## ChatGPT Prompt Template
 
 ### Title
-**"Expert Peer Review: Chemistry Processes and Techniques Extraction (Unified Labeling Instructions)"**
+**"Expert Peer Review: Chemistry Processes and Techniques Extraction"**
 
 ### Role and Context
 You are an advanced reasoning model (capable of O1, O3, and deep research reasoning) acting as an expert chemistry reviewer. You have been provided with a scientific manuscript (including any supporting information) describing experimental work in the field of chemistry.
