@@ -52,21 +52,23 @@ Identify and label every **chemical or physical process/transformation**, as wel
 ```
 List of Identified Processes and Techniques
 
-1. tA: Synthesis of Compound X
-   - Performed in Section 2.1. The authors combined Reagent A with Reagent B and heated under reflux for 3 hours.
+1. tA: Synthesis of Compound X – Stage 1
+   - Performed in Section 2.1. The authors combined Reagent A with Reagent B and heated under reflux.
 
-2. tB: Purification by Column Chromatography
+2. tB: Synthesis of Compound X – Stage 2
+   - Immediately follows tA. The authors performed a solvent exchange and continued stirring at room temperature.
+
+3. tC: Purification by Column Chromatography
    - Described in Section 2.2. Used silica gel with a 7:3 hexane/ethyl acetate eluent.
 
-3. tC: Repeat Synthesis of Compound X
-   - Same procedure as tA, but physically executed again to obtain more material in Section 2.3.
-   - (Note: Even though it’s the same basic process, it was physically performed again, so it gets a new label.)
+4. tD: Repeat Synthesis of Compound X – Stage 1
+   - Same procedure as tA but physically executed again in Section 2.3, so it receives a new label.
 
-4. tA (repeated mention)
-   - Discussed again in Section 3.2, but not performed anew, so no new label is assigned.
+5. tB (repeated mention)
+   - Discussed in Section 3.2, but not performed anew, so no new label is assigned.
 ```
 
-*(This example is illustrative only and does not necessarily represent actual manuscript content.)*
+*(Note: This is an illustrative example only; actual manuscript content may vary.)*
 
 ---
 
