@@ -109,6 +109,7 @@ You are an advanced reasoning model (capable of O1, O3, and deep research reason
 **Step 1: Identify and Label Processes**
  - Parse the entire manuscript (including supporting information) to find every **chemical or physical process** and **experimental technique** explicitly **performed** by the authors.
  - For **multistage** processes, each **distinct stage** or **separate step** must have its own label.
+ - You are not allowed to combine any stages or processes. Each manipulation or process having a distinct name and meaning must have a distinct label.
  - Assign sequential labels: tA, tB, tC, … tZ, then tAA, tAB, etc.
  - If the **same** process is performed multiple times (e.g., repeated synthesis), each new run gets a **new** label. 
  - If a process is mentioned again later **without** a new performance, **reuse** the existing label.
@@ -126,8 +127,7 @@ You are an advanced reasoning model (capable of O1, O3, and deep research reason
  4. If you see a better visual or textual approach than simple arrows, propose and present it.
 
 **Step 3: Key Findings**
-- Summarize the main results or conclusions of the study as concise bullet points.
-- For each bullet, specify which labeled steps support or demonstrate that finding.
+- Summarize the main results or conclusions of the study as concise bullet points (maximum of 3).
 - Include a simple diagram or flow (like a mini reaction scheme) that shows how those steps interact to produce the result.
 
 **Style**:
