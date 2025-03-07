@@ -42,9 +42,9 @@ Identify and label every **chemical or physical process/transformation**, as wel
 ### Output Format
 1. Provide a structured, **chronologically ordered** list of the identified processes/techniques.  
 2. For each entry:
-   - The **assigned label** (e.g., “tA,” “tB,” “tC,” “tAA”).
-   - A **short descriptive phrase** or name (e.g., “Distillation,” “NMR Measurement,” “Hydrothermal Synthesis”).
-   - A **brief summary** of how or why it was performed in the work.
+   - The **assigned label** (e.g., “tA,” “tB,” “tC,” “tAA”).  
+   - A **short descriptive phrase** or name (e.g., “Distillation,” “NMR Measurement,” “Hydrothermal Synthesis”).  
+   - A **brief summary** of how or why it was performed in the work.  
    - A **reference** to where it appears if possible (e.g., section, figure, table, or page).
 
 ### Example (for Illustration)
