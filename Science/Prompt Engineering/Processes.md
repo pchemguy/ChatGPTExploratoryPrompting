@@ -13,10 +13,6 @@ Let's extend the task. The previously defined task becomes the first step. The s
 ---
 # A
 
-Below is an **updated** version of the ChatGPT prompt template, with the **two labeling sections merged into one** while retaining all essential details.
-
----
-
 ## ChatGPT Prompt Template
 
 ### Title
