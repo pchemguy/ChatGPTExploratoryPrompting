@@ -145,6 +145,7 @@ You are an advanced reasoning model (capable of O1, O3, and deep research reason
 - For **each** listed bullet:
     1. **Identify** which **experimental stages (from Step 1)** are relevant to that finding.
     2. Include a **mini reaction-like schematic** or micro-workflow illustrating those relevant stages (e.g., “Et → Gt → Ht → Product”).
+    3. If possible, provide a concise explanation of fundamental, methodological, applied, practical or educational value of the highlighted result.
 
 **Style**:
  - Present results in a **clearly structured**, itemized format.
