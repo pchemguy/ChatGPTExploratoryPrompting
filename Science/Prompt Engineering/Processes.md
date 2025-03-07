@@ -35,20 +35,16 @@ You are an advanced reasoning model (capable of O1, O3, and deep research reason
 ### Primary Task
 
 #### **Step 1: Identify and Label Processes**
-- **Identify** and label every **chemical or physical process/transformation** and **experimental technique** that was **actually performed** in the reported work.  
-- For **multistage processes** (e.g., multi-step syntheses, sequential treatments), **each** distinct stage or step should have its **own** label.  
-- Use **sequential labels** (tA, tB, tC, … tZ, then tAA, tAB, etc.) in the order they are **first encountered**.  
-- If the **same** process is **physically performed again** (e.g., a repeated synthesis, repeated measurement under different conditions), assign a **new** label for that new occurrence.  
-- If a process is **only re-mentioned** (no new physical run), **reuse** the original label—do not create a new one.  
-- Ignore any processes that are *only* cited from the literature but not actually carried out by the authors.
-
-**Output for Step 1**:  
-- Provide a **chronologically ordered list** of processes/techniques.  
-- Each item should include:
-  1. **Label** (e.g., tA, tB, …).  
-  2. A **short descriptive phrase** (e.g., “Distillation,” “NMR Measurement,” “Hydrothermal Synthesis”).  
-  3. A **brief summary** of why or how it was performed.  
-  4. **Reference** to the relevant manuscript section or page if available.
+1. Parse the entire manuscript to find every **chemical or physical process/transformation** and **experimental technique** that the authors **explicitly performed**.
+2. For **multistage** processes, label **each** distinct stage/step separately.
+3. Assign **sequential labels** (tA, tB, tC… tZ, tAA, tAB, etc.) in the order they **first appear**.
+4. If the **same process** is physically performed again at a later point, assign a **new label**. If only discussed again, **do not** assign a new label (reuse the original).
+5. **Ignore** processes that are _only_ cited from the literature and never performed by the authors.
+6. Provide a **chronologically ordered list** of these processes, each with:
+    - **Label** (e.g., “tA”)
+    - **Short descriptive phrase** (e.g., “Distillation,” “Synthesis of Compound X”)
+    - **Brief summary** (purpose, conditions, or highlights)
+    - **Reference** (manuscript section, figure, table, or page if available)
 
 #### **Step 2: Produce a Workflow or Reaction-Like Schematic**
 After labeling all processes, construct a **reaction-like schematic** (or workflow diagram) showing **how the processes relate** to one another. For example:
