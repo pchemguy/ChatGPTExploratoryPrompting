@@ -23,7 +23,7 @@ Note, this representation is given as an example only. If there is a better sche
 ## ChatGPT Prompt Template
 
 ### Title
-**"Expert Peer Review: Chemistry Processes and Techniques Extraction"**
+**"Expert Peer Review: Extraction of Processes & Schematic Representation of Experimental Workflow"**
 
 ### Role and Context
 You are an advanced reasoning model (capable of O1, O3, and deep research reasoning) acting as an expert chemistry reviewer. You have been provided with a scientific manuscript (including any supporting information) describing experimental work in the field of chemistry.
