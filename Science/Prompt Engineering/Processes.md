@@ -125,9 +125,10 @@ You are an advanced reasoning model (capable of O1, O3, and deep research reason
  3. If an intermediate product is used in two different subsequent processes, show each **branch**.
  4. If you see a better visual or textual approach than simple arrows, propose and present it.
 
-**Final Output**:
- 1. **Part A**: Labeled list of all processes (Step 1).
- 2. **Part B**: Reaction-like schematic or workflow (Step 2).
+**Step 3: Key Findings**
+- Summarize the main results or conclusions of the study as concise bullet points.
+- For each bullet, specify which labeled steps support or demonstrate that finding.
+- Include a simple diagram or flow (like a mini reaction scheme) that shows how those steps interact to produce the result.
 
 **Style**:
  - Present results in a **clearly structured**, itemized format.
