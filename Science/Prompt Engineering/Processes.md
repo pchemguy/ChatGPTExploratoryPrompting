@@ -15,13 +15,28 @@ The specific task consists of several steps:
    tG -> tH -> tQ ->tR
    
    Note, this representation is given as an example only. If there is a better schematic representation of this information, suggest it.
+
 3. Highlight the key finding
     - After analyzing the manuscript, **identify** the main outcomes, conclusions, or discoveries reported by the authors (e.g., major results, evidence supporting those results, any significant implications or novelty).
     - Provide a **concise** single-bullet summary of the single most important finding.
     - Include a **reaction-like schematic** (workflow diagram) illustrating illustrating how processes labeled in step 1 combine to produce/confirm the finding.
     - List up to three other extra (secondary) results or conclusions, **but only** those that are demonstrably **significant** (fundamental, methodological, applied, or educational value).
     - If any significant secondary results are identified and listed, also include a brief **mini-schematic** or flow illustrating how processes labeled in step 1 combine to produce/confirm the finding.
- ---
+ 
+4. Stage analysis
+    Create a structured list with process details for each stage contributed to the main findings. For each such stage add the following bullets:
+    1. lassify stage as
+        - essential (if omitted, achieving the final result would most likely be impossible) or
+        - refining (probably improves purity, yield, or some other characteristic; if omitted, the final result should likely be still achievable, even if with inferior value of the characteristics targeted by the stage).
+    2. ist all
+        - catalysts used
+        - relevant process conditions (temperature, pressure, stirring, etc.)
+        - key/essential starting compounds (for example, if acetic acid is prepared from acetic aldehyde, aldehyde is the key compound, but specific oxidizer is usually less important, unless the finding uses a specific non-conventional oxidizer to somehow improve the oxidation process or perhaps a conventional oxidizer with a particular additional catalyst or some other non-conventional conditions, such as a combination of KMnO4 with Potassium-ion matching crown ether).
+        - key/essential products (for example, when synthesizing m-nitrochlorobenzene from chlorobenzene, m-nitrochlorobenzene is the key product, but dinitro byproducts are probably non-essential, unless a special focus is given to those, such as in the case where the process specifically focuses on achieving maximum suppression of dinitro byproducts). 
+        - non-trivial byproducts, such as byproducts that affect the yield of the key product or are important for modeling the underlying process and predicting/estimating/validating the key result (for example, when basic KMnO4 is used as an oxidizer, MnO2 and water are usually trivial byproducts; when synthesizing m-nitrochlorobenzene from chlorobenzene, o- and p- isomers are also important, as their generation directly affects the yield of the target compound.)
+    Treat reagents/products in a wide sense, even if the process does not involve a chemical process directly. For example, when preparing a mixture or, conversely, performing mixture or composite system separation, the mixture, individual components and any isolated phases/portions should be considered as reagents/products as appropriate.
+
+---
 
 # A
 
@@ -155,6 +170,3 @@ You are an advanced reasoning model (capable of O1, O3, and deep research reason
 **Now, please read and analyze the entire manuscript (main text + supporting information) and produce requested information accordingly.**
 
 ---
-
->[!Note]
->Next: classify each stage in step 1 as essential or secondary (figure out definition of essential or secondary).
