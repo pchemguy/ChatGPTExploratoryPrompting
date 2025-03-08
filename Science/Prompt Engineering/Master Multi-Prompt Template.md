@@ -56,7 +56,7 @@ Below is a **multi-step prompt template** you can use with ChatGPT (in O1, O3, o
 
 ---
 
-### **2. Attachment Section**  
+### **2. Attachment Section**
 
 *(Use this section to list and briefly describe attachments. One attachment is always the manuscript PDF. Additional attachments could be previously completed subtasks’ outputs. For example…)*
 
