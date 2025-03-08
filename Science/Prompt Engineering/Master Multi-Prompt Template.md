@@ -95,6 +95,7 @@ Below is the **recommended structure** for each subtask:
    - For JSON, you might require a top-level array of objects, each containing consistent fields like `id`, `name`, `description`, `references`, etc.  
 
 *(Repeat the Subtask template for each subtask in this sub-prompt, incrementing the subtask number.)*
+   - Provide guidance on how to handle or format references to the paper’s text, figures, or supplementary data.  
 
 ---
 
