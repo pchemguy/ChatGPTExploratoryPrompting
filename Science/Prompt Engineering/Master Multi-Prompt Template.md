@@ -79,7 +79,7 @@ Below is a **multi-step prompt template** you can use with ChatGPT (in O1, O3, o
 
 > **Subtasks** are listed **sequentially** with their respective *instructions* and desired *output format* (e.g., JSON). Each new **sub-prompt** adds new subtasks with continuing numbering.
 
-Below is an example layout illustrating how you might define each subtask:
+Below is the **recommended structure** for each subtask:
 
 ---
 
