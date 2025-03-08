@@ -19,7 +19,7 @@ The common opening section should also include a vocabulary note.
 
 # A
 
-Below is a **template** you can adapt to structure your multi-step prompt when asking ChatGPT (in O1, O3, or Deep Research mode) to analyze and extract information from a chemistry manuscript. The template is deliberately detailed and uses a standardized structure so that ChatGPT can handle the paper and any outputs from previous subtasks in a systematic, organized way.
+Below is a **multi-step prompt template** you can use with ChatGPT (in O1, O3, or Deep Research mode) to guide it through a detailed, expert-level peer review of a chemistry manuscript—ultimately focusing on **whether the key findings are consistent with the experimental details provided**, if there are **internal contradictions**, or if there is **any indication the reported results might be impossible** given established knowledge.
 
 ---
 
