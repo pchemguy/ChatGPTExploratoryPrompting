@@ -308,6 +308,39 @@ Bp: NMR spectrum data (non-stoichiometric "product")
 
 _(Note: “Reagents” and “products” apply broadly, even to non-chemical processes like mixing, separation, or forming/isolating phases.)_
 
+**Step 5**: **Reagents, Products, and Catalysts** (materials) directly related to the **most important finding’s essential stages**:
+1. **Scope**: From the manuscript (main text, tables, supporting info), **extract** all **chemicals** (in the broad sense) used or formed in the **essential** stages (Step 4) **assigned** to the **single most important finding** (from Step 3).
+    - “Chemicals” include any **non-stoichiometric material, homogeneous/heterogeneous solution, or mixture** explicitly treated as a reagent, product, or catalyst.
+2. **Labeling Convention**
+    - Assign **sequential labels** using **Capital Letters** (A, B, C, … Z) followed by a **single-letter suffix** indicating its role:
+        - **r** = reagent
+        - **i** = intermediate
+        - **p** = product
+        - **u** = unclassified
+    - For example: **Ar**, **Bp**, **Ci**, **Xu**.
+    - **Order of Labels**: The **capital letters** are assigned **in the order materials first appear** (A, B, C, … Z). The suffix letter indicates whether that material is serving as a reagent (r), product (p), intermediate (i), or unclassified (u).
+3. **Tracking Usage Across Stages**
+    - If the **entire product** of an earlier stage (e.g., Bp) is **used fully** as a reagent in the next essential stage, keep the **capital letter** but change the suffix (Bp -> Br).
+    - If **only part** of the product is used, or if there’s an **intermediate** stage not changing the core chemistry (like filtration, washing, drying), **increment** a numeric index after the capital letter but before the suffix. Example:
+        - **Mp** (main product) -> partially used -> **M1r** (reagent form) -> or again -> **M2r** if there’s another partial usage.
+    - This allows refined tracking when a fraction of a product is carried forward or re-purified.
+4. **Different Variants of the Same Material**
+    - If the manuscript clearly identifies a **particular composition** or **state** that sets it **apart** from a simpler version, give it a **unique label** (e.g., “Acidic Aqueous Phase” vs. “Neutral Aqueous Phase,” or “High-Purity Crystalline X” vs. “Crude X”).
+5. **Extract All Relevant Parameters**
+    - For each labeled material, list any **parameters** that the manuscript provides, such as **composition, quantity, phase, purity,** or other **properties** (e.g., color, consistency, special doping levels).
+    - Cite the **exact manuscript location** for each piece of data (e.g., “Table 2,” “Figure 3,” “Section 4.1,” or “SI, p. 7”).
+6. **List Format**
+    - Present the final result as a **structured list** with one entry **per** labeled chemical.
+    - For each entry, include:
+        - **Label** (e.g., “Ar,” “Bp”)
+        - **Name or Description** (e.g., “Ammonium Persulfate (APS), 98%,” or “Enriched 17O-water, pH 7.0”)
+        - **Properties** (composition, purity, quantity, physical state, etc.)
+        - **References** (location in text, tables, SI where these details appear)
+7. **Style**
+    - Keep the results organized, itemized, and concise.
+    - Focus on materials crucial to the main finding’s essential processes.
+    - Ensure labeling consistency across all steps.
+
 **Style**:
  - Present results in a **clearly structured**, itemized format.
  - **Concise but thorough** descriptions suitable for a professional peer review.
