@@ -111,9 +111,9 @@ Below is the **recommended structure** for each subtask:
 
 ---
 
-### **4. Expected Output Structure**  
+### **4. Expected Output Structure**
 
-To finalize the sub-prompt, restate that the response **must** be given in the structure and format specified for each subtask. For instance:
+Reiterate that ChatGPT should return each subtask’s results separately and in the **specified structured format**. For example:
 
 > *“For each subtask, provide the requested information exactly as JSON.  
 > Subtask N output should be in a JSON array named ‘subtask_N_output’.  
