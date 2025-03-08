@@ -127,8 +127,8 @@ Define Step 5. Reagents, products, and catalysts directly related to the main fi
     - "i" - for intermediate,
     - "p" - for product,
     - "u" - not classified.
-- When the entire product of an earlier stage is used as a reagent in a directly following stage, keep the capital letter, but change the suffix accordingly.
-- When not all of the product of an earlier stage is used as a reagent in a subsequent stage or if an intermediate non-essential stage not associated with changes in the key chemistry (such as, filtration) is involved, keep the capital letter, change the suffix letter accordingly, and also insert (or increment) a numeric index starting from "1" after the capital letter and before the letter suffix.
+- When the entire product of an earlier stage is used as a reagent in a directly following stage, keep the capital letter, but change the suffix accordingly (e.g., Bp -> Br).
+- When not all of the product of an earlier stage is used as a reagent in a subsequent stage or if an intermediate non-essential stage not associated with changes in the key chemistry (such as, filtration, washing, drying, etc.) is involved, keep the capital letter, change the suffix letter accordingly, and also insert (or increment) a numeric index starting from "1" after the capital letter and before the letter suffix (e.g., Mp -> M1r -> M2r).
 
 
 
