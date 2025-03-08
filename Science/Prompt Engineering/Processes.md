@@ -129,7 +129,8 @@ Define Step 5. Reagents, products, and catalysts directly related to the main fi
     - "u" - not classified.
 - When the entire product of an earlier stage is used as a reagent in a directly following stage, keep the capital letter, but change the suffix accordingly (e.g., Bp -> Br).
 - When not all of the product of an earlier stage is used as a reagent in a subsequent stage or if an intermediate non-essential stage not associated with changes in the key chemistry (such as, filtration, washing, drying, etc.) is involved, keep the capital letter, change the suffix letter accordingly, and also insert (or increment) a numeric index starting from "1" after the capital letter and before the letter suffix (e.g., Mp -> M1r -> M2r).
-
+- For each identified material, extract and list all relevant parameters, such as composition, quantity, phase, purity, etc.
+- Clearly reference specific locations where the identified material is referenced, as well as location for all extracted relevant parameters.
 
 
 Define Step 5.
