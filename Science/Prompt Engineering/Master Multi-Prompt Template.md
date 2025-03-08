@@ -145,7 +145,10 @@ SUB-PROMPT #2
 
    Subtask 2 – “Identify & Validate Key Findings”
    1. Objective:
-      Extract and list all major conclusions or key findings the authors explicitly state in the manuscript. 
+      - Identify all major conclusions or key findings reported in the manuscript.
+      - Assess whether the reported experimental details (from subtask_1.json and the manuscript) support these findings or indicate any inconsistencies.
+      - Determine if each finding aligns with typical/established knowledge in the field.
+      - Flag any finding that appears implausible or contradictory based on the data or known standards.
    2. Details & Requirements:
       - Include direct quotes from the paper if possible.
       - Summarize or paraphrase the authors' wording to ensure clarity.
