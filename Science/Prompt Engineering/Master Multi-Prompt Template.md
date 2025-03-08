@@ -50,9 +50,9 @@ Below is a **multi-step prompt template** you can use with ChatGPT (in O1, O3, o
    - You should refer to both the **manuscript** (including main text, tables, figures, supporting information) and the **structured outputs** from earlier subtasks, as needed, to complete new subtasks.
 
 4. **Vocabulary Note**  
-   - **“Reagent,” “product,” “chemical,” “material”** are used broadly to include both stoichiometric compounds and any non-stoichiometric mixtures, phases, or solutions. Anything presented as an input or output (including catalysts) should be treated as a distinct material if composition or usage is central to the paper.  
-   - **“Experimental process”** (without qualification) refers to any *chemical or physical process/transformation* or *experimental technique/procedure* that the authors explicitly performed.  
-   - **“Elementary process” or “stage”** refers to any clearly named or distinctly described manipulation, operation, or series of common operations treated as a single unit in the paper. Examples range from chemical reactions (e.g., “acid neutralization”) to physical processes (e.g., “centrifugation,” “spectroscopic measurement,” or “separation of layers”).
+   - **“Reagent”, “product”, “chemical”, “material”**: Used broadly, covering stoichiometric compounds, catalysts, solvents, mixtures, solutions, or phases referred to as an input or output in any experimental process. Any distinct mixture or specific composition explicitly referred to in the analyzed document is treated as a separate “material.”  
+   - **“Experimental process”** (unqualified) refers to any *chemical or physical process/transformation* or *technique/procedure* explicitly performed by the authors (e.g., reaction, mixing, separation, measurement, etc.).  
+   - **“Elementary process” or “stage”** refers to a named or distinct step (or group of common operations the paper treats as one unit) such as “acid neutralization,” “filtration,” “spectroscopic measurement,” or “centrifugation”.
 
 ---
 
