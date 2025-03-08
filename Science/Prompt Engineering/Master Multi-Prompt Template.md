@@ -119,31 +119,31 @@ Reiterate that ChatGPT should return each subtask’s results separately and in 
 > Subtask N output should be in a JSON array named ‘subtask_N_output’.  
 > If multiple subtasks exist, separate each subtask’s JSON output clearly, using headings in your response.”*
 
-This ensures ChatGPT’s output is well-organized and easy to parse or reuse.
+This ensures the response is **easy to parse** and remains **well-organized**.
 
 ---
 
-## **Putting It All Together: Example**
+## **Example of a Complete Sub-Prompt**
 
-Below is a hypothetical example (not covering every possible subtask) showing how your **Sub-Prompt #2** might look, referencing a previous `subtask_1.json`:
+Below is a hypothetical example of a **Sub-Prompt #2** referencing prior outputs and focusing on the main goal of consistency checking:
 
 ```
 SUB-PROMPT #2
 
 1. Common Opening Section
 
-   You are ChatGPT, an advanced large language model ...
-   (Same text describing your context, overall task, note about the sub-prompt structure, vocabulary note, etc.)
+   You are ChatGPT, an advanced large language model acting as an expert chemistry reviewer ...
+   (Repeat standard text describing the overall task: to identify key results and check consistency, contradictions, or feasibility …)
 
 2. Attachment Section
 
-   - Manuscript.pdf: The original chemistry paper.
+   - Manuscript.pdf: The original paper.
    - subtask_1.json:
-     - Output from Subtask 1: “Extraction of elementary processes.”
+     - Output from Subtask 1 – “Extraction of elementary processes.”
 
 3. Task Section
 
-   Subtask 2 – “Extraction of Key Findings”
+   Subtask 2 – “Identify & Validate Key Findings”
    1. Objective:
       Extract and list all major conclusions or key findings the authors explicitly state in the manuscript. 
    2. Details & Requirements:
