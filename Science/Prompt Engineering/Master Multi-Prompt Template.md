@@ -90,12 +90,24 @@ Below is the **recommended structure** for each subtask:
    - Provide any specific instructions about what to capture, how to interpret certain details, or how to structure the response. For instance:  
      - *“List each process with a unique identifier.”*  
      - *“Include references to the corresponding sections/figure numbers in the paper if available.”*
-3. **Desired Output Format**:  
-   - Specify exactly how the output must be structured. For example, *JSON*, *CSV*, or *YAML*.  
-   - For JSON, you might require a top-level array of objects, each containing consistent fields like `id`, `name`, `description`, `references`, etc.  
-
-*(Repeat the Subtask template for each subtask in this sub-prompt, incrementing the subtask number.)*
    - Provide guidance on how to handle or format references to the paper’s text, figures, or supplementary data.  
+3. **Desired Output Format**  
+   - Specify the exact structure you want (e.g., JSON, CSV, YAML).  
+   - For JSON, you might define the fields each item should include. For instance:
+     ```json
+     [
+       {
+         "finding_id": "<string>",
+         "finding_text": "<string>",
+         "supporting_evidence": "<text_citation_or_summary>",
+         "potential_contradictions": "<text_if_any>",
+         "feasibility_comment": "<opinion_on_whether_data_supports_the_finding_or_if_it_contradicts_established_knowledge>",
+         "references_in_manuscript": ["<section_or_page_numbers>"]
+       }
+     ]
+     ```
+
+*(Repeat this format for each subtask in the current sub-prompt, incrementing Subtask numbering.)*
 
 ---
 
