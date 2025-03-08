@@ -86,7 +86,7 @@ Below is the **recommended structure** for each subtask:
 #### **Subtask N – \[Title/Name of the Subtask\]**
 1. **Objective**:  
    - Clearly state what you want ChatGPT to do for this subtask, e.g., *“Extract all elementary processes from the manuscript.”*
-2. **Details & Requirements**:  
+2. **Details & Requirements**  
    - Provide any specific instructions about what to capture, how to interpret certain details, or how to structure the response. For instance:  
      - *“List each process with a unique identifier.”*  
      - *“Include references to the corresponding sections/figure numbers in the paper if available.”*
