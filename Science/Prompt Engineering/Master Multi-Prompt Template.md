@@ -199,26 +199,17 @@ SUB-PROMPT #2
 
 ---
 
-### **Usage Notes**
+## **Checklist for Using This Template**
 
-- **Sub-Prompt #1** might only have one subtask (e.g., “Extract all elementary processes”).  
-- **Sub-Prompt #2** might contain subtasks 2, 3, 4 as in the example, and so forth.  
-- Continue this pattern for as many sub-prompts as needed.  
-- Always attach any relevant previous output files.  
-- Always restate the desired *JSON/CSV/YAML structure* so ChatGPT knows exactly how to format each subtask’s output.
+1. **Keep numbering consistent:** If you have five subtasks total across multiple prompts, be sure not to reset the subtask count in later prompts.  
+2. **Repeat the “Common Opening Section”** each time, so ChatGPT always has context about its role and the overarching goal.  
+3. **List all attachments** every time, clarifying what each file contains.  
+4. **Specify each subtask** with:
+   - A name/title.  
+   - An objective (the question or action you need from ChatGPT).  
+   - Detailed instructions/requirements.  
+   - **Exact** output formatting instructions.  
+5. Emphasize the importance of checking for **internal inconsistencies**, references to **established knowledge**, and whether the **reported results are feasible** or potentially **impossible**.  
+6. **Require a structured file format** (e.g., JSON or CSV) for each subtask’s output.
 
----
-
-## **Final Checklist**
-
-1. **Keep numbering consistent** across sub-prompts.  
-2. **Re-include the common opening section** in every sub-prompt so ChatGPT always has the context.  
-3. **List attachments** in every sub-prompt—this is crucial for referencing the original manuscript and any prior subtask outputs.  
-4. **Clearly define each subtask** with:
-   - A short name or title.  
-   - A clear objective.  
-   - Detailed requirements.  
-   - A precise output format (with example).  
-5. **Instruct ChatGPT** to output data *only* in the specified structured format whenever a subtask demands it, so it can be easily parsed or reviewed.  
-
-By following this template, you ensure each sub-prompt is self-contained yet sequentially linked, giving ChatGPT everything it needs for thorough, stepwise manuscript analysis and review.
+By following this **structured multi-step template**, you will guide ChatGPT to methodically gather, validate, and synthesize information from the manuscript—ultimately helping you assess whether the paper’s claims are valid, contradictory, or questionable.
