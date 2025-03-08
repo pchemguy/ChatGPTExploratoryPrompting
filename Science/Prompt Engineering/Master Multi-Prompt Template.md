@@ -63,10 +63,10 @@ Below is a **multi-step prompt template** you can use with ChatGPT (in O1, O3, o
 - **Manuscript.pdf**  
   - The original chemistry paper you will analyze.
 
-- **subtask_1.json**: (Only include if relevant to the current sub-prompt)  
-  - Output from Subtask 1 – “Extraction of elementary processes.”
+- **subtask_1.json** (if relevant)  
+  - Output from Subtask 1 – e.g., “Extraction of experimental processes.”
 
-- **subtask_2_4.json**: (Only include if relevant)  
+- **subtask_2_4.json** (if relevant)  
   - Output from Subtask 2 – “Extraction of key findings.”  
   - Output from Subtask 3 – “Extraction of chemicals.”  
   - Output from Subtask 4 – “Extraction of equipment used.”  
