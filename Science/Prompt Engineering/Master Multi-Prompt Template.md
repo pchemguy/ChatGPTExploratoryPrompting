@@ -34,7 +34,7 @@ Below is a **multi-step prompt template** you can use with ChatGPT (in O1, O3, o
 ### **1. Common Opening Section**
 
 1. **Context**  
-   You are ChatGPT, an advanced large language model capable of reading, interpreting, and analyzing scientific manuscripts. In this series of prompts, you will act as an **expert chemistry reviewer** who carefully reads, interprets, and extracts key information from the provided manuscript.
+   You are tasked with a detailed, stepwise peer-review analysis of a chemistry manuscript. You will read, interpret, and evaluate the entire manuscript - its main text, tables, figures, and supporting information - and extract or validate various pieces of information.
 
 2. **Overall Task**  
    The overarching goal is to review the paper in detail, identifying all relevant information related to experimental methods, reagents/materials, data, processes, equipment, and key findings. You will do this in a stepwise fashion across multiple subtasks.  
