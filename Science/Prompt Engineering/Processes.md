@@ -117,6 +117,21 @@ _(Note: “Reagents” and “products” apply broadly, even to non-chemical pr
 
 Let's remove the "7. **Relevant Equipment or Apparatus**" section from Step 4.
 
+Define Step 5. Reagents, products, and catalysts directly related to the main findings.
+- Extract all chemicals (reagents, products, and catalysts) involved in the essential stages from step 4 assigned to the single most important finding in step 3.
+- Understand "chemical" in a broad sense: any non-stoichiometric material, homogenous or heterogenous solution, or mixture identified as a starting material, catalyst, or product should receive its own label. Any such material having a particular composition, state, or some other characteristic specifically stated and identified as a product should receive its own label that is distinct from a similar material that only differs by the value of that characteristic.
+- Make sure to parse the main text, all tables, and any supporting information.
+- Assign **sequential labels** (Ax, Bx, Cx … Zx) in the order they **first appear**.
+- Use a single label series for all materials, but replace the suffix "x" with:
+    - "r" - for reagent,
+    - "i" - for intermediate,
+    - "p" - for product,
+    - "u" - not classified.
+- When the entire product of an earlier stage is used as a reagent in a directly following stage, keep the capital letter, but change the suffix accordingly.
+- When not all of the product of an earlier stage is used as a reagent in a subsequent stage or if an intermediate non-essential stage not associated with changes in the key chemistry (such as, filtration) is involved, keep the capital letter, change the suffix letter accordingly, and also insert (or increment) a numeric index starting from "1" after the capital letter and before the letter suffix.
+
+
+
 Define Step 5.
 
 Consider the following components contributing to the essential stages from step 4 assigned to the single most important finding in step 3: 
