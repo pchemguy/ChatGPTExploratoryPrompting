@@ -301,10 +301,6 @@ Bp: NMR spectrum data (non-stoichiometric "product")
 6. **Non-trivial Byproducts**
     - If a byproduct is relevant to yield, mechanism, or verifying the result, list it.
     - Omit trivial or inconsequential byproducts unless the manuscript specifically discusses them as important.
-7. **Relevant Equipment or Apparatus**
-    - Key equipment or apparatus used. Make special emphasis on equipment used for stages classified as essential and verifying. After this list is compiled, reread the manuscript to see if additional important details may be extracted from the main text, supporting information or figures. 
-    - Highlight key performance characteristics and any **essential features** or specs that strongly influence the underlying process and outcome (e.g., high-resolution microscope vs. general-purpose, industrial-scale vs. bench-scale). Include relevant numeric values whenever possible. Consider if sufficient information is explicitly provided in the manuscript, with particular focus on information necessary for analysis of the key process and performing estimation/prediction/validation of the produced results. Whenever possible, attempt to infer approximate values/ranges for any missing crucial characteristics and explain the logic used.
-    - Briefly **note** how these characteristics impact the process or result.
 
 _(Note: “Reagents” and “products” apply broadly, even to non-chemical processes like mixing, separation, or forming/isolating phases.)_
 
@@ -362,3 +358,12 @@ Consider the following components contributing to the essential stages from step
 
 
 for predicting key outcomes of the stages under considerations, be it particular reaction pathways, unexpected 
+
+---
+---
+
+7. **Relevant Equipment or Apparatus**
+    - Key equipment or apparatus used. Make special emphasis on equipment used for stages classified as essential and verifying. After this list is compiled, reread the manuscript to see if additional important details may be extracted from the main text, supporting information or figures. 
+    - Highlight key performance characteristics and any **essential features** or specs that strongly influence the underlying process and outcome (e.g., high-resolution microscope vs. general-purpose, industrial-scale vs. bench-scale). Include relevant numeric values whenever possible. Consider if sufficient information is explicitly provided in the manuscript, with particular focus on information necessary for analysis of the key process and performing estimation/prediction/validation of the produced results. Whenever possible, attempt to infer approximate values/ranges for any missing crucial characteristics and explain the logic used.
+    - Briefly **note** how these characteristics impact the process or result.
+
