@@ -38,6 +38,21 @@ The specific task consists of several steps:
         - relevant equipment apparatus, noting any essential quantitative/qualitative characteristics or classification essential for performing the process or likely affecting the result (for example, general purpose microscopes used in academic labs are usually inferior then specialized high-end systems used in industrial semiconductor facilities; smaller scale benchtop apparatus employed in an academic lab may have certain advantages and disadvantage when compared to full-scale industrial analog.) 
     Treat reagents/products in a wide sense, even if the process does not involve a chemical process directly. For example, when preparing a mixture or, conversely, performing mixture or composite system separation, the mixture, individual components and any isolated phases/portions should be considered as reagents/products as appropriate.
 
+5. Reagents, products, and catalysts directly related to the main findings
+    - Extract all chemicals (reagents, products, and catalysts) involved in the essential stages from step 4 assigned to the single most important finding in step 3.
+    - Understand "chemical" in a broad sense: any non-stoichiometric material, homogenous or heterogenous solution, or mixture identified as a starting material, catalyst, or product should receive its own label. Any such material having a particular composition, state, or some other characteristic specifically stated and identified as a product should receive its own label that is distinct from a similar material that only differs by the value of that characteristic.
+    - Make sure to parse the main text, all tables, and any supporting information.
+    - Assign **sequential labels** (Ax, Bx, Cx … Zx) in the order they **first appear**.
+    - Use a single label series for all materials, but replace the suffix "x" with:
+        - "r" - for reagent,
+        - "i" - for intermediate,
+        - "p" - for product,
+        - "u" - not classified.
+    - When the entire product of an earlier stage is used as a reagent in a directly following stage, keep the capital letter, but change the suffix accordingly (e.g., Bp -> Br).
+    - When not all of the product of an earlier stage is used as a reagent in a subsequent stage or if an intermediate non-essential stage not associated with changes in the key chemistry (such as, filtration, washing, drying, etc.) is involved, keep the capital letter, change the suffix letter accordingly, and also insert (or increment) a numeric index starting from "1" after the capital letter and before the letter suffix (e.g., Mp -> M1r -> M2r).
+    - For each identified material, extract and list all relevant parameters, such as composition, quantity, phase, purity, etc.
+    - Clearly reference specific locations where the identified material is referenced, as well as location for all extracted relevant parameters.
+
 ---
 
 # A
@@ -113,39 +128,34 @@ For each **stage** (i.e., relevant process from Step 1) that **directly contribu
 
 _(Note: “Reagents” and “products” apply broadly, even to non-chemical processes like mixing, separation, or forming/isolating phases.)_
 
----
-
-Let's remove the "7. **Relevant Equipment or Apparatus**" section from Step 4.
-
-Define Step 5. Reagents, products, and catalysts directly related to the main findings.
-- Extract all chemicals (reagents, products, and catalysts) involved in the essential stages from step 4 assigned to the single most important finding in step 3.
-- Understand "chemical" in a broad sense: any non-stoichiometric material, homogenous or heterogenous solution, or mixture identified as a starting material, catalyst, or product should receive its own label. Any such material having a particular composition, state, or some other characteristic specifically stated and identified as a product should receive its own label that is distinct from a similar material that only differs by the value of that characteristic.
-- Make sure to parse the main text, all tables, and any supporting information.
-- Assign **sequential labels** (Ax, Bx, Cx … Zx) in the order they **first appear**.
-- Use a single label series for all materials, but replace the suffix "x" with:
-    - "r" - for reagent,
-    - "i" - for intermediate,
-    - "p" - for product,
-    - "u" - not classified.
-- When the entire product of an earlier stage is used as a reagent in a directly following stage, keep the capital letter, but change the suffix accordingly (e.g., Bp -> Br).
-- When not all of the product of an earlier stage is used as a reagent in a subsequent stage or if an intermediate non-essential stage not associated with changes in the key chemistry (such as, filtration, washing, drying, etc.) is involved, keep the capital letter, change the suffix letter accordingly, and also insert (or increment) a numeric index starting from "1" after the capital letter and before the letter suffix (e.g., Mp -> M1r -> M2r).
-- For each identified material, extract and list all relevant parameters, such as composition, quantity, phase, purity, etc.
-- Clearly reference specific locations where the identified material is referenced, as well as location for all extracted relevant parameters.
-
-
-Define Step 5.
-
-Consider the following components contributing to the essential stages from step 4 assigned to the single most important finding in step 3: 
-- Chemical and physical processes, including any relevant conditions (temperature, pressure, timings, pH, etc.).  
-- Equipment, including all key characteristics that determine performance of such equipment.  
-- Reagents or catalysts used, including any specific properties defined (purity, phase, composition, special activation, specific surface area, and so on).
-
-**Ultimate goal**: Establishing whether the key outcomes of the stages under considerations could be explained/predicted/verified quantitatively, semi-quantitatively, or qualitatively based on described equipment involved, reagents or catalysts used, specific process conditions employed
-**Task**: Identifying information necessary 
-
-
-for predicting key outcomes of the stages under considerations, be it particular reaction pathways, unexpected 
-
+####  **Step 5. Reagents, products, and catalysts directly related to the main findings.**
+1. **Scope**: From the manuscript (main text, tables, supporting info), **extract** all **chemicals** (in the broad sense) used or formed in the **essential** stages (Step 4) **assigned** to the **single most important finding** (from Step 3).
+    - “Chemicals” include any **non-stoichiometric material, homogeneous/heterogeneous solution, or mixture** explicitly treated as a reagent, product, or catalyst.
+2. **Labeling Convention**
+    - Assign **sequential labels** using **Capital Letters** (A, B, C, … Z) followed by a **single-letter suffix** indicating its role:
+        - **r** = reagent
+        - **i** = intermediate
+        - **p** = product
+        - **u** = unclassified
+    - For example: **Ar**, **Bp**, **Ci**, **Xu**.
+    - **Order of Labels**: The **capital letters** are assigned **in the order materials first appear** (A, B, C, … Z). The suffix letter indicates whether that material is serving as a reagent (r), product (p), intermediate (i), or unclassified (u).
+3. **Tracking Usage Across Stages**
+    - If the **entire product** of an earlier stage (e.g., Bp) is **used fully** as a reagent in the next essential stage, keep the **capital letter** but change the suffix (Bp -> Br).
+    - If **only part** of the product is used, or if there’s an **intermediate** stage not changing the core chemistry (like filtration, washing, drying), **increment** a numeric index after the capital letter but before the suffix. Example:
+        - **Mp** (main product) -> partially used -> **M1r** (reagent form) -> or again -> **M2r** if there’s another partial usage.
+    - This allows refined tracking when a fraction of a product is carried forward or re-purified.
+4. **Different Variants of the Same Material**
+    - If the manuscript clearly identifies a **particular composition** or **state** that sets it **apart** from a simpler version, give it a **unique label** (e.g., “Acidic Aqueous Phase” vs. “Neutral Aqueous Phase,” or “High-Purity Crystalline X” vs. “Crude X”).
+5. **Extract All Relevant Parameters**
+    - For each labeled material, list any **parameters** that the manuscript provides, such as **composition, quantity, phase, purity,** or other **properties** (e.g., color, consistency, special doping levels).
+    - Cite the **exact manuscript location** for each piece of data (e.g., “Table 2,” “Figure 3,” “Section 4.1,” or “SI, p. 7”).
+6. **List Format**
+    - Present the final result as a **structured list** with one entry **per** labeled chemical.
+    - For each entry, include:
+        - **Label** (e.g., “Ar,” “Bp”)
+        - **Name or Description** (e.g., “Ammonium Persulfate (APS), 98%,” or “Enriched 17O-water, pH 7.0”)
+        - **Properties** (composition, purity, quantity, physical state, etc.)
+        - **References** (location in text, tables, SI where these details appear)
 
 ---
 ### Example (for Illustration Only)
@@ -176,7 +186,7 @@ for predicting key outcomes of the stages under considerations, be it particular
         - Schematic (specific to Finding 2):
             `Ct (Camphor + EtOH) → Tt (Exchange) → Dt (Product analysis)`
 
-* **Step 4 (Detailed Stage Analysis)**
+* **Step 4** (Detailed Stage Analysis)
     - **Stage tA**: Fractional Distillation
         - **Classification**: Essential (no enriched water otherwise).
         - **Catalysts**: None.
@@ -193,6 +203,39 @@ for predicting key outcomes of the stages under considerations, be it particular
         - **Key Product**: NMR data confirming the 17O fraction.
         - **Non-trivial Byproducts**: None.
         - **Relevant Equipment**: High-field (600 MHz) NMR spectrometer with advanced pulse sequences. A lower-field instrument might give lower resolution of the isotopic signals.
+
+* **Step 5** (Materials)
+```yaml
+A1r: Tap Water (initial partial 17O enrichment)
+  - Quantity: ~500 mL (SI, p. 2)
+  - Composition: 0.04% 17O (Table 1)
+  - Phase: Liquid
+  - Use: Reagent for distillation
+  - First mentioned: Section 2.1
+
+Ap: Distilled 17O-enriched Water
+  - 17O content: ~90% (Section 2.2, Table 2)
+  - Phase: Liquid
+  - Product from tA (Fractional Distillation)
+  - Then fully used in tB → label changes Ap → Ar when used in tB
+
+Ar: 17O-enriched Water used in NMR
+  - Same material as Ap, now a reagent for tB
+  - Quantity: 2 mL NMR sample (SI, p. 3)
+  - Purity: Distilled, no visible contaminants
+  - Mentioned: Section 2.2
+
+B1r: NMR Solvent (CDCl3)
+  - Quantity: 0.5 mL
+  - Purity: 99.8% D
+  - Phase: Liquid
+  - Info in Table S3 (SI, p. 5)
+
+Bp: NMR spectrum data (non-stoichiometric "product")
+  - Classification: Could be considered "product" if the authors treat the spectral solution as an end-entity 
+  - References: Fig. 4 (p. 7), Table 2
+  - Additional property: 1H shift, 17O shift, etc.
+```
 
 ---
 
@@ -273,3 +316,16 @@ _(Note: “Reagents” and “products” apply broadly, even to non-chemical pr
 **Now, please read and analyze the entire manuscript (main text + supporting information) and produce requested information accordingly.**
 
 ---
+---
+
+
+Consider the following components contributing to the essential stages from step 4 assigned to the single most important finding in step 3: 
+- Chemical and physical processes, including any relevant conditions (temperature, pressure, timings, pH, etc.).  
+- Equipment, including all key characteristics that determine performance of such equipment.  
+- Reagents or catalysts used, including any specific properties defined (purity, phase, composition, special activation, specific surface area, and so on).
+
+**Ultimate goal**: Establishing whether the key outcomes of the stages under considerations could be explained/predicted/verified quantitatively, semi-quantitatively, or qualitatively based on described equipment involved, reagents or catalysts used, specific process conditions employed
+**Task**: Identifying information necessary 
+
+
+for predicting key outcomes of the stages under considerations, be it particular reaction pathways, unexpected 
