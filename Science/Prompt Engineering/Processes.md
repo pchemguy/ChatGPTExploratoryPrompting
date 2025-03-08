@@ -115,6 +115,23 @@ _(Note: “Reagents” and “products” apply broadly, even to non-chemical pr
 
 ---
 
+Let's remove the "7. **Relevant Equipment or Apparatus**" section from Step 4.
+
+Define Step 5.
+
+Consider the following components contributing to the essential stages from step 4 assigned to the single most important finding in step 3: 
+- Processes, including any relevant conditions (temperature, pressure, timings, pH, etc.).  
+- Equipment, including all key characteristics that determine performance of such equipment.  
+- Reagents or catalysts used, including any specific properties defined (purity, phase, composition, special activation, specific surface area, and so on).
+
+**Ultimate goal**: Establishing whether the key outcomes of the stages under considerations could be explained/predicted/verified quantitatively, semi-quantitatively, or qualitatively based on described equipment involved, reagents or catalysts used, specific process conditions employed
+**Task**: Identifying information necessary 
+
+
+for predicting key outcomes of the stages under considerations, be it particular reaction pathways, unexpected 
+
+
+---
 ### Example (for Illustration Only)
 
 - **Step 1** (Labeled List):  
