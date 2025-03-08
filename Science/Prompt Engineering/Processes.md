@@ -26,8 +26,9 @@ The specific task consists of several steps:
 4. Stage analysis
     Create a structured list with process details for each stage contributed to the main findings. For each such stage add the following bullets:
     1. classify stage as
-        - essential (if omitted, achieving the final result would most likely be impossible) or
-        - refining (probably improves purity, yield, or some other characteristic; if omitted, the final result should likely be still achievable, even if with inferior value of the characteristics targeted by the stage).
+        - essential (if omitted, achieving the final result would most likely be impossible),
+        - refining (probably improves purity, yield, or some other characteristic; if omitted, the final result should likely be still achievable, even if with inferior value of the characteristics targeted by the stage). or
+        - verifying (such as analytical measurements).
     2. list all
         - catalysts used
         - relevant process conditions (temperature, pressure, stirring, etc.)
@@ -91,6 +92,7 @@ For each **stage** (i.e., relevant process from Step 1) that **directly contribu
 1. **Stage Classification**
     - **Essential**: If omitting it would **likely make** the final result impossible to achieve.
     - **Refining**: If omitting it would still produce the main product/findings, albeit with lower purity, yield, or other suboptimal parameters.
+    - **Verifying**: Such as analytical measurements.
 2. **Catalysts Used**
     - List any **catalysts** and briefly note their role (if no catalysts, note “None”).
 3. **Relevant Process Conditions**
@@ -150,7 +152,7 @@ _(Note: “Reagents” and “products” apply broadly, even to non-chemical pr
         - **Non-trivial Byproducts**: None.
         - **Relevant Equipment**: Standard lab-scale fractional distillation apparatus, 10-cm Vigreux column, suitable for small-volume processes. (Industrial-scale might reach higher throughput but could differ in yield/purity.)
     - **Stage tB**: NMR Verification
-        - **Classification**: Essential (confirms the enrichment).
+        - **Classification**: Analytical (confirms the enrichment).
         - **Catalysts**: None.
         - **Process Conditions**: ~25 °C, 600 MHz spectrometer.
         - **Key Starting Compound**: Distillate from tA.
@@ -208,6 +210,7 @@ _(Note: “Reagents” and “products” apply broadly, even to non-chemical pr
 1. **Stage Classification**
     - **Essential**: If omitting it would **likely make** the final result impossible to achieve.
     - **Refining**: If omitting it would still produce the main product/findings, albeit with lower purity, yield, or other suboptimal parameters.
+    - **Verifying**: Such as analytical measurements.
 2. **Catalysts Used**
     - List any **catalysts** and briefly note their role (if no catalysts, note “None”).
 3. **Relevant Process Conditions**
