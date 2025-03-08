@@ -25,15 +25,16 @@ The specific task consists of several steps:
  
 4. Stage analysis
     Create a structured list with process details for each stage contributed to the main findings. For each such stage add the following bullets:
-    1. lassify stage as
+    1. classify stage as
         - essential (if omitted, achieving the final result would most likely be impossible) or
         - refining (probably improves purity, yield, or some other characteristic; if omitted, the final result should likely be still achievable, even if with inferior value of the characteristics targeted by the stage).
-    2. ist all
+    2. list all
         - catalysts used
         - relevant process conditions (temperature, pressure, stirring, etc.)
         - key/essential starting compounds (for example, if acetic acid is prepared from acetic aldehyde, aldehyde is the key compound, but specific oxidizer is usually less important, unless the finding uses a specific non-conventional oxidizer to somehow improve the oxidation process or perhaps a conventional oxidizer with a particular additional catalyst or some other non-conventional conditions, such as a combination of KMnO4 with Potassium-ion matching crown ether).
         - key/essential products (for example, when synthesizing m-nitrochlorobenzene from chlorobenzene, m-nitrochlorobenzene is the key product, but dinitro byproducts are probably non-essential, unless a special focus is given to those, such as in the case where the process specifically focuses on achieving maximum suppression of dinitro byproducts). 
-        - non-trivial byproducts, such as byproducts that affect the yield of the key product or are important for modeling the underlying process and predicting/estimating/validating the key result (for example, when basic KMnO4 is used as an oxidizer, MnO2 and water are usually trivial byproducts; when synthesizing m-nitrochlorobenzene from chlorobenzene, o- and p- isomers are also important, as their generation directly affects the yield of the target compound.)
+        - non-trivial byproducts, such as byproducts that affect the yield of the key product or are important for modeling the underlying process and predicting/estimating/validating the key result (for example, when basic KMnO4 is used as an oxidizer, MnO2 and water are usually trivial byproducts; when synthesizing m-nitrochlorobenzene from chlorobenzene, o- and p- isomers are also important, as their generation directly affects the yield of the target compound.).
+        - relevant equipment apparatus, noting any essential quantitative/qualitative characteristics or classification essential for performing the process or likely affecting the result (for example, general purpose microscopes used in academic labs are usually inferior then specialized high-end systems used in industrial semiconductor facilities; smaller scale benchtop apparatus employed in an academic lab may have certain advantages and disadvantage when compared to full-scale industrial analog.) 
     Treat reagents/products in a wide sense, even if the process does not involve a chemical process directly. For example, when preparing a mixture or, conversely, performing mixture or composite system separation, the mixture, individual components and any isolated phases/portions should be considered as reagents/products as appropriate.
 
 ---
@@ -86,8 +87,7 @@ You are an advanced reasoning model (capable of O1, O3, and deep research reason
     2. Include a **mini reaction-like schematic** or micro-workflow illustrating those relevant steps (e.g., “Et → Gt → Ht → Product”).
 
 #### **Step 4: Detailed Stage Analysis for Main Findings**
-For each **stage** (i.e., relevant process from Step 1) that **directly contributes** to the **main** or **additional** findings identified in Step 3, provide a **structured list** of details:
-
+For each **stage** (i.e., relevant process from Step 1) that **directly contributes** to the **main** or **additional** findings identified in Step 3, provide a **structured list** of details:  
 1. **Stage Classification**
     - **Essential**: If omitting it would **likely make** the final result impossible to achieve.
     - **Refining**: If omitting it would still produce the main product/findings, albeit with lower purity, yield, or other suboptimal parameters.
@@ -104,6 +104,9 @@ For each **stage** (i.e., relevant process from Step 1) that **directly contribu
 6. **Non-trivial Byproducts**
     - If a byproduct is relevant to yield, mechanism, or verifying the result, list it.
     - Omit trivial or inconsequential byproducts unless the manuscript specifically discusses them as important.
+7. **Relevant Equipment or Apparatus**
+    - Any **essential features** or specs that strongly influence the outcome (e.g., high-resolution microscope vs. general-purpose, industrial-scale reactor vs. bench-scale apparatus).
+    - Briefly **note** how these characteristics impact the process or result.
 
 _(Note: “Reagents” and “products” apply broadly, even to non-chemical processes like mixing, separation, or forming/isolating phases.)_
 
@@ -112,13 +115,13 @@ _(Note: “Reagents” and “products” apply broadly, even to non-chemical pr
 ### Example (for Illustration Only)
 
 - **Step 1** (Labeled List):  
-  1. At: “Synthesis of Compound X – Stage 1” (Section 2.1)  
-     - Reagent A + Reagent B, reflux for 3 hours.  
-  2. Bt: “Synthesis of Compound X – Stage 2” (Section 2.1)  
-     - Solvent exchange, stirring at room temperature.  
-  3. Ct: “Purification by Column Chromatography” (Section 2.2).  
-  4. Dt: “Repeat Synthesis of Compound X” (Section 2.3)  
-     - Identical to At, but physically repeated.  
+      1. At: “Synthesis of Compound X – Stage 1” (Section 2.1)  
+         - Reagent A + Reagent B, reflux for 3 hours.  
+      2. Bt: “Synthesis of Compound X – Stage 2” (Section 2.1)  
+         - Solvent exchange, stirring at room temperature.  
+      3. Ct: “Purification by Column Chromatography” (Section 2.2).  
+      4. Dt: “Repeat Synthesis of Compound X” (Section 2.3)  
+         - Identical to At, but physically repeated.  
 
 - **Step 2** (Schematic):
 ```
@@ -132,12 +135,29 @@ _(Note: “Reagents” and “products” apply broadly, even to non-chemical pr
         - Relevant Steps: At (Evaporation/Distillation), Bt (Verification via GC-MS).
         - Schematic (specific to Finding 1):
             `At → Bt (Confirmed 17O enrichment)`
-            
     - **Finding 2**: They uncovered an oxygen-exchange reaction of primary alcohols, catalyzed by camphor.
         - Relevant Steps: Ct, Dt…
         - Schematic (specific to Finding 2):
             `Ct (Camphor + EtOH) → Tt (Exchange) → Dt (Product analysis)`
-      
+
+* **Step 4 (Detailed Stage Analysis)**
+    - **Stage tA**: Fractional Distillation
+        - **Classification**: Essential (no enriched water otherwise).
+        - **Catalysts**: None.
+        - **Process Conditions**: Distillation column, atmospheric pressure, ~95–99 °C.
+        - **Key Starting Compound**: Partially enriched tap water.
+        - **Key Product**: Concentrated 17O-labeled water.
+        - **Non-trivial Byproducts**: None.
+        - **Relevant Equipment**: Standard lab-scale fractional distillation apparatus, 10-cm Vigreux column, suitable for small-volume processes. (Industrial-scale might reach higher throughput but could differ in yield/purity.)
+    - **Stage tB**: NMR Verification
+        - **Classification**: Essential (confirms the enrichment).
+        - **Catalysts**: None.
+        - **Process Conditions**: ~25 °C, 600 MHz spectrometer.
+        - **Key Starting Compound**: Distillate from tA.
+        - **Key Product**: NMR data confirming the 17O fraction.
+        - **Non-trivial Byproducts**: None.
+        - **Relevant Equipment**: High-field (600 MHz) NMR spectrometer with advanced pulse sequences. A lower-field instrument might give lower resolution of the isotopic signals.
+
 ---
 
 ### Complete Prompt Text
@@ -183,6 +203,29 @@ _(Note: “Reagents” and “products” apply broadly, even to non-chemical pr
     1. **Identify** which **experimental stages (from Step 1)** are relevant to that finding.
     2. Include a **mini reaction-like schematic** or micro-workflow illustrating those relevant stages (e.g., “Et → Gt → Ht → Product”).
     3. If possible, provide a concise explanation of fundamental, methodological, applied, practical or educational value of the highlighted result.
+
+**Step 4**: For each **stage** (i.e., relevant process from Step 1) that **directly contributes** to the **main** or **additional** findings identified in Step 3, provide a **structured list** of details:  
+1. **Stage Classification**
+    - **Essential**: If omitting it would **likely make** the final result impossible to achieve.
+    - **Refining**: If omitting it would still produce the main product/findings, albeit with lower purity, yield, or other suboptimal parameters.
+2. **Catalysts Used**
+    - List any **catalysts** and briefly note their role (if no catalysts, note “None”).
+3. **Relevant Process Conditions**
+    - E.g., temperature, pressure, stirring rate, pH, time, or any special apparatus or environment.
+4. **Key/Essential Starting Compounds**
+    - E.g., any **critical** reagent or substrate required to form the main product or drive the main mechanism.
+    - Omit generic items (like a routine base if it’s standard) **unless** it plays a unique or non-conventional role.
+5. **Key/Essential Products**
+    - List the **main product(s)** relevant to the finding.
+    - Provide short clarifications if needed (e.g., “target compound,” “final reaction intermediate”).
+6. **Non-trivial Byproducts**
+    - If a byproduct is relevant to yield, mechanism, or verifying the result, list it.
+    - Omit trivial or inconsequential byproducts unless the manuscript specifically discusses them as important.
+7. **Relevant Equipment or Apparatus**
+    - Any **essential features** or specs that strongly influence the outcome (e.g., high-resolution microscope vs. general-purpose, industrial-scale reactor vs. bench-scale apparatus).
+    - Briefly **note** how these characteristics impact the process or result.
+
+_(Note: “Reagents” and “products” apply broadly, even to non-chemical processes like mixing, separation, or forming/isolating phases.)_
 
 **Style**:
  - Present results in a **clearly structured**, itemized format.
