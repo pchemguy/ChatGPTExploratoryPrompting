@@ -85,6 +85,28 @@ You are an advanced reasoning model (capable of O1, O3, and deep research reason
     1. **Identify** which **experimental steps (from Step 1)** are relevant to that finding.
     2. Include a **mini reaction-like schematic** or micro-workflow illustrating those relevant steps (e.g., “Et → Gt → Ht → Product”).
 
+#### **Step 4: Detailed Stage Analysis for Main Findings**
+For each **stage** (i.e., relevant process from Step 1) that **directly contributes** to the **main** or **additional** findings identified in Step 3, provide a **structured list** of details:
+
+1. **Stage Classification**
+    - **Essential**: If omitting it would **likely make** the final result impossible to achieve.
+    - **Refining**: If omitting it would still produce the main product/findings, albeit with lower purity, yield, or other suboptimal parameters.
+2. **Catalysts Used**
+    - List any **catalysts** and briefly note their role (if no catalysts, note “None”).
+3. **Relevant Process Conditions**
+    - E.g., temperature, pressure, stirring rate, pH, time, or any special apparatus or environment.
+4. **Key/Essential Starting Compounds**
+    - E.g., any **critical** reagent or substrate required to form the main product or drive the main mechanism.
+    - Omit generic items (like a routine base if it’s standard) **unless** it plays a unique or non-conventional role.
+5. **Key/Essential Products**
+    - List the **main product(s)** relevant to the finding.
+    - Provide short clarifications if needed (e.g., “target compound,” “final reaction intermediate”).
+6. **Non-trivial Byproducts**
+    - If a byproduct is relevant to yield, mechanism, or verifying the result, list it.
+    - Omit trivial or inconsequential byproducts unless the manuscript specifically discusses them as important.
+
+_(Note: “Reagents” and “products” apply broadly, even to non-chemical processes like mixing, separation, or forming/isolating phases.)_
+
 ---
 
 ### Example (for Illustration Only)
