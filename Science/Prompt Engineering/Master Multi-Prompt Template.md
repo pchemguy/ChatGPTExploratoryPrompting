@@ -60,8 +60,8 @@ Below is a **multi-step prompt template** you can use with ChatGPT (in O1, O3, o
 
 *(Use this section to list and briefly describe attachments. One attachment is always the manuscript PDF. Additional attachments could be previously completed subtasks’ outputs. For example…)*
 
-- **Manuscript.pdf**: The original chemistry paper you will analyze.  
-  - **Contents**: Main text, tables, figures, and supporting information.  
+- **Manuscript.pdf**  
+  - The original chemistry paper you will analyze.
 
 - **subtask_1.json**: (Only include if relevant to the current sub-prompt)  
   - Output from Subtask 1 – “Extraction of elementary processes.”
