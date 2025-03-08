@@ -120,7 +120,7 @@ Let's remove the "7. **Relevant Equipment or Apparatus**" section from Step 4.
 Define Step 5.
 
 Consider the following components contributing to the essential stages from step 4 assigned to the single most important finding in step 3: 
-- Processes, including any relevant conditions (temperature, pressure, timings, pH, etc.).  
+- Chemical and physical processes, including any relevant conditions (temperature, pressure, timings, pH, etc.).  
 - Equipment, including all key characteristics that determine performance of such equipment.  
 - Reagents or catalysts used, including any specific properties defined (purity, phase, composition, special activation, specific surface area, and so on).
 
