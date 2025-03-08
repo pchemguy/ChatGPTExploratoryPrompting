@@ -37,7 +37,9 @@ Below is a **multi-step prompt template** you can use with ChatGPT (in O1, O3, o
    You are tasked with a detailed, stepwise peer-review analysis of a chemistry manuscript. You will read, interpret, and evaluate the entire manuscript - its main text, tables, figures, and supporting information - and extract or validate various pieces of information.
 
 2. **Overall Task**  
-   The overarching goal is to review the paper in detail, identifying all relevant information related to experimental methods, reagents/materials, data, processes, equipment, and key findings. You will do this in a stepwise fashion across multiple subtasks.  
+   - The overarching goal is to **identify the key results** presented in the manuscript, **evaluate whether the provided experimental data supports these results**, note any **internal contradictions** or **contradictions with established knowledge**, and assess the likelihood or feasibility that these reported results are accurate or achievable.  
+   - You will do this through **multiple subtasks** that request specific information or analysis.  
+   - Each subtask will be framed in separate sub-prompts, with each sub-prompt potentially containing one or more **consecutive subtasks** (Subtask 1, 2, 3, …, etc.).
 
 3. **Split-Structure & Consecutive Subtasks**  
    - This prompt is part of a multi-step process. Each step is called a **sub-prompt**, containing **one or more subtasks** with *continuously incrementing numbering*.  
