@@ -42,7 +42,7 @@ Below is a **multi-step prompt template** you can use with ChatGPT (in O1, O3, o
    - Each subtask will be framed in separate sub-prompts, with each sub-prompt potentially containing one or more **consecutive subtasks** (Subtask 1, 2, 3, …, etc.).
 
 3. **Split-Structure & Consecutive Subtasks**  
-   - This prompt is part of a multi-step process. Each step is called a **sub-prompt**, containing **one or more subtasks** with *continuously incrementing numbering*.  
+   - This prompt is part of a multi-step process. Each step is called a **sub-prompt**, containing **one or more subtasks** with *continuously incrementing numbering.*  
    - The output from each sub-prompt is returned in a **structured file** (e.g., JSON, CSV, or YAML).  
    - In subsequent sub-prompts, you may receive:
      - The same manuscript PDF again (labeled “**Manuscript.pdf**” or similar).  
