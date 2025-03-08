@@ -71,7 +71,7 @@ Below is a **multi-step prompt template** you can use with ChatGPT (in O1, O3, o
   - Output from Subtask 3 – “Extraction of chemicals.”  
   - Output from Subtask 4 – “Extraction of equipment used.”  
 
-*(Add more attachments as needed for your scenario.)*
+*(Add as many attachments as needed, including references to prior subtask outputs.)*
 
 ---
 
