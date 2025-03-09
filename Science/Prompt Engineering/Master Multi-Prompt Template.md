@@ -79,7 +79,7 @@ Below is the **recommended structure** for each subtask:
 
 ---
 
-#### **Subtask N – \[Title/Name of the Subtask\]**
+#### **Subtask N – {Title/Name of the Subtask}**
 1. **Objective**:  
    - Clearly state what you want ChatGPT to do for this subtask, e.g., *“Extract all elementary processes from the manuscript.”*
 2. **Details & Requirements**  
