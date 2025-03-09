@@ -58,3 +58,4 @@ box "Expression" fit;
   The main part of the query starts with the `SELECT` keyword. An optional modifier (`DISTINCT` or `ALL`) is shown as “DISTINCT/ALL?”. The macro block “Select List” represents the list of columns or expressions. Subsequent clauses—`FROM`, `WHERE`, `GROUP BY`, `HAVING`, `ORDER BY`, and `LIMIT`—are each marked as optional (using a “?”) with their corresponding macro blocks for further details.
 
 You can modify or extend this diagram to suit more specific details of your grammar as needed.
+
