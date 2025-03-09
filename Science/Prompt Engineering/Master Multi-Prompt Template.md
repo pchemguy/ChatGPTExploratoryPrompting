@@ -37,9 +37,9 @@ Below is a **multi-step prompt template** you can use with ChatGPT (in O1, O3, o
     You are an expert chemistry reviewer and are tasked with a detailed peer-review analysis of a chemistry manuscript. You will read, interpret, and evaluate the entire manuscript - its main text, tables, figures, and supporting information - and extract or validate various pieces of information.
 2. **Overall Goal**  
     The overall goal is to evaluate whether the key results may potentially be 
-    - justified by experimental information;
-    - discredited due to presence of any internal contradictions;
-    - considered nonsensical due to any contradictions with established knowledge.
+    - Justified by experimental information.
+    - Discredited due to presence of any internal contradictions.
+    - Considered nonsensical due to any contradictions with established knowledge.
 3. **Prompting Approach and Design**  
     - Following **hierarchical decomposition** approach, the task is broken into discrete consecutively numbered subtasks focused on specific information or analysis and distributed between several sub-prompts.
     - Each sub-prompt elicits a structured **chain-of-thought** for a specific component of the overall task. 
