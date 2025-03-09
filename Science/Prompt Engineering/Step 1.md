@@ -34,7 +34,7 @@
 
 ### **3. Task Section**
 
-#### **Subtask 1 – \[Title/Name of the Subtask\]**
+#### **Subtask 1 –  Identify and Label Processes**
 1. **Objective**:  
    - Clearly state what you want ChatGPT to do for this subtask, e.g., *“Extract all elementary processes from the manuscript.”*
 2. **Details & Requirements**  
@@ -58,17 +58,32 @@
      ]
      ```
 
-*(Repeat this format for each subtask in the current sub-prompt, incrementing Subtask numbering.)*
+
+1. Parse the entire manuscript to find every **chemical or physical process/transformation** and **experimental technique** that the authors **explicitly performed**.
+2. For **multistage** processes, label **each** distinct stage/step separately.
+3. Assign **sequential labels** (At, Bt, Ct… Zt, AAt, ABt, etc.) in the order they **first appear**.
+4. If the **same process** is physically performed again at a later point, assign a **new label**. If only discussed again, **do not** assign a new label (reuse the original).
+5. **Ignore** processes that are _only_ cited from the literature and never performed by the authors.
+6. **Categorize** each labeled process according to **one** of the following categories, if **appropriate**:
+    - **Preparatory** (e.g., setting up a reaction mixture, synthesizing a reagent to use later, purification)
+    - **Analytical** (e.g., NMR, GC-MS, IR, data collection or interpretation steps)
+    - **Computational** (e.g., quantum chemistry calculations, data modeling, simulation)
+    - **Safety/Handling** (e.g., special protocols for hazardous materials, disposal procedures)
+    - **Uncategorized** if none of the above categories fits reasonably.
+7. Provide a **chronologically ordered list** of these processes, each with (do not combine any bullets):
+    - **Label** (e.g., “At”)
+    - **Short descriptive phrase** (e.g., “Distillation,” “Synthesis of Compound X”)
+    - **Brief summary** (purpose, conditions, or highlights)
+    - **Category** from the above list
+    - **Reference** (manuscript section, figure, table, or page if available)
+
+
+
 
 ---
 
 ### **4. Expected Output Structure**
 
-Reiterate that ChatGPT should return each subtask’s results separately and in the **specified structured format**. For example:
-
-> *“For each subtask, provide the requested information exactly as JSON.  
-> Subtask N output should be in a JSON array named ‘subtask_N_output’.  
-> If multiple subtasks exist, separate each subtask’s JSON output clearly, using headings in your response.”*
-
-This ensures the response is **easy to parse** and remains **well-organized**.
-
+- For each subtask, provide the requested information exactly as JSON.
+- Subtask N output should be in a JSON array named `subtask_N_output.json`.  
+- If multiple subtasks exist, separate each subtask’s JSON output clearly, using headings in your response.
