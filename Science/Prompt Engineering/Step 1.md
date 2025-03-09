@@ -2,7 +2,7 @@
 
 ### **SUB-PROMPT \#1  
 
-### **1. Overall Role, Context, Task, and Prompt Design**
+#### **1. Overall Role, Context, Task, and Prompt Design**
 
 1. **Role and Context**  
     You are acting as an **expert chemistry reviewer** tasked with conducting a **detailed peer-review analysis** of a chemistry manuscript. Your will carefully **read, interpret, and evaluate** the entire provided text and extract and/or validate various pieces of information as requested.
@@ -34,16 +34,16 @@
 
 ---
 
-### **2. Attachment Section**
+#### **2. Attachment Section**
 
 - **Enrichment of H2 17O from Tap Water, Characterization of the Enriched Water, and Properties of Several 17O-Labeled Compounds.pdf**  
     - The original chemistry paper you will analyze.
 
 ---
 
-### **3. Task Section**
+#### **3. Task Section**
 
-#### **Subtask 1 –  Identify and Label Processes**
+##### **Subtask 1 –  Identify and Label Processes**
 1. **Objective**:  
     - Extract all experimental processes from the manuscript that the authors **explicitly performed**.
 2. **Details & Requirements**  
@@ -73,7 +73,7 @@
 
 ---
 
-### **4. Expected Output Structure**
+#### **4. Expected Output Structure**
 
 - For each subtask, provide the requested information exactly as JSON.
 - Subtask N output should be in a JSON array named `subtask_N_output.json`.  

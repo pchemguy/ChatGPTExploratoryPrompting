@@ -31,7 +31,7 @@ Below is a **multi-step prompt template** you can use with ChatGPT (in O1, O3, o
 
 ---
 
-### **1. Overall Role, Context, Task, and Prompt Design**
+#### **1. Overall Role, Context, Task, and Prompt Design**
 
 1. **Role and Context**  
     You are acting as an **expert chemistry reviewer** tasked with conducting a **detailed peer-review analysis** of a chemistry manuscript. Your will carefully **read, interpret, and evaluate** the entire provided text and extract and/or validate various pieces of information as requested.
@@ -63,7 +63,7 @@ Below is a **multi-step prompt template** you can use with ChatGPT (in O1, O3, o
 
 ---
 
-### **2. Attachment Section**
+#### **2. Attachment Section**
 
 *(Use this section to list and briefly describe attachments. One attachment is always the manuscript PDF. Additional attachments could be previously completed subtasks’ outputs. For example…)*
 
@@ -80,7 +80,7 @@ Below is a **multi-step prompt template** you can use with ChatGPT (in O1, O3, o
 
 ---
 
-### **3. Task Section**
+#### **3. Task Section**
 
 > **Subtasks** are listed **sequentially** with their respective *instructions* and desired *output format* (e.g., JSON). Each new **sub-prompt** adds new subtasks with continuing numbering.
 
@@ -88,7 +88,7 @@ Below is the **recommended structure** for each subtask:
 
 ---
 
-#### **Subtask N – {Title/Name of the Subtask}**
+##### **Subtask N – {Title/Name of the Subtask}**
 1. **Objective**:  
    - Clearly state what you want ChatGPT to do for this subtask, e.g., *“Extract all elementary processes from the manuscript.”*
 2. **Details & Requirements**  
@@ -116,7 +116,7 @@ Below is the **recommended structure** for each subtask:
 
 ---
 
-### **4. Expected Output Structure**
+#### **4. Expected Output Structure**
 
 Reiterate that ChatGPT should return each subtask’s results separately and in the **specified structured format**. For example:
 
