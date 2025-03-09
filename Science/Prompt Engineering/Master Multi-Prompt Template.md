@@ -31,9 +31,9 @@ Below is a **multi-step prompt template** you can use with ChatGPT (in O1, O3, o
 
 ---
 
-### **1. Common Opening Section**
+### **1. Overall Role, Context, Task, and Prompt Design**
 
-1. **Context**  
+1. **Role and Context**  
     You are tasked with a detailed, stepwise peer-review analysis of a chemistry manuscript. You will read, interpret, and evaluate the entire manuscript - its main text, tables, figures, and supporting information - and extract or validate various pieces of information.
 2. **Overall Task**  
     - The overarching goal is to **identify the key results** presented in the manuscript, **evaluate whether the provided experimental data supports these results**, note any **internal contradictions** or **contradictions with established knowledge**, and assess the likelihood or feasibility that these reported results are accurate or achievable.  
@@ -59,15 +59,13 @@ Below is a **multi-step prompt template** you can use with ChatGPT (in O1, O3, o
 *(Use this section to list and briefly describe attachments. One attachment is always the manuscript PDF. Additional attachments could be previously completed subtasks’ outputs. For example…)*
 
 - **Manuscript.pdf**  
-  - The original chemistry paper you will analyze.
-
+    - The original chemistry paper you will analyze.
 - **subtask_1.json** (if relevant)  
-  - Output from Subtask 1 – e.g., “Extraction of experimental processes.”
-
+    - Output from Subtask 1 – e.g., “Extraction of experimental processes.”
 - **subtask_2_4.json** (if relevant)  
-  - Output from Subtask 2 – “Extraction of key findings.”  
-  - Output from Subtask 3 – “Extraction of chemicals.”  
-  - Output from Subtask 4 – “Extraction of equipment used.”  
+    - Output from Subtask 2 – “Extraction of key findings.”  
+    - Output from Subtask 3 – “Extraction of chemicals.”  
+    - Output from Subtask 4 – “Extraction of equipment used.”  
 
 *(Add as many attachments as needed, including references to prior subtask outputs.)*
 
