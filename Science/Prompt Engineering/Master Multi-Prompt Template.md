@@ -34,25 +34,23 @@ Below is a **multi-step prompt template** you can use with ChatGPT (in O1, O3, o
 ### **1. Common Opening Section**
 
 1. **Context**  
-   You are tasked with a detailed, stepwise peer-review analysis of a chemistry manuscript. You will read, interpret, and evaluate the entire manuscript - its main text, tables, figures, and supporting information - and extract or validate various pieces of information.
-
+    You are tasked with a detailed, stepwise peer-review analysis of a chemistry manuscript. You will read, interpret, and evaluate the entire manuscript - its main text, tables, figures, and supporting information - and extract or validate various pieces of information.
 2. **Overall Task**  
-   - The overarching goal is to **identify the key results** presented in the manuscript, **evaluate whether the provided experimental data supports these results**, note any **internal contradictions** or **contradictions with established knowledge**, and assess the likelihood or feasibility that these reported results are accurate or achievable.  
-   - You will do this through **multiple subtasks** that request specific information or analysis.  
-   - Each subtask will be framed in separate sub-prompts, with each sub-prompt potentially containing one or more **consecutive subtasks** (Subtask 1, 2, 3, …, etc.).
-
-3. **Split-Structure & Consecutive Subtasks**  
-   - This prompt is part of a multi-step process. Each step is called a **sub-prompt**, containing **one or more subtasks** with *continuously incrementing numbering.*  
-   - The output from each sub-prompt is returned in a **structured file** (e.g., JSON, CSV, or YAML).  
-   - In subsequent sub-prompts, you may receive:
-     - The same manuscript PDF again (labeled “**Manuscript.pdf**” or similar).  
-     - The previously generated output files (e.g., `subtask_1.json`, `subtask_2_4.json`, etc.) for reference.  
-   - You should refer to both the **manuscript** (including main text, tables, figures, supporting information) and the **structured outputs** from earlier subtasks, as needed, to complete new subtasks.
-
+    - The overarching goal is to **identify the key results** presented in the manuscript, **evaluate whether the provided experimental data supports these results**, note any **internal contradictions** or **contradictions with established knowledge**, and assess the likelihood or feasibility that these reported results are accurate or achievable.  
+    - You will do this through **multiple subtasks** that request specific information or analysis.  
+    - Each subtask will be framed in separate sub-prompts, with each sub-prompt potentially containing one or more **consecutive subtasks** (Subtask 1, 2, 3, …, etc.).
+3. **Prompting Approach and Design**  
+    - Selected approach employs a multi-stage approach based on **hierarchical sub-prompt decomposition**. The task is broken into discrete subtasks, each described in a dedicated sub-prompt. Each sub-prompt elicits a structured **chain-of-thought** for a specific component of the overall task (e.g., extracting experimental details, identifying contradictions) according to included subtask-specific detailed instructions and a predefined output format. The outputs of each sub-prompt are then used as reference points in subsequent prompts where necessary, implementing a simplified version of **retrieval augmented generation**.
+    - Each **sub-prompt** contains **one or more subtasks** with *continuously incrementing numbering.*  
+    - The output from each sub-prompt is returned in a **structured file** (e.g., JSON, CSV, or YAML).  
+    - In sub-prompts, you may receive as attachments:
+         - The same manuscript PDF.  
+         - Any previously generated output files (e.g., `subtask_1.json`, `subtask_2_4.json`, etc.) for reference.  
+    - You should refer to both the **manuscript** (including main text, tables, figures, supporting information) and the **structured outputs** from earlier subtasks, as needed, to complete new subtasks.
 4. **Vocabulary Note**  
-   - **“Reagent”, “product”, “chemical”, “material”**: Used broadly, covering stoichiometric compounds, catalysts, solvents, mixtures, solutions, or phases referred to as an input or output in any experimental process. Any distinct mixture or specific composition explicitly referred to in the analyzed document is treated as a separate “material.”  
-   - **“Experimental process”** (unqualified) refers to any *chemical or physical process/transformation* or *technique/procedure* explicitly performed by the authors (e.g., reaction, mixing, separation, measurement, etc.).  
-   - **“Elementary process” or “stage”** refers to a named or distinct step (or group of common operations the paper treats as one unit) such as “acid neutralization,” “filtration,” “spectroscopic measurement,” or “centrifugation”.
+    - **“Reagent”, “product”, “chemical”, “material”**: Used broadly, covering stoichiometric compounds, catalysts, solvents, mixtures, solutions, or phases referred to as an input or output in any experimental process. Any distinct mixture or specific composition explicitly referred to in the analyzed document is treated as a separate “material.”  
+    - **“Experimental process”** (unqualified) refers to any *chemical or physical process/transformation* or *technique/procedure* explicitly performed by the authors (e.g., reaction, mixing, separation, measurement, etc.).  
+    - **“Elementary process” or “stage”** refers to a named or distinct step (or group of common operations the paper treats as one unit) such as “acid neutralization,” “filtration,” “spectroscopic measurement,” or “centrifugation”.
 
 ---
 
