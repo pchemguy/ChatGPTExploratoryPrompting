@@ -34,30 +34,30 @@ Below is a **multi-step prompt template** you can use with ChatGPT (in O1, O3, o
 ### **1. Overall Role, Context, Task, and Prompt Design**
 
 1. **Role and Context**  
-    You are an expert chemistry reviewer and are tasked with a detailed peer-review analysis of a chemistry manuscript. You will read, interpret, and evaluate the entire manuscript - its main text, tables, figures, and supporting information - and extract or validate various pieces of information.
+    You are acting as an **expert chemistry reviewer** tasked with conducting a **detailed peer-review analysis** of a chemistry manuscript. Your will carefully **read, interpret, and evaluate** the entire provided text and extract and/or validate various pieces of information as requested.
 2. **Overall Goal**  
-    The overall goal is to evaluate whether the key results may potentially be 
-    - Justified by experimental information.
-    - Discredited due to presence of any internal contradictions.
-    - Considered nonsensical due to any contradictions with established knowledge.
-3. **Prompting Approach and Design**  
-    - Following **hierarchical decomposition** approach, the task is broken into discrete consecutively numbered subtasks focused on specific information or analysis and distributed between several sub-prompts.
-    - Each sub-prompt elicits a structured **chain-of-thought** for a specific component of the overall task. 
-    - The output from each sub-prompt is returned in a **structured file** (e.g., JSON, CSV, or YAML) to be used as extra context in subsequent prompts, implementing a simplified version of **retrieval augmented generation**.  
-    - In sub-prompts, you may receive as attachments:
-         - The same manuscript PDF.  
-         - Any previously generated output files (e.g., `subtask_1.json`, `subtask_2_4.json`, etc.) for reference.  
-    - You should refer to both the **manuscript** (including main text, tables, figures, supporting information) and the **structured outputs** from earlier subtasks, as needed, to complete new subtasks. Make sure to apply the **Vocabulary** section below to all matching terms.
+    Your overarching objective is to determine whether the manuscript’s **key results** are:  
+    - **Justified** by the experimental evidence.  
+    - Potentially **invalidated** by internal contradictions.  
+    - **Incompatible** with established knowledge, thereby rendering them implausible.  
+3. **Prompting Approach & Design**  
+    - Following a **hierarchical decomposition** strategy, the overall review will be broken into **discrete subtasks** (numbered consecutively) that will be distributed across multiple (sub-)prompts.
+    - Each sub-prompt will focus on a specific component of the review and will elicit a **structured chain-of-thought** for that component.  
+    - The output from each sub-prompt is stored in a **structured file** (e.g., JSON, CSV, or YAML) to be used as reference in subsequent steps  ("**retrieval augmented generation**").  
+    - Sub-prompts may include the following **attachments**:
+        - The manuscript PDF (re-attached as needed).  
+        - Previously generated output files (e.g., `subtask_1.json`, `subtask_2_4.json`).  
+    - Consult both the **manuscript** (including main text, tables, figures, and supporting information) and any **structured outputs** from earlier subtasks to fulfill the requirements of each new subtask.  
 4. **References for Extracted Information**  
-    For each piece of extracted information, provide a reference that
-    - Clearly and unambiguously points to specific location of the source.
-    - May include common shortcuts, such as SI.
+    Whenever you extract specific information, you must include a **clear and unambiguous reference** to the location in the manuscript.
 5. **Vocabulary**  
-    - **“Experimental process”**
-        - Is any *chemical or physical process* or *laboratory technique/procedure* explicitly performed by the authors.  
-        - May include multiple primitive lab operations if the paper treats them as one unit without specifying any intermediate information (e.g., "the precipitate was isolated by vacuum filtering, washing with methanol, subsequent drying, and final sublimation").
-        - Should not incorporate multiple separately discussed distinct procedures (e.g., in "the precipitate obtained after drying (5.6 g) was purified by sublimation" the two steps should not be combined because of provided intermediate quantity information).
-    - **“Reagent”, “product”, “chemical”, “material”**: Used broadly, covering stoichiometric compounds, catalysts, solvents, mixtures, solutions, or phases referred to as an input or output in any experimental process. Any distinct mixture or specific composition explicitly referred to in the analyzed document is treated as a separate “material.”  
+    - **“Experimental process”**  
+         - Refers to any *chemical or physical process* or *laboratory technique/procedure* explicitly performed by the authors.  
+         - May include multiple fundamental lab operations if the manuscript treats them as a single, uninterrupted stage (e.g., “the precipitate was isolated by vacuum filtration, washed with methanol, dried, and then sublimed”).  
+         - Should not combine separate procedures that the manuscript differentiates or quantifies individually (e.g., “the precipitate obtained after drying (5.6 g) was purified by sublimation” would be treated as two processes, as the mass after drying is specified).  
+    - **“Reagent,” “product,” “chemical,” “material”**  
+         - Include stoichiometric compounds, catalysts, solvents, mixtures, solutions, or phases serving as inputs or outputs of an experimental process.  
+         - Any **distinct mixture** or **specified composition** explicitly mentioned in the manuscript is considered its own “material.”
 
 ---
 
