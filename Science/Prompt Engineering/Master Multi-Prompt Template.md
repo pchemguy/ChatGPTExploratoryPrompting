@@ -47,11 +47,17 @@ Below is a **multi-step prompt template** you can use with ChatGPT (in O1, O3, o
     - In sub-prompts, you may receive as attachments:
          - The same manuscript PDF.  
          - Any previously generated output files (e.g., `subtask_1.json`, `subtask_2_4.json`, etc.) for reference.  
-    - You should refer to both the **manuscript** (including main text, tables, figures, supporting information) and the **structured outputs** from earlier subtasks, as needed, to complete new subtasks.
-4. **Vocabulary Note**  
+    - You should refer to both the **manuscript** (including main text, tables, figures, supporting information) and the **structured outputs** from earlier subtasks, as needed, to complete new subtasks. Make sure to apply the **Vocabulary** section below to all matching terms.
+4. **References for Extracted Information**  
+    For each piece of extracted information, provide a reference that
+    - Clearly and unambiguously points to specific location of the source.
+    - May include common shortcuts, such as SI.
+5. **Vocabulary**  
+    - **“Experimental process”**
+        - Is any *chemical or physical process* or *laboratory technique/procedure* explicitly performed by the authors.  
+        - May include multiple primitive lab operations if the paper treats them as one unit without specifying any intermediate information (e.g., "the precipitate was isolated by vacuum filtering, washing with methanol, subsequent drying, and final sublimation").
+        - Should not incorporate multiple separately discussed distinct procedures (e.g., in "the precipitate obtained after drying (5.6 g) was purified by sublimation" the two steps should not be combined because of provided intermediate quantity information).
     - **“Reagent”, “product”, “chemical”, “material”**: Used broadly, covering stoichiometric compounds, catalysts, solvents, mixtures, solutions, or phases referred to as an input or output in any experimental process. Any distinct mixture or specific composition explicitly referred to in the analyzed document is treated as a separate “material.”  
-    - **“Experimental process”** (unqualified) refers to any *chemical or physical process/transformation* or *laboratory technique/procedure* explicitly performed by the authors (e.g., reaction, mixing, separation, measurement, etc.).  
-    - **“Elementary process” or “stage”** refers to a named or distinct step (or group of common primitive lab operations the paper treats as one unit) such as “acid neutralization,” “filtration,” “spectroscopic measurement,” or “centrifugation”.
 
 ---
 
