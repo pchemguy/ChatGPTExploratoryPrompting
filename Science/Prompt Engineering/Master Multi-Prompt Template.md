@@ -49,7 +49,9 @@ Below is a **multi-step prompt template** you can use with ChatGPT (in O1, O3, o
         - Previously generated output files (e.g., `subtask_1.json`, `subtask_2_4.json`).  
     - Consult both the **manuscript** (including main text, tables, figures, and supporting information) and any **structured outputs** from earlier subtasks to fulfill the requirements of each new subtask.  
 4. **References for Extracted Information**  
-    Whenever you extract specific information, you must include a **clear and unambiguous reference** to the location in the manuscript.
+    Whenever you extract specific information, you must include a **clear and unambiguous reference** to the location in the manuscript. Include additional references, if appropriate, e.g.,
+    - `Main text “Results”, Table 1, p. 234; SI p. S-3, S-9.`  
+    - `Main text “Experimental Section”, first paragraphs, p. 230; SI p. S-1, S-3`
 5. **Vocabulary**  
     - **“Experimental process”**  
          - Refers to any *chemical or physical process* or *laboratory technique/procedure* explicitly performed by the authors.  
@@ -97,18 +99,18 @@ Below is the **recommended structure** for each subtask:
 3. **Desired Output Format**  
    - Specify the exact structure you want (e.g., JSON, CSV, YAML).  
    - For JSON, you might define the fields each item should include. For instance:
-     ```json
-     [
-       {
+```json
+[
+    {
          "finding_id": "<string>",
          "finding_text": "<string>",
          "supporting_evidence": "<text_citation_or_summary>",
          "potential_contradictions": "<text_if_any>",
          "feasibility_comment": "<opinion_on_whether_data_supports_the_finding_or_if_it_contradicts_established_knowledge>",
          "references_in_manuscript": ["<section_or_page_numbers>"]
-       }
-     ]
-     ```
+    }
+]
+```
 
 *(Repeat this format for each subtask in the current sub-prompt, incrementing Subtask numbering.)*
 
