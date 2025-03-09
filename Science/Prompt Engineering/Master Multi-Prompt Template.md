@@ -36,10 +36,17 @@ Below is a **multi-step prompt template** you can use with ChatGPT (in O1, O3, o
 1. **Role and Context**  
     You are tasked with a detailed, stepwise peer-review analysis of a chemistry manuscript. You will read, interpret, and evaluate the entire manuscript - its main text, tables, figures, and supporting information - and extract or validate various pieces of information.
 2. **Overall Task**  
-    - The overarching goal is to **identify the key results** presented in the manuscript, **evaluate whether the provided experimental data supports these results**, note any **internal contradictions** or **contradictions with established knowledge**, and assess the likelihood or feasibility that these reported results are accurate or achievable.  
+    - Identify the key results.
+    - Evaluate whether experimental information justifies these results.
+    - Detect any internal contradictions that may discredit these results.
+    - Detect any contradictions with established knowledge that may render these results nonsensical.
+3. **Prompting Approach and Design**  
+    - The task is broken into discrete subtasks following **hierarchical decomposition** strategy.
+    - The full task is split   
+    
     - You will do this through **multiple subtasks** that request specific information or analysis.  
     - Each subtask will be framed in separate sub-prompts, with each sub-prompt potentially containing one or more **consecutive subtasks** (Subtask 1, 2, 3, …, etc.).
-3. **Prompting Approach and Design**  
+
     - Selected approach employs a multi-stage approach based on **hierarchical sub-prompt decomposition**. The task is broken into discrete subtasks, each described in a dedicated sub-prompt. Each sub-prompt elicits a structured **chain-of-thought** for a specific component of the overall task (e.g., extracting experimental details, identifying contradictions) according to included subtask-specific detailed instructions and a predefined output format. The outputs of each sub-prompt are then used as reference points in subsequent prompts where necessary, implementing a simplified version of **retrieval augmented generation**.
     - Each **sub-prompt** contains **one or more subtasks** with *continuously incrementing numbering.*  
     - The output from each sub-prompt is returned in a **structured file** (e.g., JSON, CSV, or YAML).  
