@@ -27,20 +27,14 @@
 
 ### **2. Attachment Section**
 
-- **Manuscript.pdf**  
+- **Enrichment of H2 17O from Tap Water, Characterization of the Enriched Water, and Properties of Several 17O-Labeled Compounds.pdf**  
     - The original chemistry paper you will analyze.
 
 ---
 
 ### **3. Task Section**
 
-> **Subtasks** are listed **sequentially** with their respective *instructions* and desired *output format* (e.g., JSON). Each new **sub-prompt** adds new subtasks with continuing numbering.
-
-Below is the **recommended structure** for each subtask:
-
----
-
-#### **Subtask N – \[Title/Name of the Subtask\]**
+#### **Subtask 1 – \[Title/Name of the Subtask\]**
 1. **Objective**:  
    - Clearly state what you want ChatGPT to do for this subtask, e.g., *“Extract all elementary processes from the manuscript.”*
 2. **Details & Requirements**  
