@@ -43,7 +43,7 @@ Below is a **multi-step prompt template** you can use with ChatGPT (in O1, O3, o
 3. **Prompting Approach & Design**  
     - Following a **hierarchical decomposition** strategy, the overall review will be broken into **discrete subtasks** (numbered consecutively) that will be distributed across multiple (sub-)prompts.
     - Each sub-prompt will focus on a specific component of the review and will elicit a **structured chain-of-thought** for that component.  
-    - The output from each sub-prompt is stored in a **structured file** (e.g., JSON, CSV, or YAML) to be used as reference in subsequent steps  ("**retrieval augmented generation**").  
+    - The output from each sub-prompt is stored in a **structured file** (e.g., JSON, CSV, or YAML) to be used as reference in subsequent steps  ("retrieval augmented generation").  
     - Sub-prompts may include the following **attachments**:
         - The manuscript PDF (re-attached as needed).  
         - Previously generated output files (e.g., `subtask_1.json`, `subtask_2_4.json`).  
@@ -55,9 +55,9 @@ Below is a **multi-step prompt template** you can use with ChatGPT (in O1, O3, o
          - Refers to any *chemical or physical process* or *laboratory technique/procedure* explicitly performed by the authors.  
          - May include multiple fundamental lab operations if the manuscript treats them as a single, uninterrupted stage (e.g., “the precipitate was isolated by vacuum filtration, washed with methanol, dried, and then sublimed”).  
          - Should not combine separate procedures that the manuscript differentiates or quantifies individually (e.g., “the precipitate obtained after drying (5.6 g) was purified by sublimation” would be treated as two processes, as the mass after drying is specified).  
-    - **“Reagent,” “product,” “chemical,” “material”**  
+    - **"Reagent", "product", "chemical", "material"**  
          - Include stoichiometric compounds, catalysts, solvents, mixtures, solutions, or phases serving as inputs or outputs of an experimental process.  
-         - Any **distinct mixture** or **specified composition** explicitly mentioned in the manuscript is considered its own “material.”
+         - Any **distinct mixture** or **specified composition** explicitly mentioned in the manuscript is considered its own “material”.
 
 ---
 
