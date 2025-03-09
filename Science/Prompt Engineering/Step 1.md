@@ -36,9 +36,10 @@
 
 #### **Subtask 1 –  Identify and Label Processes**
 1. **Objective**:  
-   - Extract all elementary processes from the manuscript that the authors **explicitly performed**.
-1. **Details & Requirements**  
-   - 
+    - Extract all elementary processes from the manuscript that the authors **explicitly performed**.
+2. **Details & Requirements**  
+    - Assign **sequential labels** (At, Bt, Ct… Zt, AAt, ABt, etc.) in the order they **first appear**.
+    - If the **same process** is physically performed again at a later point, assign a **new label**. If only referred to again, **do not** assign a new label (reuse the original).
    - Provide any specific instructions about what to capture, how to interpret certain details, or how to structure the response. For instance:  
      - *“List each process with a unique identifier.”*  
      - *“Include references to the corresponding sections/figure numbers in the paper if available.”*
