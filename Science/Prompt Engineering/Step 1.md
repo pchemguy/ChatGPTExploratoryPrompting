@@ -21,7 +21,7 @@
 4. **Vocabulary Note**  
     - **“Reagent”, “product”, “chemical”, “material”**: Used broadly, covering stoichiometric compounds, catalysts, solvents, mixtures, solutions, or phases referred to as an input or output in any experimental process. Any distinct mixture or specific composition explicitly referred to in the analyzed document is treated as a separate “material.”  
     - **“Experimental process”** (unqualified) refers to any *chemical or physical process/transformation* or *laboratory technique/procedure* explicitly performed by the authors (e.g., reaction, mixing, separation, measurement, etc.).  
-    - **“Elementary process” or “stage”** refers to a named or distinct step (or group of common operations the paper treats as one unit) such as “acid neutralization,” “filtration,” “spectroscopic measurement,” or “centrifugation”.
+    - **“Elementary process” or “stage”** refers to a named or distinct step (or group of common primitive lab operations the paper treats as one unit) such as “acid neutralization,” “filtration,” “spectroscopic measurement,” or “centrifugation”.
 
 ---
 
@@ -36,8 +36,9 @@
 
 #### **Subtask 1 –  Identify and Label Processes**
 1. **Objective**:  
-   - Clearly state what you want ChatGPT to do for this subtask, e.g., *“Extract all elementary processes from the manuscript.”*
-2. **Details & Requirements**  
+   - Extract all elementary processes from the manuscript that the authors **explicitly performed**.
+1. **Details & Requirements**  
+   - 
    - Provide any specific instructions about what to capture, how to interpret certain details, or how to structure the response. For instance:  
      - *“List each process with a unique identifier.”*  
      - *“Include references to the corresponding sections/figure numbers in the paper if available.”*

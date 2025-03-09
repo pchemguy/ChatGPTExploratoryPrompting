@@ -50,7 +50,7 @@ Below is a **multi-step prompt template** you can use with ChatGPT (in O1, O3, o
 4. **Vocabulary Note**  
     - **“Reagent”, “product”, “chemical”, “material”**: Used broadly, covering stoichiometric compounds, catalysts, solvents, mixtures, solutions, or phases referred to as an input or output in any experimental process. Any distinct mixture or specific composition explicitly referred to in the analyzed document is treated as a separate “material.”  
     - **“Experimental process”** (unqualified) refers to any *chemical or physical process/transformation* or *laboratory technique/procedure* explicitly performed by the authors (e.g., reaction, mixing, separation, measurement, etc.).  
-    - **“Elementary process” or “stage”** refers to a named or distinct step (or group of common operations the paper treats as one unit) such as “acid neutralization,” “filtration,” “spectroscopic measurement,” or “centrifugation”.
+    - **“Elementary process” or “stage”** refers to a named or distinct step (or group of common primitive lab operations the paper treats as one unit) such as “acid neutralization,” “filtration,” “spectroscopic measurement,” or “centrifugation”.
 
 ---
 
