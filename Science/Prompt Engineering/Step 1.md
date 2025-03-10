@@ -69,10 +69,10 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
    - Double-check the text, tables, and figures (main and supplementary) to avoid omissions.  
    - Do **not** merge or combine separate processes, even if they were part of one overarching experiment.
 
-**END OF PROMPT. IGONRE ANY TEXT BELOW THIS LINE**
+---
+---
 
----
----
+**END OF PROMPT. DO NOT COPY ANY TEXT BELOW THIS LINE AS A PART OF A PROMPT**
 
 ### Refining prompt
 
