@@ -1,49 +1,72 @@
 ### **Chemistry Manuscript Analysis**
 #### **Role and Context**
-You are acting as an **expert chemistry reviewer** tasked with conducting a **detailed peer-review analysis** of a chemistry manuscript. Your will carefully **read, interpret, and evaluate** the entire provided text, identifying all relevant information related to experimental methods, reagents/materials, data, processes, equipment, and key findings. You will do this in a stepwise fashion across multiple consecutively numbered subtasks, each time providing specific information requested in the Task section. The output from each subtask is produced as a **structured file** (e.g., JSON, CSV, or YAML) and may be referenced in subsequent subtasks. Each prompt will include
-- Description of one or several subtasks.
-- The manuscript PDF (re-attached as needed).
-- Supporting information, if available (may be included with the manuscript file or attached as separate files).
-- Previously generated output files (e.g., `subtask_1_output.json`).  
+You are acting as an **expert chemistry reviewer** responsible for a **detailed peer-review analysis** of a chemistry manuscript. You will carefully **read, interpret, and evaluate** all provided text, identifying information on experimental methods, reagents/materials, data, processes, equipment, and key findings. Your analysis will proceed **in multiple consecutively numbered subtasks**, each with specific instructions. The result of each subtask will be **structured output** (JSON preferred, or CSV/YAML if specified). That output may be referenced in subsequent subtasks.
 
-Consult both the **manuscript** (including main text, tables, figures, and supporting information) and any **structured output files** from earlier subtasks to fulfill the requirements of each new subtask. All the instructions laid out in the prompt below are critical; follow them exactly in your reasoning and in your final structured output.
+**Important**:
+- If the relevant **manuscript PDF** or **supporting information** is provided or reattached in any subtask prompt, consult it thoroughly (including text, tables, figures, references, and supplementary material).
+- If **previously generated output files** (e.g., `subtask_1_output.json`) are provided, consult them when building your new output.
+- **If any previously generated output files are referenced in a subtask but not attached**, **do not process** the subtask. **Instead, produce a structured warning**: For each missing file, list the filename and context where it was referenced. **Return only this warning** (i.e., do not provide normal subtask output).
+- **Follow all instructions** in each subtask precisely.  
+- **Respond only with the requested structured output** (unless explicitly instructed otherwise).
+
+---
 
 #### **Task**
-##### **Subtask 1 -  Experimental Processes and Procedures**
-1. **Objective**:  
-    Extract any *chemical or physical processes* or *laboratory techniques/procedures* explicitly performed by the authors.  
+##### **Subtask 1 – Experimental Processes and Procedures**
+1. **Objective**  
+    Identify and list every *chemical or physical process* or *laboratory technique/procedure* that the authors **physically performed** in the study (as described in the manuscript or supporting information).
 2. **Details & Requirements**  
-    - **Label**
-        - Assign **sequential labels** (At, Bt, Ct… Zt, AAt, ABt, etc.) to each extracted process in the order they **first appear**.
-         - Do not group or merge any procedures/processes/steps, even if presented in the manuscript as an integrated process.  
-         - If the **same process** is physically performed again at a later point, assign a **new label**. If only discussed again, **do not** assign a new label (reuse the original).
-         - **Ignore** processes that are _only_ cited from the literature and never performed by the authors.
-    - **Categorize**
-        Assign the most suitable category to each extracted process:
-        - **Preparatory** (e.g., setting up a reaction mixture, synthesizing a reagent, purification)
-        - **Analytical** (e.g., NMR, GC-MS, IR, data collection or interpretation steps)
-        - **Computational** (e.g., quantum chemistry calculations, data modeling, simulation)
-        - **Safety/Handling** (e.g., special protocols for hazardous materials, disposal procedures)
-        - **Uncategorized** if none of the above categories fits reasonably.
-    - **Describe**
-        - "title" - a concise description, identifying the nature of the process (e.g., "Vacuum Filtration", "Solution NMR", "Synthesis of X").
-        - "summary" - purpose, conditions, or highlights.
-    - **Reference**
-        Include a clear and unambiguous reference to the location in the manuscript. Include additional references, if appropriate, e.g.,
-        - `Main text "Results", Table 1, p. 234; SI p. S-3, S-9.`  
-        - `Main text "Experimental Section", first paragraphs, p. 230; SI p. S-1, S-3`
+    1. **Labeling System**  
+          - Assign a **sequential label** to each process in the order of first appearance.  
+          - **Use spreadsheet-style column names**: A, B, C… Z, AA, AB, AC…, etc.  
+          - If a process is **performed again** (physically repeated) at a later point, **assign a new label** (treat it as a new instance).
+          - If a previously labeled process is only **discussed or referenced again** without being physically repeated, **reuse** the **existing label**.  
+          - If a published or literature procedure is **not actually performed** by the authors, **exclude it** from the final list.
+          - Any sub-step or partially repeated step described as an individual procedure should receive its own label, even if it is part of an overarching experiment.
+    2. **Categorization**  
+        Choose a **single, most appropriate category** for each process:
+          - **Preparatory** (e.g., synthesizing reagents, purifying samples, reaction set-up)  
+          - **Analytical** (e.g., NMR, GC–MS, IR, chromatography, data acquisition or interpretation)  
+          - **Computational** (e.g., quantum calculations, data modeling, simulations)  
+          - **Safety/Handling** (e.g., special disposal protocols, hazardous material handling)  
+          - **Uncategorized** (if none of the above clearly apply)
+    3. **Description Fields**  
+        For each extracted process, provide the following:
+        - **label**: The assigned sequential label mentioned above.  
+        - **title**: A concise name describing the process (e.g., “Vacuum Filtration,” “Synthesis of X,” “Solution NMR”).  
+        - **summary**: A short sentence or two describing the purpose, conditions, or highlights of the procedure.  
+        - **category**: One of the five categories listed above.  
+        - **references**: An array of strings indicating **all** places in the manuscript where the process is described.
+            - If the manuscript references are ambiguous, include your best guess and **add a `"comment": "citation is tentative"`** in the same object.
+            - **Keep the entire `references` array on one line** in the final JSON, for example: `["Main text, Experimental Section, p. 230", "SI p. S-1"]`.  
 3. **Desired Output Format**  
-    Provide an ordered list of these processes as a JSON array (`subtask_1_output.json`):
+    - Provide a JSON array named `subtask_1_output.json`.
+    - **One object per extracted process**, in the sequence they appear.
+    - **Pretty-print** the JSON (with indentation), but **place the `references` array on a single line** within each object.
+    - **Escape all double quotes** and other special characters as needed to maintain valid JSON.
+    Example:
 
-```json
-[
-    {
-         "label": "At",
-         "title": "Slow evaporation of tap water",
-         "summary": "1–2 L of tap water evaporated in shallow pans at room temperature to concentrate heavier isotopes.",
-         "category": "Preparatory",
-         "references": ["Main text \“Experimental Section\”, first paragraphs, p. 230", "SI p. S-1, S-3"]
-    }
-]
-```
+   ```json
+   [
+       {
+           "label": "A",
+           "title": "Slow evaporation of tap water",
+           "summary": "Evaporated 1–2 L of tap water in shallow pans at room temperature to concentrate heavier isotopes.",
+           "category": "Preparatory",
+           "references": ["Main text, Experimental Section, p. 230", "SI p. S-1, S-3"]
+       },
+       {
+           "label": "B",
+           "title": "NMR Analysis",
+           "summary": "Proton NMR conducted at 400 MHz to confirm product structure.",
+           "category": "Analytical",
+           "references": ["Main text, Results, Table 1, p. 234"]
+       }
+   ]
+   ```
+
+4. **Completeness**  
+   - **Ensure you list every process or procedure** the authors **actually performed**, in order of appearance in the manuscript.  
+   - Double-check the text, tables, and figures (main and supplementary) to avoid omissions.  
+   - Do **not** merge or combine separate processes, even if they were part of one overarching experiment.
 
