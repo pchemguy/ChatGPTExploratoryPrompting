@@ -22,7 +22,6 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
           - If a process is **performed again** (physically repeated) at a later point, **assign a new label** (treat it as a new instance).
           - If a previously labeled process is only **discussed or referenced again** without being physically repeated, **reuse** the **existing label**.  
           - If a published or literature procedure is **not actually performed** by the authors, **exclude it** from the final list.
-          - Any sub-step or partially repeated step described as an individual procedure should receive its own label, even if it is part of an overarching experiment.
     2. **Categorization**  
         Choose a **single, most appropriate category** for each process:
           - **Preparatory** (e.g., synthesizing reagents, purifying samples, reaction set-up)  
@@ -70,3 +69,17 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
    - Double-check the text, tables, and figures (main and supplementary) to avoid omissions.  
    - Do **not** merge or combine separate processes, even if they were part of one overarching experiment.
 
+**END OF PROMPT. IGONRE ANY TEXT BELOW THIS LINE**
+
+---
+---
+
+### Refining prompt
+
+Improve the following ChatGPT prompt. Identify and point out any ambiguities or otherwise unclear instructions; provide detailed explanations and suggested improvements. Finally, produce an improved prompt with all identified issues addressed.
+
+### Comments
+
+Apparently the bullet
+- Any sub-step or partially repeated step described as an individual procedure should receive its own label, even if it is part of an overarching experiment.
+starts picking apart protocols. Consider removing it, if present as the last bullet in "1. Labeling System"
