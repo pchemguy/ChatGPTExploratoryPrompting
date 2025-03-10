@@ -55,8 +55,8 @@ Below is a **multi-step prompt template** you can use with ChatGPT (in O1, O3, o
 5. **Vocabulary**  
     - **“Experimental process”**  
          - Refers to any *chemical or physical process* or *laboratory technique/procedure* explicitly performed by the authors.  
-         - May include multiple fundamental lab operations if the manuscript treats them as a single, uninterrupted stage (e.g., “the precipitate was isolated by vacuum filtration, washed with methanol, dried, and then sublimed”).  
-         - Should not combine separate procedures that the manuscript differentiates or quantifies individually (e.g., “the precipitate obtained after drying (5.6 g) was purified by sublimation” would be treated as two processes, as the mass after drying is specified).  
+         - Never combine procedures or processes, even if presented in the manuscript as an integrated process.  
+         - Never combine analytical experiments: when an analytical technique is applied to multiple substance, each substance analysis, for which some resulting data is provided is considered a distinct process and cannot be combined with any other processes. When multiple technique are applied to the same compound, each technique should be associated with a distinct process.  
     - **"Reagent", "product", "chemical", "material"**  
          - Include stoichiometric compounds, catalysts, solvents, mixtures, solutions, or phases serving as inputs or outputs of an experimental process.  
          - Any **distinct mixture** or **specified composition** explicitly mentioned in the manuscript is considered its own “material”.
