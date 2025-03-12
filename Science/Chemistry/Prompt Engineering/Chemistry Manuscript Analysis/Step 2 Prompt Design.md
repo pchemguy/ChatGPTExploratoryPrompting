@@ -11,63 +11,7 @@ You are acting as an **expert prompt engineer** specializing on development of a
 - When revising prompts, you provide detailed feedback on various potential issues, discuss robust approaches to addressing them, and implement the best approach for each issue in the finally produced generated or improved prompt.
 
 
-Improve the following ChatGPT prompt. Identify and point out any ambiguities or otherwise unclear instructions; provide detailed explanations and suggested improvements. Finally, produce an improved prompt with all identified issues addressed.
-
-
----
-
-
-
-**Analysis of Ambiguities and Unclear Instructions**
-
-1. **Unclear References to Model Variants**  
-   - The prompt refers to “GPT 4o and 4.5” as “non-reasoning” models and to “o1 and o3” as “reasoning” models. These labels are non-standard and may confuse users. It is unclear what exact versions these labels correspond to, and whether they are official or simply placeholders.
-
-2. **Chain-of-Thought Usage**  
-   - The prompt asserts that you are “capable of stimulating even non reasoning models to employ chain-of-thought technique.” Typically, non-reasoning or instruction-following models are not explicitly configured to produce chain-of-thought, and if they do, it might be too detailed or risk exposing internal reasoning. Clarifying if you want chain-of-thought to be shown to the user, or only used internally (i.e., hidden chain-of-thought), would be helpful.
-
-3. **Goals for Structured Output**  
-   - The mention of “requesting structured output of extracted information” lacks specifics about format. For example, how exactly should the output be structured (JSON, bullet points, or a schema for knowledge graphs)? The prompt only hints at it (“including approaches to encoding information”), but doesn’t specify a preferred or required schema.
-
-4. **Overly Generalized Guidance**  
-   - The prompt directs the user to “optimize prompts for efficient extraction of complex information,” “encourage models to reflect on knowledge limitations,” and “limit hallucinations,” but does not specify how or provide a coherent workflow. If the user is to follow these guidelines, the prompt should give instructions or examples on how to incorporate these strategies effectively.
-
-5. **No Distinction Between Different Prompting Strategies**  
-   - The prompt lumps together advanced vs. simpler models but does not explicitly explain how the approach should differ for each model. A step-by-step approach or separate bullet points for each type (reasoning vs. non-reasoning) would remove ambiguity.
-
-6. **Directive to Provide “Detailed Feedback” on Potential Issues**  
-   - While the prompt says “When revising prompts, you provide detailed feedback on various potential issues, discuss robust approaches to addressing them, and implement the best approach in the final prompt,” it offers no guidance on the structure or style of that feedback. Clarifying the format (e.g., bullet points, numbered lists, subheadings) and depth of detail expected would be helpful.
-
----
-
-## **Suggested Improvements**
-
-1. **Clarify or Simplify Model References**  
-   - Replace the ambiguous “GPT 4o and 4.5” and “o1 and o3” with either standard GPT versioning or keep them as placeholders but explicitly note that they are references to different model capabilities.  
-   - For example: “some simpler, instruction-following models (e.g., GPT-4.0 Lite) vs. advanced, reasoning-intensive models (e.g., GPT-4.0 Reasoner).”
-
-2. **Explicit Guidance on Chain-of-Thought**  
-   - Specify whether the chain-of-thought is supposed to be hidden or partially revealed to the end user. Provide instructions on how to handle requests for chain-of-thought if it is not meant to be exposed.
-
-3. **Concrete Structuring for Output**  
-   - Include an explicit format (e.g., JSON, bullet lists, or a knowledge-graph-friendly syntax) for structured responses when extracting complex information from scientific and technical sources.
-
-4. **Guidance on Reducing Hallucinations**  
-   - Offer specific suggestions (e.g., “Ask the model to cite sources or explain how it arrived at an answer only when confident,” or “Include disclaimers if the model is unsure.”).  
-
-5. **Differentiate Prompting Strategies for Model Types**  
-   - If the user needs to tailor prompts differently for advanced vs. simpler models, provide a short example or bullet points for each type.
-
-6. **Specify How to Provide Feedback on Prompt Revisions**  
-   - If the final prompt needs to include a “revision commentary,” clarify whether it should be appended at the end, inserted as comments within the prompt, or included as a separate section altogether.
-
----
-
-## **Improved Prompt**
-
-Below is an example of how the prompt section could be rewritten to remove ambiguities, clarify instructions, and ensure the user knows exactly how to craft and revise prompts.
-
----
+Improve the following ChatGPT prompt. Identify and point out any ambiguities or otherwise unclear instructions; provide detailed explanations and suggested improvements. Regarding the suggested output format: I expect you to suggest a particular format that can be used for exchange structured data, including graph-like data. Finally, produce an improved prompt with all identified issues addressed.
 
 ### **Development of an Advanced Prompt**
 
