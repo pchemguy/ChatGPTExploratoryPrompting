@@ -19,27 +19,23 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
     - **After** analyzing the manuscript, highlight its main outcomes, conclusions, or discoveries.
     - Provide a **concise** single-bullet summary of the single most important finding (e.g., major results, evidence, significant implications, or novelty).
     - List up to three other extra (secondary) results or conclusions. If the result has a clear and broad fundamental, methodological, applied, or educational value, it must be considered truly outstanding to be included. If the scope of such a result is limited, it must be considered revolutionary to be included. Otherwise, include the main result only.
-    - For **each** listed bullet:
-        1. **Identify** which **experimental stages (from Subtask 1)** are relevant to that finding, and how they are related.
-        2. Provide a concise explanation of fundamental, methodological, applied, practical or educational value of the highlighted result.
-3. **Desired Output Format**  
+    - For **each** finding, identify which **experimental processes (from Subtask 1)** are relevant to that finding, and how they are related.
+3. **Description Fields**  
+    For each extracted finding, provide the following:
+    - **summary**: A short sentence or two describing the result.  
+    - **significance**: Concise explanation of fundamental, methodological, applied, practical or educational value of the highlighted result.
+    - **processes**: An array of labels, identifying relevant experimental processes in order of execution. 
+    - **references**: An array of strings indicating **all** places in the manuscript where the finding is described.  
+        - **Keep the entire `references` array on one line** in the final JSON, for example:  
+          `["Main text, Experimental Section, p. 230", "SI p. S-1"]`.  
+4. **Desired Output Format**  
     - Provide a JSON array named `subtask_2_output.json`.
     - **One object per extracted finding**, in the sequence they appear.
     - **Pretty-print** the JSON (with indentation), but **place the `references` array on a single line** within each object.
     - **Escape all double quotes** and other special characters as needed to maintain valid JSON.
-
-- 
-- 
-- 
-- For **each** bullet point (the main one and secondary, if any):
-    1. **Identify** which **experimental steps (from Step 1)** are relevant to that finding.
-    2. Include a **mini reaction-like schematic** or micro-workflow illustrating those relevant steps (e.g., “Et → Gt → Ht → Product”).    
-    
-    
-    
     Example:
 
-   ```json
+```json
    [
        {
            "label": "A",
@@ -56,7 +52,7 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
            "references": ["Main text, Results, Table 1, p. 234"]
        }
    ]
-   ```
+```
 
 ---
 ---
