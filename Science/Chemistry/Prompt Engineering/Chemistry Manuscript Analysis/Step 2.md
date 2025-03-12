@@ -25,31 +25,24 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
     - **summary**: A short sentence or two describing the result.  
     - **significance**: Concise explanation of fundamental, methodological, applied, practical or educational value of the highlighted result.
     - **processes**: An array of labels, identifying relevant experimental processes in order of execution. 
+        - **Keep the entire `processes` array on one line** in the final JSON, for example: `["C", "D", "E"]`.  
     - **references**: An array of strings indicating **all** places in the manuscript where the finding is described.  
         - **Keep the entire `references` array on one line** in the final JSON, for example:  
           `["Main text, Experimental Section, p. 230", "SI p. S-1"]`.  
 4. **Desired Output Format**  
     - Provide a JSON array named `subtask_2_output.json`.
-    - **One object per extracted finding**, in the sequence they appear.
-    - **Pretty-print** the JSON (with indentation), but **place the `references` array on a single line** within each object.
+    - **One object per extracted finding**, main finding first following by any additional findings in the sequence they appear.
+    - **Pretty-print** the JSON (with indentation), but **place the `processes` and`references` arrays on a single line** within each object.
     - **Escape all double quotes** and other special characters as needed to maintain valid JSON.
     Example:
 
 ```json
    [
        {
-           "label": "A",
-           "title": "Slow evaporation of tap water",
-           "summary": "Evaporated 1–2 L of tap water in shallow pans at room temperature to concentrate heavier isotopes.",
-           "category": "Preparatory",
+           "summary": "A new catalyst XYZ enables ABC process.",
+           "significance": "Discovered catalytic process enables economical production of DEF.",
+           "processes": ["C", "D", "E"],
            "references": ["Main text, Experimental Section, p. 230", "SI p. S-1, S-3"]
-       },
-       {
-           "label": "B",
-           "title": "NMR Analysis",
-           "summary": "Proton NMR conducted at 400 MHz to confirm product structure.",
-           "category": "Analytical",
-           "references": ["Main text, Results, Table 1, p. 234"]
        }
    ]
 ```
