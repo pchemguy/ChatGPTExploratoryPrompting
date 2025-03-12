@@ -37,9 +37,9 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
         - **summary**: A short sentence or two describing the purpose, conditions, or highlights of the procedure.  
         - **category**: One of the five categories listed above.  
         - **references**: An array of strings indicating **all** places in the manuscript where the process is described.
-            - If the manuscript references are ambiguous, include your best guess and **add a `"comment": "citation is tentative"`** in the same object.
-            - **Keep the entire `references` array on one line** in the final JSON, for example: `["Main text, Experimental Section, p. 230", "SI p. S-1"]`.  
-2. **Desired Output Format**  
+            - **Keep the entire `references` array on one line** in the final JSON, for example:  
+             `["Main text, Experimental Section, p. 230", "SI p. S-1"]`.  
+3. **Desired Output Format**  
     - Provide a JSON array named `subtask_1_output.json`.
     - **One object per extracted process**, in the sequence they appear.
     - **Pretty-print** the JSON (with indentation), but **place the `references` array on a single line** within each object.
