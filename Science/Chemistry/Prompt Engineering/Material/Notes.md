@@ -19,3 +19,16 @@ When any such inferences can be made, perform the necessary estimations/assumpti
 - Graphs / schematics of different processes
 - Use constructed graphs to identify any missing or redundant information and use such information for subsequent information recovery or consistency checks
 - Model / governing equation identification
+
+
+
+Help me develop a flat, high-level classification of experimental chemistry papers based on the nature of reported research. A particular class must be assigned strictly based on the nature of the key findings/concepts/target problem, etc. Other activities, though might be integral to the presented research (for example, analytical or computational activities necessary to validate a new synthetic approach or characterize a new compound), are inconsequential as far as this classification is concerned. Of course, the same or similar/related activities might be the primary focus of a different paper, in which case such activities become the basis for choosing an appropriate class. Your task is to start with the seed items suggested below, expand the list, but also refine the seed items as well.
+
+The candidate items are as follows. Papers focused on
+1) methodology: the primary motivation of the underlying research activities is developing new or improving existing methodologies, such as protocols;
+2) synthetic pathways: the primary focus is on developing a new synthetic reaction or developing a new strategy / path for synthesizing a known compound (such as total synthesis of a biomolecule or a promising new synthesis for industrial applications);
+3) new base compounds: the ultimate goal is to produce a new individual substance, perhaps a new drug molecule;
+4) new composite materials: focus is on developing organic/inorganic/metallic composites;
+5) testing a theory or hypothesis;
+6) characterizing new or existing compounds: obtaining experimental characteristics,, such spectral data, physical or chemical parameters, etc. that were not previously available or with the goal to confirm or improve previously reported data.
+Some other targets to be captured include basic/fundamental experimental research, as well as findings strongly focused on applied or industrial applications or findings that may have such applications.
