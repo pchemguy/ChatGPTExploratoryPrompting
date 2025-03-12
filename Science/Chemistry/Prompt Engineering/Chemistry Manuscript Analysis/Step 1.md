@@ -22,6 +22,7 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
           - If a process is **performed again** (physically repeated) at a later point, **assign a new label** (treat it as a new instance).
           - If a previously labeled process is only **discussed or referenced again** without being physically repeated, **reuse** the **existing label**.  
           - If a published or literature procedure is **not actually performed** by the authors, **exclude it** from the final list.
+           - Do **not** group any processes, even if they are described as parts of the same overarching experiment or workflow; each performed lab technique or procedure gets its own label.
     2. **Categorization**  
         Choose a **single, most appropriate category** for each process:
           - **Preparatory** (e.g., synthesizing reagents, purifying samples, reaction set-up)  
@@ -38,7 +39,7 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
         - **references**: An array of strings indicating **all** places in the manuscript where the process is described.
             - If the manuscript references are ambiguous, include your best guess and **add a `"comment": "citation is tentative"`** in the same object.
             - **Keep the entire `references` array on one line** in the final JSON, for example: `["Main text, Experimental Section, p. 230", "SI p. S-1"]`.  
-3. **Desired Output Format**  
+2. **Desired Output Format**  
     - Provide a JSON array named `subtask_1_output.json`.
     - **One object per extracted process**, in the sequence they appear.
     - **Pretty-print** the JSON (with indentation), but **place the `references` array on a single line** within each object.
@@ -67,7 +68,8 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
 4. **Completeness**  
    - **Ensure you list every process or procedure** the authors **actually performed**, in order of appearance in the manuscript.  
    - Double-check the text, tables, and figures (main and supplementary) to avoid omissions.  
-   - Do **not** merge or combine separate processes, even if they were part of one overarching experiment.
+  - Do **not** group any processes, even if they are described as parts of the same overarching experiment or workflow; each performed lab technique or procedure gets its own label.
+
 
 ---
 ---
