@@ -4,7 +4,7 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
 
 **Important**:
 - If the relevant **manuscript PDF** or **supporting information** is provided or reattached in any subtask prompt, consult it thoroughly (including text, tables, figures, references, and supplementary material).
-- If **previously generated output files** (e.g., `subtask_1_output.json`) are provided, consult them when building your new output.
+- If **previously generated output files** (e.g., `subtasks_output.json`) are provided, consult them when building your new output.
 - **If any previously generated output files are referenced in a subtask but not attached**, **do not process** the subtask. **Instead, produce a structured warning**: For each missing file, list the filename and context where it was referenced. **Return only this warning** (i.e., do not provide normal subtask output).
 - **Follow all instructions** in each subtask precisely.  
 - **Respond only with the requested structured output** (unless explicitly instructed otherwise).
@@ -46,24 +46,26 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
     - **Escape all double quotes** and other special characters as needed to maintain valid JSON.
     Example:
 
-   ```json
-   [
-       {
-           "label": "A",
-           "title": "Slow evaporation of tap water",
-           "summary": "Evaporated 1–2 L of tap water in shallow pans at room temperature to concentrate heavier isotopes.",
-           "category": "Preparatory",
-           "references": ["Main text, Experimental Section, p. 230", "SI p. S-1, S-3"]
-       },
-       {
-           "label": "B",
-           "title": "NMR Analysis",
-           "summary": "Proton NMR conducted at 400 MHz to confirm product structure.",
-           "category": "Analytical",
-           "references": ["Main text, Results, Table 1, p. 234"]
-       }
-   ]
-   ```
+```json
+{
+   "subtask_1_output": [
+        {
+            "label": "A",
+            "title": "Slow evaporation of tap water",
+            "summary": "Evaporated 1–2 L of tap water in shallow pans at room temperature to concentrate heavier isotopes.",
+            "category": "Preparatory",
+            "references": ["Main text, Experimental Section, p. 230", "SI p. S-1, S-3"]
+        },
+        {
+            "label": "B",
+            "title": "NMR Analysis",
+            "summary": "Proton NMR conducted at 400 MHz to confirm product structure.",
+            "category": "Analytical",
+            "references": ["Main text, Results, Table 1, p. 234"]
+        }
+    ]
+}
+```
 
 4. **Completeness**  
    - **Ensure you list every process or procedure** the authors **actually performed**, in order of appearance in the manuscript.  
