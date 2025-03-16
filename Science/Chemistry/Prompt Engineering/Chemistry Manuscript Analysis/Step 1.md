@@ -19,23 +19,30 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
     1. **Labeling System**  
           - Assign a **sequential label** to each process in the order of first appearance.  
           - **Use spreadsheet-style column names**: A, B, C… Z, AA, AB, AC…, etc.  
+    2. **Exclusion criteria**  
+          - A process must involve at least one item from the list to be included:
+              - Phase or composition changes due to heat, irradiation, mixing, separation, etc.
+              - Chemical transformation (dissolution, reaction, etc.).
+              - Acquisition of experimental information (measurement of physical, chemical, or spectroscopic properties, etc.)
+          - If a process is a part of analytical sample preparation, include it as a part of associated analysis.
           - If a process is implemented in a batch fashion to accumulate more material, use a single label and add a batch note in the summary.
           - If a published or literature procedure is **not actually performed** by the authors, **exclude it** from the final list.
            - Do **not** group any processes, even if they are described as parts of the same overarching experiment or workflow; each performed lab technique or procedure gets its own label.
-    2. **Categorization**  
+    3. **Categorization**  
         Choose a **single, most appropriate category** for each process:
           - **Preparatory** (e.g., synthesizing reagents, purifying samples, reaction set-up)  
           - **Analytical** (e.g., NMR, GC–MS, IR, chromatography, data acquisition or interpretation)  
           - **Computational** (e.g., data processing, quantum calculations, data modeling, simulations)  
           - **Safety/Handling** (e.g., special disposal protocols, hazardous material handling)  
           - **Uncategorized** (if none of the above clearly apply)
-    3. **Description Fields**  
+    4. **Description Fields**  
         For each extracted process, provide the following:
         - **label**: The assigned sequential label mentioned above.  
         - **title**: A concise name describing the process (e.g., “Vacuum Filtration,” “Synthesis of X,” “Solution NMR”).  
         - **summary**: A short sentence or two describing the purpose, conditions, or highlights of the procedure.  
         - **category**: One of the five categories listed above.  
         - **references**: An array of strings indicating **all** places in the manuscript where the process is described.
+            - Extract and use actual page numbers indicated on pages, if available.
             - **Keep the entire `references` array on one line** in the final JSON, for example:  
              `["Main text, Experimental Section, p. 230", "SI p. S-1"]`.  
 3. **Desired Output Format**  
