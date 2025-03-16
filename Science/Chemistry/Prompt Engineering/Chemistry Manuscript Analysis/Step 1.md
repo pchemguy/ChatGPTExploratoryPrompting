@@ -19,8 +19,7 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
     1. **Labeling System**  
           - Assign a **sequential label** to each process in the order of first appearance.  
           - **Use spreadsheet-style column names**: A, B, C… Z, AA, AB, AC…, etc.  
-          - If a process is **performed again** (physically repeated) at a later point, **assign a new label** (treat it as a new instance).
-          - If a previously labeled process is only **discussed or referenced again** without being physically repeated, **reuse** the **existing label**.  
+          - If a process is implemented in a batch fashion to accumulate more material, use a single label and add a batch note in the summary.
           - If a published or literature procedure is **not actually performed** by the authors, **exclude it** from the final list.
            - Do **not** group any processes, even if they are described as parts of the same overarching experiment or workflow; each performed lab technique or procedure gets its own label.
     2. **Categorization**  
