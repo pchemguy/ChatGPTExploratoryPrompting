@@ -14,7 +14,7 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
 #### **Task**
 ##### **Subtask 1 – Experimental Processes and Procedures**
 1. **Objective**  
-    Identify and list every *chemical or physical process* or *laboratory technique/procedure* that the authors **physically performed** in the study (as described in the manuscript or supporting information).
+    Identify and list every *experimental chemical or physical process* or *laboratory technique/procedure* that the authors **physically performed** in the study (as described in the manuscript or supporting information).
 2. **Details & Requirements**  
     1. **Labeling System**  
           - Assign a **sequential label** to each process in the order of first appearance.  
@@ -27,7 +27,7 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
         Choose a **single, most appropriate category** for each process:
           - **Preparatory** (e.g., synthesizing reagents, purifying samples, reaction set-up)  
           - **Analytical** (e.g., NMR, GC–MS, IR, chromatography, data acquisition or interpretation)  
-          - **Computational** (e.g., quantum calculations, data modeling, simulations)  
+          - **Computational** (e.g., data processing, quantum calculations, data modeling, simulations)  
           - **Safety/Handling** (e.g., special disposal protocols, hazardous material handling)  
           - **Uncategorized** (if none of the above clearly apply)
     3. **Description Fields**  
