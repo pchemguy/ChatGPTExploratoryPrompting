@@ -16,4 +16,5 @@ Organic compound A has the molecular formula C5H8O. It decolorizes bromine water
 - [ChatGPT o1](ChemistryProblem_ChatGPT)
 - [Grok 3 / Think](ChemistryProblem_Grok)
 - [Gemini 2.0 Flash Thinking (experimental)](ChemistryProblem_Gemini)
-- Claude: Anthropic does not provide access to its reasoning model on free plan, so no evaluation here. 
+- DeepThink (R1): Deepseek produces a partial solution, so basically fails.
+- Claude 3.7 Sonnet Extended: Anthropic does not provide access to its reasoning model on the free plan, so no evaluation here. 
