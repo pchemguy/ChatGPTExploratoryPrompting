@@ -18,9 +18,7 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
 2. **Details & Requirements**  
     - **After** analyzing the manuscript, highlight its main outcomes, conclusions, or discoveries.
     - Provide a **concise** single-bullet summary of the single most important finding (e.g., major results, evidence, significant implications, or novelty).
-    - List up to top three other important results or conclusions that may be considered any of the following:
-        - Revolutionary (regardless of scope).
-        - Truly outstanding and possessing a broad fundamental, methodological, applied, or educational value.  
+    - List up to top three other important results or conclusions that may be considered truly outstanding and possessing a broad fundamental, methodological, applied, or educational value.  
     - For **each** finding, identify which **experimental processes (from Subtask 1)** are relevant to that finding, and the order of execution.
 3. **Description Fields**  
     For each extracted finding, provide the following:
@@ -39,7 +37,7 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
     - **Pretty-print** the JSON (with indentation), but **place the `processes` and`references` arrays on a single line** within each object.
     - **Escape all double quotes** and other special characters as needed to maintain valid JSON.
     Example:
-
+    
 ```json
    [
        {
@@ -50,6 +48,9 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
        }
    ]
 ```
-
-5. **Explanation**  
+    
+5. **Novelty Check**
+    For each selected result, check the content of the `description` field against the manuscript's abstract. Each such result must be clearly identified in the abstract as possessing significant scientific or technical novelty. If the result is not mentioned in the abstract or mentioned, but is not presented as significantly novel, it needs to be dropped from the final output.
+    
+6. **Explanation**  
     After generating the requested JSON output, provide a structured explanation of each included result and specific rationale for inclusion.
