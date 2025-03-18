@@ -16,41 +16,53 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
 1. **Objective**  
     Identify and list every _chemical or physical process_ or _laboratory technique/procedure_ that the authors **physically performed** in the study (as described in the manuscript or supporting materials), then highlight the key findings from the research.
 2. **Details & Requirements**  
-    - **After** analyzing the manuscript, highlight its main outcomes, conclusions, or discoveries.
-    - Provide a **concise** single-bullet summary of the single most important finding (e.g., major results, evidence, significant implications, or novelty).
-    - List up to top three other important results or conclusions that may be considered truly outstanding and possessing a broad fundamental, methodological, applied, or educational value.  
-    - For **each** finding, identify which **experimental processes (from Subtask 1)** are relevant to that finding, and the order of execution.
+    - **After analyzing the manuscript:**
+        - Highlight the main outcomes, conclusions, or discoveries.
+        - Provide a **single-bullet summary of the single most important finding** (e.g., major results, evidence, significant implications, or novelty).
+        - List up to **three additional** important results or conclusions with broad fundamental, methodological, applied, or educational value.
+        - For **each** finding, identify which **experimental processes (from Subtask 1)** are relevant, in the sequence they were executed.
+    - **Novelty Check:**
+        - Compare each candidate finding (as written in the `description` field) against the manuscript’s abstract.
+        - **Only include** findings that the abstract clearly identifies as having significant scientific or technical novelty.
+        - Omit any findings not clearly presented in the abstract as novel.
 3. **Description Fields**  
-    For each extracted finding, provide the following:
-    - **description**: A short, neutral statement describing only the essential novel outcome or procedure, so that an expert in the field could consider its practical utility. For example:
-        - Synthesis of a novel catalyst RhCl(P(Ph)3)3 for hydroacylation.
-        - New protocol for economical production of ammonium nitrate. 
-    - **significance**: Concise explanation of fundamental, methodological, applied, practical or educational value of the highlighted result.
-    - **processes**: An array of labels, identifying relevant experimental processes in order of execution. 
-        - **Keep the entire `processes` array on one line** in the final JSON, for example: `["C", "D", "E"]`.  
-    - **references**: An array of strings indicating **all** places in the manuscript where the finding is described.  
-        - **Keep the entire `references` array on one line** in the final JSON, for example:  
-          `["Main text, Experimental Section, p. 230", "SI p. S-1"]`.  
+    Provide the following fields for **each** included finding:
+    - **description**  
+        A short, neutral statement focusing on the essential novel outcome or procedure so that an expert can readily assess its practical utility.  
+        _Example:_
+        - `"Synthesis of a novel catalyst RhCl(P(Ph)3)3 for hydroacylation."`
+        - `"New protocol for economical production of ammonium nitrate."`
+    - **significance**  
+        A concise explanation of the fundamental, methodological, applied, or educational value of the result.
+    - **processes**  
+        An array (in order of execution) of relevant experimental process labels **on a single line**, e.g.:
+        - "processes": \["C", "D", "E"\]
+    - **references**  
+        An array of strings citing **all** places in the manuscript where the finding is described, **on a single line**, e.g.:
+        - "references": \["Main text, Experimental Section, p. 230", "SI, p. S-1"\]
 4. **Desired Output Format**  
-    - Provide a JSON array named `subtask_2_output.json`.
-    - **One object per extracted finding**, main finding first following by any additional findings sorted in the order of first appearance.
-    - **Pretty-print** the JSON (with indentation), but **place the `processes` and`references` arrays on a single line** within each object.
-    - **Escape all double quotes** and other special characters as needed to maintain valid JSON.
-    Example:
+    - Output a **JSON array** named `subtask_2_output.json`.
+    - **One JSON object per finding**, with the **most important finding listed first**, followed by up to three additional findings in the order they appear in the manuscript.
+    - **Use pretty-print** (indentation) for readability, but ensure:
+        - The entire `processes` array is on one line.
+        - The entire `references` array is on one line.
+        - All double quotes or special characters are escaped correctly so that the JSON remains valid.
+    
+    **Example**:
     
 ```json
-   [
-       {
-           "description": "A new catalyst XYZ enables ABC process.",
-           "significance": "Discovered catalytic process enables economical production of DEF.",
-           "processes": ["C", "D", "E"],
-           "references": ["Main text, Experimental Section, p. 230", "SI p. S-1, S-3"]
-       }
-   ]
-```
+[
+    {
+        "description": "A new catalyst XYZ enables ABC process.",
+        "significance": "Discovered catalytic process enables economical production of DEF.",
+        "processes": ["C", "D", "E"],
+        "references": ["Main text, Experimental Section, p. 230", "SI p. S-1, S-3"]
+    }
+]
+```    
     
-5. **Novelty Check**
-    For each selected result, check the content of the `description` field against the manuscript's abstract. Each such result must be clearly identified in the abstract as possessing significant scientific or technical novelty. If the result is not mentioned in the abstract or mentioned, but is not presented as significantly novel, it needs to be dropped from the final output.
-    
-6. **Explanation**  
-    After generating the requested JSON output, provide a structured explanation of each included result and specific rationale for inclusion.
+5. **Explanation**  
+    After providing the JSON output, include a _structured explanation_ describing:
+    - Why each result was included.
+    - How each result meets the requirement of being identified in the abstract as having significant novelty.
+    - Any other relevant details supporting the selection of each finding.
