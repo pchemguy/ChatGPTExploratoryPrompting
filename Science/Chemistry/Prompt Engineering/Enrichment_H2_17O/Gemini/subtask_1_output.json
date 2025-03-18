@@ -211,7 +211,7 @@
         {
             "label": "V",
             "title": "Density Measurement of Water",
-            "summary": "Density of deionized water and H2^17O fraction were measured at 21°C using a calibrated pipettor and balance.",
+            "summary": "Density of deionized water and H2^17O fraction were measured at 21oC using a calibrated pipettor and balance.",
             "category": "Analytical",
             "references": [
                 "Main text, Results and Discussion, p. 233",
@@ -221,7 +221,7 @@
         {
             "label": "W",
             "title": "Refractive Index Measurement of Water",
-            "summary": "Refractive index of deionized water and H2^17O fraction were measured at 21°C using a refractometer.",
+            "summary": "Refractive index of deionized water and H2^17O fraction were measured at 21oC using a refractometer.",
             "category": "Analytical",
             "references": [
                 "Main text, Results and Discussion, p. 233",
