@@ -14,7 +14,7 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
 #### **Task**
 ##### **Subtask 2 – Key Findings**
 1. **Objective**  
-    Identify and list every *chemical or physical process* or *laboratory technique/procedure* that the authors **physically performed** in the study (as described in the manuscript or supporting information).
+    Identify and list every _chemical or physical process_ or _laboratory technique/procedure_ that the authors **physically performed** in the study (as described in the manuscript or supporting materials), then highlight the key findings from the research.
 2. **Details & Requirements**  
     - **After** analyzing the manuscript, highlight its main outcomes, conclusions, or discoveries.
     - Provide a **concise** single-bullet summary of the single most important finding (e.g., major results, evidence, significant implications, or novelty).
