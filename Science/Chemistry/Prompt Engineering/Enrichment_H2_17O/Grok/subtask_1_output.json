@@ -1,0 +1,81 @@
+{
+    "subtask_1_output": [
+        {
+            "label": "A",
+            "title": "Slow evaporation of tap water",
+            "summary": "Evaporated 1-2 L of tap water in shallow black bowls at room temperature on a windowsill to enrich H2_17O, repeated in batches until over 1 L was collected.",
+            "category": "Preparatory",
+            "references": ["Main text, Experimental Section, p. 232"]
+        },
+        {
+            "label": "B",
+            "title": "Fractional distillation of enriched water",
+            "summary": "Performed fractional distillation on ~500 mL of enriched water using a 1 L flask with two condensers to separate fractions at 98.5 oC and 99 oC.",
+            "category": "Preparatory",
+            "references": ["Main text, Experimental Section, p. 232", "Supporting Information, p. S-9"]
+        },
+        {
+            "label": "C",
+            "title": "Electrolysis of H2_17O to produce hydrogen peroxide",
+            "summary": "Electrolyzed 5 mL of H2_17O buffered at pH 7.7 with phosphate buffer and KCl using copper cathode and graphite anode to synthesize H2_17O2.",
+            "category": "Preparatory",
+            "references": ["Main text, Experimental Section, p. 232"]
+        },
+        {
+            "label": "D",
+            "title": "Synthesis of 17O-hexanol",
+            "summary": "Synthesized 17O-hexanol by reacting iodohexane with Na17OH (generated from NaH and H2_17O) via an SN2 reaction.",
+            "category": "Preparatory",
+            "references": ["Main text, Experimental Section, p. 231", "Supporting Information, p. S-10"]
+        },
+        {
+            "label": "E",
+            "title": "Preparation of 17O-trimethylsilanol and 17O-hexamethyldisiloxane",
+            "summary": "Prepared 17O-trimethylsilanol and 17O-hexamethyldisiloxane by reacting H2_17O with bis(trimethylsilyl)trifluoroacetamide (BSTFA).",
+            "category": "Preparatory",
+            "references": ["Main text, Experimental Section, p. 231"]
+        },
+        {
+            "label": "F",
+            "title": "Preparation of H2_17O2 by electrolysis",
+            "summary": "Produced H2_17O2 by electrolyzing H2_17O, used as a standard for 17O NMR.",
+            "category": "Preparatory",
+            "references": ["Main text, Experimental Section, p. 231"]
+        },
+        {
+            "label": "G",
+            "title": "Preparation of 17O-camphor by oxygen exchange",
+            "summary": "Prepared 17O-camphor by exchanging the ketone oxygen of camphor with H2_17O, monitored via NMR.",
+            "category": "Preparatory",
+            "references": ["Main text, Experimental Section, p. 231", "Supporting Information, p. S-14"]
+        },
+        {
+            "label": "H",
+            "title": "NMR spectroscopy of labeled compounds",
+            "summary": "Characterized 17O-labeled compounds (hexanol, camphor, trimethylsilanol, hexamethyldisiloxane, water) using 1H, 13C, and 17O NMR on 600 MHz and 500 MHz spectrometers.",
+            "category": "Analytical",
+            "references": ["Main text, Experimental Section, p. 231", "Supporting Information, p. S-3 to S-35"]
+        },
+        {
+            "label": "I",
+            "title": "GC-MS analysis of labeled compounds",
+            "summary": "Analyzed 17O enrichment and characterized labeled compounds (hexanol, hexamethyldisiloxane, camphor) using gas chromatography-mass spectrometry with specific oven settings.",
+            "category": "Analytical",
+            "references": ["Main text, Experimental Section, p. 231", "Supporting Information, p. S-5 to S-6", "Supporting Information, p. S-10 to S-11", "Supporting Information, p. S-26 to S-28"]
+        },
+        {
+            "label": "J",
+            "title": "Colorimetric assays for H2O2 quantitation",
+            "summary": "Quantified H2_17O2 produced by electrolysis using two colorimetric assays testing its reducing and oxidizing abilities with TCA, KMnO4, Fe(NH4)2SO4, and KSCN.",
+            "category": "Analytical",
+            "references": ["Main text, Experimental Section, p. 231", "Supporting Information, p. S-8"]
+        },
+        {
+            "label": "K",
+            "title": "Density and refractive index measurement of enriched water",
+            "summary": "Measured density using a pipettor and balance, and refractive index at 589 nm using an Abbe refractometer, to characterize enriched H2_17O.",
+            "category": "Analytical",
+            "references": ["Main text, p. 231", "Supporting Information, p. S-3"]
+        }
+    ]
+}

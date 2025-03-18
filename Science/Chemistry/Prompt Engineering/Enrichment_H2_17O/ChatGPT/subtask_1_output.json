@@ -1,0 +1,172 @@
+{
+  "subtask_1_output": [
+    {
+      "label": "A",
+      "title": "Slow evaporation of tap water",
+      "summary": "Tap water (~1-2 L) placed in shallow pans and left to slowly evaporate at room temperature to begin enriching the 17O content.",
+      "category": "Preparatory",
+      "references": ["Main text, Experimental Section, p. 232"]
+    },
+    {
+      "label": "B",
+      "title": "Microwave boiling to sterilize enriched water",
+      "summary": "Briefly boiled collected water in a microwave to kill any bacteria before storage.",
+      "category": "Preparatory",
+      "references": ["Main text, Experimental Section, p. 232"]
+    },
+    {
+      "label": "C",
+      "title": "Filtration of partially enriched water",
+      "summary": "Passed the enriched water through fluted filter paper to remove particulates.",
+      "category": "Preparatory",
+      "references": ["Main text, Experimental Section, p. 232"]
+    },
+    {
+      "label": "D",
+      "title": "Fractional distillation",
+      "summary": "Distilled enriched water through a packed column and collected multiple fractions at distinct boiling points.",
+      "category": "Preparatory",
+      "references": ["Main text, Experimental Section, p. 232"]
+    },
+    {
+      "label": "E",
+      "title": "Electrolysis of 17O-labeled water",
+      "summary": "Applied a constant voltage (5 V) to 17O-enriched water using copper and graphite electrodes to generate hydrogen peroxide.",
+      "category": "Preparatory",
+      "references": ["Main text, Experimental Section, p. 232"]
+    },
+    {
+      "label": "F",
+      "title": "Colorimetric assays for hydrogen peroxide",
+      "summary": "Quantified the 17O-labeled hydrogen peroxide produced from electrolysis via two redox-based colorimetric methods.",
+      "category": "Analytical",
+      "references": ["Supporting Information, p. S-8"]
+    },
+    {
+      "label": "G",
+      "title": "Measurement of water density",
+      "summary": "Determined the density of the fractionally distilled 17O-enriched water using a calibrated pipette and balance at 21 oC.",
+      "category": "Analytical",
+      "references": ["Main text, p. 233"]
+    },
+    {
+      "label": "H",
+      "title": "Measurement of water refractive index",
+      "summary": "Used an Abbe refractometer at 24.5 oC to measure the refractive index of the enriched water sample.",
+      "category": "Analytical",
+      "references": ["Main text, p. 233"]
+    },
+    {
+      "label": "I",
+      "title": "17O NMR measurement of water",
+      "summary": "Collected proton-decoupled 17O NMR spectra of H2 17O at various pH values to observe changes in chemical shift.",
+      "category": "Analytical",
+      "references": ["Main text, Experimental Section, p. 232", "Main text, p. 233"]
+    },
+    {
+      "label": "J",
+      "title": "Synthesis of 17O-labeled sodium hydroxide",
+      "summary": "Reacted a small piece of sodium metal with 17O-enriched water to form Na17OH for subsequent organic synthesis.",
+      "category": "Preparatory",
+      "references": ["Main text, Experimental Section, p. 233"]
+    },
+    {
+      "label": "K",
+      "title": "Synthesis of 17O-labeled 1-hexanol",
+      "summary": "Performed an SN2 reaction by adding 1-iodohexane to the freshly prepared Na17OH solution, yielding 17O-1-hexanol.",
+      "category": "Preparatory",
+      "references": ["Main text, Experimental Section, p. 233"]
+    },
+    {
+      "label": "L",
+      "title": "Preparation of 17O-labeled TMS ether of 1-hexanol",
+      "summary": "Reacted 17O-1-hexanol with bis(trimethylsilyl)trifluoroacetamide (BSTFA) to form the trimethylsilyl ether derivative.",
+      "category": "Preparatory",
+      "references": ["Main text, Experimental Section, p. 233"]
+    },
+    {
+      "label": "M",
+      "title": "Synthesis of 17O-labeled hexamethyldisiloxane (HMDS)",
+      "summary": "Mixed BSTFA with 17O-enriched water to produce labeled HMDS via hydrolysis and condensation of trimethylsilyl groups.",
+      "category": "Preparatory",
+      "references": ["Main text, Experimental Section, p. 233"]
+    },
+    {
+      "label": "N",
+      "title": "Preparation of 17O-labeled camphor",
+      "summary": "Allowed camphor to exchange its ketone oxygen with 17O-enriched water under mild conditions, forming 17O-camphor.",
+      "category": "Preparatory",
+      "references": ["Main text, Experimental Section, p. 234"]
+    },
+    {
+      "label": "O",
+      "title": "GC-MS analysis of 17O-labeled 1-hexanol",
+      "summary": "Injected derivatized and underivatized hexanol samples into a Varian ion trap GC-MS to assess isotopic enrichment.",
+      "category": "Analytical",
+      "references": ["Main text, p. 232", "Main text, p. 233"]
+    },
+    {
+      "label": "P",
+      "title": "GC-MS analysis of 17O-labeled TMS ether of 1-hexanol",
+      "summary": "Examined the trimethylsilyl derivative by GC-MS to quantify mass shifts and determine 17O incorporation.",
+      "category": "Analytical",
+      "references": ["Main text, p. 233", "Main text, p. 234"]
+    },
+    {
+      "label": "Q",
+      "title": "GC-MS analysis of 17O-labeled hexamethyldisiloxane",
+      "summary": "Used GC-MS fragment ions (M-CH4) to distinguish 16O, 17O, and 18O isotopologues in HMDS.",
+      "category": "Analytical",
+      "references": ["Main text, p. 233", "Main text, p. 234"]
+    },
+    {
+      "label": "R",
+      "title": "GC-MS analysis of 17O-labeled camphor",
+      "summary": "Confirmed isotopic enrichment and fragmentation differences between labeled and unlabeled camphor samples.",
+      "category": "Analytical",
+      "references": ["Main text, p. 234"]
+    },
+    {
+      "label": "S",
+      "title": "NMR analyses of 17O-labeled 1-hexanol",
+      "summary": "Characterized product by 1H, 13C, and 17O NMR to confirm structure and isotopic incorporation.",
+      "category": "Analytical",
+      "references": ["Main text, p. 233", "Main text, p. 234"]
+    },
+    {
+      "label": "T",
+      "title": "NMR analyses of 17O-labeled hexamethyldisiloxane",
+      "summary": "Acquired 1H, 13C, and 17O NMR to validate the formation of labeled HMDS from BSTFA hydrolysis.",
+      "category": "Analytical",
+      "references": ["Main text, p. 234"]
+    },
+    {
+      "label": "U",
+      "title": "NMR analyses of 17O-labeled hydrogen peroxide",
+      "summary": "Used 17O NMR to observe the labeled peroxide peak (~179 ppm) produced by water electrolysis.",
+      "category": "Analytical",
+      "references": ["Main text, p. 234"]
+    },
+    {
+      "label": "V",
+      "title": "NMR analyses of 17O-labeled camphor",
+      "summary": "Acquired 1H, 13C, and 17O NMR on camphor exchanged with 17O water to confirm labeling.",
+      "category": "Analytical",
+      "references": ["Main text, p. 234"]
+    },
+    {
+      "label": "W",
+      "title": "Investigation of ethanol OH exchange in presence of 17O-labeled camphor",
+      "summary": "Detected an unexpected reaction wherein water displaced the ethanol OH, observed by 17O NMR.",
+      "category": "Preparatory",
+      "references": ["Main text, p. 235"]
+    },
+    {
+      "label": "X",
+      "title": "Investigation of cyclohexanone-mediated exchange of ethanol OH with 17O-labeled water",
+      "summary": "Demonstrated a similar nucleophilic exchange reaction using cyclohexanone, monitored via 17O NMR.",
+      "category": "Preparatory",
+      "references": ["Main text, p. 235"]
+    }
+  ]
+}

@@ -18,11 +18,15 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
 2. **Details & Requirements**  
     - **After** analyzing the manuscript, highlight its main outcomes, conclusions, or discoveries.
     - Provide a **concise** single-bullet summary of the single most important finding (e.g., major results, evidence, significant implications, or novelty).
-    - List up to three other extra (secondary) results or conclusions. If the result has a clear and broad fundamental, methodological, applied, or educational value, it must be considered truly outstanding to be included. If the scope of such a result is limited, it must be considered revolutionary to be included. Otherwise, include the main result only.
-    - For **each** finding, identify which **experimental processes (from Subtask 1)** are relevant to that finding, and how they are related.
+    - List up to top three other important results or conclusions that may be considered any of the following:
+        - Revolutionary (regardless of scope).
+        - Truly outstanding and possessing a broad fundamental, methodological, applied, or educational value.  
+    - For **each** finding, identify which **experimental processes (from Subtask 1)** are relevant to that finding, and the order of execution.
 3. **Description Fields**  
     For each extracted finding, provide the following:
-    - **summary**: A short sentence or two describing the result.  
+    - **description**: A short, neutral statement describing only the essential novel outcome or procedure, so that an expert in the field could consider its practical utility. For example:
+        - Synthesis of a novel catalyst RhCl(P(Ph)3)3 for hydroacylation.
+        - New protocol for economical production of ammonium nitrate. 
     - **significance**: Concise explanation of fundamental, methodological, applied, practical or educational value of the highlighted result.
     - **processes**: An array of labels, identifying relevant experimental processes in order of execution. 
         - **Keep the entire `processes` array on one line** in the final JSON, for example: `["C", "D", "E"]`.  
@@ -31,7 +35,7 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
           `["Main text, Experimental Section, p. 230", "SI p. S-1"]`.  
 4. **Desired Output Format**  
     - Provide a JSON array named `subtask_2_output.json`.
-    - **One object per extracted finding**, main finding first following by any additional findings in the sequence they appear.
+    - **One object per extracted finding**, main finding first following by any additional findings sorted in the order of first appearance.
     - **Pretty-print** the JSON (with indentation), but **place the `processes` and`references` arrays on a single line** within each object.
     - **Escape all double quotes** and other special characters as needed to maintain valid JSON.
     Example:
@@ -39,7 +43,7 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
 ```json
    [
        {
-           "summary": "A new catalyst XYZ enables ABC process.",
+           "description": "A new catalyst XYZ enables ABC process.",
            "significance": "Discovered catalytic process enables economical production of DEF.",
            "processes": ["C", "D", "E"],
            "references": ["Main text, Experimental Section, p. 230", "SI p. S-1, S-3"]
@@ -47,16 +51,5 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
    ]
 ```
 
----
----
-
-**END OF PROMPT. DO NOT COPY ANY TEXT BELOW THIS LINE AS A PART OF A PROMPT**
-
----
-
-### Refining prompt
-
-Improve the following ChatGPT prompt. Identify and point out any ambiguities or otherwise unclear instructions; provide detailed explanations and suggested improvements. Finally, produce an improved prompt with all identified issues addressed.
-
----
-
+5. **Explanation**  
+    After generating the requested JSON output, provide a structured explanation of each included result and specific rationale for inclusion.
