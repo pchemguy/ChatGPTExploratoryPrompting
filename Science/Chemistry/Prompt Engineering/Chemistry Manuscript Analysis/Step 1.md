@@ -24,7 +24,6 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
               - Phase or composition changes due to heat, irradiation, mixing, separation, etc.
               - Chemical transformation (dissolution, reaction, etc.).
               - Acquisition of experimental information (measurement of physical, chemical, or spectroscopic properties, etc.)
-          - If a process is a part of analytical sample preparation, include it as a part of associated analysis.
           - If a process is implemented in a batch fashion to accumulate more material, use a single label and add a batch note in the summary.
           - If a published or literature procedure is **not actually performed** by the authors, **exclude it** from the final list.
            - Do **not** group any processes, even if they are described as parts of the same overarching experiment or workflow; each performed lab technique or procedure gets its own label.
@@ -76,20 +75,3 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
 4. **Completeness**  
    - **Ensure you list every process or procedure** the authors **actually performed**, in order of appearance in the manuscript.  
    - Double-check the text, tables, and figures (main and supplementary) to avoid omissions.  
-  - Do **not** group any processes, even if they are described as parts of the same overarching experiment or workflow; each performed lab technique or procedure gets its own label.
-
-
----
----
-
-**END OF PROMPT. DO NOT COPY ANY TEXT BELOW THIS LINE AS A PART OF A PROMPT**
-
-### Refining prompt
-
-Improve the following ChatGPT prompt. Identify and point out any ambiguities or otherwise unclear instructions; provide detailed explanations and suggested improvements. Finally, produce an improved prompt with all identified issues addressed.
-
-### Comments
-
-Apparently the bullet
-- Any sub-step or partially repeated step described as an individual procedure should receive its own label, even if it is part of an overarching experiment.
-starts picking apart protocols. Consider removing it, if present as the last bullet in "1. Labeling System"
