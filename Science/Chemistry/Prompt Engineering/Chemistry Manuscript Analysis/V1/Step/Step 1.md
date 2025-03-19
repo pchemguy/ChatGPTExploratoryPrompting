@@ -45,26 +45,36 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
             - **Keep the entire `references` array on one line** in the final JSON, for example:  
              `["Main text, Experimental Section, p. 230", "SI p. S-1"]`.  
 3. **Desired Output Format**  
-    - Provide a JSON array named `subtask_1_output.json`.
-    - **One object per extracted process**, in the sequence they appear.
-    - **Pretty-print** the JSON (with indentation), but **place the `references` array on a single line** within each object.
-    - **Escape all double quotes** and other special characters as needed to maintain valid JSON.
+    - Provide a JSON array named subtask_1_output.json.  
+    - **One object per extracted process**, in the sequence they appear.  
+    - **Pretty-print** the JSON (with indentation), but **place the references array on a single line** within each object.  
+    - **Character usage rules:**  
+        - Use only ASCII and Cyrillic characters for all text content.  
+        - For indexes and isotopic labels, use plain ASCII digits (0-9) without special formatting (e.g., 13CH4).  
+        - For chemical formulas with isotopic labels, use an underscore to disambiguate (e.g., CH3_13COOH).  
+        - Use a small ASCII "o" (lowercase 'o') as the degree sign (e.g., 25oC).  
+        - Use the ASCII dash for all dashes or hyphens.  
+        - Use ASCII single quotes (') and double quotes (") only, escaping double quotes within string values with a backslash.  
+    - Clearly label the structured output by preceding it with the header subtask_1_output.json on a new line, followed by the JSON content.    
+
     Example:
+
+###### subtask_1_output.json
 
 ```json
 {
    "subtask_1_output": [
         {
             "label": "A",
-            "title": "Slow evaporation of tap water",
+            "title": "Azeotropic distillation of ethanol-water mixture with benzene entrainer",
             "summary": "Evaporated 1–2 L of tap water in shallow pans at room temperature to concentrate heavier isotopes.",
             "category": "Preparatory",
             "references": ["Main text, Experimental Section, p. 230", "SI p. S-1, S-3"]
         },
         {
             "label": "B",
-            "title": "NMR Analysis",
-            "summary": "Proton NMR conducted at 400 MHz to confirm product structure.",
+            "title": "13C NMR of unlabelled benzene",
+            "summary": "13C NMR conducted at 400 MHz (1H) to confirm product structure.",
             "category": "Analytical",
             "references": ["Main text, Results, Table 1, p. 234"]
         }
