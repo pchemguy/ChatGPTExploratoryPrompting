@@ -18,22 +18,27 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
     Identify and list every chemical directly involved in the most important finding, identified in `Subtask 1` (as described in the manuscript or supporting materials).
 2. **Details & Requirements**  
     - List all starting materials, intermediate and final products, and catalysts.
+    - Make sure to extract any materials listed only in associated tables.
     - Include both individual substances and mixture/solutions/compositions where appropriate.
 3. **Description Fields**  
     Provide the following fields for **each** included finding:
     - **formula**  
         - **Individual substances**: chemical formula, if provided in the paper, e.g. `"Ph2CH_13COOH"`
+            _Example:_
+            - `"PhCOOEt"`
         - **Mixture/solutions/compositions**: chemical formulas of individual constituents and composition
-        _Example:_
-        - `"NaOH, aq, 5%"
-        - `"Ph2CH_13COO(15NH4), 13C - 15%, 15N - 20%"`
-        - `"EtOH/H2O, azeotropic"`
+            _Example:_
+            - `"NaOH, aq, 5%"`
+            - `"EtOH/H2O, azeotropic"`
+        - If the process involves isotopically labeled materials, all relevant label levels must be indicated
+            _Example:_
+            - `"Ph2CH_13COO(15NH4), 13C - 15%, 15N - 20%, 17O - n.a., 18O - n.a."`
     - **name**  
         - Chemical name as provided in the manuscript.
     - **role**  
-        - reagent
-        - product
-        - catalyst
+        - **source** (reagent or starting material for physical processes)
+        - **product**
+        - **catalyst**
     - **references**  
         An array of strings citing **all** places in the manuscript where the finding is described, **on a single line**, e.g.:
         - "references": \["Main text, Experimental Section, p. 230", "SI, p. S-1"\]
