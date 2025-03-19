@@ -23,9 +23,8 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
         - List up to **three additional** important results or conclusions with broad fundamental, methodological, applied, or educational value.
         - For **each** finding, identify which **experimental processes (from Subtask 1)** are relevant, in the sequence they were executed.
     - **Novelty Check:**
-        - Compare each candidate finding (as written in the `description` field) against the manuscript’s abstract.
-        - **Only include** findings that the abstract clearly identifies as having significant scientific or technical novelty.
-        - Omit any findings not clearly presented in the abstract as novel.
+        - Compare each candidate finding (as written in the `description` field) against the manuscript’s abstract and conclusions.
+        - **Only include** findings that both abstract and conclusions clearly identify as having significant scientific or technical novelty simultaneously.
 3. **Description Fields**  
     Provide the following fields for **each** included finding:
     - **description**  
@@ -33,8 +32,9 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
         _Example:_
         - `"Synthesis of a novel catalyst RhCl(P(Ph)3)3 for hydroacylation."`
         - `"New protocol for economical production of ammonium nitrate."`
-    - **significance**  
-        A concise explanation of the fundamental, methodological, applied, or educational value of the result.
+    - **details**  
+        - A concise explanation of the fundamental, methodological, applied, or educational value of the result.
+        - Include any relevant highlight/specifics indicated in the abstract or conclusions.
     - **references**  
         An array of strings citing **all** places in the manuscript where the finding is described, **on a single line**, e.g.:
         - "references": \["Main text, Experimental Section, p. 230", "SI, p. S-1"\]
@@ -58,7 +58,7 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
 [
     {
         "description": "A new catalyst XYZ enables ABC process.",
-        "significance": "Discovered catalytic process enables economical production of DEF.",
+        "details": "Discovered catalytic process enables economical production of DEF.",
         "references": ["Main text, Experimental Section, p. 230", "SI p. S-1, S-3"]
     }
 ]
