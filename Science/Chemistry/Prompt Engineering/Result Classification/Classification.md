@@ -1,4 +1,4 @@
-# **Classification of Experimental Chemistry Results**
+# **Classification of Experimental Chemistry Results (with Keywords)**
 
 The following six categories capture the most common primary objectives in experimental chemistry:
 
@@ -138,7 +138,7 @@ Studies aiming to **reveal, confirm, or clarify** how a chemical reaction or pro
 - *“Elucidating the Radical Pathway in a Copper-Mediated Cross-Coupling Reaction via Kinetic and Spectroscopic Studies.”*  
 - *“Unraveling the Mechanism of Phase Transformation in Lithium Battery Cathodes Using In Situ X-ray Diffraction.”*  
 
-## **Classification of Experimental Chemistry Results (Compact Version)**
+## **Classification of Experimental Chemistry Results**
 
 Each category includes two examples of paper titles/descriptions.
 

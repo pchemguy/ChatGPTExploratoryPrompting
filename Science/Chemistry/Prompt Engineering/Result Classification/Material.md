@@ -358,3 +358,8 @@ Studies aiming to **reveal, confirm, or clarify** how a chemical reaction or pro
 **Example Paper Titles/Descriptions**  
 - *“Elucidating the Radical Pathway in a Copper-Mediated Cross-Coupling Reaction via Kinetic and Spectroscopic Studies.”*  
 - *“Unraveling the Mechanism of Phase Transformation in Lithium Battery Cathodes Using In Situ X-ray Diffraction.”*  
+
+
+# Notes
+
+Split description of each key result / finding into "objective" in accordance with the associated category and minimalistic description of implementation specifics, highlighting the key novelty/innovation.
