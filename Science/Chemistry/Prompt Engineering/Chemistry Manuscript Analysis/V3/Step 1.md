@@ -17,10 +17,18 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
 1. **Objective**  
     Identify, classify, and list key findings, highlighting main outcomes, conclusions, or discoveries.
 2. **Details & Requirements**  
-    - **Key Findings:**
-        - The **central most important finding** (usually highlighted in the title, abstract, and conclusions).
-        - Up to **top three additional** important result or conclusion candidates.
+    - **Candidate Findings:**
+        - Identify the **central most important finding** (usually highlighted in the title, abstract, and conclusions).
+        - Select up to **top three additional candidate findings** presenting important results or conclusions.
         - Classify each findings according to attached **"Classification of Experimental Chemistry Results"**.
+    - **Essential Details**
+        For each candidate finding identify
+        - Essential target / objective
+          For example:
+            - `Synthesis of a Novel Porous Copper-Organic Framework for Gas Storage` (**Material-Focused** result)
+            - `Low-T thermodynamic functions for UHMWPE` (**Characterization-Focused** result)
+            - `A Greener One-Pot Synthesis of Acetylsalicylic Acid with Reduced Byproducts` (**Preparation-Focused** result)
+            - `Repurposing a Common Dye as a Photocatalyst for Solar Fuel Generation`
     - **Main Finding:**
         - Provide a **single-bullet summary of the single most important finding** (e.g., major results, evidence, significant implications, or novelty).
     - **Additional Important Result Candidates:**
