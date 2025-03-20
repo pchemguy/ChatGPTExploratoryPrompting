@@ -17,32 +17,34 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
 1. **Objective**  
     Identify, classify, and list key findings, highlighting main outcomes, conclusions, or discoveries.
 2. **Details & Requirements**  
-    - **Candidate Findings:**
+    - **Major Findings:**
         - Identify the **central most important finding** (usually highlighted in the title, abstract, and conclusions).
         - Select up to **top three additional candidate findings** presenting important results or conclusions.
         - Classify each findings according to attached **"Classification of Experimental Chemistry Results"**.
     - **Essential Details**
         For each candidate finding identify
-        - Essential target / objective
+        - **objective:** Essential target as identified in abstract and conclusions
           For example:
-            - `Synthesis of a Novel Porous Copper-Organic Framework for Gas Storage` (**Material-Focused** finding)
-            - `Low-T thermodynamic functions for UHMWPE` (**Characterization-Focused** finding)
-            - `A Greener One-Pot Synthesis of Acetylsalicylic Acid with Reduced Byproducts` (**Preparation-Focused** finding)
-            - `Repurposing a Common Dye as a Photocatalyst for Solar Fuel Generation` (**Application-Focused** finding)
-            - 
-    - **Main Finding:**
-        - Provide a **single-bullet summary of the single most important finding** (e.g., major results, evidence, significant implications, or novelty).
-    - **Additional Important Result Candidates:**
-        - Identify up to **three additional** important result or conclusion candidates with broad fundamental, methodological, applied, or educational value.
-        - Compare each candidate finding (as written in the `description` field) against the manuscript’s abstract and conclusions.
-        - **Only include** in the final output candidates that both abstract and conclusions clearly identify as having significant scientific or technical novelty.
+            - `Synthesis of a novel porous copper-organic framework for gas storage` (**Material-Focused** finding)
+            - `Acquisition of low-T thermodynamic data for UHMWPE` (**Characterization-Focused** finding)
+            - `A robust finishing purification protocol for common UHP gases` (**Preparation-Focused** finding)
+            - `Repurposing a common dye as a photocatalyst for solar fuel generation` (**Application-Focused** finding)
+            - `Novel 1H decoupling sequence for ultrafast MAS NMR` (**Method-Focused** finding)
+        - **implementation:** Concise highlighting of the essential component only that encompasses the novelty of the result
+          For example:
+            - `OFHC copper and inert atmosphere (N2) enabled the key synthetic step` (**Material-Focused** finding)
+            - `Application of high pressure (100 bar) stabilized XYZ phase` (**Characterization-Focused** finding)
+            - `One-pot synthesis in supercritical N2` (**Preparation-Focused** finding)
+    - **Novelty Check:**
+        **Only include** in the final output additional candidate finding, for which all applies:
+        - `objective` and `implementation` are prominently presented in abstract and conclusions.
+        - Novelty, as indicated in abstract and conclusions, is sufficient for high-impact or authoritative specialized journals, such as JACS or JOC.
 3. **Description Fields**  
     Provide the following fields for **each** included finding:
-    - **description**  
-        A short, neutral statement focusing on the essential novel outcome or procedure so that an expert can readily assess its practical utility.  
-        _Example:_
-        - `"Synthesis of a novel catalyst RhCl(P(Ph)3)3 for hydroacylation."`
-        - `"New protocol for economical production of ammonium nitrate."`
+    - **objective**
+    - **implementation**
+    - **classification**
+        According to the attached **"Classification of Experimental Chemistry Results"**
     - **details**  
         - A concise explanation of the fundamental, methodological, applied, or educational value of the result.
         - Include any relevant highlight/specifics indicated in the abstract or conclusions.
@@ -68,7 +70,9 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
 ```json
 [
     {
-        "description": "A new catalyst XYZ enables ABC process.",
+        "objective": "Synthesis of a novel porous copper-organic framework for gas storage.",
+        "implementation": "OFHC copper and inert atmosphere (N2) enabled the key synthetic step",
+        "classification": "Material-Focused",
         "details": "Discovered catalytic process enables economical production of DEF.",
         "references": ["Main text, Experimental Section, p. 230", "SI p. S-1, S-3"]
     }
@@ -80,3 +84,4 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
     - Why each result was included.
     - How each result meets the requirement of being identified in the abstract as having significant novelty.
     - Any other relevant details supporting the selection of each finding.
+    
