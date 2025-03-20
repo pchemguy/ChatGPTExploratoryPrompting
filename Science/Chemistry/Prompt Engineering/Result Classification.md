@@ -207,18 +207,11 @@ Here are my initial categories:
     - Designing a new protocol from scratch (e.g., switching from a conventional to one-pot approach).
 - **Discovery of a New Application for a Chemical (Application-Focused)**
     - Identifying and demonstrating a novel use or application for a known chemical or class of chemicals in a new context. Examples include applications in catalysis, materials science, sensing, medicine, or other fields.
-- **Innovation in Chemical Process/Methodology (Method-Focused)**
-    - Creation or significant modification of a chemical process, reaction, or analytical technique that is broadly applicable or represents a significant advancement in methodology. This could be applicable across various areas of chemistry, including synthesis, analysis, or other chemical manipulations.
+- **Innovation in Chemical Process/Methodology/Equipment (Method-Focused)**
+    - Creation or significant modification of a chemical process, reaction, analytical/lab technique, or equipment that is broadly applicable or represents a significant advancement in methodology. This could be applicable across various areas of chemistry, including synthesis, analysis, or other chemical manipulations.
 - **Mechanistic or Reaction Pathway Elucidation (Mechanism-Focused)**
     - Uncovering or clarifying the mechanism behind a chemical reaction or process.
     - May also involve investigation of physicochemical/physical/mechanical processes
-
-**Rationale**  
-Many experimental chemistry papers center on determining **how** a reaction proceeds rather than on the final compound or the method’s general utility. If your analyses frequently encounter mechanistic insights (e.g., intermediate detection, kinetic modeling, isotope labeling studies), a separate “mechanistic” category can reduce confusion and overlap with existing categories.
-
-**Refined Description**  
-Focuses on **uncovering or clarifying the mechanism** behind a chemical reaction or process. The key contributions are kinetic analyses, intermediate identification, isotope-labeling experiments, or other data that definitively map out the reaction pathway.
-
 
 Note, in the context of this classification, terms "material" and "preparation" should be understood in broad sense:
 - Material
@@ -233,11 +226,3 @@ Note, in the context of this classification, terms "material" and "preparation" 
 * **Refined and clearer descriptions.**
 * **A list of 5-10 keywords/phrases.**
 * **1-2 example paper titles or brief descriptions of results.**
-
-# Notes
-
-- Synthesis of a Novel Compound (Novelty-Focused) -> Preparation of a Novel Material (Material-Focused)
-  Material may be a well defined compound, a composite, what else?
-  Preparation may or may not involved {well-defined} chemical processes / synthetic pathways. Preparation may primarily rely on physical or physicochemical processes (mixing, separation, dissolution, thermal/radiation (EM/optical/acoustic) treatment, etc.)
-- New equipment?
-
