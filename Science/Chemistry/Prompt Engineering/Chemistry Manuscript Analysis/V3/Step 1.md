@@ -15,16 +15,14 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
 #### **Task**
 ##### **Subtask 1 – Key Findings**
 1. **Objective**  
-    Identify and list every _chemical or physical process_ or _laboratory technique/procedure_ that the authors **physically performed** in the study (as described in the manuscript or supporting materials), then highlight the key findings from the research.
+    Identify, classify, and list key findings, highlighting main outcomes, conclusions, or discoveries.
 2. **Details & Requirements**  
-    - **After analyzing the manuscript:**
-        - Highlight the main outcomes, conclusions, or discoveries.
+    - **Main Finding:**
         - Provide a **single-bullet summary of the single most important finding** (e.g., major results, evidence, significant implications, or novelty).
-        - List up to **three additional** important results or conclusions with broad fundamental, methodological, applied, or educational value.
-        - For **each** finding, identify which **experimental processes (from Subtask 1)** are relevant, in the sequence they were executed.
-    - **Novelty Check:**
+    - **Additional Important Result Candidates:**
+        - Identify up to **three additional** important result or conclusion candidates with broad fundamental, methodological, applied, or educational value.
         - Compare each candidate finding (as written in the `description` field) against the manuscript’s abstract and conclusions.
-        - **Only include** findings that both abstract and conclusions clearly identify as having significant scientific or technical novelty simultaneously.
+        - **Only include** in the final output candidates that both abstract and conclusions clearly identify as having significant scientific or technical novelty.
 3. **Description Fields**  
     Provide the following fields for **each** included finding:
     - **description**  
