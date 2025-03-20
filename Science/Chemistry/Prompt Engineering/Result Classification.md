@@ -1,4 +1,4 @@
-# Q
+# Q1
 
 I'm developing a classification system for the key results of experimental chemistry papers to better analyze and categorize research.  Here are my initial categories. Please help me improve them to be both robust and practically useful for classification by:
 
@@ -26,7 +26,7 @@ Below is an expanded and refined classification system that aims to be both comp
 
 ---
 
-## 1. Synthesis of a Novel Compound (Novelty-Focused)
+## 1. Preparation of a Novel Material (Material-Focused)
 
 **Refined Description**  
 Focuses on reporting the **first-ever synthesis or isolation** of a previously unreported chemical entity. The *novelty* of the compound’s structure is paramount. While basic characterization (e.g., NMR, MS, IR) is necessary to confirm the identity and novelty, the paper’s central claim is the creation of a *new* molecule. Any improvements in yield or cost are secondary to proving that the compound itself has not appeared in the literature before.
@@ -135,7 +135,7 @@ Centers on **finding and demonstrating a novel use** for an existing compound or
 
 ---
 
-## 6. *(Proposed Additional Category)* Mechanistic or Reaction Pathway Elucidation (Mechanism-Focused)
+## 6. Mechanistic or Reaction Pathway Elucidation (Mechanism-Focused)
 
 **Rationale**  
 Many experimental chemistry papers center on determining **how** a reaction proceeds rather than on the final compound or the method’s general utility. If your analyses frequently encounter mechanistic insights (e.g., intermediate detection, kinetic modeling, isotope labeling studies), a separate “mechanistic” category can reduce confusion and overlap with existing categories.
@@ -185,8 +185,59 @@ By clarifying category boundaries, sharpening descriptions, providing relevant k
 ---
 ---
 
+# Q2
+
+I'm developing a classification system for the key results of experimental chemistry papers to better analyze and categorize research.  Here are my initial categories. Please help me improve them to be both robust and practically useful for classification by:
+
+1. **Ensuring each category is clearly distinct, non-overlapping, and comprehensively covers the typical key results in experimental chemistry.** Are there any significant types of results missing?
+2. **Refining the descriptions for each category to be as clear, unambiguous, and precise as possible.**  Focus on making the distinctions between categories sharp.
+3. **Generating a list of keywords and phrases that are strongly associated with each category.**  These keywords will be used to help identify papers belonging to each category, potentially in automated or semi-automated systems. Aim for 5-10 keywords/phrases per category.
+4. **Providing examples of paper titles or brief descriptions of experimental results that would clearly fall into each category.** This will help to validate and further refine the category definitions and keyword lists.
+
+Here are my initial categories:
+
+- **Preparation of a Novel Material (Material-Focused)**
+    - Achieving the preparation of a previously unreported material from commercially available starting materials.
+    - The primary goal is the creation of the new material itself.
+    - Practical considerations like yield, scalability, purity, or cost are secondary to the novelty of the material structure or composition.
+- **Characterization of a Compound's Properties (Characterization-Focused)** 
+    - Detailed and in-depth investigation and reporting of a compound's physical, chemical, or spectroscopic properties. This becomes the primary focus of the paper, even if the compound itself is not entirely novel or the synthesis is well-established.
+- **Development of an Improved Preparation Pathway (Focused on Robust Preparation)**
+    - Optimizing an existing preparation protocol for a known compound. This could involve using new or optimized reagents, catalysts, conditions, or a combination of techniques to improve aspects like yield, purity, safety, cost-effectiveness, environmental impact, or ease of execution.
+    - Designing a new protocol from scratch (e.g., switching from a conventional to one-pot approach).
+- **Discovery of a New Application for a Chemical (Application-Focused)**
+    - Identifying and demonstrating a novel use or application for a known chemical or class of chemicals in a new context. Examples include applications in catalysis, materials science, sensing, medicine, or other fields.
+- **Innovation in Chemical Process/Methodology (Method-Focused)**
+    - Creation or significant modification of a chemical process, reaction, or analytical technique that is broadly applicable or represents a significant advancement in methodology. This could be applicable across various areas of chemistry, including synthesis, analysis, or other chemical manipulations.
+- **Mechanistic or Reaction Pathway Elucidation (Mechanism-Focused)**
+    - Uncovering or clarifying the mechanism behind a chemical reaction or process.
+    - May also involve investigation of physicochemical/physical/mechanical processes
+
+**Rationale**  
+Many experimental chemistry papers center on determining **how** a reaction proceeds rather than on the final compound or the method’s general utility. If your analyses frequently encounter mechanistic insights (e.g., intermediate detection, kinetic modeling, isotope labeling studies), a separate “mechanistic” category can reduce confusion and overlap with existing categories.
+
+**Refined Description**  
+Focuses on **uncovering or clarifying the mechanism** behind a chemical reaction or process. The key contributions are kinetic analyses, intermediate identification, isotope-labeling experiments, or other data that definitively map out the reaction pathway.
+
+
+Note, in the context of this classification, terms "material" and "preparation" should be understood in broad sense:
+- Material
+    - Individual well-defined chemicals (avoiding using term "molecule", as it is less suitable for ionic and covalent solid chemicals)
+    - Polymers
+    - Composites/solutions/mixes
+- Preparation
+    - May or may not involve typical chemical reactions.
+    - May solely rely on physicochemical/physical/mechanical methods, such as mixing, separation, dissolution, thermal/EM/optical/acoustic energy treatment, etc.
+
+**For each category, please provide:**
+* **Refined and clearer descriptions.**
+* **A list of 5-10 keywords/phrases.**
+* **1-2 example paper titles or brief descriptions of results.**
+
 # Notes
 
 - Synthesis of a Novel Compound (Novelty-Focused) -> Preparation of a Novel Material (Material-Focused)
   Material may be a well defined compound, a composite, what else?
   Preparation may or may not involved {well-defined} chemical processes / synthetic pathways. Preparation may primarily rely on physical or physicochemical processes (mixing, separation, dissolution, thermal/radiation (EM/optical/acoustic) treatment, etc.)
+- New equipment?
+
