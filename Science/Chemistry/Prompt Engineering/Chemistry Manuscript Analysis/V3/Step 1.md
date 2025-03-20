@@ -25,10 +25,11 @@ You are acting as an **expert chemistry reviewer** responsible for a **detailed 
         For each candidate finding identify
         - Essential target / objective
           For example:
-            - `Synthesis of a Novel Porous Copper-Organic Framework for Gas Storage` (**Material-Focused** result)
-            - `Low-T thermodynamic functions for UHMWPE` (**Characterization-Focused** result)
-            - `A Greener One-Pot Synthesis of Acetylsalicylic Acid with Reduced Byproducts` (**Preparation-Focused** result)
-            - `Repurposing a Common Dye as a Photocatalyst for Solar Fuel Generation`
+            - `Synthesis of a Novel Porous Copper-Organic Framework for Gas Storage` (**Material-Focused** finding)
+            - `Low-T thermodynamic functions for UHMWPE` (**Characterization-Focused** finding)
+            - `A Greener One-Pot Synthesis of Acetylsalicylic Acid with Reduced Byproducts` (**Preparation-Focused** finding)
+            - `Repurposing a Common Dye as a Photocatalyst for Solar Fuel Generation` (**Application-Focused** finding)
+            - 
     - **Main Finding:**
         - Provide a **single-bullet summary of the single most important finding** (e.g., major results, evidence, significant implications, or novelty).
     - **Additional Important Result Candidates:**
