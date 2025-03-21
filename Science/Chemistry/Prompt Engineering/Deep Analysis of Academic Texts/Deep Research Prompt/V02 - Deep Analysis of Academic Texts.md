@@ -128,6 +128,7 @@ Identify opportunities for inferring any missing information
 Integrate inferred and existing information and perform additional consistency checks, if possible
 
 
+
 1. **Key findings**:
     - Identify and extract details about the main result and other major results.
     - Perform classification.
@@ -148,4 +149,14 @@ Integrate inferred and existing information and perform additional consistency c
     For each process
     - Select appropriate process model.
     - If appropriate, identify governing equations.
-    - Given quantities of starting materials, process model, governing equations, and the list of products / byproducts, estimate products quantities and compare with reported results.
+    - Given quantities of starting materials, process model, governing equations, and the list of products / byproducts, estimate products quantities and compare with reported results (mass balance check).
+5. **Special considerations**:
+    - Extract experimental information from both main text and any supporting materials.
+    - If materials or their quantities are listed in tables, such information also needs to be extracted.
+    - Identify any missing information necessary for process analysis; consider if such information can be inferred.
+    - If equipment information is provided in the figures as photos / schematics
+        - Interpret figures
+        - Identify equipment
+        - Identify key performance characteristics and consider if any values / value ranges for such characteristics can be inferred.
+        - Integrate inferred data together with extracted data for **Process analysis**.
+    - Consider if for any process redundant information related to mass balance checks is provided; perform consistency checks, if possible.
