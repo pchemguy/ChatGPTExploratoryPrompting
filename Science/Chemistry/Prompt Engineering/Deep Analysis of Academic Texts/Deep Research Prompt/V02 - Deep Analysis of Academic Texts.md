@@ -121,11 +121,7 @@ Focus on **prompt designs** that remain effective across various paper formats a
 Use this prompt to **guide a focused investigation** into **generalizable, single-paper prompt engineering** for experimental chemistry. The aim is to develop reliable, **ready-to-use** prompts that extract and validate key data from any relevant paper **without** tailoring prompts for individual documents.
 
 
-Extract information
-Identify missing and redundant information
-Check for consistency where information is complete or redundant
-Identify opportunities for inferring any missing information
-Integrate inferred and existing information and perform additional consistency checks, if possible
+
 
 
 
@@ -144,7 +140,7 @@ Integrate inferred and existing information and perform additional consistency c
     - **Key equipment**
         - Equipment type.
         - Key performance characteristics.
-    - **Process parameters**
+    - **Process parameters and protocols**
 4. **Process analysis**:
     For each process
     - Select appropriate process model.
