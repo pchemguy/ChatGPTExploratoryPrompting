@@ -1,4 +1,4 @@
-# Application of General Purpose LLM Models to Deep Analysis of Academic Publications - Research Directions
+# Prompt Engineering for Deep Analysis of Academic Publications - Research Directions
 
 - General purpose vs. specialized models
 - non-reasoning vs. reasoning vs. deep research for complex tasks (such as deep analysis of academic publications)
