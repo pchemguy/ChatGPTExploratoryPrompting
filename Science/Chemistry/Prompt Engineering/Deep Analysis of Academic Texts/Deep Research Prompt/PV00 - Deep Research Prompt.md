@@ -1,4 +1,7 @@
-# Base Workflow for Deep Analysis of Academic Texts
+# Task:
+
+Help me create a prompt for Deep Research analysis. The goal of this analysis is to identify any published prompts or prompt design strategies for deep analysis of experimental chemistry papers. The particular focus is on prompts assessing completeness of provided information and performing basic validation by doing internal consistency checks, such as mass balance check, and checks for consistency with established knowledge. Such prompts should implement workflow given below or any part of it.
+# Base Workflow for Deep Analysis of Academic Texts:
 
 1. **Key Findings**:
     - Identify and extract the primary result and any other major outcomes or observations.
