@@ -128,6 +128,7 @@ Use this prompt to **guide a focused investigation** into **generalizable, singl
 1. **Key findings**:
     - Identify and extract details about the main result and other major results.
     - Perform classification.
+    - Novelty should be highlighted in title, abstract, and conclusions; details - in experimental section and supporting information.
 2. **Key experimental steps**:
     For each finding 
     - Identify and extract details about associated individual experimental processes / procedures.
