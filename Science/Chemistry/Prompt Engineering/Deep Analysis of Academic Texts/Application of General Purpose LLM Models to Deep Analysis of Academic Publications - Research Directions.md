@@ -11,7 +11,7 @@ Format: Blogpost article / Markdown. The full text will be published on GitHub a
 Note: Potential prompt engineering research directions are presented in the form of a structured **Deep Research Prompt** and that should be suitable to leading Deep Research models without tailoring to any specific vendor.
 
 Task:
-Help me write a draft based on provided context and material below. At this point
+Help me write a draft based on provided context and material below. At this point, I the the article as containing two parts. The focus is on the **Deep Research Prompt** that
 
 # Section Drafts
 
