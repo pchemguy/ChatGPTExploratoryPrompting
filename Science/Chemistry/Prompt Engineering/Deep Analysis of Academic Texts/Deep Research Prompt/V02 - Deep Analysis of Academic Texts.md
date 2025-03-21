@@ -122,7 +122,36 @@ Use this prompt to **guide a focused investigation** into **generalizable, singl
 
 
 Extract information
-Identify gaps and redundant information
+Identify missing and redundant information
 Check for consistency where information is complete or redundant
 Identify opportunities for inferring any missing information
 Integrate inferred and existing information and perform additional consistency checks, if possible
+
+
+1. **Key findings**:
+    - Identify and extract details about the main result and other major results.
+    - Perform classification.
+2. **Key experimental steps**:
+    For each finding 
+    - Identify and extract details about associated individual experimental processes / procedures.
+    - Perform classification.
+3. **Implementation**:
+    For each process, identify and extract information about
+    - **Materials**
+        - Lists of starting materials / reagents, catalysts, products / byproducts.
+        - Quantities / composition.
+    - **Key equipment**
+        - Equipment type.
+        - Key performance characteristics.
+    - **Process parameters**
+
+4. For each/main finding identify and extract information about associated individual experimental processes
+5. Classify each identified process
+6. For each process, identify and extract information about
+    1. **materials**
+        - lists of starting materials / reagents, catalysts, products / byproducts
+        - quantities / composition
+    2. **equipment**
+        - key performance charatreistics
+    3. **process parameters**
+7. 
