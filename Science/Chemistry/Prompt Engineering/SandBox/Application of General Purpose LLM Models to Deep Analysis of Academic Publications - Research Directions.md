@@ -8,4 +8,8 @@
     - models not available on free plan or available with significantly reduced input/output token limits
     - privacy considerations (user data being used for model training on free plan vs. promise not use it on subscription-based plans)
 - importance of large input context for many-shot learning
-- 
+
+
+- field scope
+- format - deep research prompt
+- disclaimer - aggressive use of LLM Chatbots for text development
