@@ -11,7 +11,7 @@ Format: Blogpost article / Markdown. The full text will be published on GitHub a
 Note: Potential prompt engineering research directions are presented in the form of a structured **Deep Research Prompt** and that should be suitable to leading Deep Research models without tailoring to any specific vendor.
 
 Task:
-Help me write a draft based on provided context and material below. At this point, I the the article as containing two parts. The focus is on the **Deep Research Prompt** that
+Help me write a draft based on provided context and material below. At this point, I see the article as containing three parts. The focus is on the **Deep Research Prompt** that comes last. The first section discusses Relevant Technical Aspects of LLMs important for the topic being discussed and suggested approaches. The middle section briefly discusses the structure of a scientific manuscript, highlighting aspects important for LLM-based analysis. While this matter should be considered as being part of the audience's expertise, the academic writing skill may often be developed/learned more like art, but high degree of rationalization and explicit verbalization are important, as such information must be taken into account explicitly for best result.
 
 # Section Drafts
 
@@ -33,6 +33,43 @@ Help me write a draft based on provided context and material below. At this poin
 - format - deep research prompt
 - disclaimer - aggressive use of LLM Chatbots for text development
 - disclaimer - work-in-progress
+
+## Structure of an Academic Manuscript
+
+- Key findings
+    - Title: the main/central finding
+    - Abstract and Conclusions: the main finding and other important results; both must clearly identify core novelties/contribution presented in the paper.
+- Experimental details
+    Primary source - Experimental Section, but useful information may also be contained in Abstract, Conclusions, Results and Discussions (while ideally no new experimental details should be presented outside the Experimental Section, no manuscript is ideal and other sections may contain derived characteristics that can be used for performing internal consistency checks). Some experimental data may only be presented in the form of tables or even as charts/diagrams, so those needs to be analyzed and interpreted as well.
+
+### Classification of Experimental Chemistry Results
+
+Each category includes two examples of paper titles/descriptions.
+
+1. **Material-Focused: Novel Material Synthesis**
+    Research primarily aimed at creating or isolating a **new** material (broadly defined: discrete chemical compounds, polymers, composites, solutions, etc.) that has not been previously reported. The central novelty lies in the material's structure, composition, or unique combination of components. Practical considerations (e.g., yield, cost, scale) are important but remain secondary to establishing that the material itself is new.
+    - *"Synthesis and Initial Characterization of a Novel Porous Copper-Organic Framework for Gas Storage."*  
+    - *"Discovery of a New Layered Calcium Silicate with Tunable Porosity."*  
+2. **Characterization-Focused: Property Characterization Study**
+    Work centered on **in-depth** measurement, description, and interpretation of the physical, chemical, spectroscopic, or other properties of a material. The compound itself may be known or previously reported, and the synthetic method may be routine; what is **new** is the extensive or specialized characterization. This category also applies to systematic comparative studies of properties if the main thrust is understanding or detailing those properties.
+    - *"High-Resolution Solid-State NMR and X-ray Diffraction Analysis of a Known Magnesium Hydride."*  
+    - *"Investigating the Electronic and Magnetic Properties of a Well-Studied Manganese Complex."*  
+3. **Preparation-Focused: Enhanced Preparation Protocol**
+    Studies that **optimize** or **significantly improve** existing methods to prepare a known material. Novelty derives from the improved protocol itself-factors such as yield, purity, sustainability, cost, safety, or scalability are prominently featured. This can include switching from multi-step to one-pot syntheses, use of greener/safer reagents, or employing new reaction conditions to streamline an established procedure.
+       - *"A Greener One-Pot Synthesis of Acetylsalicylic Acid with Reduced Byproducts."*  
+    - *"Optimized Palladium-Catalyzed Cross-Coupling Route Achieving 90% Yield for a Known Pharmaceutical Intermediate."*  
+4. **Application-Focused: Novel Application Discovery**
+    Papers highlighting a **new function or use** for a known chemical or class of chemicals in a context that has not been previously demonstrated. The emphasis is on showing **proof-of-concept** or practical feasibility of this new function, whether it's in catalysis, sensing, energy storage, drug delivery, or other domains.
+    - *"Repurposing a Common Dye as a Photocatalyst for Solar Fuel Generation."*  
+    - *"First Report of a Porphyrin Complex as a Biosensor for Early Disease Detection."*  
+5. **Method-Focused: Methodological or Technological Advancement**
+    Research introducing or significantly improving a **broadly applicable** chemical process, technique, or piece of equipment. The novelty is in the **method** rather than in the specific materials or the final product. This could involve new synthetic strategies, innovative analytical instrumentation, advanced reaction monitoring technologies, or any major leap in technique that could be applied across different projects or fields.
+    - *"Development of a Continuous-Flow Microreactor System for Rapid Peptide Synthesis."*  
+    - *"A Novel Electrochemical Detection Platform for Trace Metal Analysis in Water."*  
+6. **Mechanism-Focused: Mechanistic Insight or Reaction Pathway Elucidation**
+    Studies aiming to **reveal, confirm, or clarify** how a chemical reaction or process occurs. This may also include investigations of **physicochemical** or **physical/mechanical** processes that govern material transformations. Emphasis is on understanding reaction intermediates, transition states, kinetics, thermodynamics, or other fundamental mechanistic details.
+    - *"Elucidating the Radical Pathway in a Copper-Mediated Cross-Coupling Reaction via Kinetic and Spectroscopic Studies."*  
+    - *"Unraveling the Mechanism of Phase Transformation in Lithium Battery Cathodes Using In Situ X-ray Diffraction."*  
 
 ## Deep Research Prompt - First Draft
 
