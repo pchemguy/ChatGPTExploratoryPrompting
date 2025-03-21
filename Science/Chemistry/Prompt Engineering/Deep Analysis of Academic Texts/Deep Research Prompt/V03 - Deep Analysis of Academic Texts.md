@@ -1,4 +1,4 @@
-
+The following list describes a generic workflow for analyzing experimental chemistry manuscript. The goals include assessing completeness of provided information and performing basic validation by doing internal consistency checks, such as mass balance check, and checks for consistency with established knowledge. Help me identify any gaps in this workflow, improve clarity, structure, and language.
 
 1. **Key findings**:
     - Identify and extract details about the main result and other major results.
