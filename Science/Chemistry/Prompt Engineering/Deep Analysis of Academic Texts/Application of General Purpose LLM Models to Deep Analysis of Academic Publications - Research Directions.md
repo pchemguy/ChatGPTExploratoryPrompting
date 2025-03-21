@@ -1,3 +1,15 @@
+# Task
+
+Help me write a draft of an article based on provided context and material below. At this point, I see the article as containing three parts:
+- The focus is on the **Deep Research Prompt** that comes last.
+- The first section discusses Relevant Technical Aspects of LLMs important for the topic being discussed and suggested approaches.
+- The middle section briefly discusses the structure of a scientific manuscript, highlighting aspects important for LLM-based analysis. While this matter should be considered as being part of the audience's expertise, the academic writing skill may often be developed/learned more like art, but high degree of rationalization and explicit verbalization are important, as such information must be taken into account explicitly for best result.
+You need to
+- analyze provided material
+- improve language
+- identify gaps in material and help fill them
+- draft the article, paying attention to clarity and smooth flow.
+
 # Instructions and context
 
 Title: Prompt Engineering for Deep Analysis of Academic Publications - Research Directions
@@ -9,9 +21,6 @@ Goal: Discussion of potential abilities of top general purpose LLM models to per
 Format: Blogpost article / Markdown. The full text will be published on GitHub as "work-in-progress", and a summary to be generated will be published as social network posts targeting industrial and academic research community.
 
 Note: Potential prompt engineering research directions are presented in the form of a structured **Deep Research Prompt** and that should be suitable to leading Deep Research models without tailoring to any specific vendor.
-
-Task:
-Help me write a draft based on provided context and material below. At this point, I see the article as containing three parts. The focus is on the **Deep Research Prompt** that comes last. The first section discusses Relevant Technical Aspects of LLMs important for the topic being discussed and suggested approaches. The middle section briefly discusses the structure of a scientific manuscript, highlighting aspects important for LLM-based analysis. While this matter should be considered as being part of the audience's expertise, the academic writing skill may often be developed/learned more like art, but high degree of rationalization and explicit verbalization are important, as such information must be taken into account explicitly for best result.
 
 # Section Drafts
 
