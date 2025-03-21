@@ -145,4 +145,7 @@ Integrate inferred and existing information and perform additional consistency c
         - Key performance characteristics.
     - **Process parameters**
 4. **Process analysis**:
-    
+    For each process
+    - Select appropriate process model.
+    - If appropriate, identify governing equations.
+    - Given quantities of starting materials, process model, governing equations, and the list of products / byproducts, estimate products quantities and compare with reported results.
