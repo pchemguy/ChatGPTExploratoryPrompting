@@ -1,5 +1,4 @@
-
- Conduct in-depth research on advanced prompt engineering strategies, methodologies, and best practices specifically designed for
+Conduct in-depth research on advanced prompt engineering strategies, methodologies, and best practices specifically designed for
  - Extraction of structured information from collections of academic STEM manuscripts and other science and engineering texts.
  - Subsequent analysis of the extracted information with the goal to validate extracted information, check for internal consistency and consistency with established knowledge.
  The focus should be on techniques applicable to multiple documents, not single papers.
