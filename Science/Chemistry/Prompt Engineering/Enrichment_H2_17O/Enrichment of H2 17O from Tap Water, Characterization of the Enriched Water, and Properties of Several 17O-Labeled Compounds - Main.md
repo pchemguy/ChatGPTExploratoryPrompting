@@ -28,15 +28,17 @@ The boiling point was monitored using a thermometer at the top of the fractionat
 
 In our method, the electrolysis of 5 mL of $\mathrm{H}_{2}{ }^{17} \mathrm{O}$ buffered to pH 7.7 using 50 mM phosphate buffer (made from 50 mM $\mathrm{KH}_{2} \mathrm{PO}_{4}$ and $50 \mathrm{mM} \mathrm{K} \mathrm{K}_{2} \mathrm{HPO}_{4}$ ) with 150 mM KCl was carried out using a copper cathode and a graphite anode. The electrodes were connected to a Biorad Power Pac 1000 and a constant voltage of 5 V was applied for one hour. The reaction was monitored by observing the redox properties of $\mathrm{H}_{2} \mathrm{O}_{2}$ in two different reactions (quantitation details of $\mathrm{H}_{2} \mathrm{O}_{2}$ in the Supporting Information).
 
-![](https://cdn.mathpix.com/cropped/2025_03_23_837950dfe95c2a99c2a7g-3.jpg?height=559&width=861&top_left_y=103&top_left_x=135)
+**${ }^{17} \mathrm{O}$ NMR of Water.** The proton decoupled ${ }^{17} \mathrm{O}$ NMR of the water sample ( pH 6.6 ) was obtained with $\mathrm{CDCl}_{3}$ lock in a coaxial capillary, recycle delay 0.2 s and the chemical shift was set to 0 ppm . (Figure 1a). Another $\mathrm{H}_{2}{ }^{17} \mathrm{O}$ sample containing buffer (pH 2.6) was also run in the same fashion to see if there is any variation in the chemical shift with pH (Figure 1b). NMR acquisition conditions are included in the experimental details of the Supporting Information.
+
+![](Figure_1.jpg)
 
 **Figure 1.** ${ }^{17} \mathrm{O}$ NMR spectrum of water samples: (a) pH 6.6, (b) pH 2.6.
 
-## Scheme 1. Formation of ${ }^{17} \mathbf{O}$-Labeled Hexanol by a $\mathbf{S}_{\mathbf{N}}{ }^{2}$ Reaction
+**Scheme 1. Formation of ${ }^{17} \mathbf{O}$-Labeled Hexanol by a $\mathbf{S}_{\mathbf{N}}{ }^{2}$ Reaction**
 
+$$ 2\mathrm{Na} + 2\mathrm{H}_2{}^{17}\mathrm{O} \longrightarrow 2\mathrm{Na}^{17}\mathrm{OH} + \mathrm{H}_2 $$
 ![](https://cdn.mathpix.com/cropped/2025_03_23_837950dfe95c2a99c2a7g-3.jpg?height=118&width=851&top_left_y=886&top_left_x=140)
 
-${ }^{17} \mathrm{O}$ NMR of Water. The proton decoupled ${ }^{17} \mathrm{O}$ NMR of the water sample ( pH 6.6 ) was obtained with $\mathrm{CDCl}_{3}$ lock in a coaxial capillary, recycle delay 0.2 s and the chemical shift was set to 0 ppm . (Figure 1a). Another $\mathrm{H}_{2}{ }^{17} \mathrm{O}$ sample containing buffer ( pH 2.6 ) was also run in the same fashion to see if there is any variation in the chemical shift with pH . (Figure 1b). NMR acquisition conditions are included in the experimental details of the Supporting Information.
 
 Synthesis of Labeled 1-Hexanol and Hexamethyldisiloxane. The ${ }^{17} \mathrm{O}$-labeled water could not be run directly on a gas chromatograph - mass spectrometer because the fusedsilica capillary column would have been damaged by the water. We chose to prepare labeled 1-hexanol because smaller alcohols are hard to detect by GC-MS (weak molecular ion peak and high volatility) and higher alcohols give more complex fragmentation patterns. ${ }^{17}$ O-Labeled hexanol was synthesized by reacting the ${ }^{17} \mathrm{O}$-enriched water with sodium metal, followed by addition of 1-iodohexane. Briefly, $200 \mu \mathrm{~L}$ ( 0.2 mmol ) of ${ }^{17} \mathrm{O}$ water was reacted with 3 $\mathrm{mg}(0.13 \mathrm{mmol})$ of sodium metal (Scheme 1). When the metal had all reacted, 1 equiv of 1-iodohexane ( $10 \mu \mathrm{~L}$ was dissolved in $100 \mu \mathrm{~L}$ of acetone) was added, and the reaction mixture was stirred at room temperature for 3 h . The reaction was monitored every 30 min by GC-MS, and after 3 h , complete depletion of 1-iodohexane was observed.
 
