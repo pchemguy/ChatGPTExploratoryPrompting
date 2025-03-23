@@ -27,9 +27,7 @@ For example:
     
     Any nonconventional or modified processing protocol should be described in detail, enabling independent reproduction and validation of claimed results. 
     
-    For any highly unusual/revolutionary results/claims, such as
+    For any highly unusual/revolutionary results/claims, a clear and detailed explanation/justification should be provided of how appropriate process models and any relevant governing equations support claimed results when all specific experimental/processing protocols and any essential modifications are considered. Examples of such results include
     - demonstrated processes or characteristics that are apparently inconsistent with or contradicting to established knowledge/practices
-    - odd results, such as unexpected performance characteristics observed with apparently conventional/established equipment/protocols
-    - potentially highly disruptive findings (findings that may )
-    a clear and detailed discussion of how specific experimental/processing protocols enabled such results
- 
+    - observed odd results (such as unexpected performance characteristics) and/or potentially highly disruptive findings (findings that may enable disruptive scientific and/or industrial/market applications) within an established field using apparently conventional/established equipment/protocols
+    
