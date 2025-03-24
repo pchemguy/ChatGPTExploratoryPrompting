@@ -12,6 +12,7 @@ $\ce{0.5 H2O}$
 $\ce{1/2 H2O}$  
 $\ce{(1/2) H2O}$  
 $\ce{n H2O}$  
+
 $\ce{^{227}_{90}Th+}$ $\ce{^227_90Th+}$  
 
 $\ce{^{0}_{-1}n^{-}}$ $\ce{^0_-1n-}$  
@@ -82,14 +83,21 @@ $\ce{KCr(SO4)2*12H2O}$
 $\ce{KCr(SO4)2.12H2O}$  
 $\ce{KCr(SO4)2 * 12 H2O}$  
 $\ce{Fe^{II}Fe^{III}2O4}$  
+
 $\ce{OCO^{.-}}$  
+
 $\ce{NO^{(2.)-}}$  
+
 $\ce{Li^x_{Li,1-2x}Mg^._{Li,x}\mathit{V}'_{Li,x}Cl^x_{Cl}}$   
+
 $\ce{O''_{i,x}}$  
+
 $\ce{M^{..}_i}$  
 
 $\ce{\mathit{V}^{4'}_{Ti}}$  
+
 $\ce{V_{V,1}C_{C,0.8}\mathit{V}_{C,0.2}}$  
+
 $\ce{A + B}$  
 $\ce{A - B}$  
 $\ce{A = B}$  
