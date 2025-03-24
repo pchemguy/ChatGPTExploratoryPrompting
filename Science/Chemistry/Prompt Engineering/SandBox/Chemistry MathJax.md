@@ -61,6 +61,7 @@ $\ce{{Gluconic Acid} + H2O2}$
 $\ce{X_{{red}}}$  
 
 $\ce{{(+)}_589{-}[Co(en)3]Cl3}$   
+
 $\ce{C6H5-CHO}$  
 $\ce{A-B=C#D}$  
 $\ce{A\bond{-}B\bond{=}C\bond{#}D}$  
