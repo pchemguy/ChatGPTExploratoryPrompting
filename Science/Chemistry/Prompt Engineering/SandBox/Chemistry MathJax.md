@@ -49,7 +49,9 @@ $\ce{\beta +}$
 $\ce{^40_18Ar + \gamma{} + \nu_e}$  
 
 $\ce{Fe(CN)_\mathrm{{\frac{6}{2}}}}$  
+
 $\ce{X_{\mathit{i}}^{\mathit{x}}}$  
+
 $\ce{X_\mathit{Vi}^\mathit{x}}$  
 
 $\ce{\mathit{cis~cis}{-}[PtCl2(NH3)2]}$  
