@@ -36,6 +36,7 @@ In our method, the electrolysis of 5 mL of $\mathrm{H}_{2}{ }^{17} \mathrm{O}$ b
 
 **Scheme 1. Formation of ${ }^{17} \mathbf{O}$-Labeled Hexanol by a $\mathbf{S}_{\mathbf{N}}{ }^{2}$ Reaction**
 
+$$\ce{2Na + 2H2^{17}O -> 2Na^{17}OH + H2}$$  
 $$ 2\mathrm{Na} + 2\mathrm{H}_2{}^{17}\mathrm{O} \longrightarrow 2\mathrm{Na}^{17}\mathrm{OH} + \mathrm{H}_2 $$
 ![](https://cdn.mathpix.com/cropped/2025_03_23_837950dfe95c2a99c2a7g-3.jpg?height=118&width=851&top_left_y=886&top_left_x=140)
 
