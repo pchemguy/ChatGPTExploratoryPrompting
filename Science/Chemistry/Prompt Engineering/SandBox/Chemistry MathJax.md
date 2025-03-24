@@ -124,11 +124,17 @@ $\pu{123 kJ}$
 $\pu{123 mm2}$  
 $\pu{123 J s}$  
 $\pu{123 J*s}$  
+
 $\pu{123 kJ/mol}$  
+
 $\pu{123 kJ//mol}$  
+
 $\pu{123 kJ mol-1}$  
+
 $\pu{123 kJ*mol-1}$   
+
 $\pu{1.2e3 kJ}$  
+
 $\pu{1,2e3 kJ}$  
 $\pu{1.2E3 kJ}$  
 $\pu{1,2E3 kJ}$  
