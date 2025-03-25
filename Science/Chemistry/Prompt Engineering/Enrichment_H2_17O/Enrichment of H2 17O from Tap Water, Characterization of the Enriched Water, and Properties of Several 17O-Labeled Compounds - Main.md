@@ -50,7 +50,7 @@ To form hexamethyldisiloxane, HMDS (or bis-trimethylsilyl oxide) (Scheme 2), $0.
 **Scheme 2. Hydrolysis Reaction of BSTFA To Form Hexamethyldisiloxane (HMDS)**
 ![](hexamethyldisiloxane.svg)
 
-Preparation of ${ }^{17} \mathbf{O}$ Camphor. Camphor ( 7 mg ) was dissolved in 0.5 mL of $\mathrm{CDCl}_{3}$ and added to $50 \mu \mathrm{~L}$ of $\mathrm{H}_{2}{ }^{17} \mathrm{O}$ buffer ( 50 mM phosphate, pH 7.7 ) in an NMR tube (diameter: 5 mm ). The mixture was left to react at room temperature overnight and analyzed directly by ${ }^{17} \mathrm{O}$ NMR the next day. After NMR, a sample was extracted and checked by EI GC-MS (The GC-MS data of ${ }^{17} \mathrm{O}$-labeled camphor is included in the Supporting Information).
+**Preparation of ${ }^{17} \mathbf{O}$ Camphor.** Camphor (7 mg) was dissolved in 0.5 mL of $\mathrm{CDCl}_{3}$ and added to $50 \mu \mathrm{~L}$ of $\mathrm{H}_{2}{ }^{17} \mathrm{O}$ buffer (50 mM phosphate, pH 7.7) in an NMR tube (diameter: 5 mm). The mixture was left to react at room temperature overnight and analyzed directly by ${ }^{17} \mathrm{O}$ NMR the next day. After NMR, a sample was extracted and checked by EI GC-MS (The GC-MS data of ${ }^{17} \mathrm{O}$-labeled camphor is included in the Supporting Information).
 
 ## RESULTS AND DISCUSSION
 
