@@ -38,4 +38,3 @@ Conduct in-depth research on advanced prompt engineering strategies, methodologi
  - Relevant entities (e.g., chemical compounds) and their relationships
 
  The output of this research should provide insights into effective prompt engineering strategies for extracting structured information from groups of scientific papers in experimental chemistry, enabling downstream analysis and knowledge synthesis.
-

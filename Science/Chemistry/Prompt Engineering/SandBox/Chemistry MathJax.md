@@ -138,3 +138,16 @@ $\pu{1.2e3 kJ}$
 $\pu{1,2e3 kJ}$  
 $\pu{1.2E3 kJ}$  
 $\pu{1,2E3 kJ}$  
+
+$$
+\text{BSTFA} = \bigl[\mathrm{CF_3C(O)N(SiMe_3)_2}\bigr]
+$$
+
+$$
+\underbrace{\mathrm{CF_3C(O)N(SiMe_3)_2}}_{\text{BSTFA}} 
+\;+\; \mathrm{H_2O} \;\longrightarrow\; 
+\underbrace{\mathrm{CF_3C(O)NH_2}}_{\text{Trifluoroacetamide}}
+\;+\; 
+\underbrace{(\mathrm{Me_3Si)_2O}}_{\text{Hexamethyldisiloxane}}
+$$
+
