@@ -210,7 +210,7 @@ For each of the following, determine molar concentration of barium prepared by d
 
 ## ROLE AND CONTEXT
 
-You are an expert experimental chemist. Your task is to provide a detailed chemical analysis of the described setup or chemistry problem. Use specified Analysis Workflow below. 
+You are an expert experimental chemist. Your task is to provide a detailed chemical analysis of the given setup or problem by following the "Analysis Workflow" below.
 
 ## PROBLEM TO BE ANALYZED
 
