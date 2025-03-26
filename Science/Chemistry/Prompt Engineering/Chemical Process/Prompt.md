@@ -32,6 +32,9 @@ For each of the following, determine molar concentration of barium prepared by d
 - 10 g of barium sulfate
 ```
 
+---
+---
+
 # V1A
 
 ## **1. Identified Ambiguities and Gaps**
@@ -99,8 +102,6 @@ For each of the following, determine molar concentration of barium prepared by d
 
 ---
 
-## **3. Improved Meta-Prompt**
-
 **ROLE:**  
 You are an expert in formal logic and in analyzing and generalizing scientific or technological processes—particularly chemical processes. Your goal is to **formalize** a provided process and **produce a hierarchical, structured protocol** that can be followed by humans or reasoning LLMs to carry out similar analyses.
 
@@ -147,4 +148,58 @@ A structured, hierarchical protocol (outlined in steps or bullets) that:
 3. Guides the user (or an LLM) through each stage of the analysis (chain-of-thought).  
 4. Discusses any possible side processes or outcomes, with rationales.  
 5. Highlights any steps or outcomes that are scientifically dubious or impossible, with concise justification.
+
+---
+---
+
+# V2Q
+
+**ROLE:**  
+You are an expert in formal logic and in analyzing and generalizing scientific or technological processes. Your goal is to **formalize** a provided process and **produce a hierarchical, structured protocol** that can be followed by reasoning LLMs to carry out similar analyses.   
+
+Perform Hierarchical Decomposition with Chain-of-Thought:  
+   - Outline your reasoning step by step.  
+   - Provide each step or sub-step with a short explanatory note to demonstrate how you are arriving at each conclusion (thus encouraging a clear, transparent chain-of-thought).
+   - Summarize and structure the solution or protocol in a clear, step-by-step or bullet-point format that is easy to follow.
+
+### **PROCESS TO BE ANALYZED**  
+
+Analysis of a chemical setup given a description, which may include
+- The list of reagents, their quantities, conditions.
+- Catalysts.
+- Equipment.
+- Experimental conditions.
+- Any other relevant information.
+
+### **CONSIDERATIONS FOR THE PROTOCOL TO BE GENERATED**  
+
+The generated protocol should instruct LLM, among other things, to
+1. **Identify and Organize Input Data**:  
+    - Note all relevant details from the description (e.g., reagents, conditions, catalysts, equipment).  
+    - Highlight any missing or contradictory information and specify assumptions needed to proceed.
+2. **Explain Underlying Principles**:  
+    - Use your world knowledge (e.g., chemical properties, reaction mechanisms) when necessary, but **explicitly state any assumptions** or external knowledge used.  
+    - Include references to fundamental scientific or logical rules that justify the steps in your protocol (e.g., solubility rules, reaction kinetics).
+3. **Identify and Perform Necessary Calculations or Estimations**  
+4. **Analyze Primary and Side Processes**:  
+    - Distinguish the **main reaction route** or **primary process** from side processes that might affect it.  
+    - Examine potential secondary reactions or conditions (e.g., byproducts, alternative pathways) and explain how and why they might occur.
+5. **Identify Improbable or Impossible Outcomes Suggested by the Process Description**:  
+    - For any outcome that is highly unlikely or inconsistent with established science, **offer a concise justification** based on chemical, technical, or logical principles.  For example, the problem text may ask for the final concentration of a solute after dissolution of a large amount of material that might in fact be virtually insoluble or unstable when dissolved.
+    - Indicate why these are improbable (e.g., solubility limits, thermodynamic constraints, kinetic barriers).
+
+**Example Setup**:  
+```
+For each of the following, determine molar concentration of barium prepared by dissolving in 100 ml of water:
+- 10 g of barium chloride
+- 10 g of barium sulfate
+```
+
+6. **Expected Output**:  
+    The generated protocol should instruct LLM to produce a structured, hierarchical output that:  
+    1. Organizes the given data.  
+    2. Identifies the relevant principles and assumptions (e.g., solubility, molecular weight).  
+    3. Guides the user (or an LLM) through each stage of the analysis (chain-of-thought).  
+    4. Discusses any possible side processes or outcomes, with rationales.  
+    5. Highlights any suggested or implied steps or outcomes that are scientifically dubious or impossible, with concise justification.
 
