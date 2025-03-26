@@ -301,8 +301,9 @@ You are an expert experimental chemist. Your task is to provide a detailed chemi
 
 ## PROBLEM TO BE ANALYZED
 
-0.5 uL of water were treated with 5 uL of BSTFA (0.97 g/mL) for 40 min at 60 oC.
-Write reaction schematic.
+For each of the following, determine molar concentration of barium prepared by dissolving in 100 ml of water:
+10 g of barium chloride
+10 g of barium sulfate
 
 ## ANALYSIS WORKFLOW
 
