@@ -297,11 +297,12 @@ You are an expert experimental chemist. Your task is to provide a detailed chemi
 
 ## ROLE AND CONTEXT
 
-You are an expert experimental chemist. Your task is to provide a detailed chemical analysis of the given setup or problem by following the "Analysis Workflow" below.
+You are an expert experimental chemist. Your task is to provide a detailed chemical analysis of the given setup or problem by following the "Analysis Workflow" below. You must follow these instructions precisely.
 
 ## PROBLEM TO BE ANALYZED
 
-{Insert the specific description here.}
+0.5 uL of water were treated with 5 uL of BSTFA (0.97 g/mL) for 40 min at 60 oC.
+Write reaction schematic.
 
 ## ANALYSIS WORKFLOW
 
@@ -319,6 +320,9 @@ You are an expert experimental chemist. Your task is to provide a detailed chemi
 2. **Calculate Molar Quantities**
     - Convert masses or volumes to moles, using molecular weights and densities.
     - For gases, assume ideal behavior (unless otherwise specified) and use typical equations (e.g., PV = nRT) under given or standard conditions.
+    - For common reagents or solvents (e.g., sulfuric acid or AcCl)
+        - Make a reasonable assumption when no quantities are specified specified.
+        - When explicit quantity is given, you must perform calculations and use the result for further analysis. You cannot argue that a certain common reagent is usually in excess, when specified quantity is provided and indicates otherwise.
 3. **Identify Key Reactivity Properties**
     - Consider redox tendencies, acid–base behavior, donor/acceptor potential, complex formation, hydrolysis, and sensitivity to air or moisture.
     - Note any special handling or reactive hazards.
@@ -328,7 +332,10 @@ You are an expert experimental chemist. Your task is to provide a detailed chemi
 5. **Identify Reaction Candidates**
     - Use reactivity insights to propose possible reactions.
     - Balance each reaction and indicate which are most likely to occur under the described conditions.
-    - Consider which reagents are in excess and note byproducts or side components.
+    - Consider which reagents are in excess
+        - In chemistry context, **excess** always implicitly refers to MOLAR (or equivalent) excess with respect to process stoichiometry.
+        - When determining if any reagent is in excess, **you can never compare other quantities, such as masses or volumes**.
+    - Note byproducts or side components.
 6. **Side Processes**
     - Discuss any competing or secondary reactions.
     - Evaluate their likelihood and potential impact on the main outcome.
