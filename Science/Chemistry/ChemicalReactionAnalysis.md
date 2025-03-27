@@ -2,7 +2,7 @@
 
 I am sharing an [experimental LLM prompt](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Science/Chemistry/ChemicalReactionAnalysis.md) designed to demonstrate how large language models (LLMs) can perform the basic analysis of chemical processes. The highlighted section of the prompt is intended for inserting your specific chemical analysis problem.
 
-Given the complexity of such analyses, I initially aimed this prompt at advanced reasoning-oriented models (such as ChatGPT Plus o1, Gemini Advanced 2.0 Flash Thinking, and SuperGrok Grok 3 Thinking). However, I also tested the same prompt using leading general-purpose LLMs, specifically:
+Given the complexity of such analysis, I initially aimed this prompt at advanced reasoning-oriented models (such as ChatGPT Plus o1, Gemini Advanced 2.0 Flash Thinking, and SuperGrok Grok 3 Thinking). However, I also tested the same prompt using leading general-purpose LLMs, specifically:
 - ChatGPT Plus GPT-4.5
 - Gemini Advanced 2.5 Pro
 - SuperGrok Grok 3
