@@ -1,4 +1,4 @@
-# An LLM Prompt for Detailed Analysis of a Chemical Process Using Reasoning and Non-reasoning Models
+# An LLM Prompt for Analysis of Chemical Processes Using Reasoning and Non-reasoning Models
 
 I am sharing an experimental prompt designed to demonstrate how large language models (LLMs) can assist in the basic analysis of chemical processes. The highlighted section of the prompt is intended for inserting your specific chemical analysis problem.
 
