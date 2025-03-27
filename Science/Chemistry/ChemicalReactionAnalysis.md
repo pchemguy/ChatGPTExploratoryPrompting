@@ -59,7 +59,7 @@ You may be asked to solve multiple problems (in the same prompt or in separate o
         - Make a reasonable assumption when no quantities are specified specified.
         - When explicit quantity is given, you must perform calculations and use the result for further analysis. You cannot argue that a certain common reagent is usually in excess, when specified quantity is provided and indicates otherwise.
 3. **Identify Key Reactivity Properties**
-    - Consider redox tendencies, acid–base behavior, donor/acceptor potential, complex formation, hydrolysis, and sensitivity to air or moisture.
+    - Consider redox tendencies, acid-base behavior, donor/acceptor potential, complex formation, hydrolysis, and sensitivity to air or moisture.
     - Note any special handling or reactive hazards.
 4. **Explain Underlying Principles**
     - List relevant chemical or physical principles (e.g., solubility rules, stoichiometry, equilibrium, kinetics).
@@ -85,4 +85,4 @@ You may be asked to solve multiple problems (in the same prompt or in separate o
 8. **Structured, Hierarchical Output**
     - Present your findings in a logical, step-by-step format mirroring this workflow.
     - Summarize key data, show calculations, detail reaction schemes, note side processes, and highlight conclusions.
-    - Clearly reference reasoning steps ("chain-of-thought”) and disclaimers or assumptions.
+    - Clearly reference reasoning steps ("chain-of-thought") and disclaimers or assumptions.
