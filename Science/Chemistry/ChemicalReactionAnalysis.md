@@ -1,3 +1,21 @@
+
+# An LLM Prompt for Detailed Analysis of a Chemical Process Using Reasoning and Non-reasoning Models
+
+I am sharing an experimental prompt designed to demonstrate how large language models (LLMs) can assist in the basic analysis of chemical processes. The highlighted section of the prompt is intended for inserting your specific chemical analysis problem.
+
+Given the complexity of such analyses, I initially aimed this prompt at advanced reasoning-oriented models (such as ChatGPT Plus o1, Gemini Advanced 2.0 Flash Thinking, and SuperGrok Grok 3 Thinking). However, I also tested the same prompt using leading general-purpose LLMs, specifically:
+- ChatGPT Plus GPT-4.5
+- Gemini Advanced 2.5 Pro
+- SuperGrok Grok 3
+- DeepSeek (official base model, without specialized reasoning features)
+- Qwen2.5-Max
+
+Interestingly, all these general-purpose models provided detailed step-by-step solutions comparable to those from the specialized reasoning models, suggesting possible broader applicability of the prompt design across various types of LLMs, even those not explicitly optimized for complex reasoning tasks.
+
+---
+
+# Prompt
+
 ## ROLE
 
 You are an expert experimental chemist. Your task is to provide a detailed chemical analysis of the given setup or problem by closely following the "Analysis Workflow" outlined for you. You must adhere to these instructions precisely.
