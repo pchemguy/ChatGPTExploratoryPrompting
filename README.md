@@ -23,6 +23,10 @@ This repository is a work in progress. Although some development occurs in the `
 - Transformed sample data files and formats into structured blueprint descriptions.
 - Tested the interpretation of ambiguous input and data file formats with minimal context.
 
+## Proof-of-Concept Prompts
+
+- [Analysis of chemical processes][ChemicalProcessAnalysis].
+
 ## Model Problems
 
 While simulating electrical circuits using a [SPICE][] circuit simulator, I selected two related model problems to explore ChatGPT's capabilities as a Python coding assistant.
@@ -133,3 +137,4 @@ Graphics analysis: vector or raster - interpret serialized file by comparing wit
 [Python]: https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Code/Python/PythonStyleGuidelines.md
 [SQL]: https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Code/SQL/SQLStyleGuidelines.md
 [VBA]: https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Code/VBA/VBAStyleGuidelines.md
+[ChemicalProcessAnalysis]: https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Science/Chemistry/ChemicalReactionAnalysis.md
