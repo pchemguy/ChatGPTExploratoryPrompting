@@ -1,3 +1,7 @@
+
+
+Using general-purpose LLM models for complex domain-specific research and engineering tasks. 
+
 # Task
 
 Help me write a draft of an article based on provided context and material below. At this point, I see the article as containing three parts:
