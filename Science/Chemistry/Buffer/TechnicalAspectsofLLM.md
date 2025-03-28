@@ -1,62 +1,26 @@
 # Technical Aspects of LLM
 
-General purpose LLMs, such as OpenAI GPT-4 or Google Gemini 2.0 Flash are rapidly evolving, but they still possess limited ability to handling complex domain-specifc research and engineering tasks. On the one hand, limited specialized data may be available for model training, so models may not know certain facts. On the other hand, limitations may be due to lack of examples in the training data, demonstrating *how* to do certain complex tasks (workflow/algorithms examples), or because potential solutions involve multiple interdependent steps.
+General purpose LLMs, such as OpenAI GPT-4 or Google Gemini 2.0 Flash are rapidly evolving, but they still possess limited ability to solve complex domain-specifc research and engineering problems. Two essential constituents of such solutions involve *facts* and *workflows/algorithms*. For example, to determine coefficients in chemical schematic of a redox reaction, one would need to know chemical properties of reagents (facts) and master balancing techniques (workflow/algorithm). Hence, model's abilities may be limited due to lack in the training data of specialized data or examples, demonstrating *how* to perform certain complex tasks. Moreover, even when workflow/algorithm information is available in the training data "baseline" models are not optimized for developing multistep solutions for complex problems.
 
-Relatively recently introduced reasoning models have been developed to improve LLMs' ability to handle complex multistep tasks. Generally, the reasoning feature cannot compensate for lack of specific facts in the training data or 
+A number of approaches have emerged to address deficiencies in training data and improve complex workflow handling abilities. Relatively recently introduced *reasoning/thinking* models have been developed to improve LLMs' ability to handle complex multistep tasks. Reasoning models generally possess the same knowledge about world as their non-reasoning counterparts, but they have been additionally trained (fine-tuned) to simulate reasoning processes. Several approaches may be used to compensate for training data deficiencies: 
+- training/creating a new model from scratch
+- fine-tuning pretrained model
+- taking advantage of in-context learning.
 
-- General purpose vs. specialized models
-- Limited abilities of genereal-purpose models to perform highly-specialized tasks, such as deep paper manuscript analysis due to lack of training material
+Each approach has pro's and con's. Creating a new model is most complicated/costly process that, in principle, provides the greatest flexibility. Fine-tuning is a simpler alternative that still necessitates specialized expertise. In-context learning, on the other hand, provides additional information to the trained model directly as part of a prompt, in the form of attached files, or as part of the special instructions feature where available. Such additional information may include facts, special processing/transformation examples, descriptions of workflows/algorithms, and special instructions. Models also usually "remember" previous messages that are part of the same conversation, so the entire conversation is usually also a part of the model's *context*.
+
+Two common prompting techniques used to improve handling complex tasks are hierarchical decomposition and [Chain-of-Thought][https://en.wikipedia.org/wiki/Prompt_engineering#Chain-of-thought] (CoT). The former approach focus on splitting a complex problem into a series of simpler steps. Then these steps maybe provided to the model as separate prompts, or they may be combined into a structured sequence of steps with emphasis on explicit demonstration of all intermediate work (CoT).
+
+Explicit description of specific workflows/algorithms may be provided to the model even when the model might be able to produce some kind of solution without additional specific instructions. 
+
+
 - Chain-of-Thought and Hierarchical decomposition approaches to handling complex tasks with limited to no relevant training data available for training foundation models.
 - non-reasoning vs. reasoning vs. deep research for complex tasks (such as deep analysis of academic publications)
 - fine-tuning vs. in-context learning
+- 
 - context size limit, tokens, output token limit
 - free vs. subscriptions based plans:
     - models not available on free plan or available with significantly reduced input/output token limits
     - privacy considerations (user data being used for model training on free plan vs. promise not use it on subscription-based plans)
 - importance of large input context for many-shot learning
 
-
-```mermaid
-flowchart TB
-    A([Start]) --> B{1. Identify<br>and Organize<br>Input Data}
-    B --> B1[1.1 Parse the Description<br>
-    • Review process<br>
-    • List key info<br>
-    • Note missing/contradictory data<br>
-    • Highlight ambiguities and assumptions]
-    B --> B2[1.2 Validate Internal Consistency<br>
-    • Check if reagents & conditions are standard<br>
-    • Flag contradictions<br>
-    • Seek alternative interpretations]
-    B --> C{2. Calculate<br>Molar Quantities<br>
-    • Convert masses/volumes to moles<br>
-    • For gases, assume ideal behavior<br>
-    • For common reagents, make<br>reasonable assumptions as needed}
-    C --> D{3. Identify Key<br>Reactivity Properties<br>
-    • Redox, acid-base, complex formation<br>
-    • Hazards or special handling}
-    D --> E{4. Explain Underlying<br>Principles<br>
-    • List chemical/physical concepts<br>
-    • Cite data (pKa, solubility, etc.)<br>
-    • State assumptions if data are missing}
-    E --> F{5. Identify Reaction Candidates<br>
-    • Propose possible reactions<br>
-    • Balance equations<br>
-    • Consider reagent excess (molar basis)<br>
-    • Note byproducts}
-    F --> G{6. Side Processes<br>
-    • Discuss competing/secondary reactions<br>
-    • Evaluate likelihood & impact}
-    G --> H{7. Improbable or<br>Impossible Outcomes}
-    H --> H1[7.1 Check Scientific Plausibility<br>
-    • Compare with known chem knowledge<br>
-    • Propose alternative interpretations]
-    H --> H2[7.2 Provide Justification<br>
-    • Explain why outcome is flagged<br>
-    • Suggest resolutions]
-    H --> I{8. Structured,<br>Hierarchical Output<br>
-    • Present findings step-by-step<br>
-    • Summarize data & calculations<br>
-    • Highlight conclusions & assumptions}
-    I --> Z([End])
-```
