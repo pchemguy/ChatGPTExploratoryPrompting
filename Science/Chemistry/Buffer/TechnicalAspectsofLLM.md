@@ -4,20 +4,23 @@ General purpose LLMs, such as OpenAI GPT-4 or Google Gemini 2.0 Flash are rapidl
 
 A number of approaches have emerged to address deficiencies in training data and improve complex workflow handling abilities. Relatively recently introduced *reasoning/thinking* models have been developed to improve LLMs' ability to handle complex multistep tasks. Reasoning models generally possess the same knowledge about world as their non-reasoning counterparts, but they have been additionally trained (fine-tuned) to simulate reasoning processes. Several approaches may be used to compensate for training data deficiencies. The most radical approach - training/creating a new model from scratch, tailoring the training process/material towards a particular knowledge domain (e.g., chemistry or biology) or type of task (music OCR, chemical reaction extraction from manuscripts, etc.), the most complicated/costly process that, in principle, provides the greatest flexibility. Fine-tuning pretrained models is a simpler alternative that still necessitates specialized expertise, and having, at present, a number of other limitations.
 
-The simplest (in a sense) group of techniques focus primarily on prompt engineering and rely on model's *context*, which is essentially a model's memory focused on the current "conversation". The context feature makes it possible for a model to remember previous messages that are part of the same conversation, enabling a meaningful conversation. Context also enables model's "temporary" (in-context) learning: when generating a response to a prompt, the model takes into account information provided to model previously in the same conversation. In-context training / reference information may be provided to the model
+## In-context learning
+
+The simplest (in a sense) group of techniques focuses primarily on prompt engineering and rely on model's *context*, which is essentially a model's memory focused on the current "conversation". The context feature makes it possible for a model to remember previous messages that are part of the same conversation, enabling a meaningful conversation. Context also enables model's [in-context learning](https://en.wikipedia.org/wiki/Prompt_engineering#In-context_learning): when generating a response to a prompt, the model takes into account information provided to model previously in the same conversation. In-context learning / reference information may be provided to the model
 - directly as part of a prompt
 - in attached files
 - as part of the special instructions feature where available.
 Such additional information may include, for example,
 - facts
-- special processing/transformation examples
+- processing/transformation examples
 - descriptions of workflows/algorithms
 - special instructions.
+
+The main advantage of in-context learning techniques is that they can be used with any leading LLM chatbot, because contextual memory is a *de-facto* standard feature. One of the important limitations of in-context learning is the size of available memory (context window length or input tokens limit). In practice, models may not be able to use the full specified context window, as the quality of recalling may degrade as context usage becomes a large fraction of the maximum limit size. Also, quality of recalling of material placed in the middle may be lower than for beginning and end. Context window limit is rapidly improving (with [Google leading the way](https://ai.google.dev/gemini-api/docs/long-context)), enabling more elaborate in-context learning. 
+
 Two common prompt engineering techniques used to improve handling of complex tasks are hierarchical decomposition and [Chain-of-Thought][https://en.wikipedia.org/wiki/Prompt_engineering#Chain-of-thought] (CoT). The former approach focus on splitting a complex problem into a series of simpler steps. Then these steps maybe provided to the model as separate prompts, or they may be combined into a structured sequence of steps with emphasis on explicit demonstration of all intermediate work (CoT).
 
-The main advantage of in-context learning techniques is that they can be used with any leading LLM chatbot, because contextual memory is a *de-facto* standard feature. The primary limitation of in-context learning is the size of available memory (context window length or input tokens limit). This metric is rapidly increasing (with Google leading the way), enabling more elaborate in-context learning. 
-
-Speaking of critical limits, output token limit is another essential characteristic. The output token limit is usually much smaller than the input token limit (specific information may not be easily accessible). There is an important consequence of this characteristic in present context. When taking advantage of large input token limit, the input may contain information that does not have a significant affect on the output size  (e.g., we can defined detailed stylistic guidelines for [English]() or [Python]())
+Speaking of critical limits, output token limit is another essential characteristic. The output token limit is usually much smaller than the input token limit (specific information may not be easily accessible). There is an important consequence of this characteristic in present context. When taking advantage of large input token limit, the input may contain information that does not have a significant affect on the output size  (e.g., we can defined detailed stylistic guidelines for [English](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Writing/WritingStyleGuidelines.md) or [Python](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Code/Python/PythonStyleGuidelines.md) ), 
 
 Explicit description of specific workflows/algorithms may be provided to the model even when the model might be able to produce some kind of solution without additional specific instructions. 
 
@@ -33,3 +36,5 @@ Explicit description of specific workflows/algorithms may be provided to the mod
 - importance of large input context for many-shot learning
 
 Disclaimer: Humans can also be inaccurate.
+
+https://ai.google.dev/gemini-api/docs/long-context#:~:text=Many%2Dshot%20in%2Dcontext%20learning
