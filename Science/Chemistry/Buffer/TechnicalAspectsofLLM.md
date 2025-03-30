@@ -1,6 +1,6 @@
 # Technical Aspects of LLM
 
-Generally available Large Language Models (LLMs), such as OpenAI $\mathrm{GPT_{X}/o_{x}}$ or Google Gemini family are rapidly evolving, but they still possess limited ability to solve complex domain-specific research and engineering problems. Generally, solving such problems involves
+Generally available Large Language Models (LLMs), such as OpenAI $\mathrm{GPT_{x}/o_{x}}$ or Google Gemini family are rapidly evolving, but they still possess limited ability to solve complex domain-specific research and engineering problems. Generally, solving such problems involves
  - facts (e.g., relevant chemical or physical properties of involved materials)
  - workflows/algorithms (e.g., algorithm of balancing chemical redox reactions)
  - execution of multistep solution processes 
