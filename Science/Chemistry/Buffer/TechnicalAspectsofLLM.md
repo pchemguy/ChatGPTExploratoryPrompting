@@ -1,6 +1,10 @@
 # Technical Aspects of LLM
 
-General purpose LLMs, such as OpenAI GPT-4 or Google Gemini 2.0 Flash are rapidly evolving, but they still possess limited ability to solve complex domain-specifc research and engineering problems. Two essential constituents of such solutions involve *facts* and *workflows/algorithms*. For example, to determine coefficients in a chemical schematic of a redox reaction, an LLM model would need to "know" chemical properties of reagents (facts) and the workflow/algorithm of redox reaction balancing. And the ability to execute multistep
+Generally available LLMs, such as OpenAI $\mathrm{GPT_{X}/o_{x}}$ or Google Gemini are rapidly evolving, but they still possess limited ability to solve complex domain-specific research and engineering problems. Generally, solving such problems involves
+ - facts (e.g., relevant chemical or physical properties of involved materials)
+ - workflows/algorithms (e.g., algorithm of balancing chemical redox reactions)
+ - execution of multistep solution processes 
+The ability to execute multistep solution processes has greatly increased with introduction of "reasoning/thinking" models. Reasoning models generally possess the same knowledge about world as their non-reasoning counterparts, but have been additionally trained/fine-tuned to simulate reasoning processes. The first two bullets above are related to knowledge gaps in model training data and need to be addressed separately.
 
 
 Hence, model's abilities may be limited due to lack in the training data of specialized data or examples, demonstrating *how* to perform certain complex tasks. Moreover, even when workflow/algorithm information is available in the training data "baseline" models are not optimized for developing multistep solutions for complex problems.
