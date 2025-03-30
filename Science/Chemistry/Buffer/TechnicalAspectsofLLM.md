@@ -24,9 +24,9 @@ The extra learning/training material may
     - descriptions of workflows/algorithms
     - special instructions
 - focus on
-    - input (e.g., chemical properties of reagents, description and/or examples of input format/structure)
-    - transformation process (e.g., description of a desired workflow/algorithm that should be followed for generating the response)
-    - output (e.g., style guidelines or format, such as plain text / bulleted list / structured CSV format)
+    - input context (e.g., chemical properties of reagents, description and/or examples of input format/structure)
+    - transformation context (e.g., description of a desired workflow/algorithm that should be followed for generating the response)
+    - output context (e.g., style guidelines or format, such as plain text / bulleted list / structured CSV format)
 
 **Complex workflows/algorithms handling.** Two common prompt engineering techniques used to improve handling of complex tasks are hierarchical decomposition and [Chain-of-Thought][https://en.wikipedia.org/wiki/Prompt_engineering#Chain-of-thought] (CoT). The former approach focus on splitting a complex problem into a series of simpler steps. These steps may be provided to the model as separate prompts or combined into a structured sequence of steps with emphasis on explicit demonstration of all intermediate work (CoT). For example, this [prompt template](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Science/Chemistry/ChemicalReactionAnalysis.md) provides a structured step-by-step workflow guide to the model, instructing it to perform a chemical process analysis in a particular way.
 
