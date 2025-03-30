@@ -11,16 +11,22 @@ Several approaches may be applied to compensate for knowledge gaps and improve h
 
 ## In-context learning
 
-[In-context learning](https://en.wikipedia.org/wiki/Prompt_engineering#In-context_learning) focuses primarily on [prompt engineering](https://en.wikipedia.org/wiki/Prompt_engineering) and relies on model's *context*. The context feature, which is essentially a model's working memory, makes it possible for a model to remember previous messages that are part of the same conversation. With additional [meta-learning](https://en.wikipedia.org/wiki/Meta-learning_(computer_science)) (learning to learn) training, models become capable of using their working memory content together with training-based knowledge when generating responses, thus enabling meaningful conversations. Importantly, in-context learning also enables special prompting techniques developed to extend model's abilities to solve complex problems with limited-to-no relevant material in model's training data. The extra learning/training material
-- may be provided to the model
+[In-context learning](https://en.wikipedia.org/wiki/Prompt_engineering#In-context_learning) focuses primarily on [prompt engineering](https://en.wikipedia.org/wiki/Prompt_engineering) and relies on model's *context*. The context feature, which is essentially a model's working memory, makes it possible for a model to remember previous messages that are part of the same conversation. With additional [meta-learning](https://en.wikipedia.org/wiki/Meta-learning_(computer_science)) (learning to learn) training, models become capable of using their working memory content together with training-based knowledge when generating responses, thus enabling meaningful conversations. Importantly, in-context learning also enables special prompting techniques developed to extend model's abilities to solve complex problems with limited-to-no relevant material in model's training data.
+
+The extra learning/training material may
+- be provided to the model
     - directly as part of a prompt
     - in attached files
     - as part of the special instructions feature where available.
-- may include
+- include
     - facts
     - processing/transformation examples
     - descriptions of workflows/algorithms
-    - special instructions.
+    - special instructions
+- focus on
+    - input (e.g., chemical properties of reagents, description and/or examples of input format/structure)
+    - transformation process (e.g., description of a desired workflow/algorithm that should be followed for generating the response)
+    - output (e.g., style guidelines or format, such as plain text / bulleted list / structured CSV format)
 
 **Complex workflows/algorithms handling.** Two common prompt engineering techniques used to improve handling of complex tasks are hierarchical decomposition and [Chain-of-Thought][https://en.wikipedia.org/wiki/Prompt_engineering#Chain-of-thought] (CoT). The former approach focus on splitting a complex problem into a series of simpler steps. These steps may be provided to the model as separate prompts or combined into a structured sequence of steps with emphasis on explicit demonstration of all intermediate work (CoT). For example, this [prompt template](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Science/Chemistry/ChemicalReactionAnalysis.md) provides a structured step-by-step workflow guide to the model, instructing it to perform a chemical process analysis in a particular way.
 
