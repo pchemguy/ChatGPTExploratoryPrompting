@@ -41,14 +41,27 @@ Input context provides extra information about the "starting point" of the probl
     - **format:** plain text files containing serialized objects supplied as prompt attachments or via copy/paste as part of the prompt text.
     - **problem:** creation of a Python class that should represent graphical primitives used for rendering SPICE circuit element symbols.
 [Retrieval Augmented Generation](https://en.wikipedia.org/wiki/Retrieval-augmented_generation) (RAG) is a family of advanced techniques for supplying input context. These techniques typically necessitate additional software tools and programmatic access via model's APIs.
+See also 
 
 ### Output context
 
-Output context may prescribe what specific information should be included in the output and how it should be organized. For example, it may be desired that generated text followed a particular [language style](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Writing/WritingStyleGuidelines.md) or generated code followed a particular [coding style](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Code/Python/PythonStyleGuidelines.md)
+Output context may prescribe what specific information should be included in the output and how it should be organized. For example, it may be desired that generated text followed a particular [language style](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Writing/WritingStyleGuidelines.md) or generated code followed a particular [coding style](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Code/Python/PythonStyleGuidelines.md).
+
+
 
 ### Transformation context
  
-For ordinary uses, it is common to define a problem for LLM and let it generate a solution without any instruction as to how to arrive at it.
+For ordinary uses, it is common to define a problem for LLM and let it generate a solution without any instruction as to how to arrive at it. 
+
+
+### Learning by example
+
+One-shot/single-shot and few-shot/multi-shot prompting techniques rely on providing to the model one or several examples, each consisting with sample input and associated desired output pairs. By extension, many-shot approach may involve a substantially larger set of examples, compared to few-shot. The number of examples that can be provided depend on the availability of examples, but also on context window length (mentioned below), as each example takes up a certain amount of model's "working" memory.
+
+
+### Limitations
+
+
 
 **Complex workflows/algorithms handling.** Two common prompt engineering techniques used to improve handling of complex tasks are hierarchical decomposition and [Chain-of-Thought][https://en.wikipedia.org/wiki/Prompt_engineering#Chain-of-thought] (CoT). The former approach focus on splitting a complex problem into a series of simpler steps. These steps may be provided to the model as separate prompts or combined into a structured sequence of steps with emphasis on explicit demonstration of all intermediate work (CoT). For example, this [prompt template](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Science/Chemistry/ChemicalReactionAnalysis.md) provides a structured step-by-step workflow guide to the model, instructing it to perform a chemical process analysis in a particular way.
 
