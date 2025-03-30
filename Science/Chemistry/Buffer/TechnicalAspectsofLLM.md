@@ -7,22 +7,20 @@ Generally available Large Language Models (LLMs), such as OpenAI $\mathrm{GPT_{X
 
 The ability to execute multistep solution processes has greatly increased with introduction of "reasoning/thinking" models. Reasoning models generally possess the same knowledge about world as their non-reasoning counterparts, but have been additionally trained/fine-tuned to simulate reasoning processes. The first two bullets above are related to knowledge gaps in model training data and need to be addressed separately.
 
-Several approaches may be applied to compensate for knowledge gaps and improve handling of complex multistep workflows. The most radical approach - training a new model from scratch for a particular knowledge domain (e.g., chemistry or biology) or type of task (music OCR, chemical reaction extraction from manuscripts, etc.). This approach involves the most complicated/costly process that, in principle, provides the greatest flexibility. Fine-tuning pretrained models is a simpler alternative that still necessitates specialized expertise and possessing, at present, a number of other limitations. The simplest (in a sense) [in-context learning](https://en.wikipedia.org/wiki/Prompt_engineering#In-context_learning) focuses primarily on [prompt engineering](https://en.wikipedia.org/wiki/Prompt_engineering) and relies on model's *context*. 
+Several approaches may be applied to compensate for knowledge gaps and improve handling of complex multistep workflows. The most radical approach - training a new model from scratch for a particular knowledge domain (e.g., chemistry or biology) or type of task (music OCR, chemical reaction extraction from manuscripts, etc.). This approach involves the most complicated/costly process that, in principle, provides the greatest flexibility. Fine-tuning pretrained models is a simpler alternative that still necessitates specialized expertise and possessing, at present, a number of other limitations. The simplest (in a sense) in-context learning addresses knowledge gaps by providing additional information via the model's prompt. This approach is the most universal as it does not involve any manipulations with the model, so it can be used with virtually any generally available model (including frontier proprietary models available via official chatbots and APIs).
 
 ## In-context learning
 
-The context feature, which is essentially a model's working memory, makes it possible for a model to remember previous messages that are part of the same conversation. With additional [meta-learning](https://en.wikipedia.org/wiki/Meta-learning_(computer_science)) (learning to learn) training, models become capable of using their working memory content together with training-based knowledge when generating responses, thus enabling meaningful conversations. Importantly, in-context learning also enables special prompting techniques developed to extend model's abilities to solve complex problems with limited-to-no relevant material in model's training data. This approach is the most universal in a sense that it can be used with virtually any generally available model (including frontier proprietary models available via official chatbots and APIs), because the extra learning/training material is provided solely through the model's standard prompt. 
-
-The extra learning/reference information may be provided to the model
-- directly as part of a prompt
-- in attached files
-- as part of the special instructions feature where available.
-
-Such additional information may include, for example,
-- facts
-- processing/transformation examples
-- descriptions of workflows/algorithms
-- special instructions.
+[In-context learning](https://en.wikipedia.org/wiki/Prompt_engineering#In-context_learning) focuses primarily on [prompt engineering](https://en.wikipedia.org/wiki/Prompt_engineering) and relies on model's *context*. The context feature, which is essentially a model's working memory, makes it possible for a model to remember previous messages that are part of the same conversation. With additional [meta-learning](https://en.wikipedia.org/wiki/Meta-learning_(computer_science)) (learning to learn) training, models become capable of using their working memory content together with training-based knowledge when generating responses, thus enabling meaningful conversations. Importantly, in-context learning also enables special prompting techniques developed to extend model's abilities to solve complex problems with limited-to-no relevant material in model's training data. The extra learning/training material is provided solely through the model's standard prompt., and it
+- may be provided to the model
+    - directly as part of a prompt
+    - in attached files
+    - as part of the special instructions feature where available.
+- may include
+    - facts
+    - processing/transformation examples
+    - descriptions of workflows/algorithms
+    - special instructions.
 
 **Complex workflows/algorithms handling.** Two common prompt engineering techniques used to improve handling of complex tasks are hierarchical decomposition and [Chain-of-Thought][https://en.wikipedia.org/wiki/Prompt_engineering#Chain-of-thought] (CoT). The former approach focus on splitting a complex problem into a series of simpler steps. These steps may be provided to the model as separate prompts or combined into a structured sequence of steps with emphasis on explicit demonstration of all intermediate work (CoT). For example, this [prompt template](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Science/Chemistry/ChemicalReactionAnalysis.md) provides a structured step-by-step workflow guide to the model, instructing it to perform a chemical process analysis in a particular way.
 
