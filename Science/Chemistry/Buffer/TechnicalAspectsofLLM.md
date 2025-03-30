@@ -1,26 +1,23 @@
 # Technical Aspects of LLM
 
-Generally available LLMs, such as OpenAI $\mathrm{GPT_{X}/o_{x}}$ or Google Gemini are rapidly evolving, but they still possess limited ability to solve complex domain-specific research and engineering problems. Generally, solving such problems involves
+Generally available Large Language Models (LLMs), such as OpenAI $\mathrm{GPT_{X}/o_{x}}$ or Google Gemini family are rapidly evolving, but they still possess limited ability to solve complex domain-specific research and engineering problems. Generally, solving such problems involves
  - facts (e.g., relevant chemical or physical properties of involved materials)
  - workflows/algorithms (e.g., algorithm of balancing chemical redox reactions)
  - execution of multistep solution processes 
+
 The ability to execute multistep solution processes has greatly increased with introduction of "reasoning/thinking" models. Reasoning models generally possess the same knowledge about world as their non-reasoning counterparts, but have been additionally trained/fine-tuned to simulate reasoning processes. The first two bullets above are related to knowledge gaps in model training data and need to be addressed separately.
 
-
-Hence, model's abilities may be limited due to lack in the training data of specialized data or examples, demonstrating *how* to perform certain complex tasks. Moreover, even when workflow/algorithm information is available in the training data "baseline" models are not optimized for developing multistep solutions for complex problems.
-
-Relatively recently introduced *reasoning/thinking* models have been developed to improve LLMs' ability to handle complex multistep tasks. Reasoning models generally possess the same knowledge about world as their non-reasoning counterparts, but they have been additionally trained (fine-tuned) to simulate reasoning processes.
-
-
-A number of approaches have emerged to address deficiencies in training data and improve complex workflow handling abilities. 
-Several approaches may be applied to compensate for training data gaps used with generally available models. The most radical approach - training a new model from scratch for a particular knowledge domain (e.g., chemistry or biology) or type of task (music OCR, chemical reaction extraction from manuscripts, etc.). This approach involves the most complicated/costly process that, in principle, provides the greatest flexibility. Fine-tuning pretrained models is a simpler alternative that still necessitates specialized expertise, and having, at present, a number of other limitations.
+Several approaches may be applied to compensate for knowledge gaps and improve handling of complex multistep workflows. The most radical approach - training a new model from scratch for a particular knowledge domain (e.g., chemistry or biology) or type of task (music OCR, chemical reaction extraction from manuscripts, etc.). This approach involves the most complicated/costly process that, in principle, provides the greatest flexibility. Fine-tuning pretrained models is a simpler alternative that still necessitates specialized expertise and possessing, at present, a number of other limitations. The simplest (in a sense) [in-context learning](https://en.wikipedia.org/wiki/Prompt_engineering#In-context_learning) focuses primarily on [prompt engineering](https://en.wikipedia.org/wiki/Prompt_engineering) and relies on model's *context*. 
 
 ## In-context learning
 
-The simplest (in a sense) group of techniques focuses primarily on [prompt engineering](https://en.wikipedia.org/wiki/Prompt_engineering) and rely on model's *context*, which is essentially a model's working memory focused on the current "conversation". The context feature makes it possible for a model to remember previous messages that are part of the same conversation, enabling a meaningful conversation. Context also enables model's [in-context learning](https://en.wikipedia.org/wiki/Prompt_engineering#In-context_learning): when generating a response to a prompt, the model takes into account information provided to model previously in the same conversation. In-context learning / reference information may be provided to the model
+The context feature, which is essentially a model's working memory, makes it possible for a model to remember previous messages that are part of the same conversation. With additional [meta-learning](https://en.wikipedia.org/wiki/Meta-learning_(computer_science)) (learning to learn) training, models become capable of using their working memory content together with training-based knowledge when generating responses, thus enabling meaningful conversations. Importantly, in-context learning also enables special prompting techniques developed to extend model's abilities to solve complex problems with limited-to-no relevant material in model's training data. This approach is the most universal in a sense that it can be used with virtually any generally available model (including frontier proprietary models available via official chatbots and APIs), because the extra learning/training material is provided solely through the model's standard prompt. 
+
+The extra learning/reference information may be provided to the model
 - directly as part of a prompt
 - in attached files
 - as part of the special instructions feature where available.
+
 Such additional information may include, for example,
 - facts
 - processing/transformation examples
