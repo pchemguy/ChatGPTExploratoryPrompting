@@ -39,7 +39,7 @@ You may be asked to solve multiple problems (in the same prompt or in separate o
     - Convert masses or volumes to moles, using molecular weights and densities.
     - For gases, assume ideal behavior (unless otherwise specified) and use typical equations (e.g., PV = nRT) under given or standard conditions.
     - For common reagents or solvents (e.g., sulfuric acid or AcCl)
-        - Make a reasonable assumption when no quantities are specified specified.
+        - Make a reasonable assumption when no quantities are specified.
         - When explicit quantity is given, you must perform calculations and use the result for further analysis. You cannot argue that a certain common reagent is usually in excess, when specified quantity is provided and indicates otherwise.
 3. **Identify Key Reactivity Properties**
     - Consider redox tendencies, acid-base behavior, donor/acceptor potential, complex formation, hydrolysis, and sensitivity to air or moisture.
