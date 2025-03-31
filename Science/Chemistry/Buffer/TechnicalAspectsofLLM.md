@@ -86,7 +86,7 @@ Developing such explicit workflows can be challenging because human reasoning in
 
 A more ambitious workflow might involve dissecting a manuscript describing experimental chemistry. This multi-step approach could include:
 1. **Extracting key experimental results**  
-2. **Identifying the processes associated with each result**  
+2. **Identifying the processes** associated with each result  
 3. **Listing all reagents, catalysts, products, and byproducts** involved in each process  
 4. **Recording quantity and composition** details for each material  
 5. **Extracting experimental parameters/protocols**  
