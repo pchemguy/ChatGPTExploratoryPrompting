@@ -104,7 +104,7 @@ A more ambitious workflow might involve dissecting a manuscript describing exper
         - Theoretical treatment taking into account said modifications and supporting reported results
     - Assessing potentially transformative findings that might disrupt an established field or market niche, and considering how such results might have been missed by other motivated experts  
 
-I made some progress towards developing such a workflow using mostly the ChatGPT o1 model.
+# ~I made some progress towards developing such a workflow using mostly the ChatGPT o1 model.
 
 ---
 
