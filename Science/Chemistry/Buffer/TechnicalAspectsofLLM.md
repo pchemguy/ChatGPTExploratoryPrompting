@@ -16,20 +16,15 @@ Several strategies can help bridge these gaps and improve handling of multi-step
 
 [In-context learning](https://en.wikipedia.org/wiki/Prompt_engineering#In-context_learning) relies primarily on [prompt engineering](https://en.wikipedia.org/wiki/Prompt_engineering) and leverages the model’s *context* (essentially its working memory of the current conversation). Thanks to [meta-learning](https://en.wikipedia.org/wiki/Meta-learning_(computer_science)) (learning to learn), which is a component of the foundational training process, the model can integrate this short-term contextual information with its training-based knowledge, supporting more coherent and logically consistent responses. It also facilitates specialized prompting techniques that allow the model to tackle complex problems - even when relevant data is absent or limited in the training data.
 
-The extra learning/training material may
-- be provided to the model
-    - directly as part of a prompt
-    - in attached files
-    - as part of the special instructions feature where available.
-- include
-    - facts
-    - processing/transformation examples
-    - descriptions of workflows/algorithms
-    - special instructions
-- focus on
-    - input context (e.g., chemical properties of reagents, description and/or examples of input format/structure)
-    - transformation context (e.g., description of a desired workflow/algorithm that should be followed for generating the response)
-    - output context (e.g., style guidelines or format, such as plain text / bulleted list / structured CSV format)
+Additional learning or training materials may be presented to the model:
+- **Directly in the prompt**  
+- **In attached files**  
+- **Via special instructions** (if the platform supports it)
+
+These materials might include facts, transformation examples, detailed workflows or algorithms, or special instructions, and provide:
+- **Input context** (e.g., chemical properties of reagents, format description or examples)  
+- **Transformation context** (e.g., details of the workflow or algorithm the model should follow)  
+- **Output context** (e.g., style guidelines or formats such as plain text, bullet points, or CSV)
 
 ### Input context
 
