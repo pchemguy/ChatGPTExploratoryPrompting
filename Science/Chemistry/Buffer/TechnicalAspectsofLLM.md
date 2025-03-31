@@ -39,7 +39,6 @@ Input context provides extra information about the "starting point" of the probl
     - **format:** plain text files containing serialized objects supplied as prompt attachments or via copy/paste as part of the prompt text.
     - **problem:** creation of a Python class that should represent graphical primitives used for rendering SPICE circuit element symbols.
 [Retrieval Augmented Generation](https://en.wikipedia.org/wiki/Retrieval-augmented_generation) (RAG) is a family of advanced techniques for supplying input context. These techniques typically necessitate additional software tools and programmatic access via model's APIs.
-See also 
 
 ### Output context
 
