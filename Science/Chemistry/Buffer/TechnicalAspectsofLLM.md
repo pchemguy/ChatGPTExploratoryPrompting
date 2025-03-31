@@ -104,6 +104,8 @@ A more ambitious workflow might involve dissecting a manuscript describing exper
         - Theoretical treatment taking into account said modifications and supporting reported results
     - Assessing potentially transformative findings that might disrupt an established field or market niche, and considering how such results might have been missed by other motivated experts  
 
+I made some progress towards developing such a workflow using mostly the ChatGPT o1 model.
+
 ---
 
-By explicitly defining such workflows, one can guide LLMs to offer more consistent, in-depth analysis. As AI capabilities continue to expand, developing a library of clearly articulated reasoning workflows for specialized domains will likely be an effective way to ensure rigorous and insightful model outputs.
+By explicitly defining such workflows, it becomes easier to guide LLMs toward more consistent, in-depth analysis. As AI capabilities continue to evolve, compiling a library of well-articulated reasoning workflows for specialized domains will likely be a powerful strategy for ensuring rigorous and insightful outputs - and may also present a promising cross-disciplinary research direction.
