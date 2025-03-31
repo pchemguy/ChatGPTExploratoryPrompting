@@ -1,13 +1,31 @@
-### Limitations
+### Transformation Context
 
-In *in-context learning*, all supplementary material is supplied in the model’s input prompt. This prompt is constrained by the model’s **context window**—the maximum number of *tokens* (the basic building blocks processed by an LLM) that can be included, encompassing prompt text, attachments, and any conversation history. Although a detailed understanding of tokens is not strictly necessary, the key takeaway is that larger inputs consume more tokens, thereby reducing the available capacity for additional content.
+Often, one simply poses a question to an LLM and lets it solve the problem without specifying a particular method or workflow. However, for more complex tasks, models might fail to devise an appropriate approach on their own—or there could be multiple valid strategies, and you may wish to guide the model toward a more rigorous solution. In these cases, explicitly defining a workflow or algorithm can greatly enhance the quality of the results.
 
-**Context Window Constraints**  
-- **Size and Recall**: As the context window usage increases, the model’s ability to recall information accurately may degrade. Content placed in the middle of a large prompt can be especially prone to partial recall or omission.  
-- **Ongoing Improvements**: Context window limits are rapidly expanding—[Google’s long-context support](https://ai.google.dev/gemini-api/docs/long-context) leads to more robust in-context learning, including more extensive *many-shot* examples and longer, more detailed workflows or algorithms.
+Two common prompt-engineering methods for making workflows explicit are:
+- **Hierarchical Decomposition**: Breaking a complex problem into a sequence of simpler, smaller tasks.  
+- **[Chain-of-Thought](https://en.wikipedia.org/wiki/Prompt_engineering#Chain-of-thought)** (CoT): Providing detailed, step-by-step demonstrations of intermediate reasoning.
 
-**Output Token Limits**  
-The number of output tokens is limited separately—usually by a smaller cap than the context window. If the instructions prompt the model to produce detailed or lengthy responses (e.g., showing intermediate steps or results), the system may begin “compressing” the output once it nears this token limit. In other words, it will omit or shorten details to stay within the output cap. When preserving detail is essential, you may need to divide prompts into smaller segments or handle them in separate conversations.
+These methods can be combined or used separately. For example, this experimental [prompt template](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Science/Chemistry/ChemicalReactionAnalysis.md) illustrates a structured, step-by-step workflow for analyzing chemical processes—ensuring the model follows a deliberate approach rather than taking shortcuts.
 
-**Plan Differences**  
-Models offered on “Free” vs. “Advanced” (or other paid) tiers may have different usage limits, including distinct input and output token caps. While free-tier limits might be enough for simple tasks, more complex or detailed prompts often benefit from the larger context windows and output capacities available under advanced plans.
+Developing such explicit workflows can be challenging because human reasoning in specialized domains (e.g., advanced research) often involves [tacit knowledge](https://en.wikipedia.org/wiki/Tacit_knowledge) and techniques learned over time. Formalizing these implicit processes may require [self-reflection](https://en.wikipedia.org/wiki/Self-reflection) and iterative experimentation. Nonetheless, identifying and codifying complex reasoning strategies has value, especially as AI models continue to improve.
+
+#### Example: Analyzing a Manuscript on Experimental Chemistry
+
+A more ambitious workflow might involve dissecting a manuscript describing experimental chemistry. This multi-step approach could include:
+
+1. **Extracting key experimental results**  
+2. **Identifying the processes associated with each result**  
+3. **Listing all reagents, catalysts, products, and byproducts** involved in each process  
+4. **Recording quantity and composition** details for each material  
+5. **Extracting experimental parameters/protocols**  
+6. **Identifying and classifying key equipment** used for each process  
+7. **Extracting or inferring performance characteristics** for each piece of equipment  
+8. **Analyzing each process**, including any suitable models or governing equations for yield/purity estimations  
+9. **Validating reported results**, comparing them to expected outcomes under those models/conditions  
+10. **Evaluating unusual or revolutionary claims**:
+    - Explaining how any novel process, model, or method justifies the reported outcomes  
+    - Identifying inconsistent or contradictory results and discussing potential reasons  
+    - Highlighting any potentially disruptive findings with the capacity to transform an existing field
+
+By explicitly defining such workflows, one can guide LLMs to offer more consistent, in-depth analysis. As AI capabilities continue to expand, building a library of clearly articulated reasoning workflows for specialized domains will likely be an effective way to ensure rigorous and insightful model outputs.

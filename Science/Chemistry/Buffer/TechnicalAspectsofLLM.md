@@ -26,6 +26,8 @@ These materials might include facts, transformation examples, detailed workflows
 - **Transformation context** (e.g., details of the workflow or algorithm the model should follow)  
 - **Output context** (e.g., style guidelines or formats such as plain text, bullet points, or CSV)
 
+---
+
 ### Input Context
 
 *Input context* supplies additional information about the initial conditions of a problem. Examples include:
@@ -34,9 +36,13 @@ These materials might include facts, transformation examples, detailed workflows
 - **Sample input files** (e.g., creating a Python class for graphical primitives used in rendering SPICE circuit element symbols)  
 [Retrieval-Augmented Generation](https://en.wikipedia.org/wiki/Retrieval-augmented_generation) (RAG) provides advanced methods for supplying input context. These techniques typically require additional software tools and programmatic access through the model’s APIs.
 
+---
+
 ### Output Context
 
 *Output context* outlines what information should appear in the final output and how it should be organized or formatted. For instance, one might require that generated text adhere to a particular [language style](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Writing/WritingStyleGuidelines.md) or that generated code conform to a specific [coding style](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Code/Python/PythonStyleGuidelines.md). This ensures consistency, clarity, and alignment with project or organizational standards.
+
+---
 
 ### N-shot Learning (Learning by Example)
 
@@ -49,6 +55,7 @@ N-shot learning examples can focus on any aspect of a problem: the input, the tr
 
 In general, more and varied examples lead to better performance. However, the total number of examples is limited by the *context window length*, since each example consumes part of the model’s "working" memory.
 
+---
 ### Limitations
 
 In *in-context learning*, all supplementary material is supplied in the model’s input prompt. This prompt is constrained by the model’s **context window** - the maximum number of *input [tokens](https://ai.google.dev/gemini-api/docs/tokens)* (the basic building blocks processed by an LLM) that can be included, encompassing prompt text, attachments, and conversation history. Although a detailed understanding of tokens is not strictly necessary, the key takeaway is that larger inputs consume more tokens, thereby reducing the available capacity for additional content.
@@ -63,10 +70,49 @@ The number of *output tokens* is limited separately - usually constituting a fra
 Models offered on “Free” vs. “Advanced” (or other paid) tiers may have different usage limits, including distinct input and output token caps. While free-tier limits might be enough for simple tasks, more complex or detailed prompts often benefit from the larger context windows and output capacities available under advanced plans.
 
 ### Transformation context
- 
-For ordinary uses, it is common to define a problem for LLM and let it generate a solution without any instruction as to how to arrive at it. For more complex tasks, models may not be able to "figure" out a good workflow for solving the problem. Or there might be various approaches to deriving and/or presenting solution candidates, and you might want to steer the model to a particular, say, more rigorous solution, making sure the model does not take any "shortcuts". In such cases, an explicit workflow or algorithm description may substantially improve the quality of produced result.
 
-Two common prompt engineering techniques used for explicit definition of workflows/algorithms are hierarchical decomposition and [Chain-of-Thought][https://en.wikipedia.org/wiki/Prompt_engineering#Chain-of-thought] (CoT). The former approach focuses on splitting a complex problem into a series of simpler steps. These steps may be provided to the model as separate prompts or combined into a structured sequence of steps with emphasis on explicit demonstration of all intermediate work (CoT). For example, this [prompt template](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Science/Chemistry/ChemicalReactionAnalysis.md) provides a structured step-by-step workflow guide to the model, instructing it to perform a chemical process analysis in a particular way.
+Often, one simply poses a question to an LLM and lets it solve the problem without specifying a particular method or workflow. However, for more complex tasks, models might fail to devise an appropriate approach on their own, or there could be multiple valid strategies, and you may wish to guide the model toward a more rigorous solution. In these cases, explicitly defining a workflow or algorithm can greatly enhance the quality of the results.
+
+Two common prompt-engineering methods for making workflows explicit are:
+- **Hierarchical Decomposition**: Breaking a complex problem into a sequence of simpler, smaller tasks.  
+- **[Chain-of-Thought](https://en.wikipedia.org/wiki/Prompt_engineering#Chain-of-thought)** (CoT): Providing detailed, step-by-step demonstrations of intermediate reasoning.  
+These methods can be combined or used separately. For example, this experimental [prompt template](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Science/Chemistry/ChemicalReactionAnalysis.md) illustrates a structured, step-by-step workflow for analyzing chemical processes—ensuring the model follows a deliberate approach rather than taking shortcuts.
+
+Developing such explicit workflows can be challenging because human reasoning in specialized domains (e.g., advanced research) often involves [tacit knowledge](https://en.wikipedia.org/wiki/Tacit_knowledge) and techniques learned over time. Formalizing these implicit processes may require [self-reflection](https://en.wikipedia.org/wiki/Self-reflection) and iterative experimentation. Nonetheless, identifying and codifying complex reasoning strategies has value, especially as AI models continue to improve.
+
+---
+
+#### Example: Analyzing a Manuscript on Experimental Chemistry
+
+A more ambitious workflow might involve dissecting a manuscript describing experimental chemistry. This multi-step approach could include:
+1. **Extracting key experimental results**  
+2. **Identifying the processes associated with each result**  
+3. **Listing all reagents, catalysts, products, and byproducts** involved in each process  
+4. **Recording quantity and composition** details for each material  
+5. **Extracting experimental parameters/protocols**  
+6. **Identifying and classifying key equipment** used for each process  
+7. **Extracting or inferring performance characteristics** for each piece of equipment  
+8. **Analyzing each process**, including any suitable models or governing equations for yield/purity estimations  
+9. **Validating reported results**, comparing them to expected outcomes under those models/conditions  
+10. **Performing internal consistency checks**, such as mass or composition balances
+11. **Evaluating highly unusual or disruptive claims**:
+    - Check for potential contradictions with established knowledge or practices
+    - Check for any issues with equipment or protocols (e.g., using methods or techniques known to perform poorly without clear and sound justification of the choice)
+    - Check for incompletely reported experimental data, complicating basic analysis, such as mass balance check, without any clear reason for such an omission
+    - In case of conventional/established techniques/protocols yielding odd results, check if clear explanations are provided of specific experimental modifications used that enabled achieving such results and if sound theoretical treatment is provided that takes into account said modifications and supports reported results
+    - In case of potentially disruptive findings with the capacity to transform an established field or market niche (meaning probably a wealth of highly qualified researches driven by pressing needs to advance their careers and / or receive a generous bonus), check for discussion how all these motivated experts overlooked the reported results. 
+
+
+
+- Explaining how any novel process, model, or method justifies the reported outcomes  
+- Identifying inconsistent or contradictory results and discussing potential reasons  
+- Highlighting any potentially disruptive findings with the capacity to transform an existing field
+
+---
+
+By explicitly defining such workflows, one can guide LLMs to offer more consistent, in-depth analysis. As AI capabilities continue to expand, building a library of clearly articulated reasoning workflows for specialized domains will likely be an effective way to ensure rigorous and insightful model outputs.
+
+
 
 A unique challenge with developing this part may be in conceptualizing/rationalizing/generalizing often [implicitly](https://en.wikipedia.org/wiki/Tacit_knowledge) followed reasoning workflows. Conventional human education, perhaps, focuses more on learning specific techniques applicable to a certain group of problems. Once a sufficient number of specialized techniques is learned, the student may be able to implicitly classify the problem at hand and consider which technique to apply. This education process is conceptually similar to the N-shot learning above. Even at advanced levels, education largely shifts towards more complex inputs and techniques. Thus, to come up with a sufficiently generic and explicit workflow description of implicit reasoning processes may necessitate some brain straining with [self-relection](https://en.wikipedia.org/wiki/Self-reflection) and trial and error. Perhaps, identifying such implicit complex reasoning processes involved with advanced research tasks and developing a broad repertoire of generalized explicit workflows for specific knowledge domains might be a good research direction even with rapidly improving AI models.
 
