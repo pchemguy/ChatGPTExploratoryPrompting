@@ -91,5 +91,6 @@ Recently, I have been trying a couple ideas in this direction. The first one is 
 - estimating  yield / purity for each process and comparing with reported values
 - evaluating whether there are any results
 - For any highly unusual/revolutionary results/claims, a clear and detailed explanation/justification should be provided of how appropriate process models and any relevant governing equations support claimed results when all specific experimental/processing protocols and any essential modifications are considered. 
-
+    - demonstrated processes or characteristics that are apparently inconsistent with or contradicting to established knowledge/practices
+    - observed odd results (such as unexpected performance characteristics) and/or potentially highly disruptive findings (findings that may enable disruptive scientific and/or industrial/market applications) within an established field using apparently conventional/established equipment/protocols
  
