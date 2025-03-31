@@ -64,13 +64,8 @@ Long context windows provided by Google enable
 - significantly extended amount of reference/context material
 - extended and more elaborate descriptions of workflows/algorithms. 
 
+The maximum number of output tokens is also limited. This characteristic is completely separate form the context window and is usually much smaller than the input token limit. There is an important consequence of this characteristic in present context. When taking advantage of large input token limit, the input may contain instructions that does not have a significant affect on the output size (output token count). For example, we can defined detailed stylistic guidelines for [English](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Writing/WritingStyleGuidelines.md), and these guidelines probably will not inflate the size of output. On the other hand, when the input contains code functionality specification or description of reasoning workflows/algorithms together with request to provide detailed output showing intermediate steps/results, extending such instructions will generally extend the generated output. At a certain point, the model will start compressing the output by dropping pieces/details, which is not something generally desirable, unless a summary is being generated. To preserve the level of details, it will be necessary to split the prompt (and the problem) in parts that will be handled sequentially in separate prompts or, perhaps, even in separate conversations where possible.
 
-and the amount of information they can produce as the output.
-
-
-Speaking of critical limits, output token limit is another essential characteristic. The output token limit is usually much smaller than the input token limit (specific information may not be easily accessible). There is an important consequence of this characteristic in present context. When taking advantage of large input token limit, the input may contain information that does not have a significant affect on the output size  (e.g., we can defined detailed stylistic guidelines for [English](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Writing/WritingStyleGuidelines.md) or [Python](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Code/Python/PythonStyleGuidelines.md) ), 
-
-Explicit description of specific workflows/algorithms may be provided to the model even when the model might be able to produce some kind of solution without additional specific instructions. 
 
 ### Transformation context
  
@@ -110,5 +105,5 @@ Explicit description of specific workflows/algorithms may be provided to the mod
     - privacy considerations (user data being used for model training on free plan vs. promise not use it on subscription-based plans)
 - importance of large input context for many-shot learning
 
-Disclaimer: Humans can also be inaccurate.
+Disclaimer: Humans too can be inaccurate.
 
