@@ -26,19 +26,13 @@ These materials might include facts, transformation examples, detailed workflows
 - **Transformation context** (e.g., details of the workflow or algorithm the model should follow)  
 - **Output context** (e.g., style guidelines or formats such as plain text, bullet points, or CSV)
 
-### Input context
+### Input Context
 
-Input context provides extra information about the "starting point" of the problem. Examples of such extras may include
-- physical and/or chemical properties of reagents
-    - **format:** plaint text, bulleted lists, JSON, CSV, etc.
-    - **problem example:** analysis of potential chemical reactions for a given set of reagents
-- description of input format
-    - **format:** plain text description, bulleted lists, JSON schema, etc.
-    - **problem example:** creation (reverse engineering) of a Python class module to represent serialized data
-- sample input files
-    - **format:** plain text files containing serialized objects supplied as prompt attachments or via copy/paste as part of the prompt text.
-    - **problem:** creation of a Python class that should represent graphical primitives used for rendering SPICE circuit element symbols.
-[Retrieval Augmented Generation](https://en.wikipedia.org/wiki/Retrieval-augmented_generation) (RAG) is a family of advanced techniques for supplying input context. These techniques typically necessitate additional software tools and programmatic access via model's APIs.
+Input context supplies additional information about the initial conditions of a problem. Examples include:
+- **Physical and/or chemical properties of reagents** (e.g., analyzing possible chemical reactions based on a specific set of reagents)  
+- **Description of input format** (e.g., reverse-engineering a Python class module to represent serialized data) 
+- **Sample input files** (e.g., creating a Python class for graphical primitives used in rendering SPICE circuit element symbols)  
+[Retrieval-Augmented Generation](https://en.wikipedia.org/wiki/Retrieval-augmented_generation) (RAG) provides advanced methods for supplying input context. These techniques typically require additional software tools and programmatic access through the model’s APIs.
 
 ### Output context
 
