@@ -47,16 +47,25 @@ See also
 
 Output context may prescribe what specific information should be included in the output and how it should be organized. For example, it may be desired that generated text followed a particular [language style](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Writing/WritingStyleGuidelines.md) or generated code followed a particular [coding style](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Code/Python/PythonStyleGuidelines.md).
 
+### Few-shot learning (learning by example)
 
+One-shot/single-shot and few-shot/multi-shot prompting techniques rely on providing to the model one or several examples. An important aspect of these techniques is that the *transformation* process is implicit. A pure few-short learning material does not include any information as to how to transform the input to the desired output. Instead, we rely on the LLM to come up with some kind of transformation based on model's training such that selected transformation satisfies provided learning examples.
+
+This techniques may focus on any constituent: input, transformation, or output. For example, if we want to have plaint text input reformatted as a bulleted list, we may provide several examples, each containing sample text paragraph and associated bulleted list. If we want to generate a code module that follows a particular coding style, we may give several examples of desired output together with a brief plain-text explanation. If we want to reverse engineer a Python class module implementing functionality of an object describing a graphical representation of a SPICE circuit element symbol, we might provide several sample text files containing serialized representation of the target object.
+
+Generally, a larger number of diverse learning examples improves the resulting performance. However, the number of examples may be limited by the *context window length* (see below), as each example takes up a certain amount of model's "working" memory.
 
 ### Transformation context
  
-For ordinary uses, it is common to define a problem for LLM and let it generate a solution without any instruction as to how to arrive at it. 
+For ordinary uses, it is common to define a problem for LLM and let it generate a solution without any instruction as to how to arrive at it. For more complex tasks, models may not be able to "figure" out a good workflow for solving the problem. Or there might be various approaches to deriving and/or presenting solution candidates, and you might want to steer the model to a particular, say, more rigorous solution, making sure the model does not take any "shortcuts". In such cases, an explicit workflow or algorithm description may substantially improve the quality of produced result.
+
+Two common prompt engineering techniques used for explicit definition of workflows/algorithms are hierarchical decomposition and [Chain-of-Thought][https://en.wikipedia.org/wiki/Prompt_engineering#Chain-of-thought] (CoT). The former approach focuses on splitting a complex problem into a series of simpler steps. These steps may be provided to the model as separate prompts or combined into a structured sequence of steps with emphasis on explicit demonstration of all intermediate work (CoT). For example, this [prompt template](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Science/Chemistry/ChemicalReactionAnalysis.md) provides a structured step-by-step workflow guide to the model, instructing it to perform a chemical process analysis in a particular way.
+
+A unique challenge with developing this part may be in conceptualizing/rationalizing/generalizing often [implicitly](https://en.wikipedia.org/wiki/Tacit_knowledge) followed reasoning workflows. Conventional human education, perhaps, focuses more on learning specific techniques applicable to a certain group of problems. Once a sufficient number of specialized techniques is learned, the student may be able to implicitly classify the problem at hand and consider which technique to apply. This education process is somewhat similar to the few-shot learning above, where the specific solution workflow is implicit. Even at advanced levels, education largely shifts towards more complex inputs and techniques. Thus, to come up with a sufficiently generic and explicit workflow description of implicit reasoning processes may necessitate some brain straining and trial and error.
+ 
 
 
-### Learning by example
 
-One-shot/single-shot and few-shot/multi-shot prompting techniques rely on providing to the model one or several examples, each consisting with sample input and associated desired output pairs. By extension, many-shot approach may involve a substantially larger set of examples, compared to few-shot. The number of examples that can be provided depend on the availability of examples, but also on context window length (mentioned below), as each example takes up a certain amount of model's "working" memory.
 
 
 ### Limitations
