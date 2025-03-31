@@ -78,30 +78,3 @@ Two common prompt engineering techniques used for explicit definition of workflo
 
 A unique challenge with developing this part may be in conceptualizing/rationalizing/generalizing often [implicitly](https://en.wikipedia.org/wiki/Tacit_knowledge) followed reasoning workflows. Conventional human education, perhaps, focuses more on learning specific techniques applicable to a certain group of problems. Once a sufficient number of specialized techniques is learned, the student may be able to implicitly classify the problem at hand and consider which technique to apply. This education process is conceptually similar to the N-shot learning above. Even at advanced levels, education largely shifts towards more complex inputs and techniques. Thus, to come up with a sufficiently generic and explicit workflow description of implicit reasoning processes may necessitate some brain straining with [self-relection](https://en.wikipedia.org/wiki/Self-reflection) and trial and error. Perhaps, identifying such implicit complex reasoning processes involved with advanced research tasks and developing a broad repertoire of generalized explicit workflows for specific knowledge domains might be a good research direction even with rapidly improving AI models (to clarify, this job has little to do with prompt engineering; rather think of it as developing )
  
-
-
-
-
-
-### Limitations
-
-
-
-
-
-
-
-
-
-- Chain-of-Thought and Hierarchical decomposition approaches to handling complex tasks with limited to no relevant training data available for training foundation models.
-- non-reasoning vs. reasoning vs. deep research for complex tasks (such as deep analysis of academic publications)
-- fine-tuning vs. in-context learning
-- 
-- context size limit, tokens, output token limit
-- free vs. subscriptions based plans:
-    - models not available on free plan or available with significantly reduced input/output token limits
-    - privacy considerations (user data being used for model training on free plan vs. promise not use it on subscription-based plans)
-- importance of large input context for many-shot learning
-
-
-
