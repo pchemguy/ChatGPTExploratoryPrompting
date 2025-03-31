@@ -90,5 +90,6 @@ Recently, I have been trying a couple ideas in this direction. The first one is 
 - qualitative or semi-quantitative validation of reported results against what should typically be expected for identified processes/conditions/equipment
 - estimating  yield / purity for each process and comparing with reported values
 - evaluating whether there are any results
+- For any highly unusual/revolutionary results/claims, a clear and detailed explanation/justification should be provided of how appropriate process models and any relevant governing equations support claimed results when all specific experimental/processing protocols and any essential modifications are considered. 
 
  
