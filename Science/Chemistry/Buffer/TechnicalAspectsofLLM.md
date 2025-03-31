@@ -95,40 +95,15 @@ A more ambitious workflow might involve dissecting a manuscript describing exper
 8. **Analyzing each process**, including any suitable models or governing equations for yield/purity estimations  
 9. **Validating reported results**, comparing them to expected outcomes under those models/conditions  
 10. **Performing internal consistency checks**, such as mass or composition balances
-11. **Evaluating highly unusual or disruptive claims**:
-    - Check for potential contradictions with established knowledge or practices
-    - Check for any issues with equipment or protocols (e.g., using methods or techniques known to perform poorly without clear and sound justification of the choice)
-    - Check for incompletely reported experimental data, complicating basic analysis, such as mass balance check, without any clear reason for such an omission
-    - In case of conventional/established techniques/protocols yielding odd results, check if clear explanations are provided of specific experimental modifications used that enabled achieving such results and if sound theoretical treatment is provided that takes into account said modifications and supports reported results
-    - In case of potentially disruptive findings with the capacity to transform an established field or market niche (meaning probably a wealth of highly qualified researches driven by pressing needs to advance their careers and / or receive a generous bonus), check for discussion how all these motivated experts overlooked the reported results. 
-
-
-
-- Explaining how any novel process, model, or method justifies the reported outcomes  
-- Identifying inconsistent or contradictory results and discussing potential reasons  
-- Highlighting any potentially disruptive findings with the capacity to transform an existing field
+11. **Evaluate highly unusual or disruptive claims** by:  
+    - Checking for conflicts with established knowledge or practices  
+    - Identifying questionable equipment choices or protocols, particularly those known to perform poorly unless well-justified  
+    - Noting any incomplete experimental data (e.g., missing information necessary for a thorough mass balance) without valid explanation  
+    - Ensuring that any anomalous results obtained via standard techniques are fully explained, including
+        - Sound special modifications used that enabled achieving such results  
+        - Theoretical treatment taking into account said modifications and supporting reported results
+    - Assessing potentially transformative findings that might disrupt an established field or market niche, and considering how such results might have been missed by other motivated experts  
 
 ---
 
-By explicitly defining such workflows, one can guide LLMs to offer more consistent, in-depth analysis. As AI capabilities continue to expand, building a library of clearly articulated reasoning workflows for specialized domains will likely be an effective way to ensure rigorous and insightful model outputs.
-
-
-
-A unique challenge with developing this part may be in conceptualizing/rationalizing/generalizing often [implicitly](https://en.wikipedia.org/wiki/Tacit_knowledge) followed reasoning workflows. Conventional human education, perhaps, focuses more on learning specific techniques applicable to a certain group of problems. Once a sufficient number of specialized techniques is learned, the student may be able to implicitly classify the problem at hand and consider which technique to apply. This education process is conceptually similar to the N-shot learning above. Even at advanced levels, education largely shifts towards more complex inputs and techniques. Thus, to come up with a sufficiently generic and explicit workflow description of implicit reasoning processes may necessitate some brain straining with [self-relection](https://en.wikipedia.org/wiki/Self-reflection) and trial and error. Perhaps, identifying such implicit complex reasoning processes involved with advanced research tasks and developing a broad repertoire of generalized explicit workflows for specific knowledge domains might be a good research direction even with rapidly improving AI models.
-
-Recently, I have been trying a couple ideas in this direction. The first one is an experimental [prompt template](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Science/Chemistry/ChemicalReactionAnalysis.md) that defines a workflow for analysis of chemical processes. My other more ambitious idea is developing a workflow for analysis of a manuscript on experimental chemistry. A rough stepwise workflow would involve  
-- extraction of key experimental results
-- extraction of the processes directly involved with each result
-- extraction of all reagent / starting materials, catalysts, products / byproducts, associated with each process
-- extraction of quantity and composition for each material
-- extraction of experimental parameters / protocols
-- extraction and classification of key equipment for each process
-- extraction or inference of key performance characteristics for each piece of equipment
-- analysis of each processes, including identification of any suitable model and governing equations necessary for performing yield / purity estimations
-- qualitative or semi-quantitative validation of reported results against what should typically be expected for identified processes/conditions/equipment
-- estimating  yield / purity for each process and comparing with reported values
-- evaluating whether there are any results
-- For any highly unusual/revolutionary results/claims, a clear and detailed explanation/justification should be provided of how appropriate process models and any relevant governing equations support claimed results when all specific experimental/processing protocols and any essential modifications are considered. 
-    - demonstrated processes or characteristics that are apparently inconsistent with or contradicting to established knowledge/practices
-    - observed odd results (such as unexpected performance characteristics) and/or potentially highly disruptive findings (findings that may enable disruptive scientific and/or industrial/market applications) within an established field using apparently conventional/established equipment/protocols
- 
+By explicitly defining such workflows, one can guide LLMs to offer more consistent, in-depth analysis. As AI capabilities continue to expand, developing a library of clearly articulated reasoning workflows for specialized domains will likely be an effective way to ensure rigorous and insightful model outputs.
