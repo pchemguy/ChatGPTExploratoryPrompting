@@ -28,15 +28,15 @@ These materials might include facts, transformation examples, detailed workflows
 
 ### Input Context
 
-Input context supplies additional information about the initial conditions of a problem. Examples include:
+*Input context* supplies additional information about the initial conditions of a problem. Examples include:
 - **Physical and/or chemical properties of reagents** (e.g., analyzing possible chemical reactions based on a specific set of reagents)  
 - **Description of input format** (e.g., reverse-engineering a Python class module to represent serialized data) 
 - **Sample input files** (e.g., creating a Python class for graphical primitives used in rendering SPICE circuit element symbols)  
 [Retrieval-Augmented Generation](https://en.wikipedia.org/wiki/Retrieval-augmented_generation) (RAG) provides advanced methods for supplying input context. These techniques typically require additional software tools and programmatic access through the model’s APIs.
 
-### Output context
+### Output Context
 
-Output context may prescribe what specific information should be included in the output and how it should be organized. For example, it may be desired that generated text followed a particular [language style](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Writing/WritingStyleGuidelines.md) or generated code followed a particular [coding style](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Code/Python/PythonStyleGuidelines.md).
+*Output context* outlines what information should appear in the final output and how it should be organized or formatted. For instance, one might require that generated text adhere to a particular [language style](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Writing/WritingStyleGuidelines.md) or that generated code conform to a specific [coding style](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Code/Python/PythonStyleGuidelines.md). This ensures consistency, clarity, and alignment with project or organizational standards.
 
 ### N-shot learning (learning by example)
 
