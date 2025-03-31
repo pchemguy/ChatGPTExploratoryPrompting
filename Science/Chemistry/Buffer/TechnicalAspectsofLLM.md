@@ -59,6 +59,10 @@ Generally, a larger number of diverse learning examples improves the resulting p
 
 In-context learning provides learning material as part of the model input prompt. The amount of information that can be provided as input to an LLM is generally limited by capacity of its "working" memory, and so is the amount learning material. The characteristic that determines the maximum amount of input a model can accept is its *context window length*. This characteristic is typically specified as the maximum number of *input* [*tokens*](https://ai.google.dev/gemini-api/docs/tokens) (elementary chunks of information operated by the LLM). Deep understanding of this concept is probably not essential. It might be sufficient to accept that each piece of input, such as prompt text, any attachments, and previous messages within the same conversations, are somehow transformed into tokens. Generally, the larger the input, the more tokens it consumes. In practice, models may not be able to use the full specified context window, as the quality of recalling may degrade as context usage becomes a large fraction of the maximum limit size. Also, quality of recalling of material placed in the middle may be lower than for beginning and end. Context window limit is rapidly improving (with [Google leading the way](https://ai.google.dev/gemini-api/docs/long-context)), enabling more elaborate in-context learning. 
 
+Long context windows provided by Google enable
+- [many-shot in-context learning](https://ai.google.dev/gemini-api/docs/long-context#:~:text=Many%2Dshot%20in%2Dcontext%20learning), which may be considered an extension of the few-shot learning described above
+- significantly extended amount of reference/context material
+- extended and more elaborate descriptions of workflows/algorithms. 
 
 
 and the amount of information they can produce as the output.
@@ -108,4 +112,3 @@ Explicit description of specific workflows/algorithms may be provided to the mod
 
 Disclaimer: Humans can also be inaccurate.
 
-https://ai.google.dev/gemini-api/docs/long-context#:~:text=Many%2Dshot%20in%2Dcontext%20learning
