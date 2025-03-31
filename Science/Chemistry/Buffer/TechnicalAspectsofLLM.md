@@ -55,6 +55,16 @@ N-shot learning material may focus on any constituent: input, transformation, or
 
 Generally, a larger number of diverse learning examples improves the resulting performance. However, the number of examples may be limited by the *context window length* (see below), as each example takes up a certain amount of model's "working" memory.
 
+### Limitations
+
+LLMs are generally limited with respect to the amount of information provided as input, and the amount of information they can produce as the output. The characteristic that determines the maximum amount of input the model can handle is its *context window length*. This characteristic is typically specified as the maximum number of input [*tokens*](https://learn.microsoft.com/en-us/dotnet/ai/conceptual/understanding-tokens) (elementary chunks of information operated by the LLM). Deep understanding of this concept is probably not essential. It might be sufficient to accept that each piece of input, such as prompt text, any attachments, previous messages with the same conversations are somehow transformed into tokens. Generally, the larger the input, the more tokens it consumes.
+
+One of the important limitations of in-context learning is the size of available "working" memory (context window length or input tokens limit). In practice, models may not be able to use the full specified context window, as the quality of recalling may degrade as context usage becomes a large fraction of the maximum limit size. Also, quality of recalling of material placed in the middle may be lower than for beginning and end. Context window limit is rapidly improving (with [Google leading the way](https://ai.google.dev/gemini-api/docs/long-context)), enabling more elaborate in-context learning. 
+
+Speaking of critical limits, output token limit is another essential characteristic. The output token limit is usually much smaller than the input token limit (specific information may not be easily accessible). There is an important consequence of this characteristic in present context. When taking advantage of large input token limit, the input may contain information that does not have a significant affect on the output size  (e.g., we can defined detailed stylistic guidelines for [English](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Writing/WritingStyleGuidelines.md) or [Python](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Code/Python/PythonStyleGuidelines.md) ), 
+
+Explicit description of specific workflows/algorithms may be provided to the model even when the model might be able to produce some kind of solution without additional specific instructions. 
+
 ### Transformation context
  
 For ordinary uses, it is common to define a problem for LLM and let it generate a solution without any instruction as to how to arrive at it. For more complex tasks, models may not be able to "figure" out a good workflow for solving the problem. Or there might be various approaches to deriving and/or presenting solution candidates, and you might want to steer the model to a particular, say, more rigorous solution, making sure the model does not take any "shortcuts". In such cases, an explicit workflow or algorithm description may substantially improve the quality of produced result.
