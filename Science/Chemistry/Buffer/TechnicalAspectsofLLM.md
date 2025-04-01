@@ -97,7 +97,7 @@ A more ambitious workflow might involve dissecting a manuscript describing exper
 10. **Performing internal consistency checks**, such as mass or composition balances
 11. **Evaluate highly unusual or disruptive claims** by:  
     - Checking for conflicts with established knowledge or practices  
-    - Identifying questionable equipment choices or protocols, particularly those known to perform poorly unless well-justified  
+    - Identifying questionable equipment choices, protocols, or procedures, particularly those known to perform poorly unless well-justified  
     - Noting any incomplete experimental data (e.g., missing information necessary for a thorough mass balance) without valid explanation  
     - Ensuring that any anomalous results obtained via standard techniques are fully explained, including
         - Sound special modifications used that enabled achieving such results  
@@ -111,10 +111,20 @@ A more ambitious workflow might involve dissecting a manuscript describing exper
 By explicitly defining such workflows, it becomes easier to guide LLMs toward more consistent, in-depth analysis. As AI capabilities continue to evolve, compiling a library of well-articulated reasoning workflows for specialized domains will likely be a powerful strategy for ensuring rigorous and insightful outputs - and may also present a promising cross-disciplinary research direction.
 
 
-Extract the main experimental result and key findings.
-Extract the main experimental goal/result and key findings/points from introduction only.
-Extract conclusions.
-Extract core experimental protocol leading to the main experimental result. Do not list any subsequent stages, such as analysis/verification/applications/etc
-Provide a detailed description of Figure S1
-What kind of wrapping is used as shown in the photo?
+- Extract the main experimental result and key findings.
+- Extract the main experimental goal/result and key findings/points from introduction only.
+- Extract conclusions.
+- Extract core experimental protocol leading to the main experimental result. Do not list any subsequent stages, such as analysis/verification/applications/etc
+- Provide a detailed description of Figure S1
+- What kind of wrapping is used as shown in the photo?
+- Analyze the core experimental protocol
+    - Are there any red flags, such as questionable equipment choices, protocols, or procedures, particularly those known to perform poorly?
+    - For any identified issue provide
+        - Detailed reasons, consequences, and accepted alternatives
+            - Include quantitative or semi-quantitative estimation of key metrics
+        - Provide academic references discussing the issue, including citations to accepted academic sources and/or high quality secondary sources 
+        - Extract arguments provided by the authors justifying their choice or state that no such arguments can be identified
+            - You cannot use any reported results as supporting evidence
+        - Also discuss any counter arguments that might justify the choice implicitly (e.g., simplifications may be often justified at early or proof-of-concept stages, if they are not expected to skew, bias, or otherwise significantly affect the main result/goal)
+            - You cannot use any reported results as supporting evidence
 
