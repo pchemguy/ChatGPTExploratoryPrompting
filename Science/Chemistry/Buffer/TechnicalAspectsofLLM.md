@@ -111,6 +111,11 @@ A more ambitious workflow might involve dissecting a manuscript describing exper
 By explicitly defining such workflows, it becomes easier to guide LLMs toward more consistent, in-depth analysis. As AI capabilities continue to evolve, compiling a library of well-articulated reasoning workflows for specialized domains will likely be a powerful strategy for ensuring rigorous and insightful outputs - and may also present a promising cross-disciplinary research direction.
 
 
+#### Example
+
+ROLE AND CONTEXT
+INSTRUCTIONS
+
 - Extract the main experimental result and key findings.
 - Extract the main experimental goal/result and key findings/points from introduction only.
 - Extract conclusions.
