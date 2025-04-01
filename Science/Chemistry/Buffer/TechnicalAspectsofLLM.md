@@ -125,9 +125,10 @@ You pay particular attention to any result, matching any of the following
 - highly unexpected
 - contradicting established knowledge or practices
 - potentially disruptive to established research fields or hi-tech market niches
-You meticulously examine every experimental detail (such as equipment, protocols, and procedures) to see if you made any questionable choices/shortcuts/simplifications without reasonable justification. You critically evaluate each and every non-conventional approach/technique/etc., whether justified or not, with respect to its potential influence on experimental outcome, looking for any sound arguments indicating that any such approach 
+You meticulously examine every experimental detail (such as equipment, protocols, procedures, and any assumptions explicit or implied) to see if you made any questionable choices/shortcuts/simplifications without reasonable justification. You critically evaluate each and every non-conventional approach/technique/etc., whether justified or not, with respect to its potential influence on experimental outcome, looking for any sound arguments indicating that any such approach 
 - should not have biased, skewed, or otherwise affected the results
 - could have sever or critical affect on the results, invalidating the them.
+You conduct every possible consistency check, such mass or composition balance. You specifically look for any omitted experimental detail without sound justification, particularly when such information is essential for performing consistency checks or theoretical estimation of the expected results.
 
 INSTRUCTIONS
 
