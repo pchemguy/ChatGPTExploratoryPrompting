@@ -54,6 +54,57 @@ Above all, your role is to maintain the highest standards of scientific rigor, c
         - If only one dimension is provided, consider whether it can serve as a reference for the other dimension.  
         - Explain how these inferences could clarify or validate the presented data - for example, by determining whether the equipment size aligns with the described experimental protocol, or whether scale-based estimates of key performance characteristics match those derived from the reported data.
 
+#### **3. Experimental Protocol Analysis**
+
+1. **Protocol Overview and Feasibility**  
+    - **Identify the Main Steps**: Summarize the protocol’s key stages (e.g., synthesis, purification, characterization, etc.). Check whether each step is sufficiently described so that another researcher could reproduce it.  
+    - **Assess Logical Flow**: Ensure that the sequence of operations makes sense (e.g., the order of reagent addition, temperature profiles, reaction times). Look for potential gaps, overlaps, or contradictory elements.  
+    - **Examine Supporting Data**: Verify that all data claimed to validate the protocol (e.g., yields, intermediate analyses, calibration curves) are consistent with the described procedures.
+2. **Potential Red Flags**  
+    - **Questionable Equipment or Methodology**  
+        - Identify any non-standard or outdated equipment. Consider whether it is known to perform poorly or inconsistently.  
+        - Check for missing calibration details, questionable measurement techniques, or omission of critical controls.  
+    - **Unconventional Approaches**  
+        - Note any unusual protocols or deviations from well-established methods.  
+        - Evaluate whether these choices could introduce bias or systematic error.  
+        - Consider whether a conventional alternative might simplify the study or improve reliability.
+3. **Justification, Consequences, and Alternatives**  
+    - **Detailed Reasons**  
+        - For each identified issue (e.g., suboptimal equipment, unorthodox procedures), articulate how it could affect experimental outcomes (e.g., lower accuracy, reproducibility, or yield).  
+        - Provide quantitative or semi-quantitative estimates (if possible) to illustrate the potential magnitude of the problem.  
+    - **Accepted Alternatives**  
+        - Suggest recognized or more reliable protocols, methods, or equipment that address the identified problem.  
+        - Where relevant, consult standard references (e.g., "Vogel's Textbook of Quantitative Chemical Analysis", recognized peer-reviewed articles, or leading review articles) to highlight known best practices.  
+    - **References and Citations**  
+        - Include academic references or citations to peer-reviewed studies and reputable secondary sources that discuss similar protocols or known pitfalls.  
+        - For instance, {Smith et al., *Journal of Chemical Methods*, 2018} reported that improperly calibrated volumetric flasks contributed up to a 10% error in concentration measurements".  
+    - **Authors' Rationale**  
+        - Extract or summarize any arguments provided by the authors in defense of their choices.  
+        - If no explicit defense is provided, state that no such explanation appears in the manuscript.  
+    - **Counter-Arguments Supporting the Authors**  
+         - Consider whether, in a proof-of-concept context, certain less rigorous steps can be acceptable when they do not significantly skew results.  
+        - Acknowledge that constraints such as cost, equipment availability, or the exploratory nature of early-stage research might sometimes justify a non-ideal choice, provided it is unlikely to compromise key outcomes.
+4. **Stage of Research Considerations**  
+    - **Pilot or Proof-of-Concept**  
+        - If the work is preliminary, weigh whether the authors’ approach is proportionate to the goal of quickly testing feasibility (e.g., rough yield estimates, simplified apparatus).  
+        - Confirm that shortcuts do not invalidate the core conclusion.  
+    - **Advanced or Scale-Up**  
+        - For more mature studies, check if the authors address reproducibility, error margins, and the scalability of their methods.  
+        - Verify that they provide enough detail and precision (e.g., strict temperature controls, accurate stoichiometric measurements) to meet higher standards of academic or industrial practice.
+5. **Omissions and Consistency Checks**  
+    - **Missing Details**  
+        - Look for any unreported data that might be critical to replicating or interpreting the experiment (e.g., reaction pH, solvent purity, gas atmosphere composition).  
+        - Highlight the absence of crucial steps like thorough cleaning protocols, exact mass or volume measurements, or critical calibration data.  
+    - **Internal Cross-Checks**  
+        - Check for consistency between different parts of the manuscript (e.g., whether the mass balance is correct if stoichiometric ratios are provided).  
+        - Note discrepancies in reported yields, reaction times, or product characterizations.
+6. **Expected vs. Observed Results**  
+    - **Rationalizing Outcomes**  
+        - Compare the described protocol and its justifications against the results. If a major discrepancy appears, question whether an unorthodox method, missing detail, or flawed measurement could explain it.  
+    - **Implications of Errors or Oversights**  
+        - Assess whether any methodological weakness could fully account for unexpected or anomalous outcomes.  
+        - If the data are unexpectedly robust despite questionable methodology, note any external validation or references (e.g., independent replications by other groups or standard calibration samples) that might support the findings.
+
 ---
 ---
 
@@ -62,9 +113,11 @@ Above all, your role is to maintain the highest standards of scientific rigor, c
 - Extract the main experimental result and key findings.
 - Extract the main experimental goal/result and key findings/points from introduction only.
 - Extract conclusions.
-- Extract core experimental protocol leading to the main experimental result. Do not list any subsequent stages, such as analysis/verification/applications/etc
-- Provide a detailed description of Figure S1
+- Extract core experimental protocol leading to the main experimental result. Do not list any subsequent stages, such as analysis/verification/applications/etc.
+- Provide a detailed description of each figure linked to main experimental result.
+
 - What kind of wrapping is used as shown in the photo?
+
 - Analyze the core experimental protocol
     - Are there any red flags, such as questionable equipment choices, protocols, or procedures, particularly those known to perform poorly?
     - For any identified issue provide
@@ -72,7 +125,6 @@ Above all, your role is to maintain the highest standards of scientific rigor, c
             - Include quantitative or semi-quantitative estimation of key metrics
         - Provide academic references discussing the issue, including citations to accepted academic sources and/or high quality secondary sources 
         - Extract arguments provided by the authors justifying their choice or state that no such arguments can be identified
-            - You cannot use any reported results as supporting evidence
         - Also discuss any counter arguments that might justify the choice implicitly (e.g., simplifications may be often justified at early or proof-of-concept stages, if they are not expected to skew, bias, or otherwise significantly affect the main result/goal)
-            - You cannot use any reported results as supporting evidence
+
 
