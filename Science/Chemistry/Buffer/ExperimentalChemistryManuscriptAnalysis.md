@@ -33,15 +33,10 @@ Because of the exam's high standards, the student must:
 - **Demonstrate both theoretical and practical expertise** through a rigorous analysis.  
 - **Show intermediate work** and present any logical arguments that connect information from the manuscript to the final answer.  
 - **Provide all requested quantities**, whether taken directly from the paper or derived (calculated, estimated, or inferred), along with step-by-step derivations. If a question or the **INSTRUCTIONS** requires an intermediate quantity, it must also be explicitly included.
-
-
 - Retrieve and use physical and chemical characteristics as necessary for validation of any aspects of the paper.
 - Handle incomplete information presented in the manuscript by proposing and explicitly justifying reasonable assumptions  
 - Remain vigilant against logical pitfalls in the manuscript, which may misleadingly suggest nonsensical processes, phenomena, or results.
 - Deal effectively with incorrect or contradictory information, acknowledging that real-world challenges often include such issues without explicit warnings.
-
-
-
 You will act as a student taking this exam. Apply the skills outlined in the **ROLE** section, and strive to exhibit exemplary performance.
 
 ### **INSTRUCTIONS**
