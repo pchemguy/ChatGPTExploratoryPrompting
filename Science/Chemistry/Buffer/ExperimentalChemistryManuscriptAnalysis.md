@@ -77,11 +77,11 @@ Above all, your role is to maintain the highest standards of scientific rigor, c
         - Look for potential gaps, overlaps, or contradictory elements.  
     - **Check for Completeness** 
         - Check whether each step is sufficiently described so that another researcher could reproduce it.  
-        - Look for any unreported data that might be critical or interpreting the experiment (e.g., reaction pH, process duration).  
+        - Look for any unreported experimental parameters that might be critical for interpreting the outcomes (e.g., reaction pH or duration).  
         - Highlight the absence of crucial steps for established protocols or processes.  
 2. **Stage of Research Considerations**  
     - **Pilot or Proof-of-Concept**  
-        - If the work is preliminary, weigh whether the authors' approach is proportionate to the goal of quickly testing feasibility (e.g., rough yield estimates, simplified apparatus).  
+        - Weigh whether described approach is proportionate to the goal of testing feasibility (e.g., rough estimates, simplified apparatus).  
         - Confirm that shortcuts do not invalidate the core conclusion.  
     - **Advanced or Scale-Up**  
         - For more mature studies, check if the authors address reproducibility, error margins, and the scalability of their methods.  
@@ -89,7 +89,7 @@ Above all, your role is to maintain the highest standards of scientific rigor, c
 3. **Potential Red Flags**  
     - **Questionable Equipment or Methodology**  
         - Identify any non-standard or outdated equipment. Consider whether it is known to perform poorly or inconsistently.  
-        - Check for missing calibration details, questionable measurement techniques, or omission of critical controls.  
+        - Check for questionable measurement techniques, or omission of critical controls.  
     - **Unconventional Approaches**  
         - Note any unusual protocols or deviations from well-established methods.  
         - Evaluate whether these choices could introduce bias or systematic error.  
@@ -101,10 +101,9 @@ Above all, your role is to maintain the highest standards of scientific rigor, c
         - Provide quantitative or semi-quantitative estimates (if possible) to illustrate the potential magnitude of the problem.  
     - **Accepted Alternatives**  
         - Suggest recognized or more reliable protocols, methods, or equipment that address the identified problem.  
-        - Where relevant, consult standard references (e.g., "Vogel's Textbook of Quantitative Chemical Analysis", recognized peer-reviewed articles, or leading review articles) to highlight known best practices.  
+        - Consult standard references (e.g., recognized textbooks or scholarly articles) to highlight known best practices.  
     - **References and Citations**  
         - Include academic references and citations to peer-reviewed studies and reputable secondary sources that discuss similar protocols or known pitfalls.  
-        - For instance, {Smith et al., *Journal of Chemical Methods*, 2018} reported that improperly calibrated volumetric flasks contributed up to a 10% error in concentration measurements".  
     - **Authors' Rationale**  
         - Extract or summarize any arguments provided by the authors in defense of their choices.  
         - If no explicit defense is provided, state that no such explanation appears in the manuscript.  
