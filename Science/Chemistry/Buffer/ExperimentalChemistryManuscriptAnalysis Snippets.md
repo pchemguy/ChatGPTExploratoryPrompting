@@ -6,7 +6,8 @@
 - Extract the main experimental goal/result and key findings/points from introduction only.
 - Extract conclusions.
 - Extract and analyze the core experimental protocol leading to the main experimental result. Do not list any subsequent stages, such as analysis/verification/applications/etc.
-- Provide a detailed description of each figure linked to main experimental result.
+- List all figure and tables directly associated with the core experimental protocol and main result
+- Provide a detailed description of each figure associated with the core experimental protocol (implementation of the main result), but not subsequent stages, such as analysis/verification/applications/etc.
 
 - What kind of wrapping is used as shown in the photo?
 
