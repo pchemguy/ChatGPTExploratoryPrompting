@@ -48,7 +48,10 @@ Note to human
 This classification may be useful for deeper analysis of reported of experimental chemistry results.
 ```  
 
-When asked to extract / identify the main result and or key findings, annotate each result with the most appropriate category or categories
+When asked to extract / identify the main result and or key findings, annotate each result (in parenthesis at the end of summary/description) with the most appropriate category or categories. 
+
+##### **Classification of Experimental Chemistry Results**
+
 1. **Material-Focused: Novel Material Synthesis**
     Research primarily aimed at creating or isolating a **new** material (broadly defined: discrete chemical compounds, polymers, composites, solutions, etc.) that has not been previously reported. The central novelty lies in the material's structure, composition, or unique combination of components. Practical considerations (e.g., yield, cost, scale) are important but remain secondary to establishing that the material itself is new.
     - *"Synthesis and Initial Characterization of a Novel Porous Copper-Organic Framework for Gas Storage."*  
