@@ -74,26 +74,55 @@ For the duration of this mock exam, you will **take on the role of a student** a
 
 #### **3. Figure Analysis**
 
+This section defines a framework for a **comprehensive and meticulous** examination of every figure - especially photographs. The goal is to extract and interpret **all relevant experimental details**, explicitly demonstrating how each visual element informs or challenges the manuscript's reported data and conclusions.
+
 1. **High-Level Overview**  
-    - Start with a concise summary of its overall purpose or title.  
-    - Indicate whether it is a single-panel or multi-panel figure.  
-    - For each panel, briefly identify what type of content is shown (e.g., chart, diagram, chemical reaction schematic, photograph of experimental setup, spectrum, etc.).
+    - Begin by stating the figure's overall title or objective (e.g., "Experimental Setup Overview" or "Synthesis Pathway Diagram").  
+    - Indicate whether the figure comprises a single panel or multiple panels.  
+    - For each panel, briefly identify the type of content: chart, diagram, reaction schematic, photograph of experimental setup, spectrum, or other relevant format.
 2. **Detailed Description**  
-    - **Charts, Schematics, etc.**
-        - Provide sufficiently detailed description of the visual composition, nature of information, key features. 
-    - **Photographs**
-        - Describe overall picture composition, probable location, whether the camera appears to be properly oriented vertically, to what extent the target objects in the foreground appear to be distorted by perspective (so, for example, can we estimate the vertical scale reference based on the horizontal scale reference?).
-        - Identify objects and materials, describe their relations/connections/relative positions/etc., be as specific as possible (e.g., a thermometer secured with *duck tape* placed inside the 250 ml lab beaker or camera secured with transparent double-sided scotch at the top of the clamp stand above the beaker).
-        - Identify the key equipment components, if relevant
-        - Indicate if any dimensions have direct affect on the main result
-        - Describe every visible feature, linking these features to any related schematics and information included in text.
-        - Note any scale references present (e.g., rulers, labeled dimensions).  
-        - If no scale reference is given, try to infer one based on equipment details or related information found in the text (e.g., vessel volume and shape specified in text), state and justify any assumptions, show calculations, consider whether estimated value is consistent with other inferences, information, or overall picture.  
-    - **Estimation and Inference**  
-        - Use any provided or inferred dimensions (vertical or horizontal) to estimate overall size or capacity.  
-        - Make every attempt to provide numerical estimation of key dimensions (dimensions that likely affect the main result or its interpretation).
-        - If only one dimension is provided, consider whether it can serve as a reference for the other dimension.  
-        - Explain how these inferences could clarify or validate presented data - for example, by determining whether the equipment size aligns with the described experimental protocol, or whether scale-based estimates of key performance characteristics match those derived from the reported data.
+    1. **Charts, Schematics, and Similar Visuals**  
+        - **Content and Composition**  
+            - Describe what the chart or schematic displays (e.g., chat type, axes in a chart, symbols in a reaction schematic).  
+            - Note any labels, legends, or annotations that clarify variables, processes, or data.  
+        - **Key Features**  
+            - Identify relevant peaks, inflection points, or markers in graphs (e.g., a peak in a spectrum).  
+            - Highlight any unusual or notable elements (e.g., unexpected data trends, abrupt scale changes).
+    2. **Photographs**  
+        - **Overall Composition**  
+            - Describe the scene: the apparent setting, orientation of the camera (e.g., camera tilt or perspective), and any objects in the foreground or background.  
+            - Note whether the camera angle might distort objects' size or shape. Consider whether vertical and horizontal dimensions can be cross-referenced.  
+        - **Object Identification and Positioning**  
+            - Identify all visible objects and materials. Indicate their arrangement, connections, or relative positions (e.g., "A thermometer, secured with duct tape, is inserted into a 250 mL beaker.").  
+            - Link any visible equipment to known or referenced schematic diagrams, textual descriptions, or standard lab apparatus.  
+            - If brand names, labels, or model numbers are visible, mention them if relevant.  
+        - **Relevance to Main Results**  
+            - Note which features (if any) appear critical to the experiment's outcomes (e.g., the volume or orientation of a reaction vessel, the presence of a cooling system).  
+            - Comment on any potential inconsistencies - such as equipment that does not match the text description - or signs of modification or tampering.  
+        - **Scale References**  
+            - Identify any ruler, scale bar, labeled dimension, or calibration standard in the photo.  
+            - If no explicit scale is provided, attempt to infer one using visible equipment details or textual references (e.g., known volume or standard sizes of flasks).  
+            - State all assumptions used in estimating dimensions and check for consistency with other text or images (e.g., if a vessel is labeled 250 mL in the text, estimate its height or diameter, then see if this seems plausible in the photo).  
+        - **Visibility and Labels**  
+            - Describe any text, symbols, or color markings on the equipment.  
+            - Note lighting conditions or image clarity that could affect interpretation.  
+        - **Detailed Feature Analysis**  
+            - Provide any numerically estimated dimensions, especially if they affect interpretation of the main results (e.g., approximate diameter, length, or volume).  
+            - If only one dimension is known or can be inferred, consider whether it can serve as a reference to estimate other dimensions.
+    3. **Estimation and Inference**  
+        - **Quantitative Estimations**  
+            - Use any available or inferred measurements to determine key dimensions (e.g., the depth of a vessel, the length of a tube).  
+            - Provide **step-by-step calculations**, explicitly stating assumptions and showing intermediate quantities (e.g., "Assuming the beaker's base diameter is 8 cm, the visible thermometer length appears roughly 1.5x the beaker's diameter, implying a ~12 cm thermometer.").  
+        - **Cross-Verification**  
+            - Explain how these dimensional inferences can either support or question the experimental claims (e.g., the equipment size aligns with the stated protocol, or scale-based performance estimates contradict reported data).  
+            - Compare these estimates to any theoretical or expected performance metrics (e.g., reaction volume, heating/cooling rates).  
+            - Note any direct impact on reported yield, reaction kinetics, or other critical factors.
+    4. **Practical Implications**  
+        - **Consistency with the Text**  
+            - Examine whether the figures reinforce or conflict with the written description (e.g., the text states a 10 mL reactor, but the photo suggests a much larger vessel).  
+            - Identify any missing or inconsistent details that complicate interpretation.  
+        - **Potential Misinterpretations**  
+            - If the photo or diagram could mislead viewers (e.g., forced perspective, incomplete labeling), highlight how a more accurate depiction could improve clarity.
 
 #### **4. Experimental Protocol Analysis**
 
@@ -148,73 +177,3 @@ For the duration of this mock exam, you will **take on the role of a student** a
 ---
 ---
 
-
-Below is a revised and expanded version of the **Figure Analysis** section. It places special emphasis on extracting and interpreting every piece of available or inferable information—especially from photographs—and ensures clarity, logical flow, and thoroughness.
-
----
-
-#### **3. Figure Analysis**
-
-
-### **3. Figure Analysis (Revised)**
-
-#### **1. High-Level Overview**  
-- **Purpose/Title**  
-  - Begin by stating the figure’s overall title or objective (e.g., “Reaction Yield vs. Temperature,” “Experimental Setup Overview,” “Synthesis Pathway Diagram”).  
-- **Figure Structure**  
-  - Indicate whether the figure comprises a single panel or multiple panels.  
-  - For each panel, briefly identify the type of content: chart, diagram, reaction schematic, photograph of experimental setup, spectrum, or other relevant format.
-
----
-
-#### **2. Detailed Description**
-
-1. **Charts, Schematics, and Similar Visuals**  
-   - **Content and Composition**  
-     - Describe what the chart or schematic displays (e.g., axes in a chart, symbols in a reaction schematic).  
-     - Note any labels, legends, or annotations that clarify variables, processes, or data.  
-   - **Key Features**  
-     - Identify relevant peaks, inflection points, or markers in graphs (e.g., a peak in a spectrum).  
-     - Highlight any unusual or notable elements (e.g., unexpected data trends, abrupt scale changes).
-
-2. **Photographs**  
-   - **Overall Composition**  
-     - Describe the scene: the apparent setting, orientation of the camera (e.g., camera tilt or perspective), and any objects in the foreground or background.  
-     - Note whether the camera angle might distort objects’ size or shape. Consider whether vertical and horizontal dimensions can be cross-referenced.  
-   - **Object Identification and Positioning**  
-     - Identify all visible objects and materials. Indicate their arrangement, connections, or relative positions (e.g., “A thermometer, secured with duct tape, is inserted into a 250 mL beaker.”).  
-     - Link any visible equipment to known or referenced schematic diagrams, textual descriptions, or standard lab apparatus.  
-     - If brand names, labels, or model numbers are visible, mention them if relevant.  
-   - **Relevance to Main Results**  
-     - Note which features (if any) appear critical to the experiment’s outcomes (e.g., the volume or orientation of a reaction vessel, the presence of a cooling system).  
-     - Comment on any potential inconsistencies—such as equipment that doesn’t match the text description—or signs of modification or tampering.  
-   - **Scale References**  
-     - Identify any ruler, scale bar, labeled dimension, or calibration standard in the photo.  
-     - If no explicit scale is provided, attempt to infer one using visible equipment details or textual references (e.g., known volume or standard sizes of flasks).  
-     - State all assumptions used in estimating dimensions and check for consistency with other text or images (e.g., if a vessel is labeled 250 mL in the text, estimate its height or diameter, then see if this seems plausible in the photo).  
-   - **Visibility and Labels**  
-     - Describe any text, symbols, or color markings on the equipment.  
-     - Note lighting conditions or image clarity that could affect interpretation.  
-   - **Detailed Feature Analysis**  
-     - Provide any numerically estimated dimensions, especially if they affect interpretation of the main results (e.g., approximate diameter, length, or volume).  
-     - If only one dimension is known or can be inferred, consider whether it can serve as a reference to estimate other dimensions.
-
-3. **Estimation and Inference**  
-- **Quantitative Estimations**  
-  - Use any available or inferred measurements to determine key dimensions (e.g., the depth of a vessel, the length of a tube).  
-  - Provide **step-by-step calculations**, explicitly stating assumptions and showing intermediate quantities (e.g., “Assuming the beaker’s base diameter is 8 cm, the visible thermometer length appears roughly 1.5× the beaker’s diameter, implying a ~12 cm thermometer.”).  
-- **Cross-Verification**  
-  - Explain how these dimensional inferences can either support or question the experimental claims (e.g., the equipment size aligns with the stated protocol, or scale-based performance estimates contradict reported data).  
-  - Compare these estimates to any theoretical or expected performance metrics (e.g., reaction volume, heating/cooling rates).  
-  - Note any direct impact on reported yield, reaction kinetics, or other critical factors.
-
-4. **Practical Implications**  
-- **Consistency with the Text**  
-  - Examine whether the figures reinforce or conflict with the written description (e.g., the text states a 10 mL reactor, but the photo suggests a much larger vessel).  
-  - Identify any missing or inconsistent details that complicate interpretation.  
-- **Potential Misinterpretations**  
-  - If the photo or diagram could mislead viewers (e.g., forced perspective, incomplete labeling), highlight how a more accurate depiction could improve clarity.
-
----
-
-By following these steps, you ensure a **comprehensive and meticulous** examination of every figure—especially photographs. Your goal is to extract and interpret **all relevant experimental details**, explicitly demonstrating how each visual element informs or challenges the manuscript’s reported data and conclusions.
