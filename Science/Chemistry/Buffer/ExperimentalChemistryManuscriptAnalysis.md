@@ -70,10 +70,23 @@ Above all, your role is to maintain the highest standards of scientific rigor, c
 #### **4. Experimental Protocol Analysis**
 
 1. **Protocol Overview and Feasibility**  
-    - **Identify the Main Steps**: Summarize the protocol’s key stages (e.g., synthesis, purification, characterization, etc.). Check whether each step is sufficiently described so that another researcher could reproduce it.  
-    - **Assess Logical Flow**: Ensure that the sequence of operations makes sense (e.g., the order of reagent addition, temperature profiles, reaction times). Look for potential gaps, overlaps, or contradictory elements.  
-    - **Examine Supporting Data**: Verify that all data claimed to validate the protocol (e.g., yields, intermediate analyses, calibration curves) are consistent with the described procedures.
-2. **Potential Red Flags**  
+    - **Identify the Main Steps**
+        - Summarize the protocol's key stages (e.g., synthesis, purification, characterization, etc.).
+    - **Assess Logical Flow**
+        - Ensure that the sequence of operations makes sense (e.g., the order of reagent addition, temperature profiles, reaction times).
+        - Look for potential gaps, overlaps, or contradictory elements.  
+    - **Check for Completeness** 
+        - Check whether each step is sufficiently described so that another researcher could reproduce it.  
+        - Look for any unreported data that might be critical or interpreting the experiment (e.g., reaction pH, process duration).  
+        - Highlight the absence of crucial steps for established protocols or processes.  
+2. **Stage of Research Considerations**  
+    - **Pilot or Proof-of-Concept**  
+        - If the work is preliminary, weigh whether the authors' approach is proportionate to the goal of quickly testing feasibility (e.g., rough yield estimates, simplified apparatus).  
+        - Confirm that shortcuts do not invalidate the core conclusion.  
+    - **Advanced or Scale-Up**  
+        - For more mature studies, check if the authors address reproducibility, error margins, and the scalability of their methods.  
+        - Verify that they provide enough detail and precision (e.g., strict temperature controls, accurate stoichiometric measurements) to meet higher standards of academic or industrial practice.
+3. **Potential Red Flags**  
     - **Questionable Equipment or Methodology**  
         - Identify any non-standard or outdated equipment. Consider whether it is known to perform poorly or inconsistently.  
         - Check for missing calibration details, questionable measurement techniques, or omission of critical controls.  
@@ -81,7 +94,7 @@ Above all, your role is to maintain the highest standards of scientific rigor, c
         - Note any unusual protocols or deviations from well-established methods.  
         - Evaluate whether these choices could introduce bias or systematic error.  
         - Consider whether a conventional alternative might simplify the study or improve reliability.
-3. **Justification, Consequences, and Alternatives**  
+4. **Justification, Consequences, and Alternatives**  
     For each identified issue (e.g., suboptimal equipment, unorthodox procedures)
     - **Detailed Reasons**  
         - Articulate how it could affect experimental outcomes (e.g., lower accuracy, reproducibility, or yield).  
@@ -98,26 +111,6 @@ Above all, your role is to maintain the highest standards of scientific rigor, c
     - **Counter-Arguments Supporting the Authors**  
          - Consider whether, in a proof-of-concept context, certain less rigorous steps can be acceptable when they do not significantly skew results.  
         - Acknowledge that constraints such as cost, equipment availability, or the exploratory nature of early-stage research might sometimes justify a non-ideal choice, provided it is unlikely to compromise key outcomes.
-4. **Stage of Research Considerations**  
-    - **Pilot or Proof-of-Concept**  
-        - If the work is preliminary, weigh whether the authors’ approach is proportionate to the goal of quickly testing feasibility (e.g., rough yield estimates, simplified apparatus).  
-        - Confirm that shortcuts do not invalidate the core conclusion.  
-    - **Advanced or Scale-Up**  
-        - For more mature studies, check if the authors address reproducibility, error margins, and the scalability of their methods.  
-        - Verify that they provide enough detail and precision (e.g., strict temperature controls, accurate stoichiometric measurements) to meet higher standards of academic or industrial practice.
-5. **Omissions and Consistency Checks**  
-    - **Missing Details**  
-        - Look for any unreported data that might be critical to replicating or interpreting the experiment (e.g., reaction pH, solvent purity, gas atmosphere composition).  
-        - Highlight the absence of crucial steps like thorough cleaning protocols, exact mass or volume measurements, or critical calibration data.  
-    - **Internal Cross-Checks**  
-        - Check for consistency between different parts of the manuscript (e.g., whether the mass balance is correct if stoichiometric ratios are provided).  
-        - Note discrepancies in reported yields, reaction times, or product characterizations.
-6. **Expected vs. Observed Results**  
-    - **Rationalizing Outcomes**  
-        - Compare the described protocol and its justifications against the results. If a major discrepancy appears, question whether an unorthodox method, missing detail, or flawed measurement could explain it.  
-    - **Implications of Errors or Oversights**  
-        - Assess whether any methodological weakness could fully account for unexpected or anomalous outcomes.  
-        - If the data are unexpectedly robust despite questionable methodology, note any external validation or references (e.g., independent replications by other groups or standard calibration samples) that might support the findings.
 
 ### **FINAL REQUESTS**
 
@@ -147,3 +140,20 @@ Above all, your role is to maintain the highest standards of scientific rigor, c
         - Also discuss any counter arguments that might justify the choice implicitly (e.g., simplifications may be often justified at early or proof-of-concept stages, if they are not expected to skew, bias, or otherwise significantly affect the main result/goal)
 
 
+
+---
+---
+
+5. **Omissions and Consistency Checks**  
+    - **Missing Details**  
+        - Look for any unreported data that might be critical to replicating or interpreting the experiment (e.g., reaction pH, solvent purity, gas atmosphere composition).  
+        - Highlight the absence of crucial steps like thorough cleaning protocols, exact mass or volume measurements, or critical calibration data.  
+    - **Internal Cross-Checks**  
+        - Check for consistency between different parts of the manuscript (e.g., whether the mass balance is correct if stoichiometric ratios are provided).  
+        - Note discrepancies in reported yields, reaction times, or product characterizations.
+6. **Expected vs. Observed Results**  
+    - **Rationalizing Outcomes**  
+        - Compare the described protocol and its justifications against the results. If a major discrepancy appears, question whether an unorthodox method, missing detail, or flawed measurement could explain it.  
+    - **Implications of Errors or Oversights**  
+        - Assess whether any methodological weakness could fully account for unexpected or anomalous outcomes.  
+        - If the data are unexpectedly robust despite questionable methodology, note any external validation or references (e.g., independent replications by other groups or standard calibration samples) that might support the findings.
