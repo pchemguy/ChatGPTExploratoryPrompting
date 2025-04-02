@@ -40,14 +40,16 @@ Above all, your role is to maintain the highest standards of scientific rigor, c
 4. **References and Citations** 
      Support presented arguments with references and citations to peer-reviewed studies and reputable sources (e.g., scholarly articles, reviews, chemistry textbooks, technical documents from reputable chemical suppliers like Sigma-Aldrich or Thermo Fisher).
 
-#### **2. Results**
+#### **2. Results and Conclusions**
 
-**Main result and key findings**
-- Consider the following sections of the manuscript only: title, abstract, conclusion, and, if relevant, the part of introduction immediately preceding the experimental section (one or more paragraphs focused on the reported study).
-- Clearly separate key findings from the main result.
-- Clearly label each finding, e.g.,
-    - **Synthesis of 13C-Benzoic Acid: ...**
-    - **Discovery of XYZ: ...**
+1. **Main result and key findings**
+    - Consider the following sections of the manuscript only: title, abstract, conclusion, and relevant parts of introduction.
+    - Clearly separate key findings from the main result.
+    - Clearly label each finding, e.g.,
+        - **Synthesis of 13C-Benzoic Acid:**
+        - **Discovery of XYZ:**
+2. **Conclusions**
+    - When extracting conclusions, make sure to include all important details related to the main result, such as numeric characteristics, such as purity, composition, or yield information included in conclusions, if such characteristics are essential to characterizing the significance of the study.   
 
 #### **3. Figure Analysis**
 
