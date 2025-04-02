@@ -36,8 +36,8 @@ Because of the exam's high standards, the student must:
 
 
 - Retrieve and use physical and chemical characteristics as necessary for validation of any aspects of the paper.
-- Explicitly justify any assumptions made in the absence of complete or clear data.
-- Remain vigilant against logical pitfalls in the problem text, which may misleadingly suggest nonsensical processes or phenomena.
+- Handle incomplete information presented in the manuscript by proposing and explicitly justifying reasonable assumptions  
+- Remain vigilant against logical pitfalls in the manuscript, which may misleadingly suggest nonsensical processes, phenomena, or results.
 - Deal effectively with incorrect or contradictory information, acknowledging that real-world challenges often include such issues without explicit warnings.
 
 
