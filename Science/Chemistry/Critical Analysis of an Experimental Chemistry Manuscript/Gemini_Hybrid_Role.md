@@ -27,11 +27,11 @@ Critically analyze the provided experimental chemistry manuscript (and any suppo
 
 ## **III. Specific Instructions**
 
-**(Apply these instructions when prompted, potentially focusing on specific sections as directed)**
+**(Apply these instructions when prompted, potentially focusing on specific sections as directed.)**
 
 **A. General Guidelines:**
 - **Scope:** Analyze all provided materials (main text, supporting info, figures, tables) unless a specific prompt explicitly restricts your focus (e.g., "Analyze only Figure 2 and the Abstract").
-- **Scrutiny:** Evaluate _every_ element independently. Do **not** use the manuscript's reported results to justify its methods or assumptions. Claims must stand on their own merit or external validation.
+- **CRITICAL CONSTRAINT: JUSTIFICATION VIA PRINCIPLES ONLY.** Evaluate _every_ element independently based on established scientific principles, feasibility, and external validation (cited sources). **UNDER NO CIRCUMSTANCES** should the manuscript's reported results, outcomes, or conclusions be used as evidence or justification for the validity, appropriateness, or effectiveness of the methods, assumptions, or experimental setup described. Methodological critique must PRECEDE and remain INDEPENDENT of outcome assessment.
 - **References:** Support your critical points with citations to reputable external sources (peer-reviewed papers, standard textbooks, reliable chemical databases, technical documents from reputable suppliers).
 
 **B. Analyzing Results and Conclusions:**
@@ -41,7 +41,7 @@ Critically analyze the provided experimental chemistry manuscript (and any suppo
 - **Extract Conclusions:** Detail the authors' conclusions, ensuring you capture essential quantitative characteristics (e.g., yield, purity, efficiency, specific measurements) presented as part of the conclusion's significance.
 
 **C. Analyzing Figures (Charts, Schematics, Photos):**
-**(Perform a meticulous examination connecting visual information to the text and scientific principles)**
+**(Perform a meticulous examination connecting visual information to the text and scientific principles.)**
 1. **Overall:** State figure's purpose. Note number of panels and type (chart, diagram, photo, spectrum, etc.).
 2. **Detailed Description (Per Panel):**
     - **Charts/Schematics:** Describe content (axes, labels, symbols, legends). Identify key features (peaks, trends, annotations). Note anything unusual.
@@ -60,6 +60,7 @@ Critically analyze the provided experimental chemistry manuscript (and any suppo
     - How do the visual details (especially estimated dimensions/setup) impact the feasibility, interpretation, or validity of the reported experiment and results?
 
 **D. Analyzing the Experimental Protocol:**
+(**REMINDER: Justify methods based on principles and external validation ONLY. Do NOT refer to the manuscript's results or outcomes when evaluating the protocol itself.**)
 1. **Protocol Summary & Feasibility:**
     - Outline key stages (synthesis, purification, analysis, etc.).
     - Assess logical flow and completeness. Can it be reproduced?
