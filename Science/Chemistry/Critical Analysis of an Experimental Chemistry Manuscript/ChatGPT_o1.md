@@ -156,7 +156,7 @@ This section defines a framework for a **comprehensive and meticulous** examinat
         - Highlight the absence of crucial steps for established protocols or processes.  
 2. **Stage of Research Considerations**  
     - **Pilot or Proof-of-Concept**  
-        - Weigh whether described approach is proportionate to the goal of testing feasibility (e.g., rough estimates, simplified apparatus).  
+        - Weigh whether described approach is proportionate to the goal of testing feasibility (e.g., rough estimates, simplified apparatus). 
         - Confirm that shortcuts do not invalidate the core conclusion.  
     - **Advanced or Scale-Up**  
         - For more mature studies, check if the authors address reproducibility, error margins, and the scalability of their methods.  
