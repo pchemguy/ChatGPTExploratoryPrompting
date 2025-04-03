@@ -67,11 +67,21 @@ Critically analyze the provided experimental chemistry manuscript (and any suppo
     - Identify missing critical parameters (time, temp, pH, atmosphere, concentrations, workup details).
     - Highlight omissions of standard/expected steps.
 2. **Scrutinize the Core Experimental Protocol (Implementation of the Main Result):**
-    - Highlight stages directly involved in implementation of the main result.
-    - Provide a detailed description of each figure associated highlighted stages, but not other stages, such as analysis/verification/applications/etc.
-    - Identify key equipment processes used.
-    - Identify key performance characteristics having the major/critical influence on the process outcome.
-    - Check the manuscript for values of key performance characteristics. If none available, your task is gauge these values. Make best effort. If only the order of magnitude can be estimated, do it. Show your work.
+    - **Identify Core Stages:** Pinpoint the specific experimental stages directly responsible for achieving the claimed main result (e.g., the specific synthesis reaction, the key separation/purification step, the critical measurement technique underlying the main claim). Focus exclusively on these implementation stages.
+    - **Equipment and Processes:** Detail the key equipment (including model/manufacturer if provided, or type if generic) and the fundamental chemical or physical processes employed within these core stages, as described in the text.
+    - **Associated Figure Analysis:** For figures directly illustrating these core stages (e.g., reaction setup schematics, photos of key apparatus during operation, diagrams of separation units):
+        - Apply the detailed figure analysis methodology from Section III.C (overall purpose, detailed description per panel, quantitative estimation/inference with assumptions shown, cross-verification).
+        - Explicitly link the visual information (depicted equipment, connections, scale, observed phenomena) back to the textual description of the core protocol steps, noting consistencies or discrepancies.
+    - **Key Performance Characteristics & Values:**
+        - Identify the critical performance characteristics of the equipment or process steps that fundamentally influence the potential success, efficiency, scale, and precision of the outcome. Examples include: reactor temperature range and stability, distillation column separation efficiency (e.g., HETP, number of theoretical plates), reagent purity specifications, effectiveness and control of mixing, precision of reaction time control, control over heating/cooling rates, sensitivity and accuracy of measurement instruments used _within the core process_.
+        - Carefully extract any specific values for these characteristics provided within the manuscript or supporting information. Note units and any stated uncertainty.
+        - **If Critical Values Are Missing or Vague:** Your task is to _gauge_ plausible values, ranges, or orders of magnitude for these missing characteristics. Base these estimations on:
+            - The specific equipment described (referencing figure analysis from III.C if applicable).
+            - Typical specifications for standard laboratory equipment of the type mentioned.
+            - Fundamental chemical principles or engineering correlations (e.g., estimating achievable vacuum level, heat transfer limitations).
+            - Cited external data (reliable databases, manufacturer technical sheets, peer-reviewed literature).
+            - **Crucially:** Clearly state all assumptions made during this gauging process and explicitly show your reasoning or calculations. If only an order of magnitude can be reasonably estimated, state this clearly.
+    - **A Priori Feasibility Assessment:** Based _solely_ on the detailed analysis of the described equipment, processes, parameters (whether reported explicitly or gauged by you), and established scientific/engineering principles – **and explicitly NOT referencing the manuscript's reported results or conclusions** – perform a critical assessment. Evaluate the _a priori_ feasibility and inherent limitations of the described core protocol. Does the method, _as described_, possess the necessary capability, control, precision, and scale required, in principle, to achieve the _type_ and _magnitude_ of outcome claimed as the main result? Highlight any apparent mismatches between the described methodology and the demands of the claimed achievement based on first principles.
 3. **Contextual Appropriateness (Stage of Research):**
     - Is the protocol's rigor appropriate for the stated goal (e.g., exploratory PoC vs. detailed validation study)? Are shortcuts justified or detrimental?
     - For advanced studies, assess reproducibility considerations, error analysis, and scalability details.
