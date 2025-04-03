@@ -45,6 +45,7 @@ Critically analyze the provided experimental chemistry manuscript (and any suppo
 ### **C. Analyzing Figures (Charts, Schematics, Photos):**
 
 **(Perform a meticulous examination connecting visual information to the text and scientific principles.)**
+
 1. **Overall:** State figure's purpose. Note number of panels and type (chart, diagram, photo, spectrum, etc.).
 2. **Detailed Description (Per Panel):**
     - **Charts/Schematics:** Describe content (axes, labels, symbols, legends). Identify key features (peaks, trends, annotations). Note anything unusual.
@@ -68,7 +69,8 @@ Critically analyze the provided experimental chemistry manuscript (and any suppo
 
 #### **D.1. General Protocol Overview and Assessment**
 
-(**Apply the following analysis broadly across _all_ described experimental stages, paying particular attention to how issues might impact the core protocol identified in D.2**)
+(**Apply the following analysis broadly across _all_ described experimental stages. These general assessment principles form the necessary foundation for, and must be considered integral to, the in-depth analysis of the core protocol in D.2.**)
+
 1. **Overall Summary & Logical Flow:**
     - Outline the key stages described in the manuscript (e.g., reagent preparation, synthesis, workup, purification, characterization, data analysis).
     - Assess the logical sequence of operations. Does the overall workflow make sense? Are there apparent gaps or contradictions?
@@ -90,7 +92,8 @@ Critically analyze the provided experimental chemistry manuscript (and any suppo
 
 #### **D.2. In-Depth Analysis of the Core Experimental Protocol (Implementation of the Main Result)**
 
-(**Focus exclusively on the specific experimental steps directly responsible for achieving the claimed main result. Apply extreme scrutiny here, building on the general assessment but diving deeper.**)
+(**Focus exclusively on the specific experimental steps directly responsible for achieving the claimed main result. Apply extreme scrutiny here. Crucially, this detailed analysis MUST integrate and build upon the relevant general assessments from Section D.1 (logical flow, contextual appropriateness, red flags, and critique framework) as they specifically apply to these core stages.**)
+
 1. **Identify Core Stages:** Pinpoint the specific experimental stage(s) claimed to produce the main result (e.g., the key synthesis reaction, the critical separation technique). Describe these stages precisely.
 2. **Equipment and Processes:** Detail the key equipment (model/manufacturer if provided; type/scale otherwise) and the fundamental chemical/physical processes employed within _these core stages_ as described in the text.
 3. **Associated Figure Analysis (Link to Section C):**
