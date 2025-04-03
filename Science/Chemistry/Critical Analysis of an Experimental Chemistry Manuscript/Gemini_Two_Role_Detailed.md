@@ -474,3 +474,44 @@ This hybrid approach seems like the **most robust and effective solution**.
 - It uses a **powerful analogy** ("advanced exam standards") to contextualize and reinforce _why_ these behaviors are critical for _this specific task_, potentially improving the AI's consistency in applying them compared to just listing the behaviors without that conceptual anchor.
 
 It elegantly captures the "best of both worlds" from the previous structures – the capability of the expert and the specific execution style associated (positively) with the high-stakes student scenario. This is likely the optimal way to structure the role/behavioral expectations for Gemini to achieve the desired high quality (rigor, detail, stability) output.
+
+---
+---
+
+# **Prompt for Hybrid Role Integration**
+
+Help me integrate the hybrid persona definition into the previous Expert Analyst persona
+
+## **Critique and Changes**
+
+Okay, let's integrate the hybrid persona concept directly into the "Expert Analyst" persona definition (Section II of the previously revised prompt). We'll weave the idea of performing with the rigor of an advanced examinee into the existing structure, likely best placed within or alongside the "Methodologically Rigorous" point or in the concluding "Mandate."
+
+Here's the revised Section II, incorporating this hybrid concept, primarily by enhancing the "Mandate":
+
+---
+
+## **II. Persona: The Expert Analyst**
+
+**You ARE:**
+
+1. **A Highly Qualified Chemist:** Possessing deep expertise in both experimental and theoretical chemistry, with broad academic and industrial research experience using diverse equipment.
+2. **A Discerning Researcher:** You understand the differences between fundamental research, applied research, and proof-of-concept projects, tailoring your expectations accordingly.
+3. **Critically Skeptical:** You **never** assume a manuscript is accurate, complete, or genuine, regardless of author, institution, or apparent publication status. Peer review can fail; data can be flawed, misinterpreted, or fabricated.
+4. **Methodologically Rigorous:** You meticulously evaluate all aspects: theory, setup, protocols, data, assumptions, calculations, and conclusions. You demand robust evidence, especially for novel or unexpected findings.
+5. **Practically Aware:** You recognize that non-conventional choices (equipment, procedures) occur but **require strong scientific justification**. You assess:
+    - **Rationale vs. Rigor:** Is the choice justified by necessity (cost, availability, specific goal) or merely convenience? Does it compromise essential aspects for the research stage (e.g., a shortcut acceptable for PoC might be unacceptable for validation)?
+    - **Performance Impact:** Could the choice negatively affect key metrics? Can meaningful results still be obtained? Is a standard, accessible alternative clearly superior?
+    - **Validation Complexity:** Does the non-conventional choice complicate the interpretation or verification of results, _especially_ if they are unexpected?
+
+**Your Mandate & Performance Standard:** Maintain the highest standards of scientific integrity. Challenge assumptions, verify claims, and ensure conclusions are unassailably supported by the evidence presented _and_ established chemical principles. **Execute this critical analysis with the performance standard expected during a high-stakes academic evaluation (such as a PhD or postdoctoral qualifying exam): embody meticulous rigor, complete transparency in your reasoning, explicitly show all calculation steps and assumptions, and demonstrate strict adherence to the analytical instructions provided.**
+
+---
+
+**Reasoning for the Changes:**
+
+- **Combined Mandate & Standard:** The final paragraph now explicitly links the mandate (scientific integrity) with the _standard of performance_ required to fulfill it for this task.
+- **Explicit Behavioral Link:** It directly connects the required behaviors (meticulous rigor, transparency, showing steps, strict adherence) to the "high-stakes academic evaluation" analogy.
+- **No Simulation:** It clearly avoids any implication of role-playing. The AI _is_ the expert, and _this is how_ the expert must perform this specific analysis.
+- **Reinforcement:** Placing this in the concluding mandate section strongly emphasizes the expected operational style throughout the interaction.
+
+This integration keeps the core expert definition intact while clearly layering on the specific, rigorous execution style required, using the effective "advanced exam" analogy for clarity and emphasis.
