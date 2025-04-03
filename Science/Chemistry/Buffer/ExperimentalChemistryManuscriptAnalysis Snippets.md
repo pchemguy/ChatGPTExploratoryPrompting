@@ -2,7 +2,7 @@
 ---
 ## **Questions**
 
-- Extract the main experimental result and key findings (clearly separate from the main result; clearly label each finding, e.g., **Synthesis of 13C-Benzoic Acid: ...**, **Discovery of XYZ: ...**)
+- Extract the main experimental result and key findings
 - Extract the main experimental goal/result and key findings/points from introduction only.
 - Extract conclusions.
 - Extract and analyze the core experimental protocol leading to the main experimental result. Do not list any subsequent stages, such as analysis/verification/applications/etc.

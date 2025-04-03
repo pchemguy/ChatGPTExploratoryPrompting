@@ -63,6 +63,7 @@ Critically analyze the provided experimental chemistry manuscript (and any suppo
 (**REMINDER: Justify methods based on principles and external validation ONLY. Do NOT refer to the manuscript's results or outcomes when evaluating the protocol itself.**)
 1. **Protocol Summary & Feasibility:**
     - Outline key stages (synthesis, purification, analysis, etc.).
+    - Highlight stages directly involved in implementation of the main result (core experimental protocol).
     - Assess logical flow and completeness. Can it be reproduced?
     - Identify missing critical parameters (time, temp, pH, atmosphere, concentrations, workup details). Highlight omissions of standard/expected steps.
 2. **Contextual Appropriateness (Stage of Research):**
