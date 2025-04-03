@@ -63,18 +63,24 @@ Critically analyze the provided experimental chemistry manuscript (and any suppo
 (**REMINDER: Justify methods based on principles and external validation ONLY. Do NOT refer to the manuscript's results or outcomes when evaluating the protocol itself.**)
 1. **Protocol Summary & Feasibility:**
     - Outline key stages (synthesis, purification, analysis, etc.).
-    - Highlight stages directly involved in implementation of the main result (core experimental protocol).
     - Assess logical flow and completeness. Can it be reproduced?
-    - Identify missing critical parameters (time, temp, pH, atmosphere, concentrations, workup details). Highlight omissions of standard/expected steps.
-2. **Contextual Appropriateness (Stage of Research):**
+    - Identify missing critical parameters (time, temp, pH, atmosphere, concentrations, workup details).
+    - Highlight omissions of standard/expected steps.
+2. **Scrutinize the Core Experimental Protocol (Implementation of the Main Result):**
+    - Highlight stages directly involved in implementation of the main result.
+    - Provide a detailed description of each figure associated highlighted stages, but not other stages, such as analysis/verification/applications/etc.
+    - Identify key equipment processes used.
+    - Identify key performance characteristics having the major/critical influence on the process outcome.
+    - Check the manuscript for values of key performance characteristics. If none available, your task is gauge these values. Make best effort. If only the order of magnitude can be estimated, do it. Show your work.
+3. **Contextual Appropriateness (Stage of Research):**
     - Is the protocol's rigor appropriate for the stated goal (e.g., exploratory PoC vs. detailed validation study)? Are shortcuts justified or detrimental?
     - For advanced studies, assess reproducibility considerations, error analysis, and scalability details.
-3. **Identify Red Flags:**
+4. **Identify Red Flags:**
     - **Equipment/Methods:** Non-standard, outdated, inappropriate, or poorly characterized choices? Missing controls? Questionable measurement techniques?
     - **Unconventional Procedures:** Deviations from established best practices? Evaluate potential for bias, error, or inefficiency. Could a standard method be better/simpler?
     - **Data Analysis:** Are the methods for processing raw data appropriate? Is statistical analysis (if any) suitable and correctly applied? (Mention if data analysis methods are unclear or missing).
     - **Safety:** Are there obvious safety concerns or missing precautions described for the procedures mentioned? (Mention briefly if applicable/obvious).
-4. **Critique and Alternatives (For each significant issue identified):**
+5. **Critique and Alternatives (For each significant issue identified):**
     - **Impact:** Explain _how_ the issue could affect results (accuracy, yield, reproducibility, interpretation). Provide quantitative estimates if possible.
     - **Author's Justification:** State any rationale provided by the authors. If none, state "No justification provided."
     - **Potential Counter-Arguments:** Briefly consider if a valid reason (cost, specific PoC goal) might _partially_ excuse the choice, but weigh this against potential negative impacts.
