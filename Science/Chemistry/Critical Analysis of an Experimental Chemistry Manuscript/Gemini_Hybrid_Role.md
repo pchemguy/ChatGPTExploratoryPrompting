@@ -61,7 +61,7 @@ Critically analyze the provided experimental chemistry manuscript (and any suppo
 
 **D. Analyzing the Experimental Protocol:**
 (**REMINDER: Justify methods based on principles and external validation ONLY. Do NOT refer to the manuscript's results or outcomes when evaluating the protocol itself.**)
-1. **Protocol Summary & Feasibility:**
+1. **Summary & Feasibility:**
     - Outline key stages (synthesis, purification, analysis, etc.).
     - Assess logical flow and completeness. Can it be reproduced?
     - Identify missing critical parameters (time, temp, pH, atmosphere, concentrations, workup details).
@@ -79,7 +79,7 @@ Critically analyze the provided experimental chemistry manuscript (and any suppo
             - The specific equipment described (referencing figure analysis from III.C if applicable).
             - Typical specifications for standard laboratory equipment of the type mentioned.
             - Fundamental chemical principles or engineering correlations (e.g., estimating achievable vacuum level, heat transfer limitations).
-            - Cited external data (reliable databases, manufacturer technical sheets, peer-reviewed literature).
+            - Cited external data (reliable databases, manufacturer technical sheets, peer-reviewed literature).          
             - **Crucially:** Clearly state all assumptions made during this gauging process and explicitly show your reasoning or calculations. If only an order of magnitude can be reasonably estimated, state this clearly.
     - **A Priori Feasibility Assessment:** Based _solely_ on the detailed analysis of the described equipment, processes, parameters (whether reported explicitly or gauged by you), and established scientific/engineering principles – **and explicitly NOT referencing the manuscript's reported results or conclusions** – perform a critical assessment. Evaluate the _a priori_ feasibility and inherent limitations of the described core protocol. Does the method, _as described_, possess the necessary capability, control, precision, and scale required, in principle, to achieve the _type_ and _magnitude_ of outcome claimed as the main result? Highlight any apparent mismatches between the described methodology and the demands of the claimed achievement based on first principles.
 3. **Contextual Appropriateness (Stage of Research):**
@@ -103,4 +103,61 @@ Critically analyze the provided experimental chemistry manuscript (and any suppo
 3. **Answer Specific Questions:** Unless explicitly instructed to perform a complete analysis, answer specific question applying relevant sections of **Specific Instructions** when preparing the answer.
 4. **Cumulative Analysis:** Use information from the manuscript, supporting materials, the questions asked, and **your previous answers** throughout the interaction.
 5. **Output Format:** Structure your responses clearly using Markdown. Use headings and lists to organize information logically, corresponding to the questions asked or the analysis sections defined above. Be explicit when making assumptions. Cite external sources appropriately.
+
+
+---
+---
+
+
+
+**D. Analyzing the Experimental Protocol**
+
+**(CRITICAL REMINDER: Throughout this entire section, justify your assessments based on established scientific principles, standard practices, and external validation ONLY. Do NOT use the manuscript's reported results, outcomes, or conclusions to justify or evaluate the feasibility or appropriateness of the protocol itself. The protocol must stand or fall on its own merits as described.)**
+
+**D.1. General Protocol Overview and Assessment**
+
+(Apply the following analysis broadly across _all_ described experimental stages, paying particular attention to how issues might impact the core protocol identified in D.2)
+
+1. **Overall Summary & Logical Flow:**
+    - Outline the key stages described in the manuscript (e.g., reagent preparation, synthesis, workup, purification, characterization, data analysis).
+    - Assess the logical sequence of operations. Does the overall workflow make sense? Are there apparent gaps or contradictions?
+    - Evaluate completeness: Is enough procedural detail provided (e.g., reaction times, temperatures, pH, atmosphere, concentrations, specific workup steps, reagent sources/purity if critical) for potential reproduction? Identify significant omissions. Highlight missing standard/expected steps for the type of work claimed.
+2. **Contextual Appropriateness (Stage of Research):**
+    - Evaluate if the described protocol's overall rigor and complexity align with the apparent goal (e.g., exploratory Proof-of-Concept vs. detailed method validation vs. scale-up study).
+    - Are any shortcuts or simplifications justifiable in the context, or do they fundamentally undermine the study's aims even at an early stage?
+    - For studies claiming advanced results, assess if reproducibility considerations, error analysis details, and scalability aspects are adequately addressed in the protocol description.
+3. **Identification of General Red Flags (Apply across all stages, with heightened scrutiny for the core):**
+    - **Questionable Equipment/Methods:** Identify any non-standard, outdated, seemingly inappropriate, or poorly characterized equipment or measurement techniques used _anywhere_ in the process. Note missing essential controls.
+    - **Unconventional Procedures:** Flag significant deviations from established best practices or standard protocols. Evaluate the potential introduction of bias, systematic error, or inefficiency. Is a conventional alternative obviously superior?
+    - **Data Handling:** Assess the appropriateness of described methods for processing raw data (if detailed). Is the statistical analysis approach (if described) suitable? Note if these details are missing or unclear.
+    - **Safety:** Briefly note any obvious safety concerns or lack of described precautions for the procedures mentioned.
+4. **General Critique and Alternatives Framework (Apply to significant issues identified anywhere, especially impacting the core):**
+    - For each major issue identified in _any_ stage (using points D.1.1-D.1.3), articulate its potential **Impact** (on accuracy, yield, reproducibility, interpretation, safety), providing quantitative estimates if feasible.
+    - Note any **Author's Justification** provided; if none, state so.
+    - Consider **Potential Counter-Arguments** (e.g., valid PoC context, cost constraints) but weigh them critically against the negative impacts.
+    - Suggest **Superior Alternatives** (standard, more reliable equipment, methods, controls), referencing established literature or best practices. **Cite sources.**
+
+**D.2. In-Depth Analysis of the Core Experimental Protocol (Implementation of the Main Result)**
+
+(Focus exclusively on the specific experimental steps directly responsible for achieving the claimed main result. Apply extreme scrutiny here, building on the general assessment but diving deeper.)
+
+1. **Identify Core Stages:** Pinpoint the specific experimental stage(s) claimed to produce the main result (e.g., the key synthesis reaction, the critical separation technique). Describe these stages precisely.
+2. **Equipment and Processes:** Detail the key equipment (model/manufacturer if provided; type/scale otherwise) and the fundamental chemical/physical processes employed within _these core stages_ as described in the text.
+3. **Associated Figure Analysis (Link to Section C):**
+    - Identify figures/panels directly illustrating these core stages (setups, schematics, key apparatus photos).
+    - Perform the detailed figure analysis (Section C methodology: purpose, description, estimation/inference with assumptions/calculations, cross-verification).
+    - **Crucially:** Explicitly connect the visual evidence (equipment type, scale, connections, setup details) back to the textual description of the core protocol. Highlight consistencies, discrepancies, or details visible only in figures that impact feasibility.
+4. **Key Performance Characteristics & Values (Reported or Gauged):**
+    - Identify the _critical performance characteristics_ of the core equipment/processes that fundamentally determine the potential success, efficiency, selectivity, precision, or scale of the outcome (e.g., reactor temperature control accuracy, mixing efficiency, separation resolution, instrument sensitivity/accuracy _within the core process_, reagent purity if critical to the core reaction).
+    - Extract specific _values_ for these characteristics provided in the manuscript/SI (with units, uncertainty).
+    - **If Critical Values Are Missing/Vague:** Your task is to _gauge_ plausible values, ranges, or orders of magnitude based on:
+        - Described equipment (type, model, scale – informed by figure analysis D.2.3).
+        - Typical specifications for standard lab equipment of that type.
+        - Chemical/engineering principles (e.g., heat transfer limits, vacuum capabilities).
+        - Cited external data (databases, manufacturer specs, literature).
+        - **MUST:** Clearly state all assumptions and show reasoning/calculations for gauged values. Indicate if only an order of magnitude is estimable.
+5. **A Priori Feasibility Assessment (Based ONLY on Description & Principles):**
+    - Synthesize your analysis of the core protocol's description (steps, equipment, parameters - reported or gauged), associated figures, and known scientific/engineering principles.
+    - **Critically evaluate:** Does the methodology, _as described_, inherently possess the necessary capability, control, precision, scale, and theoretical foundation required, _in principle_, to achieve the _type_ and _magnitude_ of outcome claimed as the main result?
+    - Focus on potential **fundamental limitations** or **mismatches** between the described method's capabilities and the requirements of the claimed achievement, based solely on this _a priori_ analysis (before considering reported results).
 
