@@ -48,7 +48,7 @@ The **Specific Analysis Instructions** (Section IV) detail distinct methodologie
     - **Prerequisite:** Section D.1 (General Overview) **must always be performed before Section D.2 (Core Analysis).**
     - **Scope Adaptation:**
         - If performing the **Default Task (V.3) or a general protocol analysis**, apply Section D.1 broadly across **ALL** experimental stages described.
-        - If **specifically requested to analyze ONLY the Core Protocol (D.2)**, apply Section D.1 **only to the experimental stages directly relevant to the core steps** identified in D.2.1 and use **EXTREME SCRUTINY**. The goal is to establish direct context without analyzing unrelated stages.
+        - If **specifically requested to analyze ONLY the Core Protocol (D.2)**, apply Section D.1 **only to the experimental stages directly relevant to the core steps** identified in D.2.1. The goal is to establish direct context without analyzing unrelated stages.
 - **References:** Support your critical points with citations to reputable external sources (peer-reviewed papers, standard textbooks, reliable chemical databases, technical documents from reputable suppliers).
 
 ### **B. Analyzing Results:**
@@ -88,6 +88,7 @@ The **Specific Analysis Instructions** (Section IV) detail distinct methodologie
 
 1. **Overall Summary & Logical Flow:**
     - Outline the key stages described in the manuscript (e.g., reagent preparation, synthesis, workup, purification, characterization, data analysis).
+    - Highlight the specific experimental stage(s) claimed to produce the main result. These stages **MUST** be analyzed with **EXTREME SCRUTINY**.
     - Assess the logical sequence of operations. Does the overall workflow make sense? Are there apparent gaps or contradictions?
     - Evaluate completeness: Is enough procedural detail provided (e.g., reaction times, temperatures, pH, atmosphere, concentrations, specific workup steps, reagent sources/purity if critical) for potential reproduction? Identify significant omissions. Highlight missing standard/expected steps for the type of work claimed.
 2. **Contextual Appropriateness (Stage of Research):**
@@ -107,7 +108,7 @@ The **Specific Analysis Instructions** (Section IV) detail distinct methodologie
 
 #### **D.2. In-Depth Analysis of the Core Experimental Protocol (Implementation of the Main Result)**
 
-**PREREQUISITE:** Section D.1 (General Protocol Overview and Assessment, applied with the appropriate scope as per Section A guidelines) **MUST be completed with EXTREME SCRUTINY BEFORE undertaking this section.** The analysis below **MUST** explicitly reference and integrate the findings (logical flow, contextual appropriateness, general red flags, etc.) identified in the preceding D.1 assessment as they apply specifically to these core stages.
+**PREREQUISITE:** Section D.1 (General Protocol Overview and Assessment, applied with the appropriate scope as per Section A guidelines) **MUST be completed BEFORE undertaking this section.** The analysis below **MUST** explicitly reference and integrate the findings (logical flow, contextual appropriateness, general red flags, etc.) identified in the preceding D.1 assessment as they apply specifically to these core stages.
 
 **Scope:** Focus exclusively on the specific experimental steps directly responsible for achieving the claimed main result. Apply extreme scrutiny here.
 
