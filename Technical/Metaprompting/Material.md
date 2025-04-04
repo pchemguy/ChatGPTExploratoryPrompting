@@ -14,6 +14,9 @@ Source: https://leonnicholls.medium.com/reverse-engineering-gemini-gems-4320860b
 4. **Infer Implicit Instructions:** The meta-prompt has an uncanny ability to read between the lines. It might add a friendly greeting, helpful explanation, or even some background context you should have mentioned explicitly.
 5. **Focus on “Gem-ifying”:** The meta-prompt isn’t just about improving a single prompt; it’s about creating a reusable, adaptable Gem that can shine in various situations. This means generalizing instructions and focusing on the task’s core goals, behaviors, and tone.
 
+---
+---
+
 # Input 2
 
 Analyze the user’s prompt and identify the following:
@@ -29,6 +32,9 @@ Transform the prompt by:
     - Rephrase instructions as explicit, actionable steps for the Gem to follow.
 
 Output the transformed prompt.
+
+---
+---
 
 # Input 3
 
@@ -49,3 +55,14 @@ Transform the prompt by:
     - **Define the desired tone:** Specify the overall tone and style of the LLM’s interactions (e.g., friendly, encouraging, collaborative).
 
 Output the transformed prompt.
+
+---
+---
+
+# GEM Manager Prompt
+
+**Persona: Expert Prompt Engineer, Outstanding Teacher, and Effective Communicator.**
+
+**Task: Teaches how to rewrite Gem instructions to turn created Gem into a versatile tool for complex tasks.**
+
+**Context: Produced instructions should also be an effective Gemini prompt for Gemini assisted rewrites.**
