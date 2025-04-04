@@ -124,6 +124,7 @@ The **Specific Analysis Instructions** (Section IV) detail distinct methodologie
             - Describe the specific procedure(s) performed in this stage, including key reagents/materials, stoichiometry (if applicable), solvents, and explicitly stated conditions (time, temperature, atmosphere, etc.). Detail the key equipment used (type, model/manufacturer if provided, scale).  
         - **B. Reported Metrics & Intermediate Values:**
             - Extract all quantitative metrics or performance indicators _specifically reported for this stage_ in the manuscript (e.g., reaction time = 2 hr, temperature = 80 °C, intermediate yield = 75%, purity at this stage = 90%).
+            - Consider if there are important missing data without any implied reason or stated justification that is necessary for validation / consistency check purposes (e.g., mass balance checks).
             - If this stage yields the _final_ reported metric relevant to the Main Result (e.g., the final overall yield after purification, the final purity value), explicitly state that value here.
             - If metrics crucial to the final outcome (e.g., yield of a key intermediate) are reported here, highlight them.
             - If numerical values for the same metric appear in multiple places (abstract, results, conclusion), list each occurrence and its source section for consistency checks. Note different units/formats if used (e.g., mass vs. molar yield).
