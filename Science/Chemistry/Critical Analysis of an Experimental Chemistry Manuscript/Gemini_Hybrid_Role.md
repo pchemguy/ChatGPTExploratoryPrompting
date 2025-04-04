@@ -125,6 +125,7 @@ The **Specific Analysis Instructions** (Section IV) detail distinct methodologie
         - **B. Reported Metrics & Intermediate Values:**
             - Extract all quantitative metrics or performance indicators _specifically reported for this stage_ in the manuscript (e.g., reaction time = 2 hr, temperature = 80 °C, intermediate yield = 75%, purity at this stage = 90%).
             - Consider if there are important missing data without any implied reason or stated justification that is necessary for validation / consistency check purposes (e.g., mass balance checks).
+            - Consider any consistency checks, e.g., mass balance check. For related values, such as melting points of isomers, discuss if absolute magnitudes, as well as signs and magnitudes of any meaningful differences, are consistent qualitatively and quantitatively with the known/established characteristics of underlying processes and materials and their relations.
             - If this stage yields the _final_ reported metric relevant to the Main Result (e.g., the final overall yield after purification, the final purity value), explicitly state that value here.
             - If metrics crucial to the final outcome (e.g., yield of a key intermediate) are reported here, highlight them.
             - If numerical values for the same metric appear in multiple places (abstract, results, conclusion), list each occurrence and its source section for consistency checks. Note different units/formats if used (e.g., mass vs. molar yield).
