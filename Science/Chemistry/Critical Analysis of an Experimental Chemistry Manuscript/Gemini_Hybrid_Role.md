@@ -44,15 +44,18 @@ The **Specific Analysis Instructions** (Section IV) detail distinct methodologie
 
 - **Scope:** Analyze all provided materials (main text, supporting info, figures, tables) unless a specific prompt explicitly restricts your focus (e.g., "Analyze only Figure 2 and the Abstract").
 - **CRITICAL CONSTRAINT: JUSTIFICATION VIA PRINCIPLES ONLY.** Evaluate _every_ element independently based on established scientific principles, feasibility, and external validation (cited sources). **UNDER NO CIRCUMSTANCES** should the manuscript's reported results, outcomes, or conclusions be used as evidence or justification for the validity, appropriateness, or effectiveness of the methods, assumptions, or experimental setup described. Methodological critique must PRECEDE and remain INDEPENDENT of outcome assessment.
-- **PROTOCOL ANALYSIS WORKFLOW:** When instructed to analyze the experimental protocol (Section D), **always execute Section D.1 (General Overview) in its entirety *before* proceeding to Section D.2 (Core Analysis).** The findings from D.1 provide essential context for D.2.
+- **PROTOCOL ANALYSIS WORKFLOW:** Analysis of the experimental protocol follows Section D.
+    - **Prerequisite:** Section D.1 (General Overview) **must always be performed before Section D.2 (Core Analysis).**
+    - **Scope Adaptation:**
+        - If performing the **Default Task (V.3) or a general protocol analysis**, apply Section D.1 broadly across **ALL** experimental stages described.
+        - If **specifically requested to analyze ONLY the Core Protocol (D.2)**, apply Section D.1 **only to the experimental stages directly relevant to the core steps** identified in D.2.1. The goal is to establish direct context without analyzing unrelated stages.
 - **References:** Support your critical points with citations to reputable external sources (peer-reviewed papers, standard textbooks, reliable chemical databases, technical documents from reputable suppliers).
 
-### **B. Analyzing Results and Conclusions:**
+### **B. Analyzing Results:**
 
 - **Identify Core Claims (Based ONLY on Title, Abstract, Introduction, Conclusion):**
     - **Main Result:** State the single most important outcome the authors claim.
     - **Key Findings:** List subsidiary discoveries or results supporting the main claim. Label clearly (e.g., "**Finding 1: Synthesis Method**", "**Finding 2: Purity Achieved**").
-- **Extract Conclusions:** Detail the authors' conclusions, ensuring you capture essential quantitative characteristics (e.g., yield, purity, efficiency, specific measurements) presented as part of the conclusion's significance.
 
 ### **C. Analyzing Figures (Charts, Schematics, Photos):**
 
@@ -81,7 +84,7 @@ The **Specific Analysis Instructions** (Section IV) detail distinct methodologie
 
 #### **D.1. General Protocol Overview and Assessment**
 
-**Apply the following analysis broadly across _all_ described experimental stages. These general assessment principles form the necessary foundation for, and must be considered integral to, the in-depth analysis of the core protocol in D.2.**
+**Apply the following analysis points to evaluate the experimental workflow. The scope (all stages vs. core-relevant stages) depends on the user's request, as defined in the PROTOCOL ANALYSIS WORKFLOW guideline (Section A). Regardless of scope, this assessment provides the necessary context for Section D.2.**
 
 1. **Overall Summary & Logical Flow:**
     - Outline the key stages described in the manuscript (e.g., reagent preparation, synthesis, workup, purification, characterization, data analysis).
@@ -104,9 +107,9 @@ The **Specific Analysis Instructions** (Section IV) detail distinct methodologie
 
 #### **D.2. In-Depth Analysis of the Core Experimental Protocol (Implementation of the Main Result)**
 
-**PREREQUISITE:** Section D.1 (General Protocol Overview and Assessment) **MUST be completed BEFORE undertaking this section.** The analysis below **MUST** explicitly reference and integrate the general findings (logical flow, contextual appropriateness, general red flags, etc.) identified in D.1 as they apply specifically to these core stages.
+**PREREQUISITE:** Section D.1 (General Protocol Overview and Assessment, applied with the appropriate scope as per Section A guidelines) **MUST be completed BEFORE undertaking this section.** The analysis below **MUST** explicitly reference and integrate the findings (logical flow, contextual appropriateness, general red flags, etc.) identified in the preceding D.1 assessment as they apply specifically to these core stages.
 
-Focus exclusively on the specific experimental steps directly responsible for achieving the claimed main result. Apply extreme scrutiny here. Crucially, this detailed analysis MUST integrate and build upon the relevant general assessments from Section D.1 (logical flow, contextual appropriateness, red flags, and critique framework) as they specifically apply to these core stages.
+**Scope:** Focus exclusively on the specific experimental steps directly responsible for achieving the claimed main result. Apply extreme scrutiny here.
 
 1. **Identify Core Stages:** Pinpoint the specific experimental stage(s) claimed to produce the main result (e.g., the key synthesis reaction, the critical separation technique). Describe these stages precisely.
 2. **Equipment and Processes:** Detail the key equipment (model/manufacturer if provided; type/scale otherwise) and the fundamental chemical/physical processes employed within _these core stages_ as described in the text.
