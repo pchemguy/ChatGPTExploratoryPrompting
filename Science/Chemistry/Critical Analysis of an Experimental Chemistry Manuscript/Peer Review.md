@@ -125,7 +125,7 @@ Let's extend the source list. As far as journals are concerns, the search should
     - **Keywords:** Combine terms like `"peer review"` OR `"manuscript review"` with terms like `(quality OR process OR effectiveness OR training OR bias OR methodology OR best practices OR analysis OR guidelines OR standards)` AND discipline-specific terms `(chemistry OR physics OR "physical chemistry" OR "experimental science" OR spectroscopy OR instrumentation OR materials)`. Also consider `"meta-research" OR "scientometrics"` combined with peer review and discipline terms.
     - **Target Journals:** While searching broadly, pay attention to potential articles in the high-priority journals listed above, as well as journals focused on science communication, meta-research, or higher education in STEM fields (e.g., _PLoS ONE_, _Scientometrics_, _Journal of Chemical Education_ - if relevant content exists).
     - **Filter Focus:** Prioritize papers that offer constructive analysis, propose improved methods, detail specific evaluation criteria tested, or provide evidence-based recommendations applicable to the review task.
-5. **General Search (Quality Filter):** Broader web searches for high-quality resources from reputable sources (e.g., COPE, research consortia) not captured above, maintaining strict filters for actionability and experimental science relevance.
+5. **General Search (Quality Filter):** Conduct broader web searches but apply strict filters for actionability and relevance to experimental sciences. Look for guides potentially hosted on personal academic pages, research group sites, or non-profit organizations focused on research integrity/publishing (e.g., COPE - Committee on Publication Ethics, while often policy-focused, may link to training).
 
 **Keywords & Search Strings (Examples - Combine and Modify):**
 - _Guides:_ `"guide for peer reviewers" + "experimental chemistry"`, `"how to review a scientific paper" + "physical chemistry" + checklist`, `site:.edu "peer review" + "STEM" + instructions`
@@ -135,3 +135,52 @@ Let's extend the source list. As far as journals are concerns, the search should
 
 **Output:** Collate identified resources (guides, articles, etc.), including direct links/DOIs, source (publisher, journal, university, database), a brief description highlighting actionable elements or key findings relevant to novice reviewers, and format. Distinguish clearly between instructional guides and research publications about the process.
 
+# Prompt
+
+**Objective:** Identify and retrieve specific, actionable resources (guides, tutorials, checklists, training materials) and relevant scholarly publications (research articles, reviews, perspectives, editorials) that offer insights or guidance on performing academic peer review. The focus remains on resources suitable for early-career researchers (Ph.D. students, postdocs) in experimental sciences with limited prior review experience.
+
+**Context:** The traditional "learn by doing" approach to peer review often lacks explicit instruction. This research aims to find resources that bridge this gap by providing concrete guidance, moving beyond general principles to offer step-by-step instructions or detailed criteria applicable to evaluating manuscripts.
+
+**Subject Domain Focus:**
+- Experimental Chemistry (including Organic, Inorganic, Materials)
+- Physical Chemistry (including Spectroscopy, Kinetics, Thermodynamics, Surface Science)
+- Analytical Chemistry (particularly concerning instrumentation and experimental methodology)
+- Interdisciplinary areas heavily involving experimental work in these fields (e.g., Chemical Physics, Materials Science).
+
+**Key Requirements for Resources:**
+1. **Actionability:** Must provide practical steps, specific questions to ask, or clear criteria for evaluating different sections of a manuscript (Introduction, Methods, Results, Discussion, Conclusion, Figures, References).
+2. **Target Audience Suitability:** Explicitly aimed at new reviewers OR detailed enough to be easily followed by someone without prior experience or tacit knowledge.
+3. **Discipline Specificity:** Content should be relevant to the norms and common manuscript structures within _experimental_ chemistry and physics journals. Avoid purely theoretical, computational, or social science-focused guides unless the principles are demonstrably transferable and highly detailed.
+4. **Format:** Open to various formats including webpages, downloadable PDFs, checklists, online course modules, and peer-reviewed journal articles/reviews/editorials.
+
+**Specific Search Areas & Source Prioritization:**
+1. **Publisher/Society Resource Centers:** Systematically search reviewer/author centers for dedicated guides:
+    - Elsevier, Springer Nature, Wiley, ACS, RSC, AIP, APS, Taylor & Francis, IOP Publishing.
+2. **High-Priority Journals (Reviewer Guideline Sections):** Investigate "Information for Reviewers," "Reviewer Guidelines," or similar sections for specific journals like:
+    - _ACS:_ JACS, ACS Central Sci, Anal Chem, J Phys Chem (A/B/C/L), ACS Nano, Chem Mater, Org Lett, Inorg Chem.
+    - _AIP/APS:_ J Chem Phys, Appl Phys Lett, Phys Rev Lett, Phys Rev (B/Appl/Mater), Rev Sci Instrum.
+    - _Others:_ Chem Sci, Angew Chem, Adv Mater, J Mater Res (JMR), Surf Sci, Chem Phys Lett, relevant experimental physics journals.
+3. **Top STEM University Libraries & Writing Centers:** Search websites (prioritizing `.edu` domains, especially library, research office, or writing center subdomains) of institutions known for strong experimental science programs:
+    - MIT, Caltech, Stanford, Harvard, UC Berkeley, Cornell, Princeton, Cambridge, ETH Zurich, etc.
+    - _Keywords:_ "peer review guide," "how to review," "reviewer training," "scholarly publishing guide."
+4. **Scholarly Literature Search:**
+    - **Databases:** Utilize bibliographic databases like Web of Science, Scopus, Google Scholar, SciFinder (for Chem), INSPEC (for Phys/Eng), PubMed (for relevant interfaces).
+    - **Objective:** Find peer-reviewed articles, reviews, editorials, or perspective pieces _discussing or analyzing_ the peer review process within or relevant to experimental chemistry and physics.
+    - **Keywords:** Combine terms like `"peer review"` OR `"manuscript review"` with terms like `(quality OR process OR effectiveness OR training OR bias OR methodology OR best practices OR analysis OR guidelines OR standards)` AND discipline-specific terms `(chemistry OR physics OR "physical chemistry" OR "experimental science" OR spectroscopy OR instrumentation OR materials)`. Also consider `"meta-research" OR "scientometrics"` combined with peer review and discipline terms.
+    - **Target Journals:** While searching broadly, pay attention to potential articles in the high-priority journals listed above, as well as journals focused on science communication, meta-research, or higher education in STEM fields (e.g., _PLoS ONE_, _Scientometrics_, _Journal of Chemical Education_ - if relevant content exists).
+    - **Filter Focus:** Prioritize papers that offer constructive analysis, propose improved methods, detail specific evaluation criteria tested, or provide evidence-based recommendations applicable to the review task.
+5. **General Search (Quality Filter):** Broader web searches for high-quality resources from reputable sources (e.g., COPE, research consortia) not captured above, maintaining strict filters for actionability and experimental science relevance.
+
+**Keywords & Search Strings (Examples - Combine and Modify):**
+- `"guide for peer reviewers" + "experimental chemistry"`
+- `"how to review a scientific paper" + "physical chemistry" + checklist`
+- `"reviewer guidelines" + "physics journal" + detailed`
+- `"training for new reviewers" + ACS OR Elsevier OR Springer OR AIP OR APS`
+- `site:.edu "peer review" + "STEM" OR "science" + instructions OR template`
+- `"evaluating research methods" + "peer review" + chemistry`
+- `"writing a peer review report" + physics + template OR example`
+- `"Journal of Chemical Physics" + "information for reviewers"`
+- `"Review of Scientific Instruments" + "reviewer guide"`
+- `"actionable peer review advice" + experimental`
+
+**Output:** Collate identified resources (guides, articles, etc.), including direct links/DOIs, source (publisher, journal, university, database), a brief description highlighting actionable elements or key findings relevant to novice reviewers, and format. Distinguish clearly between instructional guides and research publications about the process.
