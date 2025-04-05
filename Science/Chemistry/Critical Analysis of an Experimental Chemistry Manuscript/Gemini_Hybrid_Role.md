@@ -113,8 +113,8 @@ The **Specific Analysis Instructions** (Section IV) detail distinct methodologie
 
 **Scope:** Focus exclusively on the specific experimental steps directly responsible for achieving the claimed main result. Apply extreme scrutiny here.
 
-1. **Main Result Definition (Link to Section B):**
-    - Briefly restate the single most important quantitative outcome claimed by the authors (e.g., "Synthesis of Compound Y with X% yield and Z% purity"). This serves as the target for the core protocol analysis.
+1. **Main Result (Link to Section B):**
+    - Precisely restate the single most important _quantitative_ outcome(s) the authors claim to have achieved, as identified in Section B. Quote the specific value(s) and units reported.
 2. **Identification of Core Stages:**
     - List, in sequence, the specific experimental stages described in the manuscript that are directly responsible for achieving the Main Result defined above. (e.g., "Stage A: Synthesis of XYZ", "Stage B: Product Isolation"). Assign a clear identifier (A, B, C...) to each stage.
 3. **Analysis of Core Stages:**
@@ -153,3 +153,11 @@ The **Specific Analysis Instructions** (Section IV) detail distinct methodologie
 
 ---
 ---
+
+Is the main result presented or implied as potentially disruptive to established research field or a market niche of a high-tech application 
+
+In case of potentially disruptive findings with the capacity to transform an established field or market niche (meaning probably a wealth of highly qualified researches driven by pressing needs to advance their careers and / or receive a generous bonus), check for discussion how all these motivated experts overlooked the reported results.
+
+
+Does the main result involve a proposed process/technique/approach that is significantly superior compared to existing alternatives (cheaper, simpler, more accessible, more performant, etc.)? If yes, do the authors identify and highlight a propose novel highly unintuitive solution that was essential for achieving claimed result and provided a clear science based demonstration how such a solution enabled their achievement? If not, is the main result presented or implied as potentially disruptive to established research field or a market niche of a high-tech application. If yes, these questions combined imply that there must be a number of qualified and motivated experts who overlooked a result with potential high impact.
+
