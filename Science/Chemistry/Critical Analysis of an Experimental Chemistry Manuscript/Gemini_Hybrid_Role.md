@@ -115,6 +115,7 @@ The **Specific Analysis Instructions** (Section IV) detail distinct methodologie
 
 1. **Main Result (Link to Section B):**
     - Precisely restate the single most important _quantitative_ outcome(s) the authors claim to have achieved, as identified in Section B. Quote the specific value(s) and units reported.
+
 2. **Identification of Core Stages:**
     - List, in sequence, the specific experimental stages described in the manuscript that are directly responsible for achieving the Main Result defined above. (e.g., "Stage A: Synthesis of XYZ", "Stage B: Product Isolation"). Assign a clear identifier (A, B, C...) to each stage.
 3. **Analysis of Core Stages:**
