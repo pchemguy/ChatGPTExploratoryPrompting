@@ -38,3 +38,19 @@ Does the main result involve a proposed process/technique/approach that is signi
     - **a. New Application/Function for Known Material:** Demonstrating a previously unrecognized use or function for an existing material (e.g., using a known polymer in a new type of sensor, finding a known compound catalyzes a new reaction).
     - **b. Performance Improvement in a Known Application:** Modifying a known material or the way it's used to enhance its performance in an _existing_ application (e.g., improving the efficiency of a known catalyst, increasing the conductivity of a known material in a device).
     - **c. Material Development for a Specific Application:** Synthesizing a new material (linking to 2a) _explicitly designed and optimized_ to meet the requirements of a particular application (e.g., designing a new drug molecule, creating a new semiconductor for solar cells). The _need_ is application-driven, even if it involves novel synthesis.
+
+-
+
+1. **Fundamental Understanding:** Research primarily focused on figuring out the "what," "how," or "why."    
+    - **a. Characterization & Property Measurement:** Determining the intrinsic physical or chemical properties of materials.
+    - **b. Mechanistic Investigation:** Elucidating the step-by-step pathway, intermediates, kinetics of chemical reactions or physical processes.
+    - **c. Methodological Development (Experimental/Analytical/Computational):** Creating or improving techniques, instrumentation, or computational approaches for observation, measurement, analysis, or data interpretation.
+2. **Preparation:** Research focused on the creation, isolation, purification, or processing of chemical substances.
+    - **a. Preparation of Novel Entities:**
+        - **i. Novel Specific Molecule/Material:** Reporting the first synthesis of a specific, previously unknown compound or material.
+        - **ii. Novel Class of Materials/Reactions:** Developing synthetic routes to access an entire family of related new compounds or establishing a fundamentally new type of chemical transformation.
+    - **b. Improved Preparation Routes for Known Entities:**
+        - **i. Preparatory Technique for a Known Class:** Developing a new or improved general method/protocol applicable to preparing a range of related, already known materials. Novelty is in the _general applicability_ and _improvement_ (e.g., efficiency, scope, greenness) of the method.
+        - **ii. Improved Material Access:** Developing a new or improved method focused on making one particular, known material better, cheaper, purer, safer, greener, or at a different scale, even if it's commercially available. Novelty is the _improved process_ for that _specific target_.
+3. **Application & Function**: Research focused on what materials can _do_.
+
