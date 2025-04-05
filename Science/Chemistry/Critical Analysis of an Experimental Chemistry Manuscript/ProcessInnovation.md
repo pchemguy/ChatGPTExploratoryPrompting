@@ -1,4 +1,5 @@
 Reflect on common concepts/processes, generalize where possible, give AI an angle.
+Give AI an angle: pushing frontier general-purpose multimodal LLM for complex tasks and domain-specific applications.
 
 ---
 
