@@ -106,7 +106,6 @@ The **Specific Analysis Instructions** (Section IV) detail distinct methodologie
     - Consider **Potential Counter-Arguments** (e.g., valid PoC context, cost constraints) but weigh them critically against the negative impacts.
     - Suggest **Superior Alternatives** (standard, more reliable equipment, methods, controls), referencing established literature or best practices. **Cite sources.**
 
-
 #### **D.2. In-Depth Analysis of the Core Experimental Protocol (Implementation of the Main Result)**
 
 **PREREQUISITE:** Section D.1 (General Protocol Overview and Assessment, applied with the appropriate scope as per Section A guidelines) **MUST be completed BEFORE undertaking this section.** The analysis below **MUST** explicitly reference and integrate the relevant findings (logical flow, contextual appropriateness, general red flags, etc.) identified in the preceding D.1 assessment as they specifically impact these core stages.
@@ -115,7 +114,6 @@ The **Specific Analysis Instructions** (Section IV) detail distinct methodologie
 
 1. **Main Result (Link to Section B):**
     - Precisely restate the single most important _quantitative_ outcome(s) the authors claim to have achieved, as identified in Section B. Quote the specific value(s) and units reported.
-
 2. **Identification of Core Stages:**
     - List, in sequence, the specific experimental stages described in the manuscript that are directly responsible for achieving the Main Result defined above. (e.g., "Stage A: Synthesis of XYZ", "Stage B: Product Isolation"). Assign a clear identifier (A, B, C...) to each stage.
 3. **Analysis of Core Stages:**
@@ -133,9 +131,18 @@ The **Specific Analysis Instructions** (Section IV) detail distinct methodologie
         - **C. Associated Figure Analysis (Link to Section C):**
             - Identify and analyze any figures/panels directly illustrating this stage (setup photos, schematics, spectra obtained _during_ this stage, etc.).
             - Apply the full Section C methodology. Explicitly link visual evidence (or lack thereof) to the textual description of this stage, noting consistency, discrepancies, or impact on feasibility/interpretation.
-        - **D. Key Performance Characteristics (Equipment/Process):**
-            - Identify and analyze the critical inherent performance characteristics of the equipment or processes used _in this stage_ that  determine the potential success/efficiency/etc. of the outcome (e.g., reactor heat transfer capability, mixing efficiency).
-            - Gauge plausible values/ranges for missing critical characteristics using the methods outlined previously (analysis of photographs in the previous section, typical specs, principles, external data), stating all assumptions and calculations.
+        - **D. Equipment/Process - Critical Performance Analysis:**
+            1. **Identify Critical Characteristics & Link to Stage Function:**
+                - Identify the inherent performance characteristics of the _specific_ equipment or processes used in this stage that are _most critical_ to achieving the intended function of _this particular stage_ within the overall protocol.
+                - Explicitly state _why_ each identified characteristic is critical for this stage's successful execution and its potential impact on the stage's outcome (e.g., yield, purity, measurement accuracy).
+            2. **Assess Adequacy & Gauge Missing Values (Quantitatively):**
+                - **Gauge plausible quantitative values or ranges** for critical characteristics _missing_ from the description. Use the following sources:
+                    - Information derived from associated figure analysis (Section D.2.3.C, applying Section C methodology).
+                    - Calculations based on fundamental scientific principles.
+                    - Typical specifications for standard, commonly available laboratory equipment of the type mentioned (referencing standard lab practice, handbooks, or reputable manufacturer datasheets if necessary, and citing appropriately).
+                - **Strongly prefer quantitative estimates** over purely qualitative statements.
+                - **Explicitly state all assumptions, calculation steps (briefly), and any cited external sources** used for gauging these values. Check for consistency between different estimates if possible.
+                - Evaluate if the _stated_ equipment/process specifications are theoretically adequate for the demands of this stage based on scientific principles and the described procedure.
         - **E. A Priori Feasibility Assessment (Stage-Level):**
             - Based _only_ on the description, metrics (or lack thereof), figures, and gauged characteristics for _this specific stage_, critically assess its _a priori_ feasibility. Is the described procedure and equipment capable, in principle, of performing its intended function within the overall protocol effectively and reliably? Note any immediate red flags or limitations specific to this stage identified in D.3 and their potential impact from D.4.
 4. **Overall A Priori Feasibility Assessment (Synthesizing Core Stages)**
