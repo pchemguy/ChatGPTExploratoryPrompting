@@ -17,41 +17,24 @@ Does the main result involve a proposed process/technique/approach that is signi
 - Based _only_ on the magnitude of the claim relative to natural abundance, benchmarks, or established chemical principles, critically assess the _implied significance_ of the quantitative result itself. Does the claim represent a routine outcome, a modest improvement, or a potentially groundbreaking or unexpected achievement?
 - Determine if the _magnitude_ or _nature_ of the claimed result (e.g., unprecedented efficiency, purity, unexpected product) necessitates an exceptionally robust, novel, or meticulously controlled protocol. This assessment sets the _a priori_ burden of proof and the level of scrutiny required for the subsequent feasibility analysis of the core protocol stages (D.2.3 onwards). Briefly note if the claim appears potentially disruptive _based purely on its quantitative merit and deviation from norms_, demanding extraordinary justification in the methodology.
 
+---
+---
 
 
-# **Classification of Experimental Chemistry Results**
+**Proposed Classification of Needs Addressed by Experimental Chemistry Publications:**
 
-Knowledge gap (material properties, reaction mechanism, experimental methodology)
-Preparatory technique for a class of materials
-- Emphasis - technique or protocol (goal is to provide a preparatory tool, not a particular material, that can be sourced commercially)
-- Novelty - technique or protocol
-Preparatory technique for a specific material
-- Emphasis - specific material (previously prepared, possibly available commercially)
-- Novelty - technique or protocol
-
-Application specific need
-
-1. **Material-Focused: Novel Material Synthesis**
-    Research primarily aimed at creating or isolating a **new** material (broadly defined: discrete chemical compounds, polymers, composites, solutions, etc.) that has not been previously reported. The central novelty lies in the material's structure, composition, or unique combination of components. Practical considerations (e.g., yield, cost, scale) are important but remain secondary to establishing that the material itself is new.
-    - *"Synthesis and Initial Characterization of a Novel Porous Copper-Organic Framework for Gas Storage."*  
-    - *"Discovery of a New Layered Calcium Silicate with Tunable Porosity."*  
-2. **Characterization-Focused: Property Characterization Study**
-    Work centered on **in-depth** measurement, description, and interpretation of the physical, chemical, spectroscopic, or other properties of a material. The compound itself may be known or previously reported, and the synthetic method may be routine; what is **new** is the extensive or specialized characterization. This category also applies to systematic comparative studies of properties if the main thrust is understanding or detailing those properties.
-    - *"High-Resolution Solid-State NMR and X-ray Diffraction Analysis of a Known Magnesium Hydride."*  
-    - *"Investigating the Electronic and Magnetic Properties of a Well-Studied Manganese Complex."*  
-3. **Preparation-Focused: Enhanced Preparation Protocol**
-    Studies that **optimize** or **significantly improve** existing methods to prepare a known material. Novelty derives from the improved protocol itself-factors such as yield, purity, sustainability, cost, safety, or scalability are prominently featured. This can include switching from multi-step to one-pot syntheses, use of greener/safer reagents, or employing new reaction conditions to streamline an established procedure.
-       - *"A Greener One-Pot Synthesis of Acetylsalicylic Acid with Reduced Byproducts."*  
-    - *"Optimized Palladium-Catalyzed Cross-Coupling Route Achieving 90% Yield for a Known Pharmaceutical Intermediate."*  
-4. **Application-Focused: Novel Application Discovery**
-    Papers highlighting a **new function or use** for a known chemical or class of chemicals in a context that has not been previously demonstrated. The emphasis is on showing **proof-of-concept** or practical feasibility of this new function, whether it's in catalysis, sensing, energy storage, drug delivery, or other domains.
-    - *"Repurposing a Common Dye as a Photocatalyst for Solar Fuel Generation."*  
-    - *"First Report of a Porphyrin Complex as a Biosensor for Early Disease Detection."*  
-5. **Method-Focused: Methodological or Technological Advancement**
-    Research introducing or significantly improving a **broadly applicable** chemical process, technique, or piece of equipment. The novelty is in the **method** rather than in the specific materials or the final product. This could involve new synthetic strategies, innovative analytical instrumentation, advanced reaction monitoring technologies, or any major leap in technique that could be applied across different projects or fields.
-    - *"Development of a Continuous-Flow Microreactor System for Rapid Peptide Synthesis."*  
-    - *"A Novel Electrochemical Detection Platform for Trace Metal Analysis in Water."*  
-6. **Mechanism-Focused: Mechanistic Insight or Reaction Pathway Elucidation**
-    Studies aiming to **reveal, confirm, or clarify** how a chemical reaction or process occurs. This may also include investigations of **physicochemical** or **physical/mechanical** processes that govern material transformations. Emphasis is on understanding reaction intermediates, transition states, kinetics, thermodynamics, or other fundamental mechanistic details.
-    - *"Elucidating the Radical Pathway in a Copper-Mediated Cross-Coupling Reaction via Kinetic and Spectroscopic Studies."*  
-    - *"Unraveling the Mechanism of Phase Transformation in Lithium Battery Cathodes Using In Situ X-ray Diffraction."*  
+1. **Fundamental Understanding (Addressing Knowledge Gaps)**: Research primarily focused on figuring out the "what," "how," or "why."    
+    - **a. Characterization & Property Measurement:** Determining the intrinsic physical or chemical properties of materials.
+    - **b. Mechanistic Investigation:** Elucidating the step-by-step pathway, intermediates, kinetics of chemical reactions or physical processes.
+    - **c. Methodological Development (Experimental/Analytical/Computational):** Creating or improving techniques, instrumentation, or computational approaches for observation, measurement, analysis, or data interpretation.
+2. **Preparation (Developing Ways to Make Materials)**: Research focused on the creation, isolation, purification, or processing of chemical substances.
+    - **a. Preparation of Novel Entities:**
+        - **i. Novel Specific Molecule/Material:** Reporting the first synthesis of a specific, previously unknown compound or material.
+        - **ii. Novel Class of Materials/Reactions:** Developing synthetic routes to access an entire family of related new compounds or establishing a fundamentally new type of chemical transformation.
+    - **b. Improved Preparation Routes for Known Entities:**
+        - **i. Preparatory Technique for a Known Class:** Developing a new or improved general method/protocol applicable to preparing a range of related, already known materials. Novelty is in the _general applicability_ and _improvement_ (e.g., efficiency, scope, greenness) of the method.
+        - **ii. Improved Material Access:** Developing a new or improved method focused on making one particular, known material better, cheaper, purer, safer, greener, or at a different scale, even if it's commercially available. Novelty is the _improved process_ for that _specific target_.
+3. **Application & Function (Finding or Improving Uses for Materials)**: Research focused on what materials can _do_.
+    - **a. New Application/Function for Known Material:** Demonstrating a previously unrecognized use or function for an existing material (e.g., using a known polymer in a new type of sensor, finding a known compound catalyzes a new reaction).
+    - **b. Performance Improvement in a Known Application:** Modifying a known material or the way it's used to enhance its performance in an _existing_ application (e.g., improving the efficiency of a known catalyst, increasing the conductivity of a known material in a device).
+    - **c. Material Development for a Specific Application:** Synthesizing a new material (linking to 2a) _explicitly designed and optimized_ to meet the requirements of a particular application (e.g., designing a new drug molecule, creating a new semiconductor for solar cells). The _need_ is application-driven, even if it involves novel synthesis.
