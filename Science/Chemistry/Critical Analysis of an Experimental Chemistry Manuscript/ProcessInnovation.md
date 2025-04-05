@@ -1,4 +1,6 @@
+Reflect on common concepts/processes, generalize where possible, give AI an angle.
 
+---
 
 The course of chemical and physicochemical processes is generally determined by thermodynamic and kinetic considerations
 
