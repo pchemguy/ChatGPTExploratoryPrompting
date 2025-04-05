@@ -3,6 +3,8 @@ Reflect on common concepts/processes, generalize where possible, give AI an angl
 Give AI an angle: Engineering prompts for general-purpose multimodal LLM with long context window for complex tasks and domain-specific applications via in-context learning.
 Give AI an angle: pushing frontier general-purpose multimodal LLM with long context window for complex tasks and domain-specific applications via in-context learning.
 
+Teach AI to think through 
+
 ---
 
 The course of chemical and physicochemical processes is generally determined by thermodynamic and kinetic considerations
