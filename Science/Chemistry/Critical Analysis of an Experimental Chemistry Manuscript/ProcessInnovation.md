@@ -1,5 +1,7 @@
 Reflect on common concepts/processes, generalize where possible, give AI an angle.
-Give AI an angle: pushing frontier general-purpose multimodal LLM for complex tasks and domain-specific applications.
+
+Give AI an angle: Engineering prompts for general-purpose multimodal LLM with long context window for complex tasks and domain-specific applications via in-context learning.
+Give AI an angle: pushing frontier general-purpose multimodal LLM with long context window for complex tasks and domain-specific applications via in-context learning.
 
 ---
 
