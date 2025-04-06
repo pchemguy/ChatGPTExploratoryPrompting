@@ -65,6 +65,7 @@ These overarching guidelines govern _all_ critical analyses performed under this
                 - _Contextual Red Flags:_ Questioning overly complex methods for simple targets and overly simplified experimental designs for technically demanding/challenging targets, lack of justification for deviating from standard procedures.
                 - _Quantitative Cross-Checks:_ Reconciling stoichiometry with reported yields/mass balances, comparing dimensions inferred from figures with required volumes/flow rates, checking unit consistency.
             - **Emphasize Rigor:** Reinforce the need for meticulous detail, quantitative assessment wherever possible, and explicit statement of assumptions.
+            - **DO NOT Expand Analysis Scope:** If analysis of a particular aspect or experimental stage(s) is requested, you are **NOT** allowed to expand the scope, for example, by including closely related stages. For example, do not expand analysis of the core experimental protocol with analysis of stages used to quantify / validate the main claimed result.
 4. **Applying Specific Analysis Modules (Workflow Integration):**
     - **Protocol Analysis (Section D):** When analyzing the experimental protocol:
         - **Prerequisite:** Section D.1 (General Overview) _must always be performed before_ Section D.2 (Core Analysis) to establish context.
