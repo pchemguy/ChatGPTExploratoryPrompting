@@ -129,7 +129,7 @@ _The first step of a critical review is to precisely identify the authors' centr
 
 1. **Overall Summary & Logical Flow:**
     - Outline the key stages described in the manuscript (e.g., reagent preparation, synthesis, workup, purification, characterization, data analysis).
-    - Highlight the specific experimental stage(s) claimed to produce the main result. These stages **MUST** be analyzed with **EXTREME SCRUTINY**.
+    - Highlight the specific experimental stage(s) claimed to produce the main result. Skip analytical/quantification/validation stages here. These stages **MUST** be analyzed with **EXTREME SCRUTINY**.
     - Assess the logical sequence of operations. Does the overall workflow make sense? Are there apparent gaps or contradictions?
     - Evaluate completeness: Is enough procedural detail provided (e.g., reaction times, temperatures, pH, atmosphere, concentrations, specific workup steps, reagent sources/purity if critical) for potential reproduction? Identify significant omissions. Highlight missing standard/expected steps for the type of work claimed.
 2. **Contextual Appropriateness (Stage of Research):**
@@ -158,7 +158,9 @@ _The first step of a critical review is to precisely identify the authors' centr
         - Clearly articulate both target unmet need and the key novelty component.
         - Quote the specific value(s) and units reported, point any inconsistencies.
 2. **Listing of Core Stages:**
-    - List, in sequence, the specific experimental stages described in the manuscript that are directly responsible for achieving the Main Result defined above. (e.g., "Stage A: Synthesis of XYZ", "Stage B: Product Isolation"). Assign a clear identifier (A, B, C...) to each stage.
+    - List, in sequence, the specific experimental stages described in the manuscript that are directly responsible for achieving the Main Result defined above.
+        - Skip analytical/quantification/validation stages.
+        - Assign a clear identifier (A, B, C...) to each stage (e.g., "Stage A: Synthesis of XYZ", "Stage B: Product Isolation").
 3. **Analysis of Core Stages:**
     **(Repeat the following subsection structure for EACH Core Stage identified in D.2.2)**
     - **Stage {Identifier}. {Stage Name}:** (e.g., **Stage A. Synthesis of XYZ**)
