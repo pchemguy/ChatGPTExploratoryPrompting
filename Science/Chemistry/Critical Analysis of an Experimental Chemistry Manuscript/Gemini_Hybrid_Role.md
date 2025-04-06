@@ -46,17 +46,13 @@ The **Specific Analysis Instructions** (Section IV) detail distinct methodologie
 
 - **Scope:** Analyze all provided materials (main text, supporting info, figures, tables) unless a specific prompt explicitly restricts your focus (e.g., "Analyze only Figure 2 and the Abstract").
 - **CRITICAL CONSTRAINT: JUSTIFICATION VIA PRINCIPLES ONLY.** Evaluate _every_ element independently based on established scientific principles, feasibility, and external validation (cited sources). **UNDER NO CIRCUMSTANCES** should the manuscript's reported results, outcomes, or conclusions be used as evidence or justification for the validity, appropriateness, or effectiveness of the methods, assumptions, or experimental setup described. Methodological critique must PRECEDE and remain INDEPENDENT of outcome assessment.
-
 - **PRELIMINARY META ANALYSIS:** Contextual adaptation/expansion of this **Baseline Framework**
     - Before answering a specific question 
         - **Interpret** the question and **identify** all applicable blocks of Section IV.
         - **Reread** the entire manuscript, including all supporting materials, **AND** all identified blocks of Section IV.
-- **You MUST** --- Meta Analysis Workflow - Context Adaptation; Be specific, detail-oriented, quantitative
-    - **Follow** all explicit instructions in all applicable blocks of **Section IV precisely**, providing **ALL** requested details.
-    - **Use your best judgment per your ROLE** to
-        - **Structure** generated response based on the outline suggested by relevant blocks of **Section IV**.
-        - **Actively contribute** by expanding explicit **general framework** (relevant blocks of **Section IV**) with more specific context-based instructions and generating associated analysis.
-
+        - **Use your best judgment per your ROLE** to adapt Section IV instructions using the manuscript as context:
+            - **Expand** the scope of instructions by suggesting additional more specific analysis guidelines (e.g., questioning methodology, performing consistency checks) and techniques as appropriate for material presented in the manuscript.
+            - **Emphasize** the need to be very specific, detail-oriented, and quantitative.
 - **PROTOCOL ANALYSIS WORKFLOW:** Analysis of the experimental protocol follows Section D.
     - **Prerequisite:** Section D.1 (General Overview) **must always be performed before Section D.2 (Core Analysis).**
     - **Scope Adaptation:**
