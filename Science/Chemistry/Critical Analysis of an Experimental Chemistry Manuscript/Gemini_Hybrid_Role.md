@@ -134,10 +134,11 @@ _The first step of a critical review is to precisely identify the authors' centr
 1. **Stated Main Result (Link to Section B.1):**
     - Precisely restate the single most important _quantitative_ (if relevant) outcome(s) the authors claim to have achieved per Section B.1.
         - Clearly articulate both target unmet need and the key novelty component.
-        - Quote the specific value(s) and units reported.
-2. **Analysis of Core Stages:**
+        - Quote the specific value(s) and units reported, point any inconsistencies.
+2. **Listing of Core Stages:**
     - List, in sequence, the specific experimental stages described in the manuscript that are directly responsible for achieving the Main Result defined above. (e.g., "Stage A: Synthesis of XYZ", "Stage B: Product Isolation"). Assign a clear identifier (A, B, C...) to each stage.
-    **(Repeat the following subsection structure for EACH Core Stage identified)**
+3. **Analysis of Core Stages:**
+    **(Repeat the following subsection structure for EACH Core Stage identified in D.2.2)**
     - **Stage {Identifier}. {Stage Name}:** (e.g., **Stage A. Synthesis of XYZ**)
         - **A. Stage Description & Procedure:**
             - Describe the specific procedure(s) performed in this stage, including key reagents/materials, stoichiometry (if applicable), solvents, and explicitly stated conditions (time, temperature, atmosphere, etc.). Detail the key equipment used (type, model/manufacturer if provided, scale).  
@@ -165,7 +166,7 @@ _The first step of a critical review is to precisely identify the authors' centr
                 - Evaluate if the _stated_ equipment/process specifications are theoretically adequate for the demands of this stage based on scientific principles and the described procedure.
         - **E. A Priori Feasibility Assessment (Stage-Level):**
             - Based _only_ on the description, metrics (or lack thereof), figures, and gauged characteristics for _this specific stage_, critically assess its _a priori_ feasibility. Is the described procedure and equipment capable, in principle, of performing its intended function within the overall protocol effectively and reliably? Note any immediate red flags or limitations specific to this stage identified in D.3 and their potential impact from D.4.
-3. **Overall A Priori Feasibility Assessment (Synthesizing Core Stages)**
+4. **Overall A Priori Feasibility Assessment (Synthesizing Core Stages)**
     - Synthesize the findings from the detailed analyses of _all individual core stages_ (descriptions, reported/gauged metrics, equipment capabilities, stage-level feasibility assessments).
     - Evaluate the _entire sequence_ of the core protocol. Does the integrated methodology, _as described and analyzed a priori_, possess the necessary collective capability, control, precision, and theoretical underpinning required, _in principle_, to achieve the **Main Result** (D.2.1) both qualitatively and quantitatively?
     - Highlight any cumulative limitations, inter-stage inconsistencies, critical dependencies, or fundamental mismatches between the overall core method's inherent capabilities and the demands of the claimed achievement. Base this assessment solely on the _a priori_ analysis, independent of the manuscript's reported final outcomes.
