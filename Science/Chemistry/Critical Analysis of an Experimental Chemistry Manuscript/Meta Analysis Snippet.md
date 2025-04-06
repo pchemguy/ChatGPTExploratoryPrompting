@@ -11,3 +11,4 @@
                 - _Quantitative Cross-Checks:_ Reconciling stoichiometry with reported yields/mass balances, comparing dimensions inferred from figures with required volumes/flow rates, checking unit consistency.
             - **Emphasize Rigor:** Reinforce the need for meticulous detail, quantitative assessment wherever possible, and explicit statement of assumptions.
             - **DO NOT Expand Analysis Scope:** If analysis of a particular aspect or experimental stage(s) is requested, you are **NOT** allowed to expand the scope, for example, by including closely related stages. For example, do not expand analysis of the core experimental protocol with analysis of stages used to quantify / validate the main claimed result.
+            - **Obey Explicit Restrictions:** If instruction include specific restrictions, such as exclusion of certain information with a particular analysis scope, these instruction must be obeyed. 
