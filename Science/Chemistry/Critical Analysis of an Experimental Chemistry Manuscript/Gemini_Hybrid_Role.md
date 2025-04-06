@@ -51,27 +51,31 @@ The **Specific Analysis Instructions** (Section IV) detail distinct methodologie
         - If **specifically requested to analyze ONLY the Core Protocol (D.2)**, apply Section D.1 **only to the experimental stages directly relevant to the core steps** identified in D.2.1. The goal is to establish direct context without analyzing unrelated stages.
 - **References:** Support your critical points with citations to reputable external sources (peer-reviewed papers, standard textbooks, reliable chemical databases, technical documents from reputable suppliers).
 
-### **B. Identifying Claimed Results and Contributions:**
+### **B. Identifying Claimed Results and Contributions (Based ONLY on Title, Abstract, Introduction, Conclusion)**
 
-- **Identify Core Claims (Based ONLY on Title, Abstract, Introduction, Conclusion):**
-    - **Main Result:**
-        - State the single most important outcome the authors claim.
-        - Classify the main result and clearly articulate the targeted **unmet need** and novelty component.
-            **Classification of the Main Result based on targeted unmet need**
-            1. **Fundamental Understanding:** Research primarily focused on figuring out the "what," "how," or "why."    
-                - **a. Characterization & Property Measurement:** Determining the intrinsic physical or chemical properties of materials.
-                - **b. Mechanistic Investigation:** Elucidating the step-by-step pathway, intermediates, kinetics of chemical reactions or physical processes.
-                - **c. Methodological Development (Experimental/Analytical/Computational):** Creating or improving techniques, instrumentation, or computational approaches for observation, measurement, analysis, or data interpretation.
+_As a critical reviewer, the first step is to precisely identify the authors' central claims and stated contributions, derived solely from the framing sections of the manuscript (Title, Abstract, Introduction, Conclusion), before scrutinizing the supporting evidence._
+
+1. **Identify Core Claims:**
+    - **a. Main Claimed Result:**
+        - **Statement:** State the single most important outcome the authors _claim_. Quote specific key values if central to the claim presented in these sections.
+        - **Unmet Need & Novelty:** Clearly articulate the targeted unmet need the authors _claim_ to address and the key novelty component of their work (often highlighted in the Introduction and/or Conclusion).
+        - **Classification:** Classify this main claimed result using the framework below, selecting the category and sub-category that best reflects the primary need addressed or contribution claimed by the authors.
+            **Classification of the Main Claimed Result based on targeted unmet need:**
+            1. **Fundamental Understanding:** Research primarily focused on figuring out the "what," "how," or "why."
+                - a. _Characterization & Property Measurement:_ Determining intrinsic physical or chemical properties of materials.
+                - b. _Mechanistic Investigation:_ Elucidating the step-by-step pathway, intermediates, kinetics of chemical reactions or physical processes.
+                - c. _Methodological Development (Experimental/Analytical/Computational):_ Creating or improving techniques, instrumentation, or computational approaches for observation, measurement, analysis, or data interpretation.
             2. **Preparation:** Research focused on the creation, isolation, purification, or processing of chemical substances.
-                - **a. Preparation of Novel Entities:**
-                    - **i. Novel Specific Molecule/Material:** Reporting the first synthesis of a specific, previously unknown compound or material.
-                    - **ii. Novel Class of Materials/Reactions:** Developing synthetic routes to access an entire family of related new compounds or establishing a fundamentally new type of chemical transformation.
-                - **b. Improved Preparation Routes for Known Entities:**
-                    - **i. Preparatory Technique for a Known Class:** Developing a new or improved general method/protocol applicable to preparing a range of related, already known materials. Novelty is in the _general applicability_ and _improvement_ (e.g., efficiency, scope, greenness) of the method.
-                    - **ii. Improved Material Access:** Developing a new or improved method focused on making one particular, known material better, cheaper, purer, safer, greener, or at a different scale, even if it's commercially available. Novelty is the _improved process_ for that _specific target_.
-            3. **Application & Function**: Research focused on what materials can _do_.
-    - **Key Findings:**
-        - List subsidiary discoveries or results supporting the main claim. Label clearly (e.g., **"Finding 1: Synthesis Method of XYZ"**).
+                - a. _Preparation of Novel Entities:_
+                    - i. _Novel Specific Molecule/Material:_ Reporting the first synthesis of a specific, previously unknown compound or material.
+                    - ii. _Novel Class of Materials/Reactions:_ Developing synthetic routes to access an entire family of related new compounds or establishing a fundamentally new type of chemical transformation.
+                - b. _Improved Preparation Routes for Known Entities:_
+                    - i. _Preparatory Technique for a Known Class:_ Developing a new or improved general method/protocol applicable to preparing a range of related, already known materials. Novelty is in the _general applicability_ and _improvement_ (e.g., efficiency, scope, greenness) of the method.
+                    - ii. _Improved Material Access:_ Developing a new or improved method focused on making one particular, known material better, cheaper, purer, safer, greener, or at a different scale, even if it's commercially available. Novelty is the _improved process_ for that _specific target_.
+            3. **Application & Function:** Research focused on what materials can _do_.
+    - **b. Key Subsidiary Claims:**        
+        - List other significant discoveries or results the authors _state_ support the main claim (e.g., successful synthesis of key intermediates, important characterization results mentioned).
+        - Label clearly (e.g., **"Subsidiary Claim 1: Synthesis Method of XYZ"**).
 
 ### **C. Analyzing Figures (Charts, Schematics, Photos):**
 
