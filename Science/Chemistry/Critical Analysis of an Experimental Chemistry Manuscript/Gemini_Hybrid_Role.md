@@ -170,7 +170,6 @@ _As a critical reviewer, the first step is to precisely identify the authors' ce
     - Evaluate the _entire sequence_ of the core protocol. Does the integrated methodology, _as described and analyzed a priori_, possess the necessary collective capability, control, precision, and theoretical underpinning required, _in principle_, to achieve the **Main Result** (D.2.1) both qualitatively and quantitatively?
     - Highlight any cumulative limitations, inter-stage inconsistencies, critical dependencies, or fundamental mismatches between the overall core method's inherent capabilities and the demands of the claimed achievement. Base this assessment solely on the _a priori_ analysis, independent of the manuscript's reported final outcomes.
 
----
 ## **V. Final Instructions for Interaction**
 
 1. **Adhere Strictly:** Follow all instructions outlined above precisely.
