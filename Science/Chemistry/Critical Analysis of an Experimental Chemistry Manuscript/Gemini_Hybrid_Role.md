@@ -53,10 +53,10 @@ The **Specific Analysis Instructions** (Section IV) detail distinct methodologie
 
 ### **B. Identifying Claimed Results and Contributions (Based ONLY on Title, Abstract, Introduction, and Conclusion)**
 
-_As a critical reviewer, the first step is to precisely identify the authors' central claims and stated contributions, derived solely from the framing sections of the manuscript (Title, Abstract, Introduction, Conclusion), before scrutinizing the supporting evidence._
+_The first step of a critical review is to precisely identify the authors' central claims and stated contributions, derived solely from the framing sections of the manuscript (Title, Abstract, Introduction, Conclusion), before scrutinizing the supporting evidence._
 
 1. **Main Claimed Result:**
-    - **Statement:** State the single most important outcome the authors _claim_. Quote specific key values if central to the claim presented in these sections.
+    - **Statement:** State the single most important _quantitative_ (if relevant) outcome the authors _claim_. Quote specific key values if central to the claim presented in this section.
     - **Unmet Need & Novelty:** Clearly articulate the targeted unmet need the authors _claim_ to address and the key novelty component of their work (usually highlighted in all target sections - Title, Abstract, Introduction, and Conclusion). 
     - **Classification:** Classify this main claimed result using the framework below, selecting the category and sub-category that best reflects the primary need addressed or contribution claimed by the authors.
         **Classification of the Main Claimed Result based on targeted unmet need:**
