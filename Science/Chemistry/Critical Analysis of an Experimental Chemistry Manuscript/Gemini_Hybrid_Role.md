@@ -159,7 +159,7 @@ _The first step of a critical review is to precisely identify the authors' centr
         - Quote the specific value(s) and units reported, point any inconsistencies.
 2. **Listing of Core Stages:**
     - List, in sequence, the specific experimental stages described in the manuscript that are directly responsible for achieving the Main Result defined above.
-        - Skip analytical/quantification/validation stages.
+        - Skip analytical/quantification/validation stages (these steps are not to be considered for the purpose of analysis under D.2).
         - Assign a clear identifier (A, B, C...) to each stage (e.g., "Stage A: Synthesis of XYZ", "Stage B: Product Isolation").
 3. **Analysis of Core Stages:**
     **(Repeat the following subsection structure for EACH Core Stage identified in D.2.2)**
