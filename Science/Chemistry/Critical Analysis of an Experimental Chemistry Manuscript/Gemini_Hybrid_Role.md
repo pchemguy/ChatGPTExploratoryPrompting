@@ -51,31 +51,30 @@ The **Specific Analysis Instructions** (Section IV) detail distinct methodologie
         - If **specifically requested to analyze ONLY the Core Protocol (D.2)**, apply Section D.1 **only to the experimental stages directly relevant to the core steps** identified in D.2.1. The goal is to establish direct context without analyzing unrelated stages.
 - **References:** Support your critical points with citations to reputable external sources (peer-reviewed papers, standard textbooks, reliable chemical databases, technical documents from reputable suppliers).
 
-### **B. Identifying Claimed Results and Contributions (Based ONLY on Title, Abstract, Introduction, Conclusion)**
+### **B. Identifying Claimed Results and Contributions (Based ONLY on Title, Abstract, Introduction, and Conclusion)**
 
 _As a critical reviewer, the first step is to precisely identify the authors' central claims and stated contributions, derived solely from the framing sections of the manuscript (Title, Abstract, Introduction, Conclusion), before scrutinizing the supporting evidence._
 
-1. **Identify Core Claims:**
-    - **a. Main Claimed Result:**
-        - **Statement:** State the single most important outcome the authors _claim_. Quote specific key values if central to the claim presented in these sections.
-        - **Unmet Need & Novelty:** Clearly articulate the targeted unmet need the authors _claim_ to address and the key novelty component of their work (often highlighted in the Introduction and/or Conclusion).
-        - **Classification:** Classify this main claimed result using the framework below, selecting the category and sub-category that best reflects the primary need addressed or contribution claimed by the authors.
-            **Classification of the Main Claimed Result based on targeted unmet need:**
-            1. **Fundamental Understanding:** Research primarily focused on figuring out the "what," "how," or "why."
-                - a. _Characterization & Property Measurement:_ Determining intrinsic physical or chemical properties of materials.
-                - b. _Mechanistic Investigation:_ Elucidating the step-by-step pathway, intermediates, kinetics of chemical reactions or physical processes.
-                - c. _Methodological Development (Experimental/Analytical/Computational):_ Creating or improving techniques, instrumentation, or computational approaches for observation, measurement, analysis, or data interpretation.
-            2. **Preparation:** Research focused on the creation, isolation, purification, or processing of chemical substances.
-                - a. _Preparation of Novel Entities:_
-                    - i. _Novel Specific Molecule/Material:_ Reporting the first synthesis of a specific, previously unknown compound or material.
-                    - ii. _Novel Class of Materials/Reactions:_ Developing synthetic routes to access an entire family of related new compounds or establishing a fundamentally new type of chemical transformation.
-                - b. _Improved Preparation Routes for Known Entities:_
-                    - i. _Preparatory Technique for a Known Class:_ Developing a new or improved general method/protocol applicable to preparing a range of related, already known materials. Novelty is in the _general applicability_ and _improvement_ (e.g., efficiency, scope, greenness) of the method.
-                    - ii. _Improved Material Access:_ Developing a new or improved method focused on making one particular, known material better, cheaper, purer, safer, greener, or at a different scale, even if it's commercially available. Novelty is the _improved process_ for that _specific target_.
-            3. **Application & Function:** Research focused on what materials can _do_.
-    - **b. Key Subsidiary Claims:**        
-        - List other significant discoveries or results the authors _state_ support the main claim (e.g., successful synthesis of key intermediates, important characterization results mentioned).
-        - Label clearly (e.g., **"Subsidiary Claim 1: Synthesis Method of XYZ"**).
+1. **Main Claimed Result:**
+    - **Statement:** State the single most important outcome the authors _claim_. Quote specific key values if central to the claim presented in these sections.
+    - **Unmet Need & Novelty:** Clearly articulate the targeted unmet need the authors _claim_ to address and the key novelty component of their work (usually highlighted in all target sections - Title, Abstract, Introduction, and Conclusion). 
+    - **Classification:** Classify this main claimed result using the framework below, selecting the category and sub-category that best reflects the primary need addressed or contribution claimed by the authors.
+        **Classification of the Main Claimed Result based on targeted unmet need:**
+        1. **Fundamental Understanding:** Research primarily focused on figuring out the "what," "how," or "why."
+            - a. _Characterization & Property Measurement:_ Determining intrinsic physical or chemical properties of materials.
+            - b. _Mechanistic Investigation:_ Elucidating the step-by-step pathway, intermediates, kinetics of chemical reactions or physical processes.
+            - c. _Methodological Development (Experimental/Analytical/Computational):_ Creating or improving techniques, instrumentation, or computational approaches for observation, measurement, analysis, or data interpretation.
+        2. **Preparation:** Research focused on the creation, isolation, purification, or processing of chemical substances.
+            - a. _Preparation of Novel Entities:_
+                - i. _Novel Specific Molecule/Material:_ Reporting the first synthesis of a specific, previously unknown compound or material.
+                - ii. _Novel Class of Materials/Reactions:_ Developing synthetic routes to access an entire family of related new compounds or establishing a fundamentally new type of chemical transformation.
+            - b. _Improved Preparation Routes for Known Entities:_
+                - i. _Preparatory Technique for a Known Class:_ Developing a new or improved general method/protocol applicable to preparing a range of related, already known materials. Novelty is in the _general applicability_ and _improvement_ (e.g., efficiency, scope, greenness) of the method.
+                - ii. _Improved Material Access:_ Developing a new or improved method focused on making one particular, known material better, cheaper, purer, safer, greener, or at a different scale, even if it's commercially available. Novelty is the _improved process_ for that _specific target_.
+        3. **Application & Function:** Research focused on what materials can _do_.
+2. **Key Subsidiary Claims:**        
+    - List other significant discoveries or results the authors _state_ support the main claim (e.g., successful synthesis of key intermediates, important characterization results mentioned).
+    - Label clearly (e.g., **"Subsidiary Claim 1: Synthesis Method of XYZ"**).
 
 ### **C. Analyzing Figures (Charts, Schematics, Photos):**
 
@@ -132,12 +131,13 @@ _As a critical reviewer, the first step is to precisely identify the authors' ce
 
 **Scope:** Focus exclusively on the specific experimental steps directly responsible for achieving the claimed main result. Apply extreme scrutiny here.
 
-1. **Main Result (Link to Section B):**
-    - Precisely restate the single most important _quantitative_ outcome(s) the authors claim to have achieved, as identified in Section B. Quote the specific value(s) and units reported.
-2. **Identification of Core Stages:**
+1. **Stated Main Result (Link to Section B.1):**
+    - Precisely restate the single most important _quantitative_ (if relevant) outcome(s) the authors claim to have achieved per Section B.1.
+        - Clearly articulate both target unmet need and the key novelty component.
+        - Quote the specific value(s) and units reported.
+2. **Analysis of Core Stages:**
     - List, in sequence, the specific experimental stages described in the manuscript that are directly responsible for achieving the Main Result defined above. (e.g., "Stage A: Synthesis of XYZ", "Stage B: Product Isolation"). Assign a clear identifier (A, B, C...) to each stage.
-3. **Analysis of Core Stages:**
-    **(Repeat the following subsection structure for EACH Core Stage identified in D.2.2)**
+    **(Repeat the following subsection structure for EACH Core Stage identified)**
     - **Stage {Identifier}. {Stage Name}:** (e.g., **Stage A. Synthesis of XYZ**)
         - **A. Stage Description & Procedure:**
             - Describe the specific procedure(s) performed in this stage, including key reagents/materials, stoichiometry (if applicable), solvents, and explicitly stated conditions (time, temperature, atmosphere, etc.). Detail the key equipment used (type, model/manufacturer if provided, scale).  
@@ -165,7 +165,7 @@ _As a critical reviewer, the first step is to precisely identify the authors' ce
                 - Evaluate if the _stated_ equipment/process specifications are theoretically adequate for the demands of this stage based on scientific principles and the described procedure.
         - **E. A Priori Feasibility Assessment (Stage-Level):**
             - Based _only_ on the description, metrics (or lack thereof), figures, and gauged characteristics for _this specific stage_, critically assess its _a priori_ feasibility. Is the described procedure and equipment capable, in principle, of performing its intended function within the overall protocol effectively and reliably? Note any immediate red flags or limitations specific to this stage identified in D.3 and their potential impact from D.4.
-4. **Overall A Priori Feasibility Assessment (Synthesizing Core Stages)**
+3. **Overall A Priori Feasibility Assessment (Synthesizing Core Stages)**
     - Synthesize the findings from the detailed analyses of _all individual core stages_ (descriptions, reported/gauged metrics, equipment capabilities, stage-level feasibility assessments).
     - Evaluate the _entire sequence_ of the core protocol. Does the integrated methodology, _as described and analyzed a priori_, possess the necessary collective capability, control, precision, and theoretical underpinning required, _in principle_, to achieve the **Main Result** (D.2.1) both qualitatively and quantitatively?
     - Highlight any cumulative limitations, inter-stage inconsistencies, critical dependencies, or fundamental mismatches between the overall core method's inherent capabilities and the demands of the claimed achievement. Base this assessment solely on the _a priori_ analysis, independent of the manuscript's reported final outcomes.
