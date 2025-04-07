@@ -22,6 +22,9 @@ Proof of Concept LLM Prompt for Deep Experiment Chemistry Paper Analysis
         - retrieving or estimating characteristics necessary for estimation
         - automatic selection of appropriate model by LLM 
     - identification of key performance characteristics (such as HETP for a distillation column) 
+    - analysis of experimental methodology
+    - identification of the key experimental stages
     - identifying red flags and assessing their potential impact on the study results
     - evaluating context (like certain aspects of a proof-of-concept application study might be potentially relaxed in terms of academic research rigor, if such a move is deliberate, and a sound justification is provided that the core results/goals will not be no significantly influenced or if expected influence is understood, reasonably controlled, does not compromise the results, and there is a sound reason to follow such a path).
-    - 
+    - assessing a priori feasibility of reported study by comparing claimed results with a analysis of experimental methodology, model estimations, and general field knowledge.
+    - assessing a priori plausibility that a high-impact result with trivial implementation may have been overlooked by qualified experts.
