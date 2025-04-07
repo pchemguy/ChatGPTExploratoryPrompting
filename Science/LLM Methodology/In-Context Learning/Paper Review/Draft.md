@@ -81,7 +81,6 @@ Reflection on review process
 ---
 ---
 
-
 # Key Highlights: AI-Powered Manuscript Critique Framework
 
 - **Expert Peer Review Simulation:** Critically evaluates experimental methods _before_ considering claimed results. Rigorously assesses protocols based on fundamental scientific principles to uncover hidden flaws and questionable assumptions, independent of claimed outcomes.
