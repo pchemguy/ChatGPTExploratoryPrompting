@@ -97,7 +97,7 @@ Reflection on review process
 
 ## Demo Chats
 
-- [Gemini Advanced 2.5 Pro](https://g.co/gemini/share/c6c2a8fbcf58)
+- [Gemini Advanced 2.5 Pro](https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221sUZsweVq3MU_Et2VNS89IMfgYLIzCKMe%22%5D,%22action%22:%22open%22,%22userId%22:%22101058840941883201829%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing)
 - [ChatGPT Plus o1](https://chatgpt.com/share/67f2cad6-0068-8004-818e-da96c4e4544d)
 - [SuperGrok Grok 3 Think](https://grok.com/share/bGVnYWN5_0cca0b8b-1298-49ad-a1b2-8e6af6a686e8)
 

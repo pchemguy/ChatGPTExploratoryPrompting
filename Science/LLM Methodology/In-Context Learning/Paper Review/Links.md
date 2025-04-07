@@ -19,4 +19,7 @@ https://chatgpt.com/share/67f2cad6-0068-8004-818e-da96c4e4544d
 https://gemini.google.com/app/a4250f853a3cae0b
 https://g.co/gemini/share/c6c2a8fbcf58
 
+https://aistudio.google.com/prompts/1sUZsweVq3MU_Et2VNS89IMfgYLIzCKMe
+https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221sUZsweVq3MU_Et2VNS89IMfgYLIzCKMe%22%5D,%22action%22:%22open%22,%22userId%22:%22101058840941883201829%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing
+
 https://gemini.google.com/app/bcc4a4b9ef8fa8d4
