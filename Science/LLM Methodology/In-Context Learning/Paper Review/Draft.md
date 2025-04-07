@@ -93,6 +93,17 @@ Reflection on review process
 ---
 ---
 
+# Prompt Usage
+
+## Demo Chats
+
+- [Gemini *Advanced* 2.5 Pro](https://g.co/gemini/share/c6c2a8fbcf58)
+- [ChatGPT Plus o1](https://chatgpt.com/share/67f2cad6-0068-8004-818e-da96c4e4544d)
+- [SuperGrok Grok 3 Think](https://grok.com/share/bGVnYWN5_0cca0b8b-1298-49ad-a1b2-8e6af6a686e8)
+
+---
+---
+
 # Detailed Feature Highlights
 
 1. **Foundational Principles & Rigor**
