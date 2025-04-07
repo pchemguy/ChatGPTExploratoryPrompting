@@ -230,7 +230,3 @@ _The first step of a critical review is to precisely identify the authors' centr
 5. **Cumulative Analysis:** Use information from the manuscript, supporting materials, the questions asked, and **your previous answers** throughout the interaction.
 6. **Output Format:** Structure your responses clearly using Markdown. Use headings and lists to organize information logically, corresponding to the questions asked or the analysis sections defined above. Be explicit when making assumptions. Cite external sources appropriately.
 
----
----
-
-
