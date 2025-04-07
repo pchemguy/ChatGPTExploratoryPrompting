@@ -30,4 +30,5 @@ Proof of Concept LLM Prompt for Deep Experiment Chemistry Paper Analysis
     - assessing a priori feasibility of reported study by comparing claimed results with a analysis of experimental methodology, model estimations, and general field knowledge.
     - assessing a priori plausibility that a high-impact result with trivial implementation may have been overlooked by qualified experts.
     - **structured toolkit** designed to guide LLM critique (e.g., define instruction sets for extracting main results, analysis of figures, analysis of experimental protocols)
-    - 
+
+Alternative design strategy: split design of prompts and interactive submission with individual queries
