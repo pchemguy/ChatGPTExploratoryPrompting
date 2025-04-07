@@ -1,3 +1,6 @@
+
+
+
 Proof of Concept LLM Prompt for Deep Experiment Chemistry Paper Analysis
 
 
@@ -78,6 +81,19 @@ Reflection on review process
 ---
 ---
 
+
+# Key Highlights: AI-Powered Manuscript Critique Framework
+
+- **Expert Peer Review Simulation:** Critically evaluates experimental methods _before_ considering claimed results. Rigorously assesses protocols based on fundamental scientific principles to uncover hidden flaws and questionable assumptions, independent of claimed outcomes.
+- **Information Extraction, Inference, and Integration:** Actively extracts crucial claims, numeric data, and procedural details from across the entire manuscript (text, tables, figures). Intelligently infers missing parameters and synthesizes disparate information with scientific knowledge to build a cohesive, evidence-based understanding.
+- **Quantitative Reality Check:** Performs rapid back-of-the-envelope calculations, idealized modeling, and figure-based estimations. Rigorously tests if the described methods are _quantitatively capable_ of achieving the reported results _a priori_, flagging claims potentially inconsistent with method simplicity.
+- **Deep Figure Analysis:** Meticulously analyzes figures, photos, and schematics. Extracts quantitative details _from visuals_ and cross-validates _visual information_ against the text to uncover inconsistencies or provide unique supporting evidence.
+- **Guided Analysis Framework:** Leverages in-context learning and a modular and hierarchical prompt architecture that systematically guides the LLM through complex, multi-step critiques. Ensures thorough, consistent, and structured evaluation, acting like an interactive, expert-driven review template.
+- **Zero-Code Accessibility:** Unleashes sophisticated manuscript analysis capabilities directly within the standard LLM chat window using generally available advanced reasoning models. Entirely prompt-driven, requiring **no programming, API access, or specialized software installs.** (Primary target platform - Gemini *Advanced* 2.5 Pro; also tested on *ChatGPT Plus o1* and *SuperGrok Grok 3 Think* as of Apr 2025.)
+
+---
+---
+
 # Detailed Feature Highlights
 
 1. **Advanced Prompt Architecture & Interaction**
@@ -116,10 +132,3 @@ Reflection on review process
     - **LLM Requirements:** Specifies the need for advanced reasoning models capable of complex instruction following and, for full functionality, multimodal analysis (as tested).
     - **Cumulative Analysis:** Designed to leverage the entire conversation history and all provided materials for a comprehensive and evolving understanding (Section V.5).
 
-# Key Highlights: AI-Powered Manuscript Critique Framework
-
-- **Expert Peer Review Simulation:** Critically evaluates experimental methods _before_ considering claimed results. Rigorously assesses protocols based on fundamental scientific principles to uncover hidden flaws and questionable assumptions, independent of claimed outcomes.
-- **Information Extraction, Inference, and Synthesis:** Actively extracts crucial claims, numeric data, and procedural details from across the entire manuscript (text, tables, figures). Intelligently infers missing parameters and synthesizes disparate information with scientific knowledge to build a cohesive, evidence-based understanding.
-- **Quantitative Reality Check:** Performs rapid back-of-the-envelope calculations, idealized modeling, and figure-based estimations. Rigorously tests if the described methods are _quantitatively capable_ of achieving the reported results _a priori_, flagging claims potentially inconsistent with method simplicity.
-- **Dive Figure Analysis:** Meticulously analyzes figures, photos, and schematics. Extracts quantitative details _from visuals_ and cross-validates _visual information_ against the text to uncover inconsistencies or provide unique supporting evidence.
-- **Efficient Guided Analysis Framework:** Leverages an advanced prompt architecture that systematically guides the LLM through complex, multi-step critiques. Ensures thorough, consistent, and structured evaluation, acting like an interactive, expert-driven review template.
