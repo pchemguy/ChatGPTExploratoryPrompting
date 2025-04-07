@@ -12,6 +12,7 @@
     - In-context learning
     - Focused extraction of key findings (Title, abstract, intro, conclusions)
     - Ad-hoc semantic classification
+    - Extraction of numeric information from text and tables (probably from figures and photos during multimodal analysis) 
     - Data inference and validation
         - inference of missing characteristics by analysis of photographs, textual information, and integration with world knowledge
         - back-of-envelope / order of magnitude / idealized calculations
