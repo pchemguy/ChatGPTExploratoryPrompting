@@ -1,3 +1,5 @@
+Proof of Concept LLM Prompt for Deep Experiment Chemistry Paper Analysis
+
 # Features
 
 - Model Requirements: reasoning / thinking variants (tested on Gemini Advanced 2.5 Pro, SuperGrok Grok 3 Think, ChatGPT Plus o1)
@@ -19,3 +21,7 @@
         - appropriate governing equation selection
         - retrieving or estimating characteristics necessary for estimation
         - automatic selection of appropriate model by LLM 
+    - identification of key performance characteristics (such as HETP for a distillation column) 
+    - identifying red flags and assessing their potential impact on the study results
+    - evaluating context (like certain aspects of a proof-of-concept application study might be potentially relaxed in terms of academic research rigor, if such a move is deliberate, and a sound justification is provided that the core results/goals will not be no significantly influenced or if expected influence is understood, reasonably controlled, does not compromise the results, and there is a sound reason to follow such a path).
+    - 
