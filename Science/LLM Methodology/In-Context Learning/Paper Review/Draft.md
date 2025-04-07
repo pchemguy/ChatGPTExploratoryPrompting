@@ -9,9 +9,10 @@ Proof of Concept LLM Prompt for Deep Experiment Chemistry Paper Analysis
 - Application - critical analysis of an experimental chemistry paper
 - Methodology
     - Structured hierarchical prompt with internal references
-    - Prompt framework active for the duration of the conversation
+    - Modular prompt framework active for the duration of the conversation
     - Prompt framework akin an application shell console with the underlying LLM prompt being an analog of basic OS shell console
     - In-context learning
+    - Analysis workflow
     - Focused extraction of key findings (Title, abstract, intro, conclusions)
     - Ad-hoc semantic classification
     - Extraction of numeric information from text and tables (probably from figures and photos during multimodal analysis) 
@@ -28,3 +29,5 @@ Proof of Concept LLM Prompt for Deep Experiment Chemistry Paper Analysis
     - evaluating context (like certain aspects of a proof-of-concept application study might be potentially relaxed in terms of academic research rigor, if such a move is deliberate, and a sound justification is provided that the core results/goals will not be no significantly influenced or if expected influence is understood, reasonably controlled, does not compromise the results, and there is a sound reason to follow such a path).
     - assessing a priori feasibility of reported study by comparing claimed results with a analysis of experimental methodology, model estimations, and general field knowledge.
     - assessing a priori plausibility that a high-impact result with trivial implementation may have been overlooked by qualified experts.
+    - **structured toolkit** designed to guide LLM critique (e.g., define instruction sets for extracting main results, analysis of figures, analysis of experimental protocols)
+    - 
