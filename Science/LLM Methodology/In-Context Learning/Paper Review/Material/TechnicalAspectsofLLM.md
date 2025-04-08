@@ -24,7 +24,7 @@ Additional learning or training materials may be presented to the model:
 These materials might include facts, transformation examples, detailed workflows or algorithms, or special instructions, and provide:
 - **Input context** (e.g., chemical properties of reagents, format description or examples)  
 - **Transformation context** (e.g., details of the workflow or algorithm the model should follow)  
-- **Behavioral context** (often included as a part of ROLE/PERSONA/CONTEXT sections in structured prompts)
+- **Behavioral context** (e.g., role prompting)
 - **Output context** (e.g., style guidelines or formats such as plain text, bullet points, or CSV)
 
 ---
