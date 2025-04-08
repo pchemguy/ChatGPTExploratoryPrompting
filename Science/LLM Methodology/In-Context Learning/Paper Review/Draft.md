@@ -2,13 +2,12 @@
 
 ## Summary 
 
-I am sharing a proof-of-concept LLM [prompt](PeerReviewPrompt.md) that models the academic peer review process for experimental chemistry manuscripts. I also discuss select LLM and prompt engineering concepts and potential research directions. The key features of the presented prompт are highlighted below, with an extended list of features available [here](FrameWork_Features.md). The prompt has been developed and tested on a single [publication](https://pubs.acs.org/doi/10.1021/ac1022887). The basic use of this prompt:
-1. Submit the prompt at the beginning of a new LLM conversation (the primary target model is Gemini Advanced 2.5 Pro)  
-2. Su
-
- with 
-  (repo [copy](Enrichment of H2 17O from Tap Water, Characterization of the Enriched Water, and Properties of Several 17O-Labeled Compounds.pdf) with SI), which is a remarkable example of a disastrous failure of the peer review process.
-
+I am sharing a proof-of-concept LLM [prompt](PeerReviewPrompt.md) that models the academic peer review process for experimental chemistry manuscripts. I also discuss select LLM and prompt engineering concepts and potential research directions. The key features of the presented prompт are highlighted below, with an extended list of features available [here](FrameWork_Features.md). The prompt has been developed and tested using this [publication](https://pubs.acs.org/doi/10.1021/ac1022887). The basic use of this prompt:
+1. Submit the prompt (including Markdown) at the beginning of a new LLM conversation (the primary target model is Gemini Advanced 2.5 Pro)  
+2. Submit prompt "Analyze the core experimental protocol" with attached target manuscript and any SI.
+Here are demo analyses with [Gemini Advanced 2.5 Pro](https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221sUZsweVq3MU_Et2VNS89IMfgYLIzCKMe%22%5D,%22action%22:%22open%22,%22userId%22:%22101058840941883201829%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing), as well as with [ChatGPT Plus o1](https://chatgpt.com/share/67f2cad6-0068-8004-818e-da96c4e4544d) and [SuperGrok Grok 3 Think](https://grok.com/share/bGVnYWN5_0cca0b8b-1298-49ad-a1b2-8e6af6a686e8) (click on "Analysis of Core Experimental Protocol for H<sub>2</sub><sup>17</sup>O Enrichment" at the bottom).
+ 
+ 
 ==N.B: Highlight prompt engineering and review methodology==
 
 **Key Feature Highlights: Deep Analysis of Experimental Chemistry Manuscripts**  
@@ -19,3 +18,8 @@ I am sharing a proof-of-concept LLM [prompt](PeerReviewPrompt.md) that models th
 - **Guided Analysis Framework:** Leverages in-context learning and a hierarchical, modular, and flexible prompt architecture that systematically guides the LLM through complex, multi-step critiques. Ensures thorough, consistent, and structured evaluation, acting like an interactive, expert-driven review template.
 - **Zero-Code Accessibility:** Implements sophisticated manuscript analysis capabilities directly within the standard LLM chat window using generally available advanced reasoning models. Entirely prompt-driven, requiring no programming, API access, or specialized software installs. (Primary target platform - Gemini *Advanced* 2.5 Pro; also tested on Gemini *Standard* 2.5 Pro, *ChatGPT Plus o1* and *SuperGrok Grok 3 Think* as of Apr 2025.) 
 - **Markdown-Driven Prompt Architecture:** Relies on inherent **Markdown structure** (headings, lists, bolding, MathJax extension) to organize complex instructions during the development process and to effectively guide the LLM's sophisticated analytical process within the chat interface. _(Preserving format upon submission is essential for optimal function)._
+
+
+
+
+  (repo [copy](Enrichment of H2 17O from Tap Water, Characterization of the Enriched Water, and Properties of Several 17O-Labeled Compounds.pdf) with SI), which is a remarkable example of a disastrous failure of the peer review process.
