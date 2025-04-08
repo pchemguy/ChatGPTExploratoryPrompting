@@ -152,5 +152,11 @@ Reflection on review process
 - Development of learning materials in the form of problem solving
     - Development of problem solution examples for complex domain-specific tasks for few-shot / many-shot learning (example libraries)
 - Multi-modal analysis
-    - Development of workflow and example learning materials and testing for domain-specific image comprehension and knowledge integration
+    - Development of workflow/example learning materials and testing for domain-specific image comprehension and knowledge integration
 - Domain-specific context-based knowledge inference and integration learning materials and testing
+- Workflow/example learning materials for specific consistency checks, such as mass balance, composition, measurement errors vs. target quantity magnitude (e.g., attempting fractional distillation of water of 17O-water separation (dT < 0.1oC) with conventional lab thermometer).
+- Engineering targets: tolerances basic and geometric
+- Total synthesis
+- One-pot synthesis
+- Workflows for semi-automatic preparation of learning materials through deep analysis of manuscripts, textbooks, technical documents
+- Workflows/example for structured data/metadata extraction from primary and secondary sources.
