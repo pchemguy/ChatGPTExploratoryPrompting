@@ -4,11 +4,16 @@
 
 This post introduces a proof-of-concept LLM [prompt](PeerReviewPrompt.md) simulating academic peer review for experimental chemistry manuscripts, discusses related prompt engineering concepts, and suggests research directions. This prompt has been developed and tested using this [publication][EnrichmentURL], and its key features are highlighted below (detailed feature list [here](FrameWork_Features.md)).  
 
+> [!Warning]
+>
+> DO NOT copy nicely formatted prompt text using directly from the page above - it will not work. Press the "raw" button on the right of the toolbar or use [this link][Raw Prompt] directly.
+
+
 **Basic usage (primary target: Gemini Advanced 2.5 Pro):**  
-1. Input the full Markdown-formatted prompt in a new chat.
+1. Input the full **raw Markdown-formatted** prompt in a new chat.
 2. Submit "Analyze the core experimental protocol" prompt with the manuscript and SI.
 
-See demos for [Gemini Advanced 2.5 Pro][Gemini Demo] ([verbatim analysis][Gemini Analysis]), [ChatGPT Plus o1][o1 Demo], and [SuperGrok Grok 3 Think][Grok Demo] (click on "Analysis of Core Experimental Protocol for H<sub>2</sub><sup>17</sup>O Enrichment" at the bottom). Be aware that advanced components like process modeling, calculations, and multi-modal analysis may yield variable or failed results.
+See demos for [Gemini Advanced 2.5 Pro][Gemini Demo] ([verbatim copy of analysis][Gemini Analysis]), [ChatGPT Plus o1][o1 Demo], and [SuperGrok Grok 3 Think][Grok Demo] (click on "Analysis of Core Experimental Protocol for H<sub>2</sub><sup>17</sup>O Enrichment" at the bottom). Be aware that advanced components like process modeling, calculations, and multi-modal analysis may yield variable or failed results.
 
 ### Key Feature Highlights: Deep Analysis of Experimental Chemistry Manuscripts
 
@@ -126,6 +131,7 @@ Free vs. paid tiers often have different usage limits (input/output token caps).
 <!-- References -->
 
 [EnrichmentURL]: https://pubs.acs.org/doi/10.1021/ac1022887
+[Raw Prompt]: https://raw.githubusercontent.com/pchemguy/ChatGPTExploratoryPrompting/refs/heads/main/Science/LLM%20Methodology/In-Context%20Learning/Paper%20Review/PeerReviewPrompt.md
 [Gemini Demo]: https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221sUZsweVq3MU_Et2VNS89IMfgYLIzCKMe%22%5D,%22action%22:%22open%22,%22userId%22:%22101058840941883201829%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing
 [Gemini Analysis]: Gemini%20Analysis.md
 [o1 Demo]: https://chatgpt.com/share/67f2cad6-0068-8004-818e-da96c4e4544d
