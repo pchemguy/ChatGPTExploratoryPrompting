@@ -143,3 +143,14 @@ Reflection on review process
     - **Detailed Visual Examination:** Performs meticulous analysis of figures, including charts, schematics, spectra, and photographs, describing content, identifying key features, and noting anomalies (Section IV.C).
     - **Cross-Modal Synthesis:** Integrates information extracted from visuals (including inferred scales and dimensions from photos) with manuscript text, scientific principles, and external knowledge to assess consistency and implications (Section IV.C.4, IV.D.2.3.C).
 
+# Research Directions: Focus on In-Context Learning
+
+- Development of testing / benchmarking methodology (considering the open-ended nature of questions; [see also](https://en.wikipedia.org/wiki/Language_model_benchmark))
+- Development of learning materials in the form of workflows
+    - Development of custom workflows for complex domain-specific tasks, e.g., analysis of theoretical chemistry papers (workflow libraries)
+    - Pushing the size and complexity limits of individual prompts, e.g., extending presented prompt to cover, theoretical chemistry papers, then, possibly extending bordering subject and interdisciplinary targets
+- Development of learning materials in the form of problem solving
+    - Development of problem solution examples for complex domain-specific tasks for few-shot / many-shot learning (example libraries)
+- Multi-modal analysis
+    - Development of workflow and example learning materials and testing for domain-specific image comprehension and knowledge integration
+- Domain-specific context-based knowledge inference and integration learning materials and testing
