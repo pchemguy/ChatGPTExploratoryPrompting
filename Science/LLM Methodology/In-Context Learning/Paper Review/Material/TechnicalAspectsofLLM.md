@@ -16,18 +16,18 @@ Several strategies can help bridge these gaps:
 2. **Fine-tuning pre-trained models:** Adapting existing models with domain-specific data. This is less resource-intensive than training from scratch but still requires expertise and faces certain constraints.
 3. **In-context learning:** Providing necessary knowledge and workflow guidance directly within the prompt given to the LLM. This is often the most practical approach as it requires no changes to the underlying model and can be used with most available LLMs, including proprietary ones.
 
-[In-context learning](https://en.wikipedia.org/wiki/Prompt_engineering#In-context_learning) relies primarily on [prompt engineering](https://en.wikipedia.org/wiki/Prompt_engineering) and leverages the model’s *context* (essentially its working memory of the current conversation). Thanks to [meta-learning](https://en.wikipedia.org/wiki/Meta-learning_(computer_science)) (learning to learn), which is a component of the foundational training process, the model can integrate this short-term contextual information with its training-based knowledge, supporting more coherent and logically consistent responses. It also facilitates specialized prompting techniques that allow the model to tackle complex problems - even when relevant data is absent or limited in the training data.
+[In-context learning](https://en.wikipedia.org/wiki/Prompt_engineering#In-context_learning) primarily utilizes [prompt engineering](https://en.wikipedia.org/wiki/Prompt_engineering) to guide the LLM by leveraging its _context window_ (essentially, the working memory encompassing the current conversation and provided materials). Thanks to underlying [meta-learning](https://en.wikipedia.org/wiki/Meta-learning_(computer_science)) capabilities developed during foundational training, the model can integrate this immediate contextual information with its pre-existing knowledge. This enables more coherent, logically consistent responses and allows the model to tackle complex problems using specialized prompting techniques, even if relevant data was limited during its initial training.
 
-Additional learning or training materials may be presented to the model:
-- **Directly in the prompt**  
-- **In attached files**  
-- **Via special instructions** (if the platform supports it)
+This crucial contextual information can be supplied to the model in several ways:
+- **Directly within the prompt text.**
+- **Through attached files** (e.g., documents, data sheets).
+- **Via special instructions or system messages** (when available).
 
-These materials might include facts, transformation examples, detailed workflows or algorithms, or special instructions, and provide:
-- **Input context** (e.g., chemical properties of reagents, format description or examples)  
-- **Transformation context** (e.g., details of the workflow or algorithm the model should follow)  
-- **Behavioral context** (e.g., role prompting)
-- **Output context** (e.g., style guidelines or formats such as plain text, bullet points, or CSV)
+These provided materials (which might include facts, examples, detailed workflows, algorithms, or specific instructions) establish different types of context that shape the model's response:
+- **Input context:** Defines the data or format the model needs to understand or begin with (e.g., chemical properties of reagents, description of an input data structure, examples to follow).
+- **Transformation context:** Specifies the process, workflow, or algorithm the model should apply (e.g., step-by-step instructions for a calculation, rules for data conversion).
+- **Behavioral context:** Guides the model's persona, tone, or interaction style (e.g., instructions to act as a specific expert, adopt a formal tone).
+- **Output context:** Dictates the desired format, structure, or style of the final response (e.g., requesting output in CSV format, as bullet points, or following specific style guidelines).
 
 ---
 
