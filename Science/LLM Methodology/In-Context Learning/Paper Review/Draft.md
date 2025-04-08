@@ -1,4 +1,5 @@
-# Modeling the Peer Review Process with LLM
+# An LLM Prompt for Simulating Academic Peer Review
+
 
 ## **Summary** <!--Highlight prompt engineering and review methodology ?-->
 
