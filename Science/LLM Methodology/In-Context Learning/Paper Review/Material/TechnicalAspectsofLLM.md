@@ -22,34 +22,44 @@ This crucial contextual information can be supplied to the model in several ways
 - **Directly within the prompt text.**
 - **Through attached files** (e.g., documents, data sheets).
 - **Via special instructions or system messages** (when available).
-
-These provided materials (which might include facts, examples, detailed workflows, algorithms, or specific instructions) establish different types of context that shape the model's response:
-- **Input context:** Defines the data or format the model needs to understand or begin with (e.g., chemical properties of reagents, description of an input data structure, examples to follow).
-- **Transformation context:** Specifies the process, workflow, or algorithm the model should apply (e.g., step-by-step instructions for a calculation, rules for data conversion).
-- **Behavioral context:** Guides the model's persona, tone, or interaction style (e.g., instructions to act as a specific expert, adopt a formal tone).
-- **Output context:** Dictates the desired format, structure, or style of the final response (e.g., requesting output in CSV format, as bullet points, or following specific style guidelines).
+These provided materials establish different types of context that shape the model's response. Let's explore these context types in more detail.
 
 ---
 
 ### Input Context
 
-*Input context* supplies additional information about the initial conditions of a problem. Examples include:
-- **Physical and/or chemical properties of reagents** (e.g., analyzing possible chemical reactions based on a specific set of reagents)  
-- **Description of input format** (e.g., reverse-engineering a Python class module to represent serialized data) 
-- **Sample input files** (e.g., creating a Python class for graphical primitives used in rendering SPICE circuit element symbols)  
-[Retrieval-Augmented Generation](https://en.wikipedia.org/wiki/Retrieval-augmented_generation) (RAG) provides advanced methods for supplying input context. These techniques typically require additional software tools and programmatic access through the model’s APIs.
+_Input context_ supplies additional information about the initial conditions or data for a problem. Examples include:
+- **Physical and/or chemical properties of reagents**: Providing data for analyzing possible chemical reactions based on a specific set of reagents.
+- **Description of input format**: Detailing a data structure, perhaps for reverse-engineering a Python class module to represent serialized data.
+- **Sample input files**: Offering examples, such as graphical primitives data used in rendering SPICE circuit element symbols, to help create a corresponding Python class.
+
+[Retrieval-Augmented Generation](https://en.wikipedia.org/wiki/Retrieval-augmented_generation) (RAG) represents a set of advanced methods specifically for supplying relevant input context dynamically, often requiring additional tools and API access.
 
 ---
 
-### Behavioral context
+### Transformation Context
 
-Imposing restrictions on how the model behaves (for example, via role prompting) may (or may not) improve the quality of generated response. This part is tricky in part because models evolve rapidly and in part because this LLM aspect might be particularly opaque.
+Often, one simply poses a question to an LLM and lets it determine the solution path. However, for more complex tasks where the model might struggle to find an appropriate approach, or where a specific, rigorous method is preferred, explicitly defining the _transformation context_ - the workflow or algorithm - can greatly enhance result quality.
+
+Two common prompt-engineering methods for making workflows explicit are:
+- **Hierarchical Decomposition**: Breaking a complex problem into a sequence of simpler, smaller tasks.
+- **[Chain-of-Thought](https://en.wikipedia.org/wiki/Prompt_engineering#Chain-of-thought)** (CoT): Providing detailed, step-by-step demonstrations of intermediate reasoning.
+
+These methods can be combined or used separately. For example, this experimental [prompt template](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Science/Chemistry/ChemicalReactionAnalysis.md) illustrates a structured, step-by-step workflow for analyzing chemical processes - ensuring the model follows a deliberate approach rather than taking shortcuts.
+
+Developing such explicit workflows can be challenging because human reasoning in specialized domains often involves [tacit knowledge](https://en.wikipedia.org/wiki/Tacit_knowledge). Formalizing these implicit processes may require [self-reflection](https://en.wikipedia.org/wiki/Self-reflection), generalization, and iteration. Nonetheless, codifying complex reasoning strategies is valuable, especially as AI capabilities advance.
 
 ---
 
 ### Output Context
 
 *Output context* outlines what information should appear in the final output and how it should be organized or formatted. For instance, one might require that generated text adhere to a particular [language style](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Writing/WritingStyleGuidelines.md) or that generated code conform to a specific [coding style](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Code/Python/PythonStyleGuidelines.md). This ensures consistency, clarity, and alignment with project or organizational standards.
+
+---
+
+### Behavioral context
+
+Imposing restrictions on how the model behaves (for example, via role prompting) may (or may not) improve the quality of generated response. This part is tricky in part because models evolve rapidly and in part because this LLM aspect might be particularly opaque.
 
 ---
 
@@ -78,18 +88,6 @@ The number of *output tokens* is limited separately - usually constituting a fra
 **Subscription Plan Differences**  
 Models offered on “Free” vs. “Advanced” (or other paid) tiers may have different usage limits, including distinct input and output token caps. While free-tier limits might be enough for simple tasks, more complex or detailed prompts often benefit from the larger context windows and output capacities available under advanced plans.
 
----
-
-### Transformation context
-
-Often, one simply poses a question to an LLM and lets it solve the problem without specifying a particular method or workflow. However, for more complex tasks, models might fail to devise an appropriate approach on their own, or there could be multiple valid strategies, and you may wish to guide the model toward a more rigorous solution. In these cases, explicitly defining a workflow or algorithm can greatly enhance the quality of the results.
-
-Two common prompt-engineering methods for making workflows explicit are:
-- **Hierarchical Decomposition**: Breaking a complex problem into a sequence of simpler, smaller tasks.  
-- **[Chain-of-Thought](https://en.wikipedia.org/wiki/Prompt_engineering#Chain-of-thought)** (CoT): Providing detailed, step-by-step demonstrations of intermediate reasoning.  
-These methods can be combined or used separately. For example, this experimental [prompt template](https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/Science/Chemistry/ChemicalReactionAnalysis.md) illustrates a structured, step-by-step workflow for analyzing chemical processes—ensuring the model follows a deliberate approach rather than taking shortcuts.
-
-Developing such explicit workflows can be challenging because human reasoning in specialized domains (e.g., advanced research) often involves [tacit knowledge](https://en.wikipedia.org/wiki/Tacit_knowledge) and techniques learned over time. Formalizing these implicit processes may require [self-reflection](https://en.wikipedia.org/wiki/Self-reflection) and iterative experimentation. Nonetheless, identifying and codifying complex reasoning strategies has value, especially as AI models continue to improve.
 
 ---
 
