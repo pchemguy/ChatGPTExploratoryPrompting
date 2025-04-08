@@ -1,6 +1,5 @@
 # An LLM Prompt for Simulating Academic Peer Review
 
-
 ## **Summary** <!--Highlight prompt engineering and review methodology ?-->
 
 This post introduces a proof-of-concept LLM [prompt](PeerReviewPrompt.md) simulating academic peer review for experimental chemistry manuscripts, discusses related prompt engineering concepts, and suggests research directions. Key features are highlighted below (full list [here](FrameWork_Features.md)). The prompt was developed and tested using this [publication][EnrichmentURL].  
