@@ -10,7 +10,7 @@ This post introduces a proof-of-concept LLM [prompt](PeerReviewPrompt.md) simula
 
 **Basic usage (primary target: Gemini Advanced 2.5 Pro):**  
 1. Input the full **raw Markdown-formatted** prompt in a new chat.
-2. Submit "Analyze the core experimental protocol" prompt with the manuscript and SI.
+2. Submit `Analyze the core experimental protocol` prompt with the manuscript and SI.
 
 See demos for [Gemini Advanced 2.5 Pro][Gemini Demo] ([verbatim copy of analysis][Gemini Analysis]), [ChatGPT Plus o1][o1 Demo], and [SuperGrok Grok 3 Think][Grok Demo] (click on "Analysis of Core Experimental Protocol for H<sub>2</sub><sup>17</sup>O Enrichment" at the bottom). Be aware that advanced components like process modeling, calculations, and multi-modal analysis may yield variable or failed results.
 
@@ -125,9 +125,24 @@ Free vs. paid tiers often have different usage limits (input/output token caps).
 
 ## Prompt Design
 
+### The Goal
+
+The goal of this project was to see if it was possible to craft an LLM prompt such that a meaningful analysis of an experimental chemistry manuscript could be produced by submitting the manuscript alone with a prompt like `Review the attached paper` (in addition to the crafted prompt).
+
 ### Test Publication
 
-This prompt has been developed and tested using this [publication][EnrichmentURL] (repo [copy](Enrichment of H2 17O from Tap Water, Characterization of the Enriched Water, and Properties of Several 17O-Labeled Compounds.pdf) with SI), which is a remarkable example of a disastrous failure of the peer review process. (Actually, I am not sure which is more stunning: how ridiculous the main idea of the paper, how ineptly it was fabricated, how profoundly incompetent the PI on the paper is, or how on Earth this piece of work could ever reach reviewers, let alone get published in a good journal.) Well, at least I had an interesting example for my exercise...
+For development and testing, I have used this [publication][EnrichmentURL] (repo [copy](Enrichment of H2 17O from Tap Water, Characterization of the Enriched Water, and Properties of Several 17O-Labeled Compounds.pdf) with SI), which is a remarkable example of a disastrous failure of the peer review process. (Actually, I am not sure which is more stunning: how ridiculous the main idea of the paper, how ineptly it was fabricated, how profoundly incompetent the PI on the paper is, or how on Earth this piece of work could ever reach reviewers, let alone get published in a good journal.) Well, at least I had an interesting example for my little project...
+
+### Target Model
+
+Given the desired project goal, it was fairly clear that I only had chances with reasoning models. I have made initial attempts with ChatGPT Plus o1. The start was promising. However, performing development with the limit of 50 prompts per week is not very efficient, and I was not willing to pay ten times more for the Pro. The other problem was that I think I hit some input/output token limits. I did try Gemini 2.0 Flash Thinking with mixed results. I suspended the project and considered spending less time doing AI, when Google released Gemini Advanced 2.5 Pro. Google also did not have this 50 prompts per week limit, so I decided to give it another try. 
+
+### Dissecting the Paper 
+
+There is this [idea](https://oneusefulthing.org/p/on-the-necessity-of-a-sin?utm_source=publication-search) of interact with AI as if it were a human, hence the concepts of AI learning/understanding/thinking/reasoning or not, even though it does not do those things, at least not in a human sense. So, AI did not know what reviewing a paper means. Perhaps, I could actually give it specific step-by-step instructions that AI could understand and execute and that would implement some kind of an equivalent of a review process, except what those instructions would be?... So I decided to resort to some reflection and generalization exercises.
+
+#### Key Findings
+
 
 
 <!-- References -->
