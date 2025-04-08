@@ -146,7 +146,7 @@ Reflection on review process
 # Research Directions: Focus on In-Context Learning
 
 - Development of testing / benchmarking methodology (considering the open-ended nature of questions; [see also](https://en.wikipedia.org/wiki/Language_model_benchmark))
-- Development of learning materials in the form of workflows
+- Development of learning materials in the form of hierarchical/modular workflows
     - Development of custom workflows for complex domain-specific tasks, e.g., analysis of theoretical chemistry papers (workflow libraries)
     - Pushing the size and complexity limits of individual prompts, e.g., extending presented prompt to cover, theoretical chemistry papers, then, possibly extending bordering subject and interdisciplinary targets
 - Development of learning materials in the form of problem solving
@@ -160,3 +160,4 @@ Reflection on review process
 - One-pot synthesis
 - Workflows for semi-automatic preparation of learning materials through deep analysis of manuscripts, textbooks, technical documents
 - Workflows/example for structured data/metadata extraction from primary and secondary sources.
+- Custom classifications to be imbedded into in-context learning material
