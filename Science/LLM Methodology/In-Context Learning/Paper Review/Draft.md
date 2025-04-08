@@ -1,4 +1,4 @@
-# Modeling the Peer Review Process with LLM: AI-Powered Manuscript Critique Framework
+# Modeling the Peer Review Process with LLM
 
 ## **Summary** <!--Highlight prompt engineering and review methodology ?-->
 
