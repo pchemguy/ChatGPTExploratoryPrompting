@@ -2,12 +2,12 @@
   
 # Technical Aspects of LLM  
   
-Large Language Models (LLMs) that are generally available - such as OpenAI $\mathrm{GPT_{x}/o_{x}}$ or Google’s Gemini family - are evolving rapidly but still face limitations in solving complex, domain-specific research and engineering problems. Typically, addressing these problems requires:
+Large Language Models (LLMs) that are generally available - such as OpenAI *o1* or Google’s *Gemini* family - are evolving rapidly but still face limitations in solving complex, domain-specific research and engineering problems. Typically, addressing these limitations requires:
 - **Relevant factual knowledge** (e.g., chemical or physical properties of materials)  
 - **Workflows or algorithms** (e.g., a method for balancing chemical redox reactions)  
 - **Execution of multi-step solution processes**
 
-The introduction of “reasoning/thinking” models has substantially enhanced the ability of LLMs to perform multi-step processes. While these reasoning models share the same world knowledge as their non-reasoning counterparts, they are additionally trained or fine-tuned to simulate reasoning processes. However, knowledge gaps related to factual data and workflows still need separate solutions.
+The introduction of “reasoning/thinking” models has substantially enhanced the ability of LLMs to execute multi-step tasks. While these reasoning models share the same world knowledge as their non-reasoning counterparts, they are additionally trained or fine-tuned to simulate reasoning processes. At the same time, knowledge gaps related to factual data and workflows still need separate solutions. For example, while `Perform peer review of the attached manuscript` is a valid prompt, the produced result will be most like not particularly useful, probably because actual peer reviews are mostly closed and not available for training the foundational models. 
 
 Several strategies can help bridge these gaps and improve handling of multi-step workflows:
 1. **Training a new model from scratch** for a particular domain (e.g., chemistry or biology) or task (e.g., music OCR, chemical reaction extraction). This is the most resource-intensive approach but offers the greatest control over domain-specific capabilities.
@@ -24,6 +24,7 @@ Additional learning or training materials may be presented to the model:
 These materials might include facts, transformation examples, detailed workflows or algorithms, or special instructions, and provide:
 - **Input context** (e.g., chemical properties of reagents, format description or examples)  
 - **Transformation context** (e.g., details of the workflow or algorithm the model should follow)  
+- **Behavioral context** (often included as a part of ROLE/PERSONA/CONTEXT sections in structured prompts)
 - **Output context** (e.g., style guidelines or formats such as plain text, bullet points, or CSV)
 
 ---
@@ -35,6 +36,12 @@ These materials might include facts, transformation examples, detailed workflows
 - **Description of input format** (e.g., reverse-engineering a Python class module to represent serialized data) 
 - **Sample input files** (e.g., creating a Python class for graphical primitives used in rendering SPICE circuit element symbols)  
 [Retrieval-Augmented Generation](https://en.wikipedia.org/wiki/Retrieval-augmented_generation) (RAG) provides advanced methods for supplying input context. These techniques typically require additional software tools and programmatic access through the model’s APIs.
+
+---
+
+### Behavioral context
+
+Imposing restrictions on how the model behaves (for example, via role prompting) may (or may not) improve the quality of generated response. This part is tricky in part because models evolve rapidly and in part because this LLM aspect might be particularly opaque.
 
 ---
 
@@ -68,6 +75,8 @@ The number of *output tokens* is limited separately - usually constituting a fra
 
 **Subscription Plan Differences**  
 Models offered on “Free” vs. “Advanced” (or other paid) tiers may have different usage limits, including distinct input and output token caps. While free-tier limits might be enough for simple tasks, more complex or detailed prompts often benefit from the larger context windows and output capacities available under advanced plans.
+
+---
 
 ### Transformation context
 
