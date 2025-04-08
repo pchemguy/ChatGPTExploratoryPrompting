@@ -1,6 +1,6 @@
 <p align="right">Humans too can be inaccurate...</p>
   
-# Technical Aspects of LLM  
+## Technical Aspects of LLM  
   
 Widely available Large Language Models (LLMs)—such as OpenAI's _o1_ or Google’s _Gemini_ family - are evolving rapidly. However, they still face limitations when tackling complex, domain-specific research and engineering problems. Successfully addressing these limitations often requires integrating:
 - **Relevant factual knowledge** (e.g., specific chemical or physical properties).
@@ -57,37 +57,41 @@ _Output context_ outlines requirements for the final output's content, organizat
 
 ---
 
-### Behavioral context
+### Behavioral Context
 
-Imposing restrictions on how the model behaves (for example, via role prompting) may (or may not) improve the quality of generated response. This part is tricky in part because models evolve rapidly and in part because this LLM aspect might be particularly opaque.
+Guiding the model's persona, tone, or interaction style through _behavioral context_ (e.g., via role prompting) is another way to shape the output. The effectiveness of this can vary and may depend on the specific model and task, partly because this aspect of LLM behavior can be less predictable or opaque. Examples include instructing the model to act as a specific expert or adopt a formal tone.
 
 ---
 
 ### N-shot Learning (Learning by Example)
 
-One-shot (single-shot) and few-shot (multi-shot) prompting - collectively known as *N-shot* - involves providing one or more examples to the model. A key feature of these techniques is that the *transformation* process itself remains *implicit*. In other words, pure few-shot learning does not explicitly describe how to convert input into the desired output; instead, it depends on the model’s underlying training to infer an appropriate transformation that aligns with the examples given.
+Beyond defining context directly, models can also learn from examples provided within the prompt. One-shot (single example) and few-shot (multiple examples) prompting - collectively known as _N-shot_ learning - involve providing demonstrations of the desired input, output, or input-output relationship.
 
-N-shot learning examples can focus on any aspect of a problem: the input, the transformation, or the output. For instance:
-- **Reformatting plain text into a bulleted list**: Provide examples in which a sample paragraph is paired with its corresponding bulleted list.  
-- **Generating code in a specific style**: Show multiple examples of output code that follows particular style guidelines, accompanied by a brief explanation.  
-- **Reverse-engineering a Python class module**: Offer several sample text files containing serialized representations of an object (e.g., describing a graphical symbol of a an electrical component), which the model can use to infer how to implement the desired functionality.
+A key feature is that the _transformation_ process often remains _implicit_ in pure N-shot learning. The model infers the appropriate transformation based on the examples, relying on its underlying training.
 
-In general, more and varied examples lead to better performance. However, the total number of examples is limited by the *context window length*, since each example consumes part of the model’s "working" memory.
+N-shot examples can illustrate any aspect: input format, transformation logic, or output style. For instance:
+- **Reformatting**: Provide examples pairing paragraphs with their corresponding bulleted lists.
+- **Code Style**: Show multiple code examples following specific guidelines, perhaps with brief explanations.    
+- **Reverse-engineering**: Offer sample files of serialized objects (e.g., electrical component symbols) for the model to infer a class implementation.
+
+Generally, more diverse and numerous examples improve performance, but the total number is constrained by the model's _context window length_.
 
 ---
-### Limitations
 
-In *in-context learning*, all supplementary material is supplied in the model’s input prompt. This prompt is constrained by the model’s **context window** - the maximum number of *input [tokens](https://ai.google.dev/gemini-api/docs/tokens)* (the basic building blocks processed by an LLM) that can be included, encompassing prompt text, attachments, and conversation history. Although a detailed understanding of tokens is not strictly necessary, the key takeaway is that larger inputs consume more tokens, thereby reducing the available capacity for additional content.
+### Limitations of In-Context Learning
 
-**Context Window Constraints**  
-As the context window usage increases, the model’s ability to recall information accurately may degrade. Content placed in the middle of a large prompt can be especially prone to partial recall or omission. Context window limits are rapidly expanding - [Google’s long-context support](https://ai.google.dev/gemini-api/docs/long-context) leads to more robust in-context learning, including more extensive *[many-shot](https://ai.google.dev/gemini-api/docs/long-context#:~:text=Many%2Dshot%20in%2Dcontext%20learning)* examples, extra reference/context material, and longer, more detailed workflows or algorithms.
+While powerful, in-context learning relies entirely on information supplied within the prompt (including text, attachments, and history), which is subject to several constraints:
 
-**Output Token Limits**  
-The number of *output tokens* is limited separately - usually constituting a fraction the context window length. If the instructions prompt the model to produce detailed or lengthy responses (e.g., following an elaborate workflows and showing intermediate steps or results), the system may begin “compressing” the output once it nears this token limit. In other words, it will omit or shorten details to stay within the output cap. When preserving detail is important, you may need to divide prompts into smaller segments or handle them in separate conversations.
+**Context Window Constraints**
+The prompt is constrained by the model’s **context window** - the maximum number of [_input tokens_](https://ai.google.dev/gemini-api/docs/tokens) (the basic units processed by LLMs) it can handle. Larger inputs consume more tokens, reducing capacity.
 
-**Subscription Plan Differences**  
-Models offered on “Free” vs. “Advanced” (or other paid) tiers may have different usage limits, including distinct input and output token caps. While free-tier limits might be enough for simple tasks, more complex or detailed prompts often benefit from the larger context windows and output capacities available under advanced plans.
+Furthermore, as context window usage increases, recall accuracy may degrade, especially for information placed in the middle of long prompts. While context limits are rapidly expanding (cf. [Google’s long-context support](https://ai.google.dev/gemini-api/docs/long-context)), enabling more robust in-context learning (e.g., extensive *[many-shot](https://ai.google.dev/gemini-api/docs/long-context#:~:text=Many%2Dshot%20in%2Dcontext%20learning)* examples, more reference material, longer workflows), this fundamental limitation remains.
 
+**Output Token Limits**
+The number of _output tokens_ is typically limited separately, often to a fraction of the input context window size. If instructions require detailed or lengthy responses (e.g., showing intermediate steps), the model might start “compressing” the output (omitting details) as it nears this limit. Preserving detail might necessitate breaking prompts into smaller segments.
+
+**Subscription Plan Differences**
+Free vs. paid tiers often have different usage limits (input/output token caps). Complex tasks generally benefit from the larger capacities of advanced plans.
 
 ---
 
