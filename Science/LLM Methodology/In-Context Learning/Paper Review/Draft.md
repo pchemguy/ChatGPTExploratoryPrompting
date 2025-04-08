@@ -21,6 +21,7 @@ See demos for [Gemini Advanced 2.5 Pro][Gemini Demo] ([verbatim analysis][Gemini
 - **Markdown-Driven Prompt Architecture:** Relies on inherent **Markdown structure** (headings, lists, bolding, MathJax extension) to organize complex instructions during the development process and to effectively guide the LLM's sophisticated analytical process within the chat interface. _(Preserving format upon submission is essential for optimal function)._
 
 ---
+---
 
 ## Technical Aspects of LLM  
   
