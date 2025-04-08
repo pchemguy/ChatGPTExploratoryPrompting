@@ -8,7 +8,7 @@ This post introduces a proof-of-concept LLM [prompt](PeerReviewPrompt.md) simula
 1. Input the full Markdown-formatted prompt in a new chat.
 2. Submit "Analyze the core experimental protocol" prompt with the manuscript and SI.
 
-See demos for [Gemini Advanced 2.5 Pro][Gemini Demo] ([verbatim analysis](Gemini%20%Analysis.md)), [ChatGPT Plus o1][o1 Demo], and [SuperGrok Grok 3 Think][Grok Demo] (click on "Analysis of Core Experimental Protocol for H<sub>2</sub><sup>17</sup>O Enrichment" at the bottom). Be aware that advanced components like process modeling, calculations, and multi-modal analysis may yield variable or failed results.
+See demos for [Gemini Advanced 2.5 Pro][Gemini Demo] ([verbatim analysis](Gemini%20Analysis.md)), [ChatGPT Plus o1][o1 Demo], and [SuperGrok Grok 3 Think][Grok Demo] (click on "Analysis of Core Experimental Protocol for H<sub>2</sub><sup>17</sup>O Enrichment" at the bottom). Be aware that advanced components like process modeling, calculations, and multi-modal analysis may yield variable or failed results.
 
 **Key Feature Highlights: Deep Analysis of Experimental Chemistry Manuscripts**  
 - **Expert Peer Review Simulation:** Critically evaluates experimental methods _before_ considering claimed results. Rigorously assesses protocols based on fundamental scientific principles to uncover hidden flaws and questionable assumptions, independent of claimed outcomes.
