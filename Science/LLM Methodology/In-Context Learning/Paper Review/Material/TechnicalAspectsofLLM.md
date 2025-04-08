@@ -2,10 +2,10 @@
   
 # Technical Aspects of LLM  
   
-Large Language Models (LLMs) that are generally available - such as OpenAI *o1* or Google’s *Gemini* family - are evolving rapidly but still face limitations in solving complex, domain-specific research and engineering problems. Typically, addressing these limitations requires:
-- **Relevant factual knowledge** (e.g., chemical or physical properties of materials)  
-- **Workflows or algorithms** (e.g., a method for balancing chemical redox reactions)  
-- **Execution of multi-step solution processes**
+Widely available Large Language Models (LLMs)—such as OpenAI's _o1_ or Google’s _Gemini_ family - are evolving rapidly. However, they still face limitations when tackling complex, domain-specific research and engineering problems. Successfully addressing these limitations often requires integrating:
+- **Relevant factual knowledge** (e.g., specific chemical or physical properties).
+- **Domain-specific workflows or algorithms** (e.g., a defined method for balancing chemical redox reactions).
+- **Reliable execution of multi-step solution processes**.
 
 The introduction of “reasoning/thinking” models has substantially enhanced the ability of LLMs to execute multi-step tasks. While these reasoning models share the same world knowledge as their non-reasoning counterparts, they are additionally trained or fine-tuned to simulate reasoning processes. At the same time, knowledge gaps related to factual data and workflows still need separate solutions. For example, while `Perform peer review of the attached manuscript` is a valid prompt, the produced result will be most like not particularly useful, probably because actual peer reviews are mostly closed and not available for training the foundational models. 
 
