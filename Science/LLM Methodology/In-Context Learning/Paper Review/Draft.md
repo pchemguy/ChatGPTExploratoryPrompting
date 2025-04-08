@@ -149,6 +149,7 @@ Reflection on review process
 - Development of learning materials in the form of hierarchical/modular workflows
     - Development of custom workflows for complex domain-specific tasks, e.g., analysis of theoretical chemistry papers (workflow libraries)
     - Pushing the size and complexity limits of individual prompts, e.g., extending presented prompt to cover, theoretical chemistry papers, then, possibly extending bordering subject and interdisciplinary targets
+    - Expert reasoning simulation/modeling
 - Development of learning materials in the form of problem solving
     - Development of problem solution examples for complex domain-specific tasks for few-shot / many-shot learning (example libraries)
 - Multi-modal analysis
