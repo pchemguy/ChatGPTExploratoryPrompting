@@ -2,7 +2,7 @@
 
 ## Summary <!--Highlight prompt engineering and review methodology ?-->
 
-This post introduces a proof-of-concept LLM [prompt](PeerReviewPrompt.md) simulating academic peer review for experimental chemistry manuscripts, discusses related prompt engineering concepts, and suggests research directions. Key features are highlighted below (full list [here](FrameWork_Features.md)). The prompt was developed and tested using this [publication][EnrichmentURL].  
+This post introduces a proof-of-concept LLM [prompt](PeerReviewPrompt.md) simulating academic peer review for experimental chemistry manuscripts, discusses related prompt engineering concepts, and suggests research directions. This prompt has been developed and tested using this [publication][EnrichmentURL], and its key features are highlighted below (detailed feature list [here](FrameWork_Features.md)).  
 
 **Basic usage (primary target: Gemini Advanced 2.5 Pro):**  
 1. Input the full Markdown-formatted prompt in a new chat.
