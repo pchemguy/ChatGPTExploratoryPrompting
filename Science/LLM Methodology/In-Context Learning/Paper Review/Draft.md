@@ -143,7 +143,8 @@ I will use *the model* or gapAI as a shortcut for Gemini Advanced 2.5 Pro. Other
 
 There is this [idea](https://oneusefulthing.org/p/on-the-necessity-of-a-sin?utm_source=publication-search) of interaction with AI as if it were a human (anthropomorphization), hence the concepts of AI learning / understanding / thinking / reasoning or not, even though it does not do those things, at least not in a human sense. Following this approach, the prompt text directly instructs the model to perform various actions or to behave a certain way.
 
-[I. Core Objective][Core Objective] instructs the model about the ultimate objective. 
+[I. Core Objective][Core Objective] instructs the model about the ultimate objective. I developed an extensive behavioral context primarily split between 
+[II. Persona: Expert Critical Reviewer][Persona] and [III. Context: Framework for Critical Manuscript Review][Context: Framework for Critical Manuscript Review]. 
 
 ### Dissecting the Paper 
 
@@ -166,5 +167,7 @@ The first logical step was to have the AI identify the main result and key findi
 [Grok Demo]: https://grok.com/share/bGVnYWN5_0cca0b8b-1298-49ad-a1b2-8e6af6a686e8
 
 [Core Objective]: PeerReviewPrompt.md#i-core-objective
+[Persona]: PeerReviewPrompt.md#ii-persona-expert-critical-reviewer
+[Context: Framework for Critical Manuscript Review]: PeerReviewPrompt.md#iii-context-framework-for-critical-manuscript-review
 [MainResults] PeerReviewPrompt.md#b-identifying-claimed-results-and-contributions-based-only-on-title-abstract-introduction-and-conclusion
 
