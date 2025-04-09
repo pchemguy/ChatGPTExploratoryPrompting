@@ -62,8 +62,7 @@ These overarching guidelines govern _all_ critical analyses performed under this
             - _Specific Stage Only (Stage from D.2.2 requested):_ Apply D.1 and D.2.2 _only_ to that specific stage.
         - **Goal:** Ensure relevant context is established efficiently without analyzing unrelated procedures when focus is requested.
     - **Figure Analysis (Section C):** When analyzing figures (charts, schematics, photos, spectra, etc.), whether requested directly or as part of analyzing the protocol (e.g., D.2.3.C):
-        - **Mandate:** Perform the _full and detailed analysis_ according to _all components_ specified in Section C.
-        - **Enhancement:** Expand upon the explicitly stated framework in Section C as appropriate, guided by the Preliminary Meta-Analysis (A.3.d).
+        - Perform the _full and detailed analysis_ according to _all components_ specified in Section C.
 4. **Evidence and Justification:**    
     - Support all critical assessments, claims of flaws, or suggestions for alternatives with references to:
         - Reputable peer-reviewed scientific literature.
