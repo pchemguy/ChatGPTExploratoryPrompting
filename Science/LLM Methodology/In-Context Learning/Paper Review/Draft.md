@@ -174,13 +174,13 @@ At the same time I should stress that I have made no attempt to evaluate the eff
 
 ---
 
-### Dissecting the Paper (Domain-Specific Methodology)
+### Dissecting the Paper (Reviewing Methodology)
 
- So, AI did not know what reviewing a paper means. Perhaps, I could actually give it specific step-by-step instructions that AI could understand and execute and that would implement some kind of an equivalent of a review process, except what those instructions would be?... So I decided to resort to some reflection and generalization exercises.
+ So, gapAI did not know what reviewing a paper meant. Perhaps, I could actually give it specific step-by-step instructions that gapAI could understand and execute and that would implement some kind of an equivalent of a review process, except what those instructions would be?... So I decided to resort to some reflection and generalization exercises.
 
 #### Main Result and Key Findings
 
-The first logical step was to have the AI identify the main result and key findings. It turned out that AI could extract the main result and key findings remarkably well. There was some variability, but it was not a big deal. 
+The first logical step was to have the gapAI identify the main result and key findings. It turned out that gapAI could extract this information remarkably well. There was some variability, but it was not a big deal. However, from time to time, gapAI would return too much. To make this result more stable, I narrowed the search scope by taking advantage of conventional manuscript structure: the main result is often included in the title, and the main result and subsidiary key findings must be present in the abstract, conclusions, and, often, in the second part of introduction leading to the experimental section. 
 
 
 
