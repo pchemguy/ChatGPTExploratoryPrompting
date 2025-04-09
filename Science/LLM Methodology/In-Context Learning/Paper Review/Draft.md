@@ -143,11 +143,19 @@ I will use *the model* or gapAI as a shortcut for Gemini Advanced 2.5 Pro. Other
 
 ### Design Overview 
 
-The overall structure is roughly based on common patterns used for structured prompts, where the full prompt is split in several blocks that provide behavioral context (**Role** / **Persona** and **Context**) and task description (**Task** / **Objective**). This functional separation is not strict, of course, and the complexity of present objective necessitated a considerably more complex structure, with primary focus on **how** and **what** - the component which is generally only included in advanced prompts.
+The top-level block structure is roughly based a common pattern used for structured prompts, where the full prompt is split into several blocks that provide behavioral context (**Role** / **Persona** and **Context**) and task description (**Task** / **Objective**). This functional separation is not strict, of course, and the complexity of present objective necessitated a considerably more complex structure, with primary focus on **how** and **what** to do - the component which is generally only included in advanced prompts.
+
+The presented prompt employs several advanced design strategies. First of all, the primary content block, **[IV. Specific Analysis Instructions (Baseline Framework)][Framework]**, which is responsible for actual implementation of the simulated peer review workflow, organizes instructions using two earlier mentioned established techniques, hierarchical decomposition and chain-of-thought. The content structure is formatted with Markdown marking, which directly submitted to the model as part of the prompt and interpreted by the model.
+
+
+
+to advanced 
 
 **[IV. Specific Analysis Instructions (Baseline Framework)][Framework]** is the core section responsible for actual implementation of the simulated peer review workflow.
 
-**[I. Core Objective][Core Objective]** instructs the model about the ultimate objective.
+
+
+---
 
 [**II. Persona: Expert Critical Reviewer**][Persona]  
 The role prompting technique where prompt instructions tell the model to behave as a particular character is a common, though somewhat opaque, means to steer the transformation process and facilitate certain output format or content without explicitly describing such requirements. I went further, by trying to rationalize desirable characteristics of an expert reviewer and imprinting/projecting those characteristics onto the model via detailed description of the indicated roles with associated traits. 
@@ -159,6 +167,8 @@ I also included a third aspect to specifically address studies that might have r
 As can be seen from the prompt text, I actually defined multiple role models that focus on different character aspects. The text is also occasionally repetitive (and not only in this section). This redundancy is intentional and important. Because model does not recall content with 100% accuracy, reiterating the most important points throughout a large complex prompt improves model compliance.
 
 At the same time I should stress that I have made no attempt to evaluate the effect of using both role models and associated detailed descriptions. Neither did I try to optimize strategic repetitions. These aspects may very well be a topic of a separate methodological prompt engineering research. 
+
+---
 
 and [III. Context: Framework for Critical Manuscript Review][Framework] are the primary source of the behavioral context. 
 
