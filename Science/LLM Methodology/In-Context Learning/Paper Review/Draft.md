@@ -135,15 +135,19 @@ For development and testing, I have used this [publication][EnrichmentURL] (repo
 
 ### Target Model
 
-Given the desired project goal, it was fairly clear that I only had chances with reasoning models. I have made initial attempts with ChatGPT Plus o1. The start was promising. However, performing development with the limit of 50 prompts per week is not very efficient, and I was not willing to pay ten times more for the Pro. The other problem was that I think I hit some input/output token limits. I did try Gemini 2.0 Flash Thinking with mixed results. I suspended the project and considered spending less time doing AI, when Google released Gemini Advanced 2.5 Pro. Google also did not have this 50 prompts per week limit, so I decided to give it another try (I will use simply AI where I mean Gemini Advanced 2.5 Pro for brevity). 
+Given the desired project goal, it was fairly clear that I only had chances with reasoning models. I have made initial attempts with ChatGPT Plus o1. The start was promising. However, performing development with the limit of 50 prompts per week is not very efficient, and I was not willing to pay ten times more for the Pro. The other problem was that I think I hit some input/output token limits. I did try Gemini 2.0 Flash Thinking with mixed results. I suspended the project and considered spending less time doing AI, when Google released Gemini Advanced 2.5 Pro. Google also did not have this 50 prompts per week limit, so I decided to give it another try. From this point forward,
+
+I will use *the model* or gapAI as a shortcut for Gemini Advanced 2.5 Pro. Other reasoning models generally can also be swapped for this shortcut, with certain restrictions.
 
 ### Block Structure
 
-q
+There is this [idea](https://oneusefulthing.org/p/on-the-necessity-of-a-sin?utm_source=publication-search) of interaction with AI as if it were a human (anthropomorphization), hence the concepts of AI learning / understanding / thinking / reasoning or not, even though it does not do those things, at least not in a human sense. Following this approach, the prompt text directly instructs the model to perform various actions or to behave a certain way.
+
+[I. Core Objective][Core Objective] instructs the model about the ultimate objective. 
 
 ### Dissecting the Paper 
 
-There is this [idea](https://oneusefulthing.org/p/on-the-necessity-of-a-sin?utm_source=publication-search) of interact with AI as if it were a human, hence the concepts of AI learning/understanding/thinking/reasoning or not, even though it does not do those things, at least not in a human sense. So, AI did not know what reviewing a paper means. Perhaps, I could actually give it specific step-by-step instructions that AI could understand and execute and that would implement some kind of an equivalent of a review process, except what those instructions would be?... So I decided to resort to some reflection and generalization exercises.
+ So, AI did not know what reviewing a paper means. Perhaps, I could actually give it specific step-by-step instructions that AI could understand and execute and that would implement some kind of an equivalent of a review process, except what those instructions would be?... So I decided to resort to some reflection and generalization exercises.
 
 #### Main Result and Key Findings
 
@@ -160,4 +164,7 @@ The first logical step was to have the AI identify the main result and key findi
 [Gemini Analysis]: Gemini%20Analysis.md
 [o1 Demo]: https://chatgpt.com/share/67f2cad6-0068-8004-818e-da96c4e4544d
 [Grok Demo]: https://grok.com/share/bGVnYWN5_0cca0b8b-1298-49ad-a1b2-8e6af6a686e8
-[] PeerReviewPrompt.md#b-identifying-claimed-results-and-contributions-based-only-on-title-abstract-introduction-and-conclusion
+
+[Core Objective]: PeerReviewPrompt.md#i-core-objective
+[MainResults] PeerReviewPrompt.md#b-identifying-claimed-results-and-contributions-based-only-on-title-abstract-introduction-and-conclusion
+
