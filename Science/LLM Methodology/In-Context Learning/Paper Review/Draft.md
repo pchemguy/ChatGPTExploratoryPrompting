@@ -172,6 +172,8 @@ At the same time I should stress that I have made no attempt to evaluate the eff
 
 [V. Final Instructions for Interaction][Final Instructions] mostly reiterates important instructions, defines "default" analysis workflow, and provides output context instructions.
 
+---
+
 ### Dissecting the Paper 
 
  So, AI did not know what reviewing a paper means. Perhaps, I could actually give it specific step-by-step instructions that AI could understand and execute and that would implement some kind of an equivalent of a review process, except what those instructions would be?... So I decided to resort to some reflection and generalization exercises.
