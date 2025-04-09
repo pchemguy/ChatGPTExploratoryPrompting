@@ -27,7 +27,7 @@ See demos for [Gemini Advanced 2.5 Pro][Gemini Demo] ([verbatim copy of analysis
 ---
 ---
 
-## Technical Aspects of LLM  
+## Relevant Technical Aspects of LLM  
   
 Widely available Large Language Models (LLMs)—such as OpenAI's _o1_ or Google’s _Gemini_ family - are evolving rapidly. However, they still face limitations when tackling complex, domain-specific research and engineering problems. Successfully addressing these limitations often requires integrating:
 - **Relevant factual knowledge** (e.g., specific chemical or physical properties).
