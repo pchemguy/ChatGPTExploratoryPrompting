@@ -123,7 +123,7 @@ Free vs. paid tiers often have different usage limits (input/output token caps).
 ---
 ---
 
-## Prompt Design
+## Design of the Presented Prompt
 
 ### The Goal
 
