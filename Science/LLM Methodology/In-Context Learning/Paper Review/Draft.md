@@ -149,9 +149,7 @@ The presented prompt employs several advanced design strategies. First of all, t
 
 Next, the prompt designed to be added to the current context directly, rather than producing immediate answer (appropriate instructions describe this design intent to the model and provide specific usage guidelines in sections [III. Context: Framework for Critical Manuscript Review][Framework] and [V. Final Instructions for Interaction][Final Instructions]). The idea is that the instructions are stored in the working memory and used with later prompts. For example, I could prompt the model to retrieve the main result from the manuscript in subsequent prompt, and, when executing, the model would apply earlier parts of earlier submitted prompt related to main result extraction. This approach is not completely new. ChatGPT projects support limited project-wide instructions, and when custom GPTs or Gemini Gems are created, custom instructions are also used that will apply for all conversations. I am not aware, however, whether this idea of deliberately submitting workflow instructions directly through the chat prompt for subsequent use (this is basically a variant of in-context learning) has been employed before, and I have not made any attempt to see if it was. So I am not going to claim any novelty here and simply present employed concepts as used. 
 
-Finally, them main **[IV. Specific Analysis Instructions (Baseline Framework)][Framework]** section is designed as a library of workflows or a framework for performing individual analysis tasks, as well as for performing integrated tasks. For example, [B. Identifying Claimed Results and Contributions (Based ONLY on Title, Abstract, Introduction, and Conclusion)][MainResults] defines a workflow for extracting the key findings. If in a subsequent prompt I inquire about the main result, the model will use this block to follow a predefined workflow. 
-
-
+Finally, them main **[IV. Specific Analysis Instructions (Baseline Framework)][Framework]** section is designed as a library of workflows or a framework for performing individual analysis tasks, as well as for performing integrated tasks. For example, [IV.B. Identifying Claimed Results and Contributions (Based ONLY on Title, Abstract, Introduction, and Conclusion)][MainResults] defines a workflow for extracting the key findings. If in a subsequent prompt I inquire about the main result, the model will use this block to follow a predefined workflow. Similarly, if I request an analysis of a particular figure, the model would follow workflow of the section [IV.C. Analyzing Figures (Charts, Schematics, Photos)][FigureAnalysis]. Further, if my first request after submitting the framework prompt is something like `Analyze all figures directly associated with the main result`, the model identifies the need to find the main result first, which triggers the section IV.B, than it identifies related figures, and applies section IV.C for subsequent analysis.
 
 to advanced 
 
@@ -206,7 +204,7 @@ The first logical step was to have the AI identify the main result and key findi
 [Final Instructions]: PeerReviewPrompt.md#v-final-instructions-for-interaction
 
 [MainResults]: PeerReviewPrompt.md#b-identifying-claimed-results-and-contributions-based-only-on-title-abstract-introduction-and-conclusion
-[FigureAnalysis]
+[FigureAnalysis]: PeerReviewPrompt.md#c-analyzing-figures-charts-schematics-photos
 
 [Multimodal PDF]: https://ai.google.dev/gemini-api/docs/document-processing
 [Chat API]: https://ai.google.dev/gemini-api/docs/text-generation
