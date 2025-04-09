@@ -141,7 +141,7 @@ Given the desired project goal, it was fairly clear that I only had chances with
 
 I will use *the model* or gapAI as a shortcut for Gemini Advanced 2.5 Pro. Other reasoning models generally can also be swapped for this shortcut, with certain restrictions. Further, there is this [idea](https://oneusefulthing.org/p/on-the-necessity-of-a-sin?utm_source=publication-search) of interaction with AI as if it were a human (anthropomorphization), hence the concepts of AI learning / understanding / thinking / reasoning or not, even though it does not do those things, at least not in a human sense. Following this approach, the prompt text directly instructs the model to perform various actions or to behave a certain way.
 
-### Design Overview 
+### Prompt Design Overview (Prompt Engineering Methodology)
 
 The top-level block structure is roughly based a common pattern used for structured prompts, where the full prompt is split into several blocks that provide behavioral context (**Role** / **Persona** and **Context**) and task description (**Task** / **Objective**). This functional separation is not strict, of course, and the complexity of present objective necessitated a considerably more complex structure, with primary focus on **how** and **what** to do - the component which is generally only included in advanced prompts.
 
@@ -174,7 +174,7 @@ At the same time I should stress that I have made no attempt to evaluate the eff
 
 ---
 
-### Dissecting the Paper 
+### Dissecting the Paper (Domain-Specific Methodology)
 
  So, AI did not know what reviewing a paper means. Perhaps, I could actually give it specific step-by-step instructions that AI could understand and execute and that would implement some kind of an equivalent of a review process, except what those instructions would be?... So I decided to resort to some reflection and generalization exercises.
 
