@@ -178,7 +178,7 @@ At the same time I should stress that I have made no attempt to evaluate the eff
 
 ### Formalizing the Review Process
 
- So, gapAI did not know what reviewing a paper meant. Perhaps, I could actually give it specific step-by-step instructions that gapAI could understand and execute and that would implement some kind of an equivalent of a review process, except what those instructions would be?... So I decided to resort to some reflection and generalization exercises.
+ So, gapAI did not know what reviewing a paper meant. Perhaps, I could actually give it specific step-by-step instructions that gapAI could understand and execute and that would implement some kind of an equivalent of a review process, except what those instructions would be?... So I decided to resort to some reflection and generalization exercise: I started considering the various issues with the test paper and trying to articulate checks / analysis instructions targeting those issues in a generalized way.
 
 #### Main Result and Key Findings
 
@@ -186,7 +186,7 @@ The first logical step was to have the gapAI identify the main result and key fi
 
 #### Multimodal Figure Analysis
 
-
+Gemini *Advanced* 2.5 Pro supports multimodal figure analysis, so I drafted the Section [IV.C. Analyzing Figures (Charts, Schematics, Photos)][FigureAnalysis] focused on figure analysis. The workflow involves overall description of the figure (which may include, for example, a schematic of experimental setup and a photograph) composition as the first step. The second step is detailed description of individual figure components. The section IV.C intentionally places significant emphasis on photographs, as I wanted to push and test the model abilities, and, at the same time, to see that the model truly interprets the content of photos by comparing produced output with the actual photographs. For example, in case of the present test manuscript, the prompt reliably identifies the aluminum foil (which is not mentioned anywhere in text) in figure S1 wrapped around the fractionating column. Instructions also specifically request to link visual information in pictures to information in schematics and text.
 
 <!-- References -->
 
