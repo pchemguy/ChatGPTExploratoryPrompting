@@ -137,6 +137,7 @@ Given the desired project goal, it was fairly clear that I only had chances with
 
 I will use *the model* or gapAI as a shortcut for Gemini Advanced 2.5 Pro. Other reasoning models generally can also be swapped for this shortcut, with certain restrictions. Further, there is this [idea](https://oneusefulthing.org/p/on-the-necessity-of-a-sin?utm_source=publication-search) of interaction with AI as if it were a human (anthropomorphization), hence the concepts of AI learning / understanding / thinking / reasoning or not, even though it does not do those things, at least not in a human sense. Following this approach, the prompt text directly instructs the model to perform various actions or to behave a certain way.
 
+---
 ### Prompt Design Methodology
 
 The top-level block structure is roughly based a common pattern used for structured prompts, where the full prompt is split into several blocks that provide behavioral context (**Role** / **Persona** and **Context**) and task description (**Task** / **Objective**). This functional separation is not strict, of course, and the complexity of present objective necessitated a considerably more complex structure, with primary focus on **how** and **what** to do - the component which is generally only included in advanced prompts.
@@ -190,6 +191,10 @@ Gemini *Advanced* 2.5 Pro supports multimodal figure analysis, so I drafted the 
 
 For example, in case of the present test manuscript, the prompt reliably identifies the aluminum foil (which is not mentioned anywhere in text) in figure S1 wrapped around the fractionating column. Instructions also specifically request to link visual information in pictures to information in schematics and text. Equally interesting (or even more), I wanted gapAI to gauge the scale on the figure by comparing the visual size of the feed RBF and its volume as described in text, gauge the flask diameter, and then use it as reference to estimate the size of the factional column, and I wanted have it all done without a single specific word - the instructions would need to remain generic as presented in Section IV.C. From run to run, the estimated relative size guessed by gapAI varies some, but for subsequent order of magnitude estimation of potential column efficiency the observed variation is irrelevant.
 
+#### Experimental Protocol
+
+The workflow for analysis of experimental protocol is described in Section [IV.D. Analyzing the Experimental Protocol][Experimental]. This section is split into parts: general analysis in IV.D.1 and a more detailed analysis in IV.D.2 that focuses on the core experimental protocol, which is defined as a set of experimental stages directly contributing to the main result. Most likely this extra complexity is not justified and the two sections should be collapsed. Instead of heaving these two sections, the prompt should define two or more scopes of execution of the experimental protocol analysis workflow. For now, let us go over the present version.
+
 <!-- References -->
 
 [EnrichmentURL]: https://pubs.acs.org/doi/10.1021/ac1022887
@@ -208,6 +213,6 @@ For example, in case of the present test manuscript, the prompt reliably identif
 [MainResults]: PeerReviewPrompt.md#b-identifying-claimed-results-and-contributions-based-only-on-title-abstract-introduction-and-conclusion
 [FigureAnalysis]: PeerReviewPrompt.md#c-analyzing-figures-charts-schematics-photos
 [ExperimentalCore]: peerreviewprompt.md/#d2-in-depth-analysis-of-the-core-experimental-protocol-implementation-of-the-main-result:~:text=practices.%20Cite%20sources.-,D.2.%20In%2DDepth%20Analysis%20of%20the%20Core%20Experimental%20Protocol%20(Implementation%20of%20the%20Main%20Result),-PREREQUISITE%3A%20Section
-
+[Experimental]: PeerReviewPrompt.md#d-analyzing-the-experimental-protocol
 [Multimodal PDF]: https://ai.google.dev/gemini-api/docs/document-processing
 [Chat API]: https://ai.google.dev/gemini-api/docs/text-generation
