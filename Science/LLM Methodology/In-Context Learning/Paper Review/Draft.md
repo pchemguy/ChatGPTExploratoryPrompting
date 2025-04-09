@@ -145,13 +145,19 @@ I will use *the model* or gapAI as a shortcut for Gemini Advanced 2.5 Pro. Other
 
 The overall structure is roughly based on common patterns used for structured prompts, where the full prompt is split in several blocks that provide behavioral context (**Role** / **Persona** and **Context**) and task description (**Task** / **Objective**). This functional separation is not strict, of course, and the complexity of present objective necessitated a considerably more complex structure, with primary focus on **how** and **what** - the component which is generally only included in advanced prompts.
 
-[I. Core Objective][Core Objective] instructs the model about the ultimate objective.
+**[I. Core Objective][Core Objective]** instructs the model about the ultimate objective.
 
-#### Behavioral Context
-
-[II. Persona: Expert Critical Reviewer][Persona] and [III. Context: Framework for Critical Manuscript Review][Context: Framework for Critical Manuscript Review] are the primary source of the behavioral context. 
-
+[**II. Persona: Expert Critical Reviewer**][Persona]  
 The role prompting technique where prompt instructions tell the model to behave as a particular character is a common, though somewhat opaque, means to steer the transformation process and facilitate certain output format or content without explicitly describing such requirements. I went further, by trying to rationalize desirable characteristics of an expert reviewer and imprinting/projecting those characteristics onto the model via detailed description of the indicated roles with associated traits. 
+
+I have pursued two primary goals here. The first one was crucial: erasing the bias coming from the reported result. When models read the manuscript, the reported results by default become the basis for supporting reported methodology. So when I asked the model to analyze experimental protocols, it would typically used the results to support its arguments. This behavior is, of course, completely unacceptable and needed to be addressed by emphasizing and reemphasizing that the reported results can never be used throughout performed analysis as supporting arguments. The second major goal was to encourage the model to produce a detailed rigorous output. While I described this requirements explicitly, I also figured that a good model setting for this behavior could be an advanced examination.
+
+I also included a third aspect to specifically address studies that might have reported important results as proof-of-concept experiments, where, in principle, certain deviation from academic rigor can be tolerated if properly justified. This aspect is further developed in the primary workflow section of the prompt.  
+
+As can be seen from the prompt text, I actually defined multiple role models that focus on different character aspects. The text is also occasionally repetitive (and not only in this section). This 
+I should stress that I have made no attempt to evaluate the effect of 
+
+and [III. Context: Framework for Critical Manuscript Review][Framework] are the primary source of the behavioral context. 
 
 I developed an extensive behavioral context primarily split between 
 . [IV. Specific Analysis Instructions (Baseline Framework)][Framework] is the core section responsible for actual implementation of the simulated peer review workflow. [V. Final Instructions for Interaction][Final Instructions] provides, as the name suggests, the final instructions to the model.
