@@ -166,10 +166,11 @@ At the same time I should stress that I have made no attempt to evaluate the eff
 
 ---
 
-and [III. Context: Framework for Critical Manuscript Review][Framework] are the primary source of the behavioral context. 
+[III. Context: Framework for Critical Manuscript Review][Framework] primarily describes the modular/framework prompt design to the model. 
 
-I developed an extensive behavioral context primarily split between 
-. [IV. Specific Analysis Instructions (Baseline Framework)][Framework] is the core section responsible for actual implementation of the simulated peer review workflow. [V. Final Instructions for Interaction][Final Instructions] provides, as the name suggests, the final instructions to the model.
+---
+
+[V. Final Instructions for Interaction][Final Instructions] mostly reiterates important instructions, defines "default" analysis workflow, and provides output context instructions.
 
 ### Dissecting the Paper 
 
