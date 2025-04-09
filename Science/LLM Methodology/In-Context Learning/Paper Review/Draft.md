@@ -137,14 +137,24 @@ For development and testing, I have used this [publication][EnrichmentURL] (repo
 
 Given the desired project goal, it was fairly clear that I only had chances with reasoning models. I have made initial attempts with ChatGPT Plus o1. The start was promising. However, performing development with the limit of 50 prompts per week is not very efficient, and I was not willing to pay ten times more for the Pro. The other problem was that I think I hit some input/output token limits. I did try Gemini 2.0 Flash Thinking with mixed results. I suspended the project and considered spending less time doing AI, when Google released Gemini Advanced 2.5 Pro. Google also did not have this 50 prompts per week limit, so I decided to give it another try. From this point forward,
 
-I will use *the model* or gapAI as a shortcut for Gemini Advanced 2.5 Pro. Other reasoning models generally can also be swapped for this shortcut, with certain restrictions.
+### Conventions
 
-### Block Structure
+I will use *the model* or gapAI as a shortcut for Gemini Advanced 2.5 Pro. Other reasoning models generally can also be swapped for this shortcut, with certain restrictions. Further, there is this [idea](https://oneusefulthing.org/p/on-the-necessity-of-a-sin?utm_source=publication-search) of interaction with AI as if it were a human (anthropomorphization), hence the concepts of AI learning / understanding / thinking / reasoning or not, even though it does not do those things, at least not in a human sense. Following this approach, the prompt text directly instructs the model to perform various actions or to behave a certain way.
 
-There is this [idea](https://oneusefulthing.org/p/on-the-necessity-of-a-sin?utm_source=publication-search) of interaction with AI as if it were a human (anthropomorphization), hence the concepts of AI learning / understanding / thinking / reasoning or not, even though it does not do those things, at least not in a human sense. Following this approach, the prompt text directly instructs the model to perform various actions or to behave a certain way.
+### Design Overview 
 
-[I. Core Objective][Core Objective] instructs the model about the ultimate objective. I developed an extensive behavioral context primarily split between 
-[II. Persona: Expert Critical Reviewer][Persona] and [III. Context: Framework for Critical Manuscript Review][Context: Framework for Critical Manuscript Review]. 
+The overall structure is roughly based on common patterns used for structured prompts, where the full prompt is split in several blocks that provide behavioral context (**Role** / **Persona** and **Context**) and task description (**Task** / **Objective**). This functional separation is not strict, of course, and the complexity of present objective necessitated a considerably more complex structure, with primary focus on **how** and **what** - the component which is generally only included in advanced prompts.
+
+[I. Core Objective][Core Objective] instructs the model about the ultimate objective.
+
+#### Behavioral Context
+
+[II. Persona: Expert Critical Reviewer][Persona] and [III. Context: Framework for Critical Manuscript Review][Context: Framework for Critical Manuscript Review] are the primary source of the behavioral context. 
+
+The role prompting technique where prompt instructions tell the model to behave as a particular character is a common, though somewhat opaque, means to steer the transformation process and facilitate certain output format or content without explicitly describing such requirements. I went further, by trying to rationalize desirable characteristics of an expert reviewer and imprinting/projecting those characteristics onto the model via detailed description of the indicated roles with associated traits. 
+
+I developed an extensive behavioral context primarily split between 
+. [IV. Specific Analysis Instructions (Baseline Framework)][Framework] is the core section responsible for actual implementation of the simulated peer review workflow. [V. Final Instructions for Interaction][Final Instructions] provides, as the name suggests, the final instructions to the model.
 
 ### Dissecting the Paper 
 
@@ -169,5 +179,10 @@ The first logical step was to have the AI identify the main result and key findi
 [Core Objective]: PeerReviewPrompt.md#i-core-objective
 [Persona]: PeerReviewPrompt.md#ii-persona-expert-critical-reviewer
 [Context: Framework for Critical Manuscript Review]: PeerReviewPrompt.md#iii-context-framework-for-critical-manuscript-review
+[Framework]: PeerReviewPrompt.md#iv-specific-analysis-instructions-baseline-framework
+[Final Instructions]: PeerReviewPrompt.md#v-final-instructions-for-interaction
+
 [MainResults] PeerReviewPrompt.md#b-identifying-claimed-results-and-contributions-based-only-on-title-abstract-introduction-and-conclusion
 
+[Multimodal PDF]: https://ai.google.dev/gemini-api/docs/document-processing
+[Chat API]: https://ai.google.dev/gemini-api/docs/text-generation
