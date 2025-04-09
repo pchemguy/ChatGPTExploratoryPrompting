@@ -195,6 +195,8 @@ For example, in case of the present test manuscript, the prompt reliably identif
 
 The workflow for analysis of experimental protocol is described in Section [IV.D. Analyzing the Experimental Protocol][Experimental]. This section is split into parts: general analysis in IV.D.1 and a more detailed analysis in IV.D.2 that focuses on the core experimental protocol, which is defined as a set of experimental stages directly contributing to the main result. Most likely this extra complexity is not justified and the two sections should be collapsed. Instead of heaving these two sections, the prompt should define two or more scopes of execution of the experimental protocol analysis workflow. For now, let us go over the present version.
 
+When I started developing the Section IV.D workflow, I wanted to have generic instructions that would let gapAI to figure out that the two key processes are the "pre-enrichment" evaporation stage and fractional distillation. Then it should figure out that attainable enrichment for both of these processes can be estimated. gapAI would need to select appropriate models, necessary parameters, extract whatever parameters are available from text; gauge whatever possible from figure analysis (which is in this case is the length of the fractional column), and estimate the remaining parameters based on clues in text and general knowledge or pull from the Internet. Using this collected information, gapAI would calculate estimated enrichment for both processes, identify and extract the claimed numbers, compare the two sets, and concluded that, well, ACS Analytical Chemistry could as well publish a paper on perpetuum mobile... 
+
 <!-- References -->
 
 [EnrichmentURL]: https://pubs.acs.org/doi/10.1021/ac1022887
