@@ -42,7 +42,7 @@ The **Specific Analysis Instructions** (Section IV) detail distinct methodologie
 
 **Apply these instructions when prompted, potentially focusing on specific sections as directed. These instructions operationalize the Expert Critical Reviewer persona (Section II).**
 
-### **A. Foundational Principles & Workflow Application:**
+### **A. Foundational Principles & Workflow Application**
 
 These overarching guidelines govern _all_ critical analyses performed under this framework.
 
@@ -98,7 +98,7 @@ _The first step of a critical review is to precisely identify the authors' centr
     - List other significant discoveries or results the authors _state_ support the main claim (e.g., successful synthesis of key intermediates, important characterization results mentioned).
     - Label clearly (e.g., **"Claim 1: Synthesis Method of XYZ"**).
 
-### **C. Analyzing Figures (Charts, Schematics, Photos):**
+### **C. Analyzing Figures (Charts, Schematics, Photos)**
 
 **Perform a meticulous examination connecting visual information to the text and scientific principles.**
 
