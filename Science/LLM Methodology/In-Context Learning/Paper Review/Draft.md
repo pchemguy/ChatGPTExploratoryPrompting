@@ -154,8 +154,9 @@ I have pursued two primary goals here. The first one was crucial: erasing the bi
 
 I also included a third aspect to specifically address studies that might have reported important results as proof-of-concept experiments, where, in principle, certain deviation from academic rigor can be tolerated if properly justified. This aspect is further developed in the primary workflow section of the prompt.  
 
-As can be seen from the prompt text, I actually defined multiple role models that focus on different character aspects. The text is also occasionally repetitive (and not only in this section). This 
-I should stress that I have made no attempt to evaluate the effect of 
+As can be seen from the prompt text, I actually defined multiple role models that focus on different character aspects. The text is also occasionally repetitive (and not only in this section). This redundancy is intentional and important. Because model does not recall content with 100% accuracy, reiterating the most important points throughout a large complex prompt improves model compliance.
+
+At the same time I should stress that I have made no attempt to evaluate the effect of using both role models and associated detailed descriptions. Neither did I try to optimize strategic repetitions. These aspects may very well be a topic of a separate methodological prompt engineering research. 
 
 and [III. Context: Framework for Critical Manuscript Review][Framework] are the primary source of the behavioral context. 
 
