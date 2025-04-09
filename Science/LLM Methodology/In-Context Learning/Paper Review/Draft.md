@@ -145,6 +145,8 @@ I will use *the model* or gapAI as a shortcut for Gemini Advanced 2.5 Pro. Other
 
 The overall structure is roughly based on common patterns used for structured prompts, where the full prompt is split in several blocks that provide behavioral context (**Role** / **Persona** and **Context**) and task description (**Task** / **Objective**). This functional separation is not strict, of course, and the complexity of present objective necessitated a considerably more complex structure, with primary focus on **how** and **what** - the component which is generally only included in advanced prompts.
 
+**[IV. Specific Analysis Instructions (Baseline Framework)][Framework]** is the core section responsible for actual implementation of the simulated peer review workflow.
+
 **[I. Core Objective][Core Objective]** instructs the model about the ultimate objective.
 
 [**II. Persona: Expert Critical Reviewer**][Persona]  
