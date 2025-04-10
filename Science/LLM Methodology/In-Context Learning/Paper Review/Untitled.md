@@ -22,11 +22,11 @@ The main **Section [IV. Specific Analysis Instructions][Framework]** serves as t
 
 This method utilizes a form of in-context learning. While conceptually similar to persistent instructions in features like Custom GPTs or Gemini Gems, this implementation embeds the workflows directly via the initial chat prompt.  
 
-#### C. Ad Hoc Classification for Guided Information Extraction
+#### Ad Hoc Classification for Guided Information Extraction
 
 While gapAI effectively extracts specific information, parsing that information for deeper analysis can be challenging, and occasional variations occur even with stable targets like the main result. For example, the test paper claimed "economical enrichment of 17O-water... via slow evaporation and fractional distillation". A thorough analysis requires separating the _unmet need_ (access to cheap 17O-water) from the _claimed novelty_ (the specific combination of methods). This separation allows for independent assessment of the problem's significance and the ingenuity/validity of the proposed solution. To guide the model in making such distinctions generically, the prompt employs _ad hoc classification_. This involves defining categories tailored to the document type (experimental chemistry) and the specific analytical goals. For instance, Section IV.B.1 includes a "Classification of the Main Claimed Result based on targeted unmet need". This classification helps distinguish the problem being addressed. A potential refinement would be to add a separate, parallel classification specifically for the 'novelty component' (e.g., classifying the type of innovation claimed), rather than just adding comments, to enable even more distinct analysis of both aspects.
 
-#### D. Behavioral Context & Persona Engineering
+#### Behavioral Context & Persona Engineering
 
 The **[II. Persona: Expert Critical Reviewer][Persona]** section focuses on behavioral context & persona engineering. While role prompting (instructing the model to act as a character) is common, this prompt goes further by rationalizing desirable reviewer characteristics and projecting them onto the model via detailed role descriptions with associated traits. To reinforce these traits and improve compliance within the large, complex prompt, multiple role models focusing on different character aspects were defined, and key instructions were intentionally repeated (given that models lack perfect recall).
 
@@ -37,22 +37,16 @@ A third aspect addresses handling proof-of-concept studies, where some deviation
 
 *(Disclaimer: No formal evaluation was conducted on the specific effects of using multiple role models versus a single one, nor was the optimal frequency of strategic repetition determined. These remain potential areas for prompt engineering research.)*
 
+#### Final Instructions
 
-#### E. Final Instructions & Default Workflow (`[V. Final Instructions for Interaction][Final Instructions]`)
+The concluding **[V. Final Instructions for Interaction][Final Instructions]** section serves several key functions. Primarily, it reiterates crucial instructions from earlier sections, particularly reinforcing the core principles of the Persona (Section II) and critical constraints like independent methodological scrutiny (Section IV.A), ensuring these constituents are consistently applied throughout the interaction. It also defines the 'default' analysis workflow - the specific sequence of analysis steps (e.g., executing the full protocol analysis outlined in Section IV.D) that the model should perform automatically when given a general request like `Review this paper`, providing a standardized starting point. Finally, it provides output context guidelines, potentially including instructions on structuring the response, using Markdown effectively, citing sources appropriately, and explicitly stating assumptions, further ensuring the output meets the persona's rigorous standards.
 
-[V. Final Instructions for Interaction][Final Instructions] primarily serves to reiterate crucial instructions, define the "default" analysis workflow triggered by general requests, and provide output context guidelines.
+### Formalizing the Review Process
 
-### 4. Prompt Development Process & Test Case
+A significant challenge involved translating the complex human task of scientific peer review into specific, executable instructions for the model. I approached this translation through reflection and generalization: I analyzed flaws in a specific test manuscript to articulate corresponding checks and analysis steps in a generic format applicable to other experimental chemistry papers. For development and testing, I selected a particular [publication][EnrichmentURL] (repo [copy with SI](Enrichment of H2 17O from Tap Water, Characterization of the Enriched Water, and Properties of Several 17O-Labeled Compounds.pdf)), which exhibited significant, demonstrable flaws, representing a remarkable example of a disastrous failure of the peer review process. (I am not sure which is more stunning: how ridiculous the main idea of the paper, how ineptly it was fabricated, how profoundly incompetent the PI on the paper is, or how on Earth this piece of work could ever reach reviewers, let alone get published in a good journal.) Because this paper is riddled with issues, it proved particularly helpful for developing relevant instructions via the reflect/generalize workflow and served as a challenging test case for the prompt's ability to guide critical analysis.
 
-So, gapAI did not know what reviewing a paper meant. Perhaps, I could actually give it specific step-by-step instructions that gapAI could understand and execute and that would implement some kind of an equivalent of a review process, except what those instructions would be?... So I decided to resort to some reflection and generalization exercise: I started considering the various issues with the test paper and trying to articulate checks / analysis instructions targeting those issues in a generalized way.
 
-#### Test Publication
 
-For development and testing, I have used this [publication][EnrichmentURL] (repo [copy](Enrichment of H2 17O from Tap Water, Characterization of the Enriched Water, and Properties of Several 17O-Labeled Compounds.pdf) with SI), which is a remarkable example of a disastrous failure of the peer review process. (Actually, I am not sure which is more stunning: how ridiculous the main idea of the paper, how ineptly it was fabricated, how profoundly incompetent the PI on the paper is, or how on Earth this piece of work could ever reach reviewers, let alone get published in a good journal.) Well, at least I had an interesting specimen for my little AI project...
-
-### 5. Formalizing Key Review Components in the Prompt
-
-_(This section describes the specific analysis components defined within the prompt's framework, developed based on the process above)_
 
 #### Main Result and Key Findings
 
