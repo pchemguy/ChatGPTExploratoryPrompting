@@ -222,3 +222,5 @@ See demos for [Gemini Advanced 2.5 Pro][Gemini Demo] ([verbatim copy of analysis
 [Experimental]: PeerReviewPrompt.md#d-analyzing-the-experimental-protocol
 [Multimodal PDF]: https://ai.google.dev/gemini-api/docs/document-processing
 [Chat API]: https://ai.google.dev/gemini-api/docs/text-generation
+
+[Gemini Editing History]: https://gemini.google.com/app/06a510d123e47ecf
