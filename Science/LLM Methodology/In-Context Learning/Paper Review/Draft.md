@@ -4,13 +4,9 @@
 
 This post introduces a proof-of-concept LLM [prompt](PeerReviewPrompt.md) simulating academic peer review for experimental chemistry manuscripts, discusses related prompt engineering concepts, and suggests possible research directions. This prompt has been developed and tested using this [publication][EnrichmentURL], and its key features are highlighted below (detailed feature list [here](FrameWork_Features.md)).  
 
-> [!Important]
->
-> **Copying Prompt Text:** Please use the "Raw" button (usually found in the toolbar above the text) or use [this link][Raw Prompt] directly to copy the prompt text. Copying directly from the formatted view will not work.
-
 **Basic usage (primary target: Gemini Advanced 2.5 Pro):**  
-1. Input the full **raw Markdown-formatted** prompt in a new chat.
-2. Submit `Analyze the core experimental protocol` prompt with the manuscript and SI.
+1. Input the full **RAW Markdown-formatted** [prompt](PeerReviewPrompt.md) in a new chat.
+2. Submit `Analyze the core experimental protocol` prompt with the manuscript and SI attached.
 
 See demos for [Gemini Advanced 2.5 Pro][Gemini Demo] ([verbatim copy of analysis][Gemini Analysis]), [ChatGPT Plus o1][o1 Demo], and [SuperGrok Grok 3 Think][Grok Demo] (click on "Analysis of Core Experimental Protocol for H<sub>2</sub><sup>17</sup>O Enrichment" at the bottom). Be aware that advanced components like process modeling, calculations, and multi-modal analysis may yield variable or failed results.
 

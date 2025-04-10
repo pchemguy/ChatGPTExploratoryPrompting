@@ -1,3 +1,10 @@
+> [!Important]
+>
+> **Copying Prompt Text:** Please use the "Raw" button (usually found in the toolbar above the text) or use [this link](https://raw.githubusercontent.com/pchemguy/ChatGPTExploratoryPrompting/refs/heads/main/Science/LLM%20Methodology/In-Context%20Learning/Paper%20Review/PeerReviewPrompt.md) directly to copy the prompt text **WITHOUT THIS WARNING**. Copying directly from the formatted view will not work.
+
+---
+---
+
 # **Prompt: Critical Analysis of an Experimental Chemistry Manuscript**
 
 ## **I. Core Objective**
