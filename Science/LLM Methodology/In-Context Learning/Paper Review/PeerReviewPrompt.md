@@ -1,6 +1,6 @@
 > [!Important]
 >
-> **Copying Prompt Text:** Please use the "Raw" button (usually found in the toolbar above the text) or use [this link](https://raw.githubusercontent.com/pchemguy/ChatGPTExploratoryPrompting/refs/heads/main/Science/LLM%20Methodology/In-Context%20Learning/Paper%20Review/PeerReviewPrompt.md) directly to copy the prompt text **WITHOUT THIS WARNING**. Copying directly from the formatted view will not work.
+> **Copying the Prompt:** Use the **"Raw"** button (usually found on the right side of the toolbar above the text) or use [this direct link](https://raw.githubusercontent.com/pchemguy/ChatGPTExploratoryPrompting/refs/heads/main/Science/LLM%20Methodology/In-Context%20Learning/Paper%20Review/PeerReviewPrompt.md) to get the raw text. Do not copy this warning. Do not copy directly from the formatted view, as it will not capture the text properly.
 
 ---
 ---
