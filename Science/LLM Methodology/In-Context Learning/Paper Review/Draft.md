@@ -14,7 +14,7 @@
 ---
 ---
 
-## Relevant Technical Aspects of LLM  
+## Introduction  
   
 Widely available Large Language Models (LLMs)—such as OpenAI's _o1_ or Google’s _Gemini_ family - are evolving rapidly. However, they still face limitations when tackling complex, domain-specific research and engineering problems. Successfully addressing these limitations often requires integrating:
 - **Relevant factual knowledge** (e.g., specific chemical or physical properties).
@@ -28,7 +28,11 @@ For example, simply prompting a general LLM to `Perform peer review of the attac
 Several strategies can help bridge these gaps:
 1. **Training a new model from scratch:** Tailoring a model specifically for a domain (e.g., chemistry) or task (e.g., chemical reaction extraction). This is the most resource-intensive option but offers maximum control.
 2. **Fine-tuning pre-trained models:** Adapting existing models with domain-specific data. This is less resource-intensive than training from scratch but still requires expertise and faces certain constraints.
-3. **In-context learning:** Providing necessary knowledge and workflow guidance directly within the prompt given to the LLM. This is often the most practical approach as it requires no changes to the underlying model and can be used with most available LLMs, including proprietary ones.
+3. **In-context learning:** Providing necessary knowledge and workflow guidance directly within the prompt given to the LLM.
+
+Among these strategies, in-context learning is often the most practical approach as it requires no changes to the underlying model and can be used with most available LLMs, including proprietary ones.
+
+## In-Context Learning
 
 [In-context learning](https://en.wikipedia.org/wiki/Prompt_engineering#In-context_learning) primarily utilizes [prompt engineering](https://en.wikipedia.org/wiki/Prompt_engineering) to guide the LLM by leveraging its _context window_ (essentially, the working memory encompassing the current conversation and provided materials). Thanks to underlying [meta-learning](https://en.wikipedia.org/wiki/Meta-learning_(computer_science)) capabilities developed during foundational training, the model can integrate this immediate contextual information with its pre-existing knowledge. This enables more coherent, logically consistent responses and allows the model to tackle complex problems using specialized prompting techniques, even if relevant data was limited during its initial training.
 
@@ -77,18 +81,6 @@ Guiding the model's persona, tone, or interaction style through _behavioral cont
 
 ---
 
-### N-shot Learning (Learning by Example)
-
-Beyond defining context directly, models can also learn from examples provided within the prompt. One-shot (single example) and few-shot (multiple examples) prompting - collectively known as _N-shot_ learning - involve providing demonstrations of the desired input, output, or input-output relationship.
-
-A key feature is that the _transformation_ process often remains _implicit_ in pure N-shot learning. The model infers the appropriate transformation based on the examples, relying on its underlying training.
-
-N-shot examples can illustrate any aspect: input format, transformation logic, or output style. For instance:
-- **Reformatting**: Provide examples pairing paragraphs with their corresponding bulleted lists.
-- **Code Style**: Show multiple code examples following specific guidelines, perhaps with brief explanations.    
-- **Reverse-engineering**: Offer sample files of serialized objects (e.g., electrical component symbols) for the model to infer a class implementation.
-
-Generally, more diverse and numerous examples improve performance, but the total number is constrained by the model's _context window length_.
 
 ---
 
