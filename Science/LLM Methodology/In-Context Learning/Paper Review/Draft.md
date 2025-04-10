@@ -208,49 +208,6 @@ See demos for [Gemini Advanced 2.5 Pro][Gemini Demo] ([verbatim copy of analysis
 ---
 ---
 
-## Research Directions and Outlook
-
-
-Development of sample analysis reports for a specific prompt to be used as hybrid n-shot learning in combination with prompt.  
-  
-Assistant to reviewers and researchers  
-Provide meaningful in-depth analysis  
-Combine with deep research for automatic review generation  
-  
-
-  
-Optimize behavioral and transformation contexts for science/research/engineering workflows and tasks  
-  
-Specialized benchmarks  
-  
-Direct model programming via natural language  
-  
-Fine tuning foundational models for persistent framework prompts  
-  
-Recall quality
-
-- Development of testing / benchmarking methodology (considering the open-ended nature of questions; [see also](https://en.wikipedia.org/wiki/Language_model_benchmark))
-- Development of learning materials in the form of hierarchical/modular workflows
-    - Development of custom workflows for complex domain-specific tasks, e.g., analysis of theoretical chemistry papers (workflow libraries)
-    - Pushing the size and complexity limits of individual prompts, e.g., extending presented prompt to cover, theoretical chemistry papers, then, possibly extending bordering subject and interdisciplinary targets
-    - Expert reasoning simulation/modeling
-- Development of learning materials in the form of problem solving
-    - Development of problem solution examples for complex domain-specific tasks for few-shot / many-shot learning (example libraries)
-- Multi-modal analysis
-    - Development of workflow/example learning materials and testing for domain-specific image comprehension and knowledge integration
-- Domain-specific context-based knowledge inference and integration learning materials and testing
-- Workflow/example learning materials for specific consistency checks, such as mass balance, composition, measurement errors of used/identified equipment vs. target quantity magnitude.
-- Engineering targets: tolerances basic and geometric
-- Total synthesis
-- One-pot synthesis
-- Workflows for semi-automatic preparation of learning materials through deep analysis of manuscripts, textbooks, technical documents
-- Workflows/example for structured data/metadata extraction from primary and secondary sources.
-- Custom classifications to be imbedded into in-context learning material
-
-## Conclusion
-
-Demonstrates potential  
-
 
 <!-- References -->
 
@@ -273,10 +230,3 @@ Demonstrates potential
 [Experimental]: PeerReviewPrompt.md#d-analyzing-the-experimental-protocol
 [Multimodal PDF]: https://ai.google.dev/gemini-api/docs/document-processing
 [Chat API]: https://ai.google.dev/gemini-api/docs/text-generation
-
-
-
-- Summary
-- Query examples
-- Research directions
-- Conclusions
