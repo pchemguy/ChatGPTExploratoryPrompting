@@ -1,3 +1,9 @@
+
+- Summary
+- Query examples
+- Research directions
+- Conclusions
+
 # An AI Prompt for Simulating Academic Peer Review
 
 ## Summary <!--Highlight prompt engineering and review methodology ?-->
