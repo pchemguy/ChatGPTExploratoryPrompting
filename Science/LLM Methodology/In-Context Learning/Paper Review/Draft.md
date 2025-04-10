@@ -1,4 +1,4 @@
-# An AI Prompt for Simulating Academic Peer Review
+# Simulating Peer Review via Programmed Workflow Prompting
 
 
 ### Key Feature Highlights: Deep Analysis of Experimental Chemistry Manuscripts
@@ -42,9 +42,7 @@ This crucial contextual information can be supplied to the model in several ways
 - **Via special instructions or system messages** (when available).
 These provided materials establish different types of context that shape the model's response. Let's explore these context types in more detail.
 
----
-
-#### Model Context
+### Model Context
 
 **Input Context**
 
@@ -73,9 +71,7 @@ _Output context_ outlines requirements for the final output's content, organizat
 
 Guiding the model's persona, tone, or interaction style through _behavioral context_ (e.g., via role prompting) is another way to shape the output. The effectiveness of this can vary and may depend on the specific model and task, partly because this aspect of LLM behavior can be less predictable or opaque. Examples include instructing the model to act as a specific expert or adopt a formal tone.
 
----
-
-#### Limitations
+### Limitations
 
 While powerful, in-context learning relies entirely on information supplied within the prompt (including text, attachments, and history), which is subject to several constraints:
 
@@ -93,20 +89,19 @@ Free vs. paid tiers often have different usage limits (input/output token caps).
 ---
 ---
 
-## Prompt Design Methodology
+## Hierarchical Modular Analysis Framework
 
 Simulating the peer review process proved to be a challenging task requiring strong reasoning capabilities. Initial trials with `ChatGPT Plus o1` were promising but limited by usage caps and potential token constraints, while Gemini 2.0 Flash Thinking yielded mixed results. Initial tests of Gemini Advanced 2.5 Pro soon after its introduction demonstrated its superiority for this task over other models tested, which might still be suitable with certain caveats.
 
 The strong reasoning power of Gemini Advanced 2.5 Pro (referred to here as _the model_ or gapAI), combined with less restrictive usage limits, allowed for more efficient iterative development. The improved feature set enabled the creation of a complex prompt structure involving a combination of several advanced prompting techniques to meet the specific challenges of simulating peer review.
 
-The prompt follows the common practice of interacting with the AI anthropomorphically - using direct instructions as if addressing a human expert - based on the [idea](https://www.oneusefulthing.org/p/on-the-necessity-of-a-sin) that this convention facilitates interaction, despite the underlying differences in how AI processes information. This text follows a similar convention (e.g., when discussing AI's ability to _understand_ user input or something being described/explained to the model).
-### Hierarchical Modular Analysis Framework
+The prompt language follows the common practice of interacting with the AI anthropomorphically - using direct instructions as if addressing a human expert - based on the [idea](https://www.oneusefulthing.org/p/on-the-necessity-of-a-sin) that this convention facilitates interaction, despite the underlying differences in how AI processes information. This text follows a similar convention (e.g., when discussing AI's ability to _understand_ user input or something being described/explained to the model).
+
+### Programmed Workflow Prompting
 
 The prompt employs a structured approach, building upon common patterns that separate behavioral context (**Role/Persona**, **Context**) from the task description (**Task/Objective**). However, the complexity of the manuscript review task required moving beyond this basic functional separation to develop a considerably more detailed structure. This structure places primary focus on _how_ the analysis should be performed and _what_ specific steps to take - components typically elaborated only in advanced, highly specialized prompts.
 
 Several advanced design strategies are employed. The core of the prompt's methodology lies in **Section [IV. Specific Analysis Instructions (Baseline Framework)][Framework]**, which implements the simulated peer review workflow. This section organizes detailed instructions using established techniques like hierarchical decomposition and chain-of-thought. The instructions are formatted using Markdown, which is submitted directly to the model; _this formatting is crucial for helping the model parse and understand the intended structure and relationships between the steps._
-
-### In-Context Learning & Workflow Library
 
 A key technique involves designing the prompt to function as a persistent **workflow library** loaded directly into the model's context memory (this design intent is explained to the model in Sections [III. Context: Framework for Critical Manuscript Review][Framework] and [V. Final Instructions for Interaction][Final Instructions]). Instead of generating an immediate, one-off answer, the main prompt's instructions are stored in the model's working memory for the session. When the user makes subsequent, specific requests, the model applies the relevant predefined workflow from this internal library. This approach avoids needing to resubmit the large framework repeatedly and enables more interactive, focused analysis.
 
