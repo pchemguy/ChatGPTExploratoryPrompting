@@ -179,7 +179,8 @@ Here are potential prompts to submit after the framework prompt:
 - `List all figures and tables directly associated with the core experimental protocol and main result`
 - `Provide a detailed description of each figure associated with the core experimental protocol`
 
-## Conclusions: AI Prompt for Simulating Academic Peer Review
+## Discussion and Outlook
+
 
 Based on the provided description, the AI prompt designed for simulating academic peer review of experimental chemistry manuscripts represents a significant exploration into leveraging advanced Large Language Models (LLMs) for complex, domain-specific analytical tasks. Several key conclusions can be drawn:
 
