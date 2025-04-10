@@ -1,20 +1,5 @@
-
-- Summary
-- Query examples
-- Research directions
-- Conclusions
-
 # An AI Prompt for Simulating Academic Peer Review
 
-## Summary <!--Highlight prompt engineering and review methodology ?-->
-
-This post introduces a proof-of-concept LLM [prompt](PeerReviewPrompt.md) simulating academic peer review for experimental chemistry manuscripts, discusses related prompt engineering concepts, and suggests possible research directions. This prompt has been developed and tested using this [publication][EnrichmentURL], and its key features are highlighted below (detailed feature list [here](FrameWork_Features.md)).  
-
-**Basic usage (primary target: Gemini Advanced 2.5 Pro):**  
-1. Input the full **RAW Markdown-formatted** [prompt](PeerReviewPrompt.md) in a new chat.
-2. Submit `Analyze the core experimental protocol` prompt with the manuscript and SI attached.
-
-See demos for [Gemini Advanced 2.5 Pro][Gemini Demo] ([verbatim copy of analysis][Gemini Analysis]), [ChatGPT Plus o1][o1 Demo], and [SuperGrok Grok 3 Think][Grok Demo] (click on "Analysis of Core Experimental Protocol for H<sub>2</sub><sup>17</sup>O Enrichment" at the bottom). Be aware that advanced components like process modeling, calculations, and multi-modal analysis may yield variable or failed results.
 
 ### Key Feature Highlights: Deep Analysis of Experimental Chemistry Manuscripts
 
@@ -198,6 +183,22 @@ Furthermore, reflecting on the test case led to the inclusion of a specific high
 - No clear, scientifically justified innovative step is presented to explain the breakthrough.
 If such a discrepancy between claimed impact and methodological basis exists, the prompt guides the AI to question the _a priori_ plausibility, considering the maturity of the field: is it likely such a straightforward path to a high-impact result would have been widely overlooked? This check, directly inspired by the test case, instructs the AI to compare the claimed impact against the apparent simplicity/novelty of the method, flagging potential inconsistencies that demand extraordinary corroborating evidence, as seen clearly in the sample analysis conclusion (D.2.5).
 
+---
+---
+
+## Summary <!--Highlight prompt engineering and review methodology ?-->
+
+This post introduces a proof-of-concept LLM [prompt](PeerReviewPrompt.md) simulating academic peer review for experimental chemistry manuscripts, discusses related prompt engineering concepts, and suggests possible research directions. This prompt has been developed and tested using this [publication][EnrichmentURL], and its key features are highlighted below (detailed feature list [here](FrameWork_Features.md)).  
+
+**Basic usage (primary target: Gemini Advanced 2.5 Pro):**  
+1. Input the full **RAW Markdown-formatted** [prompt](PeerReviewPrompt.md) in a new chat.
+2. Submit `Analyze the core experimental protocol` prompt with the manuscript and SI attached.
+
+See demos for [Gemini Advanced 2.5 Pro][Gemini Demo] ([verbatim copy of analysis][Gemini Analysis]), [ChatGPT Plus o1][o1 Demo], and [SuperGrok Grok 3 Think][Grok Demo] (click on "Analysis of Core Experimental Protocol for H<sub>2</sub><sup>17</sup>O Enrichment" at the bottom). Be aware that advanced components like process modeling, calculations, and multi-modal analysis may yield variable or failed results.
+
+---
+---
+
 ## Research Directions and Outlook
 
 
@@ -263,3 +264,10 @@ Demonstrates potential
 [Experimental]: PeerReviewPrompt.md#d-analyzing-the-experimental-protocol
 [Multimodal PDF]: https://ai.google.dev/gemini-api/docs/document-processing
 [Chat API]: https://ai.google.dev/gemini-api/docs/text-generation
+
+
+
+- Summary
+- Query examples
+- Research directions
+- Conclusions
