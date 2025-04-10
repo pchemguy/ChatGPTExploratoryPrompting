@@ -95,9 +95,9 @@ Free vs. paid tiers often have different usage limits (input/output token caps).
 
 ## Prompt Design Methodology
 
-Simulating the peer review process proved to be a challenging task requiring strong reasoning capabilities. Initial trials with `ChatGPT Plus o1` were promising but limited by usage caps and potential token constraints, while Gemini 2.0 Flash Thinking yielded mixed results. Initial tests of Gemini Advanced 2.5 Pro (referred to here as _the model_ or gapAI) soon after its introduction demonstrated its superiority for this task over other models tested, which might still be suitable with certain caveats.
+Simulating the peer review process proved to be a challenging task requiring strong reasoning capabilities. Initial trials with `ChatGPT Plus o1` were promising but limited by usage caps and potential token constraints, while Gemini 2.0 Flash Thinking yielded mixed results. Initial tests of Gemini Advanced 2.5 Pro soon after its introduction demonstrated its superiority for this task over other models tested, which might still be suitable with certain caveats.
 
-The strong reasoning power of gapAI, combined with less restrictive usage limits, allowed for more efficient iterative development. The improved feature set enabled the creation of a complex prompt structure involving a combination of several advanced prompting techniques to meet the specific challenges of simulating peer review.
+The strong reasoning power of Gemini Advanced 2.5 Pro (referred to here as _the model_ or gapAI), combined with less restrictive usage limits, allowed for more efficient iterative development. The improved feature set enabled the creation of a complex prompt structure involving a combination of several advanced prompting techniques to meet the specific challenges of simulating peer review.
 
 The prompt follows the common practice of interacting with the AI anthropomorphically - using direct instructions as if addressing a human expert - based on the [idea](https://www.oneusefulthing.org/p/on-the-necessity-of-a-sin) that this convention facilitates interaction, despite the underlying differences in how AI processes information. This text follows a similar convention (e.g., when discussing AI's ability to _understand_ user input or something being described/explained to the model).
 ### Hierarchical Modular Analysis Framework
