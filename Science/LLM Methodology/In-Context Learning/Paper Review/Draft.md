@@ -1,4 +1,4 @@
-# Simulating Peer Review via Programmed Workflow Prompting
+# Simulating Peer Review via Persistent Workflow Prompting
 
 
 ### Key Feature Highlights: Deep Analysis of Experimental Chemistry Manuscripts
@@ -95,13 +95,13 @@ The strong reasoning power of Gemini Advanced 2.5 Pro (referred to here as _the 
 
 The prompt language follows the common practice of interacting with the AI anthropomorphically - using direct instructions as if addressing a human expert - based on the [idea](https://www.oneusefulthing.org/p/on-the-necessity-of-a-sin) that this convention facilitates interaction, despite the underlying differences in how AI processes information. This text follows a similar convention (e.g., when discussing AI's ability to _understand_ user input or something being described/explained to the model).
 
-### Programmed Workflow Prompting
+### Persistent Workflow Prompting
 
 While the prompt utilizes a common structured approach (separating **Role/Persona** and **Context** from **Task/Objective**), the complexity of manuscript review necessitated a much more detailed framework. This advanced structure moves beyond basic functional separation to focus primarily on *how* the analysis should be performed and *what* specific steps are involved, detailing procedural components typically found only in highly specialized prompts.
 
 The prompt features a hierarchical modular structure, utilizing hierarchical decomposition and chain-of-thought techniques within **Section [IV. Specific Analysis Instructions (Baseline Framework)][Framework]**. This core section implements the simulated peer review workflow. Its instructions are formatted using Markdown, submitted directly to the model; this formatting is crucial for helping the model parse and understand the intended structure and relationships between steps.
 
-A key technique involves designing the prompt to function as a persistent **workflow library** loaded directly into the model's context memory (this design intent is explained to the model in Sections [III. Context: Framework for Critical Manuscript Review][Framework] and [V. Final Instructions for Interaction][Final Instructions]). Instead of generating an immediate, one-off answer, the main prompt's instructions are stored in the model's working memory for the session. When the user makes subsequent, specific requests, the model applies the relevant predefined workflows from this internal library. This approach avoids needing to resubmit the large framework repeatedly and enables more interactive, focused analysis.
+A key technique involves designing the prompt to function as a **persistent workflow library** loaded directly into the model's context memory (this design intent is explained to the model in Sections [III. Context: Framework for Critical Manuscript Review][Framework] and [V. Final Instructions for Interaction][Final Instructions]). Instead of generating an immediate, one-off answer, the main prompt's instructions are stored in the model's working memory for the session. When the user makes subsequent, specific requests, the model applies the relevant predefined workflows from this internal library. This approach avoids needing to resubmit the large framework repeatedly and enables more interactive, focused analysis.
 
 The main **Section [IV. Specific Analysis Instructions][Framework]** serves as this library. For instance:
 - A query about the main result triggers the workflow defined in [IV.B. Identifying Claimed Results and Contributions][MainResults].
