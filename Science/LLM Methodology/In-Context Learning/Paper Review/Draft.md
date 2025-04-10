@@ -183,6 +183,15 @@ Furthermore, reflecting on the test case led to the inclusion of a specific high
 - No clear, scientifically justified innovative step is presented to explain the breakthrough.
 If such a discrepancy between claimed impact and methodological basis exists, the prompt guides the AI to question the _a priori_ plausibility, considering the maturity of the field: is it likely such a straightforward path to a high-impact result would have been widely overlooked? This check, directly inspired by the test case, instructs the AI to compare the claimed impact against the apparent simplicity/novelty of the method, flagging potential inconsistencies that demand extraordinary corroborating evidence, as seen clearly in the sample analysis conclusion (D.2.5).
 
+## Sample Queries
+
+Here are potential prompts to submit after the framework prompt:
+
+- `Analyze the core experimental protocol`
+- `Extract the main experimental result and key findings`
+- `List all figures and tables directly associated with the core experimental protocol and main result`
+- `Provide a detailed description of each figure associated with the core experimental protocol`
+
 ---
 ---
 
