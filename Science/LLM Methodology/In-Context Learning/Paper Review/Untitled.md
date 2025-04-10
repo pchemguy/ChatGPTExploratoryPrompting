@@ -81,3 +81,20 @@ Furthermore, reflecting on the test case led to the inclusion of a specific "Pla
     
 
 If these conditions are met, the prompt guides the AI to question the _a priori_ plausibility: is it likely such a straightforward path to a high-impact result would be undiscovered in an established field? _This check, directly inspired by the test case, instructs the AI to compare the claimed impact against the apparent simplicity/novelty of the method, flagging potential inconsistencies that demand extraordinary evidence, as seen clearly in the sample analysis conclusion (D.2.5)._
+
+
+
+
+The workflow for analyzing the experimental protocol is detailed in Section [IV.D. Analyzing the Experimental Protocol][Experimental]. This section is currently structured in two parts:
+- **IV.D.1 (General Analysis):** Provides a broad overview of the entire experimental workflow, assessing logical flow, completeness of reporting, contextual appropriateness (e.g., PoC vs. validation), and flagging general red flags (questionable methods, missing controls, safety issues) across all stages. 
+- **IV.D.2 (Core Protocol Analysis):** Performs an in-depth, highly critical examination focused only on the specific experimental steps claimed to directly produce the main result.
+This tiered structure allows for both a contextual overview and a focused deep analysis, although the split adds complexity. A potential refinement might involve defining different scopes of execution (e.g., 'overview', 'core analysis') for a single, unified workflow section.
+
+A central goal during the development of Section IV.D was to embed instructions for performing quantitative feasibility checks based on fundamental principles - a critical aspect of rigorous scientific review. The prompt guides the AI to, for instance: identify key physical or chemical processes involved (like evaporation or distillation in the test case); select appropriate theoretical models (e.g., applying principles of phase equilibria, reaction kinetics, separation theory, or mass/energy balances); extract, estimate, or research necessary parameters (from text, figures, standard equipment specifications, or literature); calculate theoretically expected outcomes or limits (like maximum enrichment or theoretical yield) under idealized conditions; and crucially, compare these _a priori_, physics-based estimates against the authors' claims. The aim is to assess if the described method is fundamentally capable of achieving the claimed results, independent of whether the authors report success. This goal is reflected in the sample analysis provided (Section D.2, Stage A.F and B.F), where the prompt successfully guided the AI to perform idealized calculations (Vapor Pressure Isotope Effect, Fenske) and compare the theoretical potential of the described methods to the authors' claims.
+
+Furthermore, reflecting on the test case led to the inclusion of a specific high-level "Plausibility Check" (corresponding to section IV.D.2.5). This functions as a sanity check, particularly relevant for potentially groundbreaking claims. It involves assessing scenarios where:
+- A study reports performance significantly exceeding established benchmarks.
+- A potentially disruptive result is claimed.
+- The method relies on conventional equipment/principles, perhaps with custom modifications.
+- No clear, scientifically justified innovative step is presented to explain the breakthrough.
+If such a discrepancy between claimed impact and methodological basis exists, the prompt guides the AI to question the _a priori_ plausibility, considering the maturity of the field: is it likely such a straightforward path to a high-impact result would have been widely overlooked? This check, directly inspired by the test case, instructs the AI to compare the claimed impact against the apparent simplicity/novelty of the method, flagging potential inconsistencies that demand extraordinary corroborating evidence, as seen clearly in the sample analysis conclusion (D.2.5).
