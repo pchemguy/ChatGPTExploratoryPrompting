@@ -4,9 +4,9 @@
 
 This report presents a proof-of-concept advanced AI prompt designed to simulate the peer review process for experimental chemistry manuscripts. The [prompt](PeerReviewPrompt.md) utilizes **Persistent Workflow Prompting** (also discussed) alongside a hierarchical, modular, Markdown-driven architecture to guide AI models through a critical evaluation without requiring coding or specialized software. Developed and tested using *Gemini Advanced 2.5 Pro* and this [publication][EnrichmentURL], its key features (detailed [here](FrameWork_Features.md)) focus on translating the complex, often tacit, human review process into concrete, executable steps for the AI. These steps include identifying main claims, analyzing figures multimodally, and scrutinizing experimental protocols for completeness, quantitative feasibility, and overall plausibility.
 
-**Basic usage (primary target: Gemini Advanced 2.5 Pro):**
-1. Input the full **RAW Markdown-formatted** [prompt](PeerReviewPrompt.md) in a new chat.
-2. Submit `Analyze the core experimental protocol` prompt with the manuscript and SI attached.
+**Basic usage (primary target: Gemini Advanced 2.5 Pro):**  
+1. Input the full **RAW Markdown-formatted** [prompt](PeerReviewPrompt.md) in a new chat.  
+2. Submit `Analyze the core experimental protocol` prompt with the manuscript and SI attached.  
 
 See demos for [Gemini Advanced 2.5 Pro][Gemini Demo] ([verbatim copy of analysis][Gemini Analysis]), [ChatGPT Plus o1][o1 Demo], and [SuperGrok Grok 3 Think][Grok Demo] (click on "Analysis of Core Experimental Protocol for H2_17O Enrichment" at the bottom). Be aware that advanced components like process modeling, calculations, and multimodal analysis may yield variable or failed results. In essence, this project demonstrates how sophisticated prompt engineering can enable current advanced LLMs to perform complex, domain-specific analytical tasks, such as simulating a critical scientific review, thereby pushing the boundaries of zero-code AI applications.
 
