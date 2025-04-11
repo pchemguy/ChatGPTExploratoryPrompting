@@ -181,6 +181,18 @@ Here are potential prompts to submit after the framework prompt:
 
 ## Discussion and Outlook
 
+Presented prompt is an early-stage prototype, and, as such, it has a number of obvious limitations (development opportunities).
+- **Testing**: The prompt has been developed and tested using a single publication, so testing it on other experimental chemistry manuscript is essential. 
+- **Scope**:
+    - While I attempted to generalize the prompt text, presently it only attempts cover in detail only the core experimental protocol (evaporation + distillation stages, which directly implement the main result). Extending the prompt to cover other experimental parts of the manuscript is one of the natural next steps.
+    - Extending the prompt (or creating a separate version)
+
+
+There are also a number of immediate questions related to the underlying methodology, including its limits and exploring potential variations and further application to research and engineering tasks.
+
+
+---
+---
 
 Based on the provided description, the AI prompt designed for simulating academic peer review of experimental chemistry manuscripts represents a significant exploration into leveraging advanced Large Language Models (LLMs) for complex, domain-specific analytical tasks. Several key conclusions can be drawn:
 
