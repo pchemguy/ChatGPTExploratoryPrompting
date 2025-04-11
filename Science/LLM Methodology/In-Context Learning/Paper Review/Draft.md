@@ -181,7 +181,6 @@ Here are potential prompts to submit after the framework prompt:
 
 ## Discussion and Outlook
 
-Presented prompt is an early-stage prototype, and, as such, it has a number of obvious limitations (development opportunities).
 - **Testing**: The prompt has been developed and tested using a single publication, so testing it on other experimental chemistry manuscript (and associated further development) is essential. 
 - **Scope**:
     - While I attempted to generalize the prompt text, presently it only attempts cover in detail only the core experimental protocol (evaporation + distillation stages, which directly implement the main result). Extending the prompt to cover other experimental parts of the manuscript is one of the natural next steps.
@@ -189,6 +188,14 @@ Presented prompt is an early-stage prototype, and, as such, it has a number of o
 - **Knowledge codification methodology:** As I discussed in the methodology sections, the way I approached the process of translation the practical knowledge of analysis was by analyzing specific issues of the test paper, posing questions targeting identified issues, and generalizing them. This process necessitates field experts (extensive reviewing experience is desirable) with developed advanced reasoning skills, such as self-reflection and induction/deduction (possibly in a "meta" sense, as the object of generalization on a particular field-specific phenomenon or observation, but questions targeting them). The LLM might also be able to facilitate this process, but the relevant experience also needs to be acquired. Probably, other approaches can be used for achieving the same goal.
 - **Prompt engineering methodology:**
 - **LLM models-related limitations:**
+
+- **Multimodal analysis:**
+- **Prompt structure:** D1+D2->D
+- **Workflows**
+- **Complexity management**
+
+
+Presented prompt is an early-stage prototype, and, as such, it has a number of obvious limitations (development opportunities).
 
 There are also a number of immediate questions related to the underlying methodology, including its limits and exploring potential variations and further application to research and engineering tasks.
 
