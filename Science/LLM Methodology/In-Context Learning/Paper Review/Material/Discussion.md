@@ -1,5 +1,9 @@
 ## Discussion and Outlook
 
+- **Development Tools:**
+    - Feature-rich Markdown editor, such as [Obsidian](https://obsidian.md) is essential for plain-text development of complex structured prompts.
+    - Using source-code management tools, such as Git/[GitHub](https://github.com) or [Fossil-SCM](https://fossil-scm.org) is advisable (I use them both. Because Obsidian saves changes automatically, I use GitHub/Fossil-SCM as replacement for Ctrl-S in MS Word.)
+    - For development of even more complex workflows, special tools for managing complexity, such as tools used for knowledge/information management and/or techniques used for software development, may become necessary.
 - **Testing**: The prompt has been developed and tested using a single publication, so testing it on other experimental chemistry manuscripts (and associated further development) is essential.  
 - **Scope**:  
     - While I attempted to generalize the prompt text, presently it only attempts to cover in detail only the core experimental protocol (evaporation + distillation stages, which directly implement the main result). Extending the prompt to cover other experimental parts of the manuscript is one of the natural next steps.  
@@ -7,6 +11,8 @@
 - **Knowledge codification methodology:** As I discussed in the methodology sections, the way I approached the process of translating the practical knowledge of analysis was by analyzing specific issues of the test paper, posing questions targeting identified issues, and generalizing them. This process necessitates field experts (extensive reviewing experience is desirable) with developed advanced reasoning skills, such as self-reflection and induction/deduction (possibly in a "meta" sense, as the object of generalization on a particular field-specific phenomenon or observation, but questions targeting them). The LLM might also be able to facilitate this process, but the relevant experience also needs to be acquired. Probably, other approaches can be used for achieving the same goal.  
 - **Prompt engineering methodology:**  
 - **LLM models-related limitations:**  
+    - **Model features available in leading models**
+        - Basic text transformation
   
 - **Multimodal analysis:**
 
@@ -21,15 +27,12 @@ Uncovering limitations and providing feedback to vendors
 
   
 
-- **Dev Toolset**
-
-Md editor & history management 
-  
 
 - **Model training levels**
-    - basic text transformation 
-    - instruction tuning 
-    - context/ working memory
+    - [text transformation](https://en.wikipedia.org/wiki/Generative_pre-trained_transformer) 
+    - [instruction tuning ](https://en.wikipedia.org/wiki/Instruction_tuning)
+    - conversational interaction
+    - context/working memory
     - cot tuning
     - learning tuning (n-shot: learning from examples of input, output, or input/output pairs)
     - workflow tuning 
