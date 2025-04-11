@@ -1,18 +1,42 @@
 ## Discussion and Outlook
 
-- **Testing**: The prompt has been developed and tested using a single publication, so testing it on other experimental chemistry manuscript (and associated further development) is essential. 
-- **Scope**:
-    - While I attempted to generalize the prompt text, presently it only attempts cover in detail only the core experimental protocol (evaporation + distillation stages, which directly implement the main result). Extending the prompt to cover other experimental parts of the manuscript is one of the natural next steps.
-    - Extending the prompt (or creating a separate version) to cover, for instance, theoretical and computational chemistry, as well as developing versions for other science and engineering areas present a significant interest. This direction necessitates direct involvement for field experts for efficient development process (I am a chemist, but I do not possess the necessary experience to create prototypes for non-experimental branches).
-- **Knowledge codification methodology:** As I discussed in the methodology sections, the way I approached the process of translation the practical knowledge of analysis was by analyzing specific issues of the test paper, posing questions targeting identified issues, and generalizing them. This process necessitates field experts (extensive reviewing experience is desirable) with developed advanced reasoning skills, such as self-reflection and induction/deduction (possibly in a "meta" sense, as the object of generalization on a particular field-specific phenomenon or observation, but questions targeting them). The LLM might also be able to facilitate this process, but the relevant experience also needs to be acquired. Probably, other approaches can be used for achieving the same goal.
-- **Prompt engineering methodology:**
-- **LLM models-related limitations:**
-
+- **Testing**: The prompt has been developed and tested using a single publication, so testing it on other experimental chemistry manuscripts (and associated further development) is essential.  
+- **Scope**:  
+    - While I attempted to generalize the prompt text, presently it only attempts to cover in detail only the core experimental protocol (evaporation + distillation stages, which directly implement the main result). Extending the prompt to cover other experimental parts of the manuscript is one of the natural next steps.  
+    - Extending the prompt (or creating a separate version) to cover, for instance, theoretical and computational chemistry, as well as developing versions for other science and engineering areas present a significant interest. This direction necessitates direct involvement for field experts for efficient development processes (I am a chemist, but I do not possess the necessary experience to create prototypes for non-experimental branches).  
+- **Knowledge codification methodology:** As I discussed in the methodology sections, the way I approached the process of translating the practical knowledge of analysis was by analyzing specific issues of the test paper, posing questions targeting identified issues, and generalizing them. This process necessitates field experts (extensive reviewing experience is desirable) with developed advanced reasoning skills, such as self-reflection and induction/deduction (possibly in a "meta" sense, as the object of generalization on a particular field-specific phenomenon or observation, but questions targeting them). The LLM might also be able to facilitate this process, but the relevant experience also needs to be acquired. Probably, other approaches can be used for achieving the same goal.  
+- **Prompt engineering methodology:**  
+- **LLM models-related limitations:**  
+  
 - **Multimodal analysis:**
-- **Prompt structure:** D1+D2->D
-- **Workflows**
-- **Complexity management**
 
+Uncovering limitations and providing feedback to vendors
+
+  
+
+  
+- **Prompt structure:** D1+D2->D  
+- **Workflows**  
+- **Complexity management**  
+
+  
+
+- **Dev Toolset**
+
+Md editor & history management 
+  
+
+- **Model training levels**
+    - basic text transformation 
+    - instruction tuning 
+    - context/ working memory
+    - cot tuning
+    - learning tuning (n-shot: learning from examples of input, output, or input/output pairs)
+    - workflow tuning 
+    - meta-learning tuning
+    - advanced prompting techniques involving elements of meta-reasoning
+
+Extensive meta-reasoning tuning may provide substantial benefits for advanced STEM applications and AGI development.
 
 Presented prompt is an early-stage prototype, and, as such, it has a number of obvious limitations (development opportunities).
 
