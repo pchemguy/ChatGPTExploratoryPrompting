@@ -187,7 +187,8 @@ Presented prompt is an early-stage prototype, and, as such, it has a number of o
     - While I attempted to generalize the prompt text, presently it only attempts cover in detail only the core experimental protocol (evaporation + distillation stages, which directly implement the main result). Extending the prompt to cover other experimental parts of the manuscript is one of the natural next steps.
     - Extending the prompt (or creating a separate version) to cover, for instance, theoretical and computational chemistry, as well as developing versions for other science and engineering areas present a significant interest. This direction necessitates direct involvement for field experts for efficient development process (I am a chemist, but I do not possess the necessary experience to create prototypes for non-experimental branches).
 - **Knowledge codification methodology:** As I discussed in the methodology sections, the way I approached the process of translation the practical knowledge of analysis was by analyzing specific issues of the test paper, posing questions targeting identified issues, and generalizing them. This process necessitates field experts (extensive reviewing experience is desirable) with developed advanced reasoning skills, such as self-reflection and induction/deduction (possibly in a "meta" sense, as the object of generalization on a particular field-specific phenomenon or observation, but questions targeting them). The LLM might also be able to facilitate this process, but the relevant experience also needs to be acquired. Probably, other approaches can be used for achieving the same goal.
-
+- **Prompt engineering methodology:**
+- **LLM models-related limitations:**
 
 There are also a number of immediate questions related to the underlying methodology, including its limits and exploring potential variations and further application to research and engineering tasks.
 
