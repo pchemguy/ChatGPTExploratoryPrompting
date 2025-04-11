@@ -22,9 +22,8 @@ Uncovering limitations and providing feedback to vendors
   
 
   
-- **Prompt structure:** D1+D2->D  
-- **Workflows**  
-- **Complexity management**  
+
+
 
   
 
