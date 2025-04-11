@@ -107,12 +107,7 @@ The strong reasoning power of Gemini Advanced 2.5 Pro (referred to here as _the 
 
 The prompt language follows the common practice of interacting with the AI anthropomorphically - using direct instructions as if addressing a human expert - based on the [idea](https://www.oneusefulthing.org/p/on-the-necessity-of-a-sin) that this convention facilitates interaction, despite the underlying differences in how AI processes information. This text follows a similar convention (e.g., when discussing AI's ability to _understand_ user input or something being described/explained to the model).
 
-A note on prompt development tools. As complex structure of the presented prompt architecture necessitates the use of Markdown formatting, a feature-rich Markdown editor, such as [Obsidian](https://obsidian.md), is essential. I also use version control systems (VCS), [GitHub](https://github.com) (a Git-based service) and [Fossil-SCM](https://fossil-scm.org). In fact, because Obsidian saves changes automatically (so, repeated Ctrl-S, like in MS Word, becomes unnecessary), I use VCS where I would otherwise used Ctrl-S in MS Word.
-
-
-   - Feature-rich Markdown editor, such as [Obsidian](https://obsidian.md) is essential for plain-text development of complex structured prompts.
-    - Using source-code management tools, such as Git/[GitHub](https://github.com) or [Fossil-SCM](https://fossil-scm.org) is advisable (I use them both. Because Obsidian saves changes automatically, I use GitHub/Fossil-SCM as replacement for Ctrl-S in MS Word.)
-    - For development of even more complex workflows, special tools for managing complexity, such as tools used for knowledge/information management and/or techniques used for software development, may become necessary.
+**Note on Development Tools:** The complex, Markdown-based structure of this prompt benefits significantly from appropriate development tools. A feature-rich Markdown editor, such as [Obsidian](https://obsidian.md), is highly recommended. For managing revisions, I utilize version control systems (VCS) like [GitHub](https://github.com) (Git-based) and [Fossil-SCM](https://fossil-scm.org). As prompts employing patterns like persistent workflows become increasingly intricate, adopting tools and techniques from knowledge management or software development for managing complexity may prove beneficial.
 
 ### Persistent Workflow Prompting
 
