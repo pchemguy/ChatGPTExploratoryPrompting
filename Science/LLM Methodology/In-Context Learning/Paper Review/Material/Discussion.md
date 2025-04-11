@@ -12,7 +12,12 @@
 - **Prompt engineering methodology:**  
 - **LLM models-related limitations:**  
     - **Model features available in leading models**
-        - Basic text transformation
+        - [text transformation](https://en.wikipedia.org/wiki/Generative_pre-trained_transformer) 
+        - [instruction tuning ](https://en.wikipedia.org/wiki/Instruction_tuning)
+        - conversational interaction
+        - context/working memory
+        - [chains of thought](https://en.wikipedia.org/wiki/OpenAI_o1)
+        - learning tuning (n-shot: learning from examples of input, output, or input/output pairs)
   
 - **Multimodal analysis:**
 
@@ -29,12 +34,7 @@ Uncovering limitations and providing feedback to vendors
 
 
 - **Model training levels**
-    - [text transformation](https://en.wikipedia.org/wiki/Generative_pre-trained_transformer) 
-    - [instruction tuning ](https://en.wikipedia.org/wiki/Instruction_tuning)
-    - conversational interaction
-    - context/working memory
-    - cot tuning
-    - learning tuning (n-shot: learning from examples of input, output, or input/output pairs)
+
     - workflow tuning 
     - meta-learning tuning
     - advanced prompting techniques involving elements of meta-reasoning
