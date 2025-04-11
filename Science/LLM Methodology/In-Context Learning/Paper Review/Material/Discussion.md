@@ -20,9 +20,10 @@
 - **Multimodal analysis:**
     Multimodal analysis is one of the relatively younger features (or so I think). The first application that came to my mind was analysis of manuscript figures, extraction of information and its integration with information from others parts of the manuscript. As of April 2025, this feature only worked with Gemini Advanced 2.5 Pro. It did not work with the standard version Gemini 2.5 Pro, that is on the free plan. It did not work with either ChatGPT Plus o1 nor SuperGrok Grok 3 Think. While image analysis might work with, for example, GPT-4o, non-reasoning models are not considered for the tasks of interest. This may change soon, of course. 
     
-    gapAI repeatedly identified aluminum foil around the fractionation column in photo of the figure S1 of the test manuscript, which was not mentioned anywhere in text. It also identified water hoses connected to the tilted condenser. Finally, I managed to persuade it (see prompt and analysis) to identify an object in the photo whose size could be estimated based on the information in text (that was 1 L round bottom flask) and use this information to estimate the critical for the modeling length of the fractionation column. While the estimate varied form run-to-run anywhere from 25-30 cm to 40-50 cm, this range is actually completely sufficient for the purpose of capping system efficiency.  
+    gapAI repeatedly identified aluminum foil around the fractionation column in photo of the figure S1 of the test manuscript, which was not mentioned anywhere in text. It also identified water hoses connected to the tilted condenser. Finally, I managed to persuade it (see prompt and analysis) to identify an object in the photo whose size could be estimated based on the information in text (that was 1 L round bottom flask) and use this information to estimate the critical for the modeling length of the fractionation column. While the estimation varied form run-to-run anywhere from 25-30 cm to 40-50 cm, this range was actually completely sufficient for the purpose of capping system efficiency.  
     
-    Further investigation of this feature is of obvious interest. 
+    Further investigation of this feature may focus on probing model's ability to extract ever more details, improving prompt for more complex photo/figure assessment. It is also important to develop or collect a set of test examples, including tricky ones, for probing model's accuracy, potential hallucinations, and so on.
+- **Applications:**
 
 
 
