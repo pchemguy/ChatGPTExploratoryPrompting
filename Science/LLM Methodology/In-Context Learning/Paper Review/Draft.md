@@ -182,10 +182,11 @@ Here are potential prompts to submit after the framework prompt:
 ## Discussion and Outlook
 
 Presented prompt is an early-stage prototype, and, as such, it has a number of obvious limitations (development opportunities).
-- **Testing**: The prompt has been developed and tested using a single publication, so testing it on other experimental chemistry manuscript is essential. 
+- **Testing**: The prompt has been developed and tested using a single publication, so testing it on other experimental chemistry manuscript (and associated further development) is essential. 
 - **Scope**:
     - While I attempted to generalize the prompt text, presently it only attempts cover in detail only the core experimental protocol (evaporation + distillation stages, which directly implement the main result). Extending the prompt to cover other experimental parts of the manuscript is one of the natural next steps.
-    - Extending the prompt (or creating a separate version)
+    - Extending the prompt (or creating a separate version) to cover, for instance, theoretical and computational chemistry, as well as developing versions for other science and engineering areas present a significant interest. This direction necessitates direct involvement for field experts for efficient development process (I am a chemist, but I do not possess the necessary experience to create prototypes for non-experimental branches).
+- **Knowledge codification methodology:** As I discussed in the methodology sections, the way I approached the process of translation the practical knowledge of analysis was by analyzing specific issues of the test paper, posing questions targeting identified issues, and generalizing them. This process necessitates field experts with developed self-reflection / "meta-reasoning" skills. The LLM might also be able to facilitate this process, but the relevant experience also needs to be acquired.
 
 
 There are also a number of immediate questions related to the underlying methodology, including its limits and exploring potential variations and further application to research and engineering tasks.
