@@ -223,4 +223,31 @@ These publications provide foundational insights into problem decomposition tech
 ---
 ---
 
+# Find reference for 3. Subquestion Prompting
+
+### 1. **Self-Ask Prompting**
+
+- **Citation**: Press, O., Zhang, M., Min, S., Schmidt, L., Lewis, M., & Smith, N. A. (2022). *Measuring and Narrowing the Compositionality Gap in Language Models*. arXiv preprint arXiv:2210.03350.
+
+- **Summary**: This paper introduces the *Self-Ask* prompting technique, where a language model explicitly generates and answers intermediate subquestions before arriving at the final answer. This method enhances the model's reasoning capabilities by structuring complex queries into manageable components. The authors demonstrate that Self-Ask improves performance on multi-hop question answering tasks by narrowing the compositionality gap in language models. 
+
+---
+
+### 2. **Successive Prompting**
+
+- **Citation**: Dua, D., Gupta, S., Singh, S., & Gardner, M. (2022). *Successive Prompting for Decomposing Complex Questions*. arXiv preprint arXiv:2212.04092.
+
+- **Summary**: The authors propose *Successive Prompting*, an iterative approach where complex questions are broken down into simpler subquestions, each answered in sequence. This technique decouples the decomposition and answering processes, allowing for targeted supervision and improved performance on complex reasoning tasks. The method shows significant improvements on benchmarks like the DROP dataset.
+
+---
+
+### 3. **PC-SubQ Prompting**
+
+- **Citation**: Sgouritsa, E., Aglietti, V., Teh, Y. W., Doucet, A., Gretton, A., & Chiappa, S. (2024). *Prompting Strategies for Enabling Large Language Models to Infer Causation from Correlation*. arXiv preprint arXiv:2412.13952.
+
+- **Summary**: This study introduces *PC-SubQ*, a prompting strategy that guides language models through a series of subquestions aligned with the steps of the PC algorithm for causal discovery. By structuring prompts to reflect algorithmic reasoning steps, the method enhances the model's ability to infer causal relationships from correlational data. 
+
+---
+---
+
 
