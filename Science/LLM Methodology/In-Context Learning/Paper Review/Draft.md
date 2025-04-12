@@ -177,9 +177,10 @@ Here are potential prompts to submit after the framework prompt:
 - `List all figures and tables directly associated with the core experimental protocol and main result`
 - `Provide a detailed description of each figure associated with the core experimental protocol`
 
-## Discussion and Outlook
 
 
+---
+---
 
 <!-- References -->
 
