@@ -38,10 +38,12 @@
 - **Workflow Libraries:**
     Extending the prompt (or creating a separate version) to cover, for instance, theoretical and computational chemistry, as well as developing versions for other science and engineering areas present a significant interest. This direction necessitates direct involvement for field experts for efficient development processes.  
 - **Modular Architecture:**
-    Prompt sections for certain workflow blocks, such as extraction and classification of key findings or detailed figure analysis, may be developed independently. Such task -specific prompts may be developed for i 
+    Prompt sections for certain workflow blocks, such as extraction and classification of key findings or detailed figure analysis, may be developed and updated independently and included in a task snippet library (analogs of programming libraries providing routines for common operations). Complex workflows including respective tasks then will be able to simply include the necessary blocks, if available, focusing development on integration and higher level functionality.
 - **Applications:**
-
-
+    Preliminary results presented in this work suggest that at the present stage of development, leading AI models may be capable of performing meaningful in-depth analysis of manuscripts. More mature prompts, targeting such analysis may facilitate 
+     - Review process by providing assistance to reviewers
+     - Field-specific literature research
+     - Preparation of subject reviews (particularly in combination with Deep Research functionality) 
 
   
 
