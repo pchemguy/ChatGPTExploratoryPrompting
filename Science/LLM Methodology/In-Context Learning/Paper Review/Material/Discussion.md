@@ -37,6 +37,8 @@
     As I discussed in the methodology sections, the way I approached the process of translating the practical knowledge of analysis was by analyzing specific issues of the test paper, posing questions targeting identified issues, and generalizing them. This process necessitates field experts (extensive reviewing experience is desirable) with developed advanced meta-reasoning skills. The LLM might also be able to facilitate this process, but the relevant experience also needs to be acquired. Probably, other approaches can be used for achieving the same goal as well. 
 - **Workflow Libraries:**
     Extending the prompt (or creating a separate version) to cover, for instance, theoretical and computational chemistry, as well as developing versions for other science and engineering areas present a significant interest. This direction necessitates direct involvement for field experts for efficient development processes.  
+- **Modular Architecture:**
+    Prompt sections for certain workflow blocks, such as extraction and classification of key findings or detailed figure analysis, may be developed independently. Such task -specific prompts may be developed for i 
 - **Applications:**
 
 
