@@ -1,14 +1,3 @@
----
-tags: []
-parent: 'Simulating Peer Review via Persistent Workflow Prompting'
-collections:
-    - Technique
-$version: 30612
-$libraryID: 1
-$itemKey: 9VK9V99E
-
----
-
 # Source
 
 ChatGPT 4.5: https://chatgpt.com/c/67fa0031-ddf4-8004-b2b4-cc9336cecd54
