@@ -1,3 +1,10 @@
+# Source
+
+ChatGPT 4.5: https://chatgpt.com/c/67fa0031-ddf4-8004-b2b4-cc9336cecd54
+
+---
+---
+
 # Tell me about decomposition prompting techniques
 
 Decomposition prompting techniques refer to methods used in prompt engineering that break complex questions or tasks into smaller, simpler subcomponents. This strategy helps AI language models reason step-by-step, increasing their accuracy, reducing confusion, and enabling more detailed, precise answers.
