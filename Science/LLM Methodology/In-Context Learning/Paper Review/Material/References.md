@@ -326,3 +326,8 @@ Decomposition prompting is a powerful tool that significantly enhances AI models
 
 ---
 ---
+
+AI-Driven Review Systems: Evaluating LLMs in Scalable and Bias-Aware Academic Reviews
+https://arxiv.org/abs/2408.10365
+
+---
