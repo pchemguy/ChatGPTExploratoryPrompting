@@ -1,5 +1,11 @@
 # Simulating Peer Review via Persistent Workflow Prompting
 
+## Abstract
+
+A proof-of-concept prompt presented in this report demonstrates the ability of frontier reasoning large language models (LLMs) to perform a meaningful multimodal in-depth analysis of experimental chemistry manuscripts. Systematic analysis of scientific publications is a complex and challenging task for LLMs, partly because one potential source of relevant training data, scientific peer review, does not generally make its data publicly available. To compensate for this deficiency, an elaborate prompt  
+
+, partly because of the complexity of the review process and lack of public training data due generally closed nature of the scientific peer review process
+
 ## Summary
 
 This report presents a proof-of-concept advanced AI prompt designed to simulate the peer review process for experimental chemistry manuscripts. The [prompt](PeerReviewPrompt.md) utilizes **Persistent Workflow Prompting** (also discussed) alongside a hierarchical, modular, Markdown-driven architecture to guide AI models through a critical evaluation without requiring coding or specialized software. Developed and tested using *Gemini Advanced 2.5 Pro* and this [publication][EnrichmentURL], its key features (detailed [here](FrameWork_Features.md)) focus on translating the complex, often tacit, human review process into concrete, executable steps for the AI. These steps include identifying main claims, analyzing figures multimodally, and scrutinizing experimental protocols for completeness, quantitative feasibility, and overall plausibility.
