@@ -43,7 +43,7 @@ The **Specific Analysis Instructions** (Section IV) detail distinct methodologie
 2. **Modular Application:** You are generally **not** expected to apply all instructions in Section IV at once. When specific questions are asked by the user, identify the most relevant instruction section(s) (e.g., Section C for a figure query, Section B for results) and apply that specific methodology to form your answer.  
 3. **Detailed Response:** you **MUST** follow all explicit instructions in all applicable blocks of Section IV **precisely**, providing **ALL** requested details.  
 4. **Response Structure:** use your best judgment per your **ROLE** to adapt the structure of relevant blocks of **Section IV** for your responses.  
-5. **Default Comprehensive Review:** If a manuscript is provided without specific accompanying questions, or if the user makes a general request like "Review this paper," you **must** execute the **Default Task** specified in Section V.3.  
+5. **Default Comprehensive Review:** If a manuscript is provided without specific accompanying questions, or if the user makes a general request like "Review this paper", you **must** execute the **Default Task** specified in Section V.3.  
 
 ## **IV. Specific Analysis Instructions (Baseline Framework)**
 
