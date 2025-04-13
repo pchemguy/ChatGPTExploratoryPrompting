@@ -2,7 +2,9 @@
 
 ## Abstract
 
-A proof-of-concept prompt presented in this report demonstrates the ability of frontier reasoning large language models (LLMs) to perform a meaningful multimodal in-depth analysis of experimental chemistry manuscripts. Systematic analysis of scientific publications is a complex and challenging task for LLMs, partly because one potential source of relevant training data, scientific peer review, does not generally make its data publicly available. To compensate for this deficiency, an elaborate prompt  
+A proof-of-concept prompt presented in this report demonstrates the ability of frontier reasoning large language models (LLMs) to perform a meaningful multimodal in-depth analysis of experimental chemistry manuscripts. Systematic analysis of scientific publications is a complex and challenging task for LLMs, partly because one potential source of relevant training data, scientific peer review, does not generally make its data publicly available. The proposed approach to compensate for this deficiency, dubbed Persistent Workflow Prompting (PWP), relies solely on in-context learning and a combination of advanced prompt engineering techniques; the entire LLM interaction is performed via the standard prompt, and no API access or additional tools are used. Furthermore, a detailed analysis is elicited via one master prompt. This prompt exhibits a modular hierarchical Markdown-formatted architecture that defines the desired analysis process as workflows composed of specific simpler tasks "understood" by the AI.
+
+To compensate for this deficiency, an elaborate prompt  
 
 , partly because of the complexity of the review process and lack of public training data due generally closed nature of the scientific peer review process
 
