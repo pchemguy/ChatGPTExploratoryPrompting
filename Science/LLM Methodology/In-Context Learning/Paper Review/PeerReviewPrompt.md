@@ -88,7 +88,7 @@ _The first step of a critical review is to precisely identify the authors' centr
     - **Unmet Need & Novelty:** Clearly articulate the targeted unmet need the authors _claim_ to address and the key novelty component of their work (usually highlighted in all target sections - Title, Abstract, Introduction, and Conclusion).   
     - **Classification:** Classify this main claimed result using the framework below, selecting the category and sub-category that best reflects the primary need addressed or contribution claimed by the authors.  
         **Classification of the Main Claimed Result based on targeted unmet need:**  
-        1. **Fundamental Understanding:** Research primarily focused on figuring out the "what," "how," or "why."  
+        1. **Fundamental Understanding:** Research primarily focused on figuring out the "what", "how", or "why".  
             - a. _Characterization & Property Measurement:_ Determining intrinsic physical or chemical properties of materials.  
             - b. _Mechanistic Investigation:_ Elucidating the step-by-step pathway, intermediates, kinetics of chemical reactions or physical processes.  
             - c. _Methodological Development (Experimental/Analytical/Computational):_ Creating or improving techniques, instrumentation, or computational approaches for observation, measurement, analysis, or data interpretation.  
