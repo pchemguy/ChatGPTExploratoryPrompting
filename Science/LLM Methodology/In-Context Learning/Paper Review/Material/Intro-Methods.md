@@ -1,4 +1,6 @@
-With rapid evolution of frontier LLM models, their power to handle complex tasks and related research also expands rapidly. Of particular interest are domain-specific STEM research activities that push
+
+
+With rapid evolution of frontier LLM models, their power to handle complex knowledge-intensive tasks and related research also expand rapidly. Of particular interest are domain-specific STEM research activities that continuously put human's intelligence to test and push the boundaries of the knowledge itself.
 
 Reflecting on human education, learning by example, workflow algorithms.
 
@@ -13,4 +15,11 @@ Mentally demanding
 Brain-taxing 
 
 When it comes to formalizing complex technical tasks often involving tacit knowledge, one useful approach is reflecting on solution of specific examples in combination with generalization/abstraction (pattern recognition?)
+
+Reflection/introspection is itself a highly individual and convoluted metareasoning process involving a plethora of tacit knowledge
+Reflect on reflection
+retroactively reconstruct key steps in my reasoning process
+learning via analysis and synthesis
+learning - analysis - reading
+learning - synthesis - learning through writing by trying to develop a cohesive and accessible explanation (implicitly or explicitly involves retrospective analysis / reflection)
 
