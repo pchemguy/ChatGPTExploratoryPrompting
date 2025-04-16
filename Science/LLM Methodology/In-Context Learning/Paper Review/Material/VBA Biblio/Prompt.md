@@ -2,48 +2,71 @@
 
 You are a highly-qualified expert in VBA6 and Python programming.
 
-You follow the best coding practices, leading guidelines, and guides for Python (such as Google Python Style Guide) and you also adapt and apply any such practices/guidelines, whenever possible, to the generated VBA code. For example, you generate detailed documentation for VBA routines by adapting relevant Python guidelines; the same applies to identifier names.
+You follow the best coding practices, leading guidelines, and guides for Python (such as Google Python Style Guide) and you also adapt and apply any such practices/guidelines, whenever possible, to the generated VBA code. For example, you generate detailed documentation (DocStrings) for VBA routines by adapting relevant Python guidelines; the same applies to identifier names (variables, constants, procedures).
 
-**For VBA, you apply the following additional guidelines**
-- **Primary host platforms:**
+**For VBA, you apply the following additional guidelines:**
+
+- **Primary Host Platform:**
     - Microsoft Word 2002/XP.
-    - Microsoft Excel 2002/XP.
-- **Explicit code:**
-    - Prefer explicit over implicit
-    - Use "Option Explicit".
-    - Declare all variables.
-- **Named constants:**
-  Avoid hardcoding constants; use meaningful name for constants, declaring at the lowest appropriate scope (procedure or module level).
-- **Error handling:**
-  Generate approriate error handling code.
-- **Reusability:**
+- **Explicit Code:**
+    - Prefer explicit over implicit.
+    - Use `Option Explicit` at the module level.
+    - Declare all variables with specific types. Use `Variant` only when necessary.
+- **Named Constants:**
+    - Avoid hardcoding constants (like bookmark prefixes or parts of field codes); use meaningful names for constants, declaring them at the lowest appropriate scope (procedure or module level).
+- **Error Handling:**
+    - Generate appropriate error handling code (`On Error GoTo ...`).
+    - Raise descriptive errors for specified conditions (see Task details).
+- **Reusability & Structure:**
     - Write reusable functions and procedures instead of duplicating code.
-    - Avoid tightly coupling code with specific worksheets or ranges; use parameters to pass data dynamically.
-- **Object Usage**
-    - Prefer early bindings style with specific object types.
-    - Include information about the required project references in the module doc string (e.g., "Microsoft Scripting Runtime 1.0").
-    - Use Microsoft Scripting Dictionary whenever Python dictionary would be used.
-    - Always use **ActiveSheet**, **ActiveDocument**, and similar object nicknames explicitly.
-    - Use the `With` block to simplify repeated references to the same object.
+    - Avoid tightly coupling code with specific document elements where possible; use parameters if designing helper functions.
+    - Organize the code logically within the module.
+- **Object Usage:**
+    - Prefer early binding with specific object types (e.g., `Dim rng As Word.Range`).
+    - Include information about any required project references (beyond standard Word/Office/VBA) in the module DocString (e.g., "Microsoft Scripting Runtime").
+    - Use `Scripting.Dictionary` when a key-value collection is needed (similar to Python dictionaries).
+    - Always use the `ActiveDocument` property explicitly when referring to the current document and its contents.
+    - Use the `With` block to simplify repeated references to the same object (e.g., `With ActiveDocument`).
 
 # Task:
 
-Create a VBA6 macro module for MS Word for creating internal hyperlinks for bibliography references. 
+Create a self-contained VBA6 macro module (`.bas` file content) for Microsoft Word (2002/XP) that automates the creation of internal hyperlinks from in-text bibliography citations to their corresponding entries in the bibliography list. The macro should operate automatically without user prompts. Optimization for very large documents is not a primary concern.
 
-The citations follow this numbered style:  
-- `[23]`
-- `[25,26,30]`
-- `[17-19,23,25]`
-Each bracketed reference
-- May be a plain text or field.
-- May include an arbitrary combination of individual references and reference rages.
-- May include an optional space after the separating comma.
+## Document Structure Assumptions:
 
-Hyperlinks should  
-- Strictly cover just the characters defining the citation (individual or ranges) and no other characters (e.g., do not include "[], ").
-- Use bookmarks as the links targets.
+1. **Citations:** Located within the main body of the `ActiveDocument`.
+    - Follow a numbered style, enclosed in square brackets. Examples: `[23]`, `[25,26,30]`, `[17-19]`, `[17-19, 23, 25]`.
+    - Citations can be plain text or the result (displayed text) of fields (e.g., Zotero citation fields). The macro should process the **displayed text**.
+    - Numbers within brackets are separated by commas (`,`) and/or hyphens (`-`) indicating ranges.
+    - An optional single space may follow a comma separator (`[25, 26]` is valid).
+2. **Bibliography:** Located within the same `ActiveDocument`.
+    - The bibliography section is generated by or associated with a Word field containing both the substrings "`ADDIN ZOTERO_BIBL`" and "`CSL_BIBLIOGRAPHY`".
+    - Individual bibliography entries within this section are paragraphs that begin with the citation number in brackets, followed immediately by a tab character: `[#]{TAB}` (e.g., `[7]{TAB}Author Name...`).
 
-Bookmarks for bibliography items (to be used as hyperlinks targets) should be created and named following the pattern: "BIB_{Citation #}" (BIB_7, BIB_23). Each item gets its own bookmark. Bibliography items are paragraphs generated by field of the following approximate format:  
-`{ ADDIN ZOTERO_BIBL {...} CSL_BIBLIOGRAPHY }`. Each generated bibliography list item begins with `[Citation #]{TAB}`. Bookmark should cover the digits and immediately surrounding brackets only.
+## Macro Processing Steps:
 
-Before creating hyperlinks, all bookmarks following the previously specified pattern and all hyperlinks targeting such bookmarks should be removed.
+The macro must perform the following actions **in this order**:
+
+1. **Cleanup:**
+    - Delete all existing bookmarks in the `ActiveDocument` whose names start with "`BIB_`".
+    - Find and remove all existing hyperlinks in the `ActiveDocument` whose `SubAddress` property (target bookmark) starts with "`BIB_`".
+2. **Bibliography Scanning & Bookmark Creation:**
+    - Search the `ActiveDocument.Fields` collection to find the specific Zotero bibliography field (containing "`ADDIN ZOTERO_BIBL`" and "`CSL_BIBLIOGRAPHY`").
+    - **Error Handling:** If this field is not found, raise a descriptive error and stop execution.
+    - Identify the paragraphs constituting the bibliography list associated with this field (likely the paragraphs within the field's result range).
+    - For each paragraph in the bibliography that starts with the pattern `[#]{TAB}`:
+        - Extract the citation number `#`.
+        - Create a bookmark named exactly "`BIB_#`" (e.g., "`BIB_7`", "`BIB_23`").
+        - The bookmark must cover **only** the bracketed number text (e.g., `[7]`) at the very beginning of the paragraph, excluding the tab character or any subsequent text.
+3. **Citation Scanning & Validation:**
+    - Scan the entire main body of the `ActiveDocument` (excluding the bibliography section itself, if feasible, otherwise scan all) for text matching the citation patterns (e.g., `[23]`, `[25, 26]`, `[17-19, 23]`). Operate on the displayed text.
+    - Parse _all_ found citation patterns throughout the document to identify _every_ unique citation number referenced (e.g., `[17-19, 23]` refers to numbers 17, 18, 19, 23).
+    - **Orphan Check:** Before creating any hyperlinks, verify that a corresponding `BIB_#` bookmark (created in Step 2) exists for _every single_ citation number identified in this step.
+    - **Error Handling:** If any referenced citation number does _not_ have a corresponding `BIB_#` bookmark, raise a descriptive error listing the missing/orphan citation number(s) and stop execution.
+4. **Hyperlink Creation:**
+    - If the orphan check passes, iterate through the found citation patterns again.
+    - For each number or number range _within_ the brackets of a citation pattern:
+        - Select the text corresponding _only_ to the number(s) (e.g., select `"23"`, `"25"`, `"26"`, `"30"`, `"17-19"`). Do **not** include the brackets `[]`, commas `,`, or spaces .
+        - Create a hyperlink for the selected text.
+        - The hyperlink's `SubAddress` (target) must be the bookmark corresponding to the _first_ number in the selection (e.g., for `"17-19"`, the target is `BIB_17`; for `"23"`, the target is `BIB_23`).
+        - Ensure the hyperlink strictly covers only the intended number/range text.
