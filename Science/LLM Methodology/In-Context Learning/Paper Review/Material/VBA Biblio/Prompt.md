@@ -72,3 +72,537 @@ The macro must perform the following actions **in this order**:
         - Create a hyperlink for the selected text.
         - The hyperlink's `SubAddress` (target) must be the bookmark corresponding to the _first_ number in the selection (e.g., for `"17-19"`, the target is `BIB_17`; for `"23"`, the target is `BIB_23`).
         - Ensure the hyperlink strictly covers only the intended number/range text.
+
+# Code
+
+```bas
+Option Explicit
+
+'---------------------------------------------------------------------------------------
+' Module    : modBibliographyHyperlinker
+' Author    : Gemini
+' Date      : 16/04/2025
+' Purpose   : Creates internal hyperlinks from in-text bibliography citations
+'             (e.g., [1], [2, 3], [4-6]) to corresponding bibliography entries
+'             marked with bookmarks (BIB_1, BIB_2, etc.).
+'---------------------------------------------------------------------------------------
+' References:
+'   - Microsoft Word XX.X Object Library (where XX.X is your version)
+'   - Microsoft VBScript Regular Expressions 5.5
+'   - Microsoft Scripting Runtime
+'---------------------------------------------------------------------------------------
+
+'--- Constants ---
+Private Const BIB_BOOKMARK_PREFIX As String = "BIB_"
+Private Const ZOTERO_FIELD_PART1 As String = "ADDIN ZOTERO_BIBL"
+Private Const ZOTERO_FIELD_PART2 As String = "CSL_BIBLIOGRAPHY"
+' Regular expression to find bibliography entries like "[123]{TAB}"
+Private Const BIB_ENTRY_PATTERN As String = "^\[(\d+)\]" & vbTab
+' Regular expression to find citations like [1], [2, 3], [4-6, 7]
+' It captures the content within the brackets.
+Private Const CITATION_PATTERN As String = "\[([0-9,\-\s]+?)\]"
+' Regular expression to parse components within a citation (numbers or ranges)
+Private Const CITATION_COMPONENT_PATTERN As String = "(\d+)(?:-(\d+))?" ' $1=start_num, $2=end_num (optional)
+
+'--- Error Numbers ---
+Private Const ERR_BIB_FIELD_NOT_FOUND As Long = vbObjectError + 1001
+Private Const ERR_ORPHAN_CITATIONS As Long = vbObjectError + 1002
+Private Const ERR_REGEX_ERROR As Long = vbObjectError + 1003
+
+'--- Type Definitions ---
+' None needed for this implementation
+
+'=======================================================================================
+'   MAIN PROCEDURE
+'=======================================================================================
+
+Public Sub CreateBibliographyHyperlinks()
+'---------------------------------------------------------------------------------------
+' Procedure : CreateBibliographyHyperlinks
+' Author    : Gemini
+' Date      : 16/04/2025
+' Purpose   : Main routine to orchestrate the bibliography hyperlink creation process.
+'             Follows the steps outlined in the requirements:
+'             1. Cleanup existing bookmarks and hyperlinks.
+'             2. Scan bibliography, create bookmarks, and store their numbers.
+'             3. Scan document for citations, parse numbers, and validate against bookmarks.
+'             4. Create hyperlinks if validation passes.
+' Notes     : Uses early binding and requires references to:
+'             - Microsoft VBScript Regular Expressions 5.5
+'             - Microsoft Scripting Runtime
+'---------------------------------------------------------------------------------------
+    Dim bibField As Word.Field
+    Dim bibRange As Word.Range
+    Dim createdBookmarks As Scripting.Dictionary ' Key: Bib number (Long), Value: Bookmark Name (String)
+    Dim referencedCitations As Scripting.Dictionary ' Key: Citation number (Long), Value: 1 (just to track existence)
+    Dim orphanCitations As Collection
+    Dim regEx As RegExp ' Requires "Microsoft VBScript Regular Expressions 5.5"
+    Dim citationMatches As MatchCollection
+    Dim citationMatch As Match
+    Dim componentMatches As MatchCollection
+    Dim componentMatch As Match
+    Dim citationNum As Long
+    Dim startNum As Long
+    Dim endNum As Long
+    Dim i As Long
+    Dim doc As Word.Document
+    Dim citeKey As Variant
+    Dim errorDescription As String
+
+    On Error GoTo ErrorHandler
+
+    ' Ensure necessary references are available
+    ' Test creation of RegExp and Dictionary objects early
+    Set regEx = New RegExp
+    Set createdBookmarks = New Scripting.Dictionary
+    Set referencedCitations = New Scripting.Dictionary
+
+    Set doc = ActiveDocument ' Explicitly use ActiveDocument
+
+    '--- Step 1: Cleanup ---
+    Debug.Print "Step 1: Cleaning up existing bookmarks and hyperlinks..."
+    Call DeleteBibBookmarks(doc)
+    Call DeleteBibHyperlinks(doc)
+    Debug.Print "Cleanup complete."
+
+    '--- Step 2: Bibliography Scanning & Bookmark Creation ---
+    Debug.Print "Step 2: Scanning bibliography and creating bookmarks..."
+    ' Find the Zotero bibliography field
+    Set bibField = FindZoteroBibliographyField(doc)
+    If bibField Is Nothing Then
+        Err.Raise ERR_BIB_FIELD_NOT_FOUND, "CreateBibliographyHyperlinks", _
+                  "Could not find the Zotero bibliography field containing '" & _
+                  ZOTERO_FIELD_PART1 & "' and '" & ZOTERO_FIELD_PART2 & "'."
+    End If
+    Debug.Print "Bibliography field found."
+
+    ' Get the range containing the bibliography entries
+    Set bibRange = bibField.Result
+    If bibRange Is Nothing Then
+        Debug.Print "Warning: Bibliography field result range is Nothing. No bookmarks created."
+        ' Decide if this should be an error or just proceed with no bookmarks
+    Else
+        ' Create bookmarks and store numbers
+        Set createdBookmarks = CreateBibliographyBookmarks(bibRange)
+        Debug.Print "Created " & createdBookmarks.Count & " bibliography bookmarks."
+        If createdBookmarks.Count = 0 Then
+             Debug.Print "Warning: No bibliography entries matching pattern found. No bookmarks created."
+             ' Decide if this should be an error or proceed
+        End If
+    End If
+
+
+    '--- Step 3: Citation Scanning & Validation ---
+    Debug.Print "Step 3: Scanning document for citations and validating..."
+    Set regEx = New RegExp
+    With regEx
+        .Global = True
+        .MultiLine = True ' Important for scanning document content
+        .IgnoreCase = False
+        .Pattern = CITATION_PATTERN
+    End With
+
+    ' Scan the entire document content
+    Set citationMatches = regEx.Execute(doc.Content.Text)
+    Debug.Print "Found " & citationMatches.Count & " potential citation patterns."
+
+    If citationMatches.Count > 0 Then
+        ' Collect all unique citation numbers referenced in the document
+        Set referencedCitations = GetAllReferencedCitationNumbers(citationMatches)
+        Debug.Print "Found " & referencedCitations.Count & " unique referenced citation numbers."
+
+        ' Validate referenced citations against created bookmarks (Orphan Check)
+        Set orphanCitations = FindOrphanCitations(referencedCitations, createdBookmarks)
+
+        If orphanCitations.Count > 0 Then
+            errorDescription = "Orphan citation(s) found (cited in text but no matching bibliography entry/bookmark): "
+            For i = 1 To orphanCitations.Count
+                errorDescription = errorDescription & orphanCitations(i) & IIf(i < orphanCitations.Count, ", ", "")
+            Next i
+            Err.Raise ERR_ORPHAN_CITATIONS, "CreateBibliographyHyperlinks", errorDescription
+        End If
+        Debug.Print "Validation successful: All referenced citations have corresponding bookmarks."
+    Else
+        Debug.Print "No citation patterns found in the document. Skipping hyperlink creation."
+        GoTo ProcedureExit ' Nothing more to do
+    End If
+
+    '--- Step 4: Hyperlink Creation ---
+    Debug.Print "Step 4: Creating hyperlinks..."
+    Call CreateCitationHyperlinks(doc, citationMatches, createdBookmarks)
+    Debug.Print "Hyperlink creation process complete."
+
+    MsgBox "Bibliography hyperlinks created successfully!", vbInformation
+
+ProcedureExit:
+    ' Clean up objects
+    Set bibField = Nothing
+    Set bibRange = Nothing
+    Set createdBookmarks = Nothing
+    Set referencedCitations = Nothing
+    Set orphanCitations = Nothing
+    Set regEx = Nothing
+    Set citationMatches = Nothing
+    Set citationMatch = Nothing
+    Set componentMatches = Nothing
+    Set componentMatch = Nothing
+    Set doc = Nothing
+    Exit Sub
+
+ErrorHandler:
+    Dim ErrMsg As String
+    ErrMsg = "Error " & Err.Number & " (" & Err.Description & ") in " & Err.Source & "."
+    Debug.Print ErrMsg ' Log error to immediate window
+    MsgBox ErrMsg, vbCritical, "Macro Error"
+    ' Perform any necessary cleanup specific to the error handler if needed
+    GoTo ProcedureExit ' Exit after handling error
+
+End Sub
+
+'=======================================================================================
+'   HELPER FUNCTIONS & PROCEDURES
+'=======================================================================================
+
+Private Sub DeleteBibBookmarks(ByVal doc As Word.Document)
+'---------------------------------------------------------------------------------------
+' Procedure : DeleteBibBookmarks
+' Purpose   : Deletes all bookmarks in the document whose names start with BIB_BOOKMARK_PREFIX.
+' Arguments : doc - The Word Document object to process.
+'---------------------------------------------------------------------------------------
+    Dim bm As Word.Bookmark
+    Dim i As Long
+    ' Iterate backwards because we are deleting items from the collection
+    For i = doc.Bookmarks.Count To 1 Step -1
+        Set bm = doc.Bookmarks(i)
+        If bm.Name Like BIB_BOOKMARK_PREFIX & "*" Then
+            bm.Delete
+            Debug.Print "Deleted bookmark: " & bm.Name
+        End If
+    Next i
+    Set bm = Nothing
+End Sub
+'---------------------------------------------------------------------------------------
+
+Private Sub DeleteBibHyperlinks(ByVal doc As Word.Document)
+'---------------------------------------------------------------------------------------
+' Procedure : DeleteBibHyperlinks
+' Purpose   : Deletes all hyperlinks in the document whose SubAddress starts with BIB_BOOKMARK_PREFIX.
+' Arguments : doc - The Word Document object to process.
+'---------------------------------------------------------------------------------------
+    Dim hl As Word.Hyperlink
+    Dim i As Long
+    ' Iterate backwards because removing hyperlinks might affect the collection index
+    For i = doc.Hyperlinks.Count To 1 Step -1
+        Set hl = doc.Hyperlinks(i)
+        On Error Resume Next ' Handle cases where SubAddress might be invalid or empty
+        If hl.SubAddress Like BIB_BOOKMARK_PREFIX & "*" Then
+            hl.Delete
+            Debug.Print "Deleted hyperlink targeting: " & hl.SubAddress
+        End If
+        On Error GoTo 0 ' Restore default error handling
+    Next i
+    Set hl = Nothing
+End Sub
+'---------------------------------------------------------------------------------------
+
+Private Function FindZoteroBibliographyField(ByVal doc As Word.Document) As Word.Field
+'---------------------------------------------------------------------------------------
+' Function  : FindZoteroBibliographyField
+' Purpose   : Finds the first field in the document containing both Zotero identifiers.
+' Arguments : doc - The Word Document object to search within.
+' Returns   : The found Word.Field object, or Nothing if not found.
+'---------------------------------------------------------------------------------------
+    Dim fld As Word.Field
+    Dim fieldCode As String
+
+    For Each fld In doc.Fields
+        fieldCode = fld.Code.Text
+        If InStr(1, fieldCode, ZOTERO_FIELD_PART1, vbTextCompare) > 0 And _
+           InStr(1, fieldCode, ZOTERO_FIELD_PART2, vbTextCompare) > 0 Then
+            Set FindZoteroBibliographyField = fld
+            Exit Function ' Return the first match found
+        End If
+    Next fld
+
+    ' If loop completes without finding the field
+    Set FindZoteroBibliographyField = Nothing
+End Function
+'---------------------------------------------------------------------------------------
+
+Private Function CreateBibliographyBookmarks(ByVal bibRange As Word.Range) As Scripting.Dictionary
+'---------------------------------------------------------------------------------------
+' Function  : CreateBibliographyBookmarks
+' Purpose   : Scans paragraphs within the bibliography range, creates bookmarks
+'             for entries matching "[#]{TAB}", and returns a dictionary of created bookmarks.
+' Arguments : bibRange - The Word.Range object containing the bibliography entries.
+' Returns   : A Scripting.Dictionary where Key=Bibliography Number (Long), Value=Bookmark Name (String).
+' Requires  : Microsoft VBScript Regular Expressions 5.5, Microsoft Scripting Runtime
+'---------------------------------------------------------------------------------------
+    Dim para As Word.Paragraph
+    Dim regEx As RegExp
+    Dim matches As MatchCollection
+    Dim match As Match
+    Dim bibNum As Long
+    Dim bookmarkName As String
+    Dim bookmarkRange As Word.Range
+    Dim dictBookmarks As Scripting.Dictionary
+
+    Set dictBookmarks = New Scripting.Dictionary
+    Set regEx = New RegExp
+
+    ' Configure RegExp to find "[#]{TAB}" at the start of a line
+    With regEx
+        .Pattern = BIB_ENTRY_PATTERN
+        .Global = False ' Only find the first match per paragraph
+        .MultiLine = False
+        .IgnoreCase = False
+    End With
+
+    ' Iterate through each paragraph in the bibliography range
+    For Each para In bibRange.Paragraphs
+        Set matches = regEx.Execute(para.Range.Text)
+
+        If matches.Count > 0 Then
+            Set match = matches(0)
+            ' Extract the number (Group 1 of the pattern)
+            bibNum = CLng(match.SubMatches(0))
+            bookmarkName = BIB_BOOKMARK_PREFIX & bibNum
+
+            ' Define the range for the bookmark: only the "[#]" part
+            Set bookmarkRange = para.Range
+            bookmarkRange.End = bookmarkRange.Start + match.Length - 1 ' Exclude the tab
+
+            ' Check if bookmark already exists (shouldn't due to cleanup, but good practice)
+            If Not ActiveDocument.Bookmarks.Exists(bookmarkName) Then
+                 ' Add the bookmark
+                ActiveDocument.Bookmarks.Add Name:=bookmarkName, Range:=bookmarkRange
+                ' Store in dictionary if successful
+                If Not dictBookmarks.Exists(bibNum) Then
+                    dictBookmarks.Add bibNum, bookmarkName
+                    Debug.Print "Created bookmark: " & bookmarkName & " for paragraph starting with: " & Left(para.Range.Text, 20) & "..."
+                Else
+                    Debug.Print "Warning: Duplicate bibliography number found and ignored: " & bibNum
+                End If
+            Else
+                 Debug.Print "Warning: Bookmark '" & bookmarkName & "' unexpectedly already exists. Skipped."
+            End If
+        End If
+    Next para
+
+    Set CreateBibliographyBookmarks = dictBookmarks
+
+    ' Cleanup
+    Set para = Nothing
+    Set regEx = Nothing
+    Set matches = Nothing
+    Set match = Nothing
+    Set bookmarkRange = Nothing
+    Set dictBookmarks = Nothing
+End Function
+'---------------------------------------------------------------------------------------
+
+Private Function GetAllReferencedCitationNumbers(ByVal citationMatches As MatchCollection) As Scripting.Dictionary
+'---------------------------------------------------------------------------------------
+' Function  : GetAllReferencedCitationNumbers
+' Purpose   : Parses all citation strings found by the main regex and returns a
+'             dictionary containing all unique citation numbers referenced.
+' Arguments : citationMatches - A MatchCollection from executing CITATION_PATTERN on document content.
+' Returns   : A Scripting.Dictionary where Key=Citation Number (Long), Value=1 (indicates presence).
+' Requires  : Microsoft VBScript Regular Expressions 5.5, Microsoft Scripting Runtime
+'---------------------------------------------------------------------------------------
+    Dim dictReferenced As New Scripting.Dictionary
+    Dim regExComp As New RegExp ' For parsing components like "1", "2-5"
+    Dim citationMatch As Match
+    Dim innerText As String
+    Dim componentMatches As MatchCollection
+    Dim componentMatch As Match
+    Dim startNum As Long
+    Dim endNum As Long
+    Dim i As Long
+
+    ' Configure component regex
+    With regExComp
+        .Global = True ' Find all components in the inner text
+        .Pattern = CITATION_COMPONENT_PATTERN
+    End With
+
+    ' Process each citation found in the document
+    For Each citationMatch In citationMatches
+        innerText = Trim(citationMatch.SubMatches(0)) ' Get text inside brackets, e.g., "17-19, 23"
+
+        ' Find all numbers and ranges within the inner text
+        Set componentMatches = regExComp.Execute(innerText)
+
+        For Each componentMatch In componentMatches
+            startNum = CLng(componentMatch.SubMatches(0))
+
+            If componentMatch.SubMatches(1) <> "" Then ' It's a range (e.g., 17-19)
+                endNum = CLng(componentMatch.SubMatches(1))
+                If endNum < startNum Then endNum = startNum ' Handle invalid range like [5-3] as just [5]
+                ' Add all numbers in the range to the dictionary
+                For i = startNum To endNum
+                    If Not dictReferenced.Exists(i) Then dictReferenced.Add i, 1
+                Next i
+            Else ' It's a single number
+                If Not dictReferenced.Exists(startNum) Then dictReferenced.Add startNum, 1
+            End If
+        Next componentMatch
+    Next citationMatch
+
+    Set GetAllReferencedCitationNumbers = dictReferenced
+
+    ' Cleanup
+    Set dictReferenced = Nothing
+    Set regExComp = Nothing
+    Set citationMatch = Nothing
+    Set componentMatches = Nothing
+    Set componentMatch = Nothing
+
+End Function
+'---------------------------------------------------------------------------------------
+
+Private Function FindOrphanCitations(ByVal referencedCitations As Scripting.Dictionary, ByVal createdBookmarks As Scripting.Dictionary) As Collection
+'---------------------------------------------------------------------------------------
+' Function  : FindOrphanCitations
+' Purpose   : Compares referenced citation numbers against created bookmark numbers
+'             and returns a collection of orphan numbers (referenced but no bookmark).
+' Arguments : referencedCitations - Dictionary of numbers found in citations.
+'             createdBookmarks - Dictionary of numbers for which bookmarks were created.
+' Returns   : A Collection containing orphan citation numbers (Long). Empty if none found.
+'---------------------------------------------------------------------------------------
+    Dim orphans As New Collection
+    Dim citeKey As Variant
+
+    If referencedCitations Is Nothing Or createdBookmarks Is Nothing Then
+        ' Handle potential Nothing dictionaries, though they should be initialized
+        Set FindOrphanCitations = orphans
+        Exit Function
+    End If
+
+    ' Check each referenced citation number
+    For Each citeKey In referencedCitations.Keys
+        If Not createdBookmarks.Exists(citeKey) Then
+            orphans.Add CLng(citeKey) ' Add the orphan number to the collection
+        End If
+    Next citeKey
+
+    Set FindOrphanCitations = orphans
+    Set orphans = Nothing ' Clean up intermediate collection
+End Function
+'---------------------------------------------------------------------------------------
+
+Private Sub CreateCitationHyperlinks(ByVal doc As Word.Document, ByVal citationMatches As MatchCollection, ByVal createdBookmarks As Scripting.Dictionary)
+'---------------------------------------------------------------------------------------
+' Procedure : CreateCitationHyperlinks
+' Purpose   : Iterates through found citations and creates hyperlinks for each
+'             number or range, pointing to the corresponding bookmark.
+' Arguments : doc - The Word Document object.
+'             citationMatches - MatchCollection of citations found in the document.
+'             createdBookmarks - Dictionary of valid bookmark numbers/names.
+' Requires  : Microsoft VBScript Regular Expressions 5.5
+' Notes     : Assumes orphan check has already passed. Relies on Match object
+'             properties (FirstIndex, Length) to precisely locate text for linking.
+'---------------------------------------------------------------------------------------
+    Dim regExComp As New RegExp ' For parsing components like "1", "2-5"
+    Dim citationMatch As Match
+    Dim innerText As String
+    Dim componentMatches As MatchCollection
+    Dim componentMatch As Match
+    Dim startNum As Long
+    Dim linkRange As Word.Range
+    Dim bookmarkTarget As String
+    Dim linkText As String
+    Dim compStartIndex As Long
+    Dim compLength As Long
+    Dim citationContentRange As Word.Range
+
+    ' Configure component regex
+    With regExComp
+        .Global = True ' Find all components in the inner text
+        .Pattern = CITATION_COMPONENT_PATTERN
+    End With
+
+    ' Process each citation found in the document
+    For Each citationMatch In citationMatches
+        ' Define the range covering the entire citation match "[...]"
+        Set citationContentRange = doc.Content
+        citationContentRange.Start = citationMatch.FirstIndex
+        citationContentRange.End = citationContentRange.Start + citationMatch.Length
+
+        innerText = Trim(citationMatch.SubMatches(0)) ' Get text inside brackets, e.g., "17-19, 23"
+
+        ' Find all numbers and ranges within the inner text again
+        Set componentMatches = regExComp.Execute(innerText)
+
+        For Each componentMatch In componentMatches
+            startNum = CLng(componentMatch.SubMatches(0))
+            linkText = componentMatch.Value ' The text to link, e.g., "17-19" or "23"
+
+            ' Find the precise range of this component *within* the citation brackets
+            ' We need the start index relative to the *document*, not just innerText
+            ' componentMatch.FirstIndex gives index within innerText.
+            ' We need to find linkText within the citationContentRange, after the opening bracket.
+
+            Set linkRange = citationContentRange.Duplicate ' Start with the range of the whole citation match
+            linkRange.Start = linkRange.Start + 1 ' Move past opening bracket '['
+            linkRange.End = linkRange.End - 1     ' Move before closing bracket ']'
+
+            ' Now search within this inner range for the specific component text
+            With linkRange.Find
+                 .ClearFormatting
+                 .Text = linkText
+                 .Forward = True
+                 .Wrap = wdFindStop ' Don't wrap around document
+                 .Format = False
+                 .MatchCase = True ' Ensure exact match
+                 .MatchWholeWord = False ' Allow matching parts like "19" in "17-19" if needed, but pattern should handle this
+                 .MatchWildcards = False
+                 .MatchSoundsLike = False
+                 .MatchAllWordForms = False
+
+                 If .Execute Then ' Found the exact text range for the component
+                    ' Get the target bookmark name (use the first number of the component)
+                    If createdBookmarks.Exists(startNum) Then
+                        bookmarkTarget = createdBookmarks(startNum) ' Assumes dictionary Value is bookmark name
+
+                        ' Check if this specific range already has a hyperlink targeting the correct bookmark
+                        ' (Avoids adding duplicate links if macro is run multiple times without full cleanup for some reason)
+                        Dim existingLink As Boolean
+                        existingLink = False
+                        If linkRange.Hyperlinks.Count > 0 Then
+                            If linkRange.Hyperlinks(1).SubAddress = bookmarkTarget Then
+                                existingLink = True
+                            End If
+                        End If
+
+                        If Not existingLink Then
+                            ' Create the hyperlink
+                            doc.Hyperlinks.Add Anchor:=linkRange, SubAddress:=bookmarkTarget
+                            Debug.Print "Created hyperlink for """ & linkText & """ targeting """ & bookmarkTarget & """"
+                        Else
+                             Debug.Print "Skipped creating duplicate hyperlink for """ & linkText & """ targeting """ & bookmarkTarget & """"
+                        End If
+                    Else
+                        ' This should not happen if orphan check passed, but log defensively
+                        Debug.Print "Error: Bookmark for citation number " & startNum & " (text: '" & linkText & "') not found during hyperlink creation phase. This indicates an issue with the orphan check logic."
+                    End If
+                 Else
+                    ' Could not find the specific component text within the citation range. This is unexpected.
+                    Debug.Print "Warning: Could not locate the exact text """ & linkText & """ within citation range: """ & citationContentRange.Text & """. Hyperlink skipped."
+                 End If
+            End With ' End With linkRange.Find
+
+        Next componentMatch ' Next component within the citation
+    Next citationMatch ' Next citation in the document
+
+    ' Cleanup
+    Set regExComp = Nothing
+    Set citationMatch = Nothing
+    Set componentMatches = Nothing
+    Set componentMatch = Nothing
+    Set linkRange = Nothing
+    Set citationContentRange = Nothing
+
+End Sub
+'---------------------------------------------------------------------------------------
+```
