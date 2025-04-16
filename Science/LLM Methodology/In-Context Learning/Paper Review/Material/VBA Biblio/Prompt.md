@@ -1214,4 +1214,3 @@ Create a self-contained VBA6 macro module (`.bas` file content) for Microsoft Wo
     * Clear the error (`Err.Clear`).
     * Attempt to resume cleanup: `Resume CleanUp`.
     * Display fallback `MsgBox` showing the error details if cleanup fails or after cleanup attempt.
-
