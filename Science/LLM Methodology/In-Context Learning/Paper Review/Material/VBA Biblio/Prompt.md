@@ -76,16 +76,17 @@ The macro must perform the following actions **in this order**:
 # Code
 
 ```bas
+'@Folder("Project")
 Option Explicit
 
 '---------------------------------------------------------------------------------------
 ' Module    : modBibliographyHyperlinker
 ' Author    : Gemini
 ' Date      : 16/04/2025
-' Version   : 2.0
+' Version   : 2.5
 ' Purpose   : Creates internal hyperlinks from in-text bibliography citations
-'             (e.g., [1], [2, 3], [4-6]) to corresponding bibliography entries
-'             marked with bookmarks (BIB_1, BIB_2, etc.).
+'             (e.g., [1], [2, 3], [4-6], [9-14]) to corresponding bibliography entries
+'             marked with bookmarks (BIB_1, BIB_2, etc.). Handles hyphen and en dash ranges.
 ' Changes   : v1.1 - Corrected object reference after delete in hyperlink cleanup.
 '                  - Adjusted bibliography entry pattern to handle optional leading page break (\f).
 '                  - Refined bookmark range calculation to exclude page break.
@@ -107,6 +108,14 @@ Option Explicit
 '                    RegExp still used to parse inner text of found citations.
 '           : v2.0 - Added check in CreateCitationHyperlinksIterativeFind to skip processing
 '                    citations found within the bibliography range itself.
+'           : v2.1 - Updated citation patterns (Wildcard Find, Component RegExp, Validation RegExp)
+'                    to handle en dash in addition to hyphen (-) for ranges.
+'           : v2.2 - Replaced literal en dash character in patterns with ChrW(8211).
+'                  - Added detailed logging for component parsing/finding.
+'           : v2.3 - Replaced literal en dash character in comments/text with hyphen or description.
+'           : v2.4 - Replaced Const pattern definitions using ChrW with Private Functions
+'                    to avoid VBA compile error ("Constant expression required").
+'           : v2.5 - Reorganized module structure: Constants grouped at top.
 '---------------------------------------------------------------------------------------
 ' References:
 '   - Microsoft Word XX.X Object Library (where XX.X is your version)
@@ -121,16 +130,6 @@ Private Const ZOTERO_FIELD_PART2 As String = "CSL_BIBLIOGRAPHY"
 ' Regular expression to find bibliography entries like "[123]{TAB}"
 ' Allows for an optional leading form feed (page break) character \f (Chr(12))
 Private Const BIB_ENTRY_PATTERN As String = "^\f?\[(\d+)\]" & vbTab
-' *** Wildcard pattern for Word's Find to locate citations ***
-' \[      - Literal opening bracket
-' [0-9,-]@ - One or more digits, commas, or hyphens
-' \]      - Literal closing bracket
-Private Const CITATION_FIND_PATTERN As String = "\[[0-9,-]@\]"
-' Regular expression to parse components within a citation's inner text (numbers or ranges)
-Private Const CITATION_COMPONENT_PATTERN As String = "(\d+)(?:-(\d+))?" ' $1=start_num, $2=end_num (optional)
-' RegExp pattern for initial validation scan (unchanged)
-Private Const VALIDATION_CITATION_PATTERN As String = "\[([0-9,\-\s]+?)\]"
-
 
 '--- Error Numbers ---
 Private Const ERR_BIB_FIELD_NOT_FOUND As Long = vbObjectError + 1001
@@ -138,10 +137,12 @@ Private Const ERR_ORPHAN_CITATIONS As Long = vbObjectError + 1002
 Private Const ERR_REGEX_ERROR As Long = vbObjectError + 1003
 Private Const ERR_DOC_NOT_SAVED As Long = vbObjectError + 1004 ' For file logging
 
+
 '--- Module Level Variables for Logging ---
 Private m_LogFileNum As Integer ' File handle for the log file
 Private m_LogFilePath As String ' Full path to the log file
 Private m_LoggingEnabled As Boolean ' Flag to indicate if logging is active
+
 
 '=======================================================================================
 '   MAIN PROCEDURE
@@ -240,7 +241,7 @@ Public Sub CreateBibliographyHyperlinks()
         .Global = True
         .MultiLine = True
         .IgnoreCase = False
-        .Pattern = VALIDATION_CITATION_PATTERN ' Use the RegExp pattern here
+        .Pattern = GetValidationPattern() ' Use function call
     End With
 
     ' Scan the entire document content for validation
@@ -313,6 +314,34 @@ ErrorHandler:
     GoTo ProcedureExit ' Exit after handling error (log file already closed)
 
 End Sub
+
+
+'=======================================================================================
+'   PATTERN GENERATING FUNCTIONS (Replaced Constants using ChrW)
+'=======================================================================================
+
+Private Function GetCitationFindPattern() As String
+' Returns the Wildcard pattern for Word's Find to locate citations
+' Handles digits, comma, hyphen, en dash within brackets
+    GetCitationFindPattern = "\[[0-9,-" & ChrW(8211) & "]@\]"
+End Function
+'---------------------------------------------------------------------------------------
+
+Private Function GetComponentPattern() As String
+' Returns the RegExp pattern to parse components within a citation's inner text (numbers or ranges)
+' Handles hyphen (-) or EN DASH (ChrW(8211)) as range separator
+    GetComponentPattern = "(\d+)(?:[-" & ChrW(8211) & "](\d+))?"
+End Function
+'---------------------------------------------------------------------------------------
+
+Private Function GetValidationPattern() As String
+' Returns the RegExp pattern for the initial validation scan
+' Handles digits, comma, hyphen, en dash, space within brackets
+' Note: Hyphen is escaped as \- just in case, though likely not needed within [] here.
+    GetValidationPattern = "\[([0-9,\-" & ChrW(8211) & "\s]+?)\]"
+End Function
+'---------------------------------------------------------------------------------------
+
 
 '=======================================================================================
 '   LOGGING HELPER FUNCTIONS
@@ -605,13 +634,13 @@ Private Function GetAllReferencedCitationNumbers(ByVal citationMatches As MatchC
 ' Function  : GetAllReferencedCitationNumbers
 ' Purpose   : Parses all citation strings found by the main regex and returns a
 '             dictionary containing all unique citation numbers referenced.
-'             Used for the initial validation scan.
-' Arguments : citationMatches - A MatchCollection from executing CITATION_PATTERN on document content.
+'             Used for the initial validation scan. Handles ranges with hyphen or en dash.
+' Arguments : citationMatches - A MatchCollection from executing VALIDATION_CITATION_PATTERN on document content.
 ' Returns   : A Scripting.Dictionary where Key=Citation Number (Long), Value=1 (indicates presence).
 ' Requires  : Microsoft VBScript Regular Expressions 5.5, Microsoft Scripting Runtime
 '---------------------------------------------------------------------------------------
     Dim dictReferenced As New Scripting.Dictionary
-    Dim regExComp As New RegExp ' For parsing components like "1", "2-5"
+    Dim regExComp As New RegExp ' For parsing components like "1", "2-5", "9-14"
     Dim citationMatch As match
     Dim innerText As String
     Dim componentMatches As MatchCollection
@@ -620,15 +649,15 @@ Private Function GetAllReferencedCitationNumbers(ByVal citationMatches As MatchC
     Dim endNum As Long
     Dim i As Long
 
-    ' Configure component regex
+    ' Configure component regex (now handles hyphen OR en dash)
     With regExComp
-        .Global = True ' Find all components in the inner text
-        .Pattern = CITATION_COMPONENT_PATTERN
+        .Global = True
+        .Pattern = GetComponentPattern() ' Use function call
     End With
 
     ' Process each citation found in the document
     For Each citationMatch In citationMatches
-        innerText = Trim(citationMatch.SubMatches(0)) ' Get text inside brackets, e.g., "17-19, 23"
+        innerText = Trim(citationMatch.SubMatches(0)) ' Get text inside brackets, e.g., "17-19, 23", "9-14"
 
         ' Find all numbers and ranges within the inner text
         Set componentMatches = regExComp.Execute(innerText)
@@ -636,7 +665,7 @@ Private Function GetAllReferencedCitationNumbers(ByVal citationMatches As MatchC
         For Each componentMatch In componentMatches
             startNum = CLng(componentMatch.SubMatches(0))
 
-            If componentMatch.SubMatches(1) <> "" Then ' It's a range (e.g., 17-19)
+            If componentMatch.SubMatches(1) <> "" Then ' It's a range (e.g., 17-19 or 9-14)
                 endNum = CLng(componentMatch.SubMatches(1))
                 If endNum < startNum Then endNum = startNum ' Handle invalid range like [5-3] as just [5]
                 ' Add all numbers in the range to the dictionary
@@ -703,9 +732,9 @@ Private Sub CreateCitationHyperlinksIterativeFind(ByVal doc As Word.Document, By
 '             createdBookmarks - Dictionary of valid bookmark numbers/names.
 '             bibliographyRange - The Range object representing the bibliography section (can be Nothing).
 ' Requires  : Microsoft VBScript Regular Expressions 5.5
-' Notes     : Assumes orphan check has already passed.
+' Notes     : Assumes orphan check has already passed. Handles hyphen and en dash ranges.
 '---------------------------------------------------------------------------------------
-    Dim regExComp As New RegExp         ' For parsing components like "1", "2-5"
+    Dim regExComp As New RegExp         ' For parsing components like "1", "2-5", "9-14"
     Dim componentMatches As MatchCollection
     Dim componentMatch As match
     Dim startNum As Long
@@ -717,20 +746,21 @@ Private Sub CreateCitationHyperlinksIterativeFind(ByVal doc As Word.Document, By
     Dim findCompRange As Word.Range     ' Duplicate range for finding component text within citationContentRange
     Dim innerText As String
     Dim isInsideBib As Boolean          ' Flag to check if citation is in bib
+    Dim foundComp As Boolean            ' Flag for component find result
 
-    ' Configure component regex (used on extracted innerText string)
+    ' Configure component regex (now handles hyphen OR en dash)
     With regExComp
         .Global = True
-        .Pattern = CITATION_COMPONENT_PATTERN
+        .Pattern = GetComponentPattern() ' Use function call
     End With
 
     ' Initialize search range for the main Find loop
     Set searchRange = doc.Content
 
-    ' Configure Find object for finding citations "[...]"
+    ' Configure Find object for finding citations "[...]" (now includes en dash via ChrW)
     With searchRange.Find
         .ClearFormatting
-        .Text = CITATION_FIND_PATTERN ' Use wildcard pattern \[ [0-9,-]@ \]
+        .Text = GetCitationFindPattern() ' Use function call
         .Forward = True
         .Wrap = wdFindStop
         .Format = False
@@ -775,13 +805,16 @@ Private Sub CreateCitationHyperlinksIterativeFind(ByVal doc As Word.Document, By
                     Else
                         innerText = "" ' Handle cases like "[]" if found
                     End If
+                    Call LogMessage("  Inner text: '" & innerText & "'") ' Log inner text
 
                     ' Use RegExp to parse components from the inner text string
                     Set componentMatches = regExComp.Execute(innerText)
+                    Call LogMessage("  Found " & componentMatches.Count & " component(s) in inner text.")
 
                     For Each componentMatch In componentMatches
                         startNum = CLng(componentMatch.SubMatches(0))
-                        linkText = componentMatch.Value ' The text to link, e.g., "17-19" or "23"
+                        linkText = componentMatch.Value ' The text to link, e.g., "17-19" or "9-14"
+                        Call LogMessage("    Parsing component: '" & linkText & "' (StartNum: " & startNum & ")")
 
                         ' Use a duplicate of the citation range for finding the component text
                         Set findCompRange = citationContentRange.Duplicate
@@ -800,7 +833,11 @@ Private Sub CreateCitationHyperlinksIterativeFind(ByVal doc As Word.Document, By
                              .MatchSoundsLike = False
                              .MatchAllWordForms = False
 
-                             If .Execute Then ' Found the exact text range for the component
+                             foundComp = .Execute ' Store result
+
+                             Call LogMessage("      Find component '" & linkText & "' result: " & foundComp) ' Log find result
+
+                             If foundComp Then ' Found the exact text range for the component
                                 ' If found, findCompRange object now represents the component range
                                 Set linkRange = findCompRange ' Assign the found range
 
@@ -820,15 +857,15 @@ Private Sub CreateCitationHyperlinksIterativeFind(ByVal doc As Word.Document, By
                                     If Not existingLink Then
                                         ' Create the hyperlink
                                         doc.Hyperlinks.Add Anchor:=linkRange, SubAddress:=bookmarkTarget
-                                        Call LogMessage("  Created hyperlink for """ & linkText & """ targeting """ & bookmarkTarget & """")
+                                        Call LogMessage("      Created hyperlink for """ & linkText & """ targeting """ & bookmarkTarget & """")
                                     Else
-                                         Call LogMessage("  Skipped creating duplicate hyperlink for """ & linkText & """ targeting """ & bookmarkTarget & """")
+                                         Call LogMessage("      Skipped creating duplicate hyperlink for """ & linkText & """ targeting """ & bookmarkTarget & """")
                                     End If
                                 Else
-                                    Call LogMessage("  Error: Bookmark for citation number " & startNum & " (text: '" & linkText & "') not found during hyperlink creation phase.")
+                                    Call LogMessage("      Error: Bookmark for citation number " & startNum & " (text: '" & linkText & "') not found during hyperlink creation phase.")
                                 End If
                              Else
-                                Call LogMessage("  Warning: Could not locate component text """ & linkText & """ within citation range text: """ & citationContentRange.Text & """. Hyperlink skipped.")
+                                Call LogMessage("      Warning: Could not locate component text """ & linkText & """ within citation range text: """ & citationContentRange.Text & """. Hyperlink skipped.")
                              End If
                         End With ' End With findCompRange.Find
 
