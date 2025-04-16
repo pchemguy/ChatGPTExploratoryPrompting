@@ -83,7 +83,7 @@ Option Explicit
 ' Module    : modBibliographyHyperlinker
 ' Author    : Gemini
 ' Date      : 16/04/2025
-' Version   : 2.5
+' Version   : 2.6
 ' Purpose   : Creates internal hyperlinks from in-text bibliography citations
 '             (e.g., [1], [2, 3], [4-6], [9-14]) to corresponding bibliography entries
 '             marked with bookmarks (BIB_1, BIB_2, etc.). Handles hyphen and en dash ranges.
@@ -116,6 +116,7 @@ Option Explicit
 '           : v2.4 - Replaced Const pattern definitions using ChrW with Private Functions
 '                    to avoid VBA compile error ("Constant expression required").
 '           : v2.5 - Reorganized module structure: Constants grouped at top.
+'           : v2.6 - Removed extra debug logging from hyperlink creation step (Step 4).
 '---------------------------------------------------------------------------------------
 ' References:
 '   - Microsoft Word XX.X Object Library (where XX.X is your version)
@@ -805,16 +806,16 @@ Private Sub CreateCitationHyperlinksIterativeFind(ByVal doc As Word.Document, By
                     Else
                         innerText = "" ' Handle cases like "[]" if found
                     End If
-                    Call LogMessage("  Inner text: '" & innerText & "'") ' Log inner text
+                    ' Call LogMessage("  Inner text: '" & innerText & "'") ' DEBUG Removed v2.6
 
                     ' Use RegExp to parse components from the inner text string
                     Set componentMatches = regExComp.Execute(innerText)
-                    Call LogMessage("  Found " & componentMatches.Count & " component(s) in inner text.")
+                    ' Call LogMessage("  Found " & componentMatches.Count & " component(s) in inner text.") ' DEBUG Removed v2.6
 
                     For Each componentMatch In componentMatches
                         startNum = CLng(componentMatch.SubMatches(0))
                         linkText = componentMatch.Value ' The text to link, e.g., "17-19" or "9-14"
-                        Call LogMessage("    Parsing component: '" & linkText & "' (StartNum: " & startNum & ")")
+                        ' Call LogMessage("    Parsing component: '" & linkText & "' (StartNum: " & startNum & ")") ' DEBUG Removed v2.6
 
                         ' Use a duplicate of the citation range for finding the component text
                         Set findCompRange = citationContentRange.Duplicate
@@ -835,7 +836,7 @@ Private Sub CreateCitationHyperlinksIterativeFind(ByVal doc As Word.Document, By
 
                              foundComp = .Execute ' Store result
 
-                             Call LogMessage("      Find component '" & linkText & "' result: " & foundComp) ' Log find result
+                             ' Call LogMessage("      Find component '" & linkText & "' result: " & foundComp) ' DEBUG Removed v2.6
 
                              If foundComp Then ' Found the exact text range for the component
                                 ' If found, findCompRange object now represents the component range
@@ -857,15 +858,15 @@ Private Sub CreateCitationHyperlinksIterativeFind(ByVal doc As Word.Document, By
                                     If Not existingLink Then
                                         ' Create the hyperlink
                                         doc.Hyperlinks.Add Anchor:=linkRange, SubAddress:=bookmarkTarget
-                                        Call LogMessage("      Created hyperlink for """ & linkText & """ targeting """ & bookmarkTarget & """")
+                                        Call LogMessage("  Created hyperlink for """ & linkText & """ targeting """ & bookmarkTarget & """")
                                     Else
-                                         Call LogMessage("      Skipped creating duplicate hyperlink for """ & linkText & """ targeting """ & bookmarkTarget & """")
+                                         Call LogMessage("  Skipped creating duplicate hyperlink for """ & linkText & """ targeting """ & bookmarkTarget & """")
                                     End If
                                 Else
-                                    Call LogMessage("      Error: Bookmark for citation number " & startNum & " (text: '" & linkText & "') not found during hyperlink creation phase.")
+                                    Call LogMessage("  Error: Bookmark for citation number " & startNum & " (text: '" & linkText & "') not found during hyperlink creation phase.")
                                 End If
                              Else
-                                Call LogMessage("      Warning: Could not locate component text """ & linkText & """ within citation range text: """ & citationContentRange.Text & """. Hyperlink skipped.")
+                                Call LogMessage("  Warning: Could not locate component text """ & linkText & """ within citation range text: """ & citationContentRange.Text & """. Hyperlink skipped.")
                              End If
                         End With ' End With findCompRange.Find
 
