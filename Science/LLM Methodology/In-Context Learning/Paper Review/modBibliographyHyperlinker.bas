@@ -817,4 +817,3 @@ Private Sub CreateCitationHyperlinksIterativeFind(ByVal doc As Word.Document, By
 
 End Sub
 '---------------------------------------------------------------------------------------
-
