@@ -30,3 +30,8 @@ Two common strategies for a complex problem, and associated workflows
 
 https://researcher-resources.acs.org/publish/peer_reviews
 https://reviewertoolkit.acs.org/reviewertoolkit/story.html
+
+---
+
+**LLM-assisted PE**
+
