@@ -22,6 +22,8 @@ Structured systematic analysis and complex workflows are crucial for preparation
 
 Perhaps a bigger question would be to what extent tacit knowledge involved in research/engineering/medicine activities can be codified/formalized, that is reduced/decomposed to actionable workflows/structured abstract/generalized protocols involving simpler steps accessible (whatever it means) to SOTA AI.
 
+Problem of generating increasingly abstracting protocols that still elicit detailed and tailored response
+
 Meta-reasoning meta-learning meta-research
 
   
