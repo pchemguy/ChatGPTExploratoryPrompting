@@ -6,7 +6,7 @@ Option Explicit
 ' Module    : modBibliographyHyperlinker
 ' Author    : Gemini
 ' Date      : 16/04/2025
-' Version   : 2.6
+' Version   : 3.1
 ' Purpose   : Creates internal hyperlinks from in-text bibliography citations
 '             (e.g., [1], [2, 3], [4-6], [9-14]) to corresponding bibliography entries
 '             marked with bookmarks (BIB_1, BIB_2, etc.). Handles hyphen and en dash ranges.
@@ -30,7 +30,7 @@ Option Explicit
 '                    to locate citations, avoiding reliance on stale RegExp indices.
 '                    RegExp still used to parse inner text of found citations.
 '           : v2.0 - Added check in CreateCitationHyperlinksIterativeFind to skip processing
-'                    citations found within the bibliography range itself.
+'                    citations found within the bibliography range itself. Added loop counter.
 '           : v2.1 - Updated citation patterns (Wildcard Find, Component RegExp, Validation RegExp)
 '                    to handle en dash in addition to hyphen (-) for ranges.
 '           : v2.2 - Replaced literal en dash character in patterns with ChrW(8211).
@@ -40,6 +40,15 @@ Option Explicit
 '                    to avoid VBA compile error ("Constant expression required").
 '           : v2.5 - Reorganized module structure: Constants grouped at top.
 '           : v2.6 - Removed extra debug logging from hyperlink creation step (Step 4).
+'           : v2.7 - Reverted bookmark range definition in CreateBibliographyBookmarks
+'                    back to using calculated Start/End positions with ActiveDocument.Range,
+'                    to address issue where MoveStart/End covered entire bibliography for item 1.
+'           : v2.8 - Added missing constant declarations for MAX_FIND_LOOPS and ERR_INFINITE_LOOP.
+'           : v2.9 - Revised bookmark range definition to use Collapse/MoveStart/MoveEnd
+'                    followed by explicitly setting .End based on .Start + length.
+'           : v3.0 - Revised CreateBibliographyBookmarks to use para.Range.Find
+'                    to locate the specific "[#]" text for bookmarking.
+'           : v3.1 - Removed detailed debug logging from CreateBibliographyBookmarks.
 '---------------------------------------------------------------------------------------
 ' References:
 '   - Microsoft Word XX.X Object Library (where XX.X is your version)
@@ -54,12 +63,14 @@ Private Const ZOTERO_FIELD_PART2 As String = "CSL_BIBLIOGRAPHY"
 ' Regular expression to find bibliography entries like "[123]{TAB}"
 ' Allows for an optional leading form feed (page break) character \f (Chr(12))
 Private Const BIB_ENTRY_PATTERN As String = "^\f?\[(\d+)\]" & vbTab
+Private Const MAX_FIND_LOOPS As Long = 10000 ' Safety limit for Find loop
 
 '--- Error Numbers ---
 Private Const ERR_BIB_FIELD_NOT_FOUND As Long = vbObjectError + 1001
 Private Const ERR_ORPHAN_CITATIONS As Long = vbObjectError + 1002
 Private Const ERR_REGEX_ERROR As Long = vbObjectError + 1003
 Private Const ERR_DOC_NOT_SAVED As Long = vbObjectError + 1004 ' For file logging
+Private Const ERR_INFINITE_LOOP As Long = vbObjectError + 1005 ' Custom error for loop limit
 
 
 '--- Module Level Variables for Logging ---
@@ -120,9 +131,11 @@ Public Sub CreateBibliographyHyperlinks()
     Set referencedCitations = New Scripting.Dictionary
     If Err.Number <> 0 Then
         Call LogMessage("ERROR: Required object could not be created. Check References (RegExp, Scripting). Error: " & Err.Description)
+        Err.Clear ' Clear error before raising a new one
+        On Error GoTo 0 ' Restore default error handling before raising
         Err.Raise Err.Number, "CreateBibliographyHyperlinks (Object Creation)", "Required object could not be created. Check VBA References (Microsoft VBScript Regular Expressions 5.5, Microsoft Scripting Runtime)."
     End If
-    On Error GoTo ErrorHandler ' Restore error handling
+    On Error GoTo ErrorHandler ' Restore main error handler
 
     '--- Step 1b: Cleanup ---
     Call LogMessage("Step 1: Cleaning up existing bookmarks and hyperlinks...")
@@ -224,18 +237,33 @@ ProcedureExit:
     Exit Sub
 
 ErrorHandler:
-    Dim ErrMsg As String
-    ErrMsg = "Error " & Err.Number & " (" & Err.Description & ") in module " & Err.Source & "."
-    Call LogMessage("!!! MACRO ERROR: " & ErrMsg & " !!!") ' Log the error
-    Call LogMessage("CreateBibliographyHyperlinks finished with ERROR at " & Format(Now, "yyyy-mm-dd hh:nn:ss"))
-    Call LogMessage("------------------------------------------------------------")
-    MsgBox ErrMsg, vbCritical, "Macro Error"
-    ' Ensure log file is closed even if an error occurred
-    On Error Resume Next ' Prevent error in cleanup from hiding original error
-    Call CloseLogFile
-    On Error GoTo 0
-    ' Perform any necessary cleanup specific to the error handler if needed
-    GoTo ProcedureExit ' Exit after handling error (log file already closed)
+    Dim lngErrNum As Long: lngErrNum = Err.Number
+    Dim strErrDesc As String: strErrDesc = Err.Description
+    Call LogMessage("!!! MACRO ERROR: " & lngErrNum & " - " & strErrDesc & " !!!") ' Log the error
+
+    ' --- Attempt Cleanup within Error Handler ---
+    On Error Resume Next ' Prevent error during cleanup hiding original error
+    Application.ScreenUpdating = True
+    ' Release objects
+    Set bibField = Nothing
+    Set bibRange = Nothing
+    Set createdBookmarks = Nothing
+    Set referencedCitations = Nothing
+    Set orphanCitations = Nothing
+    Set regExVal = Nothing
+    Set validationMatches = Nothing
+    Set doc = Nothing
+    Call CloseLogFile ' Close log file if it was opened
+    On Error GoTo 0 ' Restore default error handling
+    ' --- End Cleanup Attempt ---
+
+    ' *** Show the Error Message Box ***
+    MsgBox "An unexpected error occurred:" & vbCrLf & vbCrLf & _
+           "Error Number: " & lngErrNum & vbCrLf & _
+           "Description: " & strErrDesc, vbCritical, "Macro Error"
+
+    ' Exit Sub after showing the error message.
+    Exit Sub
 
 End Sub
 
@@ -283,8 +311,11 @@ Private Sub SetupLogFile(ByVal doc As Word.Document)
     Dim docPath As String
     Dim baseName As String
 
+    Debug.Print "SetupLogFile: Attempting to initialize logging..." ' Visible in Immediate Window
+
     m_LoggingEnabled = False ' Assume failure initially
     m_LogFileNum = 0
+    m_LogFilePath = ""
 
     ' Check if document is saved
     docPath = ""
@@ -294,36 +325,47 @@ Private Sub SetupLogFile(ByVal doc As Word.Document)
     If docPath = "" Then
         Err.Raise ERR_DOC_NOT_SAVED, "SetupLogFile", _
                   "Document must be saved before logging can be enabled."
-        Exit Sub ' Should not be reached due to Err.Raise
+        Exit Sub ' Exit if doc not saved - fundamental requirement
     End If
+    Debug.Print "SetupLogFile: Document path found: " & docPath
 
     ' Create FileSystemObject
+    Debug.Print "SetupLogFile: Attempting to create FileSystemObject..."
     On Error Resume Next ' Handle FSO creation error (e.g., scripting disabled)
     Set fso = CreateObject("Scripting.FileSystemObject")
     If Err.Number <> 0 Then
+        Debug.Print "SetupLogFile: ERROR creating FileSystemObject - " & Err.Description
         MsgBox "Could not create FileSystemObject. Logging to file disabled." & vbCrLf & _
                "Ensure 'Microsoft Scripting Runtime' reference is enabled and scripting is allowed.", vbExclamation
-        Exit Sub ' Cannot proceed with file logging
+        Set fso = Nothing
+        On Error GoTo 0
+        GoTo SetupExit ' *** MODIFIED v1.5: Don't Exit Sub, just skip logging setup ***
     End If
     On Error GoTo 0 ' Restore error handling
+    Debug.Print "SetupLogFile: FileSystemObject created."
 
     ' Construct log file path
     baseName = fso.GetBaseName(doc.Name)
     m_LogFilePath = fso.BuildPath(docPath, baseName & ".log")
+    Debug.Print "SetupLogFile: Log file path set to: " & m_LogFilePath
 
     ' Get a free file handle and open the file for output (overwrite)
+    Debug.Print "SetupLogFile: Attempting to open log file..."
     On Error Resume Next ' Handle file access errors
     m_LogFileNum = FreeFile
     Open m_LogFilePath For Output As #m_LogFileNum
     If Err.Number <> 0 Then
+        Debug.Print "SetupLogFile: ERROR opening log file - " & Err.Description
         m_LogFileNum = 0 ' Reset file number
         MsgBox "Could not open log file for writing:" & vbCrLf & m_LogFilePath & vbCrLf & _
                "Error: " & Err.Description & vbCrLf & _
                "Logging to file disabled.", vbExclamation
-        m_LogFilePath = ""
-        Exit Sub ' Cannot proceed with file logging
+        m_LogFilePath = "" ' Clear path as it's unusable
+        On Error GoTo 0
+        GoTo SetupExit ' *** MODIFIED v1.5: Don't Exit Sub, just skip logging setup ***
     End If
     On Error GoTo 0 ' Restore error handling
+    Debug.Print "SetupLogFile: Log file opened successfully (File #" & m_LogFileNum & ")."
 
     m_LoggingEnabled = True ' Logging is now active
     ' Write header
@@ -331,7 +373,9 @@ Private Sub SetupLogFile(ByVal doc As Word.Document)
     Print #m_LogFileNum, "Macro Run Started: " & Format(Now, "yyyy-mm-dd hh:nn:ss")
     Print #m_LogFileNum, String(70, "-") ' Separator line
 
+SetupExit: ' Label for GoTo statements above
     Set fso = Nothing
+    Debug.Print "SetupLogFile: Exiting. LoggingEnabled = " & m_LoggingEnabled
 End Sub
 '---------------------------------------------------------------------------------------
 
@@ -339,6 +383,7 @@ Private Sub LogMessage(ByVal message As String)
 '---------------------------------------------------------------------------------------
 ' Procedure : LogMessage
 ' Purpose   : Writes a message to the initialized log file, if enabled.
+'             Falls back to Debug.Print if logging is not enabled.
 ' Arguments : message - The string message to log.
 '---------------------------------------------------------------------------------------
     ' Only write if logging was successfully set up
@@ -352,7 +397,7 @@ Private Sub LogMessage(ByVal message As String)
         On Error GoTo 0
     Else
         ' Fallback to immediate window if logging isn't active
-        Debug.Print message
+        Debug.Print Format(Now, "hh:nn:ss") & " - (NoLogFile) " & message
     End If
 End Sub
 '---------------------------------------------------------------------------------------
@@ -460,7 +505,7 @@ Private Function CreateBibliographyBookmarks(ByVal bibRange As Word.Range) As Sc
 ' Function  : CreateBibliographyBookmarks
 ' Purpose   : Scans paragraphs within the bibliography range, creates bookmarks
 '             for entries matching "^\f?\[#]{TAB}", and returns a dictionary of created bookmarks.
-'             Uses Collapse/MoveStart/MoveEnd to define bookmark range.
+'             Uses para.Range.Find to locate the "[#]" text for bookmarking.
 ' Arguments : bibRange - The Word.Range object containing the bibliography entries.
 ' Returns   : A Scripting.Dictionary where Key=Bibliography Number (Long), Value=Bookmark Name (String).
 ' Requires  : Microsoft VBScript Regular Expressions 5.5, Microsoft Scripting Runtime
@@ -471,22 +516,21 @@ Private Function CreateBibliographyBookmarks(ByVal bibRange As Word.Range) As Sc
     Dim match As match
     Dim bibNum As Long
     Dim bookmarkName As String
-    Dim bookmarkRange As Word.Range
+    Dim bookmarkRange As Word.Range ' Range for the bookmark itself ([#])
+    Dim findRange As Word.Range     ' Range used for finding within the paragraph
     Dim dictBookmarks As Scripting.Dictionary
     Dim paraText As String
-    Dim matchText As String
-    Dim bracketPos As Long
-    Dim numLen As Integer
-    Dim offsetToBracket As Long ' Characters from para start to '['
+    Dim searchText As String
 
     Set dictBookmarks = New Scripting.Dictionary
     Set regEx = New RegExp
 
     ' Configure RegExp to find optional \f then "[#]{TAB}" at the start of a line
+    ' This is primarily to extract the bibNum reliably.
     With regEx
         .Pattern = BIB_ENTRY_PATTERN ' Uses "\f?\[(\d+)\]{TAB}"
-        .Global = False ' Only find the first match per paragraph
-        .MultiLine = False ' Check start of paragraph text
+        .Global = False
+        .MultiLine = False
         .IgnoreCase = False
     End With
 
@@ -500,45 +544,51 @@ Private Function CreateBibliographyBookmarks(ByVal bibRange As Word.Range) As Sc
             ' Extract the number (Group 1 of the pattern)
             bibNum = CLng(match.SubMatches(0))
             bookmarkName = BIB_BOOKMARK_PREFIX & bibNum
-            matchText = match.Value ' Full matched text, e.g. "\f[7]\t" or "[7]\t"
+            searchText = "[" & bibNum & "]" ' Construct exact text to find
 
-            ' Find the starting position of '[' within the matched text
-            bracketPos = InStr(1, matchText, "[")
+            ' *** Define range using para.Range.Find ***
+            Set findRange = para.Range.Duplicate ' Search within the paragraph
+            Set bookmarkRange = Nothing          ' Reset bookmark range
 
-            If bracketPos > 0 Then
-                ' Calculate offset needed to move start point
-                numLen = Len(match.SubMatches(0))
-                offsetToBracket = match.FirstIndex + bracketPos - 1
+            With findRange.Find
+                .ClearFormatting
+                .Text = searchText
+                .Forward = True
+                .Wrap = wdFindStop
+                .Format = False
+                .MatchCase = True       ' Exact match for "[#]"
+                .MatchWholeWord = False ' Allow finding "[1]" even if attached
+                .MatchWildcards = False ' Not using wildcards here
+                .MatchSoundsLike = False
+                .MatchAllWordForms = False
 
-                ' *** Define range using Collapse/MoveStart/MoveEnd ***
-                Set bookmarkRange = para.Range.Duplicate ' Work on a copy
-                bookmarkRange.Collapse wdCollapseStart     ' Go to start of paragraph
-                bookmarkRange.MoveStart Unit:=wdCharacter, Count:=offsetToBracket ' Move start to '['
-                bookmarkRange.MoveEnd Unit:=wdCharacter, Count:=numLen + 2       ' Move end past ']'
-                ' *** End new range definition ***
-
-            Else
-                 Call LogMessage("Warning: Could not find '[' in matched text '" & matchText & "' for bibNum " & bibNum & ". Skipping bookmark.")
-                 GoTo NextPara ' Skip to next paragraph if pattern match is unexpected
-            End If
-
-            ' Check if bookmark already exists (shouldn't due to cleanup, but good practice)
-            If Not ActiveDocument.Bookmarks.Exists(bookmarkName) Then
-                 ' Add the bookmark using the range defined by MoveStart/MoveEnd
-                ActiveDocument.Bookmarks.Add Name:=bookmarkName, Range:=bookmarkRange
-                ' Store in dictionary if successful
-                If Not dictBookmarks.Exists(bibNum) Then
-                    dictBookmarks.Add bibNum, bookmarkName
-                    ' Log the actual text covered by the final range
-                    Call LogMessage("Created bookmark: " & bookmarkName & " covering range text: '" & bookmarkRange.Text & "'")
+                If .Execute Then
+                    ' If found, the findRange now IS the bookmark range
+                    Set bookmarkRange = findRange.Duplicate ' Use a copy
                 Else
-                    Call LogMessage("Warning: Duplicate bibliography number found and ignored: " & bibNum)
+                    Call LogMessage("Warning: Could not Find text '" & searchText & "' in paragraph starting with: " & Left(paraText, 20) & "... Skipping bookmark " & bookmarkName)
                 End If
-            Else
-                 Call LogMessage("Warning: Bookmark '" & bookmarkName & "' unexpectedly already exists. Skipped.")
-            End If
-        End If
-NextPara:
+            End With
+            ' *** End Find-based range definition ***
+
+
+            ' Check if bookmark already exists and range was found
+            If Not bookmarkRange Is Nothing Then
+                If Not ActiveDocument.Bookmarks.Exists(bookmarkName) Then
+                     ' Add the bookmark using the found range
+                    ActiveDocument.Bookmarks.Add Name:=bookmarkName, Range:=bookmarkRange
+                    ' Store in dictionary if successful
+                    If Not dictBookmarks.Exists(bibNum) Then
+                        dictBookmarks.Add bibNum, bookmarkName
+                        Call LogMessage("Created bookmark: " & bookmarkName & " covering range text: '" & bookmarkRange.Text & "'")
+                    Else
+                        Call LogMessage("Warning: Duplicate bibliography number found and ignored: " & bibNum)
+                    End If
+                Else
+                     Call LogMessage("Warning: Bookmark '" & bookmarkName & "' unexpectedly already exists. Skipped.")
+                End If
+            End If ' End If Not bookmarkRange Is Nothing
+        End If ' End If matches.Count > 0
     Next para
 
     Set CreateBibliographyBookmarks = dictBookmarks
@@ -549,6 +599,7 @@ NextPara:
     Set matches = Nothing
     Set match = Nothing
     Set bookmarkRange = Nothing
+    Set findRange = Nothing
     Set dictBookmarks = Nothing
 End Function
 '---------------------------------------------------------------------------------------
@@ -671,6 +722,7 @@ Private Sub CreateCitationHyperlinksIterativeFind(ByVal doc As Word.Document, By
     Dim innerText As String
     Dim isInsideBib As Boolean          ' Flag to check if citation is in bib
     Dim foundComp As Boolean            ' Flag for component find result
+    Dim loopCounter As Long             ' Safety counter
 
     ' Configure component regex (now handles hyphen OR en dash)
     With regExComp
@@ -694,8 +746,18 @@ Private Sub CreateCitationHyperlinksIterativeFind(ByVal doc As Word.Document, By
         .MatchAllWordForms = False
         .MatchWildcards = True ' IMPORTANT: Enable wildcards
 
+        loopCounter = 0 ' Initialize loop counter
         ' Start the iterative Find loop
         Do While .Execute
+            loopCounter = loopCounter + 1
+            Call LogMessage("  Loop " & loopCounter & ": Find.Execute returned. Find.Found = " & searchRange.Find.Found & ". Current searchRange.Start = " & searchRange.Start)
+
+             ' *** Safety Check for Infinite Loop ***
+             If loopCounter > MAX_FIND_LOOPS Then
+                 Err.Raise ERR_INFINITE_LOOP, "CreateCitationHyperlinksIterativeFind (Find Loop)", _
+                           "Processing stopped after exceeding maximum loop limit (" & MAX_FIND_LOOPS & "). Possible infinite loop detected."
+             End If
+
             ' Check if Find actually found something and didn't just stop
             If searchRange.Find.Found Then
                 ' searchRange now represents the found citation "[...]"
@@ -799,6 +861,8 @@ Private Sub CreateCitationHyperlinksIterativeFind(ByVal doc As Word.Document, By
                 ' --- IMPORTANT: Collapse the main search range to continue AFTER the found citation ---
                 ' (Do this regardless of whether it was skipped or processed)
                 searchRange.Collapse wdCollapseEnd
+                Call LogMessage("  After Collapse, new searchRange.Start = " & searchRange.Start) ' Log position after collapse/set start
+
 
             Else ' .Execute returned True but .Found was False (can happen at end of range)
                  Exit Do ' Stop searching
@@ -817,3 +881,27 @@ Private Sub CreateCitationHyperlinksIterativeFind(ByVal doc As Word.Document, By
 
 End Sub
 '---------------------------------------------------------------------------------------
+
+
+'=======================================================================================
+'   HELPER FUNCTIONS (Validation/Orphan check not needed for this task)
+'=======================================================================================
+
+Private Function IsArrayInitialized(arr As Variant) As Boolean
+'---------------------------------------------------------------------------------------
+' Function: IsArrayInitialized
+' Purpose: Checks if a dynamic array has been dimensioned (ReDim'd).
+' Returns: True if the array has been dimensioned, False otherwise.
+'---------------------------------------------------------------------------------------
+    On Error Resume Next
+    IsArrayInitialized = (LBound(arr) <= UBound(arr))
+    On Error GoTo 0
+End Function
+'---------------------------------------------------------------------------------------
+
+' Note: GetAllReferencedCitationNumbers and FindOrphanCitations are not required
+' for this specific recovery task as defined in the prompt. They were part of
+' the previous macro's validation step.
+
+
+
