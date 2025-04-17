@@ -26,7 +26,7 @@ Problem of generating increasingly abstracting protocols that still elicit detai
 
 Meta-reasoning meta-learning meta-research
 
-  
+   even for state-of-the-art (SOTA) LLM models
 
 Two common strategies for a complex problem, and associated workflows
 
