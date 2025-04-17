@@ -35,3 +35,12 @@ https://reviewertoolkit.acs.org/reviewertoolkit/story.html
 
 **LLM-assisted PE**
 
+https://gemini.google.com/app/59e84d4879cebb1c
+https://gemini.google.com/app/efb8c56cfe127897
+https://gemini.google.com/app/d2c4bde3d736612e
+https://gemini.google.com/app/6d2be1cb7165c2e2
+https://gemini.google.com/app/3228c100823b1c62
+https://gemini.google.com/app/c0bbf5c426b3f66a
+https://gemini.google.com/app/df57ae1b7998afd1
+https://gemini.google.com/app/ea9bea57348f2876
+https://chatgpt.com/c/674ef0cb-665c-8004-b7d0-fb28e7a9af12
