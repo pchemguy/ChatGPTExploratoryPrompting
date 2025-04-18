@@ -6,7 +6,7 @@ Option Explicit
 ' Module    : modAutoBookmarkAndLink
 ' Author    : Gemini
 ' Date      : 18/04/2025
-' Version   : 2.7
+' Version   : 2.8
 ' Purpose   : Deletes existing bookmarks and hyperlinks starting with AUTO_ and processes patterns
 '             like {{Visible Text}}{{BMK:BookmarkName}} to create bookmarks (Pass 1), and
 '             {{LinkText}}{{LNK:TargetName}} to create hyperlinks pointing to
@@ -51,6 +51,7 @@ Option Explicit
 '                    indices to handle potential document shifts before Pass 2.
 '                  - Updated Pass 2 to find anchor via temp bookmark, create link, delete temp bookmark.
 '                  - Added cleanup for TEMP_LNK_* bookmarks in Step 2.
+'           : v2.8 - Shortened TEMP_LNK_ANCHOR_PREFIX to TMP_ per user request.
 '---------------------------------------------------------------------------------------
 ' References:
 '   - Microsoft Word XX.X Object Library
@@ -60,7 +61,7 @@ Option Explicit
 
 '--- Constants ---
 Private Const BOOKMARK_PREFIX As String = "AUTO_"
-Private Const TEMP_LNK_ANCHOR_PREFIX As String = "TEMP_LNK_" ' Prefix for temporary bookmarks
+Private Const TEMP_LNK_ANCHOR_PREFIX As String = "TMP_" ' *** Shortened Prefix ***
 Private Const HIDDEN_BMK_MARKER As String = "{{BMK:"
 Private Const HIDDEN_LNK_MARKER As String = "{{LNK:"
 Private Const MAX_NAME_LEN As Long = 35 ' Max length for bookmark/link target names
@@ -798,6 +799,4 @@ Private Function IsArrayInitialized(arr As Variant) As Boolean
     On Error GoTo 0
 End Function
 '---------------------------------------------------------------------------------------
-
-
 
