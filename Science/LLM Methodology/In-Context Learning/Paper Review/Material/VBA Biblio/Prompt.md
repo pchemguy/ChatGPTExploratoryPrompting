@@ -1232,3 +1232,142 @@ Help me create a prompt for generating a VBA6 / MS Word macro (use previous prom
 4. Create bookmark around the visible part.
 Make sure to ask me for clarification, if necessary, before starting the prompt generation process.
 
+---
+
+# Prompt: VBA Macro for Auto Bookmark Creation from Pattern
+
+## Persona:
+
+You are a highly-qualified expert in VBA6 and Python programming.
+
+You follow the best coding practices, leading guidelines, and guides for Python (such as Google Python Style Guide) and you also adapt and apply any such practices/guidelines, whenever possible, to the generated VBA code. For example, you generate detailed documentation (DocStrings) for VBA routines by adapting relevant Python guidelines; the same applies to identifier names (variables, constants, procedures).
+
+**For VBA, you apply the following additional guidelines:**
+
+-   **Primary Host Platform:**
+    - Microsoft Word 2002/XP.
+-   **Explicit Code:**
+    - Prefer explicit over implicit.
+    - Use `Option Explicit` at the module level.
+    - Declare all variables with specific types. Use `Variant` only when necessary.
+-   **Named Constants & Patterns:**
+    - Avoid hardcoding constants (like bookmark prefixes); use meaningful names for constants, declaring them at the lowest appropriate scope (procedure or module level).
+    - Where patterns require special characters not allowed in `Const` (like the en dash), use private helper functions to return the pattern string. **Build these strings using character code functions (e.g., `ChrW(8211)` for en dash) instead of literal characters to ensure code compatibility with non-Unicode editors.**
+-   **Error Handling:**
+    - Generate appropriate error handling code (`On Error GoTo ...`).
+    - Raise descriptive errors for specified conditions (see Task details).
+-   **Reusability & Structure:**
+    - Write reusable functions and procedures instead of duplicating code.
+    - Avoid tightly coupling code with specific document elements where possible; use parameters if designing helper functions.
+    - Organize the code logically within the module (Constants, Variables, Public Subs, Private Subs/Functions).
+-   **Object Usage:**
+    - Prefer early binding with specific object types (e.g., `Dim rng As Word.Range`).
+    - Include information about any required project references (beyond standard Word/Office/VBA) in the module DocString (e.g., "Microsoft Scripting Runtime", "Microsoft VBScript Regular Expressions 5.5"). 
+    - Use `Scripting.Dictionary` when a key-value collection is needed (similar to Python dictionaries).
+    - Always use the `ActiveDocument` property explicitly when referring to the current document and its contents.
+    - Use the `With` block to simplify repeated references to the same object (e.g., `With ActiveDocument`).
+
+## Context:
+
+This macro is intended to automate the creation of bookmarks based on specially formatted text patterns within a Word document. The pattern consists of two parts enclosed in double curly braces: the first part contains visible text to be bookmarked, and the second part contains hidden metadata defining the bookmark name. Existing bookmarks created by this process (identified by a prefix) should be removed before new ones are created.
+
+## Task:
+
+Create a self-contained VBA6 macro module (`.bas` file content) for Microsoft Word (2002/XP) that performs the following:
+1.  Deletes all existing bookmarks in the active document whose names begin with the prefix `AUTO_`.
+2.  Searches for specific text patterns in the format `{{Visible Text}}{{BMK: BookmarkName}}`.
+3.  Validates these patterns based on visibility formatting and naming rules.
+4.  Creates new bookmarks with the prefix `AUTO_` around the validated visible text parts.
+5.  Reports a summary of actions taken and any validation failures.
+
+### Input Format / Document Assumptions:
+
+- The macro operates on `ActiveDocument`.
+- The target pattern is two sets of double curly braces immediately adjacent: `{{Visible Text}}{{BMK: BookmarkName}}`.
+- The text within the first set of braces (`{{Visible Text}}`) is expected to be **visible** (i.e., the range covering these characters should *not* have `Font.Hidden = True` applied uniformly).
+- The text within the second set of braces (`{{BMK: BookmarkName}}`) is expected to be **hidden** (i.e., the range covering these characters *must* have `Font.Hidden = True` applied uniformly). All braces must be **hidden** as well.
+- The text inside the second (hidden) braces must start exactly with `BMK:` (case-sensitive).
+- The `BookmarkName` part (the text after `BMK:` and before the closing `}}`, after trimming leading/trailing spaces) must adhere to the following rules:
+    * Contains only alphanumeric characters (A-Z, a-z, 0-9) and underscores (`_`).
+    * Must start with a letter (A-Z, a-z).
+    * Must be no longer than 35 characters after trimming.
+
+### Macro Processing Steps:
+
+1.  **Initialization & Scope Definition:**
+    * Declare all variables with explicit types (`Dim`), including necessary object variables (e.g., `Word.Document`, `Word.Range`, `Word.Bookmark`, `Word.Find`). Note required references ("Microsoft Scripting Runtime", "Microsoft VBScript Regular Expressions 5.5" - for name validation).
+    * Use `Option Explicit`.
+    * Set up error handling: `On Error GoTo ErrorHandler`.
+    * Turn off screen updating: `Application.ScreenUpdating = False`.
+    * **Determine Search Scope:**
+        * Check `Selection.Type`. If it is `wdSelectionIP` or `wdNoSelection`, set the search range `rngSearchScope` to `ActiveDocument.Content`.
+        * Otherwise (if there is a selection), set `rngSearchScope` to `Selection.Range`.
+    * Initialize counters for deleted bookmarks, created bookmarks, and validation failures. Initialize a collection or dynamic array (`arrValidationFailures`) to store details of failures.
+2.  **Delete Existing Bookmarks:**
+    * Iterate through `ActiveDocument.Bookmarks` collection **in reverse** (from `.Count` down to 1).
+    * For each bookmark `bm`, check if `bm.Name Like "AUTO_*"`.
+    * If it matches, delete the bookmark: `bm.Delete`. Increment the deleted counter.
+    * Log/report the count of deleted bookmarks.
+3.  **Find Patterns & Validate (Iterative Find):**
+    * Create and configure a `RegExp` object (`regExpNameValidator`) for validating the bookmark name part according to the rules (alphanumeric/underscore, starts with letter). Pattern example: `^[a-zA-Z][a-zA-Z0-9_]*$`.
+    * Create a range object for the find operation, duplicating the `rngSearchScope`: `Set searchRange = rngSearchScope.Duplicate`.
+    * **Configure `Find`:** Set up `searchRange.Find` properties:
+        * `.ClearFormatting`
+        * `.Text = "\{\{*\}\}\{\{*\}\}"` *(Wildcard pattern to find two adjacent double-brace blocks)*
+        * `.MatchWildcards = True`
+        * `.Forward = True`
+        * `.Wrap = wdFindStop`
+    * **Iterative Find Loop:** Start a loop: `Do While searchRange.Find.Execute`
+        * Inside loop, check `If searchRange.Find.Found Then`.
+        * **Parse Found Range:**
+            * Get the found range text: `strFoundText = searchRange.Text`.
+            * Attempt to split `strFoundText` into two parts based on the `}}{{` separator. Use `InStr` and `Mid` or similar string functions. Handle potential errors if the separator isn't found exactly once. If parsing fails, log failure, add details to `arrValidationFailures`, increment failure counter, collapse `searchRange`, and continue to the next iteration.
+            * Let `strPart1 = "{{Visible Text}}"` and `strPart2 = "{{BMK: BookmarkName}}"`.
+        * **Define Ranges for Parts:** Determine the ranges corresponding to `strPart1` (`rngPart1`) and `strPart2` (`rngPart2`) within the `searchRange`. This might involve creating new range objects based on the start/end positions derived from the string split.
+        * **Validate Formatting & Structure:**
+            * Check if `rngPart1` is effectively visible (e.g., `rngPart1.Font.Hidden = False` or `rngPart1.Font.Hidden = wdUndefined`).
+            * Check if `rngPart2` is entirely hidden (`rngPart2.Font.Hidden = True`).
+            * Check if the *text* of `strPart2` starts with `{{BMK:`.
+            * Check if the *text* of `strPart2` ends with `}}`.
+            * If any of these checks fail, log the specific reason, add details (e.g., found text, location, reason) to `arrValidationFailures`, increment failure counter, collapse `searchRange`, and continue to the next iteration.
+        * **Extract and Validate Bookmark Name:**
+            * Extract the potential name from `strPart2` (text between `{{BMK:` and `}}`).
+            * Trim leading/trailing spaces: `strBookmarkName = Trim(...)`.
+            * Validate `strBookmarkName` length (<= 35).
+            * Validate `strBookmarkName` starts with a letter (`Like "[a-zA-Z]*"`).
+            * Validate `strBookmarkName` contains only valid characters using `regExpNameValidator.Test()`.
+            * If any validation fails, log the reason, add details to `arrValidationFailures`, increment failure counter, collapse `searchRange`, and continue to the next iteration.
+        * **If All Validations Pass (Proceed to Create Bookmark):** Call a separate procedure or execute code here (Step 4).
+        * **Advance Search Range:** Collapse the `searchRange` to its end point to continue searching *after* the current match: `searchRange.Collapse wdCollapseEnd`.
+        * **Else (Not Found):** If `searchRange.Find.Found` was False, `Exit Do`.
+    * **End Loop:** `Loop`
+    * Release `regExpNameValidator`.
+4.  **Create New Bookmarks (Called from Step 3):**
+    * *(This logic executes inside the loop in Step 3 when validation passes)*
+    * Construct the full bookmark name: `strFullBookmarkName = "AUTO_" & strBookmarkName`.
+    * **Check Existence:** Check if `ActiveDocument.Bookmarks.Exists(strFullBookmarkName)`.
+    * If it exists, log a warning ("Bookmark '...' already exists, skipping creation."), add details to `arrValidationFailures` (optional, or just log), increment failure/skipped counter (optional).
+    * If it does *not* exist:
+        * Define the range for the bookmark: This should be `rngPart1` (the range corresponding to `{{Visible Text}}`).
+        * Add the bookmark: `ActiveDocument.Bookmarks.Add Name:=strFullBookmarkName, Range:=rngPart1`.
+        * Increment the created bookmark counter.
+        * Log success ("Created bookmark '...'").
+5.  **Reporting & Cleanup:**
+    * **`CleanUp:`** Label.
+    * Re-enable screen updating: `Application.ScreenUpdating = True`.
+    * Release *all* object variables.
+    * **Construct Summary Message:** Build a message string including:
+        * Number of `AUTO_` bookmarks deleted.
+        * Number of new `AUTO_` bookmarks created.
+        * Number of validation failures/skipped items.
+        * If failures > 0, list the details collected in `arrValidationFailures` (up to a reasonable limit).
+    * **Display Summary Message:** Show the message using `MsgBox` with appropriate icon (`vbInformation` or `vbExclamation`).
+    * Exit the subroutine: `Exit Sub`.
+6.  **Error Handling:**
+    * **`ErrorHandler:`** Label.
+    * Store error details (`Err.Number`, `Err.Description`).
+    * Log the error (if logging implemented).
+    * Clear the error (`Err.Clear`).
+    * Attempt to resume cleanup: `Resume CleanUp`.
+    * Display fallback `MsgBox` showing the error details if cleanup fails or after cleanup attempt.
+
