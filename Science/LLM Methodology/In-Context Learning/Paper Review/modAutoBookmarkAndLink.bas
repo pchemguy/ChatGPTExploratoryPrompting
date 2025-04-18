@@ -3,16 +3,20 @@ Attribute VB_Name = "modAutoBookmarkAndLink"
 Option Explicit
 
 '---------------------------------------------------------------------------------------
-' Module    : modAutoBookmarkAndLink
+' Module    : modMarkupProcessor
 ' Author    : Gemini
 ' Date      : 18/04/2025
-' Version   : 2.8
-' Purpose   : Deletes existing bookmarks and hyperlinks starting with AUTO_ and processes patterns
-'             like {{Visible Text}}{{BMK:BookmarkName}} to create bookmarks (Pass 1), and
-'             {{LinkText}}{{LNK:TargetName}} to create hyperlinks pointing to
-'             AUTO_TargetName bookmarks (Pass 2). Validates formatting and names.
+' Version   : 3.4
+' Purpose   : Processes patterns like {{Visible Text}}{{BMK:BookmarkName}} and
+'             {{LinkText}}{{LNK:TargetName}} within a document or selection.
+'             Validates formatting (hidden braces, visible text, hidden marker) and names.
+'             Pass 1: Deletes previous items based on surrounding hidden braces,
+'                     then creates new bookmarks defined by BMK patterns.
+'             Pass 2: Creates hyperlinks defined by LNK patterns, targeting bookmarks
+'                     (typically those created in Pass 1 or existing ones).
+'             Temporarily shows hidden text if needed and restores setting on exit.
 ' Usage     : Optionally select text to process, otherwise runs on whole document.
-'             Run the ProcessAutoMarkup macro.
+'             Run the ProcessMarkup macro.
 ' Notes     : - Requires references to "Microsoft Scripting Runtime" and
 '               "Microsoft VBScript Regular Expressions 5.5" for early binding.
 '             - Uses File Logging ({DocName}.log).
@@ -51,7 +55,18 @@ Option Explicit
 '                    indices to handle potential document shifts before Pass 2.
 '                  - Updated Pass 2 to find anchor via temp bookmark, create link, delete temp bookmark.
 '                  - Added cleanup for TEMP_LNK_* bookmarks in Step 2.
-'           : v2.8 - Shortened TEMP_LNK_ANCHOR_PREFIX to TMP_ per user request.
+'           : v2.8 - Shortened TEMP_LNK_ANCHOR_PREFIX to TMP_ per user request. Renamed TMP_ANCHOR_.
+'           : v3.0 - Removed BOOKMARK_PREFIX ("AUTO_"). Bookmarks/links use exact name.
+'                  - Changed MAX_NAME_LEN to 40.
+'                  - Reworked Step 2 cleanup: Delete bookmarks/hyperlinks only if their
+'                    range is surrounded by hidden {{ and }}. Uses new helper function.
+'                  - Updated bookmark/hyperlink creation to use non-prefixed names.
+'           : v3.1 - Changed Step 3 (Pass 1) finding mechanism from Range.Find with Wildcards
+'                    to iterating Paragraphs + VBA RegExp matching, due to Find unreliability.
+'           : v3.2 - Refined RegExp pattern to use [^}]+ instead of .*? for content matching.
+'           : v3.3 - Added logic to check/store/show hidden text status and restore on exit.
+'           : v3.4 - Changed temporary bookmark naming for LNK anchors to use a
+'                    sequential counter (TMP_ANCHOR_#) instead of start position for uniqueness.
 '---------------------------------------------------------------------------------------
 ' References:
 '   - Microsoft Word XX.X Object Library
@@ -60,20 +75,21 @@ Option Explicit
 '---------------------------------------------------------------------------------------
 
 '--- Constants ---
-Private Const BOOKMARK_PREFIX As String = "AUTO_"
-Private Const TEMP_LNK_ANCHOR_PREFIX As String = "TMP_" ' *** Shortened Prefix ***
+' Private Const BOOKMARK_PREFIX As String = "AUTO_" ' Removed v3.0
+Private Const TEMP_ANCHOR_PREFIX As String = "TMP_ANCHOR_" ' Prefix for temporary bookmarks (used for LNK anchors)
 Private Const HIDDEN_BMK_MARKER As String = "{{BMK:"
 Private Const HIDDEN_LNK_MARKER As String = "{{LNK:"
-Private Const MAX_NAME_LEN As Long = 35 ' Max length for bookmark/link target names
-Private Const MAX_FIND_LOOPS As Long = 10000 ' Safety limit for Find loop
+Private Const MAX_NAME_LEN As Long = 40 ' Max length for bookmark/link target names (Increased v3.0)
+' Private Const MAX_FIND_LOOPS As Long = 10000 ' No longer needed for Find loop
 Private Const MAX_ITEMS_IN_MSG As Long = 10  ' Max validation failures listed in MsgBox
 
 '--- Error Numbers ---
 Private Const ERR_VALIDATION_FAILED As Long = vbObjectError + 3001 ' Custom base for this macro
 Private Const ERR_BOOKMARK_EXISTS As Long = vbObjectError + 3002
-Private Const ERR_INFINITE_LOOP As Long = vbObjectError + 3003
+' Private Const ERR_INFINITE_LOOP As Long = vbObjectError + 3003 ' No longer needed
 Private Const ERR_DOC_NOT_SAVED As Long = vbObjectError + 3004 ' For file logging
 Private Const ERR_TARGET_BOOKMARK_MISSING As Long = vbObjectError + 3005
+Private Const ERR_REGEX_ERROR As Long = vbObjectError + 3006 ' Added for RegExp errors
 
 
 '--- Module Level Variables for Logging ---
@@ -86,11 +102,11 @@ Private m_LoggingEnabled As Boolean
 '   PATTERN GENERATING / VALIDATION FUNCTIONS
 '=======================================================================================
 
-Private Function GetPattern_FindAdjacentBraces() As String
-' Returns the Wildcard pattern for Word's Find to locate two adjacent {{...}} blocks.
-' Uses [!}]{1,} to match 1 or more non-} characters inside braces.
-' Word Wildcard Pattern: \{\{[!}]{1,}\}\}\{\{[!}]]{1,}\}\}
-    GetPattern_FindAdjacentBraces = "\{\{[!}]{1,}\}\}\{\{[!}]{1,}\}\}" ' More precise pattern
+Private Function GetPattern_RegExpAdjacentBraces() As String
+' Returns the RegExp pattern to find two adjacent {{...}} blocks.
+' Uses [^}]+ to match 1 or more non-} characters inside braces.
+' RegExp Pattern: \{\{[^}]+\}\}\{\{[^}]+\}\}
+    GetPattern_RegExpAdjacentBraces = "\{\{[^}]+\}\}\{\{[^}]+\}\}" ' Refined v3.2
 End Function
 '---------------------------------------------------------------------------------------
 
@@ -185,19 +201,26 @@ End Function
 '   MAIN PROCEDURE
 '=======================================================================================
 
-Public Sub ProcessAutoMarkup() ' Renamed Sub
+Public Sub ProcessMarkup() ' Renamed Sub
 '---------------------------------------------------------------------------------------
-' Procedure : ProcessAutoMarkup
+' Procedure : ProcessMarkup
 ' Author    : Gemini
 ' Date      : 18/04/2025
-' Purpose   : Main routine to delete old AUTO_ bookmarks/hyperlinks and create new ones
-'             based on validated {{Visible}}{{BMK/LNK:HiddenName}} patterns.
-'             Uses a two-pass approach: Bookmarks first, then Hyperlinks.
+' Purpose   : Main routine to delete old markup bookmarks/hyperlinks (based on
+'             surrounding hidden braces) and create new ones based on validated
+'             {{Visible}}{{BMK/LNK:HiddenName}} patterns. Uses a two-pass approach.
 '---------------------------------------------------------------------------------------
     Dim doc As Word.Document
     Dim rngSearchScope As Word.Range    ' Range to search (Selection or Document)
-    Dim searchRange As Word.Range       ' Range used for the Find loop iteration
-    Dim foundRange As Word.Range        ' The specific range found by Find.Execute
+    ' Dim searchRange As Word.Range       ' No longer needed for Find loop
+    Dim para As Word.Paragraph          ' For looping through paragraphs
+    Dim paraText As String              ' Text of current paragraph
+    Dim regExFinder As RegExp           ' RegExp for finding pattern in paragraph
+    Dim foundMatches As MatchCollection ' Matches found by regExFinder
+    Dim foundMatch As match             ' Individual match
+    Dim matchStart As Long              ' Start position of match within document
+    Dim matchEnd As Long                ' End position of match within document
+    Dim foundRange As Word.Range        ' Range of the specific match found by RegExp
     Dim rngPart1 As Word.Range          ' Range for the first {{...}} part (incl. braces)
     Dim rngPart2 As Word.Range          ' Range for the second {{...}} part (incl. braces)
     Dim targetRange As Word.Range       ' Range for the bookmark or hyperlink anchor (inner text of Part1)
@@ -212,34 +235,41 @@ Public Sub ProcessAutoMarkup() ' Renamed Sub
     Dim lngBmCreatedCount As Long
     Dim lngLinksCreated As Long
     Dim lngFailureCount As Long
+    Dim lngTempBookmarkCounter As Long  ' *** Counter for temporary bookmarks ***
     Dim strFoundText As String
     ' Dim strPart1Text As String        ' Not needed directly
     Dim strPart2Text As String
     Dim strExtractedName As String      ' Generic name extracted
-    Dim strNewBookmarkName As String    ' For BMK type
-    Dim strTargetBookmark As String     ' For LNK type target bookmark name
+    Dim strNewBookmarkName As String    ' For BMK type (no prefix)
+    Dim strTargetBookmark As String     ' For LNK type target bookmark name (no prefix)
     Dim tempAnchorBookmarkName As String ' For LNK type temporary anchor bookmark
     Dim strFailureReason As String
     Dim strMsg As String
     Dim targetAddress As String         ' For reading hyperlink subaddress safely
     Dim markerType As String            ' "BMK" or "LNK"
     Dim splitPos As Long
-    Dim loopCounter As Long             ' Safety counter for Find loop
+    ' Dim loopCounter As Long             ' No longer needed for Find loop
     Dim i As Long                       ' Loop counter for deleting bookmarks/hyperlinks
     Dim k As Long                       ' Loop counter for message box
     Dim displayCount As Long
     Dim existingHl As Hyperlink         ' For checking existing hyperlinks
     Dim isValidFormat As Boolean
     Dim isValidName As Boolean
-    ' Dim anchorStart As Long           ' No longer storing indices
-    ' Dim anchorEnd As Long             ' No longer storing indices
+    Dim originalShowHidden As Boolean   ' Store initial hidden text view state
 
     On Error GoTo ErrorHandler
     Application.ScreenUpdating = False
     Call SetupLogFile(ActiveDocument) ' Initialize file logging
-    Call LogMessage(vbCrLf & "--- Starting ProcessAutoMarkup at " & Now & " ---")
+    Call LogMessage(vbCrLf & "--- Starting ProcessMarkup at " & Now & " ---")
 
     Set doc = ActiveDocument
+
+    ' Store and optionally set ShowHiddenText
+    originalShowHidden = ActiveWindow.View.ShowHiddenText
+    If Not originalShowHidden Then
+        ActiveWindow.View.ShowHiddenText = True
+        Call LogMessage("Temporarily enabled ShowHiddenText.")
+    End If
 
     ' 1. Initialization & Scope Definition
     Call LogMessage("Step 1: Initialization and Scope Definition...")
@@ -258,229 +288,233 @@ Public Sub ProcessAutoMarkup() ' Renamed Sub
     lngBmCreatedCount = 0
     lngLinksCreated = 0
     lngFailureCount = 0
+    lngTempBookmarkCounter = 0 ' *** Initialize temp bookmark counter ***
     Set colLnkData = New Collection
     ' arrValidationFailures is initialized implicitly when first ReDim'd
 
-    ' 2. Delete Existing Items (Hyperlinks first, then Bookmarks)
-    Call LogMessage("Step 2: Deleting existing '" & BOOKMARK_PREFIX & "*' and '" & TEMP_LNK_ANCHOR_PREFIX & "*' items...")
+    ' 2. Delete Existing Items based on surrounding hidden braces
+    Call LogMessage("Step 2: Deleting existing bookmarks/hyperlinks surrounded by hidden {{}}...")
 
-    ' Delete Hyperlinks targeting AUTO_ bookmarks
-    Call LogMessage("  Deleting existing hyperlinks targeting '" & BOOKMARK_PREFIX & "*' bookmarks...")
+    ' Delete Hyperlinks surrounded by {{}}
+    Call LogMessage("  Checking existing hyperlinks...")
     lngDeletedHlCount = 0
     For i = doc.Hyperlinks.Count To 1 Step -1
         Set hl = doc.Hyperlinks(i)
-        targetAddress = "" ' Reset for safety
-        On Error Resume Next ' Handle cases where SubAddress might be invalid or empty
-        targetAddress = hl.SubAddress
-        On Error GoTo ErrorHandler ' Restore error handling
-
-        If targetAddress Like BOOKMARK_PREFIX & "*" Then
-            Call LogMessage("  Deleting hyperlink from text '" & hl.Range.Text & "' targeting: " & targetAddress)
-            hl.Delete ' Delete the hyperlink
-            lngDeletedHlCount = lngDeletedHlCount + 1
+        If IsRangeSurroundedByHiddenBraces(hl.Range) Then
+             Call LogMessage("  Deleting hyperlink on text '" & hl.Range.Text & "' (surrounded by hidden braces)")
+             hl.Delete
+             lngDeletedHlCount = lngDeletedHlCount + 1
         End If
     Next i
-    Call LogMessage("  Deleted " & lngDeletedHlCount & " existing hyperlinks.")
+    Call LogMessage("  Deleted " & lngDeletedHlCount & " existing hyperlinks based on surrounding braces.")
     Set hl = Nothing
 
-    ' Delete AUTO_ Bookmarks AND TEMP_LNK_ Bookmarks
-    Call LogMessage("  Deleting existing '" & BOOKMARK_PREFIX & "*' and '" & TEMP_LNK_ANCHOR_PREFIX & "*' bookmarks...")
+    ' Delete Bookmarks surrounded by {{}} (including Temp anchors)
+    Call LogMessage("  Checking existing bookmarks...")
     lngDeletedBmCount = 0
     For i = doc.Bookmarks.Count To 1 Step -1
         Set bm = doc.Bookmarks(i)
-        If bm.Name Like BOOKMARK_PREFIX & "*" Or bm.Name Like TEMP_LNK_ANCHOR_PREFIX & "*" Then
-            Call LogMessage("  Deleting bookmark: " & bm.Name)
-            bm.Delete
-            lngDeletedBmCount = lngDeletedBmCount + 1
+        ' Also delete leftover Temp bookmarks regardless of braces
+        If bm.Name Like TEMP_ANCHOR_PREFIX & "*" Then
+             Call LogMessage("  Deleting leftover temporary bookmark: " & bm.Name)
+             bm.Delete
+             lngDeletedBmCount = lngDeletedBmCount + 1 ' Count as deleted
+        ElseIf IsRangeSurroundedByHiddenBraces(bm.Range) Then
+             Call LogMessage("  Deleting bookmark '" & bm.Name & "' (surrounded by hidden braces)")
+             bm.Delete
+             lngDeletedBmCount = lngDeletedBmCount + 1
         End If
     Next i
-    Call LogMessage("  Deleted " & lngDeletedBmCount & " existing bookmarks.")
+    Call LogMessage("  Deleted " & lngDeletedBmCount & " existing bookmarks based on surrounding braces or Temp prefix.")
     Set bm = Nothing
 
-    ' 3. PASS 1: Find Patterns, Validate, Create Bookmarks, Store Link Data
-    Call LogMessage("Step 3 (Pass 1): Finding patterns, validating, creating bookmarks...")
+    ' 3. PASS 1: Find Patterns (RegExp), Validate, Create Bookmarks, Store Link Data
+    Call LogMessage("Step 3 (Pass 1): Finding patterns (RegExp), validating, creating bookmarks...")
+    ' Setup RegExp objects
+    On Error Resume Next ' Handle potential error creating RegExp object
+    Set regExFinder = New RegExp
     Set regExpNameValidator = New RegExp
+    If Err.Number <> 0 Then
+        Call LogMessage("ERROR: Could not create RegExp object. Check References (Microsoft VBScript Regular Expressions 5.5). Error: " & Err.Description)
+        Err.Clear
+        GoTo CleanUp ' Exit if RegExp cannot be created
+    End If
+    On Error GoTo ErrorHandler ' Restore normal error handling
+
+    With regExFinder
+        .Pattern = GetPattern_RegExpAdjacentBraces() ' Use RegExp pattern
+        .Global = True  ' Find all occurrences in paragraph
+        .MultiLine = False
+        .IgnoreCase = False
+    End With
     With regExpNameValidator
-        .Pattern = GetPattern_ValidateName() ' Use correct function name
+        .Pattern = GetPattern_ValidateName()
         .Global = False
         .IgnoreCase = False
     End With
 
-    Set searchRange = rngSearchScope.Duplicate ' Use a copy for searching
+    ' Loop through paragraphs in the search scope
+    For Each para In rngSearchScope.Paragraphs
+        paraText = para.Range.Text
+        Set foundMatches = regExFinder.Execute(paraText)
 
-    With searchRange.Find
-        .ClearFormatting
-        .Text = GetPattern_FindAdjacentBraces() ' Use function for wildcard pattern
-        .MatchWildcards = True
-        .Forward = True
-        .Wrap = wdFindStop
-        .Format = False ' Do not find based on format
+        If foundMatches.Count > 0 Then
+             Call LogMessage("  Found " & foundMatches.Count & " potential pattern(s) in paragraph starting at " & para.Range.Start)
+        End If
 
-        Call LogMessage("  Attempting Find with pattern: '" & .Text & "' and MatchWildcards=" & .MatchWildcards)
+        For Each foundMatch In foundMatches
+            strFoundText = foundMatch.Value
+            matchStart = para.Range.Start + foundMatch.FirstIndex
+            matchEnd = matchStart + foundMatch.Length
+            Set foundRange = doc.Range(matchStart, matchEnd)
 
-        loopCounter = 0 ' Initialize loop counter
-        Do While .Execute
-            loopCounter = loopCounter + 1
-            ' Call LogMessage("  Loop " & loopCounter & ": Find.Execute returned. Find.Found = " & searchRange.Find.Found & ". Current searchRange.Start = " & searchRange.Start) ' Optional detailed log
+            Call LogMessage("    Processing potential pattern: '" & Left(strFoundText, 50) & "...' at Range(" & foundRange.Start & ", " & foundRange.End & ")")
 
-            ' Safety Check for Infinite Loop
-            If loopCounter > MAX_FIND_LOOPS Then
-                Err.Raise ERR_INFINITE_LOOP, "ProcessAutoMarkup (Find Loop - Pass 1)", _
-                          "Processing stopped after exceeding maximum loop limit (" & MAX_FIND_LOOPS & "). Possible infinite loop detected."
-            End If
+            ' Reset failure reason for this match
+            strFailureReason = ""
+            markerType = "" ' Reset marker type
+            isValidFormat = False
+            isValidName = False
 
-            If .Found Then
-                Set foundRange = searchRange.Duplicate ' Work with a copy of the found range
-                strFoundText = foundRange.Text
-                Call LogMessage("  Found potential pattern: '" & Left(strFoundText, 50) & "...' at Range(" & foundRange.Start & ", " & foundRange.End & ")")
+            ' Parse into two parts based on "}}{{"
+            splitPos = InStr(1, strFoundText, "}}{{", vbBinaryCompare)
 
-                ' Reset failure reason for this match
-                strFailureReason = ""
-                markerType = "" ' Reset marker type
-                isValidFormat = False
-                isValidName = False
-
-                ' Parse into two parts based on "}}{{"
-                splitPos = InStr(1, strFoundText, "}}{{", vbBinaryCompare)
-
-                If splitPos > 0 Then
-                    ' Define ranges for each part, including the braces
-                    On Error Resume Next ' Handle potential errors defining ranges
-                    Set rngPart1 = doc.Range(foundRange.Start, foundRange.Start + splitPos + 1) ' Includes first "}}"
-                    Set rngPart2 = doc.Range(rngPart1.End, foundRange.End) ' Starts after first "}}"
-                    If Err.Number <> 0 Then
-                        strFailureReason = "Error defining sub-ranges from found text. Err: " & Err.Description
-                        Err.Clear
-                    End If
-                    On Error GoTo ErrorHandler ' Restore main handler
-
-                    If strFailureReason = "" Then ' Proceed if ranges were defined
-                        strPart2Text = rngPart2.Text
-
-                        ' Check Marker Type and Basic Structure
-                        If Left$(strPart2Text, Len(HIDDEN_BMK_MARKER)) = HIDDEN_BMK_MARKER Then
-                            markerType = "BMK"
-                        ElseIf Left$(strPart2Text, Len(HIDDEN_LNK_MARKER)) = HIDDEN_LNK_MARKER Then
-                            markerType = "LNK"
-                        Else
-                            strFailureReason = "Second part does not start with '" & HIDDEN_BMK_MARKER & "' or '" & HIDDEN_LNK_MARKER & "'."
-                        End If
-
-                        If markerType <> "" And Right$(strPart2Text, 2) <> "}}" Then
-                            strFailureReason = "Second part does not end with '}}'."
-                        End If
-
-                        ' Validate Formatting if structure seems ok so far
-                        If strFailureReason = "" Then
-                            isValidFormat = ValidatePatternFormatting(rngPart1, rngPart2, strFailureReason)
-                            If isValidFormat Then
-                                ' Formatting is valid, now extract and validate name
-                                If markerType = "BMK" Then
-                                     strExtractedName = Mid$(strPart2Text, Len(HIDDEN_BMK_MARKER) + 1, Len(strPart2Text) - Len(HIDDEN_BMK_MARKER) - 2)
-                                Else ' markerType = "LNK"
-                                     strExtractedName = Mid$(strPart2Text, Len(HIDDEN_LNK_MARKER) + 1, Len(strPart2Text) - Len(HIDDEN_LNK_MARKER) - 2)
-                                End If
-                                strExtractedName = Trim$(strExtractedName)
-
-                                isValidName = ValidateExtractedName(strExtractedName, regExpNameValidator, strFailureReason)
-                                If isValidName Then
-                                    ' All Validations Passed! Proceed with action based on type
-                                    Call LogMessage("    Validation passed for type '" & markerType & "', name '" & strExtractedName & "'")
-
-                                    ' Define the target range (text inside first braces) using Start/End offsets
-                                    Set targetRange = Nothing ' Reset before setting
-                                    On Error Resume Next ' Handle potential errors defining range
-                                    Set targetRange = doc.Range(rngPart1.Start + 2, rngPart1.End - 2)
-                                    If Err.Number <> 0 Then
-                                        strFailureReason = "Error defining target range using Start/End offsets. Err: " & Err.Description
-                                        Err.Clear
-                                    End If
-                                    On Error GoTo ErrorHandler
-
-                                    If Not targetRange Is Nothing Then
-                                        If markerType = "BMK" Then
-                                            ' --- Create Bookmark ---
-                                            strNewBookmarkName = BOOKMARK_PREFIX & strExtractedName
-                                            If doc.Bookmarks.Exists(strNewBookmarkName) Then
-                                                strFailureReason = "Bookmark '" & strNewBookmarkName & "' already exists. Skipped."
-                                                Call LogMessage("    " & strFailureReason)
-                                            Else
-                                                doc.Bookmarks.Add Name:=strNewBookmarkName, Range:=targetRange
-                                                lngBmCreatedCount = lngBmCreatedCount + 1
-                                                Call LogMessage("    Created bookmark: '" & strNewBookmarkName & "' around text: '" & targetRange.Text & "'")
-                                            End If
-                                        Else ' markerType = "LNK"
-                                            ' --- Store Link Data for Pass 2 using Temp Bookmark ---
-                                            strTargetBookmark = BOOKMARK_PREFIX & strExtractedName ' Target AUTO_ bookmark
-                                            tempAnchorBookmarkName = TEMP_LNK_ANCHOR_PREFIX & loopCounter ' Unique temp name
-
-                                            ' Add temporary bookmark to anchor range
-                                            On Error Resume Next
-                                            doc.Bookmarks.Add Name:=tempAnchorBookmarkName, Range:=targetRange
-                                            If Err.Number <> 0 Then
-                                                 strFailureReason = "Error creating temporary bookmark '" & tempAnchorBookmarkName & "'. Err: " & Err.Description
-                                                 Call LogMessage("    " & strFailureReason)
-                                                 Err.Clear
-                                            Else
-                                                 ' Store Temp Anchor Name, Target Bookmark Name
-                                                 lnkInfo = Array(tempAnchorBookmarkName, strTargetBookmark)
-                                                 colLnkData.Add lnkInfo
-                                                 Call LogMessage("    Stored LNK data using temp bookmark '" & tempAnchorBookmarkName & "' for target '" & strTargetBookmark & "'")
-                                            End If
-                                            On Error GoTo ErrorHandler
-
-                                        End If ' End BMK/LNK action block
-                                    Else
-                                         strFailureReason = "Failed to define target range for bookmark/link." ' Add failure reason if Start/End failed
-                                    End If ' End If Not targetRange Is Nothing
-                                End If ' End Name Validation check
-                            End If ' End Formatting Validation check
-                        End If ' End Structure Check (Marker Start/End)
-                    End If ' End Range Definition Check
-                Else
-                    strFailureReason = "Could not parse found text into two {{...}}{{...}} parts based on '}}{{ separator."
-                End If ' End If splitPos > 0
-
-                ' Log failure if any occurred during validation or action (e.g., bookmark exists)
-                If strFailureReason <> "" Then
-                     Call LogMessage("    Processing FAILED/Skipped: " & strFailureReason)
-                     lngFailureCount = lngFailureCount + 1
-                     ' *** Conditionally ReDim failure array ***
-                     If lngFailureCount = 1 Then
-                         ReDim arrValidationFailures(0 To 0)
-                     Else
-                         On Error Resume Next ' Protect ReDim Preserve just in case
-                         ReDim Preserve arrValidationFailures(0 To lngFailureCount - 1)
-                         If Err.Number <> 0 Then Call LogMessage("ERROR: Failed ReDim Preserve on arrValidationFailures. Err: " & Err.Description): Err.Clear
-                         On Error GoTo ErrorHandler ' Restore main error handling
-                     End If
-                     ' Assign if ReDim worked (check Err implicitly via On Error structure)
-                     If Err.Number = 0 Then arrValidationFailures(lngFailureCount - 1) = strFailureReason & " (Found Text: '" & Left(strFoundText, 30) & "...' at " & foundRange.Start & ")"
+            If splitPos > 0 Then
+                 ' Define ranges for each part, including the braces
+                On Error Resume Next ' Handle potential errors defining ranges
+                Set rngPart1 = doc.Range(foundRange.Start, foundRange.Start + splitPos + 1) ' Includes first "}}"
+                Set rngPart2 = doc.Range(rngPart1.End, foundRange.End) ' Starts after first "}}"
+                If Err.Number <> 0 Then
+                    strFailureReason = "Error defining sub-ranges from found text. Err: " & Err.Description
+                    Err.Clear
                 End If
+                On Error GoTo ErrorHandler ' Restore main handler
 
-                ' Advance Search Range
-                searchRange.Collapse wdCollapseEnd
-                ' Call LogMessage("  After processing/collapse, new searchRange.Start = " & searchRange.Start) ' Optional detailed log
+                If strFailureReason = "" Then ' Proceed if ranges were defined
+                    strPart2Text = rngPart2.Text
 
+                    ' Check Marker Type and Basic Structure
+                    If Left$(strPart2Text, Len(HIDDEN_BMK_MARKER)) = HIDDEN_BMK_MARKER Then
+                        markerType = "BMK"
+                    ElseIf Left$(strPart2Text, Len(HIDDEN_LNK_MARKER)) = HIDDEN_LNK_MARKER Then
+                        markerType = "LNK"
+                    Else
+                        strFailureReason = "Second part does not start with '" & HIDDEN_BMK_MARKER & "' or '" & HIDDEN_LNK_MARKER & "'."
+                    End If
+
+                    If markerType <> "" And Right$(strPart2Text, 2) <> "}}" Then
+                        strFailureReason = "Second part does not end with '}}'."
+                    End If
+
+                    ' Validate Formatting if structure seems ok so far
+                    If strFailureReason = "" Then
+                        isValidFormat = ValidatePatternFormatting(rngPart1, rngPart2, strFailureReason)
+                        If isValidFormat Then
+                            ' Formatting is valid, now extract and validate name
+                            If markerType = "BMK" Then
+                                 strExtractedName = Mid$(strPart2Text, Len(HIDDEN_BMK_MARKER) + 1, Len(strPart2Text) - Len(HIDDEN_BMK_MARKER) - 2)
+                            Else ' markerType = "LNK"
+                                 strExtractedName = Mid$(strPart2Text, Len(HIDDEN_LNK_MARKER) + 1, Len(strPart2Text) - Len(HIDDEN_LNK_MARKER) - 2)
+                            End If
+                            strExtractedName = Trim$(strExtractedName)
+
+                            isValidName = ValidateExtractedName(strExtractedName, regExpNameValidator, strFailureReason)
+                            If isValidName Then
+                                ' All Validations Passed! Proceed with action based on type
+                                Call LogMessage("      Validation passed for type '" & markerType & "', name '" & strExtractedName & "'")
+
+                                ' Define the target range (text inside first braces) using Start/End offsets
+                                Set targetRange = Nothing ' Reset before setting
+                                On Error Resume Next ' Handle potential errors defining range
+                                Set targetRange = doc.Range(rngPart1.Start + 2, rngPart1.End - 2)
+                                If Err.Number <> 0 Then
+                                    strFailureReason = "Error defining target range using Start/End offsets. Err: " & Err.Description
+                                    Err.Clear
+                                End If
+                                On Error GoTo ErrorHandler
+
+                                If Not targetRange Is Nothing Then
+                                    If markerType = "BMK" Then
+                                        ' --- Create Bookmark (No Prefix) ---
+                                        strNewBookmarkName = strExtractedName ' Use exact name
+                                        If doc.Bookmarks.Exists(strNewBookmarkName) Then
+                                            strFailureReason = "Bookmark '" & strNewBookmarkName & "' already exists. Skipped."
+                                            Call LogMessage("      " & strFailureReason)
+                                        Else
+                                            doc.Bookmarks.Add Name:=strNewBookmarkName, Range:=targetRange
+                                            lngBmCreatedCount = lngBmCreatedCount + 1
+                                            Call LogMessage("      Created bookmark: '" & strNewBookmarkName & "' around text: '" & targetRange.Text & "'")
+                                        End If
+                                    Else ' markerType = "LNK"
+                                        ' --- Store Link Data for Pass 2 using Temp Bookmark ---
+                                        strTargetBookmark = strExtractedName ' Target name (No Prefix)
+                                        ' Create unique temp name using counter
+                                        lngTempBookmarkCounter = lngTempBookmarkCounter + 1 ' *** Increment counter ***
+                                        tempAnchorBookmarkName = TEMP_ANCHOR_PREFIX & lngTempBookmarkCounter ' *** Use counter ***
+                                        ' Add temporary bookmark to anchor range
+                                        On Error Resume Next
+                                        ' Delete if somehow exists from prior failed run
+                                        If doc.Bookmarks.Exists(tempAnchorBookmarkName) Then doc.Bookmarks(tempAnchorBookmarkName).Delete
+                                        doc.Bookmarks.Add Name:=tempAnchorBookmarkName, Range:=targetRange
+                                        If Err.Number <> 0 Then
+                                             strFailureReason = "Error creating temporary bookmark '" & tempAnchorBookmarkName & "'. Err: " & Err.Description
+                                             Call LogMessage("      " & strFailureReason)
+                                             Err.Clear
+                                        Else
+                                             ' Store Temp Anchor Name, Target Bookmark Name
+                                             lnkInfo = Array(tempAnchorBookmarkName, strTargetBookmark)
+                                             colLnkData.Add lnkInfo
+                                             Call LogMessage("      Stored LNK data using temp bookmark '" & tempAnchorBookmarkName & "' for target '" & strTargetBookmark & "'")
+                                        End If
+                                        On Error GoTo ErrorHandler
+
+                                    End If ' End BMK/LNK action block
+                                Else
+                                     strFailureReason = "Failed to define target range for bookmark/link." ' Add failure reason if Start/End failed
+                                End If ' End If Not targetRange Is Nothing
+                            End If ' End Name Validation check
+                        End If ' End Formatting Validation check
+                    End If ' End Structure Check (Marker Start/End)
+                End If ' End Range Definition Check
             Else
-                Exit Do ' Stop loop if Find.Found is False
+                strFailureReason = "Could not parse found text into two {{...}}{{...}} parts based on '}}{{ separator."
+            End If ' End If splitPos > 0
+
+            ' Log failure if any occurred during validation or action (e.g., bookmark exists)
+            If strFailureReason <> "" Then
+                 Call LogMessage("    Processing FAILED/Skipped: " & strFailureReason)
+                 lngFailureCount = lngFailureCount + 1
+                 ' *** Conditionally ReDim failure array ***
+                 If lngFailureCount = 1 Then
+                     ReDim arrValidationFailures(0 To 0)
+                 Else
+                     On Error Resume Next ' Protect ReDim Preserve just in case
+                     ReDim Preserve arrValidationFailures(0 To lngFailureCount - 1)
+                     If Err.Number <> 0 Then Call LogMessage("ERROR: Failed ReDim Preserve on arrValidationFailures. Err: " & Err.Description): Err.Clear
+                     On Error GoTo ErrorHandler ' Restore main error handling
+                 End If
+                 ' Assign if ReDim worked (check Err implicitly via On Error structure)
+                 If Err.Number = 0 Then arrValidationFailures(lngFailureCount - 1) = strFailureReason & " (Found Text: '" & Left(strFoundText, 30) & "...' at " & foundRange.Start & ")"
             End If
-        Loop ' While .Execute
-    End With ' searchRange.Find
+            ' Release ranges for this match
+            Set rngPart1 = Nothing
+            Set rngPart2 = Nothing
+            Set foundRange = Nothing
+            Set targetRange = Nothing
+        Next foundMatch ' Next match in paragraph
+        Set foundMatches = Nothing
+    Next para ' Next paragraph
 
     Call LogMessage("Step 3 (Pass 1) finished.")
+    Set regExFinder = Nothing
     Set regExpNameValidator = Nothing
-    Set rngPart1 = Nothing ' Release ranges used in loop
-    Set rngPart2 = Nothing
-    Set foundRange = Nothing
-    Set targetRange = Nothing
 
     ' 4. PASS 2: Create Hyperlinks from Stored Data
     Call LogMessage("Step 4 (Pass 2): Creating hyperlinks from stored LNK data...")
     If colLnkData.Count > 0 Then
         For Each lnkInfo In colLnkData
             tempAnchorBookmarkName = lnkInfo(0)
-            strTargetBookmark = lnkInfo(1)
+            strTargetBookmark = lnkInfo(1) ' Target name has no prefix
             strFailureReason = "" ' Reset for each link attempt
             Set targetRange = Nothing ' Reset target range
 
@@ -567,11 +601,22 @@ Public Sub ProcessAutoMarkup() ' Renamed Sub
 
 CleanUp:
     On Error Resume Next ' Ensure final cleanup attempts don't raise new errors
+    ' Restore original hidden text view state IF it was changed
+    If Not originalShowHidden Then
+        If ActiveWindow.View.ShowHiddenText <> originalShowHidden Then
+            ActiveWindow.View.ShowHiddenText = originalShowHidden
+            Call LogMessage("Restored original ShowHiddenText state (False).")
+        End If
+    End If
     Application.ScreenUpdating = True
     ' Release objects
     Set doc = Nothing
     Set rngSearchScope = Nothing
-    Set searchRange = Nothing
+    ' Set searchRange = Nothing ' Not used in this version
+    Set para = Nothing
+    Set regExFinder = Nothing
+    Set foundMatches = Nothing
+    Set foundMatch = Nothing
     Set foundRange = Nothing
     Set rngPart1 = Nothing
     Set rngPart2 = Nothing
@@ -585,8 +630,8 @@ CleanUp:
     ' Display Summary Message ONLY if no error occurred (ErrorHandler jumps past this)
     If Err.Number = 0 Then
         strMsg = "Markup processing complete." & vbCrLf & vbCrLf & _
-                 "Deleted Hyperlinks (targeting " & BOOKMARK_PREFIX & "*): " & lngDeletedHlCount & vbCrLf & _
-                 "Deleted Bookmarks (" & BOOKMARK_PREFIX & "* / " & TEMP_LNK_ANCHOR_PREFIX & "*): " & lngDeletedBmCount & vbCrLf & _
+                 "Deleted Hyperlinks (Surrounded by {{}}): " & lngDeletedHlCount & vbCrLf & _
+                 "Deleted Bookmarks (Surrounded by {{}} or Temp): " & lngDeletedBmCount & vbCrLf & _
                  "New Bookmarks Created: " & lngBmCreatedCount & vbCrLf & _
                  "New Hyperlinks Created: " & lngLinksCreated
 
@@ -613,7 +658,7 @@ CleanUp:
         End If
     End If ' End check Err.Number = 0
 
-    Call LogMessage("--- Finished ProcessAutoMarkup at " & Now & " ---")
+    Call LogMessage("--- Finished ProcessMarkup at " & Now & " ---")
     On Error GoTo 0
     Exit Sub
 
@@ -625,11 +670,22 @@ ErrorHandler:
 
     ' --- Attempt Cleanup within Error Handler ---
     On Error Resume Next ' Prevent error during cleanup hiding original error
+     ' Restore original hidden text view state IF it was changed
+    If Not originalShowHidden Then
+        If ActiveWindow.View.ShowHiddenText <> originalShowHidden Then
+            ActiveWindow.View.ShowHiddenText = originalShowHidden
+            Call LogMessage("Restored original ShowHiddenText state (False) after error.")
+        End If
+    End If
     Application.ScreenUpdating = True
     ' Release objects
     Set doc = Nothing
     Set rngSearchScope = Nothing
-    Set searchRange = Nothing
+    ' Set searchRange = Nothing ' Not used in this version
+    Set para = Nothing
+    Set regExFinder = Nothing
+    Set foundMatches = Nothing
+    Set foundMatch = Nothing
     Set foundRange = Nothing
     Set rngPart1 = Nothing
     Set rngPart2 = Nothing
@@ -799,4 +855,49 @@ Private Function IsArrayInitialized(arr As Variant) As Boolean
     On Error GoTo 0
 End Function
 '---------------------------------------------------------------------------------------
+
+Private Function IsRangeSurroundedByHiddenBraces(rng As Word.Range) As Boolean
+'---------------------------------------------------------------------------------------
+' Function: IsRangeSurroundedByHiddenBraces
+' Purpose: Checks if the two characters immediately before and after a given range
+'          are "{{" and "}}" respectively, AND if those brace characters are hidden.
+' Returns: True if surrounded by hidden braces, False otherwise.
+' Notes:   Handles potential errors near document boundaries.
+'---------------------------------------------------------------------------------------
+    Dim rngBefore As Word.Range
+    Dim rngAfter As Word.Range
+    Dim isSurrounded As Boolean
+    isSurrounded = False ' Default
+
+    On Error GoTo CheckBraces_Error
+
+    ' Check if range is too close to document start or end
+    If rng Is Nothing Then GoTo CheckBraces_Exit
+    If rng.Start < 2 Then GoTo CheckBraces_Exit
+    If rng.End > rng.Document.Content.End - 2 Then GoTo CheckBraces_Exit
+
+    ' Define ranges for braces
+    Set rngBefore = rng.Document.Range(rng.Start - 2, rng.Start)
+    Set rngAfter = rng.Document.Range(rng.End, rng.End + 2)
+
+    ' Perform checks
+    If rngBefore.Text = "{{" And rngBefore.Font.Hidden = True Then
+        If rngAfter.Text = "}}" And rngAfter.Font.Hidden = True Then
+            isSurrounded = True
+        End If
+    End If
+
+CheckBraces_Exit:
+    IsRangeSurroundedByHiddenBraces = isSurrounded
+    Set rngBefore = Nothing
+    Set rngAfter = Nothing
+    Exit Function
+
+CheckBraces_Error:
+    Call LogMessage("Error in IsRangeSurroundedByHiddenBraces for range (" & rng.Start & "," & rng.End & "): " & Err.Description)
+    Resume CheckBraces_Exit ' Return False on error
+
+End Function
+'---------------------------------------------------------------------------------------
+
 
