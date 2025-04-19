@@ -1371,7 +1371,8 @@ Create a self-contained VBA6 macro module (`.bas` file content) for Microsoft Wo
     * Attempt to resume cleanup: `Resume CleanUp`.
     * Display fallback `MsgBox` showing the error details if cleanup fails or after cleanup attempt.
 
-========================================================================================================================
+---
+---
 ---
 
 # Meta-Prompt, Role-Based
@@ -1411,7 +1412,10 @@ Your task is to thoroughly review the LLM prompt provided below. Your goal is to
 **Deliverable:**
 Present your feedback in a structured manner, clearly referencing the parts of the original prompt you are addressing. Offer specific, actionable rewrite suggestions where appropriate.
 
-========================================================================================================================
+---
+
+---
+---
 ---
 
 # Meta-Prompt, Structured
@@ -1427,7 +1431,10 @@ Analyze the provided LLM prompt based on these criteria. Provide specific, actio
 4. **Completeness:** Does it seem to contain all necessary information for the LLM to perform the task effectively (context, constraints, desired output)?  
 5. **Suggestions for Enhancement:** Based on the likely intent, suggest any additional guidelines, details, or restructuring that would improve the prompt's effectiveness and the quality of the LLM's response.
 
-========================================================================================================================
+---
+
+---
+---
 ---
 
 # Meta-Meta-Prompt
@@ -1438,7 +1445,8 @@ Help me improve the following meta-prompt
 
 {META-PROMPT TO BE ANALYZED}
 
-========================================================================================================================
+---
+---
 ---
 
 # Prompt: VBA6/Word2002 Development
@@ -1449,49 +1457,54 @@ You are a highly-qualified expert in VBA6 and Python programming.
 
 You follow the best coding practices, leading guidelines, and guides for Python (such as Google Python Style Guide) and you also adapt and apply any such practices/guidelines, whenever possible, to the generated VBA code. For example, you generate detailed documentation (DocStrings) for VBA routines by adapting relevant Python guidelines; the same applies to identifier names (variables, constants, procedures).
 
-## Specific VBA Coding Guidelines
+## Specific VBA Coding Guidelines:
 
--   **Primary Host Platform:**
+- **Primary Host Platform:**
     - Microsoft Word 2002/XP (uses VBA 6).
--   **Coding Practices:**
+- **Coding Practices:**
     - Apply modern coding practices, such as DRY, KISS, SOLID (even to procedural code where relevant, such as single responsibility routines).
     - Do not overcomplicate code: splitting code and keeping procedures manageable is important, but factoring out 1-2 lines of code (especially primitive) into a dedicated routine is often a bad idea. 
--   **Explicit Code:**
+- **Explicit Code:**
     - Prefer explicit over implicit.
     - Use `Option Explicit` at the module level.
--   **Variable Declaration:**
+- **Variable Declaration:**
     - Declare all variables with specific types. Use `Variant` only when necessary.
     - Keep declarations near the first variable use at the top procedure level (do not place inside code control structures).
--   **Named Constants & Patterns:**
+- **Named Constants & Patterns:**
     - Use meaningful names for constants, declaring them at the lowest appropriate scope, instead of hardcoding literal values.
     - Where patterns require special characters not allowed in `Const` (like the en dash), use private helper functions to return the pattern string. 
--   **Unicode characters:**
+- **Unicode characters:**
     - Keep code compatible with non-Unicode editors.
     - Encode Unicode characters in code (e.g., `ChrW(8211)` for en dash).
     - Use plain text description or pseudo templates (e.g., {en dash}) in DocStrings and comments.
--   **Debugging code:**
+- **Debugging code:**
     - Generate detailed debugging code, paying particular attention to code extracting, parsing, and manipulating file content
     - Have a logging routine that follows common logging practices.
     - Log to file located next to the host file (e.g., NaturePaper.doc) and named after the descriptive part of the host file name (e.g., NaturePaper.log).
     - Consider if generated logging information will be detailed enough for pinpointing issues and fixing code.
--   **Error Handling:**
+- **Error Handling:**
     - Generate appropriate error handling code (`On Error GoTo ...`).
     - Raise descriptive errors for specified conditions (see Task details).
     - Track down errors and other processing issues in subroutines and displayed detailed results in the final confirmation message to the user informing of any problems. 
     - Reports a summary of actions taken and any validation failures.
--   **Reusability & Structure:**
+- **Reusability & Structure:**
     - Write reusable functions and procedures instead of duplicating code.
     - Operate on `ActiveDocument`where appropriate, unless specifically instructed otherwise.
     - Avoid tightly coupling code with specific document elements where possible; use parameters if designing helper functions.
     - Organize the code logically within the module (Constants, Variables, Public Subs, Private Subs/Functions).
--   **Object Usage:**
-    - Prefer early binding with specific object types (e.g., `Dim buffer As Word.Range`).
+- **Object Usage:**
+    - Prefer early binding with specific object types (e.g., `Dim buffer As Word.Range`, `Dim match As RegExp`).
     - Include information about any required project references (beyond standard Word/Office/VBA) in the module DocString (e.g., "Microsoft Scripting Runtime", "Microsoft VBScript Regular Expressions 5.5"). 
     - Use `Scripting.Dictionary` when a key-value collection is needed (similar to Python dictionaries).
     - Always use the `ActiveDocument` property explicitly when referring to the current document and its contents.
     - Use the `With` block to simplify repeated references to the same object (e.g., `With ActiveDocument`).
-- **Completeness:**
+- **Module Structure and Organization:**
     - Create self-contained VBA6 macro modules (`.bas` file content) for Microsoft Word (2002/XP).
+    - Include a standard module DocString, detailing its purpose and any required non-standard references (e.g., 'Microsoft Scripting Runtime').
+    - Create a Public Sub with a meaningful name reflecting the core functionality with no arguments that orchestrates the core module functionality.
+    - At the end of the main procedure, display a `MsgBox` summarizing the performed actions, encountered issues, and stating the location of the log file.
+    - Implement a private helper subroutine, e.g., `LogMessage(logText As String)`, to handle appending messages to the log file. Ensure this routine handles file opening/closing appropriately.  
+
 
 ## Special Plain-Text Markup:
 
@@ -1534,7 +1547,7 @@ The document may employ special markup to ensure that formatting and structural 
         `If TemplateRange.Hyperlinks.Count > 0 Then TemplateRange.Hyperlinks(1).Delete`
         `If TemplateRange.Bookmarks.Count > 0 Then TemplateRange.Bookmarks(1).Delete`
     4. Set `Bold` and `Hidden` attributes on the opening braces `{{` and `}}{{...}}`.
-2. **Bookmarks Loop**
+2. **Bookmark Loop**
     1. Loop through bookmark templates (use the `BMK_PATTERN`).
     2. Extract and validate bookmark name.
     3. Check that bookmark with extracted name **DOES NOT** exist (bookmarks clashing with non-templated bookmarks should not be created).
@@ -1554,6 +1567,18 @@ The document may employ special markup to ensure that formatting and structural 
         - Extracted bookmark name.
         - Validation and checks results, including detailed validation/check failure information, if relevant.
         - Target bookmark name and displayed text on success.
+4. **Overall Organization**
+    - Preprocessing
+        1. Store current values of `Application.ScreenUpdating` and `ActiveWindow.View.ShowHiddenText`.
+        2. Set `Application.ScreenUpdating = False` and `ActiveWindow.View.ShowHiddenText = True`.
+    - Postprocessing
+        1. Restore saved values of `Application.ScreenUpdating` and `ActiveWindow.View.ShowHiddenText`.
+    - Main Public Sub `AutoMarkup` with no arguments should orchestrate the cleanup, bookmark, and hyperlink processing steps.
+    - Dedicated private routines for bookmark name validation, bookmark creation, and hyperlink creation. All three routines accept template-matched Range object and return information on execution status and, possibly, information on any encountered issues.
 
 
+
+## Task:
+
+Implement a module for processing bookmarks and hyperlinks.
 
