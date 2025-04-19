@@ -1,0 +1,5 @@
+Prompt-driven development using Google Gemini Advanced Pro 2.5.
+Prompt source:
+Meta-prompt source:
+Private conversation URL: https://gemini.google.com/app/1571d7a44e0e6355
+Shared conversation URL:
