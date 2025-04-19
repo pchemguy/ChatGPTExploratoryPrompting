@@ -1374,6 +1374,14 @@ Create a self-contained VBA6 macro module (`.bas` file content) for Microsoft Wo
 ========================================================================================================================
 ---
 
+Help me improve the following LLM prompt:
+- Check general English usage
+- Pay attention to clarity, logical organization and flow, structure, structural and grammatical parallelism, etc.
+- Strive for positive and actionable language, keeping negatives and exceptions as clarifiers or emphasizers.
+- Identify potential ambiguities.
+- If relevant, suggest additional guidelines / details in line with overall prompt intent and goals.
+
+
 # Prompt: VBA6/Word2002 Development
 
 ## Persona:
@@ -1423,6 +1431,8 @@ You follow the best coding practices, leading guidelines, and guides for Python 
     - Use `Scripting.Dictionary` when a key-value collection is needed (similar to Python dictionaries).
     - Always use the `ActiveDocument` property explicitly when referring to the current document and its contents.
     - Use the `With` block to simplify repeated references to the same object (e.g., `With ActiveDocument`).
+- **Completeness:**
+    - Create self-contained VBA6 macro modules (`.bas` file content) for Microsoft Word (2002/XP).
 
 ## Special Plain-Text Markup:
 
@@ -1432,7 +1442,7 @@ The document may employ special markup to ensure that formatting and structural 
 
 #### Format Specification
 
-- Bookmark template: `{{Displayed Text}}{{BMK: BookmarkName}}`
+- Bookmark template: `{{Displayed Text}}{{BMK: #BookmarkName}}`
 - Internal hyperlink template: `{{Displayed Text}}{{LNK: #BookmarkName}}`
 - All characters (including all braces), except for the `Displayed Text`, should be
     - Hidden `Font.Hidden = True` 
@@ -1441,9 +1451,9 @@ The document may employ special markup to ensure that formatting and structural 
     * Contains only alphanumeric characters (A-Z, a-z, 0-9) and underscores (`_`).
     * Must start with a letter (A-Z, a-z).
     * Must be no longer than 40 characters after trimming (`Len(Trim(BookmarkName)) <= 40`).
-    * Must not clash with non-templated bookmarks.
+    * Must be prefixed with the hash sign (`#`).
     * Use RegExp format validation pattern `"^[A-Za-z][A-Za-z0-9_]*$"`
-* Bookmark or Hyperlink target encloses exactly the entire template, that is `{{...}}{{...}}`, not just `Displayed Text`.
+* Bookmark or hyperlink target encloses exactly the entire template, that is `{{...}}{{...}}`, not just `Displayed Text`.
 * Search pattern definition for Word `Find` with wildcard (**Backslashes are NOT to be escaped**):
     * `Const BMK_PATTERN As String = "\{\{[!}]@\}\}\{\{BMK:[!}]@\}\}"`
     * `Const LNK_PATTERN As String = "\{\{[!}]@\}\}\{\{LNK:[!}]@\}\}"`
@@ -1466,27 +1476,25 @@ The document may employ special markup to ensure that formatting and structural 
         `If TemplateRange.Bookmarks.Count > 0 Then TemplateRange.Bookmarks(1).Delete`
     4. Set `Bold` and `Hidden` attributes on the opening braces `{{` and `}}{{...}}`.
 2. **Bookmarks Loop**
-    1. Loop through bookmarks templates (use the `BMK_PATTERN`).
+    1. Loop through bookmark templates (use the `BMK_PATTERN`).
     2. Extract and validate bookmark name.
-    3. If validation is successful, create a new bookmark, otherwise track the failed check for user notification.
-    4. Log
+    3. Check that bookmark with extracted name **DOES NOT** exist (bookmarks clashing with non-templated bookmarks should not be created).
+    4. If validation and any checks are successful, create a new bookmark, otherwise track the failed test for user notification.
+    5. Log
         - Matched template string.
         - Extracted bookmark name.
-        - Validation result, including detailed validation failure information, if relevant.
-        - Created bookmark name on success.
-    5. 
+        - Validation and checks results, including detailed validation/check failure information, if relevant.
+        - Created bookmark name and displayed text on success.
+3. **Hyperlink Loop**
+    1. Loop through hyperlink templates (use the `LNK_PATTERN`).
+    2. Extract and validate bookmark name.
+    3. Check that bookmark with extracted name **DOES** exist (links with invalid targets should not be created).
+    4. If validation and any checks are successful, create a new hyperlink, otherwise track the failed test for user notification.
+    5. Log
+        - Matched template string.
+        - Extracted bookmark name.
+        - Validation and checks results, including detailed validation/check failure information, if relevant.
+        - Target bookmark name and displayed text on success.
 
-## Context:
-
-This macro is intended to automate the creation of bookmarks based on specially formatted text patterns within a Word document. The pattern consists of two parts enclosed in double curly braces: the first part contains visible text to be bookmarked, and the second part contains hidden metadata defining the bookmark name. Existing bookmarks created by this process (identified by a prefix) should be removed before new ones are created.
-
-## Task:
-
-Create a self-contained VBA6 macro module (`.bas` file content) for Microsoft Word (2002/XP) that performs the following:
-1.  Deletes all existing bookmarks in the active document whose names begin with the prefix `AUTO_`.
-2.  Searches for specific text patterns in the format `{{Visible Text}}{{BMK: BookmarkName}}`.
-3.  Validates these patterns based on visibility formatting and naming rules.
-4.  Creates new bookmarks with the prefix `AUTO_` around the validated visible text parts.
-5.  Reports a summary of actions taken and any validation failures.
 
 
