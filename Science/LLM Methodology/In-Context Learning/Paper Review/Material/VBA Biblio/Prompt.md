@@ -1527,8 +1527,8 @@ The document may employ special markup to ensure that formatting and structural 
     * Use RegExp format validation pattern `"^[A-Za-z][A-Za-z0-9_]*$"`
 * Bookmark or hyperlink target encloses exactly the entire template, that is `{{...}}{{...}}`, not just `Displayed Text`.
 * Search pattern definition for Word `Find` with wildcard (**Backslashes are NOT to be escaped**):
-    * `Const BMK_PATTERN As String = "\{\{[!}]@\}\}\{\{BMK:[!}]@\}\}"`
-    * `Const LNK_PATTERN As String = "\{\{[!}]@\}\}\{\{LNK:[!}]@\}\}"`
+    * `Const BMK_PATTERN As String = "\{\{[!}]@\}\}\{\{BMK: #[A-Za-z][A-Za-z0-9_]{0,39}\}\}"`
+    * `Const LNK_PATTERN As String = "\{\{[!}]@\}\}\{\{LNK: #[A-Za-z][A-Za-z0-9_]{0,39}\}\}"`
     * `Const ABC_PATTERN As String = "\{\{[!}]@\}\}\{\{[A-Z]{3}:[!}]@\}\}"`
 
 #### Processing Guidelines
@@ -1542,30 +1542,33 @@ The document may employ special markup to ensure that formatting and structural 
 
 1. **Cleanup Loop**
     1. Loop through all templates (use the `ABC_PATTERN`).
-    2. Log every matched string.
-    3. Remove old bookmarks and hyperlinks on templates:
+    2. Extract and validate bookmark name.
+    3. Log every
+        - Matched template string.
+        - Extracted bookmark name.
+        - Validation results, including detailed validation failure information, if relevant.
+    4. Remove old bookmarks and hyperlinks on templates:
         `If TemplateRange.Hyperlinks.Count > 0 Then TemplateRange.Hyperlinks(1).Delete`
         `If TemplateRange.Bookmarks.Count > 0 Then TemplateRange.Bookmarks(1).Delete`
-    4. Set `Bold` and `Hidden` attributes on the opening braces `{{` and `}}{{...}}`.
+    5. Set `Bold` and `Hidden` attributes on the opening braces `{{` and `}}{{...}}`.
 2. **Bookmark Loop**
     1. Loop through bookmark templates (use the `BMK_PATTERN`).
-    2. Extract and validate bookmark name.
+    2. Extract bookmark name.
     3. Check that bookmark with extracted name **DOES NOT** exist (bookmarks clashing with non-templated bookmarks should not be created).
     4. If validation and any checks are successful, create a new bookmark, otherwise track the failed test for user notification.
     5. Log
         - Matched template string.
         - Extracted bookmark name.
-        - Validation and checks results, including detailed validation/check failure information, if relevant.
+        - Checks results, including check failure information, if relevant.
         - Created bookmark name and displayed text on success.
 3. **Hyperlink Loop**
     1. Loop through hyperlink templates (use the `LNK_PATTERN`).
-    2. Extract and validate bookmark name.
-    3. Check that bookmark with extracted name **DOES** exist (links with invalid targets should not be created).
-    4. If validation and any checks are successful, create a new hyperlink, otherwise track the failed test for user notification.
-    5. Log
+    2. Check that bookmark with extracted name **DOES** exist (links with invalid targets should not be created).
+    3. If validation and any checks are successful, create a new hyperlink, otherwise track the failed test for user notification.
+    4. Log
         - Matched template string.
         - Extracted bookmark name.
-        - Validation and checks results, including detailed validation/check failure information, if relevant.
+        - Checks results, including check failure information, if relevant.
         - Target bookmark name and displayed text on success.
 4. **Overall Organization**
     - Preprocessing
