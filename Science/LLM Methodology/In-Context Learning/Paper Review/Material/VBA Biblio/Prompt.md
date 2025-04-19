@@ -1469,7 +1469,7 @@ You follow the best coding practices, leading guidelines, and guides for Python 
     - Use `Option Explicit` at the module level.
 - **Variable Declaration:**
     - Declare all variables with specific types. Use `Variant` only when necessary.
-    - Keep declarations near the first variable use (do not place inside code control structures, but placing within `With` blocks is ok).
+    - Keep declarations near the first variable use (do not place inside code control structures, but placing within `With` blocks is ok), rather than having a large block at the very top of each procedure.
 - **Named Constants & Patterns:**
     - Use meaningful names for constants, declaring them at the lowest appropriate scope, instead of hardcoding literal values.
     - Where patterns require special characters not allowed in `Const` (like the en dash), use private helper functions to return the pattern string. 
