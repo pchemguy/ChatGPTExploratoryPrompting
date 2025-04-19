@@ -1527,8 +1527,8 @@ The document may employ special markup to ensure that formatting and structural 
     * Use RegExp format validation pattern `"^[A-Za-z][A-Za-z0-9_]*$"`
 * Bookmark or hyperlink target encloses exactly the entire template, that is `{{...}}{{...}}`, not just `Displayed Text`.
 * Search pattern definition for Word `Find` with wildcard (**Backslashes are NOT to be escaped**):
-    * `Const BMK_PATTERN As String = "\{\{[!}]@\}\}\{\{BMK: #[A-Za-z][A-Za-z0-9_]{1,39}\}\}"`
-    * `Const LNK_PATTERN As String = "\{\{[!}]@\}\}\{\{LNK: #[A-Za-z][A-Za-z0-9_]{1,39}\}\}"`
+    * `Const BMK_PATTERN As String = "\{\{[!}]@\}\}\{\{BMK: #[A-Za-z][A-Za-z0-9_]@\}\}"`
+    * `Const LNK_PATTERN As String = "\{\{[!}]@\}\}\{\{LNK: #[A-Za-z][A-Za-z0-9_]@\}\}"`
     * `Const ABC_PATTERN As String = "\{\{[!}]@\}\}\{\{[A-Z]{3}:[!}]@\}\}"`
 
 #### Processing Guidelines
