@@ -1371,7 +1371,7 @@ Create a self-contained VBA6 macro module (`.bas` file content) for Microsoft Wo
     * Attempt to resume cleanup: `Resume CleanUp`.
     * Display fallback `MsgBox` showing the error details if cleanup fails or after cleanup attempt.
 
----
+========================================================================================================================
 ---
 
 # Prompt: VBA6/Word2002 Development
@@ -1414,6 +1414,7 @@ You follow the best coding practices, leading guidelines, and guides for Python 
     - Reports a summary of actions taken and any validation failures.
 -   **Reusability & Structure:**
     - Write reusable functions and procedures instead of duplicating code.
+    - Operate on `ActiveDocument`where appropriate, unless specifically instructed otherwise.
     - Avoid tightly coupling code with specific document elements where possible; use parameters if designing helper functions.
     - Organize the code logically within the module (Constants, Variables, Public Subs, Private Subs/Functions).
 -   **Object Usage:**
@@ -1422,6 +1423,24 @@ You follow the best coding practices, leading guidelines, and guides for Python 
     - Use `Scripting.Dictionary` when a key-value collection is needed (similar to Python dictionaries).
     - Always use the `ActiveDocument` property explicitly when referring to the current document and its contents.
     - Use the `With` block to simplify repeated references to the same object (e.g., `With ActiveDocument`).
+
+## Special Plain-Text Markup:
+
+The document may employ special markup to ensure that formatting and structural metadata (e.g., bookmarks and hyperlinks) information can be preserved and recovered when text is passed as plain text to generative AI system for proofreading and revisions.
+
+### Bookmarks and Internal Hyperlinks
+
+#### Format Specification
+
+- Bookmark template: `{{Displayed Text}}{{BMK: BookmarkName}}`
+- Internal hyperlink template: `{{Displayed Text}}{{LNK: #BookmarkName}}`
+- All characters (including all braces), except for the `Displayed Text`, should have `Font.Hidden = True` 
+- `BookmarkName` must meets the following Word specifications
+    * Contains only alphanumeric characters (A-Z, a-z, 0-9) and underscores (`_`).
+    * Must start with a letter (A-Z, a-z).
+    * Must be no longer than 40 characters after trimming (`Len(Trim(BookmarkName)) <= 40`).
+    * Use RegExp format validation pattern `"^[A-Za-z][A-Za-z0-9_]*$"`
+* Bookmark or Hyperlink target encloses exactly the entire template, that is `{{...}}{{...}}`, not just `Displayed Text`.
 
 ## Context:
 
@@ -1436,14 +1455,4 @@ Create a self-contained VBA6 macro module (`.bas` file content) for Microsoft Wo
 4.  Creates new bookmarks with the prefix `AUTO_` around the validated visible text parts.
 5.  Reports a summary of actions taken and any validation failures.
 
-### Input Format / Document Assumptions:
 
-- The macro operates on `ActiveDocument`.
-- The target pattern is two sets of double curly braces immediately adjacent: `{{Visible Text}}{{BMK: BookmarkName}}`.
-- The text within the first set of braces (`{{Visible Text}}`) is expected to be **visible** (i.e., the range covering these characters should *not* have `Font.Hidden = True` applied uniformly).
-- The text within the second set of braces (`{{BMK: BookmarkName}}`) is expected to be **hidden** (i.e., the range covering these characters *must* have `Font.Hidden = True` applied uniformly). All braces must be **hidden** as well.
-- The text inside the second (hidden) braces must start exactly with `BMK:` (case-sensitive).
-- The `BookmarkName` part (the text after `BMK:` and before the closing `}}`, after trimming leading/trailing spaces) must adhere to the following rules:
-    * Contains only alphanumeric characters (A-Z, a-z, 0-9) and underscores (`_`).
-    * Must start with a letter (A-Z, a-z).
-    * Must be no longer than 35 characters after trimming.
