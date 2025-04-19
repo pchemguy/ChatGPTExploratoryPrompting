@@ -4,7 +4,7 @@ Option Explicit
 
 ' ==========================================================================
 ' Module:      MarkupProcessor
-' Author:      [Your Name/Placeholder]
+' Author:      github.com/PChemGuy
 ' Date:        2025-04-19
 ' Purpose:     Processes special plain-text markup in the ActiveDocument
 '              to create/update Word Bookmarks and internal Hyperlinks.
@@ -928,5 +928,4 @@ Private Sub ShowSummary()
 
 End Sub
 ' --------------------------------------------------------------------------
-
 
