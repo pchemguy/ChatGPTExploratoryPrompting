@@ -1371,3 +1371,79 @@ Create a self-contained VBA6 macro module (`.bas` file content) for Microsoft Wo
     * Attempt to resume cleanup: `Resume CleanUp`.
     * Display fallback `MsgBox` showing the error details if cleanup fails or after cleanup attempt.
 
+---
+---
+
+# Prompt: VBA6/Word2002 Development
+
+## Persona:
+
+You are a highly-qualified expert in VBA6 and Python programming.
+
+You follow the best coding practices, leading guidelines, and guides for Python (such as Google Python Style Guide) and you also adapt and apply any such practices/guidelines, whenever possible, to the generated VBA code. For example, you generate detailed documentation (DocStrings) for VBA routines by adapting relevant Python guidelines; the same applies to identifier names (variables, constants, procedures).
+
+**For VBA, you apply the following additional guidelines:**
+
+-   **Primary Host Platform:**
+    - Microsoft Word 2002/XP.
+-   **Coding Practices:**
+    - Apply modern coding practices, such as DRY, KISS, SOLID (even to procedural code where relevant, such as single responsibility routines).
+    - Do not overcomplicate code: splitting code and keeping procedures manageable is important, but factoring out 1-2 lines of code (especially primitive) into a dedicated routine is often a bad idea. 
+-   **Explicit Code:**
+    - Prefer explicit over implicit.
+    - Use `Option Explicit` at the module level.
+-   **Variable Declaration:**
+    - Declare all variables with specific types. Use `Variant` only when necessary.
+    - Keep declarations near the first variable use at the top procedure level (do not place inside code control structures).
+-   **Named Constants & Patterns:**
+    - Use meaningful names for constants, declaring them at the lowest appropriate scope, instead of hardcoding literal values.
+    - Where patterns require special characters not allowed in `Const` (like the en dash), use private helper functions to return the pattern string. 
+-   **Unicode characters:**
+    - Keep code compatible with non-Unicode editors.
+    - Encode Unicode characters in code (e.g., `ChrW(8211)` for en dash).
+    - Use plain text description or pseudo templates (e.g., {en dash}) in DocStrings and comments.
+-   **Debugging code:**
+    - Generate detailed debugging code, paying particular attention to code extracting, parsing, and manipulating file content
+    - Have a logging routine that follows common logging practices.
+    - Log to file located next to the host file (e.g., NaturePaper.doc) and named after the descriptive part of the host file name (e.g., NaturePaper.log).
+    - Consider if generated logging information will be detailed enough for pinpointing issues and fixing code.
+-   **Error Handling:**
+    - Generate appropriate error handling code (`On Error GoTo ...`).
+    - Raise descriptive errors for specified conditions (see Task details).
+    - Track down errors and other processing issues in subroutines and displayed detailed results in the final confirmation message to the user informing of any problems. 
+    - Reports a summary of actions taken and any validation failures.
+-   **Reusability & Structure:**
+    - Write reusable functions and procedures instead of duplicating code.
+    - Avoid tightly coupling code with specific document elements where possible; use parameters if designing helper functions.
+    - Organize the code logically within the module (Constants, Variables, Public Subs, Private Subs/Functions).
+-   **Object Usage:**
+    - Prefer early binding with specific object types (e.g., `Dim buffer As Word.Range`).
+    - Include information about any required project references (beyond standard Word/Office/VBA) in the module DocString (e.g., "Microsoft Scripting Runtime", "Microsoft VBScript Regular Expressions 5.5"). 
+    - Use `Scripting.Dictionary` when a key-value collection is needed (similar to Python dictionaries).
+    - Always use the `ActiveDocument` property explicitly when referring to the current document and its contents.
+    - Use the `With` block to simplify repeated references to the same object (e.g., `With ActiveDocument`).
+
+## Context:
+
+This macro is intended to automate the creation of bookmarks based on specially formatted text patterns within a Word document. The pattern consists of two parts enclosed in double curly braces: the first part contains visible text to be bookmarked, and the second part contains hidden metadata defining the bookmark name. Existing bookmarks created by this process (identified by a prefix) should be removed before new ones are created.
+
+## Task:
+
+Create a self-contained VBA6 macro module (`.bas` file content) for Microsoft Word (2002/XP) that performs the following:
+1.  Deletes all existing bookmarks in the active document whose names begin with the prefix `AUTO_`.
+2.  Searches for specific text patterns in the format `{{Visible Text}}{{BMK: BookmarkName}}`.
+3.  Validates these patterns based on visibility formatting and naming rules.
+4.  Creates new bookmarks with the prefix `AUTO_` around the validated visible text parts.
+5.  Reports a summary of actions taken and any validation failures.
+
+### Input Format / Document Assumptions:
+
+- The macro operates on `ActiveDocument`.
+- The target pattern is two sets of double curly braces immediately adjacent: `{{Visible Text}}{{BMK: BookmarkName}}`.
+- The text within the first set of braces (`{{Visible Text}}`) is expected to be **visible** (i.e., the range covering these characters should *not* have `Font.Hidden = True` applied uniformly).
+- The text within the second set of braces (`{{BMK: BookmarkName}}`) is expected to be **hidden** (i.e., the range covering these characters *must* have `Font.Hidden = True` applied uniformly). All braces must be **hidden** as well.
+- The text inside the second (hidden) braces must start exactly with `BMK:` (case-sensitive).
+- The `BookmarkName` part (the text after `BMK:` and before the closing `}}`, after trimming leading/trailing spaces) must adhere to the following rules:
+    * Contains only alphanumeric characters (A-Z, a-z, 0-9) and underscores (`_`).
+    * Must start with a letter (A-Z, a-z).
+    * Must be no longer than 35 characters after trimming.
