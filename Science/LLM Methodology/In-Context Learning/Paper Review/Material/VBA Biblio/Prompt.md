@@ -1434,18 +1434,47 @@ The document may employ special markup to ensure that formatting and structural 
 
 - Bookmark template: `{{Displayed Text}}{{BMK: BookmarkName}}`
 - Internal hyperlink template: `{{Displayed Text}}{{LNK: #BookmarkName}}`
-- All characters (including all braces), except for the `Displayed Text`, should have `Font.Hidden = True` 
+- All characters (including all braces), except for the `Displayed Text`, should be
+    - Hidden `Font.Hidden = True` 
+    - Bold `Font.Bold = True` 
 - `BookmarkName` must meets the following Word specifications
     * Contains only alphanumeric characters (A-Z, a-z, 0-9) and underscores (`_`).
     * Must start with a letter (A-Z, a-z).
     * Must be no longer than 40 characters after trimming (`Len(Trim(BookmarkName)) <= 40`).
+    * Must not clash with non-templated bookmarks.
     * Use RegExp format validation pattern `"^[A-Za-z][A-Za-z0-9_]*$"`
 * Bookmark or Hyperlink target encloses exactly the entire template, that is `{{...}}{{...}}`, not just `Displayed Text`.
-* Search pattern definition
-    * Word `Find` with wildcard (**Backslashes are NOT to be escaped**):
-        * `Const BMK_PATTERN As String = "\{\{[!}]{1,}\}\}\{\{BMK:[!}]{1,}\}\}"`
-        * `Const LNK_PATTERN As String = "\{\{[!}]{1,}\}\}\{\{LNK:[!}]{1,}\}\}"`
+* Search pattern definition for Word `Find` with wildcard (**Backslashes are NOT to be escaped**):
+    * `Const BMK_PATTERN As String = "\{\{[!}]@\}\}\{\{BMK:[!}]@\}\}"`
+    * `Const LNK_PATTERN As String = "\{\{[!}]@\}\}\{\{LNK:[!}]@\}\}"`
+    * `Const ABC_PATTERN As String = "\{\{[!}]@\}\}\{\{[A-Z]{3}:[!}]@\}\}"`
 
+#### Processing Guidelines
+
+- Use Word `Find` property with wildcards (`.MatchWildcards = True`)
+- Operate on the `ActiveDocument.Content` `Word.Range` object.
+- **FORWARD** search only (`.Forward = True`)! Do not use backward search, as their might be issues of unclear nature.
+- **Log every match**!
+
+#### Processing Steps
+
+1. **Cleanup Loop**
+    1. Loop through all templates (use the `ABC_PATTERN`).
+    2. Log every matched string.
+    3. Remove old bookmarks and hyperlinks on templates:
+        `If TemplateRange.Hyperlinks.Count > 0 Then TemplateRange.Hyperlinks(1).Delete`
+        `If TemplateRange.Bookmarks.Count > 0 Then TemplateRange.Bookmarks(1).Delete`
+    4. Set `Bold` and `Hidden` attributes on the opening braces `{{` and `}}{{...}}`.
+2. **Bookmarks Loop**
+    1. Loop through bookmarks templates (use the `BMK_PATTERN`).
+    2. Extract and validate bookmark name.
+    3. If validation is successful, create a new bookmark, otherwise track the failed check for user notification.
+    4. Log
+        - Matched template string.
+        - Extracted bookmark name.
+        - Validation result, including detailed validation failure information, if relevant.
+        - Created bookmark name on success.
+    5. 
 
 ## Context:
 
