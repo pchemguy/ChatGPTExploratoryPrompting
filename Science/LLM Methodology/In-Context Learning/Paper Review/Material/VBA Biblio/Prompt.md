@@ -1576,8 +1576,6 @@ The document may employ special markup to ensure that formatting and structural 
     - Main Public Sub `AutoMarkup` with no arguments should orchestrate the cleanup, bookmark, and hyperlink processing steps.
     - Dedicated private routines for bookmark name validation, bookmark creation, and hyperlink creation. All three routines accept template-matched Range object and return information on execution status and, possibly, information on any encountered issues.
 
-
-
 ## Task:
 
 Implement a module for processing bookmarks and hyperlinks.
