@@ -1430,6 +1430,17 @@ Analyze the provided LLM prompt based on these criteria. Provide specific, actio
 ========================================================================================================================
 ---
 
+# Meta-Meta-Prompt
+
+Help me improve the following meta-prompt
+
+---
+
+{META-PROMPT TO BE ANALYZED}
+
+========================================================================================================================
+---
+
 # Prompt: VBA6/Word2002 Development
 
 ## Persona:
