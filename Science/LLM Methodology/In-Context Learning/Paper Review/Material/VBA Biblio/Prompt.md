@@ -1577,7 +1577,8 @@ The document may employ special markup to ensure that formatting and structural 
     - Postprocessing
         1. Restore saved values of `Application.ScreenUpdating` and `ActiveWindow.View.ShowHiddenText`.
     - Main Public Sub `AutoMarkup` with no arguments should orchestrate the cleanup, bookmark, and hyperlink processing steps.
-    - Dedicated private routines for bookmark name validation, bookmark creation, and hyperlink creation. All three routines accept template-matched Range object and return information on execution status and, possibly, information on any encountered issues.
+    - Dedicated private routines for bookmark name extraction, validation, bookmark creation, and hyperlink creation, and logging.
+    - Name extraction should take template-matched Range object and return extracted bookmark name. It should also extract displayed text for logging purposes and perform logging.
 
 ## Task:
 
