@@ -46,3 +46,27 @@ https://gemini.google.com/app/c0bbf5c426b3f66a
 https://gemini.google.com/app/df57ae1b7998afd1
 https://gemini.google.com/app/ea9bea57348f2876
 https://chatgpt.com/c/674ef0cb-665c-8004-b7d0-fb28e7a9af12
+
+---
+
+Idealized model
+
+[https://gemini.google.com/app/1f630e421bf874e8](https://gemini.google.com/app/1f630e421bf874e8)  
+[https://gemini.google.com/app/ea9bea57348f2876](https://gemini.google.com/app/ea9bea57348f2876)  
+
+Multimodal capabilities
+
+Google Gemini ADVANCED 2.5 Pro (but not the "standard" version available without subscription) repeatedly demonstrated ability to analyze and understand images and integrated extracted and inferred information. In particular, it consistently identified aluminum foil around the fractionation column in the SI Fig. 1 [§], and this information was not present anywhere in text. It has also inferred scale information based on text description per instructions and used this information for subsequent analysis of the underlying physical processes.
+
+While OpenAI has indicated that their recent o3 reasoning model is capable of performing multimodal analysis, in my limited testing of this feature, I have not observed strong evidences of this capability. Furthermore, OpenAI, as opposed to Google, hides ChatGPT's reasoning models' thought process, so direct verification of OpenAI's claims is also problematic.
+
+
+[https://openai.com/index/thinking-with-images](https://openai.com/index/thinking-with-images)
+
+---
+
+For very complex prompt development use the best reasoning models and treat it like a peer. I have been using ChatGPT Plus o1 and Google Gemini Advanced 2.5 Pro. The o1 Pro version might have provided additional advantage, it but requires more substantial financial commitment. The problem with o1 Plus is its restrictive use limit: with 50 prompts per week, it is very limited in practice. Now the o3 model is out, and it is likely to be even more restrictive. Input/output token limits are two other important characteristics that motivated my switching from OpenAI to Google.
+
+  
+
+The general strategy is start small by drafting initial prompt. In fact, when developing something new, don't bother about having a prompt at all.
