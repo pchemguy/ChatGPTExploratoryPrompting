@@ -70,3 +70,11 @@ For very complex prompt development use the best reasoning models and treat it l
   
 
 The general strategy is start small by drafting initial prompt. In fact, when developing something new, don't bother about having a prompt at all.
+
+---
+
+Consider whether the following points should be integrated in the prompt or if the present version covers them sufficiently already. 
+
+Consider the following complex prompt provided as `PeerReviewPrompt.md` attachment. This
+
+Prompt implements a proposed Persistent Workflow Prompting (PWP) technique described in the attached manuscript `MetaPWP.pdf`. Analyze both the prompt text and manuscript and consider which concepts/ideas may be integrated in the prompt engineer/tutor prompt to extend its capabilities for assistance and development of very complex prompts.
