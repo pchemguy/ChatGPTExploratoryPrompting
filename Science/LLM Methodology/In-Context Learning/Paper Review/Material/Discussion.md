@@ -1,5 +1,7 @@
 ## Discussion and Outlook
 
+Other issues in the paper: mass balance checks, relative temperatures (b.p. differences for labeled water), more focused missing identification of missing essential information, unreasonable uncertainties (amounts of water), poor choices for experimental setup, conditions, starting materials (experimental setup: 1-2 L of tap water - what exactly is a problem about starting from a fixed amount of DEIONIZED WATER!?, bad fractionation column), terminology issues: tap vs. deionized water, lack of theoretical treatment, failure to identify novelty, failure to acknowledge the plausibility considerations, "To form hexamethyldisiloxane" (stoichiometry and relative quantities), inappropriate instrumentation (actual dT ~< 0.1 oC) thermometer and entire uncontrolled apparatus are completely inadequate for the task.
+
 ### Further prompt development
 
 - **Testing**:
