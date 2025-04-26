@@ -65,6 +65,12 @@ Private Const ZOTERO_FIELD_PART2 As String = "CSL_BIBLIOGRAPHY"
 Private Const BIB_ENTRY_PATTERN As String = "^\f?\[(\d+)\]" & vbTab
 Private Const MAX_FIND_LOOPS As Long = 10000 ' Safety limit for Find loop
 
+Private Const DOI_URL_PREFIX As String = "[https://doi.org/](https://doi.org/)"
+Private Const DOI_PREFIX_TEXT As String = "DOI:"
+Private Const DOI_REGEX_PATTERN As String = "10\.\d{4,}(\.\d+)*/[-._;()/:A-Z0-9]+" ' Pattern for the DOI identifier itself
+Private Const TRAILING_PUNCTUATION As String = ".,;)]}" ' Characters to strip from end of found DOI
+Private Const MAX_DOI_CHECK_LENGTH As Long = 200 ' How many chars after "DOI:" to check with RegExp
+
 '--- Error Numbers ---
 Private Const ERR_BIB_FIELD_NOT_FOUND As Long = vbObjectError + 1001
 Private Const ERR_ORPHAN_CITATIONS As Long = vbObjectError + 1002
@@ -219,6 +225,10 @@ Public Sub CreateBibliographyHyperlinks()
     Call CreateCitationHyperlinksIterativeFind(doc, createdBookmarks, bibRange)
     Call LogMessage("Hyperlink creation process complete.")
 
+
+    '--- Step 5: Create DOI Hyperlinks ---
+    Call CreateDOILinksInRange(bibRange)
+
     MsgBox "Bibliography hyperlinks created successfully! See log file for details:" & vbCrLf & m_LogFilePath, vbInformation
 
 ProcedureExit:
@@ -293,6 +303,268 @@ Private Function GetValidationPattern() As String
     GetValidationPattern = "\[([0-9,\-" & ChrW(8211) & "\s]+?)\]"
 End Function
 '---------------------------------------------------------------------------------------
+
+
+'=======================================================================================
+'   DOI PROCESSING FUNCTION
+'=======================================================================================
+Public Sub CreateDOILinksInRange(Optional targetRange As Word.Range = Nothing)
+'---------------------------------------------------------------------------------------
+' Procedure : CreateDOILinksInRange
+' Author    : Gemini
+' Date      : 26/04/2025
+' Purpose   : Finds DOI identifiers within a specified range (or the selection, or
+'             the whole document) and creates hyperlinks.
+' Usage     : Call CreateDOILinksInRange, optionally passing a Range object.
+'             If no range is passed, it checks the Selection; if Selection is empty,
+'             it processes the entire document.
+' Notes     : - Handles "DOI:" prefix case-insensitively.
+'             - Handles optional space after the colon.
+'             - Excludes common trailing punctuation from the DOI link/text.
+'             - Skips DOIs that are already part of a hyperlink.
+'             - Requires the document to be saved for file logging.
+' Arguments : targetRange (Word.Range, Optional): The range to search within.
+'---------------------------------------------------------------------------------------
+    Dim doc As Word.Document
+    Dim rngToProcess As Word.Range      ' The actual range being searched
+    Dim searchRange As Word.Range       ' Range used for the Find loop iteration
+    Dim rngPotentialDOI As Word.Range   ' Range immediately after "DOI:" to check with RegExp
+    Dim linkRange As Word.Range         ' The precise range of the DOI identifier to hyperlink
+    Dim regExDOI As RegExp              ' RegExp object to validate DOI pattern
+    Dim doiMatch As match               ' RegExp match object
+    Dim strDOI As String                ' The extracted DOI identifier string
+    Dim strURL As String                ' The final URL for the hyperlink
+    Dim doiLength As Long               ' Length of the DOI identifier (after cleanup)
+    Dim doiStartPos As Long             ' Starting character position of the DOI identifier
+    Dim loopCounter As Long             ' Safety counter for Find loop
+    Dim linksCreatedCount As Long       ' Counter for summary
+    Dim linksSkippedCount As Long       ' Counter for summary
+    Dim strMsg As String                ' For final message box
+
+    On Error GoTo ErrorHandler
+    Application.ScreenUpdating = False
+    Set doc = ActiveDocument
+    Call SetupLogFile(doc) ' Initialize file logging
+
+    Call LogMessage(vbCrLf & "--- Starting CreateDOILinksInRange at " & Now & " ---")
+
+    ' 1. Determine Processing Range (Updated Logic)
+    Call LogMessage("Step 1: Determining processing range...")
+    If Not targetRange Is Nothing Then
+        ' Use the provided range argument
+        Set rngToProcess = targetRange
+        Call LogMessage("  Processing specified range argument (Start: " & rngToProcess.Start & ", End: " & rngToProcess.End & ")")
+    Else
+        ' No range argument provided, check selection
+        If Selection.Type = wdSelectionIP Or Selection.Type = wdNoSelection Then
+            ' Selection is empty or IP, use whole document
+            Set rngToProcess = doc.Content
+            Call LogMessage("  No range passed and selection empty. Processing entire document.")
+        Else
+            ' Use the current selection
+            Set rngToProcess = Selection.Range
+            Call LogMessage("  No range passed. Processing current selection (Start: " & rngToProcess.Start & ", End: " & rngToProcess.End & ")")
+        End If
+    End If
+
+    If rngToProcess Is Nothing Then
+        Call LogMessage("ERROR: Processing range could not be determined.")
+        GoTo CleanUp ' Exit if range is invalid
+    End If
+
+    ' Initialize counters
+    linksCreatedCount = 0
+    linksSkippedCount = 0
+
+    ' 2. Setup RegExp
+    Call LogMessage("Step 2: Setting up Regular Expression...")
+    Set regExDOI = New RegExp
+    With regExDOI
+        .Pattern = DOI_REGEX_PATTERN
+        .IgnoreCase = True
+        .Global = False ' Find only the first match after the prefix
+    End With
+    Call LogMessage("  RegExp Pattern: '" & regExDOI.Pattern & "'")
+
+    ' 3. Iterative Find for Prefix
+    Call LogMessage("Step 3: Finding DOI prefixes...")
+    Set searchRange = rngToProcess.Duplicate ' Use a copy for searching
+
+    With searchRange.Find
+        .ClearFormatting
+        .Text = DOI_PREFIX_TEXT
+        .MatchCase = False ' Case-insensitive prefix search
+        .MatchWildcards = False ' Find literal text
+        .Forward = True
+        .Wrap = wdFindStop
+        .Format = False
+
+        Call LogMessage("  Attempting Find for prefix: '" & .Text & "'")
+
+        loopCounter = 0 ' Initialize loop counter
+        Do While .Execute
+            loopCounter = loopCounter + 1
+            ' Call LogMessage("  Loop " & loopCounter & ": Find.Execute returned. Find.Found = " & searchRange.Find.Found & ". Current searchRange.Start = " & searchRange.Start) ' Optional detailed log
+
+            ' Safety Check for Infinite Loop
+            If loopCounter > MAX_FIND_LOOPS Then
+                Err.Raise ERR_INFINITE_LOOP, "CreateDOILinksInRange (Find Loop)", _
+                          "Processing stopped after exceeding maximum loop limit (" & MAX_FIND_LOOPS & "). Possible infinite loop detected."
+            End If
+
+            If .found Then
+                Call LogMessage("  Found prefix '" & searchRange.Text & "' at Range(" & searchRange.Start & ", " & searchRange.End & ")")
+
+                ' Check for Optional Space and determine DOI start position
+                doiStartPos = searchRange.End ' Default start is immediately after prefix
+                If doc.Range(searchRange.End, searchRange.End + 1).Text = " " Then
+                    doiStartPos = searchRange.End + 1
+                    Call LogMessage("    Optional space found after prefix.")
+                End If
+                Call LogMessage("    Potential DOI start position: " & doiStartPos)
+
+                ' Define Potential DOI Range to check with RegExp
+                Set rngPotentialDOI = doc.Range(Start:=doiStartPos, End:=doiStartPos)
+                ' Extend range forward, but don't exceed original processing range or reasonable length
+                rngPotentialDOI.End = rngPotentialDOI.Start + MAX_DOI_CHECK_LENGTH
+                If rngPotentialDOI.End > rngToProcess.End Then
+                    rngPotentialDOI.End = rngToProcess.End
+                End If
+                ' Also ensure it doesn't cross paragraph boundaries unnecessarily (optional refinement)
+                ' If rngPotentialDOI.Paragraphs.Count > 1 Then
+                '    rngPotentialDOI.End = rngPotentialDOI.Paragraphs(1).Range.End
+                ' End If
+                Call LogMessage("    Checking potential DOI range: " & rngPotentialDOI.Start & " - " & rngPotentialDOI.End)
+
+
+                ' Validate with RegExp
+                If regExDOI.Test(rngPotentialDOI.Text) Then
+                    Set doiMatch = regExDOI.Execute(rngPotentialDOI.Text)(0)
+                    Call LogMessage("    RegExp found potential DOI: '" & doiMatch.Value & "' at index " & doiMatch.FirstIndex & " within potential range.")
+
+                    ' Check if the match starts right after the prefix (and optional space)
+                    If doiMatch.FirstIndex = 0 Then
+                        strDOI = doiMatch.Value
+                        doiLength = Len(strDOI) ' Initial length
+
+                        ' Check/Remove Trailing Punctuation
+                        Do While doiLength > 0 And InStr(1, TRAILING_PUNCTUATION, Right$(strDOI, 1), vbBinaryCompare) > 0
+                            strDOI = Left$(strDOI, doiLength - 1)
+                            doiLength = Len(strDOI)
+                            Call LogMessage("      Removed trailing punctuation. Adjusted DOI: '" & strDOI & "'")
+                        Loop
+
+                        If doiLength > 0 Then
+                            ' Define the precise range for the hyperlink anchor
+                            Set linkRange = doc.Range(Start:=doiStartPos, End:=doiStartPos + doiLength)
+                            Call LogMessage("      Defined link range: " & linkRange.Start & " - " & linkRange.End & " (Text: '" & linkRange.Text & "')")
+
+                            ' Check for Existing Link
+                            If linkRange.Hyperlinks.Count = 0 Then
+                                ' Create Hyperlink
+                                strURL = DOI_URL_PREFIX & strDOI
+                                Call LogMessage("      Creating hyperlink to: " & strURL)
+                                On Error Resume Next ' Handle potential errors adding hyperlink
+                                doc.Hyperlinks.Add Anchor:=linkRange, Address:=strURL
+                                If Err.Number = 0 Then
+                                    linksCreatedCount = linksCreatedCount + 1
+                                    Call LogMessage("      Hyperlink created successfully.")
+                                Else
+                                    Call LogMessage("      ERROR creating hyperlink: " & Err.Description)
+                                    Err.Clear
+                                End If
+                                On Error GoTo ErrorHandler ' Restore main handler
+
+                                ' Advance Search Range past the processed DOI
+                                searchRange.Start = linkRange.End
+                            Else
+                                ' DOI is already linked
+                                linksSkippedCount = linksSkippedCount + 1
+                                Call LogMessage("      Skipped: DOI text is already part of a hyperlink.")
+                                ' Advance Search Range past the already linked DOI
+                                searchRange.Start = linkRange.End
+                            End If
+                        Else
+                             Call LogMessage("      Skipped: DOI became empty after removing punctuation.")
+                             searchRange.Collapse wdCollapseEnd ' Move past prefix
+                        End If
+                    Else
+                        ' RegExp match didn't start immediately after prefix
+                        Call LogMessage("    RegExp match found, but not immediately after prefix. Skipping.")
+                        searchRange.Collapse wdCollapseEnd ' Move past prefix
+                    End If
+                Else
+                    ' RegExp did not find a valid DOI pattern after the prefix
+                    Call LogMessage("    No valid DOI pattern found after prefix.")
+                    searchRange.Collapse wdCollapseEnd ' Move past prefix
+                End If
+            Else
+                Exit Do ' Stop loop if Find.Found is False
+            End If
+        Loop ' While .Execute
+    End With ' searchRange.Find
+
+    Call LogMessage("Step 3 finished. Links Created: " & linksCreatedCount & ", Links Skipped: " & linksSkippedCount)
+    Set regExDOI = Nothing
+
+    ' 4. Cleanup & Reporting
+    Call LogMessage("Step 4: Cleanup and Reporting...")
+
+CleanUp:
+    On Error Resume Next ' Ensure final cleanup attempts don't raise new errors
+    Application.ScreenUpdating = True
+    ' Release objects
+    Set doc = Nothing
+    Set rngToProcess = Nothing
+    Set searchRange = Nothing
+    Set rngPotentialDOI = Nothing
+    Set linkRange = Nothing
+    Set regExDOI = Nothing
+    Set doiMatch = Nothing
+    Call CloseLogFile ' Close log file if it was opened
+
+    ' Display Summary Message ONLY if no error occurred (ErrorHandler jumps past this)
+    If Err.Number = 0 Then
+        strMsg = "DOI Link processing complete." & vbCrLf & vbCrLf & _
+                 "New Hyperlinks Created: " & linksCreatedCount & vbCrLf & _
+                 "Existing Links Skipped: " & linksSkippedCount
+        MsgBox strMsg, vbInformation, "Processing Summary"
+    End If
+
+    Call LogMessage("--- Finished CreateDOILinksInRange at " & Now & " ---")
+    On Error GoTo 0
+    Exit Sub
+
+    ' 5. Error Handling
+ErrorHandler:
+    Dim lngErrNum As Long: lngErrNum = Err.Number
+    Dim strErrDesc As String: strErrDesc = Err.Description
+    Call LogMessage("!!! MACRO ERROR: " & lngErrNum & " - " & strErrDesc & " !!!") ' Log the error
+
+    ' --- Attempt Cleanup within Error Handler ---
+    On Error Resume Next ' Prevent error during cleanup hiding original error
+    Application.ScreenUpdating = True
+    ' Release objects
+    Set doc = Nothing
+    Set rngToProcess = Nothing
+    Set searchRange = Nothing
+    Set rngPotentialDOI = Nothing
+    Set linkRange = Nothing
+    Set regExDOI = Nothing
+    Set doiMatch = Nothing
+    Call CloseLogFile ' Close log file if it was opened
+    On Error GoTo 0 ' Restore default error handling
+    ' --- End Cleanup Attempt ---
+
+    ' Show the Error Message Box
+    MsgBox "An unexpected error occurred:" & vbCrLf & vbCrLf & _
+           "Error Number: " & lngErrNum & vbCrLf & _
+           "Description: " & strErrDesc, vbCritical, "Macro Error"
+
+    ' Exit Sub after showing the error message.
+    Exit Sub
+
+End Sub
 
 
 '=======================================================================================
