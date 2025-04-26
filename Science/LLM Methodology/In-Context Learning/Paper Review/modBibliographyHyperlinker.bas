@@ -10,6 +10,8 @@ Option Explicit
 ' Purpose   : Creates internal hyperlinks from in-text bibliography citations
 '             (e.g., [1], [2, 3], [4-6], [9-14]) to corresponding bibliography entries
 '             marked with bookmarks (BIB_1, BIB_2, etc.). Handles hyphen and en dash ranges.
+'             Also finds DOI identifiers within a specified range (or the selection, or
+'             the whole document) and creates hyperlinks.
 ' Changes   : v1.1 - Corrected object reference after delete in hyperlink cleanup.
 '                  - Adjusted bibliography entry pattern to handle optional leading page break (\f).
 '                  - Refined bookmark range calculation to exclude page break.
@@ -65,7 +67,7 @@ Private Const ZOTERO_FIELD_PART2 As String = "CSL_BIBLIOGRAPHY"
 Private Const BIB_ENTRY_PATTERN As String = "^\f?\[(\d+)\]" & vbTab
 Private Const MAX_FIND_LOOPS As Long = 10000 ' Safety limit for Find loop
 
-Private Const DOI_URL_PREFIX As String = "[https://doi.org/](https://doi.org/)"
+Private Const DOI_URL_PREFIX As String = "https://doi.org/"
 Private Const DOI_PREFIX_TEXT As String = "DOI:"
 Private Const DOI_REGEX_PATTERN As String = "10\.\d{4,}(\.\d+)*/[-._;()/:A-Z0-9]+" ' Pattern for the DOI identifier itself
 Private Const TRAILING_PUNCTUATION As String = ".,;)]}" ' Characters to strip from end of found DOI
