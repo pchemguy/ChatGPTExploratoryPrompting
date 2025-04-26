@@ -78,3 +78,47 @@ Consider whether the following points should be integrated in the prompt or if t
 Consider the following complex prompt provided as `PeerReviewPrompt.md` attachment. This
 
 Prompt implements a proposed Persistent Workflow Prompting (PWP) technique described in the attached manuscript `MetaPWP.pdf`. Analyze both the prompt text and manuscript and consider which concepts/ideas may be integrated in the prompt engineer/tutor prompt to extend its capabilities for assistance and development of very complex prompts.
+
+
+---
+
+I am suspicious about the main claim after reading a scholarly manuscript's title and abstract. I need a clear guide on how to proceed. Please structure your response into two main parts:
+
+- **Part 1: Metacognitive Analysis**
+    Describe a step-by-step process using metacognition for me to identify, analyze, and clearly articulate the specific reasons behind my suspicion (e.g., issues with claim strength, scope, methodology implied, contradiction with known facts).
+- **Part 2: Teaching the LLM**
+    Explain practical strategies (like designing specific prompts or defining heuristics) to use the insights from Part 1 to teach an LLM to recognize and flag similarly suspicious claims in other scholarly publications. Focus on strategies that uses standard prompt only (no API access, coding, or model modification is allowed).
+
+Please provide practical, actionable steps for both the metacognitive analysis and the process of instructing the LLM.
+
+---
+
+Assume the role of an expert peer reviewer conducting a thorough critical appraisal of the attached scholarly manuscript and its supporting information. Your goal is to identify potential reasons for skepticism regarding the study's claims, rigor, and reporting. Please analyze the entire text and report on the following points, providing specific examples or locations from the text where possible:
+
+1. **Claim Clarity & Consistency:** Identify the main claim(s) in the Abstract. Track if the Introduction's hypothesis, the Methods' objectives, the Results' key findings, and the Discussion's conclusions are fully aligned with this claim in scope and certainty. Note any discrepancies.
+2. **Methodological Rigor & Transparency:** Based on *all* details in the Methods (main text + SI), evaluate the appropriateness of the study design, sample size and selection, intervention/exposure definition, outcome measures (validity/reliability), and statistical analysis plan for addressing the main claim. Is sufficient detail provided for replication? Note specific weaknesses or ambiguities.
+3. **Results Reporting & Support:** Do the Results presented (including *all* figures, tables in main text and SI) directly and robustly support the main claim(s)? Is there evidence of selective reporting (cherry-picking significant findings, omitting non-significant ones mentioned in methods or SI)? Are effect sizes and confidence intervals reported and interpreted appropriately? Are visualizations potentially misleading?
+4. **Discussion Integrity:** Does the Discussion accurately interpret the findings considering *all* results (main + SI)? Are the study's limitations (identified from your analysis of methods/results/SI) fairly and adequately discussed? Is the strength of the conclusion justified by the evidence? Does it align with the Abstract claim?
+5. **Cross-Sectional Consistency:** Explicitly identify any major contradictions or inconsistencies found *between any sections* of the document (Abstract, Intro, Methods, Results, Discussion, SI) regarding key information (e.g., sample characteristics, methods used, results, conclusions).
+6. **Overall Red Flags:** Note any other signs suggesting potential bias, lack of rigor, or overly promotional language (e.g., funding sources, undeclared COI hints, excessive jargon, hype).
+
+Please provide a structured report addressing these points based on your analysis of the complete text provided below.
+
+---
+
+Act as a critical appraisal tool. I attached a manuscript and supporting information. Evaluate potential reasons for suspicion using the checklist below, noting flags based *only* on the information provided:
+
+**Critical Checklist - Flag potential issues:**
+* [ ] Abstract-Intro Misalign
+* [ ] Inadequate/Flawed Methods (Main Text)
+* [ ] **SI Methods Reveal Issues:** SI Methods detail flaws/limitations not clear in main text.
+* [ ] Results (Main) Don't Support Claim / Cherry-Picking
+* [ ] **SI Data Contradicts/Weakens Main Results:** SI data shows different picture, unreported negative findings, or high variability.
+* [ ] Over-Interpretation in Discussion
+* [ ] Limitations Ignored/Downplayed (across all sections including SI)
+* [ ] **Inconsistency Between Main Text & SI:** Direct contradictions found.
+* [ ] Misleading Visuals (if described)
+* [ ] Biased Language/Tone
+* [ ] Potential COI/Funding Bias
+
+**Output:** List flagged checklist points, explaining *why* based on the provided information.
