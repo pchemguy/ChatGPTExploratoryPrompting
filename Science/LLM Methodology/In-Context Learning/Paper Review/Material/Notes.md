@@ -122,3 +122,8 @@ Act as a critical appraisal tool. I attached a manuscript and supporting informa
 * [ ] Potential COI/Funding Bias
 
 **Output:** List flagged checklist points, explaining *why* based on the provided information.
+
+---
+---
+
+Help me revise a manuscript to be submitted to arXiv CS.ai. The paper is focused on prompt engineering and its applications to complex STEM tasks. The manuscript introduces a new prompting technique, PWP, a proof-of-concept prompt, which was developed via meta-prompting and meta-reasoning. Both developed prompt and methodology are novel, complex, and important.
