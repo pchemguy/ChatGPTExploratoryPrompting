@@ -274,8 +274,8 @@ End Sub
 
 Private Function GetCitationFindPattern() As String
 ' Returns the Wildcard pattern for Word's Find to locate citations
-' Handles digits, comma, hyphen, en dash within brackets
-    GetCitationFindPattern = "\[[0-9,-" & ChrW(8211) & "]@\]"
+' Handles digits, comma, hyphen, en dash, space within brackets
+    GetCitationFindPattern = "\[[0-9,-" & ChrW(8211) & " ]@\]"
 End Function
 '---------------------------------------------------------------------------------------
 
@@ -511,7 +511,7 @@ Private Function CreateBibliographyBookmarks(ByVal bibRange As Word.Range) As Sc
 ' Requires  : Microsoft VBScript Regular Expressions 5.5, Microsoft Scripting Runtime
 '---------------------------------------------------------------------------------------
     Dim para As Word.Paragraph
-    Dim regEx As RegExp
+    Dim regex As RegExp
     Dim matches As MatchCollection
     Dim match As match
     Dim bibNum As Long
@@ -523,11 +523,11 @@ Private Function CreateBibliographyBookmarks(ByVal bibRange As Word.Range) As Sc
     Dim searchText As String
 
     Set dictBookmarks = New Scripting.Dictionary
-    Set regEx = New RegExp
+    Set regex = New RegExp
 
     ' Configure RegExp to find optional \f then "[#]{TAB}" at the start of a line
     ' This is primarily to extract the bibNum reliably.
-    With regEx
+    With regex
         .Pattern = BIB_ENTRY_PATTERN ' Uses "\f?\[(\d+)\]{TAB}"
         .Global = False
         .MultiLine = False
@@ -537,7 +537,7 @@ Private Function CreateBibliographyBookmarks(ByVal bibRange As Word.Range) As Sc
     ' Iterate through each paragraph in the bibliography range
     For Each para In bibRange.Paragraphs
         paraText = para.Range.Text ' Get text of the paragraph
-        Set matches = regEx.Execute(paraText)
+        Set matches = regex.Execute(paraText)
 
         If matches.Count > 0 Then
             Set match = matches(0)
@@ -595,7 +595,7 @@ Private Function CreateBibliographyBookmarks(ByVal bibRange As Word.Range) As Sc
 
     ' Cleanup
     Set para = Nothing
-    Set regEx = Nothing
+    Set regex = Nothing
     Set matches = Nothing
     Set match = Nothing
     Set bookmarkRange = Nothing
@@ -750,7 +750,7 @@ Private Sub CreateCitationHyperlinksIterativeFind(ByVal doc As Word.Document, By
         ' Start the iterative Find loop
         Do While .Execute
             loopCounter = loopCounter + 1
-            Call LogMessage("  Loop " & loopCounter & ": Find.Execute returned. Find.Found = " & searchRange.Find.Found & ". Current searchRange.Start = " & searchRange.Start)
+            Call LogMessage("  Loop " & loopCounter & ": Find.Execute returned. Find.Found = " & searchRange.Find.found & ". Current searchRange.Start = " & searchRange.Start)
 
              ' *** Safety Check for Infinite Loop ***
              If loopCounter > MAX_FIND_LOOPS Then
@@ -759,7 +759,7 @@ Private Sub CreateCitationHyperlinksIterativeFind(ByVal doc As Word.Document, By
              End If
 
             ' Check if Find actually found something and didn't just stop
-            If searchRange.Find.Found Then
+            If searchRange.Find.found Then
                 ' searchRange now represents the found citation "[...]"
                 Set citationContentRange = searchRange.Duplicate ' Work with a copy
 
