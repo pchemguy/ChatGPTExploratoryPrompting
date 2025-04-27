@@ -226,7 +226,7 @@ Help me define section "5. A Priori Plausibility Assessment" from the following 
 
 - **Reverse-Engineering with Generalization:** Analyzing a specific example of desired reasoning or output (potentially generated manually or in a separate context) and asking the LLM to generalize that process into abstract instructions suitable for inclusion in the PUD. For example, ==Section IV.D.2.F== of the `PeerReviewPrompt` (see prompt text in {{Supporting Information}}{{LNK: #SI}}) concerning logical plausibility checks was developed using this approach. First, a guided analysis of a specific process (similar to [83]) was performed. Then, the LLM was asked to abstract this specific analysis into general instructions for the PUD (==Section IV.D.2-3== of the prompt at that time), directing the model executing the PUD to identify suitable physical/chemical models, extract parameters, find governing equations, perform estimations, and compare with claimed results, without using terminology specific to the initial example analysis (source chat for this step was unfortunately lost).
 
-### 2.2 **Prompt Architecture: Hierarchical Modular Analysis Framework**
+### **2.2 Prompt Architecture: Hierarchical Modular Analysis Framework**
 
 #### **2.2.1 Scope Definition and Development Test Case**
 
