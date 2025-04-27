@@ -121,7 +121,7 @@ Public Sub CreateBibliographyHyperlinks()
     Dim errorDescription As String
 
     On Error GoTo ErrorHandler
-
+    Application.ScreenUpdating = False
     Set doc = ActiveDocument ' Explicitly use ActiveDocument
 
     '--- Step 1a: Setup Logging ---
@@ -246,6 +246,7 @@ ProcedureExit:
     Set regExVal = Nothing          ' Already cleared after validation
     Set validationMatches = Nothing ' Already cleared after validation
     Set doc = Nothing
+    Application.ScreenUpdating = True
     Exit Sub
 
 ErrorHandler:
@@ -344,9 +345,7 @@ Public Sub CreateDOILinksInRange(Optional targetRange As Word.Range = Nothing)
     Dim strMsg As String                ' For final message box
 
     On Error GoTo ErrorHandler
-    Application.ScreenUpdating = False
     Set doc = ActiveDocument
-    Call SetupLogFile(doc) ' Initialize file logging
 
     Call LogMessage(vbCrLf & "--- Starting CreateDOILinksInRange at " & Now & " ---")
 
@@ -514,7 +513,6 @@ Public Sub CreateDOILinksInRange(Optional targetRange As Word.Range = Nothing)
 
 CleanUp:
     On Error Resume Next ' Ensure final cleanup attempts don't raise new errors
-    Application.ScreenUpdating = True
     ' Release objects
     Set doc = Nothing
     Set rngToProcess = Nothing
@@ -523,7 +521,6 @@ CleanUp:
     Set linkRange = Nothing
     Set regExDOI = Nothing
     Set doiMatch = Nothing
-    Call CloseLogFile ' Close log file if it was opened
 
     ' Display Summary Message ONLY if no error occurred (ErrorHandler jumps past this)
     If Err.Number = 0 Then
@@ -545,7 +542,6 @@ ErrorHandler:
 
     ' --- Attempt Cleanup within Error Handler ---
     On Error Resume Next ' Prevent error during cleanup hiding original error
-    Application.ScreenUpdating = True
     ' Release objects
     Set doc = Nothing
     Set rngToProcess = Nothing
@@ -554,7 +550,6 @@ ErrorHandler:
     Set linkRange = Nothing
     Set regExDOI = Nothing
     Set doiMatch = Nothing
-    Call CloseLogFile ' Close log file if it was opened
     On Error GoTo 0 ' Restore default error handling
     ' --- End Cleanup Attempt ---
 
