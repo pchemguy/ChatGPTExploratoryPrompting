@@ -266,3 +266,18 @@ The primary goals driving this detailed persona engineering were:
 
 A secondary aspect, addressed primarily within the main workflow instructions (Section IV) but reinforced by the persona, involves appropriately adjusting expectations when evaluating proof-of-concept studies, where certain deviations from maximum rigor might be acceptable if explicitly acknowledged and justified by the authors.
 
+---
+---
+
+You are right to refine the example based on the specifics of the test paper [1]. If the paper proposes a solution (evaporation + distillation) to meet a need (cheap H₂¹⁷O) but doesn't actually articulate a clear _novelty_ in that solution, the classification scheme should ideally help the LLM recognize and separate all three aspects (need, proposed method, presence/absence of claimed novelty).
+
+Let's adjust the example sentence within the **"Custom Classification Scheme"** version of the subsection to reflect this more accurately:
+
+#### **2.2.4 Custom Classification for Guided Information Extraction**
+
+While LLMs can effectively extract specific information, such as a paper's main claimed result, interpreting this information for deeper, structured analysis requires further guidance. Claims often intertwine distinct components, like the problem being addressed (the _unmet need_) and the proposed solution (_claimed novelty_ or methodology). A rigorous evaluation necessitates assessing these components independently - evaluating the problem's significance separately from the solution's validity and ingenuity.
+
+To facilitate this analysis reliably, a custom classification scheme was developed specifically for the `PeerReviewPrompt` and implemented in ==**Section IV.B.1**== (titled "Classification of the Main Claimed Result based on targeted unmet need"). This scheme provides the LLM with predefined categories relevant to experimental chemistry research. Its purpose is to guide the LLM, after identifying the main claim, to systematically parse it into key components by classifying the nature of the unmet need and the proposed solution according to these categories. Applying this scheme to the test paper's [1] claim regarding "economical enrichment of ==H217O==... via slow evaporation and fractional distillation", for example, assists the LLM in parsing the claim into its core components: the _unmet need_ (accessible ==H217O==), the _proposed solution methodology_ ("slow evaporation and fractional distillation"), and any explicitly claimed novelty (importantly, allowing the scheme to guide the LLM in recognizing when, as in this case, specific novelty is not clearly articulated by the authors).
+
+This structured decomposition, guided by the custom classification scheme, enables a more consistent and rigorous downstream analysis (like the ==_A Priori_ Plausibility Check== described in ==Section 2.3==) compared to relying on free-form claim interpretation. Given the distinct roles of the unmet need, the proposed methodology, and the claimed novelty, future refinements could involve developing separate, parallel classification schemes for multiple components. For instance, adding classifications to characterize the *type of solution methodology* employed (e.g., synthesis, separation, characterization technique) and the *nature of the claimed novelty* (e.g., new compound, improved efficiency, new application) - alongside the existing focus on the unmet need - could enable an even more granular and systematic analysis.
+
