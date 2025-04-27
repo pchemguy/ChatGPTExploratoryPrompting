@@ -1,3 +1,14 @@
+# **Zero-Code AI Simulation of Scholarly Peer Review via** **Persistent Workflow Prompting,** **Meta-Prompting, and Meta-Reasoning**
+
+
+Evgeny Markhasin  
+Lobachevsky State University of Nizhny Novgorod  
+https://orcid.org/0000-0002-7419-3605  
+https://linkedin.com/in/evgenymarkhasin
+
+**Abstract**
+
+Critical peer review of scientific manuscripts presents a significant challenge for Large Language Models (LLMs), partly due to the limited availability of actual review data for training. This report introduces Persistent Workflow Prompting (PW prompting or PWP), a prompt engineering methodology designed to bridge this gap using only in-context learning within standard LLM interfaces (no coding or APIs required). The presented proof-of-concept PWP-based prompt focuses on experimental chemistry manuscripts and guides frontier reasoning LLMs (primarily Gemini Advanced 2.5 Pro) through a systematic, multimodal analysis. The prompt features a hierarchical, modular architecture formatted in Markdown, defining complex review tasks as structured workflows. Submitted once at the start of a session, this master prompt equips the LLM with persistent workflows triggered by subsequent user queries (e.g., Analyze the core experimental protocol). Key capabilities demonstrated by the prompt include: identifying core claims vs. evidence, performing multimodal analysis integrating text and figures (including photographs), inferring missing parameters, executing quantitative feasibility checks via idealized process modeling and a priori estimations, comparing these estimations against claimed results, and assessing overall experimental plausibility. This work highlights the potential of advanced prompt engineering to enable complex, domain-specific reasoning and analysis in scientific research using readily available LLMs.
 
 **## 1. Introduction**
 
