@@ -186,3 +186,52 @@ For instance, the development of the prompt for the "_modZoteroFieldRecovery_" V
 **3. Guided Workflow Generation:**
 
 While allowing the LLM to suggest a workflow from scratch (as in ==Technique 1== above) offers flexibility, it may sometimes lack sufficient direction for highly complex or nuanced tasks. In such cases, *Guided Workflow Generation* provides a more robust approach. Here, the developer manually creates an initial draft of the workflow - ranging from a high-level outline to a detailed protocol - and includes it within the PUD template given to the meta-prompt. The meta-prompt then asks the LLM to refine, complete, or elaborate on this provided draft workflow. This initial human guidance significantly constrains the LLM's output towards the desired structure and logic. This guided approach was fundamental to developing the detailed analysis protocols within the `PeerReviewPrompt` (specifically its ==Section IV==) and was also used for the "_MarkupProcessor_" VBA module [78], where providing a detailed initial draft greatly simplified subsequent refinement.
+
+#### **2.1.5 Meta-Prompting for Complex Prompts**
+
+Developing highly complex PUDs often benefits from treating the LLM less like a simple tool and more like a collaborative partner or peer engineer, particularly when using state-of-the-art reasoning models. This involves employing more sophisticated meta-prompting techniques to refine intricate structures, logic, and content. Examples of such techniques used during the development of the `PeerReviewPrompt` include (see shared AI chats [81, 82] for further details):
+
+- **Focused Refinement:** Targeting specific parts of the PUD for improvement.
+
+```
+Here is my current version of the prompt. Improve paragraph 1 in section D.2.
+---
+{Relevant excerpt of PUD Text, including section D.2}
+```
+
+- **Structure Optimization:** Collaboratively reasoning with the LLM about the PUD's high-level architecture, such as persona design or section organization, weighing pros and cons of different structures.
+
+```
+Do you see the two-level role of a researcher playing the role of a student? What are the pros and cons of this architecture? If it doesn't provide obvious benefits, how would I collapse it to a single role, while maintaining all features and specifications related to the ultimate objective? [...]
+
+Reflect on this idea: generating a collapsed single role per recommendations, but reintroducing the student role not as a simulation, but specifying somehow this behavior as part of the expert's role. [...]
+
+Help me integrate the hybrid persona definition into the previous Expert Analyst persona.
+```
+
+- **Reflective Refinement:** Asking the LLM to reflect on undesired behaviors observed during prompt execution and suggest improvements to the PUD to mitigate them.
+
+```
+How do I improve the original prompt to make sure you do not use reported results for justifications [during analysis]?
+```
+
+- **Section Generation from Unstructured Notes:** Providing rough notes or questions and asking the LLM to structure them into a formal section of the PUD according to specified formatting rules.
+
+```
+Help me define section "5. A Priori Plausibility Assessment" from the following text notes, formatting it as a bulleted list where each question/assessment becomes its own bullet and all conditionals are dropped:
+---
+[Text notes, e.g., "Does the main result involve a process... superior compared to existing alternatives...? If yes, do authors identify... novel highly unintuitive solution...?"]
+---
+```
+
+- **Reverse-Engineering with Generalization:** Analyzing a specific example of desired reasoning or output (potentially generated manually or in a separate context) and asking the LLM to generalize that process into abstract instructions suitable for inclusion in the PUD. For example, ==Section IV.D.2.F== of the `PeerReviewPrompt` (see prompt text in {{Supporting Information}}{{LNK: #SI}}) concerning logical plausibility checks was developed using this approach. First, a guided analysis of a specific process (similar to [83]) was performed. Then, the LLM was asked to abstract this specific analysis into general instructions for the PUD (==Section IV.D.2-3== of the prompt at that time), directing the model executing the PUD to identify suitable physical/chemical models, extract parameters, find governing equations, perform estimations, and compare with claimed results, without using terminology specific to the initial example analysis (source chat for this step was unfortunately lost).
+
+### 2.2 **Prompt Architecture: Hierarchical Modular Analysis Framework**
+
+#### **2.2.1 Scope Definition and Development Test Case**
+
+Leveraging domain expertise in experimental physical chemistry, this field was selected as the target scope for the initial `PeerReviewPrompt` development. The prompt's detailed workflows and evaluation criteria were designed accordingly.
+
+A crucial part of the iterative development process involved selecting a suitable test publication to serve as both a benchmark and a source of challenging analysis requirements. A specific publication [1] focusing on isotopic enrichment, known to contain significant and demonstrable methodological flaws, was chosen for this purpose. Its known issues made it a particularly informative test case for developing a prompt aimed at critical evaluation rather than simple summarization. The use of a single publication for development is a limitation of this initial proof-of-concept work, necessitated by resource constraints; testing on a broader range of manuscripts remains future work.
+
+For practical testing during development, the manuscript file and its corresponding supporting information were combined into a single PDF document, which was used as the input for the LLM analyses discussed later.
