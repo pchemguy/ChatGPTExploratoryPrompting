@@ -266,13 +266,6 @@ The primary goals driving this detailed persona engineering were:
 
 A secondary aspect, addressed primarily within the main workflow instructions (Section IV) but reinforced by the persona, involves appropriately adjusting expectations when evaluating proof-of-concept studies, where certain deviations from maximum rigor might be acceptable if explicitly acknowledged and justified by the authors.
 
----
----
-
-You are right to refine the example based on the specifics of the test paper [1]. If the paper proposes a solution (evaporation + distillation) to meet a need (cheap H₂¹⁷O) but doesn't actually articulate a clear _novelty_ in that solution, the classification scheme should ideally help the LLM recognize and separate all three aspects (need, proposed method, presence/absence of claimed novelty).
-
-Let's adjust the example sentence within the **"Custom Classification Scheme"** version of the subsection to reflect this more accurately:
-
 #### **2.2.4 Custom Classification for Guided Information Extraction**
 
 While LLMs can effectively extract specific information, such as a paper's main claimed result, interpreting this information for deeper, structured analysis requires further guidance. Claims often intertwine distinct components, like the problem being addressed (the _unmet need_) and the proposed solution (_claimed novelty_ or methodology). A rigorous evaluation necessitates assessing these components independently - evaluating the problem's significance separately from the solution's validity and ingenuity.
