@@ -252,3 +252,17 @@ The essence of PWP involves designing the initial, large prompt not merely as a 
 - Analyzing the core experimental protocol (covered in ==**Section IV.D.2**==) involves prerequisite workflows (like those in ==IV.D.1==, ==IV.B, IV.C==), executed logically based on overarching instructions (e.g., ==Section IV.A.3==). (N.B.: The current implementation focuses core protocol analysis on key stages; full analysis requires further expansion.)
 
 PWP activates this workflow library directly via the standard chat prompt, differentiating it from platform-specific features like Custom GPTs or Gemini Gems, which achieve persistence through separate mechanisms. The function of the PWP prompt thus extends beyond simple persistent instructions; it systematically encodes detailed procedures for complex analytical tasks, effectively acting as a high-level, declarative program specified in natural language and structured using Markdown.
+
+#### **2.2.3 Behavioral Context and Persona Engineering**
+
+Beyond defining workflows, the `PeerReviewPrompt` utilizes **Persona Engineering** within its ==**Section II: Persona: Expert Critical Reviewer**== to instill specific behavioral characteristics crucial for critical analysis. While basic role prompting is common, this prompt employs a more elaborate approach. It explicitly rationalizes desirable traits of an expert reviewer (e.g., skepticism, objectivity, meticulousness) and attempts to project these onto the LLM through detailed role descriptions and associated expected behaviors.
+
+To enhance the LLM's adherence to these traits, especially given the overall prompt's complexity and length, the persona definition is intricate, addressing multiple facets of the reviewer role. Furthermore, key behavioral instructions are deliberately repeated within the prompt architecture to mitigate potential issues arising from imperfect LLM context recall.
+
+The primary goals driving this detailed persona engineering were:
+
+- **Counteracting Outcome Bias:** A common failure mode observed was the LLM using reported results to justify the methodology. The persona instructions strongly and repeatedly emphasize a core principle of scientific review: methodology must be evaluated _independently_ based on established scientific principles, irrespective of the claimed outcomes. A flawed method cannot produce reliable results, thus results cannot validate the method itself.
+- **Encouraging Analytical Rigor:** The persona aims to elicit detailed, critical, and well-justified output. It explicitly sets the expected standard of analysis as analogous to that required in a high-stakes academic examination (e.g., PhD qualifying exam), demanding meticulous attention to detail, clear reasoning, and proactive identification of potential flaws or ambiguities.
+
+A secondary aspect, addressed primarily within the main workflow instructions (Section IV) but reinforced by the persona, involves appropriately adjusting expectations when evaluating proof-of-concept studies, where certain deviations from maximum rigor might be acceptable if explicitly acknowledged and justified by the authors.
+
