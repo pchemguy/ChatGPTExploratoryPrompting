@@ -18,11 +18,14 @@ Several strategies can help bridge these gaps:
 
 1. **Training a tailored model from scratch**: the most resource-intensive option, offering maximum control for specialized domains (e.g., protein chemistry) and tasks (e.g., chemical reaction extraction).
 2. **Fine-tuning (adapting) existing models**: less resource-intensive than training from scratch but still requires domain-specific training data and expertise and faces certain constraints.
-3. **Advanced prompting**: often the most practical approach that provides necessary knowledge and workflow guidance directly within the prompt, requiring no changes to the underlying model and compatible with most available LLMs, including proprietary ones.
+3. **Steering responses at inference time**: often the most practical approach that relies on advanced prompting techniques to provide necessary knowledge and workflow guidance directly within the prompt, requiring no changes to the underlying model and compatible with most available LLMs, including proprietary ones.
 
-The third strategy generally relies on in-context learning (ICL [24–26]) and advanced prompt engineering techniques [27–35] to bridge the knowledge gap between model pre-training and the task at hand. Particular appeal of inference-time techniques stems from their ability to take full advantage of the most powerful frontier models, which incorporate the most expensive training (accessible to select few vendors in the world) and the best continuously improving world understanding.
- 
-Building on the potential of prompt engineering, this study focuses on applying this strategy to the complex challenge of AI-assisted scholarly peer review, as .
+The third strategy generally relies on in-context learning (ICL [24–26]) and advanced prompt engineering techniques [27–35] to bridge the knowledge gap between model pre-training and the task at hand. Particular appeal of inference-time techniques stems from their ability to take full advantage of the most powerful frontier models, which incorporate
+- the most expensive training (only accessible to select few vendors in the world),
+- the best continuously improving world understanding,
+- emerging multimodal analysis functionality,
+- rapidly increasing inference-time limits.
+Building on the potential of prompt engineering, this study focuses on developing and applying advanced prompting techniques to the challenge of AI-driven scholarly peer review, acting as a model complex problem of significant interest.
 
 ### **1.1 Scholarly Peer Review**
 
