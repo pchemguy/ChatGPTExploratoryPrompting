@@ -331,6 +331,42 @@ Find
 
 * Generalize questions
 
+
+---
+---
+
+- **2.3.1 The Challenge: Translating Expert Review into Actionable Prompts:**
+    - Briefly introduce the core challenge: peer review relies heavily on expert intuition and tacit knowledge [71], which is difficult to articulate explicitly for an LLM. State the goal is to formalize this process for the prompt.
+- **2.3.2 Meta-Reasoning I: Deconstructing the Core Review Workflow:**
+    - Explain the process of analyzing and breaking down the typical expert workflow for evaluating an experimental chemistry paper.
+    - Discuss how key steps were identified and translated into prompt sections/instructions. Integrate your existing content here:
+        - Analyzing the main result and key findings (linking to Section IV.B in the prompt).
+        - Critically evaluating the experimental methodology (linking to Section IV.D). This includes the principle of independent assessment and the need to compare claimed methods against established knowledge.
+- **2.3.3 Meta-Reasoning II: Implementing Quantitative & Multimodal Analysis:**
+    - Focus specifically on how the more complex analytical components were formalized. Use your examples:
+        - The steps derived for quantitative feasibility checks (identifying parameters, models, equations, handling missing info, calculation, comparison - linking to Section IV.D.2.F).
+        - Incorporating multimodal analysis (using the figure analysis example for missing parameters).
+- **2.3.4 Meta-Reasoning III: Formalizing Heuristics (e.g., "Too Good to Be True"):**
+    - Use the "Too Good to Be True" analysis as a case study in formalizing an intuitive expert judgment. Detail the steps/factors you identified (disruptive claim + simple methods + no novelty + knowledge conflict + lack of author justification) and how they were translated into prompt instructions (e.g., the _A Priori_ Plausibility Assessment in Section IV.D.2.5).
+- **2.3.5 Meta-Meta-Reasoning: Reflecting on the Knowledge Codification Process:**
+    - Step back and reflect on _how_ the above formalization (the meta-reasoning) was achieved.
+    - Discuss the process of introspection, identifying subconscious reasoning steps, and abstracting them.
+    - Integrate and elaborate on the points currently under your "Knowledge Codification Strategies" heading here as general principles or insights derived from this reflective process (e.g., identifying contradictions, missing details, poor practices; articulating intuition via "why" questions; generalizing specific analyses). Aim to provide transferable insights for others.
+- **2.3.6 Linking Formalized Procedures to PWP Architecture:**
+    - Briefly summarize how the formalized steps, heuristics, and principles discussed map directly onto the hierarchical and modular structure of the `PeerReviewPrompt`, reinforcing the PWP concept.
+
+**Benefits of this Structure:**
+
+- Clearly separates the description of the formalized review steps (2.3.2, 2.3.3, 2.3.4 - Meta-Reasoning) from the reflection on the formalization process itself (2.3.5 - Meta-Meta-Reasoning).
+- Provides logical flow from the challenge to specific examples to general principles.
+- Allows for integration of all your existing content within a more organized framework.
+- Explicitly links the formalized logic back to the prompt's structure.
+
+Does this proposed structure align with your vision for reorganizing and developing this section? If so, we can start revising the content piece by piece according to this plan.
+
+---
+---
+
 ## 3. **Discussion**
 
 ### 1. **Meta-Analysis**
