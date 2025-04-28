@@ -253,7 +253,7 @@ Leveraging domain expertise in experimental physical chemistry, this field was s
 
 A crucial part of the iterative development process involved selecting a suitable test publication to serve as both a benchmark and a source of challenging analysis requirements. A specific publication [1] focusing on isotopic enrichment, known to contain significant and demonstrable methodological flaws, was chosen for this purpose. Its known issues made it a particularly informative test case for developing a prompt aimed at critical evaluation rather than simple summarization. The use of a single publication for development is a limitation of this initial proof-of-concept work, necessitated by resource constraints; testing on a broader range of manuscripts remains future work.
 
-For practical testing during development, the manuscript file and its corresponding supporting information were combined into a single PDF document, which was used as the input for the LLM analyses discussed later.
+For practical testing during development, the input material used was the manuscript file combined with its corresponding supporting information, taken exactly as provided by the publisher without structural modification or reformatting. This ensured testing occurred on realistic, commonly encountered input formats.
 
 #### **2.2.2 Persistent Workflow Prompting (PWP)**
 
@@ -391,7 +391,18 @@ Intriguingly, the LLM analyses highlighted at least two potentially significant 
 
 These observations suggest the potential for PWP-guided LLMs not only to structure analysis but also to augment human review by identifying flaws that might be overlooked due to differing expertise or attention patterns. However, these findings are preliminary. A systematic comparison of analyses across models and multiple runs, potentially using quantitative metrics alongside qualitative assessment, is required for a rigorous evaluation of the prompt's performance, reliability, and limitations. Such a detailed comparative analysis was beyond the scope of this initial proof-of-concept study.
 
-### **3.2 Future Directions**
+### **3.2 Study Limitations**
+
+This study presents a proof-of-concept and, as such, has several important limitations that should be considered when interpreting the results and potential applicability of the PWP methodology:
+
+1. **Single Test Case:** The `PeerReviewPrompt` was developed and primarily tested using a single manuscript ==[1]==. Although chosen deliberately for its known flaws, this reliance on one test case limits the assessment of the prompt's generalizability to other experimental chemistry papers, particularly those that are methodologically sound or contain different types of errors.
+2. **Limited Prompt Scope:** As detailed (==Section 3.3 - Future Directions==), the current prompt workflows focus predominantly on the core experimental methodology described in the test paper, omitting rigorous analysis of crucial aspects like product characterization, subsequent experiments, subsidiary findings, data presentation, statistical validity, and introductory/concluding sections.
+3. **Qualitative, Non-Benchmarked Evaluation:** The assessment of the prompt's performance presented herein (==Section 3.1==) is qualitative and observational. _No quantitative benchmark_ was constructed for systematic evaluation against ground truth or objective metrics. Performance-related statements are based solely on the author’s conventional (human-driven) evaluation of the generated LLM analyses, which introduces subjectivity and lacks comparison to defined baselines.
+4. **Uncharacterized LLM Reliability:** While the PWP aims to guide LLMs towards rigorous analysis, inherent LLM limitations like potential hallucination or inconsistent context recall were observed occasionally but were not systematically characterized or quantified within this study. The impact of such issues on the reliability of the generated review feedback requires further investigation.
+
+Collectively, these limitations underscore the preliminary nature of this work. Addressing them through broader testing, scope expansion, and systematic evaluation represents crucial future research directions.
+
+### **3.3 Future Directions**
 
 The current `PeerReviewPrompt` serves as an initial proof-of-concept demonstrating the Persistent Workflow Prompting (PWP) methodology. Its development was intentionally focused on a limited scope (core experimental steps) and tested primarily against a single, deliberately chosen manuscript ==[1]==. While this approach allowed for focused development and demonstrated the potential for PWP to guide complex critical analysis, several avenues for future work are apparent.
 
@@ -405,8 +416,13 @@ Key directions for further development include:
     - **General Manuscript Components:** Extending analysis beyond experimental procedures to cover data presentation (tables, figures beyond basic analysis), statistical validation (if applicable), the adequacy and clarity of the Introduction and Conclusions sections, and overall consistency throughout the manuscript.
 3. **Optimizing Prompt Architecture:** While functional, the internal structure of the `PeerReviewPrompt` warrants optimization. All components, especially the main workflow library (==**Section IV**==), should be reviewed for clarity, efficiency, and logical flow. For example, the current structure of ==**Section IV.D**== (Analysis of Experimental Methodology) might be streamlined, and the triggering logic defined in sections like ==**IV.A.3**== could be refined based on broader testing.
 4. **Systematic Performance Evaluation:** As noted in ==Section 3.1==, a rigorous, systematic evaluation is needed. This should involve comparing the outputs generated using PWP across different models and against baseline prompting techniques (e.g., zero-shot, simple role prompts) and, ideally, against actual human expert reviews, using both qualitative and quantitative metrics.
-5. **Exploring PWP in Other Domains:** The PWP methodology, involving a persistent workflow library activated via standard chat interfaces, is potentially applicable to other complex, multi-step analytical tasks beyond chemistry peer review. Future work could explore adapting PWP for domains like code review, legal document analysis, or complex troubleshooting procedures.
+5. **Extending and Specializing PWP Applications:** The core Persistent Workflow Prompting (PWP) methodology appears potentially applicable to a range of complex analytical tasks beyond the current proof-of-concept. Future work could explore several avenues of extension and specialization:
+    - **Within Chemistry (Generalization and Specialization):** Beyond the current experimental focus, PWP could be adapted for theoretical chemistry manuscripts, requiring workflows tailored to evaluate theoretical frameworks, derivations, and computational methods. Furthermore, within both experimental and theoretical chemistry, opportunities exist for more specialized PWP designs targeting the specific nuances, common methodologies, and quality criteria of particular subfields (e.g., organic synthesis, analytical chemistry, quantum chemistry) or even the unique review standards of individual journals.
+    - **Peer Review in Other Sciences:** The PWP methodology could be tailored for scholarly peer review in other scientific disciplines (e.g., physics, biology, materials science, computer science) by collaborating with domain experts. For each discipline, similar to chemistry, both generalized PWP review prompts (e.g., for experimental biology) and more specialized versions targeting specific sub-disciplines or journals could likely be developed and prove useful.
+    - **Beyond Peer Review:** The PWP concept might also prove valuable for entirely different complex, multi-step analytical or procedural tasks outside of academic peer review, such as code generation with detailed control, detailed code review, analysis of laboratory notebooks, planning / designing experiments.
 6. **Refining Meta-Development Processes:** Further research into the meta-prompting and meta-meta-reasoning techniques (==Section 2.1, 2.3.5==) could yield more systematic and efficient methods for developing complex workflow prompts like PWP.
 
 Addressing these points will help mature the `PeerReviewPrompt` into a more robust tool and further validate the broader potential of the Persistent Workflow Prompting methodology.
+
+
 
