@@ -2,8 +2,9 @@
 
 >[!Warning]
 >
-> **1. Consider adding TOC**
-> **2. Add complexity/structure management considerations to "2.1.5 Meta-Prompting for Complex Prompts" (Markdown, XML, JSON, hierarchy, etc.)**
+> **1. Consider adding TOC**  
+> **2. Add notes on (Markdown, XML, JSON, hierarchy, etc.) to 2.2.2 Persistent Workflow Prompting (PWP)**  
+> 3. **Description of shared convos in SI**  
 
 Evgeny Markhasin  
 Lobachevsky State University of Nizhny Novgorod  
