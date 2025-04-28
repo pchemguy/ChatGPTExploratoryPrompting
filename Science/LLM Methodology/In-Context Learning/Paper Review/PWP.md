@@ -61,7 +61,7 @@ The main contributions of this paper are:
 
 Meta-prompting represents an emerging methodology within prompt engineering [74, 75]. While a standard prompt typically targets a specific _actual problem_ seeking a direct solution, a meta-prompt operates at a higher level of abstraction. It focuses on the prompting process itself, aiming either to refine the LLM's inference process for the actual problem or to generate a new prompt - the _Prompt Under Development_ (PUD) - which will subsequently be used to solve the actual problem. This meta-prompting workflow thus often involves two distinct stages: _prompt generation_ (developing the PUD) and _prompt execution_ (using the PUD to address the actual problem).
 
-The techniques encompassed by meta-prompting are valuable for refining even simple prompts and become indispensable when engineering complex prompts for challenging tasks. The prompt generation stage can utilize the same LLM intended for the subsequent prompt execution, a different model, or even specialized tools like Anthropic’s prompt generator [76]. Given that prompt development itself can be complex, particularly for intricate target tasks, frontier reasoning models are often preferred for the prompt generation stage. For the complex problems addressed in this work, reasoning models were typically employed for both prompt generation and execution.
+The techniques encompassed by meta-prompting are valuable for refining even simple prompts and become indispensable when engineering complex prompts for challenging tasks. The prompt generation stage can utilize the same LLM intended for the subsequent prompt execution, a different model, or even specialized tools like Anthropic’s prompt generator [76] with an XML-based meta-prompt. Given that prompt development itself can be complex, particularly for intricate target tasks, frontier reasoning models are often preferred for the prompt generation stage. For the complex problems addressed in this work, reasoning models were typically employed for both prompt generation and execution.
 
 The meta-prompting techniques utilized in this work can be broadly classified into two groups based on their primary focus and how they engage the LLM:
 
@@ -96,7 +96,7 @@ Analyze the following prompt below (Prompt Under Development or PUD) and conside
 
 This turns the meta-prompting process into a dialogue. Based on the LLM's feedback (e.g., questions about ambiguous instructions or missing details), the developer can provide clarifications. A subsequent meta-prompt then instructs the LLM to incorporate these clarifications and generate a revised PUD. The structure of this second meta-prompt can follow two main strategies regarding the inclusion of the PUD text itself:
 
-**1: Relying on Conversational Context**
+**1. Relying on Conversational Context**
 
 The meta-prompt provides only the answers or clarifications, assuming the LLM retains the full PUD context from the previous turn:
 
@@ -110,7 +110,7 @@ Revise the PUD based on our previous discussion, incorporating the following ans
 - **Pros:** More concise input message. Often sufficient in continuous chat sessions with models exhibiting strong context recall.
 - **Cons:** Susceptible to failure if the model's context window is exceeded, if context recall is imperfect (e.g., "lost in the middle"), or if the session is interrupted. Makes the revision step less self-contained and potentially harder to reproduce precisely.
 
-**2: Explicitly Providing Context**
+**2. Explicitly Providing Context**
 
 The meta-prompt includes both the clarifications _and_ the PUD text being revised:
 
