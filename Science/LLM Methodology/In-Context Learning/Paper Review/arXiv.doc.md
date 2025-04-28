@@ -11,7 +11,7 @@ https://linkedin.com/in/evgenymarkhasin
 
 Critical peer review of scientific manuscripts presents a significant challenge for Large Language Models (LLMs), partly due to the limited availability of actual review data for training. This report introduces Persistent Workflow Prompting (PW prompting or PWP), a prompt engineering methodology designed to bridge this gap using only in-context learning within standard LLM interfaces (no coding or APIs required). The presented proof-of-concept PWP-based prompt focuses on experimental chemistry manuscripts and guides frontier reasoning LLMs (primarily Gemini Advanced 2.5 Pro) through a systematic, multimodal analysis. The prompt features a hierarchical, modular architecture formatted in Markdown, defining complex review tasks as structured workflows. Submitted once at the start of a session, this master prompt equips the LLM with persistent workflows triggered by subsequent user queries (e.g., Analyze the core experimental protocol). Key capabilities demonstrated by the prompt include: identifying core claims vs. evidence, performing multimodal analysis integrating text and figures (including photographs), inferring missing parameters, executing quantitative feasibility checks via idealized process modeling and a priori estimations, comparing these estimations against claimed results, and assessing overall experimental plausibility. This work highlights the potential of advanced prompt engineering to enable complex, domain-specific reasoning and analysis in scientific research using readily available LLMs.
 
-# **{{Demo Usage Protocol}}{{BMK: \#Demo\_Usage\_Protocol}}**
+## **{{Demo Usage Protocol}}{{BMK: #Demo_Usage_Protocol}}**
 
 Basic prompt usage (see prompt source in [**{{**supporting information (SI)**}}{{LNK: \#SI}}**](#bookmark=id.qww106bbd6eu) file *PeerReviewPrompt.md*):
 
@@ -24,20 +24,20 @@ Other sample prompts to try (manuscript only needs to be submitted once per chat
 * *List all figures and tables directly associated with the core experimental protocol and main result*  
 * *Provide a detailed description of each figure associated with the core experimental protocol*
 
-# **{{Supporting Information}}{{BMK: \#SI}}**
+## **{{Supporting Information}}{{BMK: \#SI}}**
 
-A full demo analysis of \[[1](#bookmark=id.7da56ld7hdii)\] (including SI) using the [**{{**Demo Usage Protocol**}}{{LNK: \#Demo\_Usage\_Protocol}}**](#bookmark=id.5lmhynjc6mt0):
+A full demo analysis of [1] (including SI) using the **{{**Demo Usage Protocol**}}{{LNK: #Demo_Usage_Protocol}}**:
 
-* *Gemini\_Analysis.pdf* (shared AI chat \[[2](#bookmark=id.o0k47xuf46v1)\]) \- Gemini Advanced 2.5 Pro (primary target).  
-* *ChatGPT\_o3\_Analysis.pdf* (shared AI chat \[[3](#bookmark=id.rnjctza6kk1z), [4](#bookmark=id.s2quwm4u62zu)\]) \- ChatGPT Plus o3.  
-* Shared AI chats only: ChatGPT Plus o1 \[[5](#bookmark=id.z9p8okjfbx9m)\] and SuperGrok Grok 3 Think \[[6](#bookmark=id.btex086q0u64)\] (click on "Analysis of Core Experimental Protocol for H2\_17O Enrichment" at the bottom).
+* *Gemini_Analysis.pdf* (shared AI chat [2] - Gemini Advanced 2.5 Pro (primary target).  
+* *ChatGPT_o3_Analysis.pdf* (shared AI chat [3, 4] - ChatGPT Plus o3.  
+* Shared AI chats only: ChatGPT Plus o1 [5] and SuperGrok Grok 3 Think [6] (click on "Analysis of Core Experimental Protocol for H2\_17O Enrichment" at the bottom).
 
 Note: advanced features like modeling and multimodal analysis may yield variable or failed results.
 
 Markdown-formatted prompts:
 
 * *PeerReviewPrompt.md*:	PWP-based experimental chemistry review prompt text for use with LLMs.  
-* *DetailedMetaPrompt.md*:	Meta-prompt text for revision of prompts and meta-prompts (demo chat \[[7](#bookmark=id.tbhhphgp1vu)\]).
+* *DetailedMetaPrompt.md*:	Meta-prompt text for revision of prompts and meta-prompts (demo chat [7]).
 
 ## 1. **Introduction**
 
