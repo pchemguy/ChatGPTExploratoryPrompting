@@ -2,7 +2,8 @@
 
 >[!Warning]
 >
-> **Consider adding TOC**
+> **1. Consider adding TOC**
+> **2. Add complexity/structure management considerations to "2.1.5 Meta-Prompting for Complex Prompts" (Markdown, XML, JSON, hierarchy, etc.)**
 
 Evgeny Markhasin  
 Lobachevsky State University of Nizhny Novgorod  
@@ -192,7 +193,7 @@ While allowing the LLM to suggest a workflow from scratch (as in ==Technique 1==
 
 #### **2.1.5 Meta-Prompting for Complex Prompts**
 
-Developing highly complex PUDs often benefits from treating the LLM less like a simple tool and more like a collaborative partner or peer engineer, particularly when using state-of-the-art reasoning models. This involves employing more sophisticated meta-prompting techniques to refine intricate structures, logic, and content. Examples of such techniques used during the development of the `PeerReviewPrompt` include (see shared AI chats [81, 82] for further details):
+Developing highly complex PUDs often benefits from treating the LLM less like a simple tool and more like a collaborative partner or peer engineer, particularly when using state-of-the-art reasoning models. This approach involves more sophisticated meta-prompting techniques to refine intricate structures, logic, and content. Examples of such techniques used during the development of the `PeerReviewPrompt` include (see shared AI chats [81, 82] for further details):
 
 - **Focused Refinement:** Targeting specific parts of the PUD for improvement.
 
