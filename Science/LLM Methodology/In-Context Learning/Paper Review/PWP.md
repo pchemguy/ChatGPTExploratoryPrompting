@@ -10,18 +10,8 @@ https://linkedin.com/in/evgenymarkhasin
 >[!Warning]
 >
 > - **Consider adding TOC**  
-> - **Add notes on (Markdown, XML, JSON, hierarchy, etc.) to 2.2.2 Persistent Workflow Prompting (PWP)**  
 > - **Description of shared convos in SI**  
-> ---  
-> - This chat documents the use of ai for revision of the manuscript. It also servers as a demo of advanced active use of ai as a peer for development of the manuscript. It begins with a draft already containing preliminary revised sections.
-> ---  
-> - By taking advantage of meta-reasoning and codifying tacit knowledge, it is likely possible to develop PWP libraries for solving many STEM problems (including those presented at international subject olympiads and humanity’s last exam) using workflows similar to those applied by humans. Further, such PWP libraries may demonstrate compatible performance between different frontier models and significantly improved stability of solutions for complex workflows between different runs.
-> ---
-> - Presented PWP-based prompt for critical peer-review-like analysis of experimental chemistry manuscripts demonstrated robust performance across frontier reasoning LLM models and between runs. The prompt successfully elicited complex in-depth generally reproducible analysis of the test manuscript and reliably picked major flaws within the prompts target scope.
-> ---
-> - The prompt has been developed and tested using a single flawed manuscript as available from the publisher. The manuscript was combined with supporting information file as provided by the publisher, but no other modifications have been introduced into the manuscript. No quantitative benchmark has been constructed for systematic evaluation of prompt performance; performance-related statements are solely based on author’s conventional (as in human-driven) evaluation of generated analyses.
-> ---
-> - Development of specialized domain- or even task-specific benchmarks for complex STEM tasks targeted by PWP architecture may prove instrumental for systematic refinement or such prompts. Of interest is development of focused benchmarking techniques that would enable gauging performance of individual blocks/sections within complex hierarchical prompts. If such techniques are combined with PWP-based meta-meta-prompts (to be developed) targeting LLM-driven meta-analysis of PWP-prompt performance, an automated sematics-driven prompt refinement process may be devised.
+
 
 ## **Abstract**
 
@@ -241,7 +231,7 @@ Help me define section "5. A Priori Plausibility Assessment" from the following 
 ---
 ```
 
-- **Reverse-Engineering with Generalization:** Analyzing a specific example of desired reasoning or output (potentially generated manually or in a separate context) and asking the LLM to generalize that process into abstract instructions suitable for inclusion in the PUD. For example, ==Section IV.D.2.F== of the `PeerReviewPrompt` (see prompt text in {{Supporting Information}}{{LNK: #SI}}) concerning logical plausibility checks was developed using this approach. First, a guided analysis of a specific process (similar to [83]) was performed. Then, the LLM was asked to abstract this specific analysis into general instructions for the PUD (==Section IV.D.2-3== of the prompt at that time), directing the model executing the PUD to identify suitable physical/chemical models, extract parameters, find governing equations, perform estimations, and compare with claimed results, without using terminology specific to the initial example analysis (source chat for this step was unfortunately lost).
+- **Reverse-Engineering with Generalization:** Analyzing a specific example of desired reasoning or output (potentially generated manually or in a separate context) and asking the LLM to generalize that process into abstract instructions suitable for inclusion in the PUD. For example, ==Section IV.D.2.F== of the `PeerReviewPrompt` (see prompt text in {{Supporting Information}}{{LNK: #SI}}) concerning quantitative feasibility checks was developed using this approach. First, a guided analysis of a specific process (similar to [83]) was performed. Then, the LLM was asked to abstract this specific analysis into general instructions for the PUD (==Section IV.D.2-3== of the prompt at that time), directing the model executing the PUD to identify suitable physical/chemical models, extract parameters, find governing equations, perform estimations, and compare with claimed results, without using terminology specific to the initial example analysis (source chat for this step was unfortunately lost).
 
 ### **2.2 Prompt Architecture: Hierarchical Modular Analysis Framework**
 
@@ -257,11 +247,11 @@ For practical testing during development, the input material used was the manusc
 
 The `PeerReviewPrompt` builds upon several advanced prompting techniques but introduces *Persistent Workflow Prompting* (PWP) as its core architectural principle. While incorporating standard top-level components like Role/Persona (==Section II== of the prompt), Context (==Section III==), and Task/Objective, the prompt's primary innovation lies in its detailed, hierarchical structure designed to guide complex analysis. This structure moves beyond basic instructions to meticulously define _how_ the analysis should be performed through explicit, multi-step workflows detailed primarily in the core ==Section IV: Specific Analysis Instructions==.
 
-The complexity of these workflows is managed using Markdown formatting within the prompt text. This formatting is essential, serving both to organize the extensive instructions for the human developer/user and, critically, to aid the LLM in parsing and correctly interpreting the intended hierarchical structure and dependencies between different analysis steps.
+The complexity of these workflows is managed using Markdown formatting within the prompt text (XML-based formatting is another potential alternative). This formatting is essential, serving both to organize the extensive instructions for the human developer/user and, critically, to aid the LLM in parsing and correctly interpreting the intended hierarchical structure and dependencies between different analysis steps.
 
 The essence of PWP involves designing the initial, large prompt not merely as a single request, but as a *persistent workflow library* intended to be loaded into the LLM's context memory at the start of a session (the prompt explicitly states this intent in ==Sections III and V==). Once loaded, this internal library of predefined workflows remains active. Subsequent, shorter user queries (e.g., "Analyze the core experimental protocol", "Extract the main result") act as triggers, invoking the relevant, detailed workflow(s) stored within the initial prompt's structure. This PWP approach enables complex, multi-turn analysis interactively without requiring the user to repeatedly submit the large, detailed framework, thereby preserving context window space for the manuscript and conversational history.
 
-==Section IV== of the `PeerReviewPrompt`, titled "Specific Analysis Instructions (Baseline Framework)", serves as the primary workflow library. For instance:
+==Section IV== "Specific Analysis Instructions (Baseline Framework)" of the `PeerReviewPrompt` serves as the primary workflow library. For instance:
 
 - A query about the main result triggers the specific workflow defined in ==**Section IV.B**== (Identifying Claimed Results and Contributions).
 - A request to analyze a specific figure invokes the workflow detailed in ==**Section IV.C**== (Analyzing Figures).
@@ -407,7 +397,7 @@ The current `PeerReviewPrompt` serves as an initial proof-of-concept demonstrati
 Key directions for further development include:
 
 1. **Expanding the Test Set:** The most critical next step is to evaluate the current `PeerReviewPrompt` against a diverse set of experimental chemistry manuscripts, including those considered methodologically sound and those with different types of flaws than the initial test case. This is essential to assess the prompt's generalizability, identify its weaknesses, and guide further refinement.
-2. **Broadening Analytical Scope:** The current `PeerReviewPrompt` workflows concentrate primarily on the core experimental protocol described for the main claimed result in the test paper ==[1]== (i.e., the ==H217O== enrichment via slow evaporation and fractional distillation ). Significant expansion is necessary to apply similarly rigorous, workflow-guided analysis to other critical components typical of experimental papers, including aspects present in the test case itself that are not yet deeply scrutinized by the prompt. Key areas for scope expansion include developing workflows to evaluate:
+2. **Broadening Analytical Scope:** The current `PeerReviewPrompt` workflows concentrate primarily on the core experimental protocol described for the main claimed result in the test paper ==[1]== (i.e., the ==H217O== enrichment via slow evaporation and fractional distillation). Significant expansion is necessary to apply similarly rigorous, workflow-guided analysis to other critical components typical of experimental papers, including aspects present in the test case itself that are not yet deeply scrutinized by the prompt. Key areas for scope expansion include developing workflows to evaluate:
     - **Product Characterization Methods:** Critically assessing the techniques used to quantify or characterize the main product. For example, in paper ==[1]==, this would involve analyzing the GC-MS methods using 1-hexanol and hexamethyldisiloxane derivatives, the density and refractive index measurements, and the NMR analyses used to determine or verify enrichment.
     - **Subsequent Syntheses/Applications:** Evaluating experiments where the primary product is used as a starting material. In paper ==[1]==, this includes the synthesis of ==17O-labeled== hydrogen peroxide via electrolysis and the preparation and characterization of ==17O-labeled== camphor.
     - **Subsidiary Findings:** Analyzing the methodology, data, and claims related to secondary or unexpected results reported, such as the investigation into the camphor-catalyzed oxygen exchange reaction with ethanol described in paper ==[1]==.
