@@ -1,17 +1,31 @@
 # **AI Simulation of Scholarly Peer Review via** **Persistent Workflow Prompting,** **Meta-Prompting, and Meta-Reasoning**
 
->[!Warning]
->
-> **1. Consider adding TOC**  
-> **2. Add notes on (Markdown, XML, JSON, hierarchy, etc.) to 2.2.2 Persistent Workflow Prompting (PWP)**  
-> 3. **Description of shared convos in SI**  
-
 Evgeny Markhasin  
 Lobachevsky State University of Nizhny Novgorod  
 https://orcid.org/0000-0002-7419-3605  
 https://linkedin.com/in/evgenymarkhasin
 
-**Abstract**
+## **Notes**
+
+>[!Warning]
+>
+> - **Consider adding TOC**  
+> - **Add notes on (Markdown, XML, JSON, hierarchy, etc.) to 2.2.2 Persistent Workflow Prompting (PWP)**  
+> - **Description of shared convos in SI**  
+> ---  
+> - This chat documents the use of ai for revision of the manuscript. It also servers as a demo of advanced active use of ai as a peer for development of the manuscript. It begins with a draft already containing preliminary revised sections.
+> ---  
+> - By taking advantage of meta-reasoning and codifying tacit knowledge, it is likely possible to develop PWP libraries for solving many STEM problems (including those presented at international subject olympiads and humanity’s last exam) using workflows similar to those applied by humans. Further, such PWP libraries may demonstrate compatible performance between different frontier models and significantly improved stability of solutions for complex workflows between different runs.
+> ---
+> - Presented PWP-based prompt for critical peer-review-like analysis of experimental chemistry manuscripts demonstrated robust performance across frontier reasoning LLM models and between runs. The prompt successfully elicited complex in-depth generally reproducible analysis of the test manuscript and reliably picked major flaws within the prompts target scope.
+> ---
+> - The prompt has been developed and tested using a single flawed manuscript as available from the publisher. The manuscript was combined with supporting information file as provided by the publisher, but no other modifications have been introduced into the manuscript. No quantitative benchmark has been constructed for systematic evaluation of prompt performance; performance-related statements are solely based on author’s conventional (as in human-driven) evaluation of generated analyses.
+> ---
+> - Development of specialized domain- or even task-specific benchmarks for complex STEM tasks targeted by PWP architecture may prove instrumental for systematic refinement or such prompts. Of interest is development of focused benchmarking techniques that would enable gauging performance of individual blocks/sections within complex hierarchical prompts. If such techniques are combined with PWP-based meta-meta-prompts (to be developed) targeting LLM-driven meta-analysis of PWP-prompt performance, an automated sematics-driven prompt refinement process may be devised.
+
+
+
+## **Abstract**
 
 Critical peer review of scientific manuscripts presents a significant challenge for Large Language Models (LLMs), partly due to the limited availability of actual review data for training. This report introduces Persistent Workflow Prompting (PW prompting or PWP), a prompt engineering methodology designed to bridge this gap using pure prompting techniques within standard LLM chatbot interfaces (no coding or APIs required). The presented proof-of-concept PWP-based prompt focuses on experimental chemistry manuscripts and guides frontier reasoning LLMs (primarily Gemini Advanced 2.5 Pro) through a systematic, multimodal analysis. The prompt features a hierarchical, modular architecture formatted in Markdown, defining complex review tasks as structured workflows. Submitted once at the start of a session, this master prompt equips the LLM with persistent workflows triggered by subsequent user queries (e.g., Analyze the core experimental protocol). Key capabilities demonstrated by the prompt include: identifying core claims vs. evidence, performing multimodal analysis integrating text and figures (including photographs), inferring missing parameters, executing quantitative feasibility checks via idealized process modeling and a priori estimations, comparing these estimations against claimed results, and assessing overall experimental plausibility. This work highlights the potential of advanced prompt engineering to enable complex, domain-specific reasoning and analysis in scientific research using readily available LLMs.
 
