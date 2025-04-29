@@ -11,6 +11,9 @@ https://linkedin.com/in/evgenymarkhasin
 >
 > - **Consider adding TOC**  
 > - **Description of shared convos in SI**  
+> - **Meta-prompting deep research query** (https://gemini.google.com/app/869846691a8c0dad)
+>   Consider including starting meta-prompt, meta-prompt detailing generation process of the target prompt, and the target prompt.
+> - **High abstraction with PE assistant meta^3-prompting**
 
 
 ## **Abstract**
