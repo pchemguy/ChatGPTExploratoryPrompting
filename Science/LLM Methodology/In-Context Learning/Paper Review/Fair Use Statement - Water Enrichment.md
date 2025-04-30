@@ -1,3 +1,4 @@
+<!-- https://gemini.google.com/app/6f0752346bfea1de -->
 # **Fair Use Statement**
 
 **1. Identification of Copyrighted Material:**
@@ -35,5 +36,4 @@
 **7. Conclusion:**
 - Based on the non-profit, educational, highly transformative nature of the use (critique, commentary, methodological advancement), the necessity of using the entire work for these specific purposes, and the argument that this use does not harm the legitimate market value due to the work's identified flaws and the distinct purpose of sharing, this distribution is asserted to be fair use.
 - This material is intended solely for the recipient(s) for purposes directly related to verifying, understanding, or building upon the presented critique and methodological research. **Further distribution is not permitted.** Copyright remains with the original holder(s).
-
 
