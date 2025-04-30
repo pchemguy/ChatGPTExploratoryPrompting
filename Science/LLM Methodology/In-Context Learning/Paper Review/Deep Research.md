@@ -7,8 +7,9 @@ Seed Meta-Prompt -> Develop/Refine Topic / Fix terminology -> Generator Meta-Pro
 - This chat documents the use of ai for revision of the manuscript. It also servers as a demo of advanced active use of ai as a peer for development of the manuscript. It begins with a draft already containing preliminary revised sections.
 
 
+Microplastics - Mammalian Fertilization and Early Embryonic Development
 
-# **Deep Research Prompt: Micro- and Nanoplastic Interference with Mammalian Fertilization, Syngamy, DNA Replication, and Early Embryonic Development**
+# **Deep Research Prompt: Microplastic Interference with Mammalian Fertilization and Early Embryonic Development**
 
 ## **Seed Meta-Prompt**
 
