@@ -14,6 +14,7 @@ https://linkedin.com/in/evgenymarkhasin
 > - **Meta-prompting deep research query** (https://gemini.google.com/app/869846691a8c0dad)
 >   Consider including starting meta-prompt, meta-prompt detailing generation process of the target prompt, and the target prompt.
 > - **High abstraction with PE assistant meta^3-prompting**
+> - https://raw.githubusercontent.com/pchemguy/GenAIandVBA/0475ac382b8329fa70855876a153c72f1de004e8/PWPSI/Enrichment%20of%20H2%2017O%20from%20Tap%20Water,%20Characterization%20of%20the%20Enriched%20Water,%20and%20Properties%20of%20Several%2017O-Labeled%20Compounds.pdf
 
 
 ## **Abstract**
