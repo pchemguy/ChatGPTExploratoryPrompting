@@ -17,3 +17,5 @@
 11. Formatting marks / non-printable characters display - `Ctrl-F10`
 12. Export as PDF `File -> Export As -> Export as PDF...` (verify initial view and links settings).
 13. May need to remove unnecessary bookmarks in the PDF or add custom properties, if desired.
+14. May need to add SI attachments, such as Markdown prompts.
+
