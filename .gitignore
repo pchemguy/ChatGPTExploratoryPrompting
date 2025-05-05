@@ -163,5 +163,5 @@ cython_debug/
 
 #Obsidian
 .obsidian
-~*.tmp
+*.tmp
 ~$*.doc*
