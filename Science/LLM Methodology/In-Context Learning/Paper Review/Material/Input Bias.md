@@ -9,7 +9,7 @@ I do not discuss the input biases in 1.1 at all, as I only recently articulated 
 ---
 INTO NOTES FOR INPUT BIAS
 
-The simulated reasoning feature is important for complex tasks like in-depth analysis of academic manuscripts.
+The simulated reasoning feature is important for complex tasks like in-depth analysis of academic manuscripts. Reasoning deficiencies, such as biases, affect both humans and LLMs. Reasoning biases form a group of reasoning problems of varying nature, with particular attention given in this work to the *input bias* phenomenon, discussed both in context of human [[#]] and LLM [[#]] reasoning.
 
 ---
 
