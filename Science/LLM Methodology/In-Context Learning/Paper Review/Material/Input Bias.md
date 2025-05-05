@@ -2,12 +2,14 @@ Here are full relevant sections to work on. Presently, I see three main tasks (a
 1. Tacit expert knowledge codification
 2. Development of generalized workflow for prompt that would guide AI analysis.
 3. Countering input biases
-While current intro identifies several difficulties that should be mentioned, there is no articulated mentioning of any of the tasks above. In fact, perhaps there is some linking to be made. The complexity of the problem, lack of training data and limitations of existing approaches discussed in the second half of the second para of 1.1 can be linked to the necessity to develop detailed workflow (task 2). Need for field specific tailoring - expert knowledge codification (task 1). And I do not discuss the input biases in 1.1 at all, as I only recently articulated this matter.
+While current intro identifies several difficulties that should be mentioned, there is no articulated mentioning of any of the tasks above. In fact, perhaps there is some linking to be made. The complexity of the problem, lack of training data and limitations of existing approaches discussed in the second half of the second para of 1.1 can be linked to the necessity to develop detailed workflow (task 2). Need for field specific tailoring - expert knowledge codification (task 1). Or do I have the links in Section 1.4, where the appropriate place is for linking general issues, specific articulated tasks, and proposed/developed solutions (or should linking be done in 1.2)?
+
+I do not discuss the input biases in 1.1 at all, as I only recently articulated this matter. And this point is not identified as one of the paper's contributions in 1.4, but this matter possibly deserves a dedicated bullet point.
 
 ---
 INTO NOTES FOR INPUT BIAS
 
-Input bias 
+The simulated reasoning feature is important for complex tasks like in-depth analysis of academic manuscripts.
 
 ---
 
@@ -16,6 +18,24 @@ Input bias
 Scholarly peer review is a cornerstone of academic research, demanding significant time, domain expertise, and critical reasoning. Using technical means to facilitate this process is a long-standing goal, which has gained urgency with the explosive growth of publishing activities and the recent advances in generative AI technologies increasingly used in academic publishing [[36, 37]]. The last few years alone have witnessed a wealth of publications addressing this automation problem via diverse approaches, including basic and methodological research [[38–46]], graph-based manuscript modeling [[47]], prompt-focused techniques [[42, 46]], probing capabilities of private and open-source models [[38, 48, 49]], investigations with reasoning models [[40, 50]], training custom models [[49–51]], developing multi-model/agentic systems [[38, 47–49, 52, 53]], and launching publicly accessible services [[38, 43, 50, 54]]. Due to its intellectually demanding nature, using AI for peer-review-like feedback also serves as a valuable method for evaluating and pushing the boundaries of advanced models.
 
 Despite this progress, automating peer review remains a significant challenge for modern AI [[39–41, 55]]. Key difficulties include inherent complexity of this task, the need for field-specific tailoring, and the historical lack of readily available, large-scale training datasets (with a number of attempts to address the latter issue [[43, 45, 48–50, 56–63]]). Furthermore, existing approaches often face limitations. Training data consisting of high-level reviewer comments may not effectively teach models the detailed, step-by-step reasoning required for rigorous manuscript evaluation. Similarly, prompts based solely on common reviewer guideline questions (e.g., [[64]]) may fail to elicit the necessary depth of analysis compared to methods like chain-of-thought (CoT) prompting [[65–67]].
+
+### 1.2. Our Approach: Persistent Workflow Prompting
+
+To address these limitations, particularly the need for detailed procedural guidance in AI-driven review, we explore an approach centered on advanced prompt engineering. Instead of relying solely on ICL examples or simple question lists, we focus on codifying the intellectual workflow inherent in rigorous peer review. Drawing inspiration from techniques like least-to-most prompting [[68]], task decomposition [[69]], plan-and-solve prompting [[70]], role-playing [[71, 72]], and PC-SubQ [[73]], we introduce Persistent Workflow Prompting (PWP). PWP utilizes a highly structured, hierarchical prompt that guides an LLM through a detailed analysis process. This guidance involves decomposing the complex task of reviewing (specifically for experimental chemistry manuscripts in this work) into a sequence of manageable steps, effectively translating tacit expert knowledge [[74]] into an actionable protocol for the AI. This methodology allows for complex analysis using only the standard chat interface of LLMs.
+
+### 1.4 Contributions and Outline
+
+While this paper details complex and abstract methodologies, it also provides readily accessible materials designed to facilitate understanding and quick replication via generally available AI chat bots. Key resources, including the full Markdown-formatted **_PeerReviewPrompt_** text for use with LLMs, a file with the **_test paper_** (including SI), **usage protocol**, and **demonstration analyses** are available in the **Supporting Information**, allowing readers to quickly test and verify the core PWP application described herein (**primary target model is** **Gemini Advanced 2.5 Pro**).
+
+The main contributions of this paper are:
+1. **Persistent Workflow Prompting (PWP):** We design, implement, and **introduce PWP**, a prompt engineering methodology employing a persistent, structured, workflow-based prompt to guide LLMs through complex, multi-step analytical tasks via standard chat interfaces.
+2. **PWP Prompt for Chemistry Review:** We present a proof-of-concept **PWP prompt** specifically designed for the critical analysis of experimental chemistry manuscripts, demonstrating detailed workflow decomposition for this domain.
+3. **Meta-Development Insights:** We describe the **meta-prompting** and **meta-reasoning** techniques used to iteratively develop and refine the PWP prompt, offering practical insights applicable to creating other complex, structured prompts.
+4. **Empirical Demonstration:** We provide a qualitative **demonstration** and **analysis** of the PWP prompt's application using readily available reasoning LLMs, showcasing its ability to generate detailed, structured peer-review-like feedback incorporating multimodal analysis and quantitative checks.
+
+The remainder of this paper is organized as follows: Section 2 details the methodology, including the **meta-prompting techniques** used (2.1), the **architecture of the PWP prompt** (2.2), and the **process of formalizing the review workflow** (2.3). Section 3 discusses the **results based on the demonstration analyses** (3.1), outlines **study limitations** (3.2), and **considers further development** (3.3).
+
+### 2.3. Formalizing the Review Process
 
 #### 2.3.1. Translating Expert Review into Actionable Prompts
 
