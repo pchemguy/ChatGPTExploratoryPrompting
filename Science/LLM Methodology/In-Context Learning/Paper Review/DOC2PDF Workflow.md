@@ -16,6 +16,7 @@
 10. Hidden text display in `Options -> LibreOffice Writer -> View`
 11. Formatting marks / non-printable characters display - `Ctrl-F10`
 12. Export as PDF `File -> Export As -> Export as PDF...` (verify initial view and links settings).
-13. May need to remove unnecessary bookmarks in the PDF or add custom properties, if desired.
-14. May need to add SI attachments, such as Markdown prompts.
+13. Save As in Acrobat to reduce file size.
+14. May need to remove unnecessary bookmarks in the PDF or add custom properties, if desired.
+15. May need to add SI attachments, such as Markdown prompts.
 
