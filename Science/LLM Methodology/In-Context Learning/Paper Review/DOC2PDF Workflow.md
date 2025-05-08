@@ -19,4 +19,13 @@
 13. Save As in Acrobat to reduce file size.
 14. May need to remove unnecessary bookmarks in the PDF or add custom properties, if desired.
 15. May need to add SI attachments, such as Markdown prompts.
+16. Meta:
+
+|         |                                           |
+| ------- | ----------------------------------------- |
+| arXivID | https://arxiv.org/abs/2505.03332          |
+| arXiv   | arXiv:2505.03332 [cs.AI]                  |
+| DOI     | https://doi.org/10.48550/arXiv.2505.03332 |
+| ORCID   | https://orcid.org/0000-0002-7419-3605     |
+
 
