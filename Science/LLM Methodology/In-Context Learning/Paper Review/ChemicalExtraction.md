@@ -41,7 +41,7 @@ Execute the following task step-by-step:
   
 
 Execute the following task step-by-step:
-1. Extract each and every chemical formula from the attached PDF EXACTLY as it appears in text.
+1. Scan entire document, including figures, and extract each and every chemical formula containing at least two elements from the attached PDF EXACTLY as it appears in text or in figures.
 2. For each extracted formula, extract every directly associated chemical name included in the text, if any.
 3. For each extracted formula and associated names, consider if the chemical formula EXACTLY as it appears in text and associated names are correct and match; flag every formula/names combination that contains any errors.
 4. Create a Markdown table that should include every flagged formula/names, clear description of any problems, corrected version, and clear reference location of the flagged items.
