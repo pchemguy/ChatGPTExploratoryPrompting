@@ -8,5 +8,5 @@ Execute the following task step-by-step, using the provided PDF content:
 5. Create a Markdown table for all items that remain flagged. The table should include:
     - `Flagged Formula / Name(s)`: The item as extracted (and potentially corrected if it was an AI extraction error).
     - `Problem Description`: A clear explanation of the error identified in step 3.
-    - `Corrected Version (if applicable)`: State the corrected formula/name if an AI extraction error was fixed in step 4b. When the chemical name in the text is general and does not specify a particular form, prefer the most common, stable, or canonical form of that material, unless such canonical/common form explicitly contradicts the specific name extracted from the text. Keep this field concise: simply state corrected formula or name when appropriate.
+    - `Corrected Version (if applicable)`: State the corrected formula/name if an AI extraction error was fixed in step 4b. When the chemical name in the text is general and does not specify a particular form, prefer the most common, stable, or canonical form of that material, unless such canonical/common form explicitly contradicts the specific name extracted from the text.
     - `Reference Location in PDF`: Specific location details (e.g., page number, paragraph, or table).
