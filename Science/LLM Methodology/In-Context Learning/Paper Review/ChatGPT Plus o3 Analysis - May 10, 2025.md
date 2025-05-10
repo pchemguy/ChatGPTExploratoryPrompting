@@ -1,3 +1,10 @@
+
+# ChatGPT Plus o3 Analysis - May 10, 2025
+
+>[!Note]
+>
+>Test manuscript file (*Anal. Chem.* 2011, 83, 231-239, DOI: 10.1021/ac1022887) + SI submitted with the prompt from Google Drive.
+
 # Prompt
 
 ## **Chemical Formula Extraction and Validation from PDF**
