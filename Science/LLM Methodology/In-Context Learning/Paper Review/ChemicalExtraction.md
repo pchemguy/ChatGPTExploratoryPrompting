@@ -1,7 +1,8 @@
 ## Chats
 
 https://gemini.google.com/app/da2c372e442f898c
-https://aistudio.google.com/prompts/1aURrRgT8Pu1p4iDr2X3mNFuN_RCbifs4
+https://aistudio.google.com/prompts/1CUpdXeLstQQp1y0UZ9R9ZvaBuhy6CNW1
+https://chatgpt.com/c/681f4950-b6ac-8004-8646-d75d1ca4d05b
 
 # **Chemical Formula Extraction and Validation from PDF**
 
