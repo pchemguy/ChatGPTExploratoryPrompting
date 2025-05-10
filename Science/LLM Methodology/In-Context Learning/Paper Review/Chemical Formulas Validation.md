@@ -24,6 +24,9 @@ $\dots$
 
 $\ce{Fe(NH4​)2​SO4​}: \text{Ferrous ammonium sulfate. Correct.}$
 
+What happens here most likely is the strength of an LLM is manifested makes it harder to flag an error. This issue may be better illustrated by the following prompt: `What is the capital of grate britain? Produce name of the capital only.` It does not matter that I misspelled `Great Britain` and both models spit out "London" - my errors got corrected automatically without LLM bothering me. This is the default behavior and is usually desirable. But not when I am trying to flag an incorrect chemical formula.
+
+In the referenced [preprint][PWP], I have discussed a different issue (*input bias*) which is likely associated with specifics of "normal" operation mode of LLMs, and I had to condition the model's context to suppress that issue. And it seems that the present difficulty is similarly related to a "normal" operation mode of LLMs, albeit likely caused by a different aspect of such a mode.
 
 <!-- References-->
 
