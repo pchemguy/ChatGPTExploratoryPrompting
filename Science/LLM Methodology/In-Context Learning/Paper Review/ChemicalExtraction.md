@@ -50,59 +50,62 @@ The **Specific Analysis Instructions** (Section IV) detail methodologies and ana
 
 These overarching guidelines govern _all_ critical analyses performed under this framework.
 
-1. **Scope of Analysis:**    
-    - **Default:** Analyze all provided materials (main text, supporting information, figures, tables, supplementary data) comprehensively.  
-    - **Restriction:** If a specific prompt explicitly limits the focus (e.g., "Analyze only Figure 2 and the Methods section"), adhere strictly to that limitation.  
-2. **CRITICAL CONSTRAINT: The Principle of Independent Methodological Scrutiny:**  
-    - **Core Rule:** Evaluate _every_ aspect of the experimental design, methodology, setup, assumptions, and procedures based _solely_ on established scientific principles, chemical feasibility, standard practices, known equipment limitations, and external validation (cited reputable sources).  
-    - **Strict Prohibition:** **UNDER NO CIRCUMSTANCES** may the manuscript's reported results, outcomes, successes, or conclusions be used as evidence or justification for the _validity, appropriateness, or effectiveness_ of the methods, assumptions, or experimental setup described.  
-    - **Rationale:** Methodological critique must _precede_ and remain _independent_ of outcome assessment. A flawed method cannot reliably produce valid results, regardless of what the authors claim to have achieved. The method must stand or fall on its own scientific merit _a priori_.  
-3. **Applying Specific Analysis Modules (Workflow Integration):**  
-    To be defined.
-4. **Evidence and Justification:**    
-    - Support all critical assessments, claims of flaws, or suggestions for alternatives with references to:  
-        - Reputable peer-reviewed scientific literature.  
-        - Standard chemical/physical principles and laws.  
-        - Established laboratory techniques and best practices (e.g., from standard textbooks and authoritative guides).  
-        - Reliable chemical databases (e.g., SciFinder, Reaxys, PubChem, NIST Chemistry WebBook).  
-        - Technical documentation or specifications from reputable equipment/reagent suppliers (when applicable and verifiable).  
-    - Clearly distinguish between established facts and reasoned inferences based on your expertise.  
+1. **Scope of Analysis:**
+    - **Default:** Analyze all provided materials (main text, supporting information, figures, tables, supplementary data) comprehensively.
+    - **Restriction:** If a specific prompt explicitly limits the focus (e.g., "Analyze only Figure 2 and the Methods section"), adhere strictly to that limitation.
+2. **CRITICAL CONSTRAINT: The Principle of Independent Methodological Scrutiny:**
+    - **Core Rule:** Evaluate _every_ aspect of the experimental design, methodology, setup, assumptions, and procedures based _solely_ on established scientific principles, chemical feasibility, standard practices, known equipment limitations, and external validation (cited reputable sources).
+    - **Strict Prohibition:** **UNDER NO CIRCUMSTANCES** may the manuscript's reported results, outcomes, successes, or conclusions be used as evidence or justification for the _validity, appropriateness, or effectiveness_ of the methods, assumptions, or experimental setup described.
+    - **Rationale:** Methodological critique must _precede_ and remain _independent_ of outcome assessment. A flawed method cannot reliably produce valid results, regardless of what the authors claim to have achieved. The method must stand or fall on its own scientific merit _a priori_.
+3. **Applying Specific Analysis Modules (Workflow Integration):**
+    - To be defined.
+4. **Evidence and Justification:**
+    - Support all critical assessments, claims of flaws, or suggestions for alternatives with references to:
+        - Reputable peer-reviewed scientific literature.
+        - Standard chemical/physical principles and laws.
+        - Established laboratory techniques and best practices (e.g., from standard textbooks and authoritative guides).
+        - Reliable chemical databases (e.g., SciFinder, Reaxys, PubChem, NIST Chemistry WebBook).
+        - Technical documentation or specifications from reputable equipment/reagent suppliers (when applicable and verifiable).
+    - Clearly distinguish between established facts and reasoned inferences based on your expertise.
 
-### **Chemical Identifier Analysis** 
+### **Chemical Identifier Analysis**
 
-*This analysis section focuses on identifying errors, inconsistencies, and ambiguities in chemical formulas and names. **IMPORTANT:** when requested or prescribed by this framework, you must meticulously scan the entire document(s), including figures and any supporting materials and extract any information **EXACTLY** as it appears in text or figures regardless of any potential issues or errors present in the source documents for independent evaluation by a human reviewer.*
+_This analysis section focuses on identifying errors, inconsistencies, and ambiguities in chemical formulas and names. **IMPORTANT:** when requested or prescribed by this framework, you must meticulously scan the entire document(s), including figures and any supporting materials and extract any information **EXACTLY** as it appears in text or figures regardless of any potential issues or errors present in the source documents for independent evaluation by a human reviewer._
 
-1. **Overall Issues and Resolution Guidelines:**  
+1. **Overall Issues and Resolution Guidelines:**
     - **Chemical Formula Issues:**
-        - Formulas, suggesting incorrect valencies or oxidation states.
+        - Formulas suggesting incorrect valencies or oxidation states.
         - Misspelled chemical element symbols.
         - Wrong letter cases.
         - Confused chemical element symbols or similar looking letters and digits.
         - Improbable element or structural arrangements.
         - Ambiguous representations, unless such ambiguities are natural for the specific context and use case (such as when simply indicating molecular formula in context of elemental analysis).
-        - Inconsistent ор слоппы use.
-          Inconsistent use of alternative representations or simplifications, unless justified explicitly, by context, or by logical flow. When referring to common compounds, canonical or common formulas or formulas corresponding to commonly available stable material forms are usually preferable (especially, if one would typically use such a stable form in practice in the relevant context), unless specifically referencing a particular differing form (e.g., anhydrous compound commonly available as a hydrate) and such a form is clearly identified in the associated name.
-    - **Chemical Name Issues:** 
+        - Inconsistent or sloppy use.
+        - Inconsistent use of alternative representations or simplifications, unless justified explicitly, by context, or by logical flow. When referring to common compounds, canonical or common formulas or formulas corresponding to commonly available stable material forms are usually preferable (especially, if one would typically use such a stable form in practice in the relevant context), unless specifically referencing a particular differing form (e.g., anhydrous compound commonly available as a hydrate) and such a form is clearly identified in the associated name.
+        - Missing formulas.
+        - For common, basic, or conventional compounds, chemical formula may often be unnecessary, especially when names are sufficiently clear. Such cases should not be flagged.
+    - **Chemical Name Issues:**
         - Missing names.
-          The general practice is that most chemicals should be identified by an unambiguous systematic or common name (except for the very common chemicals having unambiguous or well-understood formula representations). While context may often disambiguate residual ambiguities, ambiguous or sloppy language in formal scientific communications is generally discouraged. 
+        - The general practice is that most chemicals should be identified by an unambiguous systematic or common name (except for the very common chemicals having unambiguous or well-understood formula representations). While context may often disambiguate residual ambiguities, ambiguous or sloppy language in formal scientific communications is generally discouraged.
         - Misspelled words.
         - Nomenclature errors.
         - Wrong common names (for example, referring to a different isomer).
         - Sloppy use (e.g., using a common name associated with a hydrate when referring to an anhydrous form - the problem may also arise when hydrate was actually used, but indicated formula omitted water of hydration, constituting a sloppy formula use).
-    - **Resolution of Ambiguities:** 
+    - **Resolution of Ambiguities:**
         - Use both extracted formulas and associated names, as well as their specific use context, surrounding text, and any other relevant necessary reasonable considerations to correct any ambiguities or errors. Clearly and explicitly indicate specific logic used in the resolution process.
         - Unless explicitly stated and discussed by the authors, any formula or name irregularities should be flagged as an issue for further inspection by a human reviewer.
-2. **Chemical Formula and Name Inspection:**  
-    1. Extract every chemical entity formula and every directly associated chemical name, recording their **EXACT** appearance (including any potential issues as they appear) and precise location in the document for easy specific source identification by a human reviewer.
-    2. Use **Overall Issues and Resolution Guidelines** to identify any formula or naming issues and suggest the most likely correction.
-    3. Generate analysis table including:
+2. **Chemical Formula and Name Inspection:**
+    1. Meticulously scan the entire document(s), including figures and any supporting materials, and extract every chemical entity formula and every directly associated chemical name, recording their **EXACT** appearance (including any potential issues as they appear) and precise location in the document.
+    2. **Filter Extracted Entities:** From the extracted list, **exclude** any entity that meets the following criteria:
+        - The representation of the entity includes symbols not allowed in standard chemical formulas (e.g., 'M', '+', '-', '/', unless part of a standard ion charge representation like Na+ or SO42−​ or isotopic notation like 13C). This specifically excludes notations for molecular ions, fragments, or mass shifts like M+, M−1, M−CH4​, M+1, m/z.
+        - The representation of the entity, as it appears, consists of only a single chemical element symbol (possibly with isotopic numbers, charges, or positional/stereochemical descriptors, but no other element symbols). This specifically excludes notations like 16O, 17O, 18O, 28Si, C2​, H1​, H5​ endo, C2​, C1​, etc., when they appear alone as identifiers.
+    3. For the remaining, **filtered** list of multi-element chemical formulas (and their associated names), use the **Overall Issues and Resolution Guidelines** to identify any formula or naming issues and suggest the most likely correction.
+    4. For all **filtered** entities, generate an analysis table including:
         - `Extracted Formula`
         - `Extracted Names`
         - `Problem description`
-          Clearly identify any problems, context, if relevant, and suggested resolution logic. Use the dash symbol to indicate items with no identified issues.  
+        - Clearly identify any problems, context, if relevant, and suggested resolution logic. Use the dash symbol to indicate items with no identified issues.
         - `Correction`
-          The most likely corrected formula or name (any comments, explanations, or alternatives should be included in the `Problem description` field). Use a checkmark symbol to indicate items with no identified issues.
+        - The most likely corrected formula or name (any comments, explanations, or alternatives should be included in the `Problem description` field). Use a checkmark symbol to indicate items with no identified issues.
         - `Source Location`
-          Indicate precise location in the document of the extracted source item that includes any issues. For items with no issues, especially items with multiple locations, indicate page numbers only (use page numbering used in the document; if document contains no identifiable page numbers, simply indicated sequential page number in the source document).  
-        
-
+        - Indicate precise location in the document of the extracted source item that includes any issues. For items with no issues, especially items with multiple locations, indicate page numbers only (use page numbering used in the document; if document contains no identifiable page numbers, simply indicated sequential page number in the source document).
