@@ -70,7 +70,7 @@ These overarching guidelines govern _all_ critical analyses performed under this
 
 ### **Chemical Identifier Analysis**
 
-_This analysis section focuses on identifying errors, inconsistencies, and ambiguities in chemical formulas and names. **IMPORTANT:** you must extract any information **EXACTLY** as it appears in text or figures regardless of any potential issues or errors present in the source documents for independent evaluation by a human reviewer._
+_This analysis section focuses on identifying errors, inconsistencies, and ambiguities in chemical formulas and names. **IMPORTANT:** you must meticulously scan the entire document(s), including figures and any supporting materials and extract any requested information **EXACTLY** as it appears in text or figures regardless of any potential issues or errors present in the source documents for independent evaluation by a human reviewer. You must also record precise location (extract **EXACT** numbers or identifiers as they appear printed on each page of the source document) in the document of the extracted information._
 
 1. **Overall Issues and Resolution Guidelines:**
     - **Chemical Formula Issues:**
@@ -94,23 +94,24 @@ _This analysis section focuses on identifying errors, inconsistencies, and ambig
         - Use both extracted formulas and associated names, as well as their specific use context, surrounding text, and any other relevant necessary reasonable considerations to correct any ambiguities or errors. Clearly and explicitly indicate specific logic used in the resolution process.
         - Unless explicitly stated and discussed by the authors, any formula or name irregularities should be flagged as an issue for further inspection by a human reviewer.
 2. **Chemical Formula and Name Inspection:**
-    1. Meticulously scan the entire document(s), including figures and any supporting materials, and extract every chemical entity representing syntactically valid chemical formula of a chemical compound or stable molecular fragment and any directly associated chemical names recording their **EXACT** appearance (including any potential issues as they appear) and precise location in the document (you must extract **EXACT** numbers or identifiers as they appear printed on each page of the source document).
-       **Important:** only extract chemical entities that include at least two distinct elements in the extracted representation; entities including only a single chemical element symbol or no chemical symbols at all, as well as entities that do not represent a stable compound (iron cation is a common stable molecular fragment existing in solution; methyl group DOES NOT represent a stable compound; 35P includes ONLY ONE chemical symbol; `TMS` DOES NOT REPRESENT a chemical formula, nor does it contain even a single chemical element symbol) MUST BE excluded. 
-    2. **Filter Extracted Entities:** From the extracted list, **exclude** any entity that includes in its recorded representation:
-        - Symbols not allowed in standard chemical formulas.
-        - Symbols referencing at most one chemical element.
-    3. For the remaining, **filtered** list of multi-element chemical formulas (and their associated names), use the **Overall Issues and Resolution Guidelines** to identify any formula or naming issues and suggest the most likely correction.
-    4. For all **filtered** entities, generate an analysis table including:
-        - `Extracted Formula`
-          **IMPORTANT**: This field must be unique! Combine all occurrences of the same formula. 
-        - `Extracted Names`
-            When no name was extracted, use the dash symbol.
-        - `Problem description`
-            Clearly identify any problems, context, if relevant, and suggested resolution logic. Use the dash symbol to indicate items with no identified issues.
-        - `Correction`
-            The most likely corrected formula or name (any comments, explanations, or alternatives should be included in the `Problem description` field). Use a checkmark symbol to indicate items with no identified issues.
-        - `Source Location`
-            Indicate precise location in the document of the extracted source item. For items with identified issues or multiple locations, list all relevant locations.
+    1. Extract every chemical entity representing syntactically valid chemical formula of a chemical compound or stable molecular fragment.
+           **Important:** only extract chemical entities that include at least two distinct elements in the extracted representation; entities including only a single chemical element symbol or no chemical symbols at all, as well as entities that do not represent a stable compound (e.g., sodium cation is a common stable molecular fragment existing in solution; ethyl group DOES NOT represent a stable compound; 35P includes ONLY ONE chemical symbol; `TMS` DOES NOT REPRESENT a chemical formula, nor does it contain even a single chemical element symbol) MUST BE excluded or filtered out after initial extraction. 
+    2. Extract every chemical names directly associated with each extracted and not excluded or filtered out entity in **Point 1**.
+    3. Use the **Overall Issues and Resolution Guidelines** to identify any formula or naming issues for data produced after execution of **Point 1 & 2** and suggest the most likely correction for each identified issue.
+    4. Generate an analysis table including:
+        - Literal Extracted Formulas/Representations
+            - List all the literal formulas or representations as extracted from the document (from Point 1) that correspond to this canonical/corrected formula. This shows what was actually found in the text. (This would be a new or modified column to clearly separate literal from canonical).
+            - This field must be unique. All identical references should be grouped together.
+        - Canonical/Corrected Formula
+            - This field represents the corrected and canonical chemical formula for the identified chemical substance after the resolution process (Point 3). Only fill for corrected items; otherwise, leave blank.
+        - Extracted Names (from Point 2)
+            - When no name was extracted, use the dash symbol.
+        - Problem description (from Point 3)
+            - Clearly identify any problems, context, if relevant, and suggested resolution logic. Use the dash symbol to indicate items with no identified issues.
+        - Correction (from Point 3)
+            - The most likely corrected formula or name (any comments, explanations, or alternatives should be included in the Problem description field). Use a checkmark symbol to indicate items with no identified issues.
+        - Source Location
+            - Indicate precise location in the document of the extracted source item(s).
 
 ## **V. Final Instructions for Interaction**  
 
