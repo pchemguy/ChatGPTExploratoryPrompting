@@ -1,0 +1,1 @@
+# Debugging Prompts - Insights from Gemini Thinking Log. 

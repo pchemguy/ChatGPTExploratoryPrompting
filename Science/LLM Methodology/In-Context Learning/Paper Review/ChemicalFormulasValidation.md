@@ -1,26 +1,3 @@
-# Chats
-
-https://gemini.google.com/app/da2c372e442f898c
-https://aistudio.google.com/prompts/1CUpdXeLstQQp1y0UZ9R9ZvaBuhy6CNW1
-https://chatgpt.com/c/681f4950-b6ac-8004-8646-d75d1ca4d05b
-
-# Naive Prompts
-
-## V1
-
-Find mistakes in chemical formulas and names
-
-## V2
-
-### Chemical Formula Extraction and Validation from PDF
-
-Execute the following task step-by-step:Â 
-1. Extract each and every chemical formula from the attached PDF.Â 
-2. For each extracted formula, extract every directly associated chemical name included in the text, if any.Â 
-3. For each extracted formula and associated names, consider if the chemical formula and associated names are correct and flag every formula/names combination that contains any errors.Â 
-4. For each flagged item, read the source PDF again and confirm that the item was extracted exactly. In case of any extraction errors, analyze the corrected item and consider if the flag should be removed.Â 
-5. Created a Markdown table that should included every flagged formula/names, clear description of any problems, corrected version, and clear reference location of the flagged items.
-
 # **Chemical Formula Extraction and Validation**
 
 ## **I. Core Objective**
@@ -118,16 +95,16 @@ _This analysis section focuses on identifying errors, inconsistencies, and ambig
     3. Use the **Overall Issues and Resolution Guidelines** to identify any formula or naming issues for data produced after execution of **Point 1 & 2** and suggest the most likely correction for each identified issue.
     4. Generate an analysis table including:
         - Literal Extracted Formulas/Representations
-            - Literal formula or representationÂ as extracted from the documentÂ (from Point 1), showing what was actually found in the text.
+            - Literal formula or representation as extracted from the document (from Point 1), showing what was actually found in the text.
             - This field must be unique. All identical references should be grouped together.
         - Canonical/Corrected Formula
-            - Corrected/canonical chemical formula for theÂ identified chemical substanceÂ after the resolution process (Point 3). Only fill for corrected items; otherwise, leave blank.
-        - Extracted NamesÂ (from Point 2)
+            - Corrected/canonical chemical formula for the identified chemical substance after the resolution process (Point 3). Only fill for corrected items; otherwise, leave blank.
+        - Extracted Names (from Point 2)
             - When no name was extracted, use the dash symbol.
-        - Problem descriptionÂ (from Point 3)
+        - Problem description (from Point 3)
             - Clear description of any problems, context, if relevant, and suggested resolution logic. Use the dash symbol to indicate items with no identified issues.
-        - CorrectionÂ (from Point 3)
-            - The most likely corrected formula or name (any comments, explanations, or alternatives should be included in theÂ Problem descriptionÂ field). Use a checkmark symbol to indicate items with no identified issues.
+        - Correction (from Point 3)
+            - The most likely corrected formula or name (any comments, explanations, or alternatives should be included in the Problem description field). Use a checkmark symbol to indicate items with no identified issues.
         - Source Location
             - Precise location in the document of the extracted source item(s).
 
