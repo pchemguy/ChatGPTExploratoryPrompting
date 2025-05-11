@@ -1,6 +1,8 @@
-# Debugging Prompts - Insight from Gemini Thinking Log. Multimodal Validation of Chemical Formulas
+# **Debugging Prompts - Insight from Gemini Thinking Log. Multimodal Validation of Chemical Formulas**
 
 In [this work][PWP], I have used this [*test paper*][test paper] to explore applications of advanced prompt engineering techniques to analysis of scholar manuscripts in experimental chemistry. This post continues that work by exploring options for analysis of chemical formulas. The [*test paper*][test paper] constitutes a convenient challenging test case for this task as well (chemical needle in a haystack). Manuscript + SI (a copy of this file is also available from an OSF repository linked from the [preprint][PWP]) combined totals to 44 pages. In this document, page S-8 shows a formula of *ferrous ammonium sulfate* as $\ce{Fe(NH4)2SO4}$ that misses one sulfate. I decided to see how difficult it would be to make a fairly generic prompt to spot this error.
+
+## **Direct Approach**
 
 I started with a basic prompt and tested it using Gemini Advanced 2.5 Pro and ChatGPT Plus o3.
 `Find mistakes in chemical formulas and names.`
@@ -32,6 +34,11 @@ What happens here most likely is the strength of an LLM is manifested makes it h
 In present case, the process of discovery of a minor deviation of one entity ($\ce{Fe(NH4​)2​SO4​ vs. Fe(NH4​)2​(SO4​)2}$) in a group of associated entities (in present case, the other entity also extracted from text is the name of the compound "$\text{ferrous ammonium sulphate}$"; note, this time the source spelling is used) via "direct contrasting" (`Point 3` in the prompt above) is complicated by LLM's natural ability for error correction, which needs to be either suppressed in a controlled fashion or error detection strategy/algorithm needs to be more complex, avoiding the direct contrasting of "complementary" entities. 
 
 One of my early attempts to avoid the direct contrasting of "complementary" entities (the second strategy) was based on a modified prompt, shown in **"Appendix. Chemical Formula Analysis - Generated Formulas and Names"**, along with the LLM's response. I wanted LLM to generate a chemical name from extracted formula. I anticipated that for minor issues, LLM would generate correct names even from defective formulas. The second step was to have LLM generate a formula from the generated name. Finally, LLM would compare the extracted and generated formulas. This approach was still fairly basic and, while it may have improved the reliability somewhat (or maybe it did not, I have not attempted to perform a rigorous systematic comparison), it remained unreliable. Noteworthy, one of the runs produced a table shown in the same appendix, that included references to various sources (I have checked a few references and found working hyperlinks and reasonable sources).
+
+## **Context Conditioning via PWP Snippet and Multimodal Analysis**
+
+After numerous unsuccessful attempts (I was able to flag the target formula, but very unreliably), I decided to try a radically different approach by resorting to model's context conditioning discussed in the [*test paper*][test paper].
+
 
 
 <!-- References-->
