@@ -42,15 +42,6 @@ After numerous unsuccessful attempts (I was able to flag the target formula, but
 I pulled sections **I-III**, responsible for general context conditioning, the final section **V**, and section **IV.A** from the *PeerReviewPrompt*. I have retained most of the original contents, except for clauses specifically related to processing workflows described in the main section **IV**. I have introduced **Chemical Identifier Analysis** subsection into the main section **IV**
 
 
-<!-- References-->
-
-[PWP]: https://arxiv.org/abs/2505.03332
-[test paper]: https://doi.org/10.1021/ac1022887
-[ChemicalFormulasValidationPrompt]: https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/PWP/ChemicalFormulasValidation.md
-[GeminiNaiveAnalysis]: https://g.co/gemini/share/a62c19799936
-[GeminiNaiveAnalysisReaction]: https://g.co/gemini/share/70cd2d7b296b
-
-
 
 ## **Appendix. Chemical Formula Analysis - Generated Formulas and Names**
 
@@ -114,3 +105,14 @@ The following table details the chemical formulas extracted directly from the PD
 **Note on Fe(NH4​)2​SO4​:** The extracted formula Fe(NH4​)2​SO4​ does not directly correspond to the common compound Ferrous Ammonium Sulfate (Mohr's Salt), which is a double salt with the formula (NH4​)2​Fe(SO4​)2​ or its hexahydrate Fe(NH4​)2​(SO4​)2​⋅6H2​O. The extracted formula suggests a 1:1 ratio of ammonium to sulfate, whereas Mohr's salt has a 2:2 (or 1:1 after simplifying the sulfate part if written as FeSO4​⋅(NH4​)2​SO4​⋅6H2​O). The regenerated formula from the name "Ferrous ammonium sulfate" typically refers to the double salt. The PDF on page S-8 in the supporting information lists "Fe(NH4​)2​SO4​" when discussing the quantitation of H2​O2​. This might be a specific notation or a typo in the source document for what is commonly known as Mohr's Salt, or a different, less common species.
 
 The analysis involved extracting formulas exactly as they appeared in the PDF, using web searches to generate their common chemical names, and then using those names to regenerate chemical formulas for comparison.
+
+
+## **References**
+
+<!-- References-->
+
+[PWP]: https://arxiv.org/abs/2505.03332
+[test paper]: https://doi.org/10.1021/ac1022887
+[ChemicalFormulasValidationPrompt]: https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/PWP/ChemicalFormulasValidationPrompt.md
+[GeminiNaiveAnalysis]: https://g.co/gemini/share/a62c19799936
+[GeminiNaiveAnalysisReaction]: https://g.co/gemini/share/70cd2d7b296b
