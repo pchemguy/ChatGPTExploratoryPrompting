@@ -4,6 +4,10 @@ https://gemini.google.com/app/da2c372e442f898c
 https://aistudio.google.com/prompts/1CUpdXeLstQQp1y0UZ9R9ZvaBuhy6CNW1
 https://chatgpt.com/c/681f4950-b6ac-8004-8646-d75d1ca4d05b
 
+https://gemini.google.com/app/5ab711f2d705d634
+https://gemini.google.com/app/c6a7e5e5a0fa3708
+https://gemini.google.com/app/0e031f4ba35a4cc7
+
 # Naive Prompts
 
 ## V1
