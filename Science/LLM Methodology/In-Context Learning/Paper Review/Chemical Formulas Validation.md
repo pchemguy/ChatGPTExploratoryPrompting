@@ -45,7 +45,10 @@ The second approach should be more robust. In such a case, the second (follow-up
 
 `Perform comprehensive Chemical Identifier Analysis`
 
-Demonstration AI chats are provided for [Gemini 2.5 Pro][GeminiAnalysis] () and [ChatGPT Plus o3][ChatGPTAnalysis]. Note that the Gemini 2.5 Pro model accessible via [Google AI Studio](https://aistudio.google.com) often performs better than Gemini Advanced 2.5 Pro model accessible via [Gemini app](https://gemini.google.com), and this is the reason why the Gemini demo chat shared here is based on Google AI Studio, and not Gemini app. This new prompt demonstrated robustness and worked fairly reliably with Gemini 2.5 Pro (in Google AI Studio; I did have issues with Gemini-app-based variant) and ChatGPT Plus o3. Note that the present version of While I was discovered a single incorrect formula in SI text and attempted to target reliably, this extended prompt also included instructions to perform multimodal analysis by requesting figure analysis explicitly.
+Demonstration AI chats are provided for [Gemini 2.5 Pro][GeminiAnalysis] () and [ChatGPT Plus o3][ChatGPTAnalysis]. Note that the Gemini 2.5 Pro model accessible via [Google AI Studio](https://aistudio.google.com) often performs better than Gemini Advanced 2.5 Pro model accessible via [Gemini app](https://gemini.google.com), and this is the reason why the Gemini demo chat shared here is based on Google AI Studio, and not Gemini app. This new prompt demonstrated robustness and worked fairly reliably with Gemini 2.5 Pro (in Google AI Studio; I did have issues with Gemini-app-based variant) and ChatGPT Plus o3. Note that the present version of the [ChemicalFormulasValidationPrompt][ChemicalFormulasValidationPrompt] prompt instructs the LLM to include all extracted formulas in the final table, not just the incorrect ones. The 1st column of the output table shows extracted chemical formula, the 2nd and 5th columns show corrected version, while the 4th column describes the problem. If the LLM has not found any issue for a particular formula, the 5th (**Correction**) column shows a checkmark symbol. While I discovered a single incorrect formula in SI text and attempted to target it reliably, this extended prompt also included instructions to perform multimodal analysis by requesting figure analysis explicitly.
+
+Both demo AI chats include a couple false positives (mistakenly labeled issues). Both models reproducibly and clearly identified the target test formula. However, if we examine the Gemini table, it also identified a problem with hexamethyldisiloxane formula in Figure 2c, page 235, main text. This figure include a raster image of an NMR spectra and has a label $\ce{(CH3)3Si2O}$, which is wrong. In fact, I have not noticed this error until Gemini identified it correctly. I have performed several runs with Gemini, and it reliably identified both of these errors.
+
 
 ## **Appendix. Chemical Formula Analysis - Generated Formulas and Names**
 
@@ -117,7 +120,7 @@ The analysis involved extracting formulas exactly as they appeared in the PDF, u
 
 [PWP]: https://arxiv.org/abs/2505.03332
 [test paper]: https://doi.org/10.1021/ac1022887
-[ChemicalFormulasValidationPrompt]: https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/PWP/ChemicalFormulasValidationPrompt.md
+[ChemicalFormulasValidationPrompt]: https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/ChemicalFormulasValidationPrompt/PWP/ChemicalFormulasValidationPrompt.md
 [GeminiNaiveAnalysis]: https://g.co/gemini/share/a62c19799936
 [GeminiNaiveAnalysisReaction]: https://g.co/gemini/share/70cd2d7b296b
 [GeminiAnalysis]: https://aistudio.google.com/app/prompts/1CUpdXeLstQQp1y0UZ9R9ZvaBuhy6CNW1
