@@ -37,7 +37,7 @@ One of my early attempts to avoid the direct contrasting of "complementary" enti
 
 ## **Context Conditioning via PWP Snippet and Multimodal Analysis**
 
-After numerous unsuccessful attempts (I was able to flag the target formula, but very unreliably), I decided to try a radically different approach by resorting to model's context conditioning discussed in the [*test paper*][test paper].
+After numerous unsuccessful attempts (I was able to flag the target formula, but very unreliably), I decided to try a radically different approach by resorting to model's context conditioning discussed in the PWP [preprint][PWP], which also introduced a complex *PeerReviewPrompt* that successfully implemented context conditioning (though it ultimately *input bias* phenomenon, likely having a different, but still related nature).
 
 
 
