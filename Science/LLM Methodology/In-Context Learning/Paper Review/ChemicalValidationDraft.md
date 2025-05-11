@@ -1,4 +1,4 @@
-# **AI-Assisted Multimodal Chemical Formula Validation: Insight from  Gemini Thinking Log**
+# **AI-Driven Multimodal Validation of Chemical Formulas: Insights from  Gemini Thinking Log**
 
 ## **Abstract**
 
