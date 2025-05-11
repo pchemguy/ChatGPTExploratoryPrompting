@@ -82,11 +82,9 @@ Validating chemical formulas within scientific texts using LLMs presents distinc
 
 Preliminary tests demonstrated the efficacy of advanced LLM context conditioning in overcoming this challenge. Specifically, the presented *ChemicalFormulasValidationPrompt*, adapted from the previously developed PWP-based *PeerReviewPrompt*, reproducibly identified the target chemical formula error using two frontier, generally available LLM models. Furthermore, reproducible multimodal analysis was demonstrated with the Gemini 2.5 Pro model, where a defective chemical formula within a figure was successfully identified by relating it to its name extracted from the figure caption, and subsequently corrected. Conversely, the same tests failed to elicit effective multimodal analysis for this specific task with the ChatGPT Plus o3 model.
 
-Context conditioning, which has demonstrated robustness in this and the previous PWP preprint study with respect to managing LLM behaviors that likely contribute to input bias and error suppression, may hold potential for broader applications. For instance, similar PWP-informed techniques could prove useful in fields such as medical AI, particularly for workflows involving the critical processing and validation of information from individual patient records.
+The demonstrated robustness of context conditioning in managing LLM behaviors - particularly those contributing to input bias and error suppression, as evidenced in this study and the previous PWP preprint - suggests potential for broader applications. For instance, similar PWP-informed techniques could prove useful in fields such as medical AI, especially for workflows involving the critical processing and validation of information from individual patient records. Another promising application lies in the extraction and validation of information from semi-structured, unstructured, or poorly structured sources, such as those found in pharmaceutical or technical documentation, where the ability to suppress silent error correction by LLMs may be of paramount importance.
 
 It is important to acknowledge, however, that the present study itself is based on a limited testing scope. Consequently, while the presented prompt shows promise as a proof-of-concept, future work should focus on more extensive testing across diverse datasets and further refinement of these PWP-informed methods to enhance accuracy and ensure wider applicability in complex scientific content analysis and validation.
-
-
 
 ---
 
