@@ -157,19 +157,11 @@ $\ce{Fe(NH4)2SO4}\text{,}$
 
 $\mathrm{Fe(NH_{4})_{2}{}^{6}SO_{4}}$
 $\mathrm{Fe(NH_{4})_{2}SO_{4}}$
+$Fe(NH_{4})_{2}SO_{4}$
+
+$Fe(NH_{4})_{2}SO_{4}$
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+$\mathrm{Fe(NH_{4})_{2}SO_{4}}$ 
+$\mathrm{Fe(NH_{4})_{2}(SO_{4})_{2}}$  
+$\mathrm{(NH_{4})_{2}Fe(SO_{4})_{2} \bullet 6H_{2}O}$  
