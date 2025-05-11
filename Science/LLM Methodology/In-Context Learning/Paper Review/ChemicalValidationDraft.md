@@ -6,20 +6,17 @@ This work explores prompt engineering strategies for the validation of chemical 
 
 ## **1. Introduction**
 
-Previous work explored the application of advanced prompt engineering techniques, specifically Persistent Workflow Prompting (PWP), for the critical analysis of scholarly manuscripts in experimental chemistry, using a specific test paper [test paper][test paper] as a challenging case study. This article extends that investigation by focusing on a common yet critical task: the validation of chemical formulas within scientific texts. The same test paper, a 44-page document including its Supporting Information (SI), serves as a pertinent and challenging test case for this task due to known, subtle errors. For instance, page S-8 of the test paper's SI presents the formula for _ferrous ammonium sulfate_ as $\ce{Fe(NH4)2SO4}$, which incorrectly omits one sulfate group (the correct formula for ferrous ammonium sulfate, Mohr's salt, is $\ce{(NH4)2Fe(SO4)2·6H2O}$ or anhydrous $\ce{(NH4)2Fe(SO4)2}$). This exploration details the iterative process of developing prompts to reliably identify such chemical "needles in a haystack".
+Previous work explored the application of advanced prompt engineering techniques, specifically Persistent Workflow Prompting (PWP), for the critical analysis of scholarly manuscripts in experimental chemistry, using a specific test paper [test paper][test paper] as a challenging case study. This article extends that investigation by focusing on a common yet critical task: the validation of chemical formulas within scientific texts. The same test paper, a 44-page document including its Supporting Information (SI), serves as a pertinent and challenging test case for this task due to known, subtle errors. For instance, page S-8 of the test paper's SI presents the formula for _ferrous ammonium sulfate_ as $\ce{Fe(NH4)2SO4}$, which incorrectly omits one sulfate group (the correct formula for ferrous ammonium sulfate, Mohr's salt, is $\ce{(NH4)2Fe(SO4)2*6H2O}$ or anhydrous $\ce{(NH4)2Fe(SO4)2}$). This exploration details the iterative process of developing prompts to reliably identify such chemical "needles in a haystack".
 
 ## **2. Approaches to Chemical Formula Validation with LLMs**
 
 ### **2.1. Direct Prompting Attempts and Initial Observations**
 
 Initial efforts involved testing basic prompts with leading LLMs (Gemini Advanced 2.5 Pro and ChatGPT Plus o3). A simple prompt such as:
-
-`Find mistakes in chemical formulas and names.`
-
+`Find mistakes in chemical formulas and names.`  
 produced highly inconsistent and generally unreliable results, occasionally identifying the target error but lacking systematic accuracy.
 
 A more structured prompt was subsequently developed:
-
 
 ```
 ## Chemical Formula Extraction and Validation from PDF
@@ -34,35 +31,31 @@ Execute the following task step-by-step:
 
 This refined prompt improved the quality of the output and increased the frequency of identifying the target error in $\ce{Fe(NH4)2SO4}$ [GeminiNaiveAnalysis][GeminiNaiveAnalysis]. However, reliability remained a significant issue.
 
-An interesting observation arose from a slightly modified version of this prompt [GeminiNaiveAnalysisReaction]. The LLM not only extracted chemical formulas but also identified and flagged an imbalanced chemical reaction scheme from page S-8 of the SI, immediately following the problematic ferrous ammonium sulfate formula:
-
-The reaction 3Fe2++KMnO4​+8H+→2Fe3++Mn2++K++4H2​O was flagged due to an imbalance in iron atoms (3 Fe on the left, 2 Fe on the right). This error, previously overlooked by the author during manual review, was correctly identified and a balanced version proposed by the LLM. This highlighted the LLM's potential to uncover errors beyond the specific target, even when the prompt was focused on "formulas."
+An interesting observation arose from a slightly modified version of this prompt [GeminiNaiveAnalysisReaction][GeminiNaiveAnalysisReaction]. The LLM not only extracted chemical formulas but also identified and flagged an imbalanced chemical reaction scheme from page S-8 of the SI, immediately following the problematic ferrous ammonium sulfate formula. The reaction of Fe(II) and hydrogen peroxide was flagged due to an imbalance in iron atoms (3 Fe on the left, 2 Fe on the right). This error, previously overlooked by the author during manual review, was correctly identified and a balanced version proposed by the LLM. This highlighted the LLM's potential to uncover errors beyond the specific target, even when the prompt was focused on "formulas".
 
 ### **2.2. Challenges with LLM Default Behaviors**
 
 Examination of Gemini's "Show thinking" logs (a feature providing insight into the model's processing steps) for various runs revealed a consistent pattern. The LLM often correctly extracted the target formula (e.g., "$\ce{Fe(NH4)2SO4}$: Ferrous ammonium sulfate (Mohr's salt)"). However, in the subsequent validation step, it would sometimes erroneously mark the pair as correct, e.g.:
 
-Identified Chemical Formulas/Names and Initial Validation:
+**Identified Chemical Formulas/Names and Initial Validation:**  
+...(Other log lines)...
+$\ce{Fe(NH4)2SO4}$**: Ferrous ammonium sulfate. Correct.**
 
-...
+This behavior likely stems from a core strength of LLMs: their inherent capability for error correction and understanding intent despite minor inaccuracies in the input. For instance, querying `What is the capital of grate britain?` typically yields "London", with the misspelling of "Great Britain" being automatically corrected. While usually beneficial, this default error tolerance becomes a hindrance when the objective is to _detect_ such errors. This phenomenon is analogous to the "input bias" discussed in the PWP preprint, where the LLM's tendency to accept input information as factual needs to be actively countered for critical evaluation.
 
-$\ce{Fe(NH4)2SO4}$: Ferrous ammonium sulfate. Correct.
+In the context of formula validation, the LLM's natural inclination to reconcile a slightly incorrect formula with its correct accompanying name complicates direct "contrasting" methods (as per Point 3 in the structured prompt above). To address this problem, strategies must either suppress this error-correction tendency in a controlled manner or employ more complex error detection algorithms that avoid direct comparison of such "complementary" yet potentially mismatched entities.
 
-This behavior likely stems from a core strength of LLMs: their inherent capability for error correction and understanding intent despite minor inaccuracies in the input. For instance, querying `What is the capital of grate britain?` typically yields "London," with the misspelling of "Great Britain" being automatically corrected. While usually beneficial, this default error tolerance becomes a hindrance when the objective is to _detect_ such errors. This phenomenon is analogous to the "input bias" discussed in the PWP preprint, where the LLM's tendency to accept input information as factual needs to be actively countered for critical evaluation.
+An early attempt at the latter approach involved a multi-step generation and comparison process (see "Appendix. Chemical Formula Analysis - Generated Formulas and Names" for the prompt and an example of LLM response). The intent was for the LLM to:
 
-In the context of formula validation, the LLM's natural inclination to reconcile a slightly incorrect formula with its correct accompanying name complicates direct "contrasting" methods (as per Point 3 in the structured prompt above). To address this, strategies must either suppress this error-correction tendency in a controlled manner or employ more complex error detection algorithms that avoid direct comparison of such "complementary" yet potentially mismatched entities.
+`Extract a chemical formula from text -> Generate a chemical name -> Generate a chemical formula -> Compare the _extracted_ formula with the _newly generated_ formula.`
 
-An early attempt at the latter involved a multi-step generation and comparison process (see "Appendix. Chemical Formula Analysis - Generated Formulas and Names" for the prompt and an example of LLM response). The intent was for the LLM to:
-
-1. Generate a chemical name from the _extracted_ formula.
-2. Generate a chemical formula from the _generated_ name.
-3. Compare the _extracted_ formula with the _newly generated_ formula. This approach, while theoretically sounder by avoiding direct comparison of potentially flawed input pairs, still proved unreliable in practice, although some runs did yield interesting outputs, including references to external chemical databases.
+This approach, while, possibly, better, still proved unreliable in practice, although some runs did yield interesting outputs, including references to external chemical databases.
 
 ## **3. Advanced Validation using PWP-Style Context Conditioning and Multimodal Analysis**
 
 Given the limitations of direct and simple generative approaches, a more robust strategy was adopted, leveraging the context conditioning principles outlined in the PWP preprint. The _PeerReviewPrompt_ detailed in that work successfully mitigated input bias through comprehensive context setting.
 
-A new prompt, the [ChemicalFormulasValidationPrompt], was developed by adapting core sections from the _PeerReviewPrompt_:
+A new prompt, the [ChemicalFormulasValidationPrompt][ChemicalFormulasValidationPrompt], was developed by adapting core sections from the _PeerReviewPrompt_:
 
 - Sections **I-III** (Core Objective, Persona, Context: Framework for Critical Review) were largely retained to establish the analytical mindset and operational guidelines.
 - Section **V** (Final Instructions for Interaction) was kept to ensure consistent LLM behavior.
@@ -71,17 +64,17 @@ A new prompt, the [ChemicalFormulasValidationPrompt], was developed by adapting 
 
 This PWP-style prompt can be submitted to the LLM initially (with or without the target PDF). A subsequent query, such as:
 
-Perform comprehensive Chemical Identifier Analysis
+`Perform comprehensive Chemical Identifier Analysis`
 
-with the target PDF attached, then initiates the detailed validation workflow.
+with the target PDF attached, then initiates the validation workflow.
 
-Demonstration AI chats using this approach with Gemini 2.5 Pro (via Google AI Studio, which often shows enhanced performance over the standard Gemini app interface) [GeminiAnalysis] and ChatGPT Plus o3 [ChatGPTAnalysis] showed significantly improved robustness and reliability. The current [ChemicalFormulasValidationPrompt] instructs the LLM to output a table of _all_ extracted chemical formulas, detailing any identified issues and providing corrected versions, or a checkmark if no error is found.
+Demonstration AI chats using this approach with Gemini 2.5 Pro (via Google AI Studio, which often shows enhanced performance over the standard subscription-based Gemini app interface) [GeminiAnalysis][GeminiAnalysis] and ChatGPT Plus o3 [ChatGPTAnalysis][ChatGPTAnalysis] showed improved robustness and reliability. The current [ChemicalFormulasValidationPrompt][ChemicalFormulasValidationPrompt] instructs the LLM to output a table of _all_ extracted chemical formulas, detailing any identified issues and providing corrected versions, or a checkmark if no error is found.
 
 Crucially, this advanced approach consistently identified the target error in $\ce{Fe(NH4)2SO4}$. Furthermore, due to the explicit instruction to perform multimodal analysis (specifically, analyzing figures), the Gemini model also reproducibly identified another error that had been missed in prior manual reviews:
 
-- In Figure 2c (page 235 of the main text of the [test paper]), an NMR spectrum is presented with a label $\ce{(CH3)3Si2O}$ for hexamethyldisiloxane. The correct formula is $\ce{((CH3)3Si)2O}$ or $\ce{C6H18OSi2}$. Gemini correctly flagged the inconsistency in the depicted formula.
+In Figure 2c (page 235 of the main text of the [test paper][test paper]), an NMR spectrum is presented with a label $\ce{(CH3)3Si2O}$ for hexamethyldisiloxane. The correct formula is $\ce{((CH3)3Si)2O}$ or $\ce{(CH3)6Si2O}$. Gemini correctly flagged the inconsistency in the depicted formula.
 
-While occasional false positives were observed in the outputs from both models, the PWP-conditioned prompt with multimodal instructions demonstrated a marked improvement in reliably detecting subtle chemical formula errors, including those embedded within figures.
+While occasional false positives were observed in the outputs from both models, the PWP-conditioned prompt with multimodal instructions demonstrated a marked improvement in reliably detecting subtle chemical formula errors, including those embedded within figures. While ChatGPT o3 model is advertised as being capable of multimodal analysis, it failed to identify the error in the figure.
 
 ## **4. Discussion**
 
@@ -95,7 +88,7 @@ The journey from simple prompts to a complex, PWP-style conditioned prompt for c
 
 ## **5. Conclusions**
 
-Validating chemical formulas within scientific texts using LLMs presents unique challenges, primarily due to the models' inherent error-correction capabilities that can mask the very errors targeted for detection. Simple prompting strategies are generally unreliable for this task.
+Validating chemical formulas within scientific texts using LLMs presents unique challenges, partly due to the models' inherent error-correction capabilities that can mask the very errors targeted for detection. Simple prompting strategies are generally unreliable for this task.
 
 This exploration demonstrates that:
 
@@ -112,8 +105,6 @@ Future work could focus on further refining PWP-style prompts for even greater a
 
 ### **Prompt**
 
-Markdown
-
 ```
 Execute the following task step-by-step:
 1. Extract chemical formulas of each and every chemical species containing at least two elements EXACTLY as they appear in the attached PDF.
@@ -123,8 +114,6 @@ Execute the following task step-by-step:
 ```
 
 ### **Response Example (Illustrative)**
-
-_(The user's provided example table is retained here, with minor formatting adjustments for consistency. Note that the reliability of this specific "direct generative" approach was found to be limited, as discussed in the main text.)_
 
 #### Chemical Species Analysis from PDF
 
@@ -180,17 +169,18 @@ The analysis involved extracting formulas exactly as they appeared in the PDF, u
 
 ## **6. References**
 
-- **PWP**: Markhasin, E. (2025). _AI-Driven Scholarly Peer Review via Persistent Workflow Prompting, Meta-Prompting, and Meta-Reasoning_. arXiv preprint. https://arxiv.org/abs/2505.03332.
-[PWP]: https://arxiv.org/abs/2505.03332
+- **PWP**: Markhasin, E. (2025). _AI-Driven Scholarly Peer Review via Persistent Workflow Prompting, Meta-Prompting, and Meta-Reasoning_. arXiv preprint. https://arxiv.org/abs/2505.03332.  
 - **Test paper**: Prasad, B., Lewis, A. R., & Plettner, E. (2011). Enrichment of H217O from Tap Water, Characterization of the Enriched Water, and Properties of Several 17O-Labeled Compounds. _Analytical Chemistry_, 83(1), 231–239. https://doi.org/10.1021/ac1022887.
-[test paper]: https://doi.org/10.1021/ac1022887
 - **ChemicalFormulasValidationPrompt**: Chemical Formulas Validation Prompt. https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/ChemicalFormulasValidationPrompt/PWP/ChemicalFormulasValidationPrompt.md.
-[ChemicalFormulasValidationPrompt]:https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/ChemicalFormulasValidationPrompt/PWP/ChemicalFormulasValidationPrompt.md
 - **GeminiNaiveAnalysis**: Shared Gemini Chat Log. https://g.co/gemini/share/a62c19799936.
-[GeminiNaiveAnalysis]: https://g.co/gemini/share/a62c19799936
 - **GeminiNaiveAnalysisReaction**: Shared Gemini Chat Log. https://g.co/gemini/share/70cd2d7b296b.
-[GeminiNaiveAnalysisReaction]: https://g.co/gemini/share/70cd2d7b296b
 - **GeminiAnalysis**: Shared Google AI Studio Chat Log. https://aistudio.google.com/app/prompts/1CUpdXeLstQQp1y0UZ9R9ZvaBuhy6CNW1.
-[GeminiAnalysis]: https://aistudio.google.com/app/prompts/1CUpdXeLstQQp1y0UZ9R9ZvaBuhy6CNW1
 - **ChatGPTAnalysis**: Shared ChatGPT Chat Log. https://chatgpt.com/share/681f5b9f-375c-8004-b2f4-294c75371945.
+
+[PWP]: https://arxiv.org/abs/2505.03332
+[test paper]: https://doi.org/10.1021/ac1022887
+[ChemicalFormulasValidationPrompt]:https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/ChemicalFormulasValidationPrompt/PWP/ChemicalFormulasValidationPrompt.md
+[GeminiNaiveAnalysis]: https://g.co/gemini/share/a62c19799936
+[GeminiNaiveAnalysisReaction]: https://g.co/gemini/share/70cd2d7b296b
+[GeminiAnalysis]: https://aistudio.google.com/app/prompts/1CUpdXeLstQQp1y0UZ9R9ZvaBuhy6CNW1
 [ChatGPTAnalysis]: https://chatgpt.com/share/681f5b9f-375c-8004-b2f4-294c75371945
