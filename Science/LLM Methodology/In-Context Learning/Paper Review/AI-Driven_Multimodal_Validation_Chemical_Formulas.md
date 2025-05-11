@@ -29,7 +29,7 @@ Execute the following task step-by-step:
 5. Create a Markdown table that should include every flagged formula/names, clear description of any problems, corrected version, and clear reference location of the flagged items.
 ```
 
-This refined prompt improved the quality of the output and increased the frequency of identifying the target error in $\ce{Fe(NH4)2SO4}\text{ }$ [GeminiNaiveAnalysis][GeminiNaiveAnalysis]. However, reliability remained a significant issue.
+This refined prompt improved the quality of the output and increased the frequency of identifying the target error in $\mathrm{Fe(NH_{4})_{2}SO_{4}}\text{ }$ [GeminiNaiveAnalysis][GeminiNaiveAnalysis]. However, reliability remained a significant issue.
 
 An interesting observation arose from a slightly modified version of this prompt [GeminiNaiveAnalysisReaction][GeminiNaiveAnalysisReaction]. The LLM not only extracted chemical formulas but also identified and flagged an imbalanced chemical reaction scheme from page S-8 of the SI, immediately following the problematic ferrous ammonium sulfate formula. The reaction of Fe(II) and hydrogen peroxide was flagged due to an imbalance in iron atoms (3 Fe on the left, 2 Fe on the right). This error, previously overlooked by the author during manual review, was correctly identified and a balanced version proposed by the LLM. This highlighted the LLM's potential to uncover errors beyond the specific target, even when the prompt was focused on "formulas".
 
