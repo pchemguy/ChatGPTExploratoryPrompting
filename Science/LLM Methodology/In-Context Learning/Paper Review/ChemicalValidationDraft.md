@@ -183,3 +183,4 @@ The analysis involved extracting formulas exactly as they appeared in the PDF, u
 [GeminiNaiveAnalysisReaction]: https://g.co/gemini/share/70cd2d7b296b
 [GeminiAnalysis]: https://aistudio.google.com/app/prompts/1CUpdXeLstQQp1y0UZ9R9ZvaBuhy6CNW1
 [ChatGPTAnalysis]: https://chatgpt.com/share/681f5b9f-375c-8004-b2f4-294c75371945
+[Private AI Revision Thread]: https://gemini.google.com/app/dc5446a3a1ddb0ef
