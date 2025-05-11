@@ -39,9 +39,15 @@ One of my early attempts to avoid the direct contrasting of "complementary" enti
 
 After numerous unsuccessful attempts (I was able to flag the target formula, but very unreliably), I decided to try a radically different approach by resorting to model's context conditioning discussed in the PWP [preprint][PWP], which also introduced a complex *PeerReviewPrompt* that successfully implemented context conditioning (though it ultimately *input bias* phenomenon, likely having a different, but still related nature).
 
-I pulled sections **I-III**, responsible for general context conditioning, the final section **V**, and section **IV.A** from the *PeerReviewPrompt*. I have retained most of the original contents, except for clauses specifically related to processing workflows described in the main section **IV**. I have introduced **Chemical Identifier Analysis** subsection into the main section **IV**.
+I pulled sections **I-III**, responsible for general context conditioning, the final section **V**, and section **IV.A** from the *PeerReviewPrompt*. I have retained most of the original contents, except for clauses specifically related to processing workflows described in the main section **IV**. I have introduced **Chemical Identifier Analysis** subsection into the main section **IV** to perform the target task. Because of the way PWP-based *PeerReviewPrompt* is designed, the new [ChemicalFormulasValidationPrompt][ChemicalFormulasValidationPrompt] (partially optimized using meta-prompting techniques discussed in the PWP [preprint][PWP], but not polished linguistically) may be submitted with target PDF attached (may or may not work as expected) or alone.
 
+The second approach should be more robust. In such a case, the second (follow-up) prompt would and have the target PDF attached and initiate analysis: 
 
+`Perform comprehensive Chemical Identifier Analysis`
+
+Demonstration AI chats are provided for [Gemini 2.5 Pro][GeminiAnalysis] and [ChatGPT Plus o3][ChatGPTAnalysis]. Note that the Gemini 2.5 Pro model accessible via [Google AI Studio](https://aistudio.google.com) often performs better than Gemini Advanced 2.5 Pro model accessible via [Gemini app](https://gemini.google.com), and this is the reason why the Gemini demo chat shared here is based on Google AI Studio, and not Gemini app.
+
+While I was discovered a single incorrect formula in SI text and attempted to target reliably, this extended prompt 
 
 ## **Appendix. Chemical Formula Analysis - Generated Formulas and Names**
 
@@ -116,3 +122,5 @@ The analysis involved extracting formulas exactly as they appeared in the PDF, u
 [ChemicalFormulasValidationPrompt]: https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/main/PWP/ChemicalFormulasValidationPrompt.md
 [GeminiNaiveAnalysis]: https://g.co/gemini/share/a62c19799936
 [GeminiNaiveAnalysisReaction]: https://g.co/gemini/share/70cd2d7b296b
+[GeminiAnalysis]: https://aistudio.google.com/app/prompts/1CUpdXeLstQQp1y0UZ9R9ZvaBuhy6CNW1
+[ChatGPTAnalysis]: https://chatgpt.com/share/681f5b9f-375c-8004-b2f4-294c75371945
