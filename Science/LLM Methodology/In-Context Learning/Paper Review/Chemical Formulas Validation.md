@@ -45,9 +45,7 @@ The second approach should be more robust. In such a case, the second (follow-up
 
 `Perform comprehensive Chemical Identifier Analysis`
 
-Demonstration AI chats are provided for [Gemini 2.5 Pro][GeminiAnalysis] and [ChatGPT Plus o3][ChatGPTAnalysis]. Note that the Gemini 2.5 Pro model accessible via [Google AI Studio](https://aistudio.google.com) often performs better than Gemini Advanced 2.5 Pro model accessible via [Gemini app](https://gemini.google.com), and this is the reason why the Gemini demo chat shared here is based on Google AI Studio, and not Gemini app.
-
-While I was discovered a single incorrect formula in SI text and attempted to target reliably, this extended prompt 
+Demonstration AI chats are provided for [Gemini 2.5 Pro][GeminiAnalysis] () and [ChatGPT Plus o3][ChatGPTAnalysis]. Note that the Gemini 2.5 Pro model accessible via [Google AI Studio](https://aistudio.google.com) often performs better than Gemini Advanced 2.5 Pro model accessible via [Gemini app](https://gemini.google.com), and this is the reason why the Gemini demo chat shared here is based on Google AI Studio, and not Gemini app. This new prompt demonstrated robustness and worked fairly reliably with Gemini 2.5 Pro (in Google AI Studio; I did have issues with Gemini-app-based variant) and ChatGPT Plus o3. Note that the present version of While I was discovered a single incorrect formula in SI text and attempted to target reliably, this extended prompt also included instructions to perform multimodal analysis by requesting figure analysis explicitly.
 
 ## **Appendix. Chemical Formula Analysis - Generated Formulas and Names**
 
