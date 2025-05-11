@@ -151,3 +151,25 @@ $$
 \underbrace{(\mathrm{Me_3Si)_2O}}_{\text{Hexamethyldisiloxane}}
 $$
 
+
+$\ce{Fe(NH4)2SO4}\text{,}$ 
+
+
+$\mathrm{Fe(NH_{4})_{2}{}^{6}SO_{4}}$
+$\mathrm{Fe(NH_{4})_{2}SO_{4}}$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
