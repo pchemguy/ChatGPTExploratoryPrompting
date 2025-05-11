@@ -97,7 +97,6 @@ This exploration demonstrates that:
 3. Incorporating explicit instructions for multimodal analysis is crucial for comprehensive validation, enabling the detection of errors in figures and other non-textual elements.
 4. The ability of LLMs to sometimes identify related errors not explicitly targeted by the user (e.g., the imbalanced chemical reaction) underscores their potential as powerful, albeit sometimes unpredictable, analytical assistants.
 
-Future work could focus on further refining PWP-style prompts for even greater accuracy and reduced false positives, systematically evaluating performance across different LLMs and error types, and developing more sophisticated strategies to harness LLM reasoning for the validation of complex scientific content. The insights gained from this study on chemical formula validation contribute to the broader understanding of how to effectively steer LLM behavior for detailed and critical analytical tasks.
 
 ---
 
