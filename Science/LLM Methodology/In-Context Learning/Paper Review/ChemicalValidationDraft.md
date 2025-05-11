@@ -2,7 +2,7 @@
 
 ## **Abstract**
 
-This work explores prompt engineering strategies for the validation of chemical formulas in scholarly manuscripts using Large Language Models (LLMs). Building upon previous work on AI-driven peer review, we investigate the efficacy of various prompting techniques, from basic queries to complex framework, for identifying errors in chemical identifiers. Using a challenging test paper known to contain subtle errors, we demonstrate that simple, direct prompts yield unreliable results. More structured prompts show incremental improvements but still lack robustness. Key insights are derived from analyzing Gemini "thinking logs", which reveal challenges related to the models' inherent error-correction tendencies that can mask errors in input text. We then adapt previously demonstrated advanced approach employing Persistent Workflow Prompting (PWP) principles for context conditioning, combined with explicit instructions for multimodal analysis of figures yielding a proof-of-concept prompt for formula validation. This method demonstrates improved reliability in identifying errors both in text and figures. The findings highlight the potential of sophisticated, PWP-informed prompting and multimodal capabilities for chemical entity validation.
+This work explores prompt engineering strategies for the validation of chemical formulas in scholarly manuscripts using Large Language Models (LLMs). Building upon previous work on AI-driven peer review, we investigate the efficacy of various prompting techniques, from basic queries to complex framework, for identifying errors in chemical identifiers. Using a challenging test paper known to contain subtle errors, we demonstrate that simple, direct prompts yield unreliable results. More structured prompts show incremental improvements but still lack robustness. Key insights are derived from analyzing Gemini "thinking logs"; this analysis indicates potential challenges related to the models' inherent error-correction tendencies that can mask errors in input text. We then adapt previously demonstrated advanced approach employing Persistent Workflow Prompting (PWP) principles for LLM context conditioning, combined with explicit instructions for multimodal analysis of figures yielding a proof-of-concept prompt for formula validation. This method demonstrates improved reliability in identifying errors both in text and figures. The findings highlight the potential of sophisticated, PWP-informed prompting and multimodal capabilities for chemical entity validation.
 
 ## **1. Introduction**
 
@@ -76,26 +76,9 @@ In Figure 2c (page 235 of the main text of the [test paper][test paper]), an NMR
 
 While occasional false positives were observed in the outputs from both models, the PWP-conditioned prompt with multimodal instructions demonstrated a marked improvement in reliably detecting subtle chemical formula errors, including those embedded within figures. While ChatGPT o3 model is advertised as being capable of multimodal analysis, it failed to identify the error in the figure.
 
-## **4. Discussion**
+## **4. Conclusions**
 
-The journey from simple prompts to a complex, PWP-style conditioned prompt for chemical formula validation highlights several key aspects of interacting with advanced LLMs for error detection tasks:
-
-- **Default Error Correction as a Hurdle:** LLMs are designed to be helpful and understand user intent, often by correcting minor input errors. This becomes counterproductive when the goal is to identify those very errors in a source document. The models may "see" the correct entity implied by the context (e.g., the correct name alongside an incorrect formula) and validate based on that inferred correctness rather than the literal discrepancy.
-- **Need for Explicit Critical Stance:** Similar to mitigating input bias in manuscript review, effective error detection requires conditioning the LLM to adopt a highly skeptical and detail-oriented persona, overriding its default tolerance. The PWP framework's emphasis on defining a critical persona and detailed analytical workflows appears beneficial here.
-- **Value of Multimodal Analysis:** Chemical information is often presented in figures, diagrams, and spectra. Errors can exist in these visual elements. Explicitly prompting for multimodal analysis, as demonstrated by the identification of the incorrect hexamethyldisiloxane formula in a figure, unlocks a deeper level of validation that text-only analysis would miss.
-- **Iterative Prompt Development:** Finding the right prompting strategy is an iterative process. Simple prompts are often insufficient for complex or nuanced tasks requiring high accuracy. Structured prompts, followed by more sophisticated context conditioning and the inclusion of specialized instructions (like multimodal analysis), are necessary to guide the LLM's reasoning effectively.
-- **Insights from "Thinking Logs":** Access to the LLM's intermediate processing steps, even if variable in detail, can provide valuable clues about how the model is interpreting instructions and where potential misinterpretations or default overrides are occurring. This can inform further prompt refinement.
-
-## **5. Conclusions**
-
-Validating chemical formulas within scientific texts using LLMs presents unique challenges, partly due to the models' inherent error-correction capabilities that can mask the very errors targeted for detection. Simple prompting strategies are generally unreliable for this task.
-
-This exploration demonstrates that:
-
-1. Structured prompts offer incremental improvements but may still lack the necessary robustness for consistent error identification.
-2. A more effective approach involves leveraging advanced prompt engineering principles, such as those embodied in the Persistent Workflow Prompting (PWP) methodology. By carefully conditioning the LLM's context with a critical persona and detailed analytical workflows, its default error-tolerant behavior can be guided towards more rigorous scrutiny.
-3. Incorporating explicit instructions for multimodal analysis is crucial for comprehensive validation, enabling the detection of errors in figures and other non-textual elements.
-4. The ability of LLMs to sometimes identify related errors not explicitly targeted by the user (e.g., the imbalanced chemical reaction) underscores their potential as powerful, albeit sometimes unpredictable, analytical assistants.
+Validating chemical formulas within scientific texts using LLMs presents distinct challenges, as illustrated by the unreliable performance of simple or directly structured prompting strategies and insights from LLM analysis logs. These logs, for instance, indicate potential challenges related to the models' inherent error-correction tendencies, which can mask the very errors targeted for detection and contribute to the observed unreliability. More effective validation necessitates advanced prompt engineering. Specifically, leveraging principles from Persistent Workflow Prompting (PWP) to carefully condition the LLM's context - by instilling a critical persona and defining detailed analytical workflows - can guide its default error-tolerant behavior towards more rigorous scrutiny. Furthermore, incorporating explicit instructions for multimodal analysis may be crucial for comprehensive validation, enabling the detection of errors in figures and other non-textual elements. It should be noted, however, that multimodal analysis is an advanced feature requiring robust model support; for instance, while ChatGPT o3 possesses claimed multimodal capabilities, it did not identify the specific figure error discussed in this study's tests. While LLMs may occasionally identify related errors beyond the user's explicit query, underscoring their potential as powerful analytical assistants, achieving consistent and accurate chemical formula validation using general reasoning models necessitates these sophisticated, context-aware prompting strategies. It is important to note, however, that the present study is based on a limited testing scope, and the ChemicalFormulasValidationPrompt discussed herein represents an initial proof-of-concept.
 
 
 ---
@@ -166,7 +149,7 @@ The analysis involved extracting formulas exactly as they appeared in the PDF, u
 
 ---
 
-## **6. References**
+## **5. References**
 
 - **PWP**: Markhasin, E. (2025). _AI-Driven Scholarly Peer Review via Persistent Workflow Prompting, Meta-Prompting, and Meta-Reasoning_. arXiv preprint. https://arxiv.org/abs/2505.03332.  
 - **Test paper**: Prasad, B., Lewis, A. R., & Plettner, E. (2011). Enrichment of H217O from Tap Water, Characterization of the Enriched Water, and Properties of Several 17O-Labeled Compounds. _Analytical Chemistry_, 83(1), 231–239. https://doi.org/10.1021/ac1022887.
