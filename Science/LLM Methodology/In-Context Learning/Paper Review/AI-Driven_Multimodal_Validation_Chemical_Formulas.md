@@ -2,7 +2,7 @@
 
 ## **Abstract**
 
-This work explores prompt engineering strategies for the validation of chemical formulas in scholarly manuscripts using Large Language Models (LLMs). Building upon previous work on AI-driven peer review, we investigate the efficacy of various prompting techniques, from basic queries to complex framework, for identifying errors in chemical identifiers. Using a challenging test paper known to contain subtle errors, we demonstrate that simple, direct prompts yield unreliable results. More structured prompts show incremental improvements but still lack robustness. Key insights are derived from analyzing Gemini "thinking logs"; this analysis indicates potential challenges related to the models' inherent error-correction tendencies that can mask errors in input text. We then adapt previously demonstrated advanced approach employing Persistent Workflow Prompting (PWP) principles for LLM context conditioning, combined with explicit instructions for multimodal analysis of figures yielding a proof-of-concept prompt for formula validation. This method demonstrates improved reliability in identifying errors both in text and figures. The findings highlight the potential of sophisticated, PWP-informed prompting and multimodal capabilities for chemical entity validation.
+This work explores prompt engineering strategies for the validation of chemical formulas in scholarly manuscripts using Large Language Models (LLMs). Building upon previous work on AI-driven peer review, we investigate the efficacy of various prompting techniques, from basic queries to complex framework, for identifying errors in chemical identifiers. Using a challenging test paper known to contain subtle errors, we observe that simple, direct prompts yield unreliable results. More structured prompts show incremental improvements but still lack robustness. Key insights are derived from analyzing Gemini "thinking logs"; this analysis indicates potential challenges related to the models' inherent error-correction tendencies that can mask errors in input text. We then adapt previously demonstrated advanced approach employing LLM context conditioning, combined with explicit instructions for multimodal analysis of figures yielding a proof-of-concept prompt for formula validation. This method demonstrates improved reliability in identifying errors both in text and figures. The findings highlight the potential of sophisticated prompting and multimodal capabilities for chemical entity validation.
 
 ## **1. Introduction**
 
@@ -51,7 +51,7 @@ An early attempt at the latter approach involved a multi-step generation and com
 
 This approach, while, possibly, better, still proved unreliable in practice, although some runs did yield interesting outputs, including references to external chemical databases.
 
-## **3. Advanced Validation using PWP-Style Context Conditioning and Multimodal Analysis**
+## **3. Advanced Validation using Context Conditioning and Multimodal Analysis**
 
 Given the limitations of direct and simple generative approaches, a more robust strategy was adopted, leveraging the context conditioning principles outlined in the PWP preprint. The _PeerReviewPrompt_ detailed in that work successfully mitigated input bias through comprehensive context setting.
 
@@ -74,7 +74,7 @@ Crucially, this advanced approach consistently identified the target error in $\
 
 In Figure 2c (page 235 of the main text of the [test paper][test paper]), an NMR spectrum is presented with a label $\ce{(CH3)3Si2O}$ for hexamethyldisiloxane. The correct formula is $\ce{((CH3)3Si)2O}$ or $\ce{(CH3)6Si2O}$. Gemini correctly flagged the inconsistency in the depicted formula.
 
-While occasional false positives were observed in the outputs from both models, the PWP-conditioned prompt with multimodal instructions demonstrated a marked improvement in reliably detecting subtle chemical formula errors, including those embedded within figures. While ChatGPT o3 model is advertised as being capable of multimodal analysis, it failed to identify the error in the figure.
+While occasional false positives were observed in the outputs from both models, the PWP-based prompt with multimodal instructions demonstrated a marked improvement in reliably detecting subtle chemical formula errors, including those embedded within figures. While ChatGPT o3 model is advertised as being capable of multimodal analysis, it failed to identify the error in the figure.
 
 ## **4. Conclusions**
 
