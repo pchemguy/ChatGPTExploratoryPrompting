@@ -1,4 +1,11 @@
-# **AI-Driven Multimodal Validation of Chemical Formulas. Insights from  Gemini Thinking Log**
+>[!Note]
+>
+> Context conditioning for improved comprehensiveness (models are lazy), reduced hallucinations, and countering input bias and error suppression.  
+> 
+> LLM Context Conditioning for Multimodal Validation of Chemical Formulas. Insights from Gemini Thinking Log
+
+
+# **AI-Driven Multimodal Validation of Chemical Formulas. Insights from Gemini Thinking Log**
 
 
 
