@@ -37,9 +37,9 @@ An interesting observation arose from a slightly modified version of this prompt
 
 Examination of Gemini's "Show thinking" logs (a feature providing insight into the model's processing steps) for various runs revealed a consistent pattern. The LLM often correctly extracted the target formula (e.g., "$\mathrm{Fe(NH_{4})_{2}SO_{4}} \textrm{: Ferrous ammonium sulfate (Mohr's salt)}$"). However, in the subsequent validation step, it would sometimes erroneously mark the pair as correct, e.g.:
 
-**Identified Chemical Formulas/Names and Initial Validation:**  
-...(Other log lines)...  
-$\mathrm{Fe(NH_{4})_{2}SO_{4}} \textrm{: Ferrous ammonium sulfate. Correct.}$  
+**Identified Chemical Formulas/Names and Initial Validation:**
+...(Other log lines)...
+$\mathrm{Fe(NH_{4})_{2}SO_{4}} \textrm{: Ferrous ammonium sulfate. Correct.}$
 
 This behavior likely stems from a core strength of LLMs: their inherent capability for error correction and understanding intent despite minor inaccuracies in the input. For instance, querying `What is the capital of grate britain?` typically yields "London", with the misspelling of "Great Britain" being automatically corrected. While usually beneficial, this default error tolerance becomes a hindrance when the objective is to _detect_ such errors. This phenomenon is analogous to the "input bias" discussed in the PWP preprint, where the LLM's tendency to accept input information as factual needs to be actively countered for critical evaluation.
 
@@ -156,7 +156,7 @@ The analysis involved extracting formulas exactly as they appeared in the PDF, u
 
 ## **5. References**
 
-- **PWP**: Markhasin, E. (2025). _AI-Driven Scholarly Peer Review via Persistent Workflow Prompting, Meta-Prompting, and Meta-Reasoning_. arXiv preprint. https://arxiv.org/abs/2505.03332.  
+- **PWP**: Markhasin, E. (2025). _AI-Driven Scholarly Peer Review via Persistent Workflow Prompting, Meta-Prompting, and Meta-Reasoning_. arXiv preprint. https://arxiv.org/abs/2505.03332.
 - **Test paper**: Prasad, B., Lewis, A. R., & Plettner, E. (2011). Enrichment of H217O from Tap Water, Characterization of the Enriched Water, and Properties of Several 17O-Labeled Compounds. _Analytical Chemistry_, 83(1), 231–239. https://doi.org/10.1021/ac1022887.
 - **ChemicalFormulasValidationPrompt**: Chemical Formulas Validation Prompt. https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/ChemicalFormulasValidationPrompt/PWP/ChemicalFormulasValidationPrompt.md.
 - **GeminiNaiveAnalysis**: Shared Gemini Chat Log. https://g.co/gemini/share/a62c19799936.
