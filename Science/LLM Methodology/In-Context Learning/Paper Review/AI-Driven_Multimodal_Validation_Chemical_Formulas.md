@@ -1,4 +1,4 @@
-# **AI-Driven Multimodal Validation of Chemical Formulas: Insights from  Gemini Thinking Log**
+# **AI-Driven Multimodal Validation of Chemical Formulas. Insights from  Gemini Thinking Log**
 
 
 
@@ -70,7 +70,7 @@ This PWP-style prompt can be submitted to the LLM initially (with or without the
 
 with the target PDF attached, then initiates the validation workflow.
 
-Demonstration AI chats using this approach with Gemini 2.5 Pro (via Google AI Studio, which often shows enhanced performance over the standard subscription-based Gemini app interface) [GeminiAnalysis][GeminiAnalysis] and ChatGPT Plus o3 [ChatGPTAnalysis][ChatGPTAnalysis] showed improved robustness and reliability. The current [ChemicalFormulasValidationPrompt][ChemicalFormulasValidationPrompt] instructs the LLM to output a table of _all_ extracted chemical formulas, detailing any identified issues and providing corrected versions, or a checkmark if no error is found.
+Demonstration AI chats using this approach with Gemini 2.5 Pro (via Google AI Studio, which often shows enhanced performance over the standard subscription-based Gemini app interface) [GeminiAnalysis][GeminiAnalysis] and ChatGPT Plus o3 [ChatGPTAnalysis][ChatGPTAnalysis] showed improved robustness and reliability. The current [ChemicalFormulasValidationPrompt][ChemicalFormulasValidationPrompt] instructs the LLM to output a table of _all_ extracted chemical formulas, detailing any identified issues and providing corrected versions, or a check mark if no error is found.
 
 Crucially, this advanced approach consistently identified the target error in $\mathrm{Fe(NH_{4})_{2}SO_{4}}$. Furthermore, due to the explicit instruction to perform multimodal analysis (specifically, analyzing figures), the Gemini model also reproducibly identified another error that had been missed in prior manual reviews:
 
@@ -87,6 +87,16 @@ Preliminary tests demonstrated the efficacy of advanced LLM context conditioning
 The demonstrated robustness of context conditioning in managing LLM behaviors - particularly those contributing to input bias and error suppression, as evidenced in this study and the previous PWP preprint - suggests potential for broader applications. For instance, similar PWP-informed techniques could prove useful in fields such as medical AI, especially for workflows involving the critical processing and validation of information from individual patient records. Another promising application lies in the extraction and validation of information from semi-structured, unstructured, or poorly structured sources, such as those found in pharmaceutical or technical documentation, where the ability to suppress silent error correction by LLMs may be of paramount importance.
 
 It is important to acknowledge, however, that the present study itself is based on a limited testing scope. Consequently, while the presented prompt shows promise as a proof-of-concept, future work should focus on more extensive testing across diverse datasets and further refinement of these PWP-informed methods to enhance accuracy and ensure wider applicability in complex scientific content analysis and validation.
+
+## **5. References**
+
+- **PWP**: Markhasin, E. (2025). _AI-Driven Scholarly Peer Review via Persistent Workflow Prompting, Meta-Prompting, and Meta-Reasoning_. arXiv preprint. https://arxiv.org/abs/2505.03332.
+- **Test paper**: Prasad, B., Lewis, A. R., & Plettner, E. (2011). Enrichment of H217O from Tap Water, Characterization of the Enriched Water, and Properties of Several 17O-Labeled Compounds. _Analytical Chemistry_, 83(1), 231–239. https://doi.org/10.1021/ac1022887.
+- **ChemicalFormulasValidationPrompt**: Chemical Formulas Validation Prompt. https://osf.io/nq68y/files/osfstorage?view_only=fe29ffe96a8340329f3ebd660faedd43.
+- **GeminiNaiveAnalysis**: Shared Gemini Chat Log. https://g.co/gemini/share/a62c19799936.
+- **GeminiNaiveAnalysisReaction**: Shared Gemini Chat Log. https://g.co/gemini/share/70cd2d7b296b.
+- **GeminiAnalysis**: Shared Google AI Studio Chat Log. https://aistudio.google.com/app/prompts/1CUpdXeLstQQp1y0UZ9R9ZvaBuhy6CNW1.
+- **ChatGPTAnalysis**: Shared ChatGPT Chat Log. https://chatgpt.com/share/681f5b9f-375c-8004-b2f4-294c75371945.
 
 ---
 
@@ -156,19 +166,11 @@ The analysis involved extracting formulas exactly as they appeared in the PDF, u
 
 ---
 
-## **5. References**
-
-- **PWP**: Markhasin, E. (2025). _AI-Driven Scholarly Peer Review via Persistent Workflow Prompting, Meta-Prompting, and Meta-Reasoning_. arXiv preprint. https://arxiv.org/abs/2505.03332.
-- **Test paper**: Prasad, B., Lewis, A. R., & Plettner, E. (2011). Enrichment of H217O from Tap Water, Characterization of the Enriched Water, and Properties of Several 17O-Labeled Compounds. _Analytical Chemistry_, 83(1), 231–239. https://doi.org/10.1021/ac1022887.
-- **ChemicalFormulasValidationPrompt**: Chemical Formulas Validation Prompt. https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/ChemicalFormulasValidationPrompt/PWP/ChemicalFormulasValidationPrompt.md.
-- **GeminiNaiveAnalysis**: Shared Gemini Chat Log. https://g.co/gemini/share/a62c19799936.
-- **GeminiNaiveAnalysisReaction**: Shared Gemini Chat Log. https://g.co/gemini/share/70cd2d7b296b.
-- **GeminiAnalysis**: Shared Google AI Studio Chat Log. https://aistudio.google.com/app/prompts/1CUpdXeLstQQp1y0UZ9R9ZvaBuhy6CNW1.
-- **ChatGPTAnalysis**: Shared ChatGPT Chat Log. https://chatgpt.com/share/681f5b9f-375c-8004-b2f4-294c75371945.
+<!-- References -->
 
 [PWP]: https://arxiv.org/abs/2505.03332
 [test paper]: https://doi.org/10.1021/ac1022887
-[ChemicalFormulasValidationPrompt]:https://github.com/pchemguy/ChatGPTExploratoryPrompting/blob/ChemicalFormulasValidationPrompt/PWP/ChemicalFormulasValidationPrompt.md
+[ChemicalFormulasValidationPrompt]:https://osf.io/nq68y/files/osfstorage?view_only=fe29ffe96a8340329f3ebd660faedd43
 [GeminiNaiveAnalysis]: https://g.co/gemini/share/a62c19799936
 [GeminiNaiveAnalysisReaction]: https://g.co/gemini/share/70cd2d7b296b
 [GeminiAnalysis]: https://aistudio.google.com/app/prompts/1CUpdXeLstQQp1y0UZ9R9ZvaBuhy6CNW1
