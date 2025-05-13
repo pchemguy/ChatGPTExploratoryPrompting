@@ -1,4 +1,4 @@
-# **Multimodal Validation of Chemical Formulas** **via PWP and LLM Context Conditioning**
+# **LLM Context Conditioning for Multimodal Validation of Chemical Formulas**
 
 ## **Abstract**
 
