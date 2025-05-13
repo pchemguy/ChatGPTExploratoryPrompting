@@ -59,11 +59,9 @@ Here, the Step 1 attempts to reduce noise by filtering formula-like strings cont
 
 4. **PWP-based prompt with LLM context conditioning**
 
-Given the limitations of direct and simple generative approaches, a more robust strategy was adopted, leveraging the context conditioning principles outlined in \[1\]. The *PeerReviewPrompt* prompt detailed in that work aimed to mitigated input bias through comprehensive context setting. [*ChemicalFormulasValidationPrompt*](#bookmark=id.tq5dg6ujmkjr) adapts core sections from the *PeerReviewPrompt*:
+Given the limitations of direct and simple generative approaches, a more robust strategy was adopted, leveraging the context conditioning principles outlined in \[1\]. The *PeerReviewPrompt* prompt detailed in that work aimed to mitigated input bias through comprehensive context setting, and initial observations suggested this approach was effective in the test case presented therein. [*ChemicalFormulasValidationPrompt*](#bookmark=id.tq5dg6ujmkjr) adapts core sections from the *PeerReviewPrompt*:
 
 * Sections **I-III** (Core Objective, Persona, Context: Framework for Critical Review) were largely retained to establish the analytical mindset and operational guidelines.  
 * Section **V** (Final Instructions for Interaction) was kept to ensure consistent LLM behavior.  
 * Section **IV.A** (Foundational Principles & Workflow Application) was adapted.  
-* A new **Chemical Identifier Analysis** subsection was introduced into Section **IV** specifically for formula and name validation, including explicit instructions for multimodal analysis of figures.
-
-
+* A new **Chemical Identifier Analysis** subsection was introduced into Section **IV** specifically for formula and name validation, providing a dedicated workflow for this task. Key instructions include: meticulous full-document scanning (text and figures) for chemical identifiers, initial attempt to define criteria for what constitutes a relevant chemical formula to reduce noise, a draft of explicit error categorization for formulas and names, protocols for multimodal analysis of figures, and a requirement for structured output detailing original entities, identified problems, proposed corrections, and exact source locations.
