@@ -1,12 +1,67 @@
-Large Language Models (LLMs) are increasingly explored for complex analytical tasks within scientific domains. Our prior work introduced Persistent Workflow Prompting (PWP), a prompt engineering methodology intended to guide LLMs through intricate, multi-step analyses using standard chat interfaces [1]. 
+# **LLM Context Conditioning for Multimodal Validation of Chemical Formulas**
 
-Within the PWP-based _PeerReviewPrompt_, developed as an initial proof-of-concept for critically reviewing experimental chemistry manuscripts, LLM context conditioning technique played a significant role.
-This technique, embedded in the prompt (e.g., via persona engineering and explicit operational directives), aimed to instill a critical analytical mindset and mitigate biases such as input bias during the evaluation of a single, deliberately chosen _test paper_ [1, 2].
+## **Abstract**
 
-The _PeerReviewPrompt_ focused on a potentially ill-defined analytical object (the "core methodology") within a relatively localized scope, where PWP-guided LLMs showed an ability to identify relevant text sections.
+## 1. **Introduction**
 
-The present proof-of-concept study continues the investigation of LLM context conditioning, applying these principles to a distinct validation challenge: the identification of errors in chemical formulas within scientific manuscripts, including those in raster images (multimodal validation). This task presents a contrasting scenario: the analytical object (a chemical formula) is comparatively well-defined, but the scope of analysis must encompass the entire manuscript, posing a "needle in a haystack" problem for detecting subtle errors. Furthermore, our initial explorations suggested a critical LLM behavior: their inherent tendency to perform error correction and interpret user intent can lead them to overlook or silently "correct" the very inaccuracies targeted for detection. This tendency presents a specific challenge for validation tasks.
+Large Language Models (LLMs) are increasingly explored for complex analytical tasks within scientific domains. A recent preprint [1] proposed Persistent Workflow Prompting (PWP) as a prompt engineering methodology intended to guide LLMs through intricate, multi-step analyses using standard chat interfaces. That work also explored the use of LLM context conditioning within a PWP-based proof-of-concept prompt, the _PeerReviewPrompt_. This prompt focused on an ill-defined analytical object (the "core methodology") within a relatively localized scope (e.g., abstract, introduction, experimental, and conclusions sections typical of scholarly experimental manuscripts). The LLM context conditioning component within _PeerReviewPrompt_ aimed to instill a critical analytical mindset and mitigate input bias through embedded instructions during the evaluation of a single, deliberately chosen test paper [1, 2]. Observations in that initial study suggested effective suppression of input bias across several tested LLM models.
 
-To explore this issue, this study tested several prompting strategies on the same _test paper_ [2] used previously, which is known to contain specific textual and image-based chemical formula errors. We began with basic direct prompts, moved to structured approaches incorporating task decomposition [3, 4] and self-reflection elements [5–7], and ultimately adapted the PWP architecture and context conditioning techniques from the _PeerReviewPrompt_ [1] to create a specialized _ChemicalFormulasValidationPrompt_. This paper details these exploratory approaches and reports on their observed performance. We analyze LLM behaviors—such as apparent error suppression, inconsistent effort ("laziness"), and hallucinations—and discuss how targeted context conditioning appeared to improve the reliability of chemical formula identification in our test case. Notably, observations with Gemini 2.5 Pro indicated successful multimodal error identification, an outcome not observed with ChatGPT Plus o3 under the same test conditions.
+The present proof-of-concept study builds upon the PWP framework and further investigates the application of LLM context conditioning principles. Here, we address a distinct validation challenge: the identification of errors in chemical formulas within scientific manuscripts, including incorrect formulas in raster images (requiring multimodal analysis encompassing both textual and visual information). This task presents a contrasting scenario: the analytical object (a chemical formula) is comparatively well-defined, yet the scope of analysis must span the entire manuscript, posing a "needle in a haystack" problem for detecting subtle errors. Furthermore, our initial explorations indicated a potentially problematic LLM behavior: an inherent tendency towards error correction, which often lead them to overlook or silently "correct" the very inaccuracies targeted for detection.
 
-The remainder of this paper is organized as follows: Section 2 describes the methodology, including the single test case, the specific formula errors targeted, and the various prompting strategies explored. Section 3 presents the results and discussion, offering insights into observed LLM processing patterns and the apparent efficacy of context conditioning based on this specific test case. Finally, Section 4 provides concluding remarks and discusses potential avenues for future research.
+To examine these issues, this study tested several prompting strategies on the same test paper [2] used in the prior work [1], which is known to contain specific textual and image-based chemical formula errors. We began with basic direct prompts, progressed to structured approaches incorporating task decomposition [3, 4] and self-reflection elements [5–7], and ultimately adapted the PWP architecture and context conditioning techniques described in [1] to create a specialized _ChemicalFormulasValidationPrompt_. This paper details these exploratory approaches and reports on their observed performance in this specific context. We analyze LLM behaviors—such as apparent error suppression, inconsistent effort ("laziness"), and hallucinations—and discuss how targeted context conditioning appeared to affect the reliability of chemical formula identification in our test case. Notably, observations with Gemini 2.5 Pro suggested the feasibility of multimodal error identification under these conditions, an outcome not observed with ChatGPT Plus o3 in the same test. Ultimately, this study highlights the critical role of context conditioning in adapting LLMs for precise validation tasks in complex scientific documents.
+
+## 2. **Methodology**
+
+This study continues using previously selected publication [2] focusing on isotopic enrichment, known to contain significant and demonstrable methodological flaws. The [test paper] file (also available via a link in [Supporting Information](#bookmark=id.ppi0ys93i7h)) constitutes a combination of the main text and supporting information files (as available via paper's DOI [2]) totaling 44 pages. The same test paper presented a pertinent and, as it turned out, challenging test case for this task due to known, subtle errors in chemical formulas.
+
+Specifically, page S-8 of the test paper's SI presents the formula for *ferrous ammonium sulfate* as Fe(NH4)2SO4, which incorrectly omits one sulfate group (the correct formula for ferrous ammonium sulfate, Mohr's salt, is (NH4)2Fe(SO4)2•6H2O or (NH4)2Fe(SO4)2 - anhydrous). The second known error is the formula for *hexamethyldisiloxane* shown on page 235 as spectral label in Figure 2(c), second from the bottom: (CH3)3Si2O (the correct formula is ((CH3)3Si)2O or (CH3)6Si2O).
+
+While the first error is in text-based formula, the second error is in a raster image making this paper also suitable for initial tests of multimodal analysis. Considering, that the *test paper* contains 44 pages, this test case also presents a chemical "needle in a haystack" challenge.
+
+All employed prompting techniques rely solely on standard prompt, requiring no API access, modification to the underlying models, or special tools. Further, all techniques employed specifically target generally available models; specifically, *Gemini Advanced 2.5 Pro* and *ChatGPT Plus o3* have been used in this study and accessed via the official chat bots (Gemini was also accessed via Google AI Studio). This deliberate restriction was adopted to maximize reproducibility of presented result. With these two models, we employed several prompting strategies, starting from basic direct prompts.
+
+1. **Basic direct prompt**
+
+The naive approach asks LLM directly to find errors. This prompt specifically mentions names, as names should generally be used to resolve formula errors.
+
+`Find mistakes in chemical formulas and names.`
+
+2. **Decomposed prompt: extracted formula vs. extracted name**
+
+Because in chemistry communications, the general practice is that most formulas (except, perhaps, for the most basic ones) should have accompanying chemical names, I decided to ask the model to extract chemical names for each extracted formula and attempt to identify problem by comparing (implicitly) the formulas with extracted names.
+
+```
+Execute the following task step-by-step:  
+1. Extract each and every chemical formula from the attached PDF.  
+2. For each extracted formula, extract every directly associated chemical name included in the text, if any.  
+3. For each extracted formula and associated names, consider if the chemical formula and associated names are correct and flag every formula/names combination that contains any errors.  
+4. For each flagged item, read the source PDF again and confirm that the item was extracted exactly. In case of any extraction errors, analyze the corrected item and consider if the flag should be removed.  
+5. Create a Markdown table that should include every flagged formula/names, clear description of any problems, corrected version, and clear reference location of the flagged items.
+```
+
+Here Step 4 attempts to elicit self-reflection to reduce errors and observed hallucinations.
+
+3. **Decomposed prompt: extracted formula vs. generated formula**
+
+This prompt uses a different error detection workflow. Instead of comparing extracted formulas and names, it asks LLM to generate names from extracted formulas. The idea here is that for minor errors, LLM might be able generate correct name from incorrect formulas. The Step 3 instructs LLM to generate a new formula from the previously generated name in the hope that this generated formula will be correct regardless of whether extracted formula is correct. Finally, extracted and generated formulas should be compared to identify potential errors.
+
+```
+Execute the following task step-by-step:  
+1. Extract chemical formulas of each and every chemical species containing at least two elements EXACTLY as they appear in the attached PDF.  
+2. For each extracted chemical formula generate associated name.  
+3. Convert each generated name to generated chemical formula.  
+4. For each generated chemical formula, determine if it matches previously extracted formula.
+```
+
+Here, the Step 1 attempts to reduce noise by filtering formula-like strings containing single or no chemical elements.
+
+4. **PWP-based prompt with LLM context conditioning**
+
+Given the limitations of direct and simple generative approaches, a more robust strategy was adopted, leveraging the context conditioning principles outlined in \[1\]. The *PeerReviewPrompt* prompt detailed in that work successfully mitigated input bias through comprehensive context setting. [*ChemicalFormulasValidationPrompt*](#bookmark=id.tq5dg6ujmkjr) adapts core sections from the *PeerReviewPrompt*:
+
+* Sections **I-III** (Core Objective, Persona, Context: Framework for Critical Review) were largely retained to establish the analytical mindset and operational guidelines.  
+* Section **V** (Final Instructions for Interaction) was kept to ensure consistent LLM behavior.  
+* Section **IV.A** (Foundational Principles & Workflow Application) was adapted.  
+* A new **Chemical Identifier Analysis** subsection was introduced into Section **IV** specifically for formula and name validation, including explicit instructions for multimodal analysis of figures.
+
+
