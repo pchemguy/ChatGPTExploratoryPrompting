@@ -12,13 +12,15 @@ To examine these issues, this study tested several prompting strategies on the s
 
 ## 2. **Methodology**
 
-This study continues using previously selected publication [2] focusing on isotopic enrichment, known to contain significant and demonstrable methodological flaws. The [test paper] file (also available via a link in [Supporting Information](#bookmark=id.ppi0ys93i7h)) constitutes a combination of the main text and supporting information files (as available via paper's DOI [2]) totaling 44 pages. The same test paper presented a pertinent and, as it turned out, challenging test case for this task due to known, subtle errors in chemical formulas.
+This study uses the same test publication [2] as in our prior work [1], known to contain demonstrable methodological flaws. The [test paper] file (also available via a link in [Supporting Information](#bookmark=id.ppi0ys93i7h)) constitutes a combination of the main text and supporting information files (as available via paper's DOI [2]) totaling 44 pages. The same test paper presented a pertinent and, as it turned out, challenging test case for this task due to known, subtle errors in chemical formulas.
 
 Specifically, page S-8 of the test paper's SI presents the formula for *ferrous ammonium sulfate* as Fe(NH4)2SO4, which incorrectly omits one sulfate group (the correct formula for ferrous ammonium sulfate, Mohr's salt, is (NH4)2Fe(SO4)2•6H2O or (NH4)2Fe(SO4)2 - anhydrous). The second known error is the formula for *hexamethyldisiloxane* shown on page 235 as spectral label in Figure 2(c), second from the bottom: (CH3)3Si2O (the correct formula is ((CH3)3Si)2O or (CH3)6Si2O).
 
 While the first error is in text-based formula, the second error is in a raster image making this paper also suitable for initial tests of multimodal analysis. Considering, that the *test paper* contains 44 pages, this test case also presents a chemical "needle in a haystack" challenge.
 
-All employed prompting techniques rely solely on standard prompt, requiring no API access, modification to the underlying models, or special tools. Further, all techniques employed specifically target generally available models; specifically, *Gemini Advanced 2.5 Pro* and *ChatGPT Plus o3* have been used in this study and accessed via the official chat bots (Gemini was also accessed via Google AI Studio). This deliberate restriction was adopted to maximize reproducibility of presented result. With these two models, we employed several prompting strategies, starting from basic direct prompts.
+All employed prompting techniques rely solely on standard prompt, requiring no API access, modification to the underlying models, or special tools. Further, all techniques employed target generally available models; specifically, Gemini Advanced 2.5 Pro and ChatGPT Plus o3 have been used in this study and accessed via the official chat bots (Gemini was also accessed via Google AI Studio). This deliberate restriction was adopted to maximize reproducibility of presented result. With these two models, we employed several prompting strategies, starting from basic direct prompts.
+
+Our methodology involved (i) selecting a challenging test case with known errors, (ii) defining the specific errors to be targeted, (iii) systematically developing and testing a series of increasingly sophisticated prompting strategies with two leading LLMs, and (iv) analyzing the LLMs' behavior and performance, particularly focusing on the impact of context conditioning.
 
 1. **Basic direct prompt**
 
@@ -57,7 +59,7 @@ Here, the Step 1 attempts to reduce noise by filtering formula-like strings cont
 
 4. **PWP-based prompt with LLM context conditioning**
 
-Given the limitations of direct and simple generative approaches, a more robust strategy was adopted, leveraging the context conditioning principles outlined in \[1\]. The *PeerReviewPrompt* prompt detailed in that work successfully mitigated input bias through comprehensive context setting. [*ChemicalFormulasValidationPrompt*](#bookmark=id.tq5dg6ujmkjr) adapts core sections from the *PeerReviewPrompt*:
+Given the limitations of direct and simple generative approaches, a more robust strategy was adopted, leveraging the context conditioning principles outlined in \[1\]. The *PeerReviewPrompt* prompt detailed in that work aimed to mitigated input bias through comprehensive context setting. [*ChemicalFormulasValidationPrompt*](#bookmark=id.tq5dg6ujmkjr) adapts core sections from the *PeerReviewPrompt*:
 
 * Sections **I-III** (Core Objective, Persona, Context: Framework for Critical Review) were largely retained to establish the analytical mindset and operational guidelines.  
 * Section **V** (Final Instructions for Interaction) was kept to ensure consistent LLM behavior.  
