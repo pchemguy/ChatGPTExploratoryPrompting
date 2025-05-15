@@ -1,6 +1,6 @@
 "LLM Context Conditioning and PWP Prompting for Multimodal Validation of Chemical Formulas" explores the use of advanced prompting techniques for validation of chemical formulas in scholar manuscripts. Developed prompt repeatedly detected formula errors in the test manuscript, including an image-based error, missed in the manual review. Full text is presently available from ResearchGate (https://researchgate.net/publication/391734942).
 
-
+В работе "LLM Context Conditioning and PWP Prompting for Multimodal Validation of Chemical Formulas" исследуется использование продвинутых техник промптинга для проверки химических формул в научных статьях. Разработанный промпт неоднократно обнаруживал ошибки в формулах в тестовой статье, включая ошибку в формуле на изображении, пропущенную при ручной проверке. Полный текст в настоящее время доступен на ResearchGate https://researchgate.net/publication/391734942.
 
 # **LLM Context Conditioning for Multimodal Validation of Chemical Formulas**
 
