@@ -94,58 +94,81 @@ However, it's a valid point that "AI-Assisted" is a highly relevant search term 
 
 ## Prompt: Key Concept Extractor and Term Generator
 
-"**Important: Please disregard any keywords, key terms, concepts, or lists that may have been generated or discussed earlier in this conversation. For this specific request, base your output _only_ on the manuscript's current title and abstract.**
+**Important: Please disregard any keywords, key terms, concepts, or lists that may have been generated or discussed earlier in this conversation. For this specific request, base your output _only_ on the manuscript's current title and abstract.**
 
 This task involves a two-stage workflow. The overall goal is to first thoroughly analyze the manuscript's title and abstract to extract its core atomic components (terms, concepts, and applications). Then, in the second stage, you will enrich these extracted components by generating closely related alternative phrasings that the target audience might use for search. Please follow the instructions for each stage carefully to produce a structured output.
+
+**Important:** You need to focus for now on stage 1 only.
 
 ### Stage 1: Extraction of Atomic Terms, Concepts, and Applications
 
 Considering the manuscript's title and abstract, please identify and list the key terms, core concepts, and any explicitly mentioned or strongly implied **applications or areas of practical relevance**.
 
 When constructing this list, aim to identify the most fundamental building blocks of the manuscript's core ideas. Strive for a **high degree of atomicity** in the terms and concepts.
-
 - If a phrase or compound term combines multiple distinct ideas, methodologies, or features (e.g., 'Method A and Theory B', or 'Feature X with Property Y'), break it down into these individual components, provided each component is an independently significant concept key to understanding the manuscript.
-- **Specifically, and crucially for this task, if a key characteristic, methodology, technology, or approach (the 'Qualifier') is described as fundamentally shaping, enabling, or being applied to a core subject, domain, or process (the 'Core Concept'), you should generally list both the 'Qualifier' (e.g., 'Method M') and the 'Core Concept' (e.g., 'Domain D') as separate atomic items.** This deconstruction is vital if both the 'how it's done or characterized' (the Qualifier) and the 'what it applies to' (the Core Concept) are individually emphasized or represent separable, significant facets of the manuscript's contribution. The primary goal here is to break down such fundamental relationships into their core constituent concepts for this list.
+- **Specifically, and crucially for this task, if a key characteristic, methodology, technology, or approach (the 'Qualifier') is described as fundamentally shaping, enabling, or being applied to a core subject, domain, or process (the 'Core Concept'), you should generally list both the 'Qualifier' (e.g., 'Method M') and the 'Core Concept' (e.g., 'Domain D') as separate atomic items.** This deconstruction is vital if both the "how it's done or characterized" (the Qualifier) and the "what it applies to" (the Core Concept) are individually emphasized or represent separable, significant facets of the manuscript's contribution. The primary goal here is to break down such fundamental relationships into their core constituent concepts for this list.
 - Each listed atomic term should, as much as possible, remain meaningful and clearly relevant to the paper's specific focus. Even if a widely applicable methodology or characteristic might seem general when viewed in complete isolation, it should be listed if it is a key component or aspect _of this particular manuscript's subject matter_.
 
-The aim of this first list is to generate concise keywords and key phrases that effectively **summarize the manuscript's core subject matter by its constituent parts and its practical significance for the target audience**, enabling them to rapidly understand:
-
-1. The manuscript's **primary focus and unique contributions through these atomic elements**.
-2. The potential **target application areas, practical uses, or significant features/benefits** highlighted.
-
 Focus on extracting elements that are central to understanding both the core research and its potential impact or utility. The terms and phrases in this initial list should be informative and indicative of the paper's content.
-
-### Stage 2: Generating Closely Related Search Alternatives
-
-(This section remains unchanged from the previous version, focusing on synonym quality and format)
-
-After you have generated the list from Stage 1, please proceed to this second stage. For **each distinct item** in the list generated in Stage 1:
-
-1. Generate **one to two closely related synonyms, direct alternative phrasings, or near-equivalent terms**.
-2. These alternatives should be terms that the **target audience** (as defined in our context) might realistically use as **search terms** when looking for information related to that _specific_ original item from Stage 1.
-3. **Guidance on "Closely Related":** While maintaining a similar level of granularity and avoiding overly broad generalizations is important, also consider practical search behavior. The alternatives should be terms the target audience might use to find the original concept, even if there are subtle semantic differences. Focus on:
-    - Slight variations in wording. This includes terms with very similar primary meanings, but can also extend to **terms representing closely related nuances or facets of the same core idea, especially if these are common alternative queries used by the target audience for the original concept.** For example, if the core idea involves an agent (like an AI system) performing a task, consider common variations in how that agent's role or the nature of its involvement is described (e.g., leading the action, supporting the action, enabling the action), provided these are relevant and frequently used alternative phrasings for that context.
-    - Common acronyms (if not already the primary term and truly equivalent).
-    - Very direct equivalents that someone familiar with the topic might use interchangeably or as an alternative search query for the precise original item. The overall goal is to find terms that are semantically very close **or are highly relevant alternative search queries for the specific original item**, rather than distant or overly abstract relations. Prioritize terms that the target audience would likely use to find the manuscript's specific concept.
 
 ### Output Structure
 
 (This section remains unchanged from the previous version)
 
-Please present your complete response in two clearly separated sections, using the Markdown headings provided below:
+Please present your complete response in clearly separated sections, using the Markdown headings provided below:
 
 #### Part 1: Extracted Atomic Terms and Concepts
 
 (Present the list generated in Stage 1 here. This should be a simple list of the extracted terms and concepts.)
 
-#### Part 2: Closely Related Search Alternatives
 
-(Present the results of Stage 2 here. For each original term from Stage 1, list its closely related search alternatives indented beneath it. Do **not** use prefixes like 'Original Term:' or 'Synonym/Equivalent:'. See the example format below.)
+---
+---
 
-**Example format for Part 2:**
+1. Identify major science domains of the manuscript.
+2. Extract atomic entities (key concepts / terms / keywords from the manuscript title and abstract), such that:
+    1. Each entity (key concept, term, or keyword) must, on its own:
+        1. Clearly and directly represent or reflect:
+            - An identified science domain. A descriptive phrase can reflect a domain if it explicitly points to the core nature of that domain's involvement.
+            - A major manuscript aspect, such as a core methodology, a key finding, or a specific major demonstrated application, subject, or target area. A term should be substantive enough to stand alone as representing one of these categories.
+        2. Be not too broad (regardless of whether the entity reflects an important aspect of the manuscript).
+    2. Linguistic guidelines:
+        1. Each compound word must be treated as a whole and never split into constituent parts.  
+        2. Generally, normalized word forms (e.g., singular vs. plural) are preferable, unless plural form is an integral part of a common concept or term.
+    3. If a compound concept can be split into constituent parts, and each such constituent independently and clearly satisfies requirement 2.1, then the compound concept should be split into these constituent entities.
+    4. Generally, drop purely generic connecting words (e.g., 'via,' 'and'). Standalone words like 'methodology' or 'application' should be dropped if they are used as general categorizations rather than being part of a specific, named concept or compound term.
 
-- [Original Term A from Stage 1]
-    - [Alternative A1]
-    - [Alternative A2] (if a second relevant alternative is found)
-- [Original Term B from Stage 1]
-    - [Alternative B1]
+---
+
+1. Considering the manuscript's title and abstract, extract a list of atomic keywords (do not split compound words) to be used for related literature search:
+    - Limit number of terms extracted from abstract to the top 10 most significant terms distinct from those extracted from the title.
+    - Take note of the source context.
+    - Produce combined list 1.
+2. For each extracted keyword
+    1. Generate up to top 5-10 related terms that the target audience might realistically use as search terms and match any of the following
+        - Closely related synonyms
+        - Direct alternative phrasings
+        - Near-equivalent terms
+    2. Make sure that generated terms are considered distinct from the extracted term by search engines (e.g., word forms and common abbreviations are generally treated as not distinct).
+    3. From this list, keep alternatives that are
+        - Close in scope (discard those broader or more specific)
+        - Commonly used
+        - Could likely replace the extracted keyword in its original context, even if having slightly nuanced meaning.
+     4. Select top two alternatives considering criteria in 2.3 and produce list 2.
+
+---
+
+Considering the manuscript's title and abstract
+1. Extract a list of atomic keywords (do not split compound words) to be used for related literature search:
+    - Limit number of terms extracted from abstract to the top 10 most significant terms distinct from those extracted from the title.
+    - Take note of the source context.
+2. Label each extracted term as being most directly related to
+    - Methodology
+    - Main application domain
+    - Something else
+    - Produce a combined list 1.
+    
+3. Drop keywords that are
+    - Not related directly to the methodology OR
+    - Specific to the manuscript OR
+    - Relatively uncommon.
