@@ -164,7 +164,7 @@ Considering the manuscript's title and abstract
     - Take note of the source context.
 2. Together with each extracted keyword extract nearest minimalistic linguistic and semantic context that should be just sufficient to consider:
     - If the keyword directly relates to the key methodology, main application domain, or something else.
-    - What alternative synonyms or keywords with close meaning are most likely to appear in the given context (do not generate them)
+    - What alternative synonyms or keywords (DO NOT actually generate them) with close meaning and scope are most likely to appear in the given context 
 3. Generate a combined JSON array:
    [{"keyword":(KEYWORD), "context":(CONTEXT)},...]
 
@@ -177,3 +177,43 @@ Considering the manuscript's title and abstract
     - Not related directly to the methodology OR
     - Specific to the manuscript OR
     - Relatively uncommon.
+
+
+
+
+
+Considering the provided manuscript's title and abstract, please perform the following tasks:
+1. **Extract Atomic Keywords for Literature Search:**    
+    - Identify and list atomic keywords (do not split compound words).
+    - From the **title**: Extract all relevant atomic keywords.
+    - From the **abstract**: Extract the top 10 most significant atomic keywords that are distinct from those already extracted from the title.
+    - For each keyword, clearly note whether its source is the 'title' or the 'abstract'.
+2. **Extract Context for Each Keyword:**
+    - For every keyword identified in Step 1:
+        - **Identify Keyword Role:** Determine if the keyword, in its specific manuscript location, primarily relates to: (a) a key **methodology** described, (b) the main **application** domain discussed, or (c) **something else** (e.g., a problem, a specific component, a general concept).
+        - **Extract Surrounding Textual Context:** From the manuscript, extract the minimalistic linguistic and semantic textual snippet that immediately surrounds the keyword. This extracted text should be just sufficient to:
+            - Clearly understand the keyword's meaning and usage in that specific instance.
+            - Serve as a self-contained environment for a _separate, later process_ where an alternative keyword (generated elsewhere) could be substituted in place of the original keyword to evaluate its linguistic and semantic appropriateness within this exact extracted textual context.
+            - **Do not describe or generate alternative keywords at this stage.** Focus solely on capturing the original keyword's immediate environment and its role.
+3. **Generate a Combined JSON Array:**    
+    - Compile all extracted keywords and their corresponding contexts (including the keyword's role and its surrounding textual snippet) into a single JSON array. The structure for each element in the array should be:
+```
+{
+    "keyword":          "(KEYWORD_TEXT)",
+    "role":             "(methodology/application/other)",
+    "source_location":  "(title/abstract)",
+    "surrounding_text": "(EXTRACTED_TEXTUAL_SNIPPET_FROM_MANUSCRIPT)"
+}
+```
+4. **Generate a Filtered JSON Array**:
+    - From combined JSON array, discard keywords that:
+        - have the "other" role OR
+        - are specific to the manuscript OR
+        - are relatively uncommon.
+5. **Generate Alternatives:**
+    - Enrich remaining keywords by adding an array "alternatives" to each JSON5 array member.
+    - Each "alternatives" array should include at most 5 related synonyms, direct alternative phrasings, or near-equivalent terms that
+        - Might be realistically used as search terms by the target audience. 
+        - Fit well linguistically and semantically in place of the extracted keyword in "surrounding_text".
+        - Are considered distinct from the extracted keyword by search engines (e.g., alternative word forms or common abbreviation are not distinct).
+
