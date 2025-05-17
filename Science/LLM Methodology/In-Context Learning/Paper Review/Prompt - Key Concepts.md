@@ -159,16 +159,21 @@ Please present your complete response in clearly separated sections, using the M
 ---
 
 Considering the manuscript's title and abstract
-1. Extract a list of atomic keywords (do not split compound words) to be used for related literature search:
+1. Extract a list of atomic (do not split compound words) keywords to be used for related literature search:
     - Limit number of terms extracted from abstract to the top 10 most significant terms distinct from those extracted from the title.
     - Take note of the source context.
-2. Label each extracted term as being most directly related to
+2. Together with each extracted keyword extract nearest minimalistic linguistic and semantic context that should be just sufficient to consider:
+    - If the keyword directly relates to the key methodology, main application domain, or something else.
+    - What alternative synonyms or keywords with close meaning are most likely to appear in the given context (do not generate them)
+3. Generate a combined JSON array:
+   [{"keyword":(KEYWORD), "context":(CONTEXT)},...]
+
+4. Label each extracted term as being most directly related to
     - Methodology
     - Main application domain
-    - Something else
     - Produce a combined list 1.
     
-3. Drop keywords that are
+5. Drop keywords that are
     - Not related directly to the methodology OR
     - Specific to the manuscript OR
     - Relatively uncommon.
