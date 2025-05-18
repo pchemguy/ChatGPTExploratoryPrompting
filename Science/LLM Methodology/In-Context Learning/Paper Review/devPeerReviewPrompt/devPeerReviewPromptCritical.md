@@ -241,7 +241,7 @@ _The first step of a critical review is to precisely identify the authors' centr
 2.  **Content and Structure of the Flowchart:**
     * **Goal:** The flowchart must accurately and clearly represent the sequence of operations, transformations, and decision points within the specified protocol. It should reflect the understanding derived from Section D (Analyzing the Experimental Protocol).
     * **Nodes (Utilize yEd's standard node types where possible):**
-        * **Start/End Events:** Use oval or rounded rectangle shapes (e.g., yEd's "Round Rectangle" or "Ellipse"). Clearly label (e.g., "Start: Synthesis of X," "End: Crude Product Y").
+        * **Start/End Events:** Use oval (preferably) or rounded rectangle shapes (e.g., yEd's "Round Rectangle" or "Ellipse"). Clearly label (e.g., "Start: Synthesis of X," "End: Crude Product Y").
         * **Operations/Tasks/Processes:** Use rectangular shapes (e.g., yEd's "Rectangle").
             * Labels should be concise but informative descriptions of the action (e.g., "Combine A (X g) and B (Y mL)," "Heat to 80°C for 2h under N2," "Filter suspension," "Wash solid with Solvent Z (3x10 mL)").
             * Include critical parameters (quantities, temperatures, times, key conditions) directly in the node label or as clearly associated annotations if the GraphML structure allows.
@@ -259,48 +259,10 @@ _The first step of a critical review is to precisely identify the authors' centr
     * Omit trivial details (e.g., "flask was clamped," "stir bar added" unless the type of stirring is critical and unusual). Focus on chemically significant actions.
 4.  **GraphML Output Requirements:**
     * The output **MUST** be a complete and valid GraphML XML document.
-    * Enclose the GraphML code within a Markdown code block, specifying the language as `xml` or `graphml`:
+    * Enclose the GraphML code within a Markdown code block, specifying the language as `xml` or `graphml`.
     * Ensure node labels are clearly embedded using `<y:NodeLabel>` within `<y:ShapeNode>` (or other appropriate yFiles node types). Also include the label in a generic `<data key="d6">` for broader compatibility if possible.
     * Use standard yEd shapes (`<y:Shape type="rectangle"/>`, `"diamond"`, `"ellipse"`, `"parallelogram"`, etc.).
     * Define arrows on edges (`<y:Arrows source="none" target="standard"/>`).
-    * Example GraphML code within a Markdown code block, specifying the language as `xml` or `graphml`:
-
-```graphml
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<graphml xmlns="[http://graphml.graphdrawing.org/xmlns](http://graphml.graphdrawing.org/xmlns)"
-         xmlns:xsi="[http://www.w3.org/2001/XMLSchema-instance](http://www.w3.org/2001/XMLSchema-instance)"
-         xmlns:y="[http://www.yworks.com/xml/graphml](http://www.yworks.com/xml/graphml)"
-         xsi:schemaLocation="[http://graphml.graphdrawing.org/xmlns](http://graphml.graphdrawing.org/xmlns) [http://www.yworks.com/xml/schema/graphml/1.1/ygraphml.xsd](http://www.yworks.com/xml/schema/graphml/1.1/ygraphml.xsd)">
-  <key for="node" id="d0" yfiles.type="nodegraphics"/>
-  <key for="edge" id="d1" yfiles.type="edgegraphics"/>
-  <key for="node" id="d6" attr.name="description" attr.type="string"/> <graph id="G" edgedefault="directed">
-    <node id="n0">
-      <data key="d0">
-        <y:ShapeNode>
-          <y:NodeLabel xml:space="preserve" visible="true" autoSizePolicy="content">Start: Protocol X</y:NodeLabel>
-          <y:Shape type="roundrectangle"/>
-        </y:ShapeNode>
-      </data>
-      <data key="d6">Start: Protocol X</data> </node>
-    <node id="n1">
-      <data key="d0">
-        <y:ShapeNode>
-          <y:NodeLabel xml:space="preserve" visible="true" autoSizePolicy="content">Add Reagent A (10g, 0.1mol) to Solvent B (100mL) under N2 atmosphere.</y:NodeLabel>
-          <y:Shape type="rectangle"/>
-        </y:ShapeNode>
-      </data>
-      <data key="d6">Add Reagent A (10g, 0.1mol) to Solvent B (100mL) under N2 atmosphere.</data>
-    </node>
-    <edge id="e0" source="n0" target="n1">
-      <data key="d1">
-        <y:PolyLineEdge>
-          <y:Arrows source="none" target="standard"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    </graph>
-</graphml>
-```
 
 5.  **Integration with Protocol Analysis (Section D):**
     * The flowchart generation must be consistent with the detailed analysis of the protocol performed under Section D.
