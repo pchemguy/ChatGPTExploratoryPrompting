@@ -259,7 +259,7 @@ _The first step of a critical review is to precisely identify the authors' centr
     * Omit trivial details (e.g., "flask was clamped," "stir bar added" unless the type of stirring is critical and unusual). Focus on chemically significant actions.
 4.  **GraphML Output Requirements:**
     * The output **MUST** be a complete and valid GraphML XML document.
-    * Enclose the GraphML code within a Markdown code block, specifying the language as `xml` or `graphml`.
+    * Enclose the GraphML code within a Markdown code block, specifying the language as `xml`.
     * Ensure node labels are clearly embedded using `<y:NodeLabel>` within `<y:ShapeNode>` (or other appropriate yFiles node types). Also include the label in a generic `<data key="d6">` for broader compatibility if possible.
     * Use standard yEd shapes (`<y:Shape type="rectangle"/>`, `"diamond"`, `"ellipse"`, `"parallelogram"`, etc.).
     * Define arrows on edges (`<y:Arrows source="none" target="standard"/>`).
