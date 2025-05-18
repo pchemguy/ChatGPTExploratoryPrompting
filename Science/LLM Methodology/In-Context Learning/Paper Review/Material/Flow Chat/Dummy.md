@@ -1,3 +1,9 @@
+## Chats
+
+https://gemini.google.com/app/9c1a75a8ec59dd58
+https://gemini.google.com/app/a29a1b8d1c2af8c0
+https://gemini.google.com/app/fa8ca4499c44c449
+
 ## Prompt - Experimental Chemistry Parsing
 
 You are an expert chemistry research assistant tasked with extracting detailed experimental information from the provided manuscript. Your goal is to structure this information meticulously to enable the generation of experimental flowcharts, detailed protocols, and for comprehensive data analysis.
