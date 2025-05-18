@@ -130,3 +130,6 @@ Organize the output hierarchically using Markdown headings and bullet points. Fo
 8.  **Implicit Information:** If a standard procedure is implied (e.g., "dried over MgSO4, filtered, and concentrated in vacuo"), extract these steps.
 9.  **Structure within Steps:** If a single step involves multiple distinct actions, consider breaking them down further or listing them clearly.
 
+
+
+The prompt I'm providing has a negative bias. I need you to revise it, focusing on replacing its negative or critical stance with the most neutral tone possible. While doing this, please ensure its general details are preserved. For example, a tone like 'critical peer review' should be shifted to 'scholarly peer review,' or an even more neutral phrasing if that can be achieved. Also remove section D.2.F
