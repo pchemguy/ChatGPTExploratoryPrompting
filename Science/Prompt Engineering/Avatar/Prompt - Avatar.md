@@ -102,3 +102,51 @@
 - Messy appearance, dark/moody lighting, busy backgrounds.
 
 **Output Format:** High-resolution PNG with a transparent background if possible.
+
+---
+---
+
+# V3
+
+## Gemini Prompt: Professional Chemist Avatar - Prioritizing Facial Recognizability
+
+**Overall Goal:** Generate a 3D emoji-style avatar of a professional chemist. **CRITICAL LIKENESS REQUIREMENT:** If reference photographs of a person are provided, the **ABSOLUTE PRIORITY** is that the avatar's face (including face shape, eye shape, color, and placement, nose, mouth, and unique facial characteristics) **MUST BE CLEARLY AND UNMISTAKABLY RECOGNIZABLE** as the person in those photographs. **Stylistic Application:** Once facial recognizability is achieved, this recognizable face should then be rendered in the 3D emoji style and incorporate the other specified characteristics (age appearance, hair, attire, etc.) as described below. The originally uploaded avatar (WM5XRr6yrWIYuNGxXQ8_o.png) serves as a key visual reference for the _overall desired artistic style, clothing, and general character type_.
+
+**Style (Inspired by original reference WM5XRr6yrWIYuNGxXQ8_o.png):**
+- 3D, emoji-style, clean lines, smooth shading, slightly stylized realism.
+- The final output should aesthetically align with modern mobile OS avatar styles, similar to the provided reference image.
+
+**Subject:** Head and shoulders shot of a male-presenting individual.
+
+**Reference Photos Integration - Detailed Instructions for Facial Features:**
+1. **Foundation is Likeness:** The avatar’s entire facial structure - overall face shape, forehead, cheeks, jawline, chin, eye shape and color, eyebrow shape, nose shape, mouth shape, and lip form - must be directly derived from and be highly recognizable as the person in the **provided reference photographs.**
+2. **Unique Features:** Pay close attention to any unique but subtle facial landmarks in the reference photos (e.g., distinct dimples or unique eyebrow arch) and incorporate them to enhance recognizability, ensuring they fit the clean emoji style.
+3. **Expression:** Aim for a gentle, friendly, and intelligent smile, as seen in the original reference avatar, adapted naturally to the features of the person in the photo. The eyes should convey warmth and focus.
+
+**Application of Other Characteristics (to the recognizable face):**
+1. **Age Appearance:** The recognizable face should be depicted as a mature adult, likely in their 40s, conveying experience and wisdom (basically matching age of the person in reference photographs).
+2. **Skin Tone:** The individual in the original reference avatar (WM5XRr6yrWIYuNGxXQ8_o.png) has a medium-to-light brown skin tone with warm undertones. Apply this skin tone to the recognizable face from the photo, if no photos are provided; otherwise, prefer skin tone in photographs. Ensure a smooth, clear complexion consistent with the emoji style, while still aiming for a warm and professional feel.
+3. **Hair (Styled on the recognizable head):**
+    - **Style:** Short, neatly combed, classic men's haircut, possibly with a slight side part or brushed back, similar to the reference photos.
+    - **Color:** Predominantly black, with some lighter undertones.
+    - **Texture:** Smooth, well-defined strands.
+4. **Attire & Accessories (Consistent with original reference avatar style):**
+    - **Primary Clothing:** A crisp, white lab coat, open at the front. Lapels visible.
+    - **Underneath Coat:** A collared shirt, teal or light turquoise in color, visible at the neckline.
+    - **Professional Accessory (Optional, choose one if desired, keep it clean):**
+        - A pen or two in the breast pocket, with a blue cap.
+        - Safety goggles (modern, functional) worn on the head/forehead.
+
+**Artistic Details & Lighting:**
+- **Lighting:** Soft, even front lighting, minimal harsh shadows, similar to the original reference avatar.
+- **Background:** Transparent background.
+- **Perspective:** Front-facing or slight three-quarter view.
+- **Overall Mood:** Professional, knowledgeable, caring, approachable, modern, trustworthy.
+
+**Crucial Points to Avoid:**
+- **Losing Likeness:** Do NOT create a generic face. The resemblance to the reference photo's facial features is paramount.
+- **Stylistic Inconsistency:** While prioritizing likeness, do not abandon the requested 3D emoji style, age, hair, and attire. It's a blend.
+- Overly cartoonish or exaggerated features beyond the defined style.
+- Messy appearance, dark/moody lighting, busy backgrounds.
+
+**Output Format:** High-resolution PNG with a transparent background if possible.
