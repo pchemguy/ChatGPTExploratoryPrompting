@@ -2,12 +2,13 @@ For this study, identify
 1. **Main claimed result.** (Provide a concise statement indicating the main claimed result only.)
 2. **Gap that this research is trying to fill.**
 3. **Main hypothesis, research question, or objectives**, directly addressed by the the main claimed result in Point 1.
-4. **Key findings** (not including the main claimed result). Remember, this list may be empty.
-   Only list key findings that:
-    1. **Directly relate to the main hypothesis/research question/objective** identified in Point 3. Accepted key findings should not constitute tangential or minor observation.
-    2. **Are supported by evidence.** Accepted key findings must be based on the data collected and analyzed in the study, not on speculation or assumptions.
-    3. **Are novel and significant.** Accepted key findings should ideally contribute new knowledge or insights to the field, or provide strong confirmation of existing theories in a new context.
-    Produce the final list of identified key findings, and for each such finding provide a brief bulleted description explaining how this finding satisfies all criteria above.
+4. **Scope.** (Provide a numbered list.)
+5. **Key findings** (not including the main claimed result). Remember, this list may be empty.
+   For each candidate key finding consider if it is:
+    a. **Strictly critical** for the standing of the main claimed result in Pont 1 **AND the Point 1 ONLY**.
+    b. **Supported by evidence.** Accepted key findings must be based on the data collected and analyzed in the study, not on speculation or assumptions.
+    c. **Novel and significant.** Accepted key findings should ideally contribute new knowledge or insights to the field, or provide strong confirmation of existing theories in a new context.
+    Produce the final numbered list of identified key findings (critical, evidence-based, and novel/significant), and for each such finding provide a brief bulleted description explaining how this finding satisfies all criteria above.
 
 
 
