@@ -1,12 +1,16 @@
 - Inexpensive 17O enrichment protocol from natural abundance (0.037%) water:
     - **Reason:** Main claimed result.
     - **Approach**: Combination of slow evaporation and fractional distillation.
-    - **Achievement:** 90%-99.7% 17O-water [Results and Discussion].
+    - **Achievement:** 90%-99.7% 17O-water.
 - Initial enrichment of tap water via natural evaporation:
     - **Reason:** Contributes substantially to the main claimed result, implicit.
     - **Approach**: Natural evaporation.
-    - **Achievement:** 40-fold enrichment [Conclusions].
+    - **Achievement:** 40-fold enrichment.
 - Practical 17O water enrichment characterization:
     - **Reason:** Subsidiary finding.
     - **Approach**: Water reaction with BSTFA.
     - **Achievement:** Quantification of HMDS by GC-MS.
+- Observed exchange reaction of primary alcohols with water catalyzed by ketones.
+    - **Reason:** Subsidiary finding.
+    - **Approach**: Mixture of ketone/alcohol/17O-water was left to stand overnight.
+    - **Observation:** Increased intensity of 17O-exchanged alcohol in presence of ketones.
