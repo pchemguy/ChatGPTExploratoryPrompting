@@ -6,7 +6,9 @@ I need to analyze a scholar manuscript. Teach me what should be considered key f
 
 Okay, analyzing a scholarly manuscript to identify its key findings is a crucial skill for researchers, students, and anyone engaging with academic literature. Here's a breakdown of what key findings are and how you can identify them:
 
-## What are Key Findings?
+## Key Findings Identification Guide
+
+### What are Key Findings?
 
 Key findings are the most important and significant outcomes of a research study. They are the core discoveries that directly address the research question(s) or hypotheses the study set out to investigate. Essentially, they represent the main answers the research provides.
 
@@ -25,7 +27,7 @@ Key findings are the most important and significant outcomes of a research study
 - **Limitations of the study:** While important to acknowledge, these are not the core discoveries.
 - **Future research suggestions:** These point to what could be done next, not what was found.
 
-## How to Identify Key Findings in a Scholarly Manuscript:
+### How to Identify Key Findings in a Scholarly Manuscript:
 
 Here's a step-by-step approach to help you pinpoint the key findings:
 
