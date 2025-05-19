@@ -1,4 +1,4 @@
-# Key Findings
+# Key Findings Identification Guide
 
 >[!Note]
 >  
@@ -63,7 +63,7 @@ Here's a step-by-step approach to help you pinpoint the key findings:
 - **Synthesize information:** Key findings are often built upon several pieces of evidence presented in the results section. You'll need to synthesize this information.
 - **If in doubt, check the abstract again:** The abstract is designed to give a quick overview of the most critical aspects of the paper.
 
-# Reading a Manuscript
+# Reading a Chemistry Manuscript Guide
 
 >[!Note]
 >  
