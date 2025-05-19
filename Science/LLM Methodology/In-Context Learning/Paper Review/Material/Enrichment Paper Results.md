@@ -22,7 +22,7 @@
 
 # Prompt: Summary of Key Findings
 
-Your task is to carefully read the provided scientific paper and create a concise, factual summary of its key reported findings. Identify 3-5 main findings or claims presented by the authors. For each of these, structure your summary as follows, using the exact labels provided:
+Your task is to carefully read the provided scientific paper and create a concise, factual summary of its key reported findings. Identify 3-5 key findings or claims presented by the authors (only consider Abstract and Conclusion for identifying candidates). For each of these, structure your summary as follows, using the exact labels provided:
 
 - **[Name of Finding/Claim - e.g., "Novel Synthesis Method for Compound X"]**
     - **Reason:** Briefly state why this result is considered important within the context of the paper (e.g., "Main claimed result", "Significant subsidiary finding", "Unexpected observation").
