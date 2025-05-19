@@ -1,0 +1,8 @@
+- Inexpensive 17O enrichment protocol from natural abundance (0.037%) water:
+    - **Reason:** Main claimed result [Abstract].
+    - **Approach**: Combination of slow evaporation and fractional distillation [Abstract].
+    - **Achievement:** 90%-99.7% 17O-water [Abstract, Results and Discussion].
+- Initial enrichment of tap water via natural evaporation:
+    - **Reason:** Contributes substantially to the main claimed result [Experimental].
+    - **Approach**: Combination of slow evaporation and fractional distillation [Abstract].
+    - **Achievement:** 40-fold enrichment [Conclusions].
