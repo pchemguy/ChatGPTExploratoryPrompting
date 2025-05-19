@@ -1,7 +1,7 @@
 For this study, identify
 1. **Main claimed result.** (Provide a concise statement indicating the main claimed result only.)
 2. **Gap that this research trying to fill.**
-3. **Main hypothesis, research question, or objective**, directly addressed by the the main claimed result in Point 1.
+3. **Main hypothesis, research question, or objectives**, directly addressed by the the main claimed result in Point 1.
 4. **Key findings** (not including the main claimed result). Remember, this list may be empty.
    Only list key findings that:
     1. **Directly relate to the main hypothesis/research question/objective** identified in Point 3. Accepted key findings should not constitute tangential or minor observation.
