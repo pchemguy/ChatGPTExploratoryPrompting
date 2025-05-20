@@ -333,7 +333,9 @@ The Conclusions section summarizes the main findings of your research and discus
 - **Ensure it flows logically from your results and discussion.**
 - **If your preprint has a separate "Discussion" section:** The Conclusions section will be shorter and more focused on summarizing the main takeaways and their significance, while the broader interpretation and comparison with literature would be more detailed in the Discussion. If you don't have a separate Discussion, the Conclusions section will incorporate more of these elements. _For many natural science preprints, a combined "Discussion and Conclusions" section is common, or a strong Discussion followed by a very concise Conclusion._ Check the common practices in your specific field or the guidelines of the preprint server.
 
-# Abstract Components of a Natural Science Manuscript
+# Abstract of a Natural Science Manuscript
+
+## Structure
 
 1. **Main claimed result:** Provide a concise statement indicating the primary scientific assertion, discovery, or  single most important _quantitative_ (if relevant) outcome the authors are putting forward as their central achievement. Quote specific key values if central to the claim presented.
 2. **Gap (unmet need) that this research is trying to fill:** Describe the specific problem, lack of knowledge, or methodological limitation addressed by this research.
@@ -343,3 +345,11 @@ The Conclusions section summarizes the main findings of your research and discus
 6. **Key methodology:**
 7. **Key findings:**
 8. **Major conclusions:**
+
+## Linguistic Analysis
+
+1. **Flow:**
+    1. **Linguistic:** Identify linguistic flow disruptions.
+    2. **Semantic**: Identify semantic flow disruptions.
+2. **Ambiguities:** Identify linguistic, semantic, or logical ambiguities.
+
