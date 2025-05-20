@@ -1,5 +1,7 @@
 # Key Findings Identification Guide
 
+Source: https://gemini.google.com/app/c1fa8f546b8d3d5d
+
 >[!Note]
 >  
 I need to analyze a scholar manuscript. Teach me what should be considered key findings and how I can identify those
@@ -66,6 +68,8 @@ Here's a step-by-step approach to help you pinpoint the key findings:
 - **If in doubt, check the abstract again:** The abstract is designed to give a quick overview of the most critical aspects of the paper.
 
 # Reading a Chemistry Manuscript Guide
+
+Source: https://gemini.google.com/app/96bcf8c2d2e7a8cf
 
 >[!Note]
 >  

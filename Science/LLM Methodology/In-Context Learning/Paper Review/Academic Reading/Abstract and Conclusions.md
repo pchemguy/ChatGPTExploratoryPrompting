@@ -2,8 +2,6 @@
 
 Source: https://gemini.google.com/app/f74a15da8b8442aa
 
-## Prompt
-
 >[!Note]
 >  
 > I am preparing a preprint for arXiv cs.AI. Teach me how to write Abstract and Conclusions.
@@ -118,8 +116,6 @@ The Conclusion section provides a satisfying ending to your paper. It's not just
 # ChemRxiv
 
 Source: https://gemini.google.com/app/8e6be33d031c882c
-
-## Prompt
 
 >[!Note]
 >  
@@ -240,8 +236,6 @@ The Conclusion section provides a summary of your key findings and discusses the
 # Natural Science Manuscript
 
 Source: https://gemini.google.com/app/424ab0cf58eaba0f
-
-## Prompt
 
 >[!Note]
 >  
