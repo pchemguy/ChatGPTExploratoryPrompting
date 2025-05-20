@@ -1,8 +1,8 @@
-For this study, identify **based on Abstract ONLY**
-1. **Main claimed result.** (Identify and concisely state the primary scientific assertion, discovery, or single most important quantitative outcome the authors are putting forward as their central achievement. Quote specific key values if central to the claim and explicitly stated.)
+For this study, identify
+1. **Main claimed result.** (Based ONLY on Title, Abstract, Introduction, and Conclusion, identify and concisely state the primary scientific assertion, discovery, or single most important quantitative (if relevant) outcome the authors are putting forward as their central achievement. Quote specific key values if central to the claim and explicitly stated.)
 2. **Gap that this research is trying to fill.**
-3. **Main hypothesis, research question, or objectives**, directly addressed by the the main claimed result in Point 1.
-4. **Key findings (supporting the main claimed result)**. Numbered list, may be empty.
+3. **MAIN hypothesis, MAIN research question, or MAIN objectives**, directly addressed by the the main claimed result. **YOU ARE ABSOLUTELY PROHIBITED** from including anything here identified as secondary, subsidiary, etc.
+4. **Key findings (directly supporting the main claimed result)**. Numbered list, may be empty.
 
 
 
