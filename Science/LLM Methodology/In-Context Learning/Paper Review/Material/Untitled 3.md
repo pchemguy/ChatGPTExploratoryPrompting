@@ -1,3 +1,23 @@
+For this study, identify:
+1. **Main claimed result.** (Provide a concise statement indicating the primary scientific assertion or discovery the authors are putting forward as their central achievement.)
+2. **Gap that this research is trying to fill.** (Describe the specific problem, lack of knowledge, or methodological limitation addressed by this research.)
+3. **Main hypothesis, research question, or objectives**, directly addressed by the main claimed result in Point 1.
+4. **Scope.** (Provide a numbered list detailing the boundaries of the study, e.g., specific materials, methods, range of investigation.)
+5. **Key findings** (this list must _only_ include findings that are indispensable to the main claimed result and should _not_ include the main claimed result itself. This list may be empty).
+    - First, identify potential findings from the study.
+    - Then, for each _potential_ finding, rigorously evaluate it against all of the following criteria (a, b, and c). A finding must satisfy ALL THREE criteria to be included in the final list of key findings.
+        
+        a. **Indispensable for substantiating the Main Claimed Result (Point 1).** * To meet this criterion, the finding must be so essential that if it were removed, the Main Claimed Result (as stated in Point 1) would lack its direct, core scientific proof or validation within this study. * The finding's indispensability must be _exclusively_ for validating Point 1 itself, not for supporting broader implications, secondary outcomes, or the general utility of a method/product described in Point 1. Ask: "Could the authors confidently and scientifically assert Point 1 without _this specific finding_ as direct evidence?" If yes, it does not meet criterion 'a'.
+        
+        b. **Supported by direct empirical evidence within the study.** * The finding must be explicitly demonstrated and supported by the data collected, analyses performed, and results presented _within this specific paper_. It cannot be based on assumptions, speculations, or references to potential future work or external information not empirically tested in this study.
+        
+        c. **Novel and significant (in the context of supporting Point 1).** * While the finding must be novel and significant, its relevance here is specifically in how its novelty/significance contributes directly to validating the Main Claimed Result (Point 1). If its primary novelty/significance lies elsewhere (e.g., opening a new research avenue unrelated to proving Point 1), it may not fit here even if it meets 'a' and 'b'. _However, prioritize criterion 'a'_: if it's indispensable for Point 1, its novelty/significance in that supporting role is key.*
+        
+    - **Produce the final numbered list of identified key findings.** For each such finding, provide a brief bulleted description explaining precisely how it satisfies _each of the three criteria (a, b, and c)_.
+    - **If there are other notable results or observations in the paper that are scientifically interesting or valuable but do NOT meet criterion 'a'** (i.e., they are not indispensable for substantiating the Main Claimed Result in Point 1), list them separately under a heading "Other Notable Results (Not Indispensable to Main Claim)" and, for each, briefly explain _why_ it does not meet criterion 'a'.
+
+
+
 For this study, identify
 1. **Main claimed result.** (Provide a concise statement indicating the main claimed result only.)
 2. **Gap that this research is trying to fill.**
