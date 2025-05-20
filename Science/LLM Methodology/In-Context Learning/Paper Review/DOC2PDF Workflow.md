@@ -29,3 +29,9 @@
 | ORCID   | https://orcid.org/0000-0002-7419-3605     |
 
 
+|         |                                           |
+| ------- | ----------------------------------------- |
+| arXivID | https://arxiv.org/abs/2505.12257          |
+| arXiv   | arXiv:2505.12257 [cs.AI]                  |
+| DOI     | https://doi.org/10.48550/arXiv.2505.12257 |
+| ORCID   | https://orcid.org/0000-0002-7419-3605     |
