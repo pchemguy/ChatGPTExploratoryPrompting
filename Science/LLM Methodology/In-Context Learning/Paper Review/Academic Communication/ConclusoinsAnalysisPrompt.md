@@ -54,23 +54,18 @@ The user will provide text, which may be an isolated dedicated conclusion sectio
 1.  **Restatement of Main Findings/Claims:**
     * **Summary:** [How do the authors summarize their key results or reiterate their main claims within the conclusion section?]
     * **Supporting Quote(s):** [Quote relevant phrases or sentences from the conclusion that illustrate this.]
-
 2.  **Interpretation of Findings in Context:**
     * **Interpretation:** [What meaning or significance do the authors ascribe to their findings in relation to their initial research questions, hypotheses, or the broader field, as stated in the conclusion?]
     * **Supporting Quote(s):** [Quote relevant phrases or sentences from the conclusion that illustrate this.]
-
 3.  **Connection to Broader Significance/Impact:**
     * **Stated Significance:** [How do the authors frame the importance, implications, or applications of their work for the wider scientific community, specific domains, or society, according to the conclusion section?]
     * **Supporting Quote(s):** [Quote relevant phrases or sentences from the conclusion that illustrate this.]
-
 4.  **Limitations of the Study (as stated by authors in the conclusion):**
     * **Acknowledged Limitations:** [List any weaknesses, constraints, or boundaries of the current work that the authors explicitly acknowledge within the conclusion section. If none are mentioned, state "No limitations explicitly stated in the conclusion."]*
     * **Supporting Quote(s):** [Quote relevant phrases or sentences from the conclusion that illustrate this.]
-
 5.  **Suggestions for Future Work/Research (from the conclusion):**
     * **Proposed Directions:** [What specific next steps, open questions, or new research directions do the authors propose in the conclusion section? If none are mentioned, state "No future work explicitly suggested in the conclusion."]*
     * **Supporting Quote(s):** [Quote relevant phrases or sentences from the conclusion that illustrate this.]
-
 6.  **Concluding Remarks/Final Take-Home Message:**
     * **Final Statement:** [What is the final, overarching statement, synthesis, or impactful take-home message conveyed by the authors at the very end of the conclusion section?]
     * **Supporting Quote(s):** [Quote relevant phrases or sentences from the conclusion that illustrate this.]
@@ -80,7 +75,6 @@ The user will provide text, which may be an isolated dedicated conclusion sectio
 
 1.  **Overall Clarity and Readability:**
     * **Impression:** [Provide a brief overall impression of the conclusion's clarity and readability (e.g., "Clear and concise," "Generally clear but contains some convoluted sentences," "Lacks clear focus.").]
-
 2.  **Flow and Cohesion:**
     * **Linguistic Flow:**
         * **Issue(s) Identified:** [Describe any instances of awkward phrasing, unclear pronoun references, confusing conjunctions, or abrupt transitions between sentences that disrupt the linguistic flow within the conclusion. Provide specific examples or quote snippets.]
@@ -88,7 +82,6 @@ The user will provide text, which may be an isolated dedicated conclusion sectio
     * **Semantic Flow (Logical Progression):**
         * **Issue(s) Identified:** [Describe any instances where the logical progression of ideas within the conclusion seems disrupted, such as unexplained jumps in logic, missing connections between concepts, or ideas presented out of a natural or expected sequence. Provide specific examples or quote snippets.]
         * *(If no issues, write "Semantic flow within the conclusion appears logical and coherent.")*
-
 3.  **Ambiguities:**
     * **Identified Ambiguities:**
         * **Ambiguity 1:**
@@ -96,7 +89,6 @@ The user will provide text, which may be an isolated dedicated conclusion sectio
             * **Description:** [Explain the ambiguity identified within the conclusion section and why it could lead to misinterpretation.]
             * **Quote Illustrating Ambiguity:** "[Relevant snippet from the conclusion.]"
         * *(Add more numbered ambiguities if identified. If none, write "No significant ambiguities observed in the conclusion.")*
-
 4.  **Notable Linguistic Features (Specific to Conclusions):**
     * **Observations:** [Comment on aspects such as:
         * **Strength and Justification of Claims:** (e.g., Are claims well-supported by the summarized findings, appropriately cautious, or overstated?)
