@@ -46,6 +46,8 @@ The user will provide text, which may be an isolated abstract or a full scientif
 ---
 *(End of Conditional Section: "Identified Abstract Text")*
 
+*(The detailed analysis of the abstract follows, if applicable)*
+
 ---
 
 #### **I. Extracted Information from Abstract**
