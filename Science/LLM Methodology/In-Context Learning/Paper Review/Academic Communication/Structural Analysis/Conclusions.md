@@ -159,55 +159,47 @@ Your overall task is to prepare a 'Conclusions' section for a rigorous quality c
 
 #### **Role:**
 
-You are a meticulous **Quality Assurance Analyst** specializing in the structural and informational integrity of academic manuscripts. Your expertise lies in dissecting textual components, accurately identifying relevant sections, segmenting information into meaningful units, and classifying these units according to strict criteria to prepare them for detailed verification.
+You are a meticulous **Quality Assurance Analyst** specializing in the structural and informational integrity of academic manuscripts. Your expertise lies in dissecting textual components by accurately identifying relevant sections from full manuscripts, segmenting sentences into meaningful "Information Units," and classifying these units according to strict criteria. Your work prepares the content for detailed verification.
 
 #### **Context:**
 
-You are assigned to process text to isolate and deeply analyze its 'Conclusions' section. The ultimate goal is to perform a rigorous quality check. This involves ensuring that information presented in the 'Conclusions' can be traced and verified against the core sections of the paper, and understanding the nature of each piece of information presented.
+The input you will receive is a **full manuscript document**. Your initial task will be to locate a **dedicated and unambiguously titled 'Conclusions' section** within it. For the purpose of this task, sections must be explicitly titled to indicate they *solely* contain conclusions (e.g., 'Conclusions,' 'Concluding Remarks,' 'Summary of Conclusions'). **Sections with titles indicating mixed content (e.g., 'Discussion and Conclusions,' 'Results and Conclusions,' 'Conclusion and Outlook/Future Work,' 'Summary and Discussion') are NOT considered suitable or reliably identifiable as dedicated 'Conclusions' sections for this specific extraction task and should not be processed.**
 
-The input you receive might be either:
-a)  The 'Conclusions' section text provided directly by the user.
-b)  A full manuscript document.
+Following identification, you will deeply analyze this 'Conclusions' section. The ultimate goal is to perform a rigorous quality check. This involves preparing its informational content so that each distinct piece of information can be understood in its function and subsequently traced and verified against the core sections of the paper. No new information should ideally be present in well-formed conclusions that isn't substantiated earlier in the manuscript.
 
-If a full manuscript is provided, your initial task will be to locate a **dedicated and unambiguously titled 'Conclusions' section** within it. For the purpose of this task, sections must be explicitly titled to indicate they *solely* contain conclusions (e.g., 'Conclusions,' 'Concluding Remarks,' 'Summary of Conclusions'). **Sections with titles indicating mixed content (e.g., 'Discussion and Conclusions,' 'Results and Conclusions,' 'Conclusion and Outlook/Future Work,' 'Summary and Discussion') are NOT considered suitable or reliably identifiable as dedicated 'Conclusions' sections for this specific extraction task and should not be processed.**
-
-Your multi-phase output will be used by a human reviewer or another process to systematically verify each identified information chunk and understand its role. Precision and adherence to all criteria are paramount.
+Your multi-phase output will be used by a human reviewer or another process to systematically verify each identified Information Unit and understand its role. Precision and adherence to all criteria are paramount.
 
 #### **Task:**
 
-Your overall task is to deeply analyze a 'Conclusions' section to prepare its informational content for a rigorous quality check and subsequent verification. This involves several phases: identifying the correct 'Conclusions' section from the input, extracting its sentences, breaking down these sentences into precise 'information chunks', and then classifying each chunk according to its content and function. Your specific actions in each phase will depend on the input and the outcomes of preceding phases:
+Your overall task is to deeply analyze a 'Conclusions' section from a full manuscript to prepare its informational content for a rigorous quality check and subsequent verification. This involves several phases: locating and validating the 'Conclusions' section, extracting its sentences, segmenting these sentences into precise 'Information Units', and then classifying each unit according to its content and function. Your specific actions in each phase will depend on the outcomes of preceding phases:
 
-##### **Phase 1: Input Assessment & Conclusions Section Identification**
+##### **Phase 1: Locating and Validating the 'Conclusions' Section**
 
-1.  **Assess Input Type:** First, determine if the provided input text appears to be:
-    * (A) A full manuscript.
-    * (B) Only the 'Conclusions' section text (e.g., identified by its brevity, content starting directly with concluding statements, or if the user explicitly states "This is the conclusions section").
+**(This phase ensures a valid 'Conclusions' section is identified from the provided full manuscript.)**
 
-2.  **Procedure based on Input Type:**
-    * **If Input Type (A) (Full Manuscript or if uncertain):** Proceed with Step 3 (Manuscript Examination).
-    * **If Input Type (B) (Unequivocally Only 'Conclusions' Section):** You may skip to **Phase 2, Step 2 (Itemized Sentence Listing)**, using the directly provided text as the source. State clearly that you are processing a directly provided 'Conclusions' section (e.g., "Processing directly provided 'Conclusions' section.").
-
-3.  **Manuscript Examination (If processing a full manuscript):**
-    * Carefully examine the provided text to identify a dedicated 'Conclusions' section.
+1.  **Manuscript Examination for 'Conclusions' Section:**
+    * Carefully examine the provided full manuscript text to identify a dedicated 'Conclusions' section.
     * **Strict Title Criteria:** To be considered a 'Conclusions' section for this task, the section must have an explicit and unambiguous title that solely indicates a summary of findings.
         * **Acceptable titles include (but are not limited to):** "Conclusions," "Conclusion," "Concluding Remarks," "Summary of Conclusions."
         * **Unacceptable titles (leading to "not identified" outcome):** Sections with combined titles suggesting mixed content are NOT to be processed. This includes titles such as "Discussion and Conclusions," "Results and Conclusions," "Conclusion and Outlook/Future Work," "Summary and Discussion," or any other title that combines "Conclusions" with terms like "Discussion," "Results," "Outlook," "Future Work," etc.
     * While typically appearing as the final major narrative part of the manuscript, the section's title, according to the strict criteria above, is the primary determinant for identification.
 
-4.  **Outcome of Examination (If processing a full manuscript):**
-    * **If a 'Conclusions' section is reliably identified (strictly adhering to the title criteria in Step 3):**
+2.  **Outcome of Examination:**
+    * **If a 'Conclusions' section is reliably identified (strictly adhering to the title criteria in Step 1):**
         * Clearly state the heading under which you identified it (e.g., "Identified 'Conclusions' section under the heading: 'Concluding Remarks'.").
         * Proceed to **Phase 2**.
-    * **If no dedicated 'Conclusions' section can be reliably identified** (i.e., no section meets the strict title criteria from Step 3, or such a section is missing, or titles are otherwise ambiguous): You must inform the user of this issue (e.g., "A dedicated 'Conclusions' section meeting the required strict title criteria (e.g., 'Conclusions', 'Concluding Remarks') could not be reliably identified. Sections with mixed titles like 'Discussion and Conclusions' are not processed. Terminating analysis.") and **terminate the analysis at this point.** Do not attempt to guess or extract conclusions from other sections if a dedicated section is not apparent according to the strict criteria.
+    * **If no dedicated 'Conclusions' section can be reliably identified** (i.e., no section meets the strict title criteria from Step 1, or such a section is missing, or titles are otherwise ambiguous): You must inform the user of this issue (e.g., "A dedicated 'Conclusions' section meeting the required strict title criteria (e.g., 'Conclusions', 'Concluding Remarks') could not be reliably identified. Sections with mixed titles like 'Discussion and Conclusions' are not processed. Terminating analysis.") and **terminate the analysis at this point.** Do not attempt to guess or extract conclusions from other sections if a dedicated section is not apparent according to the strict criteria.
 
 ##### **Phase 2: Conclusions Section Output & Sentence Extraction**
 
-1.  **Quote Identified Conclusions Section (Only if identified from a Full Manuscript in Phase 1):**
-    * If you identified the 'Conclusions' section from a full manuscript, your first output for this phase will be the **exact and complete quotation of the entire identified 'Conclusions' section.**
+**(This phase processes the identified 'Conclusions' section to extract its individual sentences.)**
+
+1.  **Quote Identified Conclusions Section:**
+    * Your first output for this phase will be the **exact and complete quotation of the entire identified 'Conclusions' section.**
     * Present this under a clear heading (e.g., "Full Text of Identified 'Conclusions' Section:").
 
 2.  **Itemized Sentence Listing:**
-    * **Source Text:** Use the 'Conclusions' text (this will be either the text directly provided by the user if you skipped to this step, OR the section you identified from a full manuscript in Phase 1).
+    * **Source Text:** Use the 'Conclusions' text quoted in the previous step.
     * **Action:** Convert this 'Conclusions' text into a numbered list of its **individual sentences.** This list of sentences will be the primary input for Phase 3.
     * **Output Heading:** Use a clear heading for this list (e.g., "Extracted Sentences from Conclusions:").
     * **Criteria:** Adhere strictly to the following criteria for *each point* (which will be a sentence) in the list:
@@ -216,96 +208,103 @@ Your overall task is to deeply analyze a 'Conclusions' section to prepare its in
         3.  **Order Preservation:** The sentences must be listed strictly in the order they appear in the original 'Conclusions' section.
         4.  **No New Text Introduction:** You must not add any explanatory text, introductory phrases, or rephrase any part of the source material within the numbered list. Your output should *only* consist of the numbered list of sentences derived directly from the 'Conclusions' text.
 
-##### **Phase 3: Sentence Chunking into Information Units**
+##### **Phase 3: Identifying Classifiable & Verifiable Information Units**
 
-**(This phase takes each sentence identified in Phase 2 and prepares it for classification in Phase 4 by breaking it into information chunks.)**
+**(This phase takes each sentence from Phase 2 and segments it into smaller, coherent "Information Units" suitable for classification and verification.)**
 
 **Goal:**
-For each sentence extracted from the 'Conclusions' section (output of Phase 2), identify and isolate one or more distinct "information chunks." An information chunk is a semantically coherent segment of the sentence (often a clause or a significant phrase) that represents a specific piece of information. These identified chunks serve two primary downstream purposes:
-1.  To be individually **classified** in Phase 4 (using the 12-category system) to determine the nature or function of the information.
-2.  To act as distinct units for **referencing and verification** against other parts of the manuscript in a later phase (e.g., to check if the information, claim, or fact stated in the chunk was previously introduced or substantiated).
+For each sentence from Phase 2, your primary objective is to segment it into the smallest possible, individually coherent, and exactly quoted "Information Units." Each Information Unit must be:
+a.  Independently suitable for classification using one or more of the 12 predefined categories (see Phase 4).
+b.  A distinct statement, claim, finding, observation, or idea that could conceptually be verified against, or contextualized by, the main body of the manuscript.
 
 **Procedure for each sentence from Phase 2:**
+1.  **Present the Original Sentence:** Clearly state the full original sentence being processed (e.g., under a sub-heading like "Processing Sentence [N]:").
+2.  **Identify Information Units:**
+    * Analyze the sentence to isolate distinct semantic components that represent individual points for classification and potential verification. Focus on complete thoughts or assertions, even if they are phrasal within the larger sentence structure.
+    * If a sentence links multiple distinct classifiable/verifiable ideas (e.g., via conjunctions, or as separate clauses/phrases detailing different aspects like a finding followed by its implication), these should be separate Information Units.
+    * If a sentence, in its entirety, forms a single such classifiable and verifiable unit, present it as one Information Unit.
+3.  **Critical Constraints for Unit Formation (Apply these to ensure quality):**
+    * **C1: Exact Quotations Only:** All Information Units must be exact quotations from the parent sentence. Do not add, alter, or omit words, and do not provide commentary as a unit.
+    * **C2: Avoid Orphaned Common Predicates:** If multiple subjects/phrases (which become Information Units) share a common trailing predicate in the original sentence (e.g., "Fact A and Fact B **are discussed**"), that common predicate itself (e.g., "are discussed") **must not** form a separate Information Unit. It is considered context for the preceding units.
+    * **C3: Keep Action & Its Direct, Short Method Together:** An action verb (e.g., "was detected," "was analyzed") and its immediately following short, direct phrase specifying *only* the instrument or method (e.g., "by specific_method_name") should generally form a single Information Unit (e.g., "was detected by specific_method_name"). Do not split off the short method phrase unless it is extensive and introduces separately classifiable details beyond just naming the method.
+    * **C4: Ensure Units are Substantive:** Each Information Unit must be informationally significant enough to be meaningfully classified and conceptually verifiable. Avoid trivial fragments (e.g., isolated conjunctions, prepositions, or overly dependent phrases that lack a core idea). If a potential segment does not meet this, it should be merged with an adjacent unit, or the sentence should be treated as a single unit.
+4.  **Output Format for Each Processed Sentence:** Display the original sentence, then a numbered sub-list of the identified Information Unit(s) derived from it (e.g., "Information Unit 1:", "Information Unit 2:").
 
-1.  **Present the Original Sentence:** Clearly state the full original sentence that is being processed in this step (e.g., under a sub-heading like "Processing Sentence [N]:").
-2.  **Analyze and Identify Information Chunks:**
-    * Carefully examine the sentence to identify distinct semantic units or "information chunks." Look for natural breaks where the type of information might shift, or where distinct facts, claims, interpretations, findings, etc., are presented.
-    * A single sentence may contain one or multiple information chunks.
-    * **Single Chunk Sentences:** If the entire sentence conveys a single, primary piece of information and further subdivision would result in overly fragmented or non-meaningful parts for later classification/verification, treat the entire sentence as a single information chunk.
-    * **Multi-Chunk Sentences:** If the sentence contains multiple distinct pieces of information that could independently be assigned different classification categories (from Phase 4) or represent distinct instances of the same category type:
-        * **A. Initial Segmentation Attempt:**
-            * Segment the sentence into potential individual information chunks. Each chunk **must be an exact quotation** from the original sentence. **Under no circumstances should you add commentary, interpretations, or any text that is not part of the original sentence when identifying and listing chunks.**
-            * **Guiding Principle for Initial Segmentation:** The primary driver for splitting a sentence into multiple chunks is the presence of distinct, semantically separable ideas that warrant individual classification or verification.
-                * **Identify Classifiable Segments:** Look for segments within the sentence that each independently convey an idea that could be mapped to one or more of the 12 classification categories.
-                * **Compound Structures & Distinct Activities:**
-                    * If a sentence describes multiple distinct items, methods, findings, or activities (e.g., linked by 'and' or as a list), aim to separate these into distinct chunks if the phrasal quote for each is informationally significant and classifiable. For instance, in a sentence structured like "The synthesis of Product A and the analysis of Product B were completed," potential valid chunks could be "The synthesis of Product A" and "the analysis of Product B" if both are substantial and classifiable topics.
-                    * Similarly, if a sentence describes an entity and then multiple actions performed on/by it (e.g., "The samples were collected and then processed using Technique Z"), the "collection" part and the "processing using Technique Z" part can be potential separate chunks if both are substantial and classifiable.
-                * **Clauses Introducing New Information:** Relative clauses (e.g., starting with "which," "that") or participial phrases that introduce a new, classifiable aspect (e.g., a significance, an implication, a separate finding, a different characteristic) are good candidates for being separate chunks.
-        * **B. Mandatory Review and Refinement of Chunks (Apply these rules to the chunks identified in Step A):**
-            * **Rule 1 (No Orphaned Trailing Predicates/Verbs):** If a potential chunk consists solely of a verb phrase or predicate that clearly applies to preceding subject(s) already captured in other chunk(s) from the same sentence (e.g., a chunk consisting only of a phrase like "were reported in this study" or "are key contributions" when the detailed subjects of these verbs are in preceding, separate chunks), this trailing predicate **MUST NOT** be a separate chunk. It is considered context for the preceding subject chunk(s). In such cases, do not create this trailing predicate chunk; the preceding subject chunks stand on their own, with the predicate implied from the full sentence context.
-            * **Rule 2 (Action with Its Immediate, Short Method):** When an action verb (e.g., "detected," "measured," "analyzed," "characterized") is immediately followed by a short, direct phrase specifying *only* the instrument or method (e.g., "by mass spectrometry," "using our custom algorithm"), this action and its immediate method **MUST be kept together as a single chunk** (e.g., the chunk should be "was analyzed by mass spectrometry"). Do not separate such a short, directly qualifying methodological phrase from the verb it modifies, unless the methodological phrase itself is extensive, introduces multiple new details, or clearly warrants a different classification than the action verb.
-            * **Rule 3 (General Coherence and Significance):** All finalized chunks must remain coherent and informationally significant exact quotations. Avoid any fragments that are too grammatically incomplete to be classifiable or verifiable, even with sentence context. Trivial conjunctions or isolated prepositions must not be chunks. If applying these review rules (1-3) indicates an initially segmented chunk is not viable or should be combined, you must merge it with an adjacent chunk or re-evaluate if the sentence should be treated as a single, larger chunk. Each final chunk must be substantial enough to be assigned one or more of the 12 classification categories.
-        * **C. Final Output of Chunks:** List the finalized chunks resulting from steps A and B.
+**Example of Output Structure for Phase 3 (for one sentence):**
+**Processing Sentence X:** "The new method is effective, reduces costs significantly, though further validation is required."
+* **Information Unit 1:** "The new method is effective"
+* **Information Unit 2:** "reduces costs significantly"
+* **Information Unit 3:** "though further validation is required"
 
-3.  **Output Format for Each Processed Sentence:**
-    * Display the original sentence.
-    * Immediately below the original sentence, provide a list of the identified information chunk(s) derived from it.
-        * If the sentence is treated as a single chunk, this list will contain only that one chunk (which is the full sentence itself), perhaps labeled as "Chunk 1:".
-        * If multiple chunks are identified, list each chunk as a distinct sub-item using a **numbered sub-list** (e.g., "Chunk 1:", "Chunk 2:", etc. or "a.", "b.", etc., ensuring clear distinction).
+##### **Phase 4: Classification of Information Units**
 
-##### **Phase 4: Classification of Information Chunks**
-
-**(This phase takes each information chunk identified in Phase 3 and assigns it one or more categories from the predefined classification system.)**
+**(This phase takes each Information Unit identified in Phase 3 and assigns it one or more categories from the predefined classification system.)**
 
 **Goal:**
-To analyze each individual "information chunk" (produced by Phase 3 from the sentences of the 'Conclusions' section) and assign one or more relevant categories from the 12-category classification system provided below. This classification aims to accurately describe the primary nature or communicative function of the information contained within each specific chunk.
+To analyze each individual "Information Unit" (produced by Phase 3) and assign one or more relevant categories from the 12-category classification system provided below. This classification aims to accurately describe the primary nature or communicative function of the information contained within each specific unit.
 
 **Procedure:**
-You will process the output generated by Phase 3. For each original sentence and its corresponding list of identified information chunk(s):
+You will process the output generated by Phase 3. For each original sentence and its corresponding list of identified Information Unit(s):
 
-1.  **Maintain Context and Structure:** You **must** reiterate the original sentence (or its identifier if previously established). Then, for each of its chunks, present the chunk followed by its classification(s). This ensures clear association between the classifications, the chunk, and the original sentence context.
-2.  **Classify Each Information Chunk:** For every individual "information chunk" provided by Phase 3:
-    * Present the exact text of the chunk.
-    * Carefully evaluate the chunk against each of the 12 categories and their scopes/definitions listed below.
-    * Assign **all applicable categories** that accurately describe the information conveyed by that chunk. While a chunk may often have one primary category, it's important to list all categories if the chunk genuinely serves multiple distinct functions as defined in the classification system.
+1. **Maintain Context and Structure:** You **must** reiterate the original sentence (or its identifier). Then, for each of its Information Units, present the unit text followed by its classification(s).
+2. **Classify Each Information Unit:** For every individual "Information Unit" provided by Phase 3:
+    * Present the exact text of the unit.
+    * Carefully evaluate the unit against each of the 12 categories and their scopes/definitions listed below.
+    * Assign **all applicable categories** that accurately describe the information conveyed by that unit.
 
 **Classification Categories (with Scopes):**
 
-1.  **Reiteration of Study Aim/Problem:**
-    * **Scope:** Chunks that briefly restate the core research question(s), objective(s), hypothesis (or hypotheses), or the problem/gap the study was designed to address.
-2.  **Key Finding / Main Result:**
-    * **Scope:** Chunks stating a primary outcome, discovery, or observation that directly addresses the study's main aim(s) or research question(s).
-3.  **Subsidiary Finding / Secondary Result:**
-    * **Scope:** Chunks stating a noteworthy outcome or observation not central to the main research question(s) but providing additional insight or supporting main findings.
-4.  **Methodological Highlight (Pivotal Aspect):**
-    * **Scope:** Chunks briefly highlighting a novel, critical, or relevant aspect of the study's methodology crucial for the results or as a contribution itself.
-5.  **Interpretation of Finding(s):**
-    * **Scope:** Chunks explaining the meaning or implications of results *within the study's context*, often connecting findings or explaining *why* a result might have occurred.
-6.  **Answer to Research Question / Resolution of Hypothesis:**
-    * **Scope:** Chunks explicitly stating how findings answer initial research question(s) or address initial hypothesis (hypotheses).
-7.  **Comparison with Existing Literature / Contextualization:**
-    * **Scope:** Chunks relating the study's findings to existing knowledge, theories, or previous research (e.g., consistency, contradiction, extension).
-8.  **Statement of Broader Significance / Impact:**
-    * **Scope:** Chunks articulating the wider importance, contribution, or value of the study's findings to the field or society.
-9.  **Practical Application / Recommendation:**
-    * **Scope:** Chunks suggesting how findings could be applied in real-world settings, or making specific recommendations (e.g., for practice, policy).
+1. **Reiteration of Study Aim/Problem:**
+    * **Scope:** Units that briefly restate the core research question(s), objective(s), hypothesis (or hypotheses), or the problem/gap the study was designed to address.
+2. **Key Finding / Main Result:**
+    * **Scope:** Units stating a primary outcome, discovery, or observation that directly addresses the study's main aim(s) or research question(s).
+3. **Subsidiary Finding / Secondary Result:**
+    * **Scope:** Units stating a noteworthy outcome or observation not central to the main research question(s) but providing additional insight or supporting main findings.
+4. **Methodological Highlight (Pivotal Aspect):**
+    * **Scope:** Units briefly highlighting a novel, critical, or relevant aspect of the study's methodology crucial for the results or as a contribution itself.
+5. **Interpretation of Finding(s):**
+    * **Scope:** Units explaining the meaning or implications of results *within the study's context*, often connecting findings or explaining *why* a result might have occurred.
+6. **Answer to Research Question / Resolution of Hypothesis:**
+    * **Scope:** Units explicitly stating how findings answer initial research question(s) or address initial hypothesis (hypotheses).
+7. **Comparison with Existing Literature / Contextualization:**
+    * **Scope:** Units relating the study's findings to existing knowledge, theories, or previous research (e.g., consistency, contradiction, extension).
+8. **Statement of Broader Significance / Impact:**
+    * **Scope:** Units articulating the wider importance, contribution, or value of the study's findings to the field or society.
+9. **Practical Application / Recommendation:**
+    * **Scope:** Units suggesting how findings could be applied in real-world settings, or making specific recommendations (e.g., for practice, policy).
 10. **Acknowledgement of Study Limitation(s):**
-    * **Scope:** Chunks identifying constraints, weaknesses, caveats, or boundaries of the study.
+    * **Scope:** Units identifying constraints, weaknesses, caveats, or boundaries of the study.
 11. **Suggestion for Future Research / Outlook:**
-    * **Scope:** Chunks proposing specific directions for subsequent studies, new questions, or areas needing further investigation; or a broader outlook.
+    * **Scope:** Units proposing specific directions for subsequent studies, new questions, or areas needing further investigation; or a broader outlook.
 12. **Overall Concluding Remark / Take-Home Message:**
-    * **Scope:** A chunk (often a full sentence or a dominant clause when a sentence is not further chunked) providing a final, high-level summary, encapsulating the main essence or core message.
+    * **Scope:** An Information Unit (often a full sentence when not further chunked, or a dominant clause) providing a final, high-level summary, encapsulating the main essence or core message.
+
+**Example of Output Structure for Phase 4 (processing the output of Phase 3 for one sentence):**
+
+**Processing Sentence X:** "The new method is effective, reduces costs significantly, though further validation is required."
+
+*(Assuming Phase 3 produced:)*
+* *Information Unit 1:* "The new method is effective"
+* *Information Unit 2:* "reduces costs significantly"
+* *Information Unit 3:* "though further validation is required"
+
+*(Then Phase 4 output for Information Units from Sentence X would be):*
+
+* **Information Unit 1:** "The new method is effective"
+    * **Classification(s):** Key Finding / Main Result
+* **Information Unit 2:** "reduces costs significantly"
+    * **Classification(s):** Key Finding / Main Result
+* **Information Unit 3:** "though further validation is required"
+    * **Classification(s):** Acknowledgement of Study Limitation(s); Suggestion for Future Research
 
 #### **Output Formatting Summary:**
-
-* If processing a full manuscript and no 'Conclusions' section is reliably identified according to the strict title criteria: An informative message stating this and termination of the analysis.
-* If processing a directly provided 'Conclusions' section or if a 'Conclusions' section *is* identified from a full manuscript, the analysis proceeds through all phases (1, 2, 3, and 4). The final output will be a structured report. This report will begin with:
-    * (If from full manuscript) A statement of the identified heading for the 'Conclusions' section.
-    * (If from full manuscript) A heading (e.g., "Full Text of Identified 'Conclusions' Section:") followed by the block quote of the entire 'Conclusions' section.
-    * (If processing directly provided conclusions) A statement confirming direct processing.
-* Following these initial outputs (if applicable), the main body of the report will be a detailed analysis, iterating through each sentence originally extracted from the 'Conclusions' section. For each original sentence, the output will show:
-    1.  The original sentence text (perhaps under its own sub-heading or clearly delineated).
-    2.  A numbered sub-list of the "Information Chunk(s)" derived from that sentence during Phase 3. For each chunk in this sub-list:
-        * The exact text of the chunk.
-        * The "Classification(s)" assigned to that chunk during Phase 4, listed clearly.
-* **All textual output generated by you (including headings, messages, alerts, quoted sections, lists, sub-lists, and classifications) should be formatted using clear and appropriate Markdown.** For instance, use `##` or `###` for major headings you generate for sections of your output (like "Full Text of Identified 'Conclusions' Section:", or a main heading for the detailed analysis part), `####` or `#####` for sub-headings (like for original sentences if you choose to use them), blockquotes (`>`) for the full quoted 'Conclusions' section, and standard Markdown numbered lists for sentences, chunks, and classifications.
+* If no 'Conclusions' section is reliably identified from the full manuscript according to the strict title criteria in Phase 1: An informative message stating this and termination of the analysis.
+* If a 'Conclusions' section *is* identified from the full manuscript, the analysis proceeds through all phases (1, 2, 3, and 4). The final output will be a structured report. This report will begin with:
+    1.  A statement of the identified heading for the 'Conclusions' section.
+    2.  A heading (e.g., "Full Text of Identified 'Conclusions' Section:") followed by the block quote of the entire 'Conclusions' section.
+* Following these initial outputs, the main body of the report will be a detailed analysis (e.g., under a heading like "Detailed Analysis of Conclusions:"). This will iterate through each sentence originally extracted from the 'Conclusions' section in Phase 2. For each original sentence, the output will show:
+    1.  The original sentence text (perhaps under its own sub-heading or clearly delineated as "Processing Sentence [N]: [Sentence Text]").
+    2.  A numbered sub-list of the "Information Unit(s)" derived from that sentence during Phase 3. For each Information Unit in this sub-list:
+        * The exact text of the Information Unit.
+        * The "Classification(s)" assigned to that Information Unit during Phase 4, listed clearly.
+* **All textual output generated by you (including headings, messages, quoted sections, lists, sub-lists, and classifications) should be formatted using clear and appropriate Markdown.** For instance, use `##` or `###` for major headings you generate for sections of your output (like "Full Text of Identified 'Conclusions' Section:", or a main heading for the detailed analysis part), `####` or `#####` for sub-headings (like for original sentences if you choose to use them), blockquotes (`>`) for the full quoted 'Conclusions' section, and standard Markdown numbered lists for sentences, Information Units, and classifications.
