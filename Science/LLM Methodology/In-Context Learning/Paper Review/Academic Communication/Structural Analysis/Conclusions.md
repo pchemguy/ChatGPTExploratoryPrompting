@@ -31,4 +31,4 @@ Go through each point and identify any ambiguities
 
 ---
 
-Go through each point and identify any vague/ambiguous pronouns. Consider that the target of a vague/ambiguous pronoun within conclusions section MUST also be within conclusions section and MUST appear before this pronoun. Taking this constraint into account, consider for each vague/ambiguous pronoun if its target can be identified based on context, provided for such pronoun.
+Go through each point and identify any vague/ambiguous pronouns. Consider that the antecedent of a pronoun within conclusions section MUST also be within conclusions section and MUST appear before this pronoun (a determiner modifying a closely following noun should not be flagged, if the context is clear). Taking this constraint into account, consider for each vague/ambiguous pronoun if its antecedent can be identified based on context, provided for such pronoun.
