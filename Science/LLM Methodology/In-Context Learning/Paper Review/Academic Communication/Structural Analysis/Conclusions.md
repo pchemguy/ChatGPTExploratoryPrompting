@@ -5,7 +5,7 @@ Quote Conclusions section
 
 ---
 
-Now I need you to convert Conclusions into a numebred list of points, each containing a single fact, going strictly in the order they appear in Conclusions.
+Now I need you to convert Conclusions into a numbered list of points, each containing a single fact (piece of information), going strictly in the order they appear in Conclusions.
 
 Important, do not generate a new text. Each point must be a sentence or sentence fragment taken exactly as it appears in the source text.
 
