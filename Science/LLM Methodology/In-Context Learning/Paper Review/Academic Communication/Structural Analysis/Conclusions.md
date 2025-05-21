@@ -23,4 +23,6 @@ Go through each point again and classify its content as
 - Future Directions/Perspectives
 - Concluding Statement (Take-Home Message)
 
+If a particular point ended up having more than a single piece of information, identify each piece of information and assign appropriate category. 
+
 ---
