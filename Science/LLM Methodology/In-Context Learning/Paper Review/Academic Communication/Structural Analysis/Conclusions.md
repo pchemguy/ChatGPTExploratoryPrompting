@@ -15,8 +15,7 @@ Go through each point again and classify its content as
 - Background / research question / hypothesis / objective / problem statement (unmet need, gap this research is trying to fill)
 - Main claimed result
 - Key methodology 
-- Important outcome or result related to the main claim or key methodology
-- Subsidiary finding or outcome
+- Important subsidiary finding or outcome
 - Interpretation and Answer to Research Question
 - Comparison with Existing Literature (Contextualization)
 - Significance and Implications
@@ -27,3 +26,9 @@ Go through each point again and classify its content as
 If a particular point ended up having more than a single piece of information, identify each piece of information and assign appropriate category. 
 
 ---
+
+Go through each point and identify any ambiguities
+
+---
+
+Go through each point and identify any vague/ambiguous pronouns. Consider that the target of a vague/ambiguous pronoun within conclusions section MUST also be within conclusions section and MUST appear before this pronoun. Taking this constraint into account, consider for each vague/ambiguous pronoun if its target can be identified based on context, provided for such pronoun.
