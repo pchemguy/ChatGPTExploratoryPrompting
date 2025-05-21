@@ -11,11 +11,15 @@ To do this, please convert the 'Conclusions' section (provided below/in the docu
 
 1. **Exact Quotation**: Each point must be a sentence or a sentence fragment taken **EXACTLY** as it appears in the source text.
 2. **Order**: The points must be listed strictly in the order they appear in the original 'Conclusions' section.
-3. **Distinct Verifiable Claim**: Each point must represent a single, distinct factual assertion or piece of information from the 'Conclusions' that can be individually verified against the main body of the manuscript.
+3. **Standalone Informational Value**: Each point must convey a **distinct and comprehensible piece of information**.
+    - If a single sentence from the source is broken into multiple points (i.e., fragments across numbered items), ensure that each resulting fragment is still **informationally significant and understandable on its own** or as a direct and essential continuation of the idea in the immediately preceding fragment that it completes.
+    - Avoid creating points from fragments that are merely conjunctions (e.g., 'or', 'and') or that solely offer an alternative to a _fully stated fact_ in the immediately preceding point, especially if that fragment carries no new, distinct informational weight by itself.
+    - The primary goal is for each numbered item, whether a full sentence or a fragment, to be as **self-contained as possible** in conveying a specific piece of information from the source.
+4. **Distinct Verifiable Claim**: Each point must represent a single, distinct factual assertion or piece of information from the 'Conclusions' that can be individually verified against the main body of the manuscript.
     - The level of granularity should be fine enough to isolate individual claims. If a single sentence in the 'Conclusions' makes multiple distinct factual assertions (e.g., 'Compound X showed property A and property B'), try to break these into separate points if the exact quotation rule allows for comprehensible, distinct fragments.
     - Even if a point is a fragment, it must clearly convey _what specific piece of information or claim_ needs to be checked for prior introduction in the manuscript. It should not be so minimal (like a single conjunction or a highly dependent clause referring to a distant antecedent) that its standalone meaning as a verifiable claim is lost.
     - If a phrase presents alternatives (e.g., 'X or Y'), and both 'X' and 'Y' are distinct pieces of information that need separate verification, list them separately if possible under the exact quote rule. If not, the combined phrase 'X or Y' will be considered the single claim from the conclusion to be verified. The priority is to capture every specific assertion made in the conclusion for subsequent checking.
-4. **No New Text**: Do not add any explanatory text or rephrase any part of the source.
+5. **No New Text**: Do not add any explanatory text or rephrase any part of the source.
 
 ---
 
