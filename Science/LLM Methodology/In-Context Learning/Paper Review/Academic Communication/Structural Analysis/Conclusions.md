@@ -5,9 +5,14 @@ Quote Conclusions section
 
 ---
 
-Now I need you to convert Conclusions into a numbered list of points, each containing a single fact (piece of information), going strictly in the order they appear in Conclusions.
+Please convert the Conclusions section into a numbered list of points. For each point, please adhere to the following criteria:
 
-Important, do not generate a new text. Each point must be a sentence or sentence fragment taken exactly as it appears in the source text.
+1. **Exact Quotation**: Each point must be a sentence or sentence fragment taken **EXACTLY** as it appears in the source text.
+2. **Order**: The points must be listed strictly in the order they appear in the original text.
+3. **Standalone Informational Value**: Each point must convey a **distinct and comprehensible piece of information**.
+    - If a single sentence from the source is broken into multiple points (i.e., fragments across numbered items), ensure that each resulting fragment is still **informationally significant and understandable on its own** or as a direct and essential continuation of the idea in the immediately preceding fragment that it completes.
+    - Avoid creating points from fragments that are merely conjunctions (e.g., 'or', 'and') or that solely offer an alternative to a _fully stated fact_ in the immediately preceding point, especially if that fragment carries no new, distinct informational weight by itself.
+    - The primary goal is for each numbered item, whether a full sentence or a fragment, to be as **self-contained as possible** in conveying a specific piece of information from the source.
 
 ---
 
