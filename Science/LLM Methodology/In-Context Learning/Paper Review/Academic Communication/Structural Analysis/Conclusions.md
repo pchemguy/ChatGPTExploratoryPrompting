@@ -14,8 +14,9 @@ Important, do not generate a new text. Each point must be a sentence or sentence
 Go through each point again and classify its content as
 - Background / research question / hypothesis / objective / problem statement (unmet need, gap this research is trying to fill)
 - Main claimed result
-- Important subsidiary finding or outcome
 - Key methodology 
+- Important outcome or result related to the main claim or key methodology
+- Subsidiary finding or outcome
 - Interpretation and Answer to Research Question
 - Comparison with Existing Literature (Contextualization)
 - Significance and Implications
