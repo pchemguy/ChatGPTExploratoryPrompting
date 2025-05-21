@@ -150,3 +150,53 @@
 - Messy appearance, dark/moody lighting, busy backgrounds.
 
 **Output Format:** High-resolution PNG with a transparent background if possible.
+
+# V4
+
+## Prompt: Professional Chemist Avatar - Prioritizing Facial Recognizability
+
+**Overall Goal:** Generate a 3D emoji-style avatar of a professional chemist. **CRITICAL LIKENESS REQUIREMENT:** If reference photographs of a person are provided, the **ABSOLUTE PRIORITY** is that the avatar's face (including face shape, eye shape, color, and placement, nose, mouth, and unique facial characteristics) **MUST BE CLEARLY AND UNMISTAKABLY RECOGNIZABLE** as the person in those photographs. **Stylistic Application:** Once facial recognizability is achieved, this recognizable face should then be rendered in the 3D emoji style and incorporate the other specified characteristics (age appearance, hair, attire, etc.) as described below.
+
+**Style:**
+- 3D, emoji-style, clean lines, smooth shading, slightly stylized realism.
+- The final output should aesthetically align with modern mobile OS avatar styles, similar to the provided reference image.
+
+**Subject:** Head and shoulders shot of a male-presenting individual.
+
+**Reference Photos Integration - Detailed Instructions for Facial Features:**
+1. **Foundation is Likeness:** The avatar’s entire facial structure and key proportions – including the overall face shape, the specific face aspect ratio (height to width), the relative size and placement of features within the face, the head size in proportion to the visible torso/shoulders as depicted in the reference photos, forehead, cheeks (explicitly ensuring their shape and fullness closely match the reference photos, avoiding alterations like making them appear significantly fatter, rounder, or thinner than the person depicted), jawline, chin, eye shape and color, eyebrow shape, nose shape, mouth shape, lip form, and ear shape, paying particular attention to how much the ears extend from the head as seen in the reference photographs, – must be directly derived from and be highly recognizable as the person in the **provided reference photographs.**
+2. **Unique Features:** Pay close attention to unique but subtle facial landmarks. For instance, if distinct dimples are visible in the reference photos, incorporate a slight, stylized hint of them to enhance recognizability. Similarly, consider other landmarks like a unique eyebrow arch, ensuring any such features are subtly represented if they contribute to likeness and fit the clean emoji style.
+3. **Expression:** Aim for a gentle, friendly, and intelligent smile, as seen in the original reference avatar, adapted naturally to the features of the person in the photo. The eyes should convey warmth and focus.
+4. **Shoulder and Body Orientation:** If any reference photographs depict the subject with a subtle turn of the shoulders or body (i.e., not strictly square to the camera), the avatar's shoulder and upper body orientation should preferably mirror this aspect from the reference(s). This should enhance the natural feel of the pose while remaining consistent with the overall 'head and shoulders shot' and desired 'front-facing or slight three-quarter view' perspective. The goal is to capture the person's typical stance if subtly indicated in the photos."
+
+**Application of Other Characteristics (to the recognizable face):**
+1. **Age Appearance:** The recognizable face should be depicted as a mature adult, likely in their 40s, conveying experience and wisdom (basically matching age of the person in reference photographs).
+2. **Skin Tone & Texture:**
+    - **Guidance from References & Desired Realism:** If reference photographs are provided, they should serve as the primary guide for the avatar's base skin tone. However, **avoid exact color replication or photorealistic skin rendering.** The goal is a tone that is harmonious with the subject in the photos but clearly fits the stylized 3D emoji aesthetic. Minor deviations from the photo's precise shades to achieve a better stylistic match are acceptable and encouraged. If no photos are provided, default to a medium-to-light brown skin tone with warm undertones.
+    - **Complexion Details & Surface Finish:** Regardless of photo provision, the skin should appear clean and well-defined. Crucially, **do NOT replicate any dark tones or shadows on the face that might suggest stubble, beard shadow, or hair beneath the skin** (e.g., a 'five o'clock shadow'), even if subtly visible in reference photos. The avatar must have a cleanly shaven appearance in the designated facial hair areas. While the overall complexion should be clear and consistent with the emoji style, **avoid an overly flat, unnaturally smooth, or 'plastic' look.** Strive for a subtle and appealing balance that suggests a natural skin surface without being photorealistic; a slight, refined tonal variation or a hint of minimal, stylized texture is desirable if it enhances character and warmth, achieving a compromise between realism and a cartoonish representation, without cluttering the clean emoji aesthetic or looking like skin imperfections.
+3. **Hair (Styled on the recognizable head):**
+    - **Style:** Short, neatly combed, classic men's haircut, possibly with a slight side part or brushed back, similar to the reference photos.
+    - **Color:** Predominantly black, with some lighter undertones.
+    - **Texture:** Smooth, well-defined strands.
+4. **Attire & Accessories (Consistent with original reference avatar style):**
+    - **Primary Clothing:** A crisp, white lab coat, open at the front. Lapels visible.
+    - **Underneath Coat:** A collared shirt, teal or light turquoise in color, visible at the neckline.
+    - **Eyeglasses: Crucially, the avatar must NOT wear any eyeglasses** (e.g., prescription glasses or fashion glasses over the eyes). This is distinct from the safety goggles mentioned below.
+    - **Professional Accessory (keep it clean):**
+            - A pen in the breast pocket, with a blue cap.
+            - Safety goggles (modern, functional) worn on the head/forehead.
+
+**Artistic Details & Lighting:**
+- **Lighting:** Soft, even front lighting, minimal harsh shadows, similar to the original reference avatar.
+- **Background:** Transparent background.
+- **Perspective:** **Perspective:** Front-facing or slight three-quarter view. Regardless of whether the overall pose is front-facing or a slight three-quarter view, the head itself should be oriented so the face is looking straight towards the viewer. Avoid turning the face significantly to the left or right, and ensure it is not tilted.
+- **Overall Mood:** Professional, knowledgeable, caring, approachable, modern, trustworthy.
+
+**Crucial Points to Avoid:**
+- **Losing Likeness:** Do NOT create a generic face. The resemblance to the reference photo's facial features is paramount.
+- **Stylistic Inconsistency:** While prioritizing likeness, do not abandon the requested 3D emoji style, age, hair, and attire. It's a blend.
+- Overly cartoonish or exaggerated features beyond the defined style.
+- Messy appearance, dark/moody lighting, busy backgrounds.
+
+**Output Format:** High-resolution PNG with a transparent background if possible.
+
