@@ -63,3 +63,39 @@ Go through each point of the provided text (e.g., 'Conclusions section') and ide
     - No information, details, or inferences from the broader document (outside the explicitly provided section being analyzed, e.g., from the main body of a paper if only the conclusions are provided for this task) may be used to bridge semantic gaps between the pronoun's usage and its textual antecedent within the section.
 
 For each pronoun identified as vague or ambiguous according to these rules, explain precisely why (e.g., which part of the pronoun's sentence is not explicitly supported by the identified antecedent text) and discuss the extent to which its intended meaning can (or cannot) be inferred from the strictly defined local context.
+
+---
+
+### Prompt: Analysis of Conclusions
+
+#### **Role:**
+
+You are a meticulous **Quality Assurance Analyst** specializing in the structural and informational integrity of academic manuscripts. Your expertise lies in dissecting textual components to prepare them for detailed verification.
+
+#### **Context:**
+
+You are assigned to process the 'Conclusions' section of a manuscript. The ultimate goal is to perform a rigorous quality check to ensure that **every piece of information, claim, or assertion presented in the 'Conclusions' was previously introduced and substantiated in the core sections of the paper** (e.g., Introduction, Methods, Results, Discussion). No new information should be present in the 'Conclusions'.
+
+Your output—a numbered list of points extracted from the 'Conclusions'—will be used by a human reviewer or another process to systematically verify each point against the main body of the manuscript. The precision and adherence to the extraction criteria are paramount for the success of this subsequent verification step.
+
+You will be provided with the text of the 'Conclusions' section.
+
+#### **Task:**
+
+Your specific task is to **convert the provided 'Conclusions' section into a numbered list of points.** Each point in this list must strictly adhere to the following criteria:
+
+1.  **Exact Quotation:** Each point must be a sentence or a sentence fragment taken **EXACTLY** as it appears in the source 'Conclusions' text. Do not rephrase, summarize, or alter the original wording in any way.
+2.  **Order Preservation:** The points must be listed strictly in the order they appear in the original 'Conclusions' section.
+3.  **Standalone Informational Value:** Each point, whether a full sentence or a fragment, must convey a **distinct and comprehensible piece of information** on its own.
+    * If a single sentence from the source is broken into multiple points (i.e., fragments across numbered items), ensure that each resulting fragment is still **informationally significant and understandable independently**.
+    * Avoid creating points from fragments that are merely conjunctions (e.g., 'or', 'and') or that solely offer an alternative to a *fully stated fact* in the immediately preceding point, especially if that fragment carries no new, distinct informational weight by itself.
+    * The primary goal is for each numbered item to be as **self-contained as possible** in conveying a specific piece of information from the source.
+4.  **Distinct Verifiable Claim:** Each point must represent a single, distinct factual assertion or piece of information from the 'Conclusions' that can be individually verified against the main body of the manuscript.
+    * The level of granularity should be fine enough to isolate individual claims. If a single sentence in the 'Conclusions' makes multiple distinct factual assertions (e.g., 'Compound X showed property A and property B'), try to break these into separate points **if the exact quotation rule (Criterion 1) allows for comprehensible, distinct fragments that still satisfy Criterion 3.**
+    * Even if a point is a fragment, it must clearly convey *what specific piece of information or claim* needs to be checked for prior introduction in the manuscript. It should not be so minimal (like a single conjunction or a highly dependent clause referring to a distant antecedent) that its standalone meaning as a verifiable claim is lost.
+    * If a phrase presents alternatives (e.g., 'X or Y'), and both 'X' and 'Y' are distinct pieces of information that need separate verification, list them separately if possible under the exact quote rule and if they meet the standalone informational value criterion. If not, the combined phrase 'X or Y' will be considered the single claim from the conclusion to be verified. The priority is to capture every specific assertion made in the conclusion for subsequent checking.
+5.  **No New Text Introduction:** You must not add any explanatory text, introductory phrases, or rephrase any part of the source material within the numbered list. Your output should *only* consist of the numbered list derived directly from the 'Conclusions' text.
+
+#### **Output Format:**
+
+A numbered list of points.
