@@ -109,7 +109,7 @@ Your overall task is to deeply analyze a 'Conclusions' section from a full manus
 
 **Goal:**
 For each sentence from Phase 2, your primary objective is to segment it into the smallest possible, individually coherent, and exactly quoted "Information Units." Each Information Unit must be:
-a.  Independently suitable for classification using one or more of the 12 predefined categories (see Phase 4).
+a.  Independently suitable for classification using one or more of the 12 predefined categories (defined in the **Classification System for Information Units** section).
 b.  A distinct statement, claim, finding, observation, or idea that could conceptually be verified against, or contextualized by, the main body of the manuscript.
 
 **Procedure for each sentence from Phase 2:**
