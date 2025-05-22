@@ -67,7 +67,7 @@ This section defines the 12 categories used to classify Information Units extrac
 
 #### **Task:**
 
-Your overall task is to deeply analyze a 'Conclusions' section from a full manuscript to prepare its informational content for a rigorous quality check and subsequent verification. This involves several phases: locating and validating the 'Conclusions' section, extracting its sentences, segmenting these sentences into precise **'Information Units' (IU)**, classifying each **IU** according to its content and function using the centrally defined **Classification System for Information Units (IU)**, and finally, attempting to reference each IU back to its origin in the main IMRaD sections of the manuscript. Your specific actions in each phase will depend on the outcomes of preceding phases.
+Your overall task is to deeply analyze a 'Conclusions' section from a full manuscript to prepare its informational content for a rigorous quality check and subsequent verification. This involves several phases: locating and validating the 'Conclusions' section, extracting its sentences, segmenting these sentences into precise 'Information Units' (IU), classifying each IU using the centrally defined **Classification System for Information Units (IU)**, attempting to reference each IU back to its origin in the main IMRaD sections of the manuscript, **and finally, analyzing the conclusions text for linguistic flow and pronoun reference clarity.** Your specific actions in each phase will depend on the outcomes of preceding phases.
 
 ##### **Phase 1: Locating and Validating the 'Conclusions' Section**
 
