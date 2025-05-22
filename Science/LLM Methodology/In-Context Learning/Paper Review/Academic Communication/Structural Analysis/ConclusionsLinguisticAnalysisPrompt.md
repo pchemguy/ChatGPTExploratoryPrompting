@@ -49,6 +49,43 @@ Your overall task is to analyze a 'Conclusions' section from a full manuscript f
         3. **Order Preservation:** The sentences must be listed strictly in the order they appear in the original 'Conclusions' section.
         4. **No New Text Introduction:** You must not add any explanatory text, introductory phrases, or rephrase any part of the source material within the numbered list. Your output should *only* consist of the numbered list of sentences derived directly from the 'Conclusions' text.
 
+##### **Phase 3: Linguistic Flow and Pronoun Reference Analysis**
+
+**(This phase analyzes the sentences of the 'Conclusions' section, as extracted by Phase 2, for vague/ambiguous pronoun references and issues affecting logical flow.)**
+
+**Goal:**
+To meticulously analyze the sentences of the 'Conclusions' section in sequence to:
+1.  Identify any pronouns (especially demonstrative pronouns like "this," "that," and personal pronouns like "it," "they" when used to refer to earlier concepts or entities) whose antecedents are vague, ambiguous, or insufficiently specified *strictly within the textual context of the 'Conclusions' section itself*.
+2.  Assess and note aspects of linguistic flow between sentences.
+
+**Procedure:**
+You will go through each sentence of the 'Conclusions' section one at a time, in the order they were extracted by Phase 2. For each sentence:
+
+1.  **Quote the Current Sentence:** Clearly display the full original sentence being processed (e.g., "Processing Sentence [N]: [Full Sentence Text]").
+2.  **Pronoun Reference Analysis:**
+    * Identify all candidate pronouns in the current sentence that refer back to previously mentioned concepts or entities (focus on demonstrative pronouns like "this," "that," "these," "those" when used pronominally, and personal pronouns like "it," "they").
+    * For each candidate pronoun, apply the following **strict constraints** to determine if it is vague or ambiguous:
+        * **(Constraint 1) Antecedent Location:** The antecedent (the specific word(s), phrase(s), or concept the pronoun refers to) **MUST** be explicitly present as text within the 'Conclusions' section (i.e., in the current or preceding sentences you have been given) and **MUST** appear *before* the pronoun in question.
+        * **(Constraint 2) Determiners vs. Pronouns:** A determiner (e.g., "this," "that," "these," "those") modifying a closely following noun (e.g., "this paper," "these results," "this work") should generally **not** be flagged as inherently vague for the purpose of this analysis if the resulting noun phrase has a clear and standard meaning in the context of a conclusions section. The primary focus is on pronouns standing more independently or referring to broader concepts. Relative pronouns (like "which," "who," "that" introducing a dependent clause) that have clear, immediate grammatical antecedents within the same sentence are also generally not the target unless their antecedent itself is part of a vague construction.
+        * **(Constraint 3) Context for Antecedent Identification:** The context for identifying an antecedent is **strictly limited** to:
+            * The sentence in which the pronoun appears.
+            * The explicit text of the sentences that precede the pronoun *within the provided 'Conclusions' section only*.
+        * **(Constraint 4) Sufficiency of Antecedent for Clarity (Crucial Rule):**
+            * For a pronoun to be considered **not vague or ambiguous**, its identified antecedent (from the strictly defined preceding text within the 'Conclusions' section) must **explicitly and fully support all aspects of the statement in which the pronoun is used.**
+            * This means the actual text of the antecedent must itself contain the necessary semantic components to justify all specific actions, descriptions, qualifications, and context attributed to the pronoun in its sentence.
+            * **If the antecedent provides only general support, but the sentence containing the pronoun introduces more specific qualifications, actions, or context that are not explicitly covered by the antecedent's text, then the pronoun MUST be flagged as vague or its reference deemed incompletely supported by the local textual antecedent.**
+            * No information, details, or inferences from any part of the broader document *outside* the provided 'Conclusions' sentences may be used to bridge semantic gaps.
+    * **Reporting for Pronoun Analysis:**
+        * If no pronouns requiring this detailed antecedent analysis are identified in the sentence, state this briefly (e.g., "No standalone pronouns requiring antecedent analysis identified in this sentence.").
+        * For each pronoun analyzed:
+            * State the pronoun.
+            * **Vagueness/Ambiguity Analysis:** Based on the constraints above, detail your reasoning. If an antecedent is considered, state what it is. If the pronoun is flagged, explain precisely why.
+            * **Conclusion:** State clearly whether the pronoun is "Not flagged as vague/ambiguous" or "Flagged as vague/ambiguous."
+            * **(If Flagged) Inferability Note:** Briefly discuss the extent to which its intended meaning can (or cannot) be reasonably inferred *strictly from the preceding text within the 'Conclusions' section*.
+3.  **Flow Analysis:**
+    * After analyzing pronouns, consider the transition from the *immediately preceding sentence* to the *current sentence*.
+    * **Note on Flow:** You must provide a brief note on the flow. If there is an obviously abrupt topic shift, a missing logical connector, or if the sentence structure is unusually convoluted in a way that obscures its connection to the previous statement, make a specific note (e.g., "Flow Note: Transition from previous sentence regarding [topic A] to current sentence on [topic B] is abrupt and lacks clear connection."). If the flow is smooth and logical, state "Flow Note: Smooth transition from previous sentence." For the first sentence of the 'Conclusions' section, state "Flow Note: N/A (first sentence)."
+
 #### **Output Formatting Summary:**
 
 * If no 'Conclusions' section is reliably identified from the full manuscript according to the strict title criteria in Phase 1: An informative message stating this and termination of the analysis.
