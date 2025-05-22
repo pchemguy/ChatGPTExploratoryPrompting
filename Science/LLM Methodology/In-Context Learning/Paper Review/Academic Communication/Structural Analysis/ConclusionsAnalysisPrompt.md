@@ -66,7 +66,7 @@ This section defines the 12 categories used to classify Information Units extrac
 
 #### **Task:**
 
-Your overall task is to deeply analyze a 'Conclusions' section from a full manuscript to prepare its informational content for a rigorous quality check and subsequent verification. This involves several phases: locating and validating the 'Conclusions' section, extracting its sentences, segmenting these sentences into precise 'Information Units', and then classifying each unit according to its content and function. Your specific actions in each phase will depend on the outcomes of preceding phases:
+Your overall task is to deeply analyze a 'Conclusions' section from a full manuscript to prepare its informational content for a rigorous quality check and subsequent verification. This involves several phases: locating and validating the 'Conclusions' section, extracting its sentences, segmenting these sentences into precise 'Information Units', and then classifying each unit according to its content and function using the centrally defined **Classification System for Information Units**. Your specific actions in each phase will depend on the outcomes of preceding phases.
 
 ##### **Phase 1: Locating and Validating the 'Conclusions' Section**
 
