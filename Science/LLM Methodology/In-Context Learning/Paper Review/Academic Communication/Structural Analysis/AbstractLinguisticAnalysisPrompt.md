@@ -72,9 +72,8 @@ To meticulously analyze the provided sentences in sequence to:
 2. Assess and note aspects of linguistic flow between these sentences.
 
 **Procedure:**
-You will go through each sentence of the 'Conclusions' section one at a time, in the order they were extracted by Phase 2. For each sentence:
-
-1.  **Quote the Current Sentence:** Clearly display the full original sentence being processed (e.g., "Processing Sentence [N]: [Full Sentence Text]").
+You will go through each sentence provided from Phase 2 one at a time, in the given order. For each sentence:
+1. **Quote the Current Sentence:** Clearly display the full original sentence being processed (e.g., "Processing Sentence [N]: [Full Sentence Text]").
 2.  **Pronoun Reference Analysis:**
     * Identify all candidate pronouns in the current sentence that refer back to previously mentioned concepts or entities (focus on demonstrative pronouns like "this," "that," "these," "those" when used pronominally, and personal pronouns like "it," "they").
     * For each candidate pronoun, apply the following **strict constraints** to determine if it is vague or ambiguous:
