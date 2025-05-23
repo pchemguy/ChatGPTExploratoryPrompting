@@ -1,6 +1,6 @@
 https://arxiv.org/abs/2505.03332
 https://gemini.google.com/app/388d36c942f229eb
-https://g.co/gemini/share/b7a1d2e31ecf
+https://g.co/gemini/share/b8ad0010d379
 
 OK, satire it is (or, perhaps, you might suggest one of the more specific term, after we discuss the target).
 
@@ -16,6 +16,17 @@ Trying to make sense of AI product tiers in 2025 has become a full-time job.
 The current strategy: if your competitor has an expensive "PRO" plan, just name your affordable plan "PRO" too! What could possibly go wrong?
 Anyway, I have to go use my "Gemini PRO 2.5 PRO" now. Wish me luck.
 
-#AI #ProductStrategy #Marketing #SaaS #Tech #Funny #UserExperience
+======================================================
 
-N.B. This is also a little AI experiment. I used my prompt "Adaptive Prompt Engineering Assistant & Tutor - Meta2-Prompt" from Appendix B in this preprint (https://arxiv.org/abs/2505.03332) to help me create the text of the post above and an image generation prompt. I described the situation to the AI (Gemini) and asked it to create me a prompt for generating a satire image. Than I used the generated prompt with ChatGPT and Gemini (see attached images). Than in the first conversation I asked AI to generate associated post text. If you are interested, here is the shared AI chat https://gemini.google.com/app/388d36c942f229eb
+P.S. This post is also a small AI experiment.
+
+The images and text were created through a collaborative process with AI. Here’s the workflow:
+
+1. I configured Gemini as an AI assistant using my custom "Adaptive Prompt Engineering Assistant & Tutor" prompt (from Appendix B of my recent preprint: [https://arxiv.org/abs/2505.03332](https://arxiv.org/abs/2505.03332)).
+2. I described the chaotic branding situation and had the AI assistant generate a detailed prompt for a satirical image.
+3. The attached images are the results from using that single prompt in both ChatGPT and Gemini's own image generator.
+4. Finally, I tasked the original AI assistant with writing the social media post you read above.
+
+For those interested in the prompt engineering details, you can see the entire AI conversation here: https://g.co/gemini/share/b8ad0010d379
+
+#AI #ProductStrategy #Marketing #SaaS #Tech #Funny #UserExperience
