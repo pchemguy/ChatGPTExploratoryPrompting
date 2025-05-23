@@ -1,4 +1,6 @@
-https://gemini.google.com/app/98d25aabb37f83e0
+>[!Note]
+>  
+>  https://gemini.google.com/app/98d25aabb37f83e0
 
 # Prompt for Deep Academic Text Analysis
 
@@ -33,13 +35,10 @@ Your primary objective is to perform a deep, critical analysis of the provided a
 ### **Part 1: Foundational Structure (The Logical Framework)**
 
 **1.1. Structural Integrity and Conventions:**
-
 - First, assess the document's primary structure based on its identified type (e.g., the funnel structure of an Introduction, the sequential logic of a Methods section).
 - **Additionally, apply other relevant analytical lenses where appropriate.** For example, if the text is a **summary or abstract**, analyze how well it reflects the underlying **IMRaD logic**. Does it clearly present a condensed version of the Introduction (problem/context), Methods (what was done), Results (key findings), and Discussion (implication/conclusion)? The absence or significant imbalance of one of these logical components in a summary is a critical flaw.
 - Critically evaluate whether the overall structure is logical, complete, and effective for the document's purpose. Quote any part that seems out of place or violates convention.
-
 **1.2. Purpose, Signposting, and Focus:**
-
 - Identify the text's primary purpose or central argument (e.g., the paper's thesis, the introduction's research question, the methods section's objective). Is this purpose stated clearly and early?
 - Evaluate the "roadmap." Does the text effectively use signposting to guide the reader through its sections or arguments? Quote any transitions that are abrupt, weak, or misleading.
 - Critically assess whether all content directly serves the text's single, focused purpose. Quote any sentences that digress or are not aligned with the section's stated goal.
@@ -47,50 +46,34 @@ Your primary objective is to perform a deep, critical analysis of the provided a
 ### **Part 2: Paragraph and Sentence Cohesion (Connecting the Ideas)**
 
 **2.1. Formal Transitions and Logical Connectors:**
-
 - Analyze the use of transitional words. Are they precise and formal?
 - Identify and quote sentences or paragraphs where a missing logical connector (e.g., _however, therefore, consequently_) creates an abrupt or confusing logical leap. Suggest an appropriate connector.
-
 **2.2. The Known-New Contract:**
-
 - Scrutinize the sentence-to-sentence flow.
 - Provide one clear example of a sentence chain that executes the Known-New contract well, explaining how it enhances flow.
 - Crucially, identify and quote a sentence chain that **fails** this principle, resulting in a disjointed, list-like feel. Rewrite the chain to establish proper flow.
-
 **2.3. Strategic Repetition for Cohesion and Clarity:**
-
 - Distinguish between effective strategic repetition (for precision and focus) and unhelpful redundancy.
 - Is there a consistent and precise use of key technical terms? Quote examples.
 - Identify any instance where using a synonym for a key term introduces ambiguity. Quote the inconsistency and explain the potential for misinterpretation.
-
 **2.4. The Topical Chain (Hub-and-Spoke Cohesion):**
-
 - Analyze the structure of several key paragraphs.
 - Identify and quote a paragraph that effectively uses the "Topical Chain" model to develop a complex idea around a central hub.
 - More importantly, identify a paragraph that **lacks a cohesive model** and reads as a collection of disconnected facts. Explain how it could be restructured around a central "hub" sentence to improve its focus and flow.
-
 **2.5. Unambiguous Pronoun Reference:**
-
 - Meticulously scan the document for pronouns (_it, they, this, these, which_).
 - Quote every single instance where the antecedent is ambiguous, distant, or unclear. For each, state the potential sources of confusion.
-
 **2.6. Parallel Structure:**
-
 - Identify and quote any instance of faulty parallelism in lists, headings, or comparisons. Provide the corrected, parallel version.
 
 ### **Part 3: Language, Precision, and Revision (The Final Polish)**
 
 **3.1. Objective and Formal Tone:**
-
 - Is the tone consistently objective and formal for an academic document?
 - Quote any phrase or sentence that uses colloquialisms, overly subjective or emotional language, or inappropriate rhetorical questions.
-
 **3.2. Technical Terminology and Acronyms:**
-
 - Verify that all specialized terms and acronyms are explicitly defined upon their first use within the provided text. List any that are not.
-
 **3.3. Integration of Data and Figure References:**
-
 - _(Apply if relevant to the text type)_ Evaluate how references (e.g., "Figure 1," "Table 2") are integrated.
 - Quote any instance where a reference feels "dropped in" and disrupts the sentence's flow. Suggest a smoother integration.
 
