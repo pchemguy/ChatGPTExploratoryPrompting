@@ -64,12 +64,12 @@ Your overall task is to analyze an **'Abstract' section** from a full manuscript
 
 ##### **Phase 3: Linguistic Flow and Pronoun Reference Analysis**
 
-**(This phase analyzes the sentences of the 'Conclusions' section, as extracted by Phase 2, for vague/ambiguous pronoun references and issues affecting logical flow.)**
+**(This phase analyzes the sequence of sentences extracted in Phase 2 from the identified summary section of the manuscript for vague/ambiguous pronoun references and issues affecting logical flow.)**
 
 **Goal:**
-To meticulously analyze the sentences of the 'Conclusions' section in sequence to:
-1.  Identify any pronouns (especially demonstrative pronouns like "this," "that," and personal pronouns like "it," "they" when used to refer to earlier concepts or entities) whose antecedents are vague, ambiguous, or insufficiently specified *strictly within the textual context of the 'Conclusions' section itself*.
-2.  Assess and note aspects of linguistic flow between sentences.
+To meticulously analyze the provided sentences in sequence to:
+1. Identify any pronouns (especially demonstrative pronouns like "this," "that," and personal pronouns like "it," "they" when used to refer to earlier concepts or entities) whose antecedents are vague, ambiguous, or insufficiently specified _strictly within the textual context of the provided sequence of sentences itself_.
+2. Assess and note aspects of linguistic flow between these sentences.
 
 **Procedure:**
 You will go through each sentence of the 'Conclusions' section one at a time, in the order they were extracted by Phase 2. For each sentence:
