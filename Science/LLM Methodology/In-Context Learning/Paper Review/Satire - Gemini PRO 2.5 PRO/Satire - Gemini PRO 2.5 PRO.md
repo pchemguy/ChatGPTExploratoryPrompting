@@ -29,4 +29,4 @@ The images and text were created through a collaborative process with AI. Hereâ€
 
 For those interested in the prompt engineering details, you can see the entire AI conversation here: https://g.co/gemini/share/b8ad0010d379
 
-#AI #ProductStrategy #Marketing #SaaS #Tech #Funny #UserExperience
+#AI #ProductStrategy #Marketing #Funny #UserExperience
