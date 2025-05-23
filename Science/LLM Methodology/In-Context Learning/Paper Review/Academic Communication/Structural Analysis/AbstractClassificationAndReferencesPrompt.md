@@ -97,28 +97,30 @@ Your overall task is to deeply analyze an **'Abstract'** section from a full man
         - **Negative Cues:** The abstract typically does not contain detailed in-text citations (though some specific styles might be exceptions), extensive methodological details, or subheadings within itself.
     - **c. Confidence in Identification:** You must be reasonably confident that an identified text block (whether explicitly labeled or identified by other cues) genuinely serves as the abstract. If the text is missing, if there are multiple ambiguous candidates, or if no single block of text clearly matches these converging characteristics in the expected location, then you should conclude that an abstract cannot be reliably identified.
 2. **Outcome of Examination:**
-    - **If an 'Abstract' section or an unlabeled text block strongly consistent with an abstract's characteristics (as defined in Step 1) is reliably identified:**
-        - If it was explicitly labeled, state the heading (e.g., "Identified Abstract under the heading: 'Abstract'." or "Identified Abstract under the heading: 'Summary' (due to position and content).").
-        - If it was unlabeled but identified by position, structure, and content, state: "An unlabeled text block consistent with an Abstract was identified at the beginning of the manuscript based on its position, structure, and content."
-        - Proceed to **Phase 2**.
-    - **If no dedicated 'Abstract' section or a clearly identifiable abstract-like text block can be reliably identified based on the combined evidence:** You must inform the user of this issue (e.g., "An Abstract section or a clearly identifiable equivalent could not be reliably located at the beginning of the manuscript using explicit labels or combined positional, structural, and content cues. Terminating analysis.") and **terminate the analysis at this point.**
+    * **If an 'Abstract' section or an unlabeled text block strongly consistent with an abstract's characteristics (as defined in Step 1) is reliably identified:**
+        * If it was explicitly labeled, state the heading (e.g., "Identified Abstract under the heading: 'Abstract'.").
+        * If it was unlabeled but identified by position, structure, and content, state: "An unlabeled text block consistent with an Abstract was identified at the beginning of the manuscript, starting with the phrase '[insert the first 5-7 words of the identified abstract text]' and ending with the phrase '[insert the last 5-7 words of the identified abstract text]'."
+        * **Crucially note for subsequent phases: The exact text block identified and demarcated here as the Abstract MUST be excluded from the search pool for prior substantiation in Phase 5.**
+        * Proceed to **Phase 2**.
+    * **If no dedicated 'Abstract' section or a clearly identifiable abstract-like text block can be reliably identified based on the combined evidence:** You must inform the user of this issue (e.g., "An Abstract section or a clearly identifiable equivalent could not be reliably located at the beginning of the manuscript using explicit labels or combined positional, structural, and content cues. Terminating analysis.") and **terminate the analysis at this point.**
+ 
 
 ##### **Phase 2: Abstract Section Output & Sentence Extraction**
 
 **(This phase processes the identified 'Abstract' section to extract its individual sentences.)**
 
-1.  **Quote Identified Abstract Section:**
+1. **Quote Identified Abstract Section:**
     * Your first output for this phase will be the **exact and complete quotation of the entire identified 'Abstract' section.**
     * Present this under a clear heading (e.g., "Full Text of Identified 'Abstract' Section:").
-2.  **Itemized Sentence Listing:**
+2. **Itemized Sentence Listing:**
     * **Source Text:** Use the 'Abstract' text quoted in the previous step.
     * **Action:** Convert this 'Abstract' text into a numbered list of its **individual sentences.** This list of sentences will be the primary input for Phase 3.
     * **Output Heading:** Use a clear heading for this list (e.g., "Extracted Sentences from Abstract:").
     * **Criteria:** Adhere strictly to the following criteria for *each point* (which will be a sentence) in the list:
-        1.  **Sentence Unit:** Each point in the numbered list must be a single, complete sentence taken from the source 'Abstract' text.
-        2.  **Exact Quotation:** Each sentence must be quoted **EXACTLY** as it appears in the source 'Abstract' text.
-        3.  **Order Preservation:** The sentences must be listed strictly in the order they appear in the original 'Abstract' section.
-        4.  **No New Text Introduction:** You must not add any explanatory text.
+        1. **Sentence Unit:** Each point in the numbered list must be a single, complete sentence taken from the source 'Abstract' text.
+        2. **Exact Quotation:** Each sentence must be quoted **EXACTLY** as it appears in the source 'Abstract' text.
+        3. **Order Preservation:** The sentences must be listed strictly in the order they appear in the original 'Abstract' section.
+        4. **No New Text Introduction:** You must not add any explanatory text.
 
 ##### **Phase 3: Identifying Classifiable & Verifiable Information Units (IU) from the Abstract**
 
@@ -126,21 +128,21 @@ Your overall task is to deeply analyze an **'Abstract'** section from a full man
 
 **Goal:**
 For each sentence from Phase 2, your primary objective is to segment it into the smallest possible, individually coherent, and exactly quoted **"Information Units" (IU)**. Each **IU** must be:
-a.  Independently suitable for classification using one or more of the 13 predefined categories (defined in the **Classification System for Information Units (IU)** section).
-b.  A distinct statement, claim, finding, observation, or idea that could conceptually be verified against, or contextualized by, the main body of the manuscript.
+a. Independently suitable for classification using one or more of the 13 predefined categories (defined in the **Classification System for Information Units (IU)** section).
+b. A distinct statement, claim, finding, observation, or idea that could conceptually be verified against, or contextualized by, the main body of the manuscript.
 
 **Procedure for each sentence from Phase 2:**
-1.  **Present the Original Sentence:** Clearly state the full original sentence being processed.
-2.  **Identify Information Units (IU):**
+1. **Present the Original Sentence:** Clearly state the full original sentence being processed.
+2. **Identify Information Units (IU):**
     * Analyze the sentence to isolate distinct semantic components.
     * If a sentence links multiple distinct classifiable/verifiable ideas, these should be separate **IU(s)**.
     * If a sentence, in its entirety, forms a single such unit, present it as one **IU**.
-3.  **Critical Constraints for Information Unit (IU) Formation (Apply these to ensure quality):**
+3. **Critical Constraints for Information Unit (IU) Formation (Apply these to ensure quality):**
     * **C1: Exact Quotations Only:** All **IU(s)** must be exact quotations. Do not add, alter, omit, or comment.
     * **C2: Avoid Orphaned Common Predicates:** If multiple subjects/phrases (IU(s)) share a common trailing predicate, that predicate **must not** form a separate **IU**.
     * **C3: Keep Action & Its Direct, Short Method Together:** An action verb and its immediate, short method phrase should generally form a single **IU**.
     * **C4: Ensure Units are Substantive:** Each **IU** must be informationally significant for classification/verification. Avoid trivial fragments. If a segment doesn't meet this, merge it or treat the sentence as a single unit.
-4.  **Output Format for Each Processed Sentence:** Display the original sentence, then a numbered sub-list of the identified **IU(s)** (e.g., "**IU** 1:", "**IU** 2:").
+4. **Output Format for Each Processed Sentence:** Display the original sentence, then a numbered sub-list of the identified **IU(s)** (e.g., "**IU** 1:", "**IU** 2:").
 
 **Example of Output Structure for Phase 3 (for one Abstract sentence):**
 **Processing Sentence X:** "The study demonstrated X and revealed Y, using method Z."
@@ -158,8 +160,8 @@ To analyze each individual **IU** (produced by Phase 3) and assign one or more r
 **Procedure:**
 For each original Abstract sentence and its corresponding list of identified **IU(s)**:
 
-1.  **Maintain Context and Structure:** Reiterate the original sentence. Then, for each of its **IU(s)**, present the unit text followed by its classification(s).
-2.  **Classify Each Information Unit (IU):** For every individual **IU** from Phase 3:
+1. **Maintain Context and Structure:** Reiterate the original sentence. Then, for each of its **IU(s)**, present the unit text followed by its classification(s).
+2. **Classify Each Information Unit (IU):** For every individual **IU** from Phase 3:
     * Present the exact text of the **IU**.
     * Evaluate the **IU** against the 13 categories in the **Classification System for Information Units (IU)** section.
     * Assign **all applicable categories**.
@@ -182,18 +184,26 @@ For each original Abstract sentence and its corresponding list of identified **I
 
 **Goal:**
 For every **IU** from the Abstract:
-1.  Locate the **first instance** in the main IMRaD sections where the core information of that **IU** was introduced/substantiated.
-2.  Provide evidence.
-3.  Identify if the **IU** from the 'Abstract' introduces **new substantive information** not found in IMRaD.
+1. Locate the **first instance** in the main IMRaD sections where the core information of that **IU** was introduced/substantiated.
+2. Provide evidence.
+3. Identify if the **IU** from the 'Abstract' introduces **new substantive information** not found in IMRaD.
 
 **Procedure:**
 For each original Abstract sentence and its list of classified **IU(s)**:
 
-1.  **Display Context:** Reiterate the full original sentence, the specific **IU** text, and its Classification(s).
-2.  **Determine Verification Strategy:** Use the **"Classification System for Information Units (IU)"** (Primary IMRaD Location, Verification Notes) for the current **IU**.
-3.  **Search Main Manuscript Body (IMRaD Sections):** Search Introduction, Methods, Results, Discussion. **Do not use the Abstract itself or the Conclusions section for *first* substantiation.** Find the earliest passage substantiating the **IU**.
-4.  **Evaluate Numeric Quantities (If the IU contains them):** Apply rules for numeric verification (exact match, derivation, rounding as previously defined). Determine if numeric quantity is (a) exact match, (b) reasonable rounding, (c) derived but unstated, or (d) not found/misleading.
-5.  **Report Verification Findings for Each Information Unit (IU):** Synthesize Step 3 & 4 findings. Present under "Verification:" with:
+1. **Display Context:** Reiterate the full original sentence, the specific **IU** text, and its Classification(s).
+2. **Determine Verification Strategy:** Use the **"Classification System for Information Units (IU)"** (Primary IMRaD Location, Verification Notes) for the current **IU**.
+3. **Search Designated IMRaD Sections (Excluding Abstract and Conclusions):**
+    * For the purpose of this verification step, the "main manuscript body" refers specifically to the **Introduction, Methods, Results, and Discussion sections.**
+    * You **MUST EXCLUDE** the following from your search pool when seeking prior substantiation for an IU derived from the Abstract:
+        * The specific text block that you identified and processed as the 'Abstract' in Phase 1 and Phase 2 (as demarcated by its starting and ending phrases if it was unlabeled, or by its section heading if it was labeled).
+        * Any 'Conclusions' section that may be present in the manuscript.
+    * The goal is to find support for Abstract Information Units *only* within the core IMRaD sections (Introduction, Methods, Results, Discussion).
+    * Systematically search these designated IMRaD sections for relevant passages. If these sections are not explicitly labeled (e.g., an unlabeled Introduction immediately following an unlabeled Abstract), your search for IMRaD content must begin with the text immediately *after* the end of the identified Abstract block.
+    * Your aim is to find the **earliest specific passage(s)** within these IMRaD sections (i.e., text following the identified Abstract and excluding any Conclusions section) that introduce, detail, or substantiate the core assertion, data, or idea presented in the IU from the Abstract.
+    * Focus on semantic equivalence and factual correspondence.
+4. **Evaluate Numeric Quantities (If the IU contains them):** Apply rules for numeric verification (exact match, derivation, rounding as previously defined). Determine if numeric quantity is (a) exact match, (b) reasonable rounding, (c) derived but unstated, or (d) not found/misleading.
+5. **Report Verification Findings for Each Information Unit (IU):** Synthesize Step 3 & 4 findings. Present under "Verification:" with:
     * **A. If Supporting Evidence is Found in IMRaD sections:**
         * **Status:** Substantiated. (Or "Partially Substantiated").
         * **First Appearance Location:** Specify IMRaD section and precise location.
@@ -210,12 +220,12 @@ For each original Abstract sentence and its list of classified **IU(s)**:
 
 * If no 'Abstract' section is reliably identified in Phase 1: An informative message and termination.
 * If an 'Abstract' section *is* identified, the analysis proceeds through all 5 phases. The final report begins with:
-    1.  Statement of the identified heading for the 'Abstract' section.
-    2.  Heading (e.g., "Full Text of Identified 'Abstract' Section:") and block quote.
-    3.  Heading (e.g., "Extracted Sentences from Abstract:") and list of sentences.
+    1. Statement of the identified heading for the 'Abstract' section.
+    2. Heading (e.g., "Full Text of Identified 'Abstract' Section:") and block quote.
+    3. Heading (e.g., "Extracted Sentences from Abstract:") and list of sentences.
 * Following this, the main report body (e.g., "Detailed IU Analysis from Abstract (Phases 3-5):") iterates through each Abstract sentence. For each sentence:
-    1.  Original sentence text.
-    2.  Numbered sub-list of **IU(s)** from Phase 3. For each **IU**:
+    1. Original sentence text.
+    2. Numbered sub-list of **IU(s)** from Phase 3. For each **IU**:
         * Exact text of the **IU**.
         * "Classification(s)" from Phase 4.
         * "Verification:" details from Phase 5.
