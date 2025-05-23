@@ -87,13 +87,13 @@ You will go through each sentence provided from Phase 2 one at a time, in the gi
             - This means the actual text of the antecedent must itself contain the necessary semantic components to justify all specific actions, descriptions, qualifications, and context attributed to the pronoun in its sentence.
             - **If the antecedent provides only general support, but the sentence containing the pronoun introduces more specific qualifications, actions, or context that are not explicitly covered by the antecedent's text, then the pronoun MUST be flagged as vague or its reference deemed incompletely supported by the local textual antecedent.**
             - No information, details, or inferences from any part of the broader document _outside_ the **provided sequence of sentences** may be used to bridge semantic gaps.
-    * **Reporting for Pronoun Analysis:**
-        * If no pronouns requiring this detailed antecedent analysis are identified in the sentence, state this briefly (e.g., "No standalone pronouns requiring antecedent analysis identified in this sentence.").
-        * For each pronoun analyzed:
-            * State the pronoun.
-            * **Vagueness/Ambiguity Analysis:** Based on the constraints above, detail your reasoning. If an antecedent is considered, state what it is. If the pronoun is flagged, explain precisely why.
-            * **Conclusion:** State clearly whether the pronoun is "Not flagged as vague/ambiguous" or "Flagged as vague/ambiguous."
-            * **(If Flagged) Inferability Note:** Briefly discuss the extent to which its intended meaning can (or cannot) be reasonably inferred *strictly from the preceding text within the 'Conclusions' section*.
+    - **Reporting for Pronoun Analysis:**
+        - If no pronouns requiring this detailed antecedent analysis are identified in the sentence, state this briefly (e.g., "No standalone pronouns requiring antecedent analysis identified in this sentence.").
+        - For each pronoun analyzed:
+            - State the pronoun.
+            - **Vagueness/Ambiguity Analysis:** Based on the constraints above, detail your reasoning. If an antecedent is considered, state what it is. If the pronoun is flagged, explain precisely why.
+            - **Conclusion:** State clearly whether the pronoun is "Not flagged as vague/ambiguous" or "Flagged as vague/ambiguous."
+            - **(If Flagged) Inferability Note:** Briefly discuss the extent to which its intended meaning can (or cannot) be reasonably inferred _strictly from the preceding text within the provided sequence of sentences_.
 3.  **Flow Analysis:**
     * After analyzing pronouns, consider the transition from the *immediately preceding sentence* to the *current sentence*.
     * **Note on Flow:** You must provide a brief note on the flow. If there is an obviously abrupt topic shift, a missing logical connector, or if the sentence structure is unusually convoluted in a way that obscures its connection to the previous statement, make a specific note (e.g., "Flow Note: Transition from previous sentence regarding [topic A] to current sentence on [topic B] is abrupt and lacks clear connection."). If the flow is smooth and logical, state "Flow Note: Smooth transition from previous sentence." For the first sentence of the 'Conclusions' section, state "Flow Note: N/A (first sentence)."
