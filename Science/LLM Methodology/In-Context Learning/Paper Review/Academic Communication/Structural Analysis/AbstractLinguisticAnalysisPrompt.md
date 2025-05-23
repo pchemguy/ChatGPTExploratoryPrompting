@@ -14,40 +14,50 @@ Following identification and sentence extraction, you will analyze the 'Conclusi
 
 Your overall task is to analyze a 'Conclusions' section from a full manuscript for its linguistic and semantic clarity. This involves three phases: locating and validating the 'Conclusions' section, extracting its sentences, and then performing a detailed linguistic analysis on each sentence, focusing on pronoun references and flow. Your specific actions in each phase will depend on the outcomes of preceding phases.
 
-##### **Phase 1: Locating and Validating the 'Conclusions' Section**
+##### **Phase 1: Locating and Validating the 'Abstract' Section**
 
-**(This phase ensures a valid 'Conclusions' section is identified from the provided full manuscript.)**
+**(This phase ensures a valid 'Abstract' section or its equivalent is identified from the provided full manuscript.)**
 
-1. **Manuscript Examination for 'Conclusions' Section:**
-    * Carefully examine the provided full manuscript text to identify a dedicated 'Conclusions' section.
-    * **Strict Title Criteria:** To be considered a 'Conclusions' section for this task, the section must have an explicit and unambiguous title that solely indicates a summary of findings.
-        * **Acceptable titles include (but are not limited to):** "Conclusions," "Conclusion," "Concluding Remarks," "Summary of Conclusions."
-        * **Unacceptable titles (leading to "not identified" outcome):** Sections with combined titles suggesting mixed content are NOT to be processed. This includes titles such as "Discussion and Conclusions," "Results and Conclusions," "Conclusion and Outlook/Future Work," "Summary and Discussion," or any other title that combines "Conclusions" with terms like "Discussion," "Results," "Outlook," "Future Work," etc.
-    * While typically appearing as the final major narrative part of the manuscript, the section's title, according to the strict criteria above, is the primary determinant for identification.
-
+1. **Manuscript Examination for 'Abstract' Section:**
+    - Your primary goal is to identify the Abstract of the manuscript. This is typically a concise, self-contained summary of the entire paper.
+    - **a. Search for Explicit Labels (Highest Priority):**
+        - First, scan the beginning of the manuscript (typically after title/authors/affiliations and before the main Introduction) for a section explicitly and unambiguously titled "Abstract". This is the most reliable identifier.
+        - Also consider the title "Summary" as a potential candidate **only if** it appears in this pre-Introduction position and its content functions as a comprehensive overview of the paper (background, methods, results, conclusions). If "Summary" appears elsewhere (e.g., at the end of the paper), it is likely not the abstract.
+    - **b. If No Clear Explicit Label is Found, Use Positional, Structural, and Content Cues (Converging Evidence):**
+        - **Positional Evidence (Very Strong Cue):** Look for a distinct block of text located at the very beginning of the main research article, immediately following elements like the paper title, author list, affiliations, and keywords (if present), and clearly preceding the main body sections (e.g., "Introduction" or a section numbered "1.").
+        - **Structural & Length Evidence:** This text block is usually presented as a single paragraph or a few short paragraphs. It typically does not have its own section number (like "1. Abstract"). Its length is generally concise (e.g., 150-350 words, though this can vary by discipline and journal; this is a soft guideline).
+        - **Content Evidence (The "Mini-Paper" Structure):** The content of this text block should provide a self-contained summary covering the essential aspects of the paper:
+            - Brief background or rationale for the study.
+            - The primary objectives or purpose.
+            - A concise description of the core methodology used.
+            - The principal results or key findings.
+            - The main conclusions or significant implications.
+        - **Negative Cues:** The abstract typically does not contain detailed in-text citations (though some specific styles might be exceptions), extensive methodological details, or subheadings within itself.
+    - **c. Confidence in Identification:** You must be reasonably confident that an identified text block (whether explicitly labeled or identified by other cues) genuinely serves as the abstract. If the text is missing, if there are multiple ambiguous candidates, or if no single block of text clearly matches these converging characteristics in the expected location, then you should conclude that an abstract cannot be reliably identified.
 2. **Outcome of Examination:**
-    * **If a 'Conclusions' section is reliably identified (strictly adhering to the title criteria in Step 1):**
-        * Clearly state the heading under which you identified it (e.g., "Identified 'Conclusions' section under the heading: 'Concluding Remarks'.").
+    * **If an 'Abstract' section or an unlabeled text block strongly consistent with an abstract's characteristics (as defined in Step 1) is reliably identified:**
+        * If it was explicitly labeled, state the heading (e.g., "Identified Abstract under the heading: 'Abstract'.").
+        * If it was unlabeled but identified by position, structure, and content, state: "An unlabeled text block consistent with an Abstract was identified at the beginning of the manuscript, starting with the phrase '[insert the first 5-7 words of the identified abstract text]' and ending with the phrase '[insert the last 5-7 words of the identified abstract text]'."
+        * **Crucially note for subsequent phases: The exact text block identified and demarcated here as the Abstract MUST be excluded from the search pool for prior substantiation in Phase 5.**
         * Proceed to **Phase 2**.
-    * **If no dedicated 'Conclusions' section can be reliably identified** (i.e., no section meets the strict title criteria from Step 1, or such a section is missing, or titles are otherwise ambiguous): You must inform the user of this issue (e.g., "A dedicated 'Conclusions' section meeting the required strict title criteria (e.g., 'Conclusions', 'Concluding Remarks') could not be reliably identified. Sections with mixed titles like 'Discussion and Conclusions' are not processed. Terminating analysis.") and **terminate the analysis at this point.** Do not attempt to guess or extract conclusions from other sections if a dedicated section is not apparent according to the strict criteria.
+    * **If no dedicated 'Abstract' section or a clearly identifiable abstract-like text block can be reliably identified based on the combined evidence:** You must inform the user of this issue (e.g., "An Abstract section or a clearly identifiable equivalent could not be reliably located at the beginning of the manuscript using explicit labels or combined positional, structural, and content cues. Terminating analysis.") and **terminate the analysis at this point.**
 
-##### **Phase 2: Conclusions Section Output & Sentence Extraction**
+##### **Phase 2: Abstract Section Output & Sentence Extraction**
 
-**(This phase processes the identified 'Conclusions' section to extract its individual sentences.)**
+**(This phase processes the identified 'Abstract' section to extract its individual sentences.)**
 
-1. **Quote Identified Conclusions Section:**
-    * Your first output for this phase will be the **exact and complete quotation of the entire identified 'Conclusions' section.**
-    * Present this under a clear heading (e.g., "Full Text of Identified 'Conclusions' Section:").
-
+1. **Quote Identified Abstract Section:**
+    * Your first output for this phase will be the **exact and complete quotation of the entire identified 'Abstract' section.**
+    * Present this under a clear heading (e.g., "Full Text of Identified 'Abstract' Section:").
 2. **Itemized Sentence Listing:**
-    * **Source Text:** Use the 'Conclusions' text quoted in the previous step.
-    * **Action:** Convert this 'Conclusions' text into a numbered list of its **individual sentences.** This list of sentences will be the primary input for Phase 3.
-    * **Output Heading:** Use a clear heading for this list (e.g., "Extracted Sentences from Conclusions:").
+    * **Source Text:** Use the 'Abstract' text quoted in the previous step.
+    * **Action:** Convert this 'Abstract' text into a numbered list of its **individual sentences.** This list of sentences will be the primary input for Phase 3.
+    * **Output Heading:** Use a clear heading for this list (e.g., "Extracted Sentences from Abstract:").
     * **Criteria:** Adhere strictly to the following criteria for *each point* (which will be a sentence) in the list:
-        1. **Sentence Unit:** Each point in the numbered list must be a single, complete sentence taken from the source 'Conclusions' text.
-        2. **Exact Quotation:** Each sentence must be quoted **EXACTLY** as it appears in the source 'Conclusions' text. Do not rephrase, summarize, or alter the original wording in any way.
-        3. **Order Preservation:** The sentences must be listed strictly in the order they appear in the original 'Conclusions' section.
-        4. **No New Text Introduction:** You must not add any explanatory text, introductory phrases, or rephrase any part of the source material within the numbered list. Your output should *only* consist of the numbered list of sentences derived directly from the 'Conclusions' text.
+        1. **Sentence Unit:** Each point in the numbered list must be a single, complete sentence taken from the source 'Abstract' text.
+        2. **Exact Quotation:** Each sentence must be quoted **EXACTLY** as it appears in the source 'Abstract' text.
+        3. **Order Preservation:** The sentences must be listed strictly in the order they appear in the original 'Abstract' section.
+        4. **No New Text Introduction:** You must not add any explanatory text.
 
 ##### **Phase 3: Linguistic Flow and Pronoun Reference Analysis**
 

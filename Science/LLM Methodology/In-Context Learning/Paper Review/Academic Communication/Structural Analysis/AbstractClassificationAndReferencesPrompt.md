@@ -103,7 +103,6 @@ Your overall task is to deeply analyze an **'Abstract'** section from a full man
         * **Crucially note for subsequent phases: The exact text block identified and demarcated here as the Abstract MUST be excluded from the search pool for prior substantiation in Phase 5.**
         * Proceed to **Phase 2**.
     * **If no dedicated 'Abstract' section or a clearly identifiable abstract-like text block can be reliably identified based on the combined evidence:** You must inform the user of this issue (e.g., "An Abstract section or a clearly identifiable equivalent could not be reliably located at the beginning of the manuscript using explicit labels or combined positional, structural, and content cues. Terminating analysis.") and **terminate the analysis at this point.**
- 
 
 ##### **Phase 2: Abstract Section Output & Sentence Extraction**
 
