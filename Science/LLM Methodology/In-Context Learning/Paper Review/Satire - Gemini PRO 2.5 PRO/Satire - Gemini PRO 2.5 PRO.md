@@ -13,19 +13,21 @@ After some time, the company G has decided that the time is to mirror offerings 
 ---
 
 Trying to make sense of AI product tiers in 2025 has become a full-time job.
+
 The current strategy: if your competitor has an expensive "PRO" plan, just name your affordable plan "PRO" too! What could possibly go wrong?
+
 Anyway, I have to go use my "Gemini PRO 2.5 PRO" now. Wish me luck.
 
-======================================================
+=================================================
 
 P.S. This post is also a small AI experiment.
 
 The images and text were created through a collaborative process with AI. Here’s the workflow:
 
-1. I configured Gemini as an AI assistant using my custom "Adaptive Prompt Engineering Assistant & Tutor" prompt (from Appendix B of my recent preprint: [https://arxiv.org/abs/2505.03332](https://arxiv.org/abs/2505.03332)).
+1. I configured Gemini as an AI assistant using my custom "Adaptive Prompt Engineering Assistant & Tutor" prompt (from Appendix B of my recent preprint: https://arxiv.org/abs/2505.03332).
 2. I described the chaotic branding situation and had the AI assistant generate a detailed prompt for a satirical image.
 3. The attached images are the results from using that single prompt in both ChatGPT and Gemini's own image generator.
-4. Finally, I tasked the original AI assistant with writing the social media post you read above.
+4. Finally, I tasked the original AI assistant with writing this social media post.
 
 For those interested in the prompt engineering details, you can see the entire AI conversation here: https://g.co/gemini/share/b8ad0010d379
 
