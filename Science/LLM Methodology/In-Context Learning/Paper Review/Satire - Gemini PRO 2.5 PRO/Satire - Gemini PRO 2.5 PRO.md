@@ -18,7 +18,7 @@ The current strategy: if your competitor has an expensive "PRO" plan, just name 
 
 Anyway, I have to go use my "Gemini PRO 2.5 PRO" now. Wish me luck.
 
-=================================================
+===========================
 
 P.S. This post is also a small AI experiment.
 
