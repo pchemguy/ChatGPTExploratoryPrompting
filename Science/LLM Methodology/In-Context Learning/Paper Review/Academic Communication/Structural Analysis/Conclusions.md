@@ -150,6 +150,6 @@ Your overall task is to prepare a 'Conclusions' section for a rigorous quality c
 
 >[!Note]
 > 
-> https://gemini.google.com/app/ea7f24844be01748
-> https://gemini.google.com/app/1d06f6971b2c587c
+> https://gemini.google.com/app/ea7f24844be01748  
+> https://gemini.google.com/app/1d06f6971b2c587c  
 
