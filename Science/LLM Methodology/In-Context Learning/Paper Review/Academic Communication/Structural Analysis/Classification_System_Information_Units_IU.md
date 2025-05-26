@@ -54,7 +54,7 @@
     - **Scope:** Information Units proposing specific directions for subsequent studies, new research questions arising from the current findings, or areas needing further investigation, including a broader outlook. (May be very brief or absent in Abstracts; more common and detailed in Conclusions).
     - **Primary IMRaD Location for First Introduction/Substantiation:** Discussion
     - **Verification Notes:** Check that these suggestions logically arise from the study and summarize detailed suggestions from the Discussion. Abstracts rarely detail this.
-13. **Overall Concluding Remark / Take-Home Message**    
+13. **Overall Concluding Remark / Take-Home Message**
     - **Scope:** An Information Unit (IU) (often a full sentence when not further chunked, or a dominant clause) providing a final, high-level summary that encapsulates the main essence of the study's findings and their importance. (This is the culminating statement for both Abstracts and Conclusions).
     - **Primary IMRaD Location for First Introduction/Substantiation:** Content derived from Results and Discussion; specific phrasing is unique to summary sections.
     - **Verification Notes:** The message must be a fair and accurate representation of substantiated contributions detailed in Results/Discussion and should not introduce new substantive claims.
