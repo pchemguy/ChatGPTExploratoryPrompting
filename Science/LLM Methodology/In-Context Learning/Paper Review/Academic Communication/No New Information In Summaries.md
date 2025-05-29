@@ -95,3 +95,82 @@ My internal search confirms that the IMRaD structure's rise to prominence occurr
 This comprehensive prompt should guide Gemini or ChatGPT to find the specific types of academic support you need. Remember that AI-generated results should always be critically reviewed and verified against the actual source documents.
 
 Let me know if you'd like to refine this prompt further or explore other angles!
+
+# Q
+
+ChatGPT suggest to add field focus, which I indicated as STEM
+
+# A
+
+That's excellent feedback and a valuable refinement! Adding a "field focus" like STEM is a smart strategic move. While the principle we're discussing is broadly applicable, focusing the AI's search on STEM literature can help it prioritize sources and examples most relevant to scientific and technical disciplines, which often adhere very strictly to structured formats like IMRaD.
+
+I'll integrate this into the PUD. This aligns perfectly with iterative refinement and ensuring the prompt is as targeted as possible.
+
+---
+
+## **Revised Deep Research Prompt (PUD v2 - Incorporating STEM Focus)**
+
+Here's the updated prompt. The key addition is highlighted.
+
+Markdown
+
+```
+**Role:** You are a specialized AI Research Assistant with expertise in academic publishing standards, scientific writing conventions, and the history of scholarly communication, **with a particular emphasis on STEM (Science, Technology, Engineering, and Mathematics) disciplines.**
+
+**Objective:** My goal is to find reputable academic sources that explicitly state, discuss, or strongly support the established academic writing principle that **the Abstract and the Conclusion sections of a scholarly manuscript (typically following an IMRaD or similar structure) must not introduce new information, data, claims, or concepts that are not already presented and discussed within the main body of the paper** (e.g., Introduction, Methods, Results, Discussion). The focus is primarily on practices within STEM fields.
+
+**Task:** Please conduct a thorough search to identify and present such sources.
+
+**Key Information & Constraints:**
+
+1.  **Core Thesis to Support:** The central idea is that abstracts and conclusions are for summarizing and reflecting on the main text, not for introducing novel elements.
+2.  **Field Focus:** **Primarily STEM (Science, Technology, Engineering, Mathematics).** While the principle may be universal, prioritize examples, guidelines, and discussions from STEM journals, publishers, and style guides (e.g., CSE - Council of Science Editors, IEEE Style Manual, ACS Style Guide, AIP Style Manual, specific publisher guidelines for STEM journals). However, foundational academic writing guides that strongly support this principle are also valuable, even if not exclusively STEM-focused.
+3.  **Preferred Source Types (in order of preference):**
+    * **Established Academic Style Guides/Manuals:** (e.g., Council of Science Editors (CSE) Style Manual, IEEE Style Manual, ACS Style Guide, AIP Style Manual, APA Publication Manual, Chicago Manual of Style – focus on sections discussing manuscript structure or writing abstracts/conclusions, particularly as they apply to or are used within STEM).
+    * **Author Guidelines from Leading Academic Publishers (especially those prominent in STEM):** (e.g., Elsevier, Springer Nature, Wiley, IEEE, ACS Publications, AIP Publishing, Taylor & Francis – look for their general manuscript preparation guides for authors, particularly for STEM journals).
+    * **Peer-Reviewed Academic Journal Articles or Books (from STEM or science communication fields):** Publications discussing scientific writing, research methodology, rhetoric of science, or academic publishing standards that explicitly address this principle within a STEM context or as a general best practice highly relevant to STEM.
+    * **Reputable Textbooks on Scientific/Technical Writing or Research Methods.**
+4.  **Date Preference:**
+    * Strong preference for sources published **before 2010**, or even significantly older (e.g., pre-2000, pre-1990), to demonstrate the long-standing nature of this principle within STEM and general academia.
+    * If newer sources are found, they should ideally reference the historical establishment of this rule or be foundational texts that are widely recognized.
+5.  **Focus:** The principle itself ("no new information/data/claims in abstract/conclusion"), not just general advice on writing abstracts or conclusions, unless that advice explicitly includes this rule.
+6.  **Keywords & Concepts for Your Search Strategy:**
+    * "scientific writing standards," "technical communication," "STEM publishing guidelines," "IMRaD structure," "manuscript preparation," "abstract writing STEM," "conclusion writing STEM," "reporting standards engineering"
+    * "new information in abstract," "new data in conclusion," "claims in abstract," "scope of abstract engineering," "function of conclusion science"
+    * Combine these with terms like "Council of Science Editors," "IEEE author guidelines," "ACS Style Guide," "Elsevier STEM," "Springer Nature physics," "style guide," "author instructions," "editorial policy," "rhetoric of science," "history of scientific paper."
+7.  **Avoid:**
+    * Blog posts, informal websites, student theses (unless they are meta-analyses of publishing standards from reputable universities or directly pertinent to STEM communication history).
+    * Sources that only give vague advice without explicitly mentioning the "no new information" constraint.
+
+**Output Requirements:**
+
+For each identified source, please provide:
+
+1.  **Full Citation:** (Author(s), Year, Title, Journal/Publisher, Volume/Issue, Pages, DOI if available).
+2.  **Source Type:** (e.g., "Author Guidelines - Elsevier (STEM journal)," "Academic Journal Article - Journal of Technical Writing and Communication," "Style Manual - CSE").
+3.  **Direct Quotation(s) (if possible):** The exact text from the source that states or strongly implies the principle.
+4.  **Brief Explanation:** A 1-2 sentence explanation of how the source/quotation supports the thesis, especially if the quotation is not perfectly explicit but the context clearly supports it, noting any STEM relevance.
+5.  **Contextual Notes (if relevant):** Any information about the source's authority or why it's considered reputable in this context (e.g., "Widely used style guide in engineering," "Instructions from a leading publisher of chemistry journals").
+
+**Strategy:**
+
+* Prioritize depth and relevance within the STEM context first, then broaden if necessary to foundational general guides.
+* Cross-reference information if possible.
+* Think historically: how was this rule established or codified, particularly within scientific communication?
+
+Please begin your search.
+```
+
+---
+
+## **Explanation of Changes (Tutor/Collaborator Mode):**
+
+- **Role & Objective Enhanced:** I've explicitly added "STEM" to the AI's expertise and the objective to immediately orient its focus.
+- **New "Field Focus" Constraint:** This is the primary addition, making STEM the priority while still allowing for influential general guides. I've also included examples of STEM-specific style guides and publishers.
+- **Refined Source Types:** I've subtly re-emphasized STEM within the source type descriptions and examples.
+- **Expanded Keywords:** I've added a few more STEM-related keyword examples to guide the AI's internal search (e.g., "technical communication," "reporting standards engineering," "scope of abstract engineering," "function of conclusion science," "IEEE author guidelines," "ACS Style Guide").
+- **Output & Strategy Tweaks:** Minor adjustments to reinforce the STEM context in the desired output and search strategy.
+
+This version should provide even more targeted results for your needs in supporting this thesis within an academic publication, particularly if it's aimed at a STEM audience or relates to STEM research.
+
+Thanks for sharing that insight from ChatGPT – it's a great example of how iterative feedback improves prompt design! How does this revised version look to you?
