@@ -2,6 +2,8 @@
 >[!Note]
 >
 > https://gemini.google.com/app/2ecc0a0d7bd6a5c8
+> https://chatgpt.com/c/68389089-def4-8004-a78c-1e720597d03d
+> https://gemini.google.com/app/d50ede1d16030987
 
 # Q
 
