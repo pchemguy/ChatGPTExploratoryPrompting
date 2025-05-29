@@ -1,4 +1,4 @@
-# **Ai-Facilitated Analysis of Abstracts and Conclusions:** **Flagging No New Information and Ambiguous Pronouns**
+# **Ai-Facilitated Analysis of Abstracts and Conclusions: Flagging No New Information and Ambiguous Pronouns**
 
 ## 1. **Introduction**
 
