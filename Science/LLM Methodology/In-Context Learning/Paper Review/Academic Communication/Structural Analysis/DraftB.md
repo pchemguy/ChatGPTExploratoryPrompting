@@ -1,0 +1,15 @@
+# **Ai-Facilitated Analysis of Abstracts and Conclusions: Flagging No New Information and Ambiguous Pronouns**
+
+## 1. **Introduction**
+
+Computer-assisted tools for academic writing have a long history [1], but the recent emergence of state-of-the-art (SOTA) large language models (LLMs) has enabled new forms of accessible semantic and linguistic analysis [5, 6] and synthesis [7]. Modern LLM architectures, such as the models like Gemini Pro 2.5 Pro [2], ChatGPT Plus o3 [3], and Claude Opus 4 [4], possess capabilities that are particularly useful for advanced processing of technical texts. Specifically, their large context windows allow for the analysis of full-length research papers [8, 9], while in-context learning (ICL) [11–13] combined with advanced prompting strategies [14–22] makes it possible to systematically focus the model's attention on specific aspects of a manuscript [8, 9].
+
+Many scholarly publications that report original research follow the IMRaD (Introduction, Methods, Results, and Discussion) structure [#]. Two other critical sections, the Abstract and the Conclusions, serve as academic summaries that frame this main body of work. This study focuses on the semantic and linguistic quality of these two summary sections. We propose an LLM-based workflow to diagnose two common issues that can detract from the clarity and integrity of these summaries: the inclusion of information not substantiated in the main text and the use of ambiguous pronoun constructs.
+
+The first issue, which we term "no new information," is a critical principle of summary writing. All factual claims within a summary must originate from and be substantiated by the IMRaD content of the paper. If a result or observation appears in a summary but not in the main text, it represents an unsubstantiated claim. The second issue involves ambiguous pronouns (e.g., a standalone "this"), which can disrupt narrative flow and complicate comprehension by obscuring the intended antecedent [#]. To address these problems, we developed and tested a series of proof-of-concept (PoC) prompts designed to guide an LLM in identifying and flagging these specific issues within a sample text [33]. The prompts and our development process are detailed in the appendices and supporting information.
+
+
+
+The first problem we target addresses a recognized principle of effective academic summaries: the expectation that they contain 'no new information'—that is, no factual claims or data not already substantiated within the main IMRaD sections of the paper [Please insert your new citation(s) here].
+
+The first issue this study addresses is the presence of unsubstantiated information in academic summaries. Such information violates a recognized principle of effective summary writing: that abstracts and conclusions must not introduce 'new information' beyond what is substantiated in the main IMRaD sections of the paper [Please insert your new citation(s) here]. The second issue targeted is the use of ambiguous pronouns (e.g., a standalone "this"), which can disrupt narrative flow and complicate comprehension by obscuring the intended antecedent [34].
