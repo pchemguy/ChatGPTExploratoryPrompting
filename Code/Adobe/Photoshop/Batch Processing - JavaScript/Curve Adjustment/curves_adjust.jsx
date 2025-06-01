@@ -1,44 +1,48 @@
 ////////////////////////////////////////////////////////////////////////
 // curves_adjust.jsx
 //
-// Photoshop CS6 ExtendScript that:
-//   1) Prompts for a SOURCE folder of images.
-//   2) Creates (or truncates) a log file named "<source_folder_name>.log"
-//      in the parent of the SOURCE folder.
-//   3) Prompts for an OUTPUT folder, initializing the dialog to the parent
-//      of the SOURCE folder.
-//   4) For each file in the SOURCE folder matching (*.jpg, *.jpeg, *.tif, *.png):
-//        a. Checks if the user pressed Escape to abort.
-//        b. Opens the file.
-//        c. Samples a 3x3 pixel block centered at (100,100).
-//        d. Samples a second 3x3 block centered at (doc.width-100, doc.height-100)
-//           (i.e. 100px left and 100px up from bottom-right).
-//        e. Computes average R,G,B for each block -> average luminance.
-//        f. Chooses the darker (smaller) luminance as new white point.
-//        g. Applies Levels so that chosen avgLum -> white (255).
-//        h. Converts the document to 8-bit Grayscale.
-//        i. Ensures output resolution equals source resolution (no resampling).
-//        j. Saves as a PROGRESSIVE JPEG with 5 scans and Quality = 8
-//           into the OUTPUT folder, overwriting any existing file.
-//        k. Closes the document without further prompts.
-//   5) Writes all non-critical messages to the log file. Uses no dialogs
-//      except for the folder-pick prompts. Critical errors abort the script.
-//
-// Press Escape at any time during processing to interrupt the batch.
+// Photoshop CS6 ExtendScript that supports two modes:
+//   1) If an image is open, prompts user to choose:
+//        * Single-Image Mode: Apply transformations to the active image.
+//        * Batch Mode: Process all images in a chosen folder.
+//   2) In Single-Image Mode:
+//        a. Runs adjustImage() on the active document.
+//        b. Reports completion via alert.
+//   3) In Batch Mode:
+//        a. Prompts for a SOURCE folder.
+//        b. Creates or truncates a log file named "<source_folder_name>.log"
+//           in the parent of SOURCE.
+//        c. Prompts for an OUTPUT folder (starting at SOURCE parent).
+//        d. For each *.jpg, *.jpeg, *.tif, *.png in SOURCE:
+//             i.  Checks if Escape pressed to abort.
+//             ii. Opens the file.
+//             iii.Calls adjustImage(doc).
+//             iv. Saves as a progressive JPEG (5 scans, Quality=8) in OUTPUT,
+//                 overwriting any existing file.
+//             v.  Closes the document.
+//             vi. Logs messages to the log file.
+//        e. Skips non-8bit RGB files with a log entry.
+//        f. Aborts on critical errors or when Escape is pressed.
+//   4) Shared function adjustImage(doc): samples two 3x3 blocks,
+//      chooses darker luminance as white point, applies Levels,
+//      converts to 8bit Grayscale, applies autoLevels, and preserves resolution.
+//   5) Uses only ASCII characters in comments and code.
+//   6) Minimizes user interaction: only folder prompts and single confirm.
 //
 // Usage:
 //   1. Open ExtendScript Toolkit (or any text editor).
 //   2. Create a new file and paste this entire code into it.
-//   3. Save it as "processFolder_interruptible_fixed.jsx".
+//   3. Save it as "processOrActiveWithAutoLevels_refactored.jsx".
 //   4. In ExtendScript Toolkit, set the target to "Adobe Photoshop CS6".
 //   5. Press > (Play) to run.
-//   6. When prompted, pick your SOURCE folder, then your OUTPUT folder.
-//   7. Check the log file in the parent of SOURCE for details.
+//   6. If an image is open, you will be asked: "Click OK to process the active image, or Cancel to run batch on a folder."
+//      * OK = Single-Image Mode.
+//      * Cancel = Batch Mode.
+//   7. Follow the folder prompts in Batch Mode. Check the log file next to SOURCE afterward.
 //
-// IMPORTANT: All input images must be 8-bit RGB. Otherwise they are skipped
-// and a message is written to the log.
+// IMPORTANT: All input images (batch mode) must be 8bit RGB. Otherwise they are skipped with a log entry.
 //
-////////////////////////////////////////////////////////////////////////
+//----------------------------------------------------------------------------
 
 #target photoshop
 app.bringToFront();
@@ -46,7 +50,172 @@ app.bringToFront();
 // Suppress all Photoshop dialogs (profile mismatch, save options, etc.)
 app.displayDialogs = DialogModes.NO;
 
-function processFolderInterruptible() {
+// Check if a document is open
+if (app.documents.length > 0) {
+  // Ask user: OK = single image, Cancel = batch
+  var singleMode = confirm(
+    "A document is open.\n" +
+    "Click OK to process the active image,\n" +
+    "or Cancel to run batch on a folder."
+  );
+  if (singleMode) {
+    processActiveImage();
+  } else {
+    processFolderBatch();
+  }
+} else {
+  // No open document, go directly to batch
+  processFolderBatch();
+}
+
+//----------------------------------------------------------------------------
+// Function: adjustImage
+// Applies sampling, levels, grayscale, autoLevels, and preserves resolution.
+//----------------------------------------------------------------------------
+
+function adjustImage(doc, logFile) {
+  // Verify mode: must be RGB and 8bit
+  if (doc.mode !== DocumentMode.RGB || doc.bitsPerChannel !== BitsPerChannelType.EIGHT) {
+    if (logFile) {
+      logFile.writeln("  Skipped (not 8bit RGB).");
+    }
+    return false;
+  }
+
+  // Record original resolution
+  var origRes = doc.resolution;
+
+  // Dimensions in pixels
+  var widthPx  = doc.width.as("px");
+  var heightPx = doc.height.as("px");
+
+  // --- Sample first 3x3 block around (100,100) ---
+  var centerX1 = 100;
+  var centerY1 = 100;
+  var sumR1 = 0, sumG1 = 0, sumB1 = 0, count1 = 0;
+  for (var dx1 = -1; dx1 <= 1; dx1++) {
+    for (var dy1 = -1; dy1 <= 1; dy1++) {
+      var x1 = centerX1 + dx1;
+      var y1 = centerY1 + dy1;
+      // Clamp to image bounds
+      if (x1 < 0) x1 = 0;
+      if (x1 > widthPx  - 1) x1 = widthPx  - 1;
+      if (y1 < 0) y1 = 0;
+      if (y1 > heightPx - 1) y1 = heightPx - 1;
+      var pt1 = [ UnitValue(x1, "px"), UnitValue(y1, "px") ];
+      var cs1 = doc.colorSamplers.add(pt1);
+      var c1 = cs1.color.rgb;
+      sumR1 += c1.red;
+      sumG1 += c1.green;
+      sumB1 += c1.blue;
+      count1++;
+      cs1.remove();
+    }
+  }
+  var avgR1 = sumR1 / count1;
+  var avgG1 = sumG1 / count1;
+  var avgB1 = sumB1 / count1;
+  var avgLum1 = (avgR1 + avgG1 + avgB1) / 3;
+  if (avgLum1 < 1)   avgLum1 = 1;
+  if (avgLum1 > 254) avgLum1 = 254;
+
+  // --- Sample second 3x3 block around (widthPx-100, heightPx-100) ---
+  var centerX2 = widthPx  - 100;
+  var centerY2 = heightPx - 100;
+  var sumR2 = 0, sumG2 = 0, sumB2 = 0, count2 = 0;
+  for (var dx2 = -1; dx2 <= 1; dx2++) {
+    for (var dy2 = -1; dy2 <= 1; dy2++) {
+      var x2 = centerX2 + dx2;
+      var y2 = centerY2 + dy2;
+      // Clamp to image bounds
+      if (x2 < 0) x2 = 0;
+      if (x2 > widthPx  - 1) x2 = widthPx  - 1;
+      if (y2 < 0) y2 = 0;
+      if (y2 > heightPx - 1) y2 = heightPx - 1;
+      var pt2 = [ UnitValue(x2, "px"), UnitValue(y2, "px") ];
+      var cs2 = doc.colorSamplers.add(pt2);
+      var c2 = cs2.color.rgb;
+      sumR2 += c2.red;
+      sumG2 += c2.green;
+      sumB2 += c2.blue;
+      count2++;
+      cs2.remove();
+    }
+  }
+  var avgR2 = sumR2 / count2;
+  var avgG2 = sumG2 / count2;
+  var avgB2 = sumB2 / count2;
+  var avgLum2 = (avgR2 + avgG2 + avgB2) / 3;
+  if (avgLum2 < 1)   avgLum2 = 1;
+  if (avgLum2 > 254) avgLum2 = 254;
+
+  if (logFile) {
+    logFile.writeln("  avgLum1 (top-left sample)     : " + Math.round(avgLum1));
+    logFile.writeln("  avgLum2 (bottom-right sample) : " + Math.round(avgLum2));
+  }
+
+  // Choose darker luminance as white point
+  var chosenLum = (avgLum1 < avgLum2) ? avgLum1 : avgLum2;
+  if (logFile) {
+    logFile.writeln("  Chosen luminance for white point: " + Math.round(chosenLum));
+  }
+
+  // Apply Levels(inBlack=0, inputWhite=chosenLum, gamma=1.0, outBlack=0, outWhite=255)
+  doc.activeLayer.adjustLevels(
+    0,
+    Math.round(chosenLum),
+    1.0,
+    0,
+    255
+  );
+
+  // Convert to 8bit Grayscale
+  doc.changeMode(ChangeMode.GRAYSCALE);
+
+  // Apply Auto Levels to active layer
+  try {
+    doc.activeLayer.autoLevels();
+    if (logFile) {
+      logFile.writeln("  Auto Levels applied successfully.");
+    }
+  } catch (e) {
+    if (logFile) {
+      logFile.writeln("  Warning: Auto Levels failed: " + e.message);
+    }
+  }
+
+  // Restore resolution without resampling
+  doc.resizeImage(undefined, undefined, origRes, ResampleMethod.NONE);
+
+  return true;
+}
+
+//----------------------------------------------------------------------------
+// Function: processActiveImage
+// Applies adjustImage() to the active document.
+//----------------------------------------------------------------------------
+
+function processActiveImage() {
+  try {
+    var doc = app.activeDocument;
+    var success = adjustImage(doc, null);
+    if (success) {
+      alert(
+        "Single-image processing complete.\n" +
+        "Please save your document manually if desired."
+      );
+    }
+  } catch (err) {
+    alert("Fatal error in single-image mode:\n" + err.message);
+  }
+}
+
+//----------------------------------------------------------------------------
+// Function: processFolderBatch
+// Processes all images in a folder, logs actions, supports Escape abort.
+//----------------------------------------------------------------------------
+
+function processFolderBatch() {
   // 1) Prompt user to pick the SOURCE folder
   var sourceFolder = Folder.selectDialog("Select the SOURCE folder of images to process");
   if (sourceFolder === null) {
@@ -138,114 +307,19 @@ function processFolderInterruptible() {
       // a) Open the file
       doc = open(inputFile);
 
-      // b) Verify mode: must be RGB and 8-bit
-      if (doc.mode !== DocumentMode.RGB || doc.bitsPerChannel !== BitsPerChannelType.EIGHT) {
-        logFile.writeln("  Skipped (not 8-bit RGB).");
+      // b) Apply transformations
+      var success = adjustImage(doc, logFile);
+      if (!success) {
         doc.close(SaveOptions.DONOTSAVECHANGES);
         logFile.writeln("");
         continue;
       }
 
-      // c) Sample first 3x3 block around (100,100)
-      var centerX1 = 100;
-      var centerY1 = 100;
-      var sumR1 = 0, sumG1 = 0, sumB1 = 0, count1 = 0;
-      var widthPx1  = doc.width.as("px");
-      var heightPx1 = doc.height.as("px");
-      for (var dx1 = -1; dx1 <= 1; dx1++) {
-        for (var dy1 = -1; dy1 <= 1; dy1++) {
-          var x1 = centerX1 + dx1;
-          var y1 = centerY1 + dy1;
-          // Clamp to image bounds
-          if (x1 < 0) x1 = 0;
-          if (x1 > widthPx1  - 1) x1 = widthPx1  - 1;
-          if (y1 < 0) y1 = 0;
-          if (y1 > heightPx1 - 1) y1 = heightPx1 - 1;
-          var pt1 = [
-            UnitValue(x1, "px"),
-            UnitValue(y1, "px")
-          ];
-          var cs1 = doc.colorSamplers.add(pt1);
-          var c1 = cs1.color.rgb;
-          sumR1 += c1.red;
-          sumG1 += c1.green;
-          sumB1 += c1.blue;
-          count1++;
-          cs1.remove();
-        }
-      }
-      var avgR1 = sumR1 / count1;
-      var avgG1 = sumG1 / count1;
-      var avgB1 = sumB1 / count1;
-      var avgLum1 = (avgR1 + avgG1 + avgB1) / 3;
-
-      // d) Sample second 3x3 block around (doc.width-100, doc.height-100)
-      var widthPx  = doc.width.as("px");
-      var heightPx = doc.height.as("px");
-      var centerX2 = widthPx  - 100;
-      var centerY2 = heightPx - 100;
-      var sumR2 = 0, sumG2 = 0, sumB2 = 0, count2 = 0;
-      for (var dx2 = -1; dx2 <= 1; dx2++) {
-        for (var dy2 = -1; dy2 <= 1; dy2++) {
-          var x2 = centerX2 + dx2;
-          var y2 = centerY2 + dy2;
-          // Clamp to image bounds
-          if (x2 < 0) x2 = 0;
-          if (x2 > widthPx  - 1) x2 = widthPx  - 1;
-          if (y2 < 0) y2 = 0;
-          if (y2 > heightPx - 1) y2 = heightPx - 1;
-          var pt2 = [
-            UnitValue(x2, "px"),
-            UnitValue(y2, "px")
-          ];
-          var cs2 = doc.colorSamplers.add(pt2);
-          var c2 = cs2.color.rgb;
-          sumR2 += c2.red;
-          sumG2 += c2.green;
-          sumB2 += c2.blue;
-          count2++;
-          cs2.remove();
-        }
-      }
-      var avgR2 = sumR2 / count2;
-      var avgG2 = sumG2 / count2;
-      var avgB2 = sumB2 / count2;
-      var avgLum2 = (avgR2 + avgG2 + avgB2) / 3;
-
-      // e) Clamp both avgLum values to [1,254]
-      if (avgLum1 < 1)   avgLum1 = 1;
-      if (avgLum1 > 254) avgLum1 = 254;
-      if (avgLum2 < 1)   avgLum2 = 1;
-      if (avgLum2 > 254) avgLum2 = 254;
-
-      logFile.writeln("  avgLum1 (top-left sample)     : " + Math.round(avgLum1));
-      logFile.writeln("  avgLum2 (bottom-right sample) : " + Math.round(avgLum2));
-
-      // f) Choose the darker luminance (smaller value) as new white point
-      var chosenLum = (avgLum1 < avgLum2) ? avgLum1 : avgLum2;
-      logFile.writeln("  Chosen luminance for white point: " + Math.round(chosenLum));
-
-      // g) Apply Levels(inBlack=0, inputWhite=chosenLum, gamma=1.0, outBlack=0, outWhite=255)
-      doc.activeLayer.adjustLevels(
-        0,                      // inputBlack
-        Math.round(chosenLum),  // inputWhite
-        1.0,                    // gamma
-        0,                      // outputBlack
-        255                     // outputWhite
-      );
-
-      // h) Convert to 8-bit Grayscale
-      doc.changeMode(ChangeMode.GRAYSCALE);
-
-      // i) Ensure output image resolution equals source resolution (no resampling)
-      var origRes = doc.resolution;
-      doc.resizeImage(undefined, undefined, origRes, ResampleMethod.NONE);
-
-      // j) Build the output filename: original base name + "_gray.jpg"
+      // c) Build the output filename: original base name + "_gray.jpg"
       var baseName = inputFile.name.replace(/\.[^\.]+$/, "");
       var outFile = new File(outputFolder.fsName + "/" + baseName + "_gray.jpg");
 
-      // k) Set JPEG save options: progressive, 5 scans, Quality = 8
+      // d) Set JPEG save options: progressive, 5 scans, Quality = 8
       var jpgSaveOpts = new JPEGSaveOptions();
       jpgSaveOpts.embedColorProfile = true;
       jpgSaveOpts.formatOptions = FormatOptions.PROGRESSIVE;
@@ -253,7 +327,7 @@ function processFolderInterruptible() {
       jpgSaveOpts.matte = MatteType.NONE;
       jpgSaveOpts.quality = 8;           // quality level 8 (0-12 scale)
 
-      // l) Save as JPEG, overwriting any existing file
+      // e) Save as JPEG, overwriting any existing file
       if (outFile.exists) {
         outFile.remove();
       }
@@ -284,11 +358,4 @@ function processFolderInterruptible() {
   logFile.writeln("Total files found    : " + allFiles.length);
   logFile.writeln("Total files processed: " + processedCount);
   logFile.close();
-}
-
-// Run the folder-processing function
-try {
-  processFolderInterruptible();
-} catch (err) {
-  alert("Fatal error in script:\n" + err.message);
 }
