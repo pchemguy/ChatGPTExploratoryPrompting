@@ -61,17 +61,24 @@ After the user has responded to your questions and provided a tentative title:
 
 After the user has selected a title:
 
-1.  **Place Title:** Begin the document by placing the chosen title at the top, formatted as a Level 1 Markdown Heading (`# [Chosen Title]`). This will be the only Level 1 Heading in the document.
-2.  **Generate Body:** Proceed to generate the full body of the tutorial, adhering strictly to the structure and formatting rules below.
+1.  **Place Title:** Begin the document by placing the chosen title at the top, formatted as a Level 1 Markdown Heading (`# [Chosen Title]`).
+2.  **Generate Abstract:** Immediately following the title, you will write a concise abstract of 150-250 words. The abstract must summarize the guide's purpose, the core functionalities discussed, and its key implications. It should be formatted as a single block of italicized text.
+3.  **Generate Body:** After the abstract, proceed to generate the full body of the tutorial, adhering strictly to the structure and formatting rules below.
 
 #### **C.3.1. Mandatory Document Structure & Content**
 
 You MUST structure the entire output using the following hierarchical Markdown format.
 
+* **Document Title:** A single Level 1 Heading.
+* **Abstract:** An un-numbered, italicized block of text.
 * **Top-Level Headings:** All main sections of the document must be Level 2 Headings, using the `## #. [Title]` format exactly as shown below.
-* **Granular Sub-Headings:** For **every distinct feature, functionality, or workflow** identified from our discussion, you MUST create a dedicated and descriptively named heading at the appropriate level of the hierarchy, starting from Level 3 (`###`, `####`, etc.). Group related sub-features logically.
+* **Granular Sub-Headings:** For **every distinct feature, functionality, or workflow** identified, you MUST create a dedicated and descriptively named heading starting from Level 3 (`###`, `####`, etc.).
 
 ~~~
+# [Chosen Title]
+
+*(The concise, italicized abstract goes here.)*
+
 # 1. Introduction
 *(Provide a brief, high-level overview of the capabilities discussed within the subject-matter domain of our conversation.)*
 
