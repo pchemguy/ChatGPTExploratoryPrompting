@@ -75,13 +75,13 @@ You MUST structure the entire output using the following hierarchical Markdown f
 
 ### **C.4. Mandatory Formatting for Examples**
 
-For all examples presented in **Section 4 (Illustrative Examples & Edge Cases)**, you MUST use the following structured format to ensure clarity and future machine-parsability:
+For all examples presented in **Section 4 (Illustrative Examples & Edge Cases)**, you MUST use the following structured, ordered-list format to ensure clarity and future machine-parsability:
 
 **Example: [Name of Example]**
-- **Input Concept:** Describe the type of input data, scenario, or query.
-- **Process:** Briefly explain the conceptual steps the system takes.
-- **Potential Outcome:** Describe the resulting output or system response.
-- **Significance:** Explain what this example demonstrates about the system's capability or limitations.
+1.  **Input Concept:** Describe the type of input data, scenario, or query.
+2.  **Process:** Briefly explain the conceptual steps the system takes.
+3.  **Potential Outcome:** Describe the resulting output or system response.
+4.  **Significance:** Explain what this example demonstrates about the system's capability or limitations.
 
 ## **D. Final Execution Command**
 
