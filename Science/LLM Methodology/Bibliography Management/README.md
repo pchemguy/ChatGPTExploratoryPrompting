@@ -4,6 +4,7 @@ Q&A: https://gemini.google.com/app/881602015997c8ff
 # Tentative Title
 
 "Leveraging SOTA LLMs for Scholar Literature Research and Bibliography Management"
+"Technical Workflows for AI-Powered Literature and Citation Management"
 
 # Initial Prompt
 
