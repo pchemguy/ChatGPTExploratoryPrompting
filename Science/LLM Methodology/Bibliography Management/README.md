@@ -38,6 +38,7 @@ Your primary task is to generate a comprehensive technical tutorial based on the
 ## **C. Instructions**
 
 ### **C.1. STAGE 1: Analysis & Information Gathering**
+
 Before writing anything, you MUST perform the following analysis:
 
 1.  **Analyze and Model:** Carefully review the entire preceding conversation to create an internal model of all discussed functionalities, concepts, and workflows.
@@ -47,18 +48,21 @@ Before writing anything, you MUST perform the following analysis:
     - **You MUST wait for the user's response before proceeding.** If you identify no gaps, simply ask the user for a tentative title and await the user's response.
 
 ### **C.2. STAGE 2: Collaborative Title Selection**
+
 After the user has responded to your questions and provided a tentative title:
 
 1.  **Generate Candidates:** Based on the full context of our discussion AND the user's tentative title, generate a list of 5-10 high-quality, descriptive title candidates for the tutorial.
 2.  **Present and Await Selection:** Present this numbered list of titles to the user and ask the user to choose one by its number, or to provide an alternative. Then **STOP** and wait for the user's selection.
 
 ### **C.3. STAGE 3: Final Content Generation**
+
 After the user has selected a title:
 
 1.  **Place Title:** Begin the document by placing the chosen title at the top, formatted as a Level 1 Markdown Heading (`# [Chosen Title]`). This will be the only Level 1 Heading in the document.
 2.  **Generate Body:** Proceed to generate the full body of the tutorial, adhering strictly to the structure and formatting rules below.
 
 #### **C.3.1. Mandatory Document Structure & Content**
+
 You MUST structure the entire output using the following hierarchical Markdown format.
 
 * **Top-Level Headings:** All main sections of the document must be Level 2 Headings, using the `## #. [Title]` format exactly as shown below.
@@ -75,6 +79,7 @@ You MUST structure the entire output using the following hierarchical Markdown f
 *(**Crucial Instruction:** In this section, you will reproduce the complete and exact text of the prompt you are currently executing, from ` # **Prompt: Generate a Structured Technical Tutorial... ` down to the final ` Begin Stage 1 now. `. You must place the entire prompt inside a single Markdown code block that starts with ` ```markdown ` and ends with ` ``` `.)*
 
 #### **C.3.2. Mandatory Formatting for Examples**
+
 For all examples presented in **Section 4 (Illustrative Examples & Edge Cases)**, you MUST use the following structured, ordered-list format:
 
 **Example: [Name of Example]**
