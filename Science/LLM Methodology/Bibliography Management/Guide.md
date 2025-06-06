@@ -46,31 +46,31 @@ BibJSON is a convention for representing bibliographic data using JavaScript Obj
     
     JSON
     
-    ```
+```
+{
+  "type": "article",
+  "title": "On the Electrodynamics of Moving Bodies",
+  "author": [
     {
-      "type": "article",
-      "title": "On the Electrodynamics of Moving Bodies",
-      "author": [
-        {
-          "name": "Albert Einstein"
-        }
-      ],
-      "year": "1905",
-      "journal": {
-        "name": "Annalen der Physik",
-        "volume": "322",
-        "issue": "10",
-        "pages": "891-921"
-      },
-      "identifier": [
-        {
-          "type": "doi",
-          "id": "10.1002/andp.19053221004"
-        }
-      ]
+      "name": "Albert Einstein"
     }
-    ```
-    
+  ],
+  "year": "1905",
+  "journal": {
+    "name": "Annalen der Physik",
+    "volume": "322",
+    "issue": "10",
+    "pages": "891-921"
+  },
+  "identifier": [
+    {
+      "type": "doi",
+      "id": "10.1002/andp.19053221004"
+    }
+  ]
+}
+```
+
 
 ### Citation Key Generation Logic
 
