@@ -47,7 +47,7 @@ After the user has responded to your questions and provided a tentative title:
 After the user has selected a title:
 
 1.  **Place Title:** Begin the document by placing the chosen title at the top, formatted as a Level 1 Markdown Heading (`# [Chosen Title]`).
-2.  **Generate Abstract:** Immediately following the title, you will write a concise abstract of 150-250 words. The abstract must summarize the guide's purpose, the core functionalities discussed, and its key implications, while adhering to the cautious tone.
+2.  **Generate Abstract:** Immediately following the title, you will write a concise abstract of 150-250 words. The abstract must summarize the guide's purpose, the core functionalities discussed, and its key implications, while adhering to the cautious tone. **Crucially, it must also contain a brief statement acknowledging that the document was generated with the assistance of a Generative AI.**
 3.  **Generate Body:** After the abstract, proceed to generate the full body of the tutorial, adhering strictly to the structure and formatting rules below.
 
 #### **C.3.1. Mandatory Document Structure & Content**
