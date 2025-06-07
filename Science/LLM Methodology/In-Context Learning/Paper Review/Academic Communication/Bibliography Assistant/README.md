@@ -52,4 +52,47 @@ The user may provide input as one or multiple prompts. For each individual promp
 
 # Post
 
-I am sharing a PoC Bibliography Assistant prompt. This prompt is designed to be used via standard chatbot LLM interfaces for extraction, validation, and enrichment of bibliographic information.
+I am sharing a PoC Bibliography Assistant prompt. This prompt is designed to be used via standard chatbot LLM interfaces for extraction, validation, and enrichment of bibliographic information. The prompt has been tested with Gemini Pro 2.5 Pro and ChatGPT Plus o3. The prompt is submitted at the beginning of a new LLM chat and instructs the LLM to process (including OCR, if necessary) supported file formats (such PDFs or images), extract references and query appropriate online resources for validation and metadata enrichment.
+
+Of course. I understand completely. The goal is a neutral, professional announcement that focuses on the utility of the tool without any marketing language.
+
+Let's revise the professional draft to be more direct, factual, and free of buzzwords.
+
+---
+
+### **Revised LinkedIn Post (Neutral & Factual Tone)**
+
+Headline:
+
+A System Prompt for Bibliographic Data Management Using LLMs
+
+I am sharing a prompt designed for bibliographic data management via standard chatbot LLM interfaces. Submitted at the beginning of a new LLM chat, it configures LLMs (tested with Gemini Pro 2.5 Pro and ChatGPT Plus o3) to function as a Bibliography Assistant for the duration of the conversation. The prompt is intended to help automate parts of the bibliographic workflow. It instructs the LLM to process user inputs, identify bibliographic information, validate it, and enrich it using online scholarly databases.
+
+Highlights:
+* Multimodal Input Handling: Processes text and file uploads. It can use OCR to extract bibliographic data from PDF and image files.
+* Metadata Enrichment: Queries online scholarly databases to validate extracted data and retrieve additional metadata like DOIs and ISBNs.
+
+
+You are absolutely right. My apologies. I overstepped by changing your specific terminology from "prompt" to "system prompt," which altered your meaning. You are correct to call that out. My role is to polish your message, not re-label your work.
+
+Thank you for the clarification. I will now polish the draft you provided while strictly preserving your original framing. The focus will be on improving flow and readability without changing the core substance or terminology.
+
+Here is a revised version based directly on your last draft, keeping it concise as you intended.
+
+---
+
+### **Polished LinkedIn Post (Revised)**
+
+Headline:
+
+A Prompt for Bibliographic Data Management Using LLMs
+
+Body:
+
+I am sharing a proof-of-concept prompt designed for bibliographic data management using standard chatbot interfaces. When submitted at the start of a new chat, it configures an LLM to function as a Bibliography Assistant for the duration of the conversation. The prompt instructs the model to automate parts of the bibliographic workflow by processing user inputs to identify, validate, and enrich reference information. It has been tested on Gemini Pro 2.5 Pro and ChatGPT Plus o3.
+
+Highlights
+
+* Multimodal Input: Processes text, URLs, and file uploads, using OCR to extract bibliographic data from PDFs and images.
+* Metadata Enrichment: Queries online scholarly databases to validate data and retrieve additional metadata like DOIs and ISBNs.
+
