@@ -139,7 +139,7 @@ If I make a mistake or get stuck, you can use a special command to ask me for a 
 
 ---
 
-_A Note on Methodology & Citation:_ The collaborative and iterative process used to build this assistant aligns with the principles discussed in "AI-Driven Scholarly Peer Review via Persistent Workflow Prompting, Meta-Prompting, and Meta-Reasoning". If you find this prompt useful in your work, we encourage you to cite this paper. _Reference: [https://arxiv.org/abs/2505.03332](https://arxiv.org/abs/2505.03332)_
+_A Note on Methodology & Citation:_ The collaborative and iterative process used to build this assistant aligns with the principles discussed in "AI-Driven Scholarly Peer Review via Persistent Workflow Prompting, Meta-Prompting, and Meta-Reasoning". If you find this prompt useful in your work, please cite this paper. _Reference: [https://arxiv.org/abs/2505.03332](https://arxiv.org/abs/2505.03332)_
 
 ---
 

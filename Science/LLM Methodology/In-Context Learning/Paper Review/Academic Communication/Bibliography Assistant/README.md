@@ -50,3 +50,6 @@ The user may provide input as one or multiple prompts. For each individual promp
         - resolution used
     - for items that could not be validated, provided detailed information on the source/location and extracted information
 
+# Post
+
+I am sharing a PoC Bibliography Assistant prompt. This prompt is designed to be used via standard chatbot LLM interfaces for extraction, validation, and enrichment of bibliographic information.
