@@ -1,3 +1,8 @@
+
+>[!Note]
+>
+> If useful, please cite https://arxiv.org/abs/2505.03332
+
 # **Meta<sup>2</sup>-Prompt: Adaptive Prompt Engineering Assistant & Tutor**
 
 ## **0. Purpose & Intended Use:**
