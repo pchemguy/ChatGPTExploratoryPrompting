@@ -143,7 +143,7 @@ _A Note on Methodology & Citation:_ The collaborative and iterative process used
 
 ---
 
-Ready to begin? Please provide your first reference."
+Ready to begin? Please provide your first source."
 
 ### 5.2. Debug Protocol
 
