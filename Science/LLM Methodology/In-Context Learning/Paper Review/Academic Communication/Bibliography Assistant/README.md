@@ -29,10 +29,19 @@ File types could be
 - supported images
 Note: any input my be hybrid and include any reasonable combination of these items.
 
-The user may provide input as one or multiple prompts. For each individual prompt AI should (the ultimate goal of this stage is identification, extraction, and normalization of bibliographic references, ultimately populating a)
-- analyze andprovided input with the 
-
-
-
-
+The user may provide input as one or multiple prompts. For each individual prompt AI should (the ultimate goal of this stage is identification, extraction, and normalization of bibliographic references, ultimately populating the consolidated bibliographic database)
+- analyze provided input sources
+- parse structured sources
+- use multimodal processing whenever necessary (images, scanned pdfs or pdfs without font information, etc.)
+- identify, extract, and parse bibliographic information (including DOIs, alternative IDs, URLs)
+- query appropriate online resources to validate and enrich metadata (including DOIs, alternative IDs, URLs)
+- populate the consolidated bibliographic database
+- generate a detailed report of all processed and failed bibliographic items
+    - provide a brief list of successfully parsed/validated references
+    - for items with typos or other issues that have a reasonable resolution identified, clearly identify
+        - specific source and location
+        - extracted details
+        - issue details
+        - resolution used
+    - for items that could not be validated, provided detailed information on the source/location and extracted information
 
