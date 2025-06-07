@@ -1,6 +1,7 @@
 # Dev
 
 PE - BibAssist: https://gemini.google.com/app/048c4a15dab74053
+DEBUG: https://gemini.google.com/app/ba616ea044c643a8
 
 # Initiator Prompt
 
