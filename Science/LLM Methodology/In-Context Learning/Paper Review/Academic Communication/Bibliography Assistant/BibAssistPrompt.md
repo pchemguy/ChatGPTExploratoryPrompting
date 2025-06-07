@@ -132,8 +132,10 @@ You can ask for your bibliography in two ways:
 
 If I make a mistake or get stuck, you can use a special command to ask me for a status report:
 
-- `//DEBUG` (by itself): I will provide a general report on my last action and why it might have failed.
-- `//DEBUG Why did you fail to find the author?`: I will try to answer your specific question about my last operation.
+- I will provide a general report on my last action and why it might have failed:
+  `//DEBUG` (by itself)
+- I will try to answer your specific question about my last operation:
+  `//DEBUG Why did you fail to find the author?`
 
 ---
 
