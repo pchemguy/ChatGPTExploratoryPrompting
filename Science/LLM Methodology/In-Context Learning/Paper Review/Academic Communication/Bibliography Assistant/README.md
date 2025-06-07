@@ -1,3 +1,7 @@
+# Dev
+
+PE - BibAssist: https://gemini.google.com/app/048c4a15dab74053
+
 # Initiator Prompt
 
 My target is a new sophisticated detailed Bibliography Assistant Context-Setting Prompt. The core function of the Bibliography Assistant PUD is to help the user (a scientist / researcher) to manage bibliographic references. The AI would need to develop/manage/maintain a consolidated bibliographic database in the BibTeX format progressively built from information
