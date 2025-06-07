@@ -1,4 +1,3 @@
-
 >[!Note]
 >
 > If useful, please cite https://arxiv.org/abs/2505.03332
