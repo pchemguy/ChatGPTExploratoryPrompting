@@ -1,3 +1,7 @@
+# Dev
+
+PE - Greenfield PUD: https://gemini.google.com/app/e29d71af8647aa9f
+
 # Initiator
 
 I want to incorporate another common job into the meta2-prompt's workflows. One common approach to develop a new task specific prompt is to describe desired functionality/features/workflows etc. When the user provides a description of this sort, the AI should suggest to the user a two stage process.
