@@ -61,27 +61,33 @@ To meticulously analyze the sentences of the 'Conclusions' section in sequence t
 **Procedure:**
 You will go through each sentence of the 'Conclusions' section one at a time, in the order they were extracted by Phase 2. For each sentence:
 
-1.  **Quote the Current Sentence:** Clearly display the full original sentence being processed (e.g., "Processing Sentence [N]: [Full Sentence Text]").
-2.  **Pronoun Reference Analysis:**
-    * Identify all candidate pronouns in the current sentence that refer back to previously mentioned concepts or entities (focus on demonstrative pronouns like "this," "that," "these," "those" when used pronominally, and personal pronouns like "it," "they").
-    * For each candidate pronoun, apply the following **strict constraints** to determine if it is vague or ambiguous:
+1. **Quote the Current Sentence:** Clearly display the full original sentence being processed (e.g., "Processing Sentence [N]: [Full Sentence Text]").
+2. **Pronoun Reference Analysis:**
+    * **Step 1: Identify Candidate Pronouns.** Identify all candidate pronouns in the current sentence that refer back to previously mentioned concepts or entities (focus on demonstrative pronouns like "this," "that," "these," "those" when used pronominally, and personal pronouns like "it," "they"). For each candidate pronoun identified, perform the following steps.
+    * **Step 2: Define the Pronoun's Contextual Meaning.** For each candidate pronoun acting as the subject of a clause, you must first perform a syntactic and semantic analysis of its own clause to precisely define the meaning it carries. This analysis establishes the **"pronoun context"** that its antecedent must fully support. You must identify:
+        * The main **verb** associated with the pronoun.
+        * The **full direct object phrase** of that verb.
+        * The **head noun** within that object phrase.
+        * All **modifiers** of the verb (e.g., adverbs, prepositional phrases) and all **modifiers** within the object phrase (e.g., adjectives, prepositional phrases, subordinate clauses).
+        * Your analysis must then explain how these identified modifiers narrow the scope of the verb and object, creating a highly specific contextual meaning that the pronoun represents.
+    * **Step 3: Apply Strict Constraints.** Apply the following strict constraints to determine if the pronoun is vague or ambiguous, paying special attention to how Constraint 4 now uses the "pronoun context" defined in Step 2.
         * **(Constraint 1) Antecedent Location:** The antecedent (the specific word(s), phrase(s), or concept the pronoun refers to) **MUST** be explicitly present as text within the 'Conclusions' section (i.e., in the current or preceding sentences you have been given) and **MUST** appear *before* the pronoun in question.
         * **(Constraint 2) Determiners vs. Pronouns:** A determiner (e.g., "this," "that," "these," "those") modifying a closely following noun (e.g., "this paper," "these results," "this work") should generally **not** be flagged as inherently vague for the purpose of this analysis if the resulting noun phrase has a clear and standard meaning in the context of a conclusions section. The primary focus is on pronouns standing more independently or referring to broader concepts. Relative pronouns (like "which," "who," "that" introducing a dependent clause) that have clear, immediate grammatical antecedents within the same sentence are also generally not the target unless their antecedent itself is part of a vague construction.
         * **(Constraint 3) Context for Antecedent Identification:** The context for identifying an antecedent is **strictly limited** to:
             * The sentence in which the pronoun appears.
             * The explicit text of the sentences that precede the pronoun *within the provided 'Conclusions' section only*.
-        * **(Constraint 4) Sufficiency of Antecedent for Clarity (Crucial Rule):**
-            * For a pronoun to be considered **not vague or ambiguous**, its identified antecedent (from the strictly defined preceding text within the 'Conclusions' section) must **explicitly and fully support all aspects of the statement in which the pronoun is used.**
-            * This means the actual text of the antecedent must itself contain the necessary semantic components to justify all specific actions, descriptions, qualifications, and context attributed to the pronoun in its sentence.
-            * **If the antecedent provides only general support, but the sentence containing the pronoun introduces more specific qualifications, actions, or context that are not explicitly covered by the antecedent's text, then the pronoun MUST be flagged as vague or its reference deemed incompletely supported by the local textual antecedent.**
+        * **(Constraint 4) Sufficiency of Antecedent for Clarity (Crucial Rule - Revised):**
+            * For a pronoun to be considered **not vague or ambiguous**, its identified antecedent (from the strictly defined preceding text within the 'Conclusions' section) must **explicitly and fully support the complete "pronoun context"** as defined in Step 2.
+            * Your analysis under this constraint **must explicitly demonstrate** how the text of the antecedent contains the necessary semantic components to satisfy the verb, the object, and **all of the specific, narrowing modifiers** that constitute the full "pronoun context."
+            * **If the antecedent's text provides only general support for the verb and object but lacks explicit support for the specific qualifications introduced by the modifiers, then the pronoun MUST be flagged as vague** because its reference is incompletely supported by the local textual antecedent.
             * No information, details, or inferences from any part of the broader document *outside* the provided 'Conclusions' sentences may be used to bridge semantic gaps.
-    * **Reporting for Pronoun Analysis:**
+    * **Step 4: Reporting for Pronoun Analysis.**
         * If no pronouns requiring this detailed antecedent analysis are identified in the sentence, state this briefly (e.g., "No standalone pronouns requiring antecedent analysis identified in this sentence.").
         * For each pronoun analyzed:
             * State the pronoun.
-            * **Vagueness/Ambiguity Analysis:** Based on the constraints above, detail your reasoning. If an antecedent is considered, state what it is. If the pronoun is flagged, explain precisely why.
+            * **Vagueness/Ambiguity Analysis:** Based on the constraints above, detail your reasoning. This must include the "pronoun context" you defined in Step 2, and the demonstration from Step 3 (Constraint 4) of how the antecedent does or does not support this context. If the pronoun is flagged, explain precisely why.
             * **Conclusion:** State clearly whether the pronoun is "Not flagged as vague/ambiguous" or "Flagged as vague/ambiguous."
-            * **(If Flagged) Inferability Note:** Briefly discuss the extent to which its intended meaning can (or cannot) be reasonably inferred *strictly from the preceding text within the 'Conclusions' section*.
+            * **(If Flagged) Inferability Note:** Briefly discuss the extent to which its intended meaning can (or cannot) be reasonably inferred *strictly from the preceding text within the 'Conclusions' section*. 
 3.  **Flow Analysis:**
     * After analyzing pronouns, consider the transition from the *immediately preceding sentence* to the *current sentence*.
     * **Note on Flow:** You must provide a brief note on the flow. If there is an obviously abrupt topic shift, a missing logical connector, or if the sentence structure is unusually convoluted in a way that obscures its connection to the previous statement, make a specific note (e.g., "Flow Note: Transition from previous sentence regarding [topic A] to current sentence on [topic B] is abrupt and lacks clear connection."). If the flow is smooth and logical, state "Flow Note: Smooth transition from previous sentence." For the first sentence of the 'Conclusions' section, state "Flow Note: N/A (first sentence)."
