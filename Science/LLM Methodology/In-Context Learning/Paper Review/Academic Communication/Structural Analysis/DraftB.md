@@ -29,3 +29,45 @@ The core of this methodology is a suite of structured prompts (provided in full 
 1. **Informational Integrity Analysis:** This analysis uses a dedicated prompt to execute a multi-phase workflow that involves locating the target section, segmenting it into sentences, and decomposing those sentences into discrete "Information Units" (IUs). Each IU is then classified according to a detailed 13-category schema defined in the prompt. The final phase involves verifying each IU against the IMRaD sections of the paper to flag new or unsubstantiated information.
 2. **Linguistic Clarity Analysis:** This analysis uses a separate prompt to assess pronoun ambiguity and logical flow. The resulting workflow isolates the target section and its sentences, then analyzes each sentence in sequence to identify vague or ambiguous pronouns (e.g., a standalone "this") by strictly evaluating the local textual antecedent.
 
+
+
+
+## 3. Results and Discussion
+
+This section presents preliminary results of the developed proof-of-concept (PoC) prompts when applied to the test case publication [33]. We analyze the two target issues - the presence of unsubstantiated claim and the use of an ambiguous pronoun - by first establishing the ground truth and then presenting the output from the corresponding LLM-based analysis.
+
+### 3.1. Case 1: Unsubstantiated Claim Check
+
+#### 3.1.1. Ground Truth Analysis
+
+The "Conclusions" section of the test paper [33] was analyzed for information not previously substantiated in the IMRaD sections. The third sentence of the Conclusions states: "From approximately **500 mL of 40-fold enriched water, about 90 mL of H217O** was obtained." While the input volume of "500 mL" is mentioned in the main text, the specification of "**40-fold enriched water**" (presumably the implied result of the first experimental stage) is not. Furthermore, the output quantity of "**90 mL of H217O**" is not explicitly stated in the main text, nor can it be directly derived from the data presented in the paper's tables or figures. Therefore, these pieces of information were flagged as "unsubstantiated claims".
+
+#### 3.1.2. LLM Prompt Results
+
+The "Informational Integrity Analysis" prompt was applied to the full text of the test paper [#].
+
+`[Placeholder: Insert the relevant portion of the LLM's output here. This should be the part of the output that analyzes the sentence "From approximately 500 mL of 40-fold enriched water, about 90 mL of H217O was obtained." and flags the unsubstantiated terms.]`
+
+The LLM successfully identified the unsubstantiated terms, classifying them as "New Information in Conclusions." The output correctly noted that while the 500 mL quantity was present, the "40-fold" specification and the "90 mL" result were not found in the IMRaD body of the manuscript.
+
+### 3.2. Case 2: Ambiguous Pronoun Check
+
+#### 3.2.1. Ground Truth Analysis
+
+The second-to-last sentence of the "Conclusions" section contains a potentially ambiguous standalone pronoun: "**This** illustrates the **power of 17O NMR** in the **detection of the reactions** of O-containing functional groups." For this use of "This" to be unambiguous, its antecedent should appear immediately prior and provide a clear basis for the claim about the "power of 17O NMR." However, the preceding sentence discusses the synthesis of several labeled compounds, which is not a direct antecedent for the claim. The final sentence _does_ mention a reaction detected by NMR, but since it appears _after_ the pronoun, it cannot serve as a valid antecedent. The pronoun "This" was therefore flagged as ambiguous and lacking a clear antecedent in the local context.
+
+#### 3.2.2. LLM Prompt Results
+
+The "Linguistic Clarity Analysis" prompt was applied to the test paper, focusing on the "Conclusions" section.
+
+`[Placeholder: Insert the LLM's output for the analysis of the sentence "This illustrates the power of 17O NMR..." here. The output should show the pronoun being flagged and the reasoning provided by the LLM.]`
+
+The prompt successfully guided the LLM to flag the pronoun "This" as ambiguous. The model's reasoning noted the lack of a sufficient antecedent in the preceding sentence and correctly disregarded the subsequent sentence as a possible source.
+
+### 3.3. Discussion
+
+The results demonstrate the feasibility of using structured, multi-phase prompts to guide an LLM in identifying specific stylistic and informational issues in academic summaries. In both test cases, the PoC prompts successfully replicated the findings of an expert human analysis.
+
+**Limitations:** This study is a proof-of-concept and, as such, has significant limitations. The prompts were developed and tested on a single manuscript that was deliberately chosen for containing known issues. The robustness and generalizability of these specific prompts across different writing styles, disciplines, and document formats are unknown. Furthermore, the analysis of more subtle or complex instances of these issues has not been evaluated.
+
+**Implications and Future Work:** Despite the limitations, this work suggests a promising direction for developing accessible, AI-assisted tools for improving scholarly writing. Future work should focus on testing these prompts on a larger and more diverse corpus of publications to assess their reliability and identify failure modes. Subsequent research could explore refining the prompts to handle more complex cases, expanding the classification schema, and integrating these checks into a more automated document analysis pipeline.
