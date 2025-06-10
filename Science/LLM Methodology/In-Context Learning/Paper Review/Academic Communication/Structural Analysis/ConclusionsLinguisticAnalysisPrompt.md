@@ -85,9 +85,23 @@ You will go through each sentence of the 'Conclusions' section one at a time, in
         * If no pronouns requiring this detailed antecedent analysis are identified in the sentence, state this briefly (e.g., "No standalone pronouns requiring antecedent analysis identified in this sentence.").
         * For each pronoun analyzed:
             * State the pronoun.
-            * **Vagueness/Ambiguity Analysis:** Based on the constraints above, detail your reasoning. This must include the "pronoun context" you defined in Step 2, and the demonstration from Step 3 (Constraint 4) of how the antecedent does or does not support this context. If the pronoun is flagged, explain precisely why.
-            * **Conclusion:** State clearly whether the pronoun is "Not flagged as vague/ambiguous" or "Flagged as vague/ambiguous."
-            * **(If Flagged) Inferability Note:** Briefly discuss the extent to which its intended meaning can (or cannot) be reasonably inferred *strictly from the preceding text within the 'Conclusions' section*. 
+            * **Vagueness/Ambiguity Analysis:** Your analysis MUST follow this specific structure:
+                1. **Pronoun Context Definition:** First, define the specific meaning of the pronoun based on its clause (as detailed in Step 2 of the Procedure). Break this context down into its key semantic components.
+                    * *Generic Example:* For a sentence like "This confirms the material's enhanced durability under stress," the pronoun context breakdown would be:
+                        * **Action:** Confirms
+                        * **Concept:** Enhanced durability
+                        * **Subject of Durability:** The material's
+                        * **Condition/Scope Modifier:** Under stress
+                2. **Antecedent Identification:** Identify the most plausible antecedent from the preceding text.
+                3. **Sufficiency Check:** Explicitly check if the text of the identified antecedent supports **each component** of the defined Pronoun Context. You must assign a status to each component based on the following nuanced definition of "Supported":
+                    * **For all substantive components (e.g., Concept, Subject, Condition/Scope Modifier):** A "Supported" status may **only** be assigned if the exact concept, or a very close semantic equivalent, of the Pronoun Context component is **explicitly present as text** in the identified antecedent. The link must be direct and not based on external knowledge.
+                    * **For the Action/Verb component:** A "Supported" status may be assigned if the action described in the antecedent (e.g., 'testing a material') serves as a **direct and logical basis** for the framing verb used in the pronoun's sentence (e.g., 'illustrates,' 'demonstrates,' 'confirms'). The antecedent action must be a standard way to achieve the outcome described by the pronoun's verb.
+                    * **"Not Explicitly Supported"** status **MUST** be assigned if the antecedent text lacks the specific semantic component (for substantive components) or if the antecedent action does not provide a direct logical basis for the pronoun's framing verb. Inference through external knowledge is not permitted.
+                    * *Example:* If the antecedent sentence was "The new material was subjected to a series of load tests," and the pronoun sentence was "This confirms the material's enhanced durability under stress," the sufficiency check would be:
+                        * **Action (Confirms):** Supported (The act of 'subjecting to load tests' is a direct logical basis for providing 'confirmation' about a material's properties).
+                        * **Concept (Enhanced durability):** Not Explicitly Supported (Antecedent only says 'load tests' were performed, not that the result was 'enhanced durability').
+                        * **Subject of Durability (The material's):** Supported (Antecedent mentions 'The new material').
+                        * **Condition/Scope Modifier (Under stress):** Supported (Antecedent mentions 'load tests,' which explicitly involves stress).
 3.  **Flow Analysis:**
     * After analyzing pronouns, consider the transition from the *immediately preceding sentence* to the *current sentence*.
     * **Note on Flow:** You must provide a brief note on the flow. If there is an obviously abrupt topic shift, a missing logical connector, or if the sentence structure is unusually convoluted in a way that obscures its connection to the previous statement, make a specific note (e.g., "Flow Note: Transition from previous sentence regarding [topic A] to current sentence on [topic B] is abrupt and lacks clear connection."). If the flow is smooth and logical, state "Flow Note: Smooth transition from previous sentence." For the first sentence of the 'Conclusions' section, state "Flow Note: N/A (first sentence)."
