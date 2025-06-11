@@ -26,8 +26,17 @@ The final prompts were created through an iterative, three-stage process designe
 
 The core of this methodology is a suite of structured prompts (provided in full in the Appendices) that guide an LLM to act as a `Quality Assurance Analyst`. The framework performs two distinct types of analysis - informational and linguistic - applied separately to the Abstract and Conclusions sections.
 
-1. **Informational Integrity Analysis:** This analysis uses a dedicated prompt to execute a multi-phase workflow that involves locating the target section, segmenting it into sentences, and decomposing those sentences into discrete "Information Units" (IUs). Each IU is then classified according to a detailed 13-category schema defined in the prompt. The final phase involves verifying each IU against the IMRaD sections of the paper to flag new or unsubstantiated information.
-2. **Linguistic Clarity Analysis:** This analysis uses a separate prompt to assess pronoun ambiguity and logical flow. The resulting workflow isolates the target section and its sentences, then analyzes each sentence in sequence to identify vague or ambiguous pronouns (e.g., a standalone "this") by strictly evaluating the local textual antecedent.
+#### 2.3.1 Informational Integrity Analysis
+
+This analysis uses a dedicated prompt to execute a multi-phase workflow that involves locating the target section, segmenting it into sentences, and decomposing those sentences into discrete "Information Units" (IUs). Each IU is then classified according to a detailed 13-category schema defined in the prompt. The final phase involves verifying each IU against the IMRaD sections of the paper to flag new or unsubstantiated information.
+  
+The use of a custom classification system to guide an LLM's semantic analysis is a conceptual approach explored in our prior work [8]. The 13-category schema employed in this study is a further development of that approach, designed specifically for the nuanced informational content of academic summaries. The schema was developed to be a modular tool applicable to both Abstracts and Conclusions, containing categories common to both summary types as well as categories more specific to one. Each category includes a scope definition, the primary IMRaD section where the information is expected to originate, and verification notes for the LLM. For the present PoC study, the system's primary function was to guide the LLM's verification process by directing its search to the most probable IMRaD source section for any given Information Unit.
+
+#### 2.3.2 Linguistic Clarity Analysis
+
+The workflow for this analysis evolved during development. Our initial approach utilized a basic prompt that relied on the LLM's general semantic capabilities, but early testing revealed this method was not sufficiently robust. This finding motivated the development of a more structured workflow where the LLM performs a highly structured assessment. For each pronoun, the workflow defines a precise **"pronoun context"** by systematically deconstructing its own clause into its semantic components (e.g., action, subject, concept, and all modifiers). It then performs a component-wise **sufficiency check**.
+
+A key feature of this structured check is the explicit separation of the 'action' (the verb) from the 'substantive components' of the claim (the object of the verb and its modifiers). This feature is intended to better handle challenging cases, such as when a pronoun is used to make a broad interpretive claim (e.g., "This illustrates the power of...") whose textual antecedent may not fully support its substantive scope. The prompt flags ambiguity in such cases by verifying that the substantive components of the claim are explicitly present in the antecedent. It is important to emphasize that this framework is an early attempt and will necessitate further development to become a universal tool.
 
 
 

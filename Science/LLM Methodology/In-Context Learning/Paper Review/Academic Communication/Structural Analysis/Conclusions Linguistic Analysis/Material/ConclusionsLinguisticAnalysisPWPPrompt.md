@@ -109,7 +109,7 @@ You will go through each sentence of the 'Conclusions' section one at a time, in
             * State the pronoun.
             * **Vagueness/Ambiguity Analysis:** Your analysis MUST follow this specific structure:
                 1. **Pronoun Context Definition:** First, define the specific meaning of the pronoun based on its clause (as detailed in Step 2 of the Procedure). Break this context down into its key semantic components.
-                    * *Generic Example:* For a sentence like "This confirms the material's enhanced durability under stress," the pronoun context breakdown would be:
+                    * *Example:* For a sentence like "This confirms the material's enhanced durability under stress," the pronoun context breakdown would be:
                         * **Action:** Confirms
                         * **Concept:** Enhanced durability
                         * **Subject of Durability:** The material's
