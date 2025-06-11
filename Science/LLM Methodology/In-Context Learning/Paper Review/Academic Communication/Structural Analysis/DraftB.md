@@ -38,6 +38,15 @@ The workflow for this analysis evolved during development. Our initial approach 
 
 Judging whether such support is sufficient can be challenging for an LLM, particularly when the pronoun's sentence involves an interpretive 'action' (the verb) and abstract concepts (e.g., "This illustrates the power of..."). To account for this scenario, the prompt separates the analysis of the often more abstract interpretive verbs from that of the more concrete 'substantive components' of the claim (the object of the verb and its modifiers). The analysis separation is achieved by including a dedicated sufficiency check branch for the 'action component'. However, it should be noted that potentially abstract 'substantive components' (particularly the syntactic head noun of the object) are not treated with similar specificity in the current prompt version.
 
+#### 2.4 Testing Protocol
+
+To assess the robustness and consistency of the `Linguistic Clarity Analysis` prompt, a systematic evaluation was conducted. All test runs were executed via the Google Gemini web app using the Gemini Pro 2.5 Pro model [2]. The prompt was executed multiple times against the test case [33] under two distinct conditions to probe the effect of available context on the model's performance.
+
+1. **Limited Context Runs:** The analysis was performed 21 times with only the text of the "Conclusions" section provided as input to the LLM.
+2. **Full Context Runs:** The analysis was subsequently performed 20 times with the full manuscript text provided as input.
+
+The outputs of these runs were collected to evaluate the consistency of the prompt's identification and reasoning regarding the ambiguous pronoun.
+
 ## 3. Results and Discussion
 
 This section presents preliminary results of the developed proof-of-concept (PoC) prompts when applied to the test case publication [33]. We analyze the two target issues - the presence of unsubstantiated claim and the use of an ambiguous pronoun - by first establishing the ground truth and then presenting the output from the corresponding LLM-based analysis.
