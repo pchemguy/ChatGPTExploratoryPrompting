@@ -34,12 +34,9 @@ The use of a custom classification system to guide an LLM's semantic analysis is
 
 #### 2.3.2 Linguistic Clarity Analysis
 
-The workflow for this analysis evolved during development. Our initial approach utilized a basic prompt that relied on the LLM's general semantic capabilities, but early testing revealed this method was not sufficiently robust. This finding motivated the development of a more structured workflow where the LLM performs a highly structured assessment. For each pronoun, the workflow defines a precise **"pronoun context"** by systematically deconstructing its own clause into its semantic components (e.g., action, subject, concept, and all modifiers). It then performs a component-wise **sufficiency check**.
+The workflow for this analysis evolved during development. Our initial approach utilized a basic prompt that relied on the LLM's general semantic capabilities, but early testing revealed this method was not sufficiently robust. This finding motivated the development of a more structured workflow where the LLM performs a highly structured assessment. For each pronoun, the workflow defines a precise **"pronoun context"** by systematically deconstructing its own clause into its semantic components (e.g., action, subject, concept, and all modifiers). It then performs a component-wise **sufficiency check** to determine if the pronoun context is properly supported by the context of the identified antecedent.
 
-A key feature of this structured check is the explicit separation of the 'action' (the verb) from the 'substantive components' of the claim (the object of the verb and its modifiers). This feature is intended to better handle challenging cases, such as when a pronoun is used to make a broad interpretive claim (e.g., "This illustrates the power of...") whose textual antecedent may not fully support its substantive scope. The prompt flags ambiguity in such cases by verifying that the substantive components of the claim are explicitly present in the antecedent. It is important to emphasize that this framework is an early attempt and will necessitate further development to become a universal tool.
-
-
-
+Judging whether such support is sufficient can be challenging for an LLM, particularly when the pronoun's sentence involves an interpretive 'action' (the verb) and abstract concepts (e.g., "This illustrates the power of..."). To account for this scenario, the prompt separates the analysis of the often more abstract interpretive verbs from that of the more concrete 'substantive components' of the claim (the object of the verb and its modifiers). The analysis separation is achieved by including a dedicated sufficiency check branch for the 'action component'. However, it should be noted that potentially abstract 'substantive components' (particularly the syntactic head noun of the object) are not treated with similar specificity in the current prompt version.
 
 ## 3. Results and Discussion
 
