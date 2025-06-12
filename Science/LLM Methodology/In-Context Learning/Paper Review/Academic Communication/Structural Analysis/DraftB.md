@@ -12,7 +12,7 @@ Both of these issues undermine the core function of a scholarly manuscript: the 
 
 ### 2.1. Materials
 
-The proof-of-concept prompts developed in this study were tested using a single, deliberately selected publication as the input text [33]. The selected test paper was chosen because prior analysis [8, 9] had identified it as containing relevant examples of the textual issues under investigation. The specific sections of the test paper analyzed were the Abstract and Conclusions. All prompt development and testing were performed using the Gemini Pro 2.5 Pro model accessed via its official web interface [2].
+The proof-of-concept prompts developed in this study were tested using a single, deliberately selected publication as the input text [33]. The selected test paper was chosen because prior analysis [8, 9] had identified it as containing relevant examples of the textual issues under investigation. The specific sections of the test paper analyzed were the Abstract and Conclusions. All prompt development and testing were performed using the Gemini Pro 2.5 Pro model accessed via its official web interface [2]. Additional testing was also performed using ChatGPT Plus o3 model accessed via its official web interface [3]. 
 
 ### 2.2. Prompt Development Process
 
@@ -40,12 +40,14 @@ Judging whether such support is sufficient can be challenging for an LLM, partic
 
 #### 2.4 Testing Protocol
 
-To assess the robustness and consistency of the `Linguistic Clarity Analysis` prompt, a systematic evaluation was conducted. All test runs were executed via the Google Gemini web app using the Gemini Pro 2.5 Pro model [2]. The prompt was executed multiple times against the test case [33] under two distinct conditions to probe the effect of available context on the model's performance.
+To assess the robustness and consistency of the `Linguistic Clarity Analysis` prompt across different models and contexts, a systematic evaluation was conducted. The prompt was tested against the publication [33] using two different LLMs under two distinct conditions: a "limited context run" where only the "Conclusions" section was provided as input, and a "full context run" where the entire manuscript was provided.
 
-1. **Limited Context Runs:** The analysis was performed 21 times with only the text of the "Conclusions" section provided as input to the LLM.
-2. **Full Context Runs:** The analysis was subsequently performed 20 times with the full manuscript text provided as input.
+The test runs were distributed as follows:
 
-The outputs of these runs were collected to evaluate the consistency of the prompt's identification and reasoning regarding the ambiguous pronoun.
+- **Gemini Pro 2.5 Pro:** The prompt was executed 21 times in the limited context runs and 20 times in the full context runs.
+- **ChatGPT Plus o3:** The prompt was executed 20 times in the full context runs.
+
+All analyses were performed using the respective official web applications for each model. The outputs of these 61 runs were collected to evaluate and compare the consistency of each model's identification and reasoning regarding the ambiguous pronoun.
 
 ## 3. Results and Discussion
 
