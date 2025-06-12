@@ -12,7 +12,7 @@ Both of these issues undermine the core function of a scholarly manuscript: the 
 
 ### 2.1. Materials
 
-The proof-of-concept prompts developed in this study were tested using a single, deliberately selected publication as the input text [33]. The selected test paper was chosen because prior analysis [8, 9] had identified it as containing relevant examples of the textual issues under investigation. The specific sections of the test paper analyzed were the Abstract and Conclusions. All prompt development and testing were performed using the Gemini Pro 2.5 Pro model accessed via its official web interface [2]. Additional testing was also performed using ChatGPT Plus o3 model accessed via its official web interface [3]. 
+The proof-of-concept prompts developed in this study were tested using a single, deliberately selected publication as the input text [33]. The selected test paper was chosen because prior analysis [8, 9] had identified it as containing relevant examples of the textual issues under investigation. The specific sections of the test paper analyzed were the Abstract and Conclusions. All prompt development and testing were performed using the Gemini Pro 2.5 Pro model accessed via its official web and mobile interface [2]. Additional testing was also performed using ChatGPT Plus o3 model accessed via its official web interface [3]. 
 
 ### 2.2. Prompt Development Process
 
