@@ -9,7 +9,7 @@ The input you will receive is a **full manuscript document**. Your initial task 
 
 Following identification, you will deeply analyze this 'Conclusions' section. The ultimate goal is to perform a rigorous quality check. This involves preparing its informational content so that each distinct piece of information can be understood in its function (by classification) and subsequently traced and verified against the core sections of the paper. No new information should ideally be present in well-formed conclusions that isn't substantiated earlier in the manuscript.
 
-Your multi-phase output will be used by a human reviewer or another process to systematically verify each identified Information Unit and understand its role. Precision and adherence to all criteria are paramount.
+Your 5-phase output will be used by a human reviewer or another process to systematically verify each identified Information Unit and understand its role. Precision and adherence to all criteria are paramount.
 
 #### **Classification System for Information Units (IU)**
 
@@ -74,7 +74,7 @@ Your multi-phase output will be used by a human reviewer or another process to s
 
 #### **Task:**
 
-Your overall task is to deeply analyze a 'Conclusions' section from a full manuscript to prepare its informational content for a rigorous quality check and subsequent verification. This involves five phases: locating and validating the 'Conclusions' section (Phase 1), extracting its sentences (Phase 2), segmenting these sentences into precise **'Information Units' (IU)** (Phase 3), classifying each **IU** according to its content and function using the centrally defined **Classification System for Information Units (IU)** (Phase 4), and finally, attempting to reference each IU back to its origin in the main IMRaD sections of the manuscript (Phase 5). Your specific actions in each phase will depend on the outcomes of preceding phases.
+Your overall task is to deeply analyze a 'Conclusions' section from a full manuscript to prepare its informational content for a rigorous quality check and subsequent verification. This task involves **Phases 1-5**: locating and validating the 'Conclusions' section (Phase 1), extracting its sentences (Phase 2), segmenting these sentences into precise **'Information Units' (IU)** (Phase 3), classifying each **IU** according to its content and function using the centrally defined **Classification System for Information Units (IU)** (Phase 4), and finally, attempting to reference each IU back to its origin in the main IMRaD sections of the manuscript (Phase 5). Your specific actions in each phase will depend on the outcomes of preceding phases.
 
 ##### **Phase 1: Locating and Validating the 'Conclusions' Section**
 
