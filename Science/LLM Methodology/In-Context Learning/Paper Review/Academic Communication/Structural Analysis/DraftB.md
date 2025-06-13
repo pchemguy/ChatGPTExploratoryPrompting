@@ -40,14 +40,7 @@ Judging whether such support is sufficient can be challenging for an LLM, partic
 
 #### 2.4 Testing Protocol
 
-To assess the robustness and consistency of the `Linguistic Clarity Analysis` prompt across different models and contexts, a systematic evaluation was conducted. The prompt was tested against the publication [33] using two different LLMs under two distinct conditions: a "limited context run" where only the "Conclusions" section was provided as input, and a "full context run" where the entire manuscript was provided.
-
-The test runs were distributed as follows:
-
-- **Gemini Pro 2.5 Pro:** The prompt was executed 21 times in the limited context runs and 20 times in the full context runs.
-- **ChatGPT Plus o3:** The prompt was executed 20 times in the full context runs.
-
-All analyses were performed using the respective official web applications for each model. The outputs of these 61 runs were collected to evaluate and compare the consistency of each model's identification and reasoning regarding the ambiguous pronoun.
+To assess the robustness and consistency of the prompts across two different models, a systematic evaluation was conducted. The prompts were tested against the publication [33] using two different frontier LLMs under two distinct conditions: a "limited context run" (for linguistic analysis) where only the "Conclusions" section was provided as input, and a "full context run" where the entire manuscript was provided. Models were accessed solely through the official web and mobile user interfaces, no API access was employed. All tests were conducted by manual submission of prompt texts, with each subsequent submission performed after completion of the previous one. each experiment was repeated in a series of 20-40 successive runs. Additionally, each series was typically repeated at least twice, with each repletion performed on a separate day. The results of individual outputs were manually collected on spreadsheets for subsequent evaluation of success/failure rates.
 
 ## 3. Results and Discussion
 
