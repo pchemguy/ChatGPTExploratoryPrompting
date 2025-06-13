@@ -1,4 +1,4 @@
-# Linguistic Analysis
+# Linguistic Analysis Results Summary
 
 Reminder: success vs. failure was judged solely based on whether the scope modifier "in the detection of the reactions
 of O-containing functional groups" was correctly flagged as unsupported/unsubstantiated regardless of overall status, which was based on other components as well.
