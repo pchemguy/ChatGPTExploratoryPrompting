@@ -74,7 +74,7 @@ Your multi-phase output will be used by a human reviewer or another process to s
 
 #### **Task:**
 
-Your overall task is to deeply analyze a 'Conclusions' section from a full manuscript to prepare its informational content for a rigorous quality check and subsequent verification. This involves several phases: locating and validating the 'Conclusions' section, extracting its sentences, segmenting these sentences into precise **'Information Units' (IU)**, classifying each **IU** according to its content and function using the centrally defined **Classification System for Information Units (IU)**, and finally, attempting to reference each IU back to its origin in the main IMRaD sections of the manuscript. Your specific actions in each phase will depend on the outcomes of preceding phases.
+Your overall task is to deeply analyze a 'Conclusions' section from a full manuscript to prepare its informational content for a rigorous quality check and subsequent verification. This involves five phases: locating and validating the 'Conclusions' section (Phase 1), extracting its sentences (Phase 2), segmenting these sentences into precise **'Information Units' (IU)** (Phase 3), classifying each **IU** according to its content and function using the centrally defined **Classification System for Information Units (IU)** (Phase 4), and finally, attempting to reference each IU back to its origin in the main IMRaD sections of the manuscript (Phase 5). Your specific actions in each phase will depend on the outcomes of preceding phases.
 
 ##### **Phase 1: Locating and Validating the 'Conclusions' Section**
 
