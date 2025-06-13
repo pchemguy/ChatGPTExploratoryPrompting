@@ -77,9 +77,16 @@ Note: One run was excluded from Series A (Full Context) due to the accidental us
 
 ### 3.2. Informational Integrity Analysis
 
-The ground truth for this analysis was established by analyzing the "Conclusions" section of the test paper [33] for information not previously substantiated in the IMRaD sections. The third sentence of the Conclusions states: "From approximately **500 mL of 40-fold enriched water, about 90 mL of H217O** was obtained." While the input volume of "500 mL" is mentioned in the main text, the specification of "**40-fold enriched water**" (presumably the implied result of the first experimental stage) is not. Furthermore, the output quantity of "**90 mL of H217O**" is not explicitly stated in the main text, nor can it be directly derived from the data presented in the paper's tables or figures. Therefore, these pieces of information were flagged as "unsubstantiated claims".
+The ground truth for this analysis was established by analyzing the "Conclusions" section of the test paper [33] for information not previously substantiated in the IMRaD sections. The third sentence of the Conclusions states: "From approximately **500 mL of 40-fold enriched water, about 90 mL of H217O** was obtained." While the input volume of "500 mL" is mentioned in the main text, the specification of "**40-fold enriched water**" (presumably the implied result of the first experimental stage) is not. Furthermore, the output quantity of "**90 mL of H217O**" is not explicitly stated in the main text, nor can it be directly derived from the data presented in the paper's tables or figures. Therefore, these pieces of information should be flagged as "unsubstantiated claims".
 
+The prompt's performance was evaluated for its ability to identify these two distinct pieces of unsubstantiated information across 20 runs for each model. The number of successful identifications ("hits") for each target is summarized in Table 3.
 
+**Table 3.** Successful Identifications of Unsubstantiated Information (out of 20 runs).
+
+|               | ChatGPT Plus o3 | Gemini Pro 2.5 Pro |
+| ------------- | :-------------: | :----------------: |
+| **"90 mL"**   |       19        |         17         |
+| **"40-fold"** |        0        |         19         |
 
 
 ---
