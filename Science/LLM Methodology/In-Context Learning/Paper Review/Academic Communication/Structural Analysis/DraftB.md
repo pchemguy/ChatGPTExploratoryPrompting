@@ -54,46 +54,40 @@ The second-to-last sentence of the "Conclusions" section in the test case [33] c
 
 The relevant context in the preceding sentence includes "Five other 17O-labeled compounds were also prepared ... and characterized by NMR and GC-MS." This antecedent context does not explicitly mention the "detection of any reactions". Furthermore, this passing generic mention of NMR (along with another complementary analytical technique) for routine characterization does not semantically support the claim of illustrating the "power" of the technique. The last sentence _does_ mention a reaction detected by NMR and could conceivably act as a formal antecedent in this case, if the last two sentences were swapped (though neither of these sentences is a suitable last sentence in this case), but the sentence following the pronoun cannot serve as a valid antecedent. The pronoun "This", therefore, should be flagged as ambiguous and lacking a clear antecedent in the local context.
 
+#### 3.1.2. Quantitative Evaluation
 
-
-
-
-#### 3.1.1. Gemini Pro 2.5 Pro
+The primary success criterion for the quantitative evaluation was the prompt's ability to guide the LLM to correctly identify that the "detection of reactions" component within the target sentence's pronoun context was not explicitly supported by the antecedent text. The performance of the prompt was tested across two LLMs, with test series conducted on different days to assess consistency.
 
 A total of 201 test runs were conducted with the Gemini Pro 2.5 Pro model. Performance was evaluated under both limited context (only the "Conclusions" section provided) and full context (the full manuscript provided) conditions. The results are summarized in Table 1.
 
 **Table 1.** Performance of the `Linguistic Clarity Analysis` Prompt with Gemini Pro 2.5 Pro.
 
-|            |             |          |               |              |                  |
-| ---------- | ----------- | -------- | ------------- | ------------ | ---------------- |
 | **Series** | **Context** | **Runs** | **Successes** | **Failures** | **Success Rate** |
-| A          | Limited     | 21       | 12            | 9            | 57%              |
-| B          | Limited     | 40       | 14            | 26           | 35%              |
-| C          | Limited     | 40       | 21            | 19           | 53%              |
-| A          | Full        | 20       | 14            | 6            | 70%              |
-| B          | Full        | 40       | 34            | 6            | 85%              |
-| C          | Full        | 40       | 35            | 5            | 88%              |
-
-The data shows a significant dependency on the provided context. The success rates in the full context condition (70-88%) were dramatically higher than in the limited context condition (35-57%). Furthermore, the performance in the limited context condition showed substantial variability between series conducted on different days.
-
-#### 3.1.2. ChatGPT Plus o3
+| :--------: | ----------- | :------: | :-----------: | :----------: | :--------------: |
+|     A      | Limited     |    21    |      12       |      9       |       ~55%       |
+|     B      | Limited     |    40    |      14       |      26      |       ~35%       |
+|     C      | Limited     |    40    |      21       |      19      |       ~55%       |
+|     A      | Full        |    20    |      14       |      6       |       ~70%       |
+|     B      | Full        |    40    |      34       |      6       |       ~85%       |
+|     C      | Full        |    40    |      35       |      5       |       ~90%       |
 
 A total of 59 test runs were conducted with the ChatGPT Plus o3 model. The results are summarized in Table 2.
 
 **Table 2.** Performance of the `Linguistic Clarity Analysis` Prompt with ChatGPT Plus o3.
 
-|            |             |           |               |              |                  |
-| ---------- | ----------- | --------- | ------------- | ------------ | ---------------- |
-| **Series** | **Context** | **Runs*** | **Successes** | **Failures** | **Success Rate** |
-| B          | Limited     | 20        | 20            | 0            | 100%             |
-| A          | Full        | 19        | 17            | 2            | 89%              |
-| B          | Full        | 20        | 16            | 4            | 80%              |
+|    **Series**    | **Context** | **Runs** | **Successes** | **Failures** | **Success Rate** |
+| :--------------: | ----------- | :------: | :-----------: | :----------: | :--------------: |
+|        B         | Limited     |    20    |      20       |      0       |      ~100%       |
+|        A         | Full        |    19    |      17       |      2       |       ~90%       |
+|        B         | Full        |    20    |      16       |      4       |       ~80%       |
 
-&lt;br>
+Note: One run was excluded from Series A (Full Context) due to the accidental use of an incorrect model version.
 
-&lt;small>* One run was excluded from Series A (Full Context) due to the use of an incorrect model version.&lt;/small>
+---
 
-The ChatGPT o3 model demonstrated a perfect (100%) success rate in the single limited context series. The performance in the full context condition was also high and consistent, with success rates of 89% and 80% across the two series.
+The data shows a significant dependency on the provided context. The success rates in the full context condition (70-88%) were dramatically higher than in the limited context condition (35-57%). Furthermore, the performance in the limited context condition showed substantial variability between series conducted on different days.
+
+The ChatGPT o3 model demonstrated a perfect (100%) success rate in the single limited context series. The performance in the full context condition was also high and consistent, with success rates of 90% and 80% across the two series.
 
 ### 3.2. Informational Integrity Analysis
 
