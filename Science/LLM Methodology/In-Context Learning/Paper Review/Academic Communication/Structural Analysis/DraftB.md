@@ -42,6 +42,67 @@ Judging whether such support is sufficient can be challenging for an LLM, partic
 
 To assess the robustness and consistency of the prompts across two different models, a systematic evaluation was conducted. The prompts were tested against the publication [33] using two different frontier LLMs under two distinct conditions: a "limited context run" (for linguistic analysis) where only the "Conclusions" section was provided as input, and a "full context run" where the entire manuscript was provided. Models were accessed solely through the official web and mobile user interfaces, no API access was employed. All tests were conducted by manual submission of prompt texts, with each subsequent submission performed after completion of the previous one. each experiment was repeated in a series of 20-40 successive runs. Additionally, each series was typically repeated at least twice, with each repletion performed on a separate day. The results of individual outputs were manually collected on spreadsheets for subsequent evaluation of success/failure rates.
 
+## 3. Results
+
+This section presents the results from the evaluation of the two proof-of-concept prompts developed in this study. We first detail the quantitative results from the systematic, multi-run testing of the `Linguistic Clarity Analysis` prompt. Following this, we report the outcome of the `Informational Integrity Analysis` prompt when applied to its target test case.
+
+### 3.1. Linguistic Clarity Analysis
+
+#### 3.1.1. Ground Truth Analysis
+
+The second-to-last sentence of the "Conclusions" section in the test case [33] contains a potentially ambiguous standalone pronoun: "**This** illustrates the **power of 17O NMR** in the detection of the reactions of O-containing functional groups." This sentence involves an interpretive claim characterized by a typical action/verb "illustrates", an abstract concept "power of 17O NMR", and a scope modifier "detection of the reactions of O-containing functional groups", which narrows the scope of the technique included in the "concept part".
+
+The relevant context in the preceding sentence includes "Five other 17O-labeled compounds were also prepared ... and characterized by NMR and GC-MS." This antecedent context does not explicitly mention the "detection of any reactions". Furthermore, this passing generic mention of NMR (along with another complementary analytical technique) for routine characterization does not semantically support the claim of illustrating the "power" of the technique. The last sentence _does_ mention a reaction detected by NMR and could conceivably act as a formal antecedent in this case, if the last two sentences were swapped (though neither of these sentences is a suitable last sentence in this case), but the sentence following the pronoun cannot serve as a valid antecedent. The pronoun "This", therefore, should be flagged as ambiguous and lacking a clear antecedent in the local context.
+
+
+
+
+
+#### 3.1.1. Gemini Pro 2.5 Pro
+
+A total of 201 test runs were conducted with the Gemini Pro 2.5 Pro model. Performance was evaluated under both limited context (only the "Conclusions" section provided) and full context (the full manuscript provided) conditions. The results are summarized in Table 1.
+
+**Table 1.** Performance of the `Linguistic Clarity Analysis` Prompt with Gemini Pro 2.5 Pro.
+
+|            |             |          |               |              |                  |
+| ---------- | ----------- | -------- | ------------- | ------------ | ---------------- |
+| **Series** | **Context** | **Runs** | **Successes** | **Failures** | **Success Rate** |
+| A          | Limited     | 21       | 12            | 9            | 57%              |
+| B          | Limited     | 40       | 14            | 26           | 35%              |
+| C          | Limited     | 40       | 21            | 19           | 53%              |
+| A          | Full        | 20       | 14            | 6            | 70%              |
+| B          | Full        | 40       | 34            | 6            | 85%              |
+| C          | Full        | 40       | 35            | 5            | 88%              |
+
+The data shows a significant dependency on the provided context. The success rates in the full context condition (70-88%) were dramatically higher than in the limited context condition (35-57%). Furthermore, the performance in the limited context condition showed substantial variability between series conducted on different days.
+
+#### 3.1.2. ChatGPT Plus o3
+
+A total of 59 test runs were conducted with the ChatGPT Plus o3 model. The results are summarized in Table 2.
+
+**Table 2.** Performance of the `Linguistic Clarity Analysis` Prompt with ChatGPT Plus o3.
+
+|            |             |           |               |              |                  |
+| ---------- | ----------- | --------- | ------------- | ------------ | ---------------- |
+| **Series** | **Context** | **Runs*** | **Successes** | **Failures** | **Success Rate** |
+| B          | Limited     | 20        | 20            | 0            | 100%             |
+| A          | Full        | 19        | 17            | 2            | 89%              |
+| B          | Full        | 20        | 16            | 4            | 80%              |
+
+&lt;br>
+
+&lt;small>* One run was excluded from Series A (Full Context) due to the use of an incorrect model version.&lt;/small>
+
+The ChatGPT o3 model demonstrated a perfect (100%) success rate in the single limited context series. The performance in the full context condition was also high and consistent, with success rates of 89% and 80% across the two series.
+
+### 3.2. Informational Integrity Analysis
+
+
+
+
+---
+---
+
 ## 3. Results and Discussion
 
 This section presents preliminary results of the developed proof-of-concept (PoC) prompts when applied to the test case publication [33]. We analyze the two target issues - the presence of unsubstantiated claim and the use of an ambiguous pronoun - by first establishing the ground truth and then presenting the output from the corresponding LLM-based analysis.
