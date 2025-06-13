@@ -48,17 +48,11 @@ This section presents the results from the evaluation of the two proof-of-concep
 
 ### 3.1. Linguistic Clarity Analysis
 
-#### 3.1.1. Ground Truth Analysis
-
-The second-to-last sentence of the "Conclusions" section in the test case [33] contains a potentially ambiguous standalone pronoun: "**This** illustrates the **power of 17O NMR** in the detection of the reactions of O-containing functional groups." This sentence involves an interpretive claim characterized by a typical action/verb "illustrates", an abstract concept "power of 17O NMR", and a scope modifier "detection of the reactions of O-containing functional groups", which narrows the scope of the technique included in the "concept part".
+The ground truth for this analysis was established by examining the second-to-last sentence of the "Conclusions" section in the test case [33] contains a potentially ambiguous standalone pronoun: "**This** illustrates the **power of 17O NMR** in the detection of the reactions of O-containing functional groups." This sentence involves an interpretive claim characterized by a typical action/verb ("illustrates"), an abstract concept ("power of 17O NMR"), and a scope modifier ("detection of the reactions of O-containing functional groups"), which narrows the scope of the technique included in the "concept part".
 
 The relevant context in the preceding sentence includes "Five other 17O-labeled compounds were also prepared ... and characterized by NMR and GC-MS." This antecedent context does not explicitly mention the "detection of any reactions". Furthermore, this passing generic mention of NMR (along with another complementary analytical technique) for routine characterization does not semantically support the claim of illustrating the "power" of the technique. The last sentence _does_ mention a reaction detected by NMR and could conceivably act as a formal antecedent in this case, if the last two sentences were swapped (though neither of these sentences is a suitable last sentence in this case), but the sentence following the pronoun cannot serve as a valid antecedent. The pronoun "This", therefore, should be flagged as ambiguous and lacking a clear antecedent in the local context.
 
-#### 3.1.2. Quantitative Evaluation
-
-The primary success criterion for the quantitative evaluation was the prompt's ability to guide the LLM to correctly identify that the "detection of reactions" component within the target sentence's pronoun context was not explicitly supported by the antecedent text. The performance of the prompt was tested across two LLMs, with test series conducted on different days to assess consistency.
-
-A total of 201 test runs were conducted with the Gemini Pro 2.5 Pro model. Performance was evaluated under both limited context (only the "Conclusions" section provided) and full context (the full manuscript provided) conditions. The results are summarized in Table 1.
+The primary success criterion for the quantitative evaluation was the prompt's ability to guide the LLM to correctly identify that the "detection of reactions" component within the target sentence's pronoun context was not explicitly supported by the antecedent text. The performance of the prompt was tested across two LLMs, with test series conducted on different days to assess consistency. Performance was evaluated under both limited context (only the "Conclusions" section provided) and full context (the full manuscript provided) conditions. A total of 201 test runs were conducted with the Gemini Pro 2.5 Pro model, and 59 runs were conducted with the ChatGPT Plus o3 model. The results are summarized in Tables 1 and 2.
 
 **Table 1.** Performance of the `Linguistic Clarity Analysis` Prompt with Gemini Pro 2.5 Pro.
 
@@ -71,8 +65,6 @@ A total of 201 test runs were conducted with the Gemini Pro 2.5 Pro model. Perfo
 |     B      | Full        |    40    |      34       |      6       |       ~85%       |
 |     C      | Full        |    40    |      35       |      5       |       ~90%       |
 
-A total of 59 test runs were conducted with the ChatGPT Plus o3 model. The results are summarized in Table 2.
-
 **Table 2.** Performance of the `Linguistic Clarity Analysis` Prompt with ChatGPT Plus o3.
 
 |    **Series**    | **Context** | **Runs** | **Successes** | **Failures** | **Success Rate** |
@@ -83,16 +75,26 @@ A total of 59 test runs were conducted with the ChatGPT Plus o3 model. The resul
 
 Note: One run was excluded from Series A (Full Context) due to the accidental use of an incorrect model version.
 
+### 3.2. Informational Integrity Analysis
+
+The ground truth for this analysis was established by analyzing the "Conclusions" section of the test paper [33] for information not previously substantiated in the IMRaD sections. The third sentence of the Conclusions states: "From approximately **500 mL of 40-fold enriched water, about 90 mL of H217O** was obtained." While the input volume of "500 mL" is mentioned in the main text, the specification of "**40-fold enriched water**" (presumably the implied result of the first experimental stage) is not. Furthermore, the output quantity of "**90 mL of H217O**" is not explicitly stated in the main text, nor can it be directly derived from the data presented in the paper's tables or figures. Therefore, these pieces of information were flagged as "unsubstantiated claims".
+
+
+
+
 ---
+---
+
 
 The data shows a significant dependency on the provided context. The success rates in the full context condition (70-88%) were dramatically higher than in the limited context condition (35-57%). Furthermore, the performance in the limited context condition showed substantial variability between series conducted on different days.
 
 The ChatGPT o3 model demonstrated a perfect (100%) success rate in the single limited context series. The performance in the full context condition was also high and consistent, with success rates of 90% and 80% across the two series.
 
-### 3.2. Informational Integrity Analysis
+~ ### 3.2. Informational Integrity Analysis
 
+#### 3.1.1. Ground Truth Analysis
 
-
+The "Conclusions" section of the test paper [33] was analyzed for information not previously substantiated in the IMRaD sections. The third sentence of the Conclusions states: "From approximately **500 mL of 40-fold enriched water, about 90 mL of H217O** was obtained." While the input volume of "500 mL" is mentioned in the main text, the specification of "**40-fold enriched water**" (presumably the implied result of the first experimental stage) is not. Furthermore, the output quantity of "**90 mL of H217O**" is not explicitly stated in the main text, nor can it be directly derived from the data presented in the paper's tables or figures. Therefore, these pieces of information were flagged as "unsubstantiated claims".
 
 ---
 ---
