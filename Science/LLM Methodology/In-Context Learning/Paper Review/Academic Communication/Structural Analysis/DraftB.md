@@ -48,9 +48,9 @@ This section presents the results from the evaluation of the two proof-of-concep
 
 The ground truth for this analysis was established by analyzing the "Conclusions" section of the test paper [33] for information not previously substantiated in the IMRaD sections. The third sentence of the Conclusions states: "From approximately **500 mL of 40-fold enriched water, about 90 mL of H217O** was obtained." While the input volume of "500 mL" is mentioned in the main text, the specification of "**40-fold enriched water**" (presumably the implied result of the first experimental stage) is not. Furthermore, the output quantity of "**90 mL of H217O**" is not explicitly stated in the main text, nor can it be directly derived from the data presented in the paper's tables or figures. Therefore, these pieces of information should be flagged as "unsubstantiated claims".
 
-The prompt's performance was evaluated for its ability to identify these two distinct pieces of unsubstantiated information across 20 runs for each model. The number of successful identifications ("hits") for each target is summarized in Table 3.
+The prompt's performance was evaluated for its ability to identify these two distinct pieces of unsubstantiated information across 20 runs for each model. The number of successful identifications ("hits") for each target is summarized in Table 1.
 
-**Table 3.** Successful Identifications of Unsubstantiated Information (out of 20 runs).
+**Table 1.** Successful Identifications of Unsubstantiated Information (out of 20 runs).
 
 |               | ChatGPT Plus o3 | Gemini Pro 2.5 Pro |
 | ------------- | :-------------: | :----------------: |
@@ -63,9 +63,9 @@ The ground truth for this analysis was established by examining the second-to-la
 
 The relevant context in the preceding sentence includes "Five other 17O-labeled compounds were also prepared ... and characterized by NMR and GC-MS." This antecedent context does not explicitly mention the "detection of any reactions". Furthermore, this passing generic mention of NMR (along with another complementary analytical technique) for routine characterization does not semantically support the claim of illustrating the "power" of the technique. The last sentence _does_ mention a reaction detected by NMR and could conceivably act as a formal antecedent in this case, if the last two sentences were swapped (though neither of these sentences is a suitable last sentence in this case), but the sentence following the pronoun cannot serve as a valid antecedent. The pronoun "This", therefore, should be flagged as ambiguous and lacking a clear antecedent in the local context.
 
-The primary success criterion for the quantitative evaluation was the prompt's ability to guide the LLM to correctly identify that the "detection of reactions" component within the target sentence's pronoun context was not explicitly supported by the antecedent text. The performance of the prompt was tested across two LLMs, with test series conducted on different days to assess consistency. Performance was evaluated under both limited context (only the "Conclusions" section provided) and full context (the full manuscript provided) conditions. A total of 201 test runs were conducted with the Gemini Pro 2.5 Pro model, and 59 runs were conducted with the ChatGPT Plus o3 model. The results are summarized in Tables 1 and 2.
+The primary success criterion for the quantitative evaluation was the prompt's ability to guide the LLM to correctly identify that the "detection of reactions" component within the target sentence's pronoun context was not explicitly supported by the antecedent text. The performance of the prompt was tested across two LLMs, with test series conducted on different days to assess consistency. Performance was evaluated under both limited context (only the "Conclusions" section provided) and full context (the full manuscript provided) conditions. A total of 201 test runs were conducted with the Gemini Pro 2.5 Pro model, and 59 runs were conducted with the ChatGPT Plus o3 model. The results are summarized in Tables 2 and 3.
 
-**Table 1.** Performance of the `Linguistic Clarity Analysis` Prompt with Gemini Pro 2.5 Pro.
+**Table 2.** Performance of the `Linguistic Clarity Analysis` Prompt with Gemini Pro 2.5 Pro.
 
 | **Series** | **Context** | **Runs** | **Successes** | **Failures** | **Success Rate** |
 | :--------: | ----------- | :------: | :-----------: | :----------: | :--------------: |
@@ -76,7 +76,7 @@ The primary success criterion for the quantitative evaluation was the prompt's a
 |     B      | Full        |    40    |      34       |      6       |       ~85%       |
 |     C      | Full        |    40    |      35       |      5       |       ~90%       |
 
-**Table 2.** Performance of the `Linguistic Clarity Analysis` Prompt with ChatGPT Plus o3.
+**Table 3.** Performance of the `Linguistic Clarity Analysis` Prompt with ChatGPT Plus o3.
 
 |    **Series**    | **Context** | **Runs** | **Successes** | **Failures** | **Success Rate** |
 | :--------------: | ----------- | :------: | :-----------: | :----------: | :--------------: |
@@ -90,7 +90,7 @@ Note: One run was excluded from Series A (Full Context) due to the accidental us
 
 ### 4.1. Interpretation of Findings
 
-The results validate the core hypothesis that structured prompts can effectively guide LLMs to perform specific, non-trivial analytical tasks on scholarly text. 
+The results provide initial demonstration of effective guidance of LLMs via structured workflow prompts to perform specific, non-trivial analytical tasks on summary sections of scholarly manuscripts. The first  test, `Informational Integrity Analysis`, targeted two identified numerical quantiles introduced in the Conclusions section of the test case. The tested Gemini model successfully identified both targets with an average rate of 90% (Table 1). Interestingly, the ChatGPT model demonstrated near binary performance: it flagged one of the quantities with 95% success rate, while completely failed (0% success rate) to flag the other one (Table 1).
 
 
 The high success rates for the `Linguistic Clarity Analysis` in the full context condition (Tables 1 & 2) demonstrate the robustness of this prompt's architecture for identifying a complex case of pronoun ambiguity. The performance divergence between context conditions and models for this task highlights key differences in model behavior, with ChatGPT o3 showing a remarkable (100%) ability to adhere to the prompt's local constraints, while Gemini Pro's performance benefited significantly from wider context.
