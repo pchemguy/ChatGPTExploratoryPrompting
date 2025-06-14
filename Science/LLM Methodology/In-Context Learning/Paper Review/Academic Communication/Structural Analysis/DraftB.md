@@ -98,7 +98,7 @@ To facilitate development process and potentially improve robustness of prompts,
 
 In present case, the prompt employs a linear workflow process that "drills down" the hierarchical organization of technical texts, starting from the entire input and gradually narrowing focus in a staged process eventually zeroing in on "atomic" IUs. The idea here is that any intermediate result/output (particularly for reasoning models) becomes part of models context that can be used/addressed in subsequent steps. For example, once the Conclusions section is identified and extracted, it becomes a separate "focused" piece in the models context, and subsequent stages involving this section, in a sense, no longer need to address the entire manuscript (though in present case, no attempt to gauge potential performance improvement due to the detailed workflow prompt design has been made).
 
-Modular structured workflow design offers two other important benefits. On the one hand, prompt sections can be reused in different prompt involving the same sub-tasks, such as identification identification of a summary section and splitting it into sentences. Equally important, 
+Modular structured workflow design offers two other important benefits. On the one hand, prompt sections can be reused in different prompt involving the same sub-tasks, such as identification of a summary section and splitting it into sentences, as demonstrated by the two prompts developed for the two reported test targets. Equally important, is the structured prompt's (with detailed output) potential ability to provide insights into LLM's specific failure modes.
 
 Detailed test data revealed two failure modes
 
