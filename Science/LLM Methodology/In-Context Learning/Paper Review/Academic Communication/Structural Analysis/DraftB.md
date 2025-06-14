@@ -65,7 +65,17 @@ The relevant context in the preceding sentence includes "Five other 17O-labeled 
 
 The primary success criterion for the quantitative evaluation was the prompt's ability to guide the LLM to correctly identify that the "detection of reactions" component within the target sentence's pronoun context was not explicitly supported by the antecedent text. The performance of the prompt was tested across two LLMs, with test series conducted on different days to assess consistency. Performance was evaluated under both limited context (only the "Conclusions" section provided) and full context (the full manuscript provided) conditions. A total of 201 test runs were conducted with the Gemini Pro 2.5 Pro model, and 59 runs were conducted with the ChatGPT Plus o3 model. The results are summarized in Tables 2 and 3.
 
-**Table 2.** Performance of the `Linguistic Clarity Analysis` Prompt with Gemini Pro 2.5 Pro.
+**Table 2.** Performance of the `Linguistic Clarity Analysis` Prompt with ChatGPT Plus o3.
+
+| **Series** | **Context** | **Runs** | **Successes** | **Failures** | **Success Rate** |
+| :--------: | ----------- | :------: | :-----------: | :----------: | :--------------: |
+|     B      | Limited     |    20    |      20       |      0       |      ~100%       |
+|     A      | Full        |    19    |      17       |      2       |       ~90%       |
+|     B      | Full        |    20    |      16       |      4       |       ~80%       |
+
+Note: One run was excluded from Series A (Full Context) due to the accidental use of an incorrect model version.
+
+**Table 3.** Performance of the `Linguistic Clarity Analysis` Prompt with Gemini Pro 2.5 Pro.
 
 | **Series** | **Context** | **Runs** | **Successes** | **Failures** | **Success Rate** |
 | :--------: | ----------- | :------: | :-----------: | :----------: | :--------------: |
@@ -76,23 +86,13 @@ The primary success criterion for the quantitative evaluation was the prompt's a
 |     B      | Full        |    40    |      34       |      6       |       ~85%       |
 |     C      | Full        |    40    |      35       |      5       |       ~90%       |
 
-**Table 3.** Performance of the `Linguistic Clarity Analysis` Prompt with ChatGPT Plus o3.
-
-|    **Series**    | **Context** | **Runs** | **Successes** | **Failures** | **Success Rate** |
-| :--------------: | ----------- | :------: | :-----------: | :----------: | :--------------: |
-|        B         | Limited     |    20    |      20       |      0       |      ~100%       |
-|        A         | Full        |    19    |      17       |      2       |       ~90%       |
-|        B         | Full        |    20    |      16       |      4       |       ~80%       |
-
-Note: One run was excluded from Series A (Full Context) due to the accidental use of an incorrect model version.
-
 ## 4. Discussion
 
 The results provide initial demonstration of effective guidance of LLMs via structured workflow prompts to perform specific, non-trivial analytical tasks on summary sections of scholarly manuscripts. Under favorable setup, both models demonstrated similarly high success rate on the linguistic analysis, though Gemini's model behavior was somewhat less consistent than that of ChatGPT. On the other hand, Gemini consistently outperformed ChatGPT in the informational integrity analysis.
 
 ### 4.1. Informational Integrity Analysis
 
-The first  test, `Informational Integrity Analysis`, targeted two identified numerical quantiles introduced in the Conclusions section of the test case (unsubstantiated information) using prompt *"ConclusionsClassificationAndReferencesPrompt.md"*. The tested Gemini model successfully identified both targets at the success rate of 95% (Table 1). Curiously, the ChatGPT model demonstrated near binary performance: it flagged one of the quantities with 95% success rate, while completely missing (0% success rate) the other one (Table 1). When these result were interpreted by Gemini, the model made an interesting observation. Syntactically, "90 mL" (correctly flagged by both models) is the head of a noun phrase that acts as the subject. On the other hand, "40-fold" (completely missed by ChatGPT) functions as an adjectival modifier. It possible that the latter more "obscure" role contributed to ChatGPT failure.
+The first  test, `Informational Integrity Analysis`, targeted two identified numerical quantiles introduced in the Conclusions section of the test case (unsubstantiated information), as discussed in the ground truth analysis above, using the prompt *"ConclusionsClassificationAndReferencesPrompt.md"*. The tested Gemini model successfully identified both targets at the success rate of 95% (Table 1). Curiously, the ChatGPT model demonstrated near binary performance: it flagged one of the quantities with 95% success rate, while completely missing (0% success rate) the other one (Table 1). When these result were interpreted by Gemini, the model made an interesting observation. Syntactically, "90 mL" (correctly flagged by both models) is the head of a noun phrase that acts as the subject. On the other hand, "40-fold" (completely missed by ChatGPT) functions as an adjectival modifier. It possible that the latter more "obscure" role contributed to ChatGPT failure.
 
 This test involves a number of challenges. First, the model needs to analyze the entire manuscript, with summary section potentially buried in the middle of a large document. While modern models demonstrate robust analytical capabilities with respect to the structure of conventional technical texts, non-conventional structure, headings, or even combined sections may complicate the process of identification and extraction of a summary section, particularly Conclusions. Further, within the summary, the model needs to accurately isolate every "atomic" claim (information unit, IU) with appropriate context. These requirements necessitate sufficiently large context window, accurate recall, and strong analytical capabilities for splitting the target section. Locating specific sources of individual identified IUs may not be a trivial task either. Numeric quantities, including derived values, often should appear literally in the appropriate IMRaD sections. At the same time, rounded values or ranges might be more appropriate in a summarizing statement. Non-numeric claims, e.g., related to methods or materials (not tested in this work), where appropriate, may use synonyms or semantically equivalent expressions, further stressing LLM's "reasoning" abilities. However, it is reasonable to expect that the challenges associated with locating specific non-trivial sources will more likely result in false positives, meaning a potential non-issue case being brought to human's attention rather than failing to flag a real problem.
 
@@ -114,8 +114,10 @@ Close examination of detailed individual LLM responses revealed a number of obse
 
 ### 4.2. Linguistic Clarity Analysis
 
+The other  test, `Linguistic Clarity Analysis`, targeted a problematic standalone "this" reference, as discussed in the ground truth analysis above, using the prompt "ConclusionsLinguisticAnalysisPrompt.md". The context for this analysis is limited solely to the summary section being analyzed, that is any "this/it" reference must have a clear antecedent within the section itself. For this reason, this analysis could be implemented in two modes: "limited context", with only the Conclusions section provided to the LLM, and "full context", where model would need identify the Conclusions section in the full manuscript. ChatGPT model demonstrated consistently high success rate (according to criteria discussed in the Results section) in both modes, with 85% rate with in the full context mode and reaching a perfect score in the limited context mode (Table 2). Gemini model demonstrated the same success rate with full context, but surprisingly low performance in the limited context mode. Gemini also demonstrated somewhat apparently odd behavior during the first Series A tests, which were excluded from further consideration (Table 3).
 
-isolate every "atomic" claim with appropriate context from the summary section.
+The oddity with Series A Gemini analysis was in distribution of failed runs. These two series involved 41 runs total executed in succession. Oddly, in both cases the majority of failed runs were in the last half of the corresponding series. For this reason, both series were doubled in length (40 runs each) and repeated twice on two separate days (series B and C). 
+
 
 The high success rates for the `Linguistic Clarity Analysis` in the full context condition (Tables 1 & 2) demonstrate the robustness of this prompt's architecture for identifying a complex case of pronoun ambiguity. The performance divergence between context conditions and models for this task highlights key differences in model behavior, with ChatGPT o3 showing a remarkable (100%) ability to adhere to the prompt's local constraints, while Gemini Pro's performance benefited significantly from wider context.
 
@@ -124,3 +126,5 @@ The high success rates for the `Linguistic Clarity Analysis` in the full context
 The temporal variability observed in the `Linguistic Clarity Analysis` for Gemini Pro (Table 1, limited context) is also a critical finding for researchers using public-facing LLM interfaces, as it suggests that prompt performance can be non-deterministic.
 
 
+
+two identified numerical quantiles introduced in the Conclusions section of the test case (unsubstantiated information) using prompt *"ConclusionsClassificationAndReferencesPrompt.md"*. The tested Gemini model successfully identified both targets at the success rate of 95% (Table 1). Curiously, the ChatGPT model demonstrated near binary performance: it flagged one of the quantities with 95% success rate, while completely missing (0% success rate) the other one (Table 1). When these result were interpreted by Gemini, the model made an interesting observation. Syntactically, "90 mL" (correctly flagged by both models) is the head of a noun phrase that acts as the subject. On the other hand, "40-fold" (completely missed by ChatGPT) functions as an adjectival modifier. It possible that the latter more "obscure" role contributed to ChatGPT failure.
