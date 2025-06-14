@@ -6,7 +6,7 @@ Computer-assisted tools for academic writing have a long history [1], but the re
 
 Many scholarly publications that report original research follow the IMRaD (Introduction, Methods, Results, and Discussion) structure [#]. Two other critical sections, the Abstract and the Conclusions, serve as academic summaries that frame this main body of work. This study focuses on the semantic and linguistic quality of these two summary sections. We propose an LLM-based workflow to diagnose two common issues that can detract from the clarity and integrity of these summaries: the inclusion of information not substantiated in the main text and the use of ambiguous pronoun constructs.
 
-Both of these issues undermine the core function of a scholarly manuscript: the effective communication of scientific information. Scientists generally expect that all factual claims within a summary must originate from and be substantiated by the IMRaD content of the paper [#], where proper context is provided. Introducing new information (unsubstantiated claim) in a summary section either deprives that information of necessary context or undermines the communicative function of the summary itself. Similarly, ambiguous pronouns (e.g., "it" or a standalone "this") can disrupt narrative flow and complicate comprehension by obscuring the intended antecedent (\<quote here\>) [#]. To address these problems, we developed and tested a series of proof-of-concept (PoC) prompts designed to guide an LLM in identifying and flagging these specific issues within a sample text [33]. The prompts and our development process are detailed in the appendices and supporting information.
+Both of these issues undermine the core function of a scholarly manuscript: the effective communication of scientific information. Scientists generally expect that all factual claims within a summary must originate from and be substantiated by the IMRaD content of the paper [#], where proper context is provided. Introducing new information (unsubstantiated claim) in a summary section either deprives that information of necessary context or undermines the communicative function of the summary itself. Similarly, ambiguous pronouns (e.g., "it" or a standalone "this") can disrupt narrative flow and complicate comprehension by obscuring the intended antecedent (\<quote here\>) [#]. To address these problems, we developed and tested a series of proof-of-concept (PoC) structured prompts designed to guide an LLM in identifying and flagging these specific issues within a sample text [33]. The prompts and our development process are detailed in the appendices and supporting information.
 
 ## 2. Methodology
 
@@ -16,29 +16,27 @@ The proof-of-concept prompts developed in this study were tested using a single,
 
 ### 2.2. Prompt Development Process
 
-The final prompts were created through an iterative, three-stage process designed to move from a high-level goal to a robust, automated workflow:
+The core of this methodology is a suite of structured prompts (provided in full in the Appendices) that guide an LLM to act as a `Quality Assurance Analyst`. Presented prompts were created through an iterative, three-stage process designed to move from a high-level goal to a robust, automated workflow:
 
 1. **Manual Task Decomposition:** The analytical goal (e.g., "flag new information") was first broken down into a logical sequence of smaller, well-defined subtasks suitable for an LLM. Initial prompts were drafted for each subtask.
 2. **Interactive Testing and Refinement:** The subtask prompts were tested interactively on the test case within a single LLM conversation. This step served to evaluate the viability of the decomposition scheme and refine the clarity of the instructions for each step.
 3. **Meta-Prompting for Workflow Integration:** The refined subtask sequence was integrated into a single, comprehensive workflow prompt using meta-prompting techniques - a process where one prompt is used to guide an LLM to develop and refine another, more specialized prompt [8]. This integration was guided by a previously developed "Adaptive Prompt Engineering Assistant & Tutor" prompt ([8], Appendix B) to structure and formalize the final instructions.
 
-### 2.3. Analytical Framework and Prompts
+Developed prompts perform two distinct types of analysis - informational and linguistic - applied separately to the Abstract and Conclusions sections.
 
-The core of this methodology is a suite of structured prompts (provided in full in the Appendices) that guide an LLM to act as a `Quality Assurance Analyst`. The framework performs two distinct types of analysis - informational and linguistic - applied separately to the Abstract and Conclusions sections.
-
-#### 2.3.1 Informational Integrity Analysis
+### 2.3. Informational Integrity Analysis
 
 This analysis uses a dedicated prompt to execute a multi-phase workflow that involves locating the target section, segmenting it into sentences, and decomposing those sentences into discrete "Information Units" (IUs). Each IU is then classified according to a detailed 13-category schema defined in the prompt. The final phase involves verifying each IU against the IMRaD sections of the paper to flag new or unsubstantiated information.
   
 The use of a custom classification system to guide an LLM's semantic analysis is a conceptual approach explored in our prior work [8]. The 13-category schema employed in this study is a further development of that approach, designed specifically for the nuanced informational content of academic summaries. The schema was developed to be a modular tool applicable to both Abstracts and Conclusions, containing categories common to both summary types as well as categories more specific to one. Each category includes a scope definition, the primary IMRaD section where the information is expected to originate, and verification notes for the LLM. For the present PoC study, the system's primary function was to guide the LLM's verification process by directing its search to the most probable IMRaD source section for any given Information Unit.
 
-#### 2.3.2 Linguistic Clarity Analysis
+### 2.4. Linguistic Clarity Analysis
 
 The workflow for this analysis evolved during development. Our initial approach utilized a basic prompt that relied on the LLM's general semantic capabilities, but early testing revealed this method was not sufficiently robust. This finding motivated the development of a more structured workflow where the LLM performs a highly structured assessment. For each pronoun, the workflow defines a precise **"pronoun context"** by systematically deconstructing its own clause into its semantic components (e.g., action, subject, concept, and all modifiers). It then performs a component-wise **sufficiency check** to determine if the pronoun context is properly supported by the context of the identified antecedent.
 
 Judging whether such support is sufficient can be challenging for an LLM, particularly when the pronoun's sentence involves an interpretive 'action' (the verb) and abstract concepts (e.g., "This illustrates the power of..."). To account for this scenario, the prompt separates the analysis of the often more abstract interpretive verbs from that of the more concrete 'substantive components' of the claim (the object of the verb and its modifiers). The analysis separation is achieved by including a dedicated sufficiency check branch for the 'action component'. However, it should be noted that potentially abstract 'substantive components' (particularly the syntactic head noun of the object) are not treated with similar specificity in the current prompt version.
 
-#### 2.4 Testing Protocol
+### 2.5. Testing Protocol
 
 To assess the robustness and consistency of the prompts across two different models, a systematic evaluation was conducted. The prompts were tested against the publication [33] using two different frontier LLMs under two distinct conditions: a "limited context run" (for linguistic analysis) where only the "Conclusions" section was provided as input, and a "full context run" where the entire manuscript was provided. Models were accessed solely through the official web and mobile user interfaces; no API access was employed. All tests were conducted by manual submission of prompt texts. Each prompt was submitted to a new AI chat after completion of the previous one. With ChatGPT, each series was executed within a dedicated project, and the test manuscript was submitted once per series as a project file. With Gemini, the test manuscript was attached to each AI chat from Google Drive. Each experiment was repeated in a series of 20-40 successive runs. Additionally, each series was typically repeated at least twice, with each repetition performed on a separate day. The results of individual outputs were manually collected on spreadsheets for subsequent evaluation of success/failure rates.
 
@@ -46,7 +44,20 @@ To assess the robustness and consistency of the prompts across two different mod
 
 This section presents the results from the evaluation of the two proof-of-concept prompts developed in this study. We first detail the quantitative results from the systematic, multi-run testing of the `Linguistic Clarity Analysis` prompt. Following this, we report the outcome of the `Informational Integrity Analysis` prompt when applied to its target test case.
 
-### 3.1. Linguistic Clarity Analysis
+### 3.1. Informational Integrity Analysis
+
+The ground truth for this analysis was established by analyzing the "Conclusions" section of the test paper [33] for information not previously substantiated in the IMRaD sections. The third sentence of the Conclusions states: "From approximately **500 mL of 40-fold enriched water, about 90 mL of H217O** was obtained." While the input volume of "500 mL" is mentioned in the main text, the specification of "**40-fold enriched water**" (presumably the implied result of the first experimental stage) is not. Furthermore, the output quantity of "**90 mL of H217O**" is not explicitly stated in the main text, nor can it be directly derived from the data presented in the paper's tables or figures. Therefore, these pieces of information should be flagged as "unsubstantiated claims".
+
+The prompt's performance was evaluated for its ability to identify these two distinct pieces of unsubstantiated information across 20 runs for each model. The number of successful identifications ("hits") for each target is summarized in Table 3.
+
+**Table 3.** Successful Identifications of Unsubstantiated Information (out of 20 runs).
+
+|               | ChatGPT Plus o3 | Gemini Pro 2.5 Pro |
+| ------------- | :-------------: | :----------------: |
+| **"90 mL"**   |       19        |         17         |
+| **"40-fold"** |        0        |         19         |
+
+### 3.2. Linguistic Clarity Analysis
 
 The ground truth for this analysis was established by examining the second-to-last sentence of the "Conclusions" section in the test case [33] contains a potentially ambiguous standalone pronoun: "**This** illustrates the **power of 17O NMR** in the detection of the reactions of O-containing functional groups." This sentence involves an interpretive claim characterized by a typical action/verb ("illustrates"), an abstract concept ("power of 17O NMR"), and a scope modifier ("detection of the reactions of O-containing functional groups"), which narrows the scope of the technique included in the "concept part".
 
@@ -75,18 +86,19 @@ The primary success criterion for the quantitative evaluation was the prompt's a
 
 Note: One run was excluded from Series A (Full Context) due to the accidental use of an incorrect model version.
 
-### 3.2. Informational Integrity Analysis
+## 4. Discussion
 
-The ground truth for this analysis was established by analyzing the "Conclusions" section of the test paper [33] for information not previously substantiated in the IMRaD sections. The third sentence of the Conclusions states: "From approximately **500 mL of 40-fold enriched water, about 90 mL of H217O** was obtained." While the input volume of "500 mL" is mentioned in the main text, the specification of "**40-fold enriched water**" (presumably the implied result of the first experimental stage) is not. Furthermore, the output quantity of "**90 mL of H217O**" is not explicitly stated in the main text, nor can it be directly derived from the data presented in the paper's tables or figures. Therefore, these pieces of information should be flagged as "unsubstantiated claims".
+### 4.1. Interpretation of Findings
 
-The prompt's performance was evaluated for its ability to identify these two distinct pieces of unsubstantiated information across 20 runs for each model. The number of successful identifications ("hits") for each target is summarized in Table 3.
+The results validate the core hypothesis that structured prompts can effectively guide LLMs to perform specific, non-trivial analytical tasks on scholarly text. 
 
-**Table 3.** Successful Identifications of Unsubstantiated Information (out of 20 runs).
 
-|               | ChatGPT Plus o3 | Gemini Pro 2.5 Pro |
-| ------------- | :-------------: | :----------------: |
-| **"90 mL"**   |       19        |         17         |
-| **"40-fold"** |        0        |         19         |
+The high success rates for the `Linguistic Clarity Analysis` in the full context condition (Tables 1 & 2) demonstrate the robustness of this prompt's architecture for identifying a complex case of pronoun ambiguity. The performance divergence between context conditions and models for this task highlights key differences in model behavior, with ChatGPT o3 showing a remarkable (100%) ability to adhere to the prompt's local constraints, while Gemini Pro's performance benefited significantly from wider context.
+
+The `Informational Integrity Analysis` results introduce further nuance. This task of identifying unsubstantiated information appears more challenging than the linguistic check. ChatGPT's complete failure to identify the unsubstantiated modifier ("40-fold") suggests a potential weakness in verifying adjectival descriptors compared to quantitative values ("90 mL"). Gemini Pro's stronger performance on both targets indicates its reasoning process was better suited for this specific verification task. These outcomes underscore that even for seemingly similar verification tasks, prompt effectiveness can be highly dependent on the model used and the specific nature of the target information (e.g., modifier vs. quantity).
+
+The temporal variability observed in the `Linguistic Clarity Analysis` for Gemini Pro (Table 1, limited context) is also a critical finding for researchers using public-facing LLM interfaces, as it suggests that prompt performance can be non-deterministic.
+
 
 
 ---
