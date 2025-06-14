@@ -92,7 +92,7 @@ Note: One run was excluded from Series A (Full Context) due to the accidental us
 
 ## 4. Discussion
 
-The results provide initial demonstration of effective guidance of LLMs via structured workflow prompts to perform specific, non-trivial analytical tasks on summary sections of scholarly manuscripts. Under favorable setup, both models demonstrated similarly high success rate on the linguistic analysis, though Gemini's model behavior was somewhat less consistent than that of ChatGPT. On the other hand, Gemini consistently outperformed ChatGPT in the informational integrity analysis.
+The results provide an initial demonstration that structured workflow prompts can effectively guide LLMs to perform specific, non-trivial analytical tasks on summary sections of scholarly manuscripts. In the `Linguistic Clarity Analysis`, both models demonstrated similarly high success rates with full context, though their performance characteristics differed under limited context. In the `Informational Integrity Analysis`, Gemini consistently outperformed ChatGPT, revealing important differences in model capabilities for this specific task.
 
 ### 4.1. Informational Integrity Analysis
 
