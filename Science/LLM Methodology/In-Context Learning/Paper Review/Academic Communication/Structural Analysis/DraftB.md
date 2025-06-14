@@ -122,20 +122,5 @@ The other  test, `Linguistic Clarity Analysis`, targeted a problematic standalon
 
 The oddity with Series A Gemini analysis was in distribution of failed runs. These two series involved 41 runs total executed in succession. Oddly, in both cases the majority of failed runs were in the last half of the corresponding series. For this reason, both series were doubled in length (40 runs each) and repeated twice on two separate days (series B and C). The series B and C demonstrated consistent behavior:  full context - close high performance (matching that of the ChatGPT model); limited context - consistently low performance.
 
-As discussed in 
+As discussed in the Results section the present prompt version primarily targeted the concrete "detection of reactions" scope modifier. Close examination of models' output revealed, however, that both models also correctly flagged the abstract concept "power of 17O NMR" as unsupported by the antecedent at nearly identical rate. In the case of poorly preforming limited-context series with Gemini, flagging of "power of 17O NMR" was also comparably poor.
 
-
-
----
----
-
-
-The high success rates for the `Linguistic Clarity Analysis` in the full context condition (Tables 1 & 2) demonstrate the robustness of this prompt's architecture for identifying a complex case of pronoun ambiguity. The performance divergence between context conditions and models for this task highlights key differences in model behavior, with ChatGPT o3 showing a remarkable (100%) ability to adhere to the prompt's local constraints, while Gemini Pro's performance benefited significantly from wider context.
-
-
-
-The temporal variability observed in the `Linguistic Clarity Analysis` for Gemini Pro (Table 1, limited context) is also a critical finding for researchers using public-facing LLM interfaces, as it suggests that prompt performance can be non-deterministic.
-
-
-
-two identified numerical quantiles introduced in the Conclusions section of the test case (unsubstantiated information) using prompt *"ConclusionsClassificationAndReferencesPrompt.md"*. The tested Gemini model successfully identified both targets at the success rate of 95% (Table 1). Curiously, the ChatGPT model demonstrated near binary performance: it flagged one of the quantities with 95% success rate, while completely missing (0% success rate) the other one (Table 1). When these result were interpreted by Gemini, the model made an interesting observation. Syntactically, "90 mL" (correctly flagged by both models) is the head of a noun phrase that acts as the subject. On the other hand, "40-fold" (completely missed by ChatGPT) functions as an adjectival modifier. It possible that the latter more "obscure" role contributed to ChatGPT failure.
