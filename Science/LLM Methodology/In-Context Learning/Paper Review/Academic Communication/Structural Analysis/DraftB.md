@@ -105,7 +105,12 @@ Close examination of detailed individual LLM responses revealed a number of obse
    ChatGPT's outputs were generally considerably more terse, often ignoring some of the instructions. For example, the subsection **"5. Report Verification Findings for Each Information Unit (IU)"** of **"Phase 5: Referencing and Verification of Information Units (IU)"** specifically mandated to provide details on both substantiated (**Subsection A**) and unsubstantiated (**Subsection B**) items. Additionally, "**4. Evaluate Numeric Quantities (If the IU contains them)**" places specific focus on numeric quantities. ChatGPT output largely ignored these instructions, as opposed to output of Gemini, making it difficult to diagnose potential issues.
    
    Gemini's output was generally more insightful. For example, the only case classified as failure to flag the "40-fold" piece clearly reveals that Gemini successfully extracted this quantity (like in all other cases), considered it, and provided an explanation of its non-flagging decision: `"40-fold enriched water" is a reasonable summary of the pre-concentration by evaporation step.` Similarly, with the other case: `The "about 90 mL" output is reasonably close to the sum of the most enriched fractions detailed (70 mL).`
-
+2. **No False Positives:**
+   Neither model flagged any other numeric quantity, which is the desired result according to our ground truth analysis. Gemini flagged several times evaluative/interpretive statements, such as:  
+   
+   `The assertion that "The most practical method for determining the enrichment was found to be the reaction of the H217O with BSTFA to yield hexamethyldisiloxane". While the method is described, its comparative "practicality" over other determination methods detailed (e.g., 1-hexanol derivatization) is not explicitly justified or stated as a finding within the IMRaD sections.` 
+   
+   These targets are more difficult/abstract and were not targeted by the present version of the prompt, though it might be conceivable to target such targets with crafted instructions. 
 
 
 
