@@ -90,8 +90,15 @@ Note: One run was excluded from Series A (Full Context) due to the accidental us
 
 ### 4.1. Interpretation of Findings
 
-The results provide initial demonstration of effective guidance of LLMs via structured workflow prompts to perform specific, non-trivial analytical tasks on summary sections of scholarly manuscripts. The first  test, `Informational Integrity Analysis`, targeted two identified numerical quantiles introduced in the Conclusions section of the test case. The tested Gemini model successfully identified both targets with an average rate of 90% (Table 1). Interestingly, the ChatGPT model demonstrated near binary performance: it flagged one of the quantities with 95% success rate, while completely failed (0% success rate) to flag the other one (Table 1).
+The results provide initial demonstration of effective guidance of LLMs via structured workflow prompts to perform specific, non-trivial analytical tasks on summary sections of scholarly manuscripts. The first  test, `Informational Integrity Analysis`, targeted two identified numerical quantiles introduced in the Conclusions section of the test case (unsubstantiated information). The tested Gemini model successfully identified both targets with an average rate of 90% (Table 1). Interestingly, the ChatGPT model demonstrated near binary performance: it flagged one of the quantities with 95% success rate, while completely missing (0% success rate) the other one (Table 1).
 
+This test involves a number of challenges. First, the model needs to analyze the entire manuscript, with summary section potentially buried in the middle of a large document. Further, within the summary, the model needs to accurately isolate every "atomic" claim (information unit, IU) with appropriate context. These requirements necessitate sufficiently large context window, accurate recall, and strong analytical capabilities for splitting the target section. Locating specific sources of individual identified IUs may not be a trivial task either. Numeric quantities, including derived values, often should appear literally in the appropriate IMRaD sections. At the same time, rounded values or ranges might be more appropriate in a summarizing statement. Non-numeric claims, e.g., related to methods or materials (not tested in this work), where appropriate, may use synonyms or semantically equivalent expressions, further stressing LLM's "reasoning" abilities. However, it is reasonable to expect that the challenges associated with locating specific non-trivial sources will more likely result in false positives, meaning a potential non-issue case being brought to human's attention rather than failing to flag a real problem.
+
+Detailed test data revealed two failure modes
+
+
+
+isolate every "atomic" claim with appropriate context from the summary section.
 
 The high success rates for the `Linguistic Clarity Analysis` in the full context condition (Tables 1 & 2) demonstrate the robustness of this prompt's architecture for identifying a complex case of pronoun ambiguity. The performance divergence between context conditions and models for this task highlights key differences in model behavior, with ChatGPT o3 showing a remarkable (100%) ability to adhere to the prompt's local constraints, while Gemini Pro's performance benefited significantly from wider context.
 
