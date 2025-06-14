@@ -119,6 +119,12 @@ The other  test, `Linguistic Clarity Analysis`, targeted a problematic standalon
 The oddity with Series A Gemini analysis was in distribution of failed runs. These two series involved 41 runs total executed in succession. Oddly, in both cases the majority of failed runs were in the last half of the corresponding series. For this reason, both series were doubled in length (40 runs each) and repeated twice on two separate days (series B and C). 
 
 
+
+
+---
+---
+
+
 The high success rates for the `Linguistic Clarity Analysis` in the full context condition (Tables 1 & 2) demonstrate the robustness of this prompt's architecture for identifying a complex case of pronoun ambiguity. The performance divergence between context conditions and models for this task highlights key differences in model behavior, with ChatGPT o3 showing a remarkable (100%) ability to adhere to the prompt's local constraints, while Gemini Pro's performance benefited significantly from wider context.
 
 
