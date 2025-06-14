@@ -59,12 +59,11 @@ The prompt's performance was evaluated for its ability to identify these two dis
 
 ### 3.2. Linguistic Clarity Analysis
 
-The ground truth for this analysis was established by examining the second-to-last sentence of the "Conclusions" section in the test case [33] contains a potentially ambiguous standalone pronoun: "**This** illustrates the **power of 17O NMR** in the detection of the reactions of O-containing functional groups." This sentence involves an interpretive claim characterized by
-- action/verb - "illustrates"
-- abstract concept - "power of 17O NMR"
-- scope modifier - "detection of the reactions of O-containing functional groups"
-These three components (which can be, in principle, further analyzed syntactically) establish "pronoun context"
-which narrows the scope of the technique included in the "concept part".
+The ground truth for this analysis was established by examining the second-to-last sentence of the "Conclusions" section in the test case [33], which contains a potentially ambiguous standalone pronoun: "**This** illustrates the **power of 17O NMR** in the detection of the reactions of O-containing functional groups." This sentence involves an interpretive claim characterized by three main components:  
+- **Action/verb:** "illustrates"
+- **Abstract concept:** "power of 17O NMR"
+- **Scope modifier:** "detection of the reactions of O-containing functional groups"
+These three components constitute the "pronoun context". While standalone "this" references are often grammatically vague, the goal of this prompt is more ambitious: to determine whether the reference is also semantically problematic. For such a pronoun reference to be considered semantically adequate, each component of its context must be explicitly supported by the antecedent. 
 
 The relevant context in the preceding sentence includes "Five other 17O-labeled compounds were also prepared ... and characterized by NMR and GC-MS." This antecedent context does not explicitly mention the "detection of any reactions". Furthermore, this passing generic mention of NMR (along with another complementary analytical technique) for routine characterization does not semantically support the claim of illustrating the "power" of the technique. The last sentence _does_ mention a reaction detected by NMR and could conceivably act as a formal antecedent in this case, if the last two sentences were swapped (though neither of these sentences is a suitable last sentence in this case), but the sentence following the pronoun cannot serve as a valid antecedent. The pronoun "This", therefore, should be flagged as ambiguous and lacking a clear antecedent in the local context.
 
