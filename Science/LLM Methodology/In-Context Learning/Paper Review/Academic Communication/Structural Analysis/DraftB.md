@@ -59,7 +59,12 @@ The prompt's performance was evaluated for its ability to identify these two dis
 
 ### 3.2. Linguistic Clarity Analysis
 
-The ground truth for this analysis was established by examining the second-to-last sentence of the "Conclusions" section in the test case [33] contains a potentially ambiguous standalone pronoun: "**This** illustrates the **power of 17O NMR** in the detection of the reactions of O-containing functional groups." This sentence involves an interpretive claim characterized by a typical action/verb ("illustrates"), an abstract concept ("power of 17O NMR"), and a scope modifier ("detection of the reactions of O-containing functional groups"), which narrows the scope of the technique included in the "concept part".
+The ground truth for this analysis was established by examining the second-to-last sentence of the "Conclusions" section in the test case [33] contains a potentially ambiguous standalone pronoun: "**This** illustrates the **power of 17O NMR** in the detection of the reactions of O-containing functional groups." This sentence involves an interpretive claim characterized by
+- action/verb - "illustrates"
+- abstract concept - "power of 17O NMR"
+- scope modifier - "detection of the reactions of O-containing functional groups"
+These three components (which can be, in principle, further analyzed syntactically) establish "pronoun context"
+which narrows the scope of the technique included in the "concept part".
 
 The relevant context in the preceding sentence includes "Five other 17O-labeled compounds were also prepared ... and characterized by NMR and GC-MS." This antecedent context does not explicitly mention the "detection of any reactions". Furthermore, this passing generic mention of NMR (along with another complementary analytical technique) for routine characterization does not semantically support the claim of illustrating the "power" of the technique. The last sentence _does_ mention a reaction detected by NMR and could conceivably act as a formal antecedent in this case, if the last two sentences were swapped (though neither of these sentences is a suitable last sentence in this case), but the sentence following the pronoun cannot serve as a valid antecedent. The pronoun "This", therefore, should be flagged as ambiguous and lacking a clear antecedent in the local context.
 
@@ -116,8 +121,9 @@ Close examination of detailed individual LLM responses revealed a number of obse
 
 The other  test, `Linguistic Clarity Analysis`, targeted a problematic standalone "this" reference, as discussed in the ground truth analysis above, using the prompt "ConclusionsLinguisticAnalysisPrompt.md". The context for this analysis is limited solely to the summary section being analyzed, that is any "this/it" reference must have a clear antecedent within the section itself. For this reason, this analysis could be implemented in two modes: "limited context", with only the Conclusions section provided to the LLM, and "full context", where model would need identify the Conclusions section in the full manuscript. ChatGPT model demonstrated consistently high success rate (according to criteria discussed in the Results section) in both modes, with 85% rate with in the full context mode and reaching a perfect score in the limited context mode (Table 2). Gemini model demonstrated the same success rate with full context, but surprisingly low performance in the limited context mode. Gemini also demonstrated somewhat apparently odd behavior during the first Series A tests, which were excluded from further consideration (Table 3).
 
-The oddity with Series A Gemini analysis was in distribution of failed runs. These two series involved 41 runs total executed in succession. Oddly, in both cases the majority of failed runs were in the last half of the corresponding series. For this reason, both series were doubled in length (40 runs each) and repeated twice on two separate days (series B and C). 
+The oddity with Series A Gemini analysis was in distribution of failed runs. These two series involved 41 runs total executed in succession. Oddly, in both cases the majority of failed runs were in the last half of the corresponding series. For this reason, both series were doubled in length (40 runs each) and repeated twice on two separate days (series B and C). The series B and C demonstrated consistent behavior:  full context - close high performance (matching that of the ChatGPT model); limited context - consistently low performance.
 
+As discussed in 
 
 
 
