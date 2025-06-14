@@ -101,16 +101,16 @@ To facilitate development process and potentially improve robustness of prompts,
 Modular structured prompt design potentially offers a number of benefits. In present case, the prompt employs a linear workflow process that "drills down" the hierarchical organization of technical texts, starting from the entire input and gradually narrowing focus in a staged process eventually zeroing in on "atomic" IUs. The idea here is that any intermediate result/output (particularly for reasoning models) becomes part of models context that can be used/addressed in subsequent steps. For example, once the Conclusions section is identified and extracted, it becomes a separate "focused" piece in the models context, and subsequent stages involving this section, in a sense, no longer need to address the entire manuscript (though in present case, no attempt to gauge potential performance improvement due to the detailed workflow prompt design has been made). Modular structured workflow design offers two other important benefits. On the one hand, prompt sections can be reused in different prompt involving the same sub-tasks, such as identification of a summary section and splitting it into sentences, as demonstrated by the two prompts developed for the two reported test targets. Equally important, is the structured prompt's (with detailed output) potential ability to provide insights into LLM's specific failure modes.
 
 Close examination of detailed individual LLM responses revealed a number of observations.
-1. **Instruction Following - Report Output:**
-   ChatGPT's outputs were generally considerably more terse, often ignoring some of the instructions. For example, the subsection **"5. Report Verification Findings for Each Information Unit (IU)"** of **"Phase 5: Referencing and Verification of Information Units (IU)"** specifically mandated to provide details on both substantiated (**Subsection A**) and unsubstantiated (**Subsection B**) items. Additionally, "**4. Evaluate Numeric Quantities (If the IU contains them)**" places specific focus on numeric quantities. ChatGPT output largely ignored these instructions, as opposed to output of Gemini, making it difficult to diagnose potential issues.
+- **Instruction Following - Report Output:**
+  ChatGPT's outputs were generally considerably more terse, often ignoring some of the instructions. For example, the subsection **"5. Report Verification Findings for Each Information Unit (IU)"** of **"Phase 5: Referencing and Verification of Information Units (IU)"** specifically mandated to provide details on both substantiated (**Subsection A**) and unsubstantiated (**Subsection B**) items. Additionally, "**4. Evaluate Numeric Quantities (If the IU contains them)**" places specific focus on numeric quantities. ChatGPT output largely ignored these instructions, as opposed to output of Gemini, making it difficult to diagnose potential issues.
    
-   Gemini's output was generally more insightful. For example, the only case classified as failure to flag the "40-fold" piece clearly reveals that Gemini successfully extracted this quantity (like in all other cases), considered it, and provided an explanation of its non-flagging decision: `"40-fold enriched water" is a reasonable summary of the pre-concentration by evaporation step.` Similarly, with the other case: `The "about 90 mL" output is reasonably close to the sum of the most enriched fractions detailed (70 mL).`
-2. **No False Positives:**
-   Neither model flagged any other numeric quantity, which is the desired result according to our ground truth analysis. Gemini flagged several times evaluative/interpretive statements, such as:  
-   
-   `The assertion that "The most practical method for determining the enrichment was found to be the reaction of the H217O with BSTFA to yield hexamethyldisiloxane". While the method is described, its comparative "practicality" over other determination methods detailed (e.g., 1-hexanol derivatization) is not explicitly justified or stated as a finding within the IMRaD sections.` 
-   
-   These targets are more difficult/abstract and were not targeted by the present version of the prompt, though it might be conceivable to target such targets with crafted instructions. 
+  Gemini's output was generally more insightful. For example, the only case classified as failure to flag the "40-fold" piece clearly reveals that Gemini successfully extracted this quantity (like in all other cases), considered it, and provided an explanation of its non-flagging decision: `"40-fold enriched water" is a reasonable summary of the pre-concentration by evaporation step.` Similarly, with the other case: `The "about 90 mL" output is reasonably close to the sum of the most enriched fractions detailed (70 mL).`
+- **No False Positives:**
+  Neither model flagged any other numeric quantity, which is the desired result according to our ground truth analysis. Gemini flagged several times evaluative/interpretive statements, such as:
+  
+  `The assertion that "The most practical method for determining the enrichment was found to be the reaction of the H217O with BSTFA to yield hexamethyldisiloxane". While the method is described, its comparative "practicality" over other determination methods detailed (e.g., 1-hexanol derivatization) is not explicitly justified or stated as a finding within the IMRaD sections.`
+  
+  These targets are more difficult/abstract and were not targeted by the present version of the prompt, though it might be conceivable to target such targets with crafted instructions. 
 
 
 
@@ -124,60 +124,3 @@ The high success rates for the `Linguistic Clarity Analysis` in the full context
 The temporal variability observed in the `Linguistic Clarity Analysis` for Gemini Pro (Table 1, limited context) is also a critical finding for researchers using public-facing LLM interfaces, as it suggests that prompt performance can be non-deterministic.
 
 
-
----
----
-
-
-The data shows a significant dependency on the provided context. The success rates in the full context condition (70-88%) were dramatically higher than in the limited context condition (35-57%). Furthermore, the performance in the limited context condition showed substantial variability between series conducted on different days.
-
-The ChatGPT o3 model demonstrated a perfect (100%) success rate in the single limited context series. The performance in the full context condition was also high and consistent, with success rates of 90% and 80% across the two series.
-
-~ ### 3.2. Informational Integrity Analysis
-
-#### 3.1.1. Ground Truth Analysis
-
-The "Conclusions" section of the test paper [33] was analyzed for information not previously substantiated in the IMRaD sections. The third sentence of the Conclusions states: "From approximately **500 mL of 40-fold enriched water, about 90 mL of H217O** was obtained." While the input volume of "500 mL" is mentioned in the main text, the specification of "**40-fold enriched water**" (presumably the implied result of the first experimental stage) is not. Furthermore, the output quantity of "**90 mL of H217O**" is not explicitly stated in the main text, nor can it be directly derived from the data presented in the paper's tables or figures. Therefore, these pieces of information were flagged as "unsubstantiated claims".
-
----
----
-
-## 3. Results and Discussion
-
-This section presents preliminary results of the developed proof-of-concept (PoC) prompts when applied to the test case publication [33]. We analyze the two target issues - the presence of unsubstantiated claim and the use of an ambiguous pronoun - by first establishing the ground truth and then presenting the output from the corresponding LLM-based analysis.
-
-### 3.1. Case 1: Unsubstantiated Claim Check
-
-#### 3.1.1. Ground Truth Analysis
-
-The "Conclusions" section of the test paper [33] was analyzed for information not previously substantiated in the IMRaD sections. The third sentence of the Conclusions states: "From approximately **500 mL of 40-fold enriched water, about 90 mL of H217O** was obtained." While the input volume of "500 mL" is mentioned in the main text, the specification of "**40-fold enriched water**" (presumably the implied result of the first experimental stage) is not. Furthermore, the output quantity of "**90 mL of H217O**" is not explicitly stated in the main text, nor can it be directly derived from the data presented in the paper's tables or figures. Therefore, these pieces of information were flagged as "unsubstantiated claims".
-
-#### 3.1.2. LLM Prompt Results
-
-The "Informational Integrity Analysis" prompt was applied to the full text of the test paper [#].
-
-`[Placeholder: Insert the relevant portion of the LLM's output here. This should be the part of the output that analyzes the sentence "From approximately 500 mL of 40-fold enriched water, about 90 mL of H217O was obtained." and flags the unsubstantiated terms.]`
-
-The LLM successfully identified the unsubstantiated terms, classifying them as "New Information in Conclusions." The output correctly noted that while the 500 mL quantity was present, the "40-fold" specification and the "90 mL" result were not found in the IMRaD body of the manuscript.
-
-### 3.2. Case 2: Ambiguous Pronoun Check
-
-#### 3.2.1. Ground Truth Analysis
-
-The second-to-last sentence of the "Conclusions" section contains a potentially ambiguous standalone pronoun: "**This** illustrates the **power of 17O NMR** in the detection of the reactions of O-containing functional groups." This sentence involves an interpretive claim characterized by a typical action/verb "illustrates", an abstract concept "power of 17O NMR", and the rest of the sentence "detection of the reactions of O-containing functional groups" constitutes scope modifier, indicating a specific use of the technique ("17O NMR") specified in the concept being modified. The relevant context in the preceding sentence includes "Five other 17O-labeled compounds were also prepared ... and characterized by NMR and GC-MS." Not only this context (as well as the omitted part of the sentence) has nothing to do with detection of any reactions whatsoever, but also this passing non-specific mentioning of NMR alone with other analytical technique constitutes a routine established use of the technique (characterization by NMR), and has nothing to do with stated illustration of its power. The last sentence _does_ mention a reaction detected by NMR and could conceivably act as a formal antecedent in this case, if the last two sentences were swapped (though neither of these sentences is a suitable last sentence in this case), but the sentence following the pronoun cannot serve as a valid antecedent. The pronoun "This", therefore, should be flagged as ambiguous and lacking a clear antecedent in the local context.
-
-#### 3.2.2. LLM Prompt Results
-
-The "Linguistic Clarity Analysis" prompt was applied to the test paper, focusing on the "Conclusions" section.
-
-`[Placeholder: Insert the LLM's output for the analysis of the sentence "This illustrates the power of 17O NMR..." here. The output should show the pronoun being flagged and the reasoning provided by the LLM.]`
-
-The prompt successfully guided the LLM to flag the pronoun "This" as ambiguous. The model's reasoning noted the lack of a sufficient antecedent in the preceding sentence and correctly disregarded the subsequent sentence as a possible source.
-
-### 3.3. Discussion
-
-The results demonstrate the feasibility of using structured, multi-phase prompts to guide an LLM in identifying specific stylistic and informational issues in academic summaries. In both test cases, the PoC prompts successfully replicated the findings of an expert human analysis.
-
-**Limitations:** This study is a proof-of-concept and, as such, has significant limitations. The prompts were developed and tested on a single manuscript that was deliberately chosen for containing known issues. The robustness and generalizability of these specific prompts across different writing styles, disciplines, and document formats are unknown. Furthermore, the analysis of more subtle or complex instances of these issues has not been evaluated.
-
-**Implications and Future Work:** Despite the limitations, this work suggests a promising direction for developing accessible, AI-assisted tools for improving scholarly writing. Future work should focus on testing these prompts on a larger and more diverse corpus of publications to assess their reliability and identify failure modes. Subsequent research could explore refining the prompts to handle more complex cases, expanding the classification schema, and integrating these checks into a more automated document analysis pipeline.
