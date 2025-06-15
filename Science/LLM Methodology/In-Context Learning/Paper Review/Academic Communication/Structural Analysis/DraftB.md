@@ -20,9 +20,12 @@ The proof-of-concept prompts developed in this study were tested using a single,
 
 ### 2.2. Prompt Design
 
-The prompts developed for this study share a common modular architecture  
-
-design philosophy that combines a specific persona, a modular multi-phase workflow, and, where applicable, a detailed classification schema. A key architectural feature is the assignment of the `Quality Assurance Analyst` role to the LLM to prime its behavior for meticulous, evidence-based analysis. Each prompt then guides the model through a structured, multi-phase process (e.g., section identification, sentence extraction, component analysis) to ensure a systematic evaluation.
+The core prompt engineering strategy employed in this study starts with analysis and hierarchical decomposition of the complex target task, yielding a workflow flow that attempts to mimic human hierarchical reasoning [#]. Subsequently, the workflow is implemented as  modular structured prompts that attempt to elicit hierarchical reasoning when guiding frontier reasoning LLM models. The workflow forms the basis of the top-level **Task** section of a commonly employed role-based design:
+- **Role/Persona:**  Primes LLM behavior to achieve better prompt adherence and fidelity, particularly for complex domain-specific tasks.
+- **Context:** General task description that may act like a summary or high-level introduction for the complex **Task** section orienting the model and providing procedural highlights, if necessary.
+- **Task:** The core hierarchical workflow
+- **Output Format:** General report formatting instructions (step-specific output instructions are commonly embedded within the related block of the **Task** section).
+- **Final Instructions:** Core behavior reinforcement.
 
 This modular, structured design offers several benefits. In the present case, the prompts employ a linear workflow that "drills down" through the hierarchical organization of a technical text, starting from the entire input and gradually narrowing focus to "atomic" information units. The core idea is that any intermediate output becomes part of the model's context that can be used in subsequent steps. For example, once the "Conclusions" section is identified and extracted, it becomes a focused piece of the context, and subsequent stages no longer need to address the entire manuscript. This modularity also means that prompt sections can be reused for different prompts involving the same sub-tasks (e.g., identifying a summary section). Equally important is the potential for detailed, structured outputs to provide insights into an LLM's specific failure modes.
 
