@@ -18,15 +18,21 @@ Both of these issues undermine the core function of a scholarly manuscript: the 
 
 The proof-of-concept prompts developed in this study were tested using a single, deliberately selected publication as the input text [33]. The selected test paper was chosen because prior analysis [8, 9] had identified it as containing relevant examples of the textual issues under investigation. The specific sections of the test paper analyzed were the Abstract and Conclusions. All prompt development and testing were performed using the Gemini Pro 2.5 Pro model accessed via its official web and mobile interface, as well as via Google AI Studio [2]. Additional testing was also performed using ChatGPT Plus o3 model accessed via its official web interface [3]. 
 
-### 2.2. Prompt Development Process
+### 2.2. Prompt Design
 
-The core of this methodology is a suite of structured prompts (provided in full in the Appendices) that guide an LLM to act as a `Quality Assurance Analyst`. Presented prompts were created through an iterative, three-stage process designed to move from a high-level goal to a robust, automated workflow:
+The prompts developed for this study share a common modular architecture  
+
+design philosophy that combines a specific persona, a modular multi-phase workflow, and, where applicable, a detailed classification schema. A key architectural feature is the assignment of the `Quality Assurance Analyst` role to the LLM to prime its behavior for meticulous, evidence-based analysis. Each prompt then guides the model through a structured, multi-phase process (e.g., section identification, sentence extraction, component analysis) to ensure a systematic evaluation.
+
+This modular, structured design offers several benefits. In the present case, the prompts employ a linear workflow that "drills down" through the hierarchical organization of a technical text, starting from the entire input and gradually narrowing focus to "atomic" information units. The core idea is that any intermediate output becomes part of the model's context that can be used in subsequent steps. For example, once the "Conclusions" section is identified and extracted, it becomes a focused piece of the context, and subsequent stages no longer need to address the entire manuscript. This modularity also means that prompt sections can be reused for different prompts involving the same sub-tasks (e.g., identifying a summary section). Equally important is the potential for detailed, structured outputs to provide insights into an LLM's specific failure modes.
+
+These prompts were created through an iterative, three-stage development process:
 
 1. **Manual Task Decomposition:** The analytical goal (e.g., "flag new information") was first broken down into a logical sequence of smaller, well-defined subtasks suitable for an LLM. Initial prompts were drafted for each subtask.
 2. **Interactive Testing and Refinement:** The subtask prompts were tested interactively on the test case within a single LLM conversation. This step served to evaluate the viability of the decomposition scheme and refine the clarity of the instructions for each step.
-3. **Meta-Prompting for Workflow Integration:** The refined subtask sequence was integrated into a single, comprehensive workflow prompt using meta-prompting techniques - a process where one prompt is used to guide an LLM to develop and refine another, more specialized prompt [8]. This integration was guided by a previously developed "Adaptive Prompt Engineering Assistant & Tutor" prompt ([8], Appendix B) to structure and formalize the final instructions.
+3. **Meta-Prompting for Workflow Integration:** The refined subtask sequence was integrated into a single, comprehensive workflow prompt using meta-prompting techniques—a process where one prompt is used to guide an LLM to develop and refine another, more specialized prompt.
 
-Developed prompts perform two distinct types of analysis - informational and linguistic - applied separately to the Abstract and Conclusions sections.
+The resulting prompts perform two distinct types of analysis—informational and linguistic—applied separately to the Abstract and Conclusions sections.
 
 ### 2.3. Informational Integrity Analysis
 
