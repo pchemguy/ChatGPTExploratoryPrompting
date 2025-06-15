@@ -20,10 +20,11 @@ The proof-of-concept prompts developed in this study were tested using a single,
 
 ### 2.2. Prompt Design
 
-The core prompt engineering strategy employed in this study starts with analysis and hierarchical decomposition of the complex target task, yielding a workflow flow that attempts to mimic human hierarchical reasoning [#]. Subsequently, the workflow is implemented as  modular structured prompts that attempt to elicit hierarchical reasoning when guiding frontier reasoning LLM models. The workflow forms the basis of the top-level **Task** section of a commonly employed role-based design:
-- **Role/Persona:**  Primes LLM behavior to achieve better prompt adherence and fidelity, particularly for complex domain-specific tasks.
-- **Context:** General task description that may act like a summary or high-level introduction for the complex **Task** section orienting the model and providing procedural highlights, if necessary.
-- **Task:** The core hierarchical workflow
+The core prompt engineering strategy employed in this study starts with analysis and hierarchical decomposition of the complex target task, yielding a workflow that seeks to mimic human hierarchical reasoning [#]. Subsequently, the workflow is implemented as modular structured prompts that are designed to elicit hierarchical reasoning when guiding frontier reasoning LLM models. The workflow forms the basis of the top-level **Task** section of a commonly employed role-based design:
+
+- **Role/Persona:** Primes LLM behavior to achieve better prompt adherence and fidelity, particularly for complex domain-specific tasks.
+- **Context:** A general task description that may act as a summary or high-level introduction for the complex **Task** section, orienting the model and providing procedural highlights if necessary.
+- **Task:** The core hierarchical workflow.
 - **Output Format:** General report formatting instructions (step-specific output instructions are commonly embedded within the related block of the **Task** section).
 - **Final Instructions:** Core behavior reinforcement.
 
@@ -33,9 +34,9 @@ These prompts were created through an iterative, three-stage development process
 
 1. **Manual Task Decomposition:** The analytical goal (e.g., "flag new information") was first broken down into a logical sequence of smaller, well-defined subtasks suitable for an LLM. Initial prompts were drafted for each subtask.
 2. **Interactive Testing and Refinement:** The subtask prompts were tested interactively on the test case within a single LLM conversation. This step served to evaluate the viability of the decomposition scheme and refine the clarity of the instructions for each step.
-3. **Meta-Prompting for Workflow Integration:** The refined subtask sequence was integrated into a single, comprehensive workflow prompt using meta-prompting techniques—a process where one prompt is used to guide an LLM to develop and refine another, more specialized prompt.
+3. **Meta-Prompting for Workflow Integration:** The refined subtask sequence was integrated into a single, comprehensive workflow prompt using meta-prompting techniques - a process where one prompt is used to guide an LLM to develop and refine another, more specialized prompt.
 
-The resulting prompts perform two distinct types of analysis—informational and linguistic—applied separately to the Abstract and Conclusions sections.
+The resulting prompts perform two distinct types of analysis - informational and linguistic - applied separately to the Abstract and Conclusions sections.
 
 ### 2.3. Informational Integrity Analysis
 
