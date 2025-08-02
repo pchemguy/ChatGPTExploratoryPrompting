@@ -162,7 +162,7 @@ cython_debug/
 #.idea/
 
 #Obsidian
-.obsidian
+.obsidian*
 *.tmp
 ~$*.doc*
 .~*
