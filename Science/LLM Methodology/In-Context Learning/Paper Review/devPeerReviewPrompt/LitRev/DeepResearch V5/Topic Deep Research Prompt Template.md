@@ -1,4 +1,4 @@
->[!Note]
+> [!Note]
 > 
 > Dev: https://gemini.google.com/app/26e6f73f61d744d8
 
