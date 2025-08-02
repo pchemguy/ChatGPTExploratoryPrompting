@@ -1,9 +1,20 @@
-Help me improve the following LLM deep research prompt under development ("PUD"). The improved prompt must instruct LLM to perform an in-depth, systematic, and academically comprehensive research akin to a high quality specialized academic review manuscript, a chapter in authoritative and highly influential expert textbook, or a section in an academic-excellency-award winning top-notch Ph.D. thesis.
+# Master Template
+
+Help me develop an LLM deep research structured prompt template. This template must instruct LLM to perform an in-depth, systematic, and academically comprehensive research akin to a high quality specialized academic review manuscript, a chapter in authoritative and highly influential expert textbook, or a section in an academic-excellency-award winning top-notch Ph.D. thesis. The scope and details of this research will be determined by the content of the `Research Outline` section of the prompt. (The template will include the section heading `Research Outline` and its content "{RESEARCH OUTLINE}" will be replaced with actual outline before executing specific topic researches.)
+
+After completing deep research, the LLM must generate a well-developed standalone comprehensive academic/technical report.
+
+**Report Formatting**
+- Suitable common academic/technical structure
+- Structured using Markdown formatting and heading (starting from heading level 2, `##`)
+- Follow rendered STEM formulas with inline code or code blocks (as appropriate) that include equivalent MathJax code (inline MathJax uses single dollar symbol and MathJax blocks use double dollar symbol).
+
+
+
+- Abstract at the beginning 
 
 References citations
 
-After completing deep research, the LLM must generate a well-developed standalone comprehensive academic/technical report. Among other things, the report should generally follow a suitable common academic/technical structure using Markdown formatting and heading include:
-- Abstract at the beginning 
 
 You must ensure that the PUD achieves the following objectives:
 
@@ -38,6 +49,12 @@ Give me an in-depth, systematic, and academically comprehensive coverage (like a
 
 
 
+
+# Outline Generator
+
+
+---
+
 ## PUD
 
 
@@ -52,5 +69,3 @@ Give me an in-depth, systematic, and academically comprehensive coverage (like a
 - directional microphone technologies and techniques
 
 - shotgun microphones
-
--
