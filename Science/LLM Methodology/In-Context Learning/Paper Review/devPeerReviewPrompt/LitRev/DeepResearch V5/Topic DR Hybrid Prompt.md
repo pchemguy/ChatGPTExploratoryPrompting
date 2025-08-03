@@ -1,3 +1,7 @@
+> [!Note]
+> 
+> https://gemini.google.com/app/65890204c0918aa8
+
 # MISSION BRIEFING: Advanced Academic Outline Generation
 
 ## 1. Persona & Core Directive
