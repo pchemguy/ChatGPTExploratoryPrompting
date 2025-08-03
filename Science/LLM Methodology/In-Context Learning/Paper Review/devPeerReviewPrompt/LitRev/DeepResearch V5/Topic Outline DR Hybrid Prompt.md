@@ -32,7 +32,6 @@ You must adhere to the following structural and formatting rules without excepti
 * **Formatting:**
     * All top-level sections must use a level-3 Markdown heading (`###`).
     * Use subheadings (`####`, `#####`, etc.) as necessary to create a detailed and logical hierarchy within each section.
-    * Immediately following each heading, you provide a brief, one-sentence description of that (sub-)section's purpose, formatted in italics.
 
 ---
 
