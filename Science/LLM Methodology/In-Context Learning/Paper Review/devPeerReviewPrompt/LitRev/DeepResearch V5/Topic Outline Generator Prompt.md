@@ -39,3 +39,5 @@ You must adhere to the following structural and formatting rules without excepti
 **Proceed by analyzing the topics below and generating the complete Research Outline.**
 
 ## Topic Bullets
+
+{TOPIC BULLETS}
