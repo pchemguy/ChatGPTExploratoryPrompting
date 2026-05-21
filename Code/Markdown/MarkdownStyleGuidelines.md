@@ -6,6 +6,12 @@ url: https://chatgpt.com/c/6a0d7893-2310-83eb-93ab-dffa1cf4d564
 
 Use Markdown as an information architecture tool, not as visual decoration. Headings should represent semantic hierarchy, not emphasis or spacing.
 
+## Summary
+
+> [!NOTE] Concise Summary
+> 
+> Follow Markdown structure guidance emphasizing semantic hierarchy, cohesive scoped sections, shallow but justified heading depth (typically H1-H4), headings as information architecture rather than visual styling, avoidance of fragmented microsections and heading spam, preference for lists vs subsections based on TOC/navigation value and explanatory depth, and overall technical-writing-oriented document organization.
+
 ## Core Principles
 
 Well-structured technical documents should:
